@@ -1,0 +1,201 @@
+using Cisco.DnaCenter.Api.Data;
+using Refit;
+
+namespace Cisco.DnaCenter.Api.Interfaces
+{
+	/// <summary>
+	/// Represents a collection of functions to interact with the API endpoints
+	/// </summary>
+	public interface INonFabricWireless
+	{
+		#region Asynchronous Operations
+
+		/// <summary>
+		/// AP Provision
+		/// </summary>
+		/// <remarks>
+		/// Provision wireless Access points
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <param name="__persistbapioutput"> (optional, default to true)</param>
+		/// <returns>Task of APProvisionResponse</returns>
+		[Post("/dna/intent/api/v1/wireless/ap-provision")]
+		System.Threading.Tasks.Task<APProvisionResponse> APProvision([Header("UserAgent")] string userAgent, [Body]APProvisionRequest request, string __persistbapioutput = null);
+
+		/// <summary>
+		/// Create and Provision SSID
+		/// </summary>
+		/// <remarks>
+		/// Creates SSID, updates the SSID to the corresponding site profiles and provision it to the devices matching the given sites
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
+		/// <returns>Task of CreateAndProvisionSSIDResponse</returns>
+		[Post("/dna/intent/api/v1/business/ssid")]
+		System.Threading.Tasks.Task<CreateAndProvisionSSIDResponse> CreateAndProvisionSSID([Header("UserAgent")] string userAgent, [Body]CreateAndProvisionSSIDRequest request, string __persistbapioutput);
+
+		/// <summary>
+		/// Create Enterprise SSID
+		/// </summary>
+		/// <remarks>
+		/// Creates enterprise SSID
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <returns>Task of CreateEnterpriseSSIDResponse</returns>
+		[Post("/dna/intent/api/v1/enterprise-ssid")]
+		System.Threading.Tasks.Task<CreateEnterpriseSSIDResponse> CreateEnterpriseSSID([Header("UserAgent")] string userAgent, [Body]CreateEnterpriseSSIDRequest request);
+
+		/// <summary>
+		/// Create or Update RF profile
+		/// </summary>
+		/// <remarks>
+		/// Create or Update RF profile
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <returns>Task of CreateOrUpdateRFProfileResponse</returns>
+		[Post("/dna/intent/api/v1/wireless/rf-profile")]
+		System.Threading.Tasks.Task<CreateOrUpdateRFProfileResponse> CreateOrUpdateRFProfile([Header("UserAgent")] string userAgent, [Body]CreateOrUpdateRFProfileRequest request);
+
+		/// <summary>
+		/// Create Wireless Profile
+		/// </summary>
+		/// <remarks>
+		/// Creates Wireless Network Profile on DNAC and associates sites and SSIDs to it.
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <returns>Task of CreateWirelessProfileResponse</returns>
+		[Post("/dna/intent/api/v1/wireless/profile")]
+		System.Threading.Tasks.Task<CreateWirelessProfileResponse> CreateWirelessProfile([Header("UserAgent")] string userAgent, [Body]CreateWirelessProfileRequest request);
+
+		/// <summary>
+		/// Delete Enterprise SSID
+		/// </summary>
+		/// <remarks>
+		/// Deletes given enterprise SSID
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="ssidName">Enter the SSID name to be deleted</param>
+		/// <returns>Task of DeleteEnterpriseSSIDResponse</returns>
+		[Delete("/dna/intent/api/v1/enterprise-ssid/{ssidName}")]
+		System.Threading.Tasks.Task<DeleteEnterpriseSSIDResponse> DeleteEnterpriseSSID([Header("UserAgent")] string userAgent, [AliasAs("ssidName")]string ssidName);
+
+		/// <summary>
+		/// Delete RF profiles
+		/// </summary>
+		/// <remarks>
+		/// Delete RF profile(s)
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="rf_profile_name"></param>
+		/// <returns>Task of DeleteRFProfilesResponse</returns>
+		[Delete("/dna/intent/api/v1/wireless/rf-profile/{rf-profile-name}")]
+		System.Threading.Tasks.Task<DeleteRFProfilesResponse> DeleteRFProfiles([Header("UserAgent")] string userAgent, [AliasAs("rf_profile_name")]string rf_profile_name);
+
+		/// <summary>
+		/// Delete SSID and provision it to devices
+		/// </summary>
+		/// <remarks>
+		/// Removes SSID or WLAN from the network profile, reprovision the device(s) and deletes the SSID or WLAN from DNA Center
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
+		/// <param name="ssidName"></param>
+		/// <param name="managedAPLocations"></param>
+		/// <returns>Task of DeleteSSIDAndProvisionItToDevicesResponse</returns>
+		[Delete("/dna/intent/api/v1/business/ssid/{ssidName}/{managedAPLocations}")]
+		System.Threading.Tasks.Task<DeleteSSIDAndProvisionItToDevicesResponse> DeleteSSIDAndProvisionItToDevices([Header("UserAgent")] string userAgent, string __persistbapioutput, [AliasAs("ssidName")]string ssidName, [AliasAs("managedAPLocations")]string managedAPLocations);
+
+		/// <summary>
+		/// Delete Wireless Profile
+		/// </summary>
+		/// <remarks>
+		/// Delete the Wireless Profile from DNAC whose name is provided.
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <param name="wirelessProfileName"></param>
+		/// <returns>Task of DeleteWirelessProfileResponse</returns>
+		[Delete("/dna/intent/api/v1/wireless-profile/{wirelessProfileName}")]
+		System.Threading.Tasks.Task<DeleteWirelessProfileResponse> DeleteWirelessProfile([Header("UserAgent")] string userAgent, [Body]DeleteWirelessProfileRequest request, [AliasAs("wirelessProfileName")]string wirelessProfileName);
+
+		/// <summary>
+		/// Get Enterprise SSID
+		/// </summary>
+		/// <remarks>
+		/// Gets either one or all the enterprise SSID
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="ssidName">Enter the enterprise SSID name that needs to be retrieved. If not entered, all the enterprise SSIDs will be retrieved. (optional, default to )</param>
+		/// <returns>Task of GetEnterpriseSSIDResponse</returns>
+		[Get("/dna/intent/api/v1/enterprise-ssid")]
+		System.Threading.Tasks.Task<GetEnterpriseSSIDResponse> GetEnterpriseSSID([Header("UserAgent")] string userAgent, [AliasAs("ssidName")]string ssidName = null);
+
+		/// <summary>
+		/// Get Wireless Profile
+		/// </summary>
+		/// <remarks>
+		/// Gets either one or all the wireless network profiles if no name is provided for network-profile.
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="profileName"> (optional, default to )</param>
+		/// <returns>Task of GetWirelessProfileResponse</returns>
+		[Get("/dna/intent/api/v1/wireless/profile")]
+		System.Threading.Tasks.Task<GetWirelessProfileResponse> GetWirelessProfile([Header("UserAgent")] string userAgent, [AliasAs("profileName")]string profileName = null);
+
+		/// <summary>
+		/// Provision
+		/// </summary>
+		/// <remarks>
+		/// Provision wireless devices
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
+		/// <returns>Task of ProvisionResponse</returns>
+		[Post("/dna/intent/api/v1/wireless/provision")]
+		System.Threading.Tasks.Task<ProvisionResponse> Provision([Header("UserAgent")] string userAgent, [Body]ProvisionRequest request, string __persistbapioutput);
+
+		/// <summary>
+		/// Provision update
+		/// </summary>
+		/// <remarks>
+		/// Updates wireless provisioning
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
+		/// <returns>Task of ProvisionUpdateResponse</returns>
+		[Put("/dna/intent/api/v1/wireless/provision")]
+		System.Threading.Tasks.Task<ProvisionUpdateResponse> ProvisionUpdate([Header("UserAgent")] string userAgent, [Body]ProvisionUpdateRequest request, string __persistbapioutput);
+
+		/// <summary>
+		/// Retrieve RF profiles
+		/// </summary>
+		/// <remarks>
+		/// Retrieve all RF profiles
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="rf_profile_name"> (optional, default to )</param>
+		/// <returns>Task of RetrieveRFProfilesResponse</returns>
+		[Get("/dna/intent/api/v1/wireless/rf-profile")]
+		System.Threading.Tasks.Task<RetrieveRFProfilesResponse> RetrieveRFProfiles([Header("UserAgent")] string userAgent, [AliasAs("rf_profile_name")]string rf_profile_name = null);
+
+		/// <summary>
+		/// Update Wireless Profile
+		/// </summary>
+		/// <remarks>
+		/// Updates the wireless Network Profile with updated details provided. All sites to be present in the network profile should be provided.
+		/// </remarks>
+		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+		/// <param name="request">request</param>
+		/// <returns>Task of UpdateWirelessProfileResponse</returns>
+		[Put("/dna/intent/api/v1/wireless/profile")]
+		System.Threading.Tasks.Task<UpdateWirelessProfileResponse> UpdateWirelessProfile([Header("UserAgent")] string userAgent, [Body]UpdateWirelessProfileRequest request);
+		#endregion Asynchronous Operations
+	}
+}

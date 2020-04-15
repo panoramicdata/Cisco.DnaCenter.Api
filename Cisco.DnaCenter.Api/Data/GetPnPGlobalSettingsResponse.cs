@@ -1,0 +1,104 @@
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text;
+
+namespace Cisco.DnaCenter.Api.Data
+{
+	/// <summary>
+	/// GetPnPGlobalSettingsResponse
+	/// </summary>
+	[DataContract]
+	public partial class GetPnPGlobalSettingsResponse
+	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetPnPGlobalSettingsResponse" /> class.
+		/// </summary>
+		/// <param name="SavaMappingList">SavaMappingList.</param>
+		/// <param name="TaskTimeOuts">TaskTimeOuts.</param>
+		/// <param name="TenantId">TenantId.</param>
+		/// <param name="AaaCredentials">AaaCredentials.</param>
+		/// <param name="DefaultProfile">DefaultProfile.</param>
+		/// <param name="AcceptEula">AcceptEula.</param>
+		/// <param name="Id">Id.</param>
+		/// <param name="Id">Id.</param>
+		/// <param name="_Version">_Version.</param>
+		public GetPnPGlobalSettingsResponse(List<GetPnPGlobalSettingsResponseSavaMappingList> SavaMappingList = default, GetPnPGlobalSettingsResponseTaskTimeOuts TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials AaaCredentials = default, GetPnPGlobalSettingsResponseDefaultProfile DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)
+		{
+			this.SavaMappingList = SavaMappingList;
+			this.TaskTimeOuts = TaskTimeOuts;
+			this.TenantId = TenantId;
+			this.AaaCredentials = AaaCredentials;
+			this.DefaultProfile = DefaultProfile;
+			this.AcceptEula = AcceptEula;
+			this.Id = Id;
+			this._Id = _Id;
+			this._Version = _Version;
+		}
+
+		/// <summary>
+		/// Gets or Sets SavaMappingList
+		/// </summary>
+		[DataMember(Name = "savaMappingList", EmitDefaultValue = false)]
+		public List<GetPnPGlobalSettingsResponseSavaMappingList> SavaMappingList { get; set; }
+		/// <summary>
+		/// Gets or Sets TaskTimeOuts
+		/// </summary>
+		[DataMember(Name = "taskTimeOuts", EmitDefaultValue = false)]
+		public GetPnPGlobalSettingsResponseTaskTimeOuts TaskTimeOuts { get; set; }
+		/// <summary>
+		/// Gets or Sets TenantId
+		/// </summary>
+		[DataMember(Name = "tenantId", EmitDefaultValue = false)]
+		public string? TenantId { get; set; }
+		/// <summary>
+		/// Gets or Sets AaaCredentials
+		/// </summary>
+		[DataMember(Name = "aaaCredentials", EmitDefaultValue = false)]
+		public DeviceDeviceInfoAaaCredentials AaaCredentials { get; set; }
+		/// <summary>
+		/// Gets or Sets DefaultProfile
+		/// </summary>
+		[DataMember(Name = "defaultProfile", EmitDefaultValue = false)]
+		public GetPnPGlobalSettingsResponseDefaultProfile DefaultProfile { get; set; }
+		/// <summary>
+		/// Gets or Sets AcceptEula
+		/// </summary>
+		[DataMember(Name = "acceptEula", EmitDefaultValue = false)]
+		public bool? AcceptEula { get; set; }
+		/// <summary>
+		/// Gets or Sets Id
+		/// </summary>
+		[DataMember(Name = "id", EmitDefaultValue = false)]
+		public string? Id { get; set; }
+		/// <summary>
+		/// Gets or Sets Id
+		/// </summary>
+		[DataMember(Name = "_id", EmitDefaultValue = false)]
+		public string? _Id { get; set; }
+		/// <summary>
+		/// Gets or Sets _Version
+		/// </summary>
+		[DataMember(Name = "version", EmitDefaultValue = false)]
+		public decimal? _Version { get; set; }
+		/// <summary>
+		/// Returns the string presentation of the object
+		/// </summary>
+		/// <returns>String presentation of the object</returns>
+		public override string ToString()
+		{
+			var sb = new StringBuilder();
+			sb.Append("class GetPnPGlobalSettingsResponse {\n");
+			sb.Append("  SavaMappingList: ").Append(SavaMappingList).Append("\n");
+			sb.Append("  TaskTimeOuts: ").Append(TaskTimeOuts).Append("\n");
+			sb.Append("  TenantId: ").Append(TenantId).Append("\n");
+			sb.Append("  AaaCredentials: ").Append(AaaCredentials).Append("\n");
+			sb.Append("  DefaultProfile: ").Append(DefaultProfile).Append("\n");
+			sb.Append("  AcceptEula: ").Append(AcceptEula).Append("\n");
+			sb.Append("  Id: ").Append(Id).Append("\n");
+			sb.Append("  _Id: ").Append(_Id).Append("\n");
+			sb.Append("  _Version: ").Append(_Version).Append("\n");
+			sb.Append("}\n");
+			return sb.ToString();
+		}
+	}
+}
