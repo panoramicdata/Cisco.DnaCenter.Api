@@ -7,21 +7,14 @@ namespace Cisco.DnaCenter.Test
 {
 	public class ClientTests : Tests
 	{
-		public ClientTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
+		public ClientTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper, false)
 		{
 		}
 
 		[Fact]
 		public async void CreateClient()
 		{
-			var dnaCenterClient = new DnaCenterClient(new DnaCenterClientOptions
-			{
-				Uri = new Uri("https://sandboxdnac2.cisco.com/"),
-				Username = "devnetuser",
-				Password = "Cisco123!"
-			});
-
-			await dnaCenterClient
+			await Client
 				.ConnectAsync()
 				.ConfigureAwait(false);
 		}

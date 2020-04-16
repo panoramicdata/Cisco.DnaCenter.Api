@@ -1,4 +1,7 @@
+using Cisco.DnaCenter.Api.Data;
 using Cisco.DnaCenter.Api.Interfaces;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Refit;
 using System;
 using System.Data;
@@ -12,8 +15,15 @@ namespace Cisco.DnaCenter.Api
 	/// </summary>
 	public class DnaCenterClient : IDisposable
 	{
-		public DnaCenterClient(DnaCenterClientOptions options)
+		private HttpClient? _httpClient;
+		private bool _isConnected;
+		private readonly ILogger _logger;
+		private readonly DnaCenterClientOptions _options;
+
+		public DnaCenterClient(DnaCenterClientOptions options, ILogger? logger = null)
 		{
+			_logger = logger ?? NullLogger.Instance;
+
 			if (options is null)
 			{
 				throw new ArgumentNullException(nameof(options));
@@ -75,9 +85,24 @@ namespace Cisco.DnaCenter.Api
 				throw new InvalidOperationException("Already connected.");
 			}
 
-			var authenticationResponse = await Authentication
-				.Authenticate("application/json", _options.GetBase64UsernamePassword())
-				.ConfigureAwait(false);
+			if (_authenticatedHttpClientHandler is null)
+			{
+				throw new InvalidOperationException("The _authenticatedHttpClientHandler is null.  This should not happen.");
+			}
+
+			AuthenticationResponse authenticationResponse;
+			try
+			{
+				var base64UsernameAndPassword = _options.GetBase64UsernamePassword();
+				authenticationResponse = await Authentication
+					.Authenticate("application/json", base64UsernameAndPassword)
+					.ConfigureAwait(false);
+			}
+			catch (Exception e)
+			{
+				_logger.LogError(e.Message, e);
+				throw;
+			}
 			_authenticatedHttpClientHandler.Token = authenticationResponse.Token ?? throw new DataException("Api returned null Token.");
 			_isConnected = true;
 		}
@@ -150,13 +175,10 @@ namespace Cisco.DnaCenter.Api
 
 		#region IDisposable Support
 		private bool _disposedValue = false; // To detect redundant calls
-		private readonly AuthenticatedHttpClientHandler? _authenticatedHttpClientHandler;
 
 		// Only set if an HttpsClient was NOT provided in the options.
-		private HttpClient? _httpClient;
-		private bool _isConnected;
 		private readonly bool _shouldDisposeHttpClient;
-		private readonly DnaCenterClientOptions _options;
+		private readonly AuthenticatedHttpClientHandler? _authenticatedHttpClientHandler;
 
 		protected virtual void Dispose(bool disposing)
 		{
