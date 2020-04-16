@@ -7,13 +7,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AuthenticationAPIResponse
 	/// </summary>
 	[DataContract]
-	public partial class AuthenticationAPIResponse
+	public partial class AuthenticationResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AuthenticationAPIResponse" /> class.
+		/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
 		/// </summary>
 		/// <param name="Token">Token.</param>
-		public AuthenticationAPIResponse(string? Token = default)
+		public AuthenticationResponse(string? Token = default)
 		{
 			this.Token = Token;
 		}

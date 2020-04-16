@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface IApplicationPolicy
+	public interface IApplicationPolicies
 	{
 		/// <summary>
 		/// Create Application
@@ -92,7 +92,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetApplicationSetsCountResponse</returns>
 		[Get("/dna/intent/api/v1/application-policy-application-set-count")]
-		Task<GetApplicationSetsCountResponse> GetApplicationSetsCount([Header("UserAgent")] string userAgent);
+		Task<GetApplicationSetsCountResponse> GetApplicationSetsCount();
 
 		/// <summary>
 		/// Get Applications
@@ -117,6 +117,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetApplicationsCountResponse</returns>
 		[Get("/dna/intent/api/v1/applications-count")]
-		Task<GetApplicationsCountResponse> GetApplicationsCount([Header("UserAgent")] string userAgent);
+		Task<GetApplicationsCountResponse> GetApplicationsCount();
 	}
 }

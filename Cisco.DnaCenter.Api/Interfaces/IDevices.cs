@@ -107,7 +107,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/network-device/config/count")]
-		Task<CountResult> GetDeviceConfigCount([Header("UserAgent")] string userAgent);
+		Task<CountResult> GetDeviceConfigCount();
 
 		/// <summary>
 		/// Get Device Config for all devices
@@ -118,7 +118,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of RawCliInfoNIOListResult</returns>
 		[Get("/dna/intent/api/v1/network-device/config")]
-		Task<RawCliInfoNIOListResult> GetDeviceConfigForAllDevices([Header("UserAgent")] string userAgent);
+		Task<RawCliInfoNIOListResult> GetDeviceConfigForAllDevices();
 
 		/// <summary>
 		/// Get Device Count
@@ -129,7 +129,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/network-device/count")]
-		Task<CountResult> GetDeviceCount([Header("UserAgent")] string userAgent);
+		Task<CountResult> GetDeviceCount();
 
 		/// <summary>
 		/// Get Device Detail
@@ -167,7 +167,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/interface/count")]
-		Task<CountResult> GetDeviceInterfaceCount([Header("UserAgent")] string userAgent);
+		Task<CountResult> GetDeviceInterfaceCount();
 
 		/// <summary>
 		/// Get Device Interface count
@@ -296,7 +296,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of DeviceIfListResult</returns>
 		[Get("/dna/intent/api/v1/interface/isis")]
-		Task<DeviceIfListResult> GetISISInterfaces([Header("UserAgent")] string userAgent);
+		Task<DeviceIfListResult> GetISISInterfaces();
 
 		/// <summary>
 		/// Get Interface by IP
@@ -427,7 +427,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of DeviceIfListResult</returns>
 		[Get("/dna/intent/api/v1/interface/ospf")]
-		Task<DeviceIfListResult> GetOSPFInterfaces([Header("UserAgent")] string userAgent);
+		Task<DeviceIfListResult> GetOSPFInterfaces();
 
 		/// <summary>
 		/// Get Organization list for Meraki
@@ -462,7 +462,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/network-device/collection-schedule/global")]
-		Task<CountResult> GetPollingIntervalForAllDevices([Header("UserAgent")] string userAgent);
+		Task<CountResult> GetPollingIntervalForAllDevices();
 
 		/// <summary>
 		/// Get wireless lan controller details by Id

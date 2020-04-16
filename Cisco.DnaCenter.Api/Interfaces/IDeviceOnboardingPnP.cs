@@ -147,7 +147,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetPnPGlobalSettingsResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings")]
-		Task<GetPnPGlobalSettingsResponse> GetPnPGlobalSettings([Header("UserAgent")] string userAgent);
+		Task<GetPnPGlobalSettingsResponse> GetPnPGlobalSettings();
 
 		/// <summary>
 		/// Get Device Count
@@ -212,7 +212,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetSmartAccountListResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings/sacct")]
-		Task<GetSmartAccountListResponse> GetSmartAccountList([Header("UserAgent")] string userAgent);
+		Task<GetSmartAccountListResponse> GetSmartAccountList();
 
 		/// <summary>
 		/// Get Sync Result for Virtual Account

@@ -123,7 +123,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery")]
-		Task<TaskIdResult> DeleteAllDiscovery([Header("UserAgent")] string userAgent);
+		Task<TaskIdResult> DeleteAllDiscovery();
 
 		/// <summary>
 		/// Delete discovery by Id
@@ -171,7 +171,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/count")]
-		Task<CountResult> GetCountOfAllDiscoveryJobs([Header("UserAgent")] string userAgent);
+		Task<CountResult> GetCountOfAllDiscoveryJobs();
 
 		/// <summary>
 		/// Get Credential sub type by credential Id
@@ -325,7 +325,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of SystemPropertyListResult</returns>
 		[Get("/dna/intent/api/v1/snmp-property")]
-		Task<SystemPropertyListResult> GetSNMPProperties([Header("UserAgent")] string userAgent);
+		Task<SystemPropertyListResult> GetSNMPProperties();
 
 		/// <summary>
 		/// Start discovery

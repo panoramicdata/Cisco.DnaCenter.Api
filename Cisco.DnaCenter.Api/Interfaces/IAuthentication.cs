@@ -20,6 +20,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Authorization">Basic Auth Base64 encoding of &lt;username&gt;:&lt;password&gt;</param>
 		/// <returns>Task of AuthenticationAPIResponse</returns>
 		[Post("/dna/system/api/v1/auth/token")]
-		Task<AuthenticationAPIResponse> AuthenticationAPI(string Content_Type, string Authorization);
+		Task<AuthenticationResponse> Authenticate(string Content_Type, string Authorization);
 	}
 }

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface IFile
+	public interface IFiles
 	{
 		/// <summary>
 		/// Download a file by fileId
@@ -30,7 +30,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of NameSpaceListResult</returns>
 		[Get("/dna/intent/api/v1/file/namespace")]
-		Task<NameSpaceListResult> GetListOfAvailableNamespaces([Header("UserAgent")] string userAgent);
+		Task<NameSpaceListResult> GetListOfAvailableNamespaces();
 
 		/// <summary>
 		/// Get list of files
@@ -42,6 +42,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="_nameSpace">A listing of fileId&#39;s</param>
 		/// <returns>Task of FileObjectListResult</returns>
 		[Get("/dna/intent/api/v1/file/namespace/{nameSpace}")]
-		Task<FileObjectListResult> GetListOfFiles([AliasAs("_nameSpace")]string _nameSpace);
+		Task<FileObjectListResult> GetListOfFiles([AliasAs("nameSpace")]string nameSpace);
 	}
 }

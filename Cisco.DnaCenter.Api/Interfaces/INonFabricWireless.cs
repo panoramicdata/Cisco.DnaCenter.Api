@@ -92,8 +92,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="rf_profile_name"></param>
 		/// <returns>Task of DeleteRFProfilesResponse</returns>
-		[Delete("/dna/intent/api/v1/wireless/rf-profile/{rf-profile-name}")]
-		Task<DeleteRFProfilesResponse> DeleteRFProfiles([AliasAs("rf_profile_name")]string rf_profile_name);
+		[Delete("/dna/intent/api/v1/wireless/rf-profile/{rfProfileName}")]
+		Task<DeleteRFProfilesResponse> DeleteRFProfiles([AliasAs("rfProfileName")]string rfProfileName);
 
 		/// <summary>
 		/// Delete SSID and provision it to devices

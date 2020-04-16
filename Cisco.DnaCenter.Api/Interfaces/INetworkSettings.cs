@@ -107,8 +107,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="sp_profile_name">sp profile name</param>
 		/// <returns>Task of DeleteSPProfileResponse</returns>
-		[Delete("/dna/intent/api/v1/sp-profile/{sp-profile-name}")]
-		Task<DeleteSPProfileResponse> DeleteSPProfile([AliasAs("sp_profile_name")]string sp_profile_name);
+		[Delete("/dna/intent/api/v1/sp-profile/{spProfileName}")]
+		Task<DeleteSPProfileResponse> DeleteSPProfile([AliasAs("spProfileName")]string spProfileName);
 
 		/// <summary>
 		/// Get Device Credential Details
@@ -156,7 +156,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetServiceProviderDetailsResponse</returns>
 		[Get("/dna/intent/api/v1/service-provider")]
-		Task<GetServiceProviderDetailsResponse> GetServiceProviderDetails([Header("UserAgent")] string userAgent);
+		Task<GetServiceProviderDetailsResponse> GetServiceProviderDetails();
 
 		/// <summary>
 		/// Update Device Credentials

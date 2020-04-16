@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface ITopology
+	public interface ITopologies
 	{
 		/// <summary>
 		/// Get L3 Topology Details
@@ -54,7 +54,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of SiteResult</returns>
 		[Get("/dna/intent/api/v1/topology/site-topology")]
-		Task<SiteResult> GetSiteTopology([Header("UserAgent")] string userAgent);
+		Task<SiteResult> GetSiteTopology();
 
 		/// <summary>
 		/// Get topology details
@@ -77,6 +77,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of VlanNamesResult</returns>
 		[Get("/dna/intent/api/v1/topology/vlan/vlan-names")]
-		Task<VlanNamesResult> GetVLANDetails([Header("UserAgent")] string userAgent);
+		Task<VlanNamesResult> GetVLANDetails();
 	}
 }

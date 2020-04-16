@@ -18,7 +18,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of LegitCliKeyResult</returns>
 		[Get("/dna/intent/api/v1/network-device-poller/cli/legit-reads")]
-		Task<LegitCliKeyResult> GetAllKeywordsOfCLIsAcceptedByCommandRunner([Header("UserAgent")] string userAgent);
+		Task<LegitCliKeyResult> GetAllKeywordsOfCLIsAcceptedByCommandRunner();
 
 		/// <summary>
 		/// Run read-only commands on devices to get their real-time configuration

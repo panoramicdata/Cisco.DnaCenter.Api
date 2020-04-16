@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface ITag
+	public interface ITags
 	{
 		/// <summary>
 		/// Add members to the tag
@@ -140,7 +140,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of TagTypesResult</returns>
 		[Get("/dna/intent/api/v1/tag/member/type")]
-		Task<TagTypesResult> GetTagResourceTypes([Header("UserAgent")] string userAgent);
+		Task<TagTypesResult> GetTagResourceTypes();
 
 		/// <summary>
 		/// Remove Tag member

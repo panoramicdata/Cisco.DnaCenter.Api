@@ -1,3 +1,5 @@
+using Cisco.DnaCenter.Api;
+using System;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -10,8 +12,18 @@ namespace Cisco.DnaCenter.Test
 		}
 
 		[Fact]
-		public void CreateClient()
+		public async void CreateClient()
 		{
+			var dnaCenterClient = new DnaCenterClient(new DnaCenterClientOptions
+			{
+				Uri = new Uri("https://sandboxdnac2.cisco.com/"),
+				Username = "devnetuser",
+				Password = "Cisco123!"
+			});
+
+			await dnaCenterClient
+				.ConnectAsync()
+				.ConfigureAwait(false);
 		}
 	}
 }
