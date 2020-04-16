@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -9,8 +10,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface INetworkDiscovery
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Create CLI credentials
 		/// </summary>
@@ -22,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/cli")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateCLICredentials([Header("UserAgent")] string userAgent, [Body]CLICredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateCLICredentials([Body]CLICredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Create HTTP read credentials
@@ -35,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-read")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateHTTPReadCredentials([Header("UserAgent")] string userAgent, [Body]HTTPReadCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateHTTPReadCredentials([Body]HTTPReadCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Create HTTP write credentials
@@ -48,7 +47,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-write")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateHTTPWriteCredentials([Header("UserAgent")] string userAgent, [Body]HTTPWriteCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Create Netconf credentials
@@ -61,7 +60,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/netconf")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateNetconfCredentials([Header("UserAgent")] string userAgent, [Body]NetconfCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateNetconfCredentials([Body]NetconfCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Create SNMP read community
@@ -74,7 +73,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateSNMPReadCommunity([Header("UserAgent")] string userAgent, [Body]SNMPvReadCommunityDto request, string Content_Type);
+		Task<TaskIdResult> CreateSNMPReadCommunity([Body]SNMPvReadCommunityDto request, string Content_Type);
 
 		/// <summary>
 		/// Create SNMP write community
@@ -87,7 +86,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateSNMPWriteCommunity([Header("UserAgent")] string userAgent, [Body]SNMPvWriteCommunityDto request, string Content_Type);
+		Task<TaskIdResult> CreateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request, string Content_Type);
 
 		/// <summary>
 		/// Create SNMPv3 credentials
@@ -100,7 +99,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv3")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateSNMPv3Credentials([Header("UserAgent")] string userAgent, [Body]SNMPvCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateSNMPv3Credentials([Body]SNMPvCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Create/Update SNMP properties
@@ -113,7 +112,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/snmp-property")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateUpdateSNMPProperties([Header("UserAgent")] string userAgent, [Body]SystemPropertyNameAndIntValueDto request, string Content_Type);
+		Task<TaskIdResult> CreateUpdateSNMPProperties([Body]SystemPropertyNameAndIntValueDto request, string Content_Type);
 
 		/// <summary>
 		/// Delete all discovery
@@ -124,7 +123,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery")]
-		System.Threading.Tasks.Task<TaskIdResult> DeleteAllDiscovery([Header("UserAgent")] string userAgent);
+		Task<TaskIdResult> DeleteAllDiscovery([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Delete discovery by Id
@@ -136,7 +135,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Discovery ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery/{id}")]
-		System.Threading.Tasks.Task<TaskIdResult> DeleteDiscoveryById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<TaskIdResult> DeleteDiscoveryById([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Delete discovery by specified range
@@ -149,7 +148,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="recordsToDelete">Number of records to delete</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery/{startIndex}/{recordsToDelete}")]
-		System.Threading.Tasks.Task<TaskIdResult> DeleteDiscoveryBySpecifiedRange([Header("UserAgent")] string userAgent, [AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToDelete")]int? recordsToDelete);
+		Task<TaskIdResult> DeleteDiscoveryBySpecifiedRange([AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToDelete")]int? recordsToDelete);
 
 		/// <summary>
 		/// Delete global credentials by Id
@@ -161,7 +160,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="globalCredentialId">ID of global-credential</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
-		System.Threading.Tasks.Task<TaskIdResult> DeleteGlobalCredentialsById([Header("UserAgent")] string userAgent, [AliasAs("globalCredentialId")]string globalCredentialId);
+		Task<TaskIdResult> DeleteGlobalCredentialsById([AliasAs("globalCredentialId")]string globalCredentialId);
 
 		/// <summary>
 		/// Get count of all discovery jobs
@@ -172,7 +171,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/count")]
-		System.Threading.Tasks.Task<CountResult> GetCountOfAllDiscoveryJobs([Header("UserAgent")] string userAgent);
+		Task<CountResult> GetCountOfAllDiscoveryJobs([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Get Credential sub type by credential Id
@@ -184,7 +183,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Global Credential ID</param>
 		/// <returns>Task of GlobalCredentialSubTypeResult</returns>
 		[Get("/dna/intent/api/v1/global-credential/{id}")]
-		System.Threading.Tasks.Task<GlobalCredentialSubTypeResult> GetCredentialSubTypeByCredentialId([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<GlobalCredentialSubTypeResult> GetCredentialSubTypeByCredentialId([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Get Devices discovered by Id
@@ -197,7 +196,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">taskId (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/network-device/count")]
-		System.Threading.Tasks.Task<CountResult> GetDevicesDiscoveredById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null);
+		Task<CountResult> GetDevicesDiscoveredById([AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null);
 
 		/// <summary>
 		/// Get Discovered devices by range
@@ -212,7 +211,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">taskId (optional)</param>
 		/// <returns>Task of NetworkDeviceNIOListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/network-device/{startIndex}/{recordsToReturn}")]
-		System.Threading.Tasks.Task<NetworkDeviceNIOListResult> GetDiscoveredDevicesByRange([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToReturn")]int? recordsToReturn, [AliasAs("taskId")]string taskId = null);
+		Task<NetworkDeviceNIOListResult> GetDiscoveredDevicesByRange([AliasAs("id")]string id, [AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToReturn")]int? recordsToReturn, [AliasAs("taskId")]string taskId = null);
 
 		/// <summary>
 		/// Get Discovered network devices by discovery Id
@@ -225,7 +224,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">taskId (optional)</param>
 		/// <returns>Task of NetworkDeviceNIOListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/network-device")]
-		System.Threading.Tasks.Task<NetworkDeviceNIOListResult> GetDiscoveredNetworkDevicesByDiscoveryId([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null);
+		Task<NetworkDeviceNIOListResult> GetDiscoveredNetworkDevicesByDiscoveryId([AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null);
 
 		/// <summary>
 		/// Get Discoveries by range
@@ -238,7 +237,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="recordsToReturn">Number of records to return</param>
 		/// <returns>Task of DiscoveryNIOListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{startIndex}/{recordsToReturn}")]
-		System.Threading.Tasks.Task<DiscoveryNIOListResult> GetDiscoveriesByRange([Header("UserAgent")] string userAgent, [AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToReturn")]int? recordsToReturn);
+		Task<DiscoveryNIOListResult> GetDiscoveriesByRange([AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToReturn")]int? recordsToReturn);
 
 		/// <summary>
 		/// Get Discovery by Id
@@ -250,7 +249,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Discovery ID</param>
 		/// <returns>Task of DiscoveryNIOResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}")]
-		System.Threading.Tasks.Task<DiscoveryNIOResult> GetDiscoveryById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<DiscoveryNIOResult> GetDiscoveryById([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Get Discovery jobs by IP
@@ -265,7 +264,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">name (optional)</param>
 		/// <returns>Task of DiscoveryJobNIOListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/job")]
-		System.Threading.Tasks.Task<DiscoveryJobNIOListResult> GetDiscoveryJobsByIP([Header("UserAgent")] string userAgent, [AliasAs("ipAddress")]string ipAddress, [AliasAs("offset")]int? offset = null, [AliasAs("limit")]int? limit = null, [AliasAs("name")]string name = null);
+		Task<DiscoveryJobNIOListResult> GetDiscoveryJobsByIP([AliasAs("ipAddress")]string ipAddress, [AliasAs("offset")]int? offset = null, [AliasAs("limit")]int? limit = null, [AliasAs("name")]string name = null);
 
 		/// <summary>
 		/// Get Global credentials
@@ -279,7 +278,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order (optional)</param>
 		/// <returns>Task of GlobalCredentialListResult</returns>
 		[Get("/dna/intent/api/v1/global-credential")]
-		System.Threading.Tasks.Task<GlobalCredentialListResult> GetGlobalCredentials([Header("UserAgent")] string userAgent, [AliasAs("credentialSubType")]string credentialSubType, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GlobalCredentialListResult> GetGlobalCredentials([AliasAs("credentialSubType")]string credentialSubType, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
 
 		/// <summary>
 		/// Get list of discoveries by discovery Id
@@ -294,7 +293,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="ipAddress">ipAddress (optional)</param>
 		/// <returns>Task of DiscoveryJobNIOListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/job")]
-		System.Threading.Tasks.Task<DiscoveryJobNIOListResult> GetListOfDiscoveriesByDiscoveryId([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("offset")]int? offset = null, [AliasAs("limit")]int? limit = null, [AliasAs("ipAddress")]string ipAddress = null);
+		Task<DiscoveryJobNIOListResult> GetListOfDiscoveriesByDiscoveryId([AliasAs("id")]string id, [AliasAs("offset")]int? offset = null, [AliasAs("limit")]int? limit = null, [AliasAs("ipAddress")]string ipAddress = null);
 
 		/// <summary>
 		/// Get network devices from Discovery
@@ -315,7 +314,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="httpStatus">httpStatus (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/summary")]
-		System.Threading.Tasks.Task<CountResult> GetNetworkDevicesFromDiscovery([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("ipAddress")]List<string> ipAddress = null, [AliasAs("pingStatus")]List<string> pingStatus = null, [AliasAs("snmpStatus")]List<string> snmpStatus = null, [AliasAs("cliStatus")]List<string> cliStatus = null, [AliasAs("netconfStatus")]List<string> netconfStatus = null, [AliasAs("httpStatus")]List<string> httpStatus = null);
+		Task<CountResult> GetNetworkDevicesFromDiscovery([AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("ipAddress")]List<string> ipAddress = null, [AliasAs("pingStatus")]List<string> pingStatus = null, [AliasAs("snmpStatus")]List<string> snmpStatus = null, [AliasAs("cliStatus")]List<string> cliStatus = null, [AliasAs("netconfStatus")]List<string> netconfStatus = null, [AliasAs("httpStatus")]List<string> httpStatus = null);
 
 		/// <summary>
 		/// Get SNMP properties
@@ -326,7 +325,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of SystemPropertyListResult</returns>
 		[Get("/dna/intent/api/v1/snmp-property")]
-		System.Threading.Tasks.Task<SystemPropertyListResult> GetSNMPProperties([Header("UserAgent")] string userAgent);
+		Task<SystemPropertyListResult> GetSNMPProperties([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Start discovery
@@ -339,7 +338,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/discovery")]
-		System.Threading.Tasks.Task<TaskIdResult> StartDiscovery([Header("UserAgent")] string userAgent, [Body]InventoryRequest request, string Content_Type);
+		Task<TaskIdResult> StartDiscovery([Body]InventoryRequest request, string Content_Type);
 
 		/// <summary>
 		/// Update CLI credentials
@@ -352,7 +351,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/cli")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateCLICredentials([Header("UserAgent")] string userAgent, [Body]CLICredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateCLICredentials([Body]CLICredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Update global credentials
@@ -366,7 +365,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="globalCredentialId">Global credential Uuid</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateGlobalCredentials([Header("UserAgent")] string userAgent, [Body]SitesInfoDto request, string Content_Type, [AliasAs("globalCredentialId")]string globalCredentialId);
+		Task<TaskIdResult> UpdateGlobalCredentials([Body]SitesInfoDto request, string Content_Type, [AliasAs("globalCredentialId")]string globalCredentialId);
 
 		/// <summary>
 		/// Update HTTP read credential
@@ -379,7 +378,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-read")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateHTTPReadCredential([Header("UserAgent")] string userAgent, [Body]HTTPReadCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateHTTPReadCredential([Body]HTTPReadCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Update HTTP write credentials
@@ -392,7 +391,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-write")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateHTTPWriteCredentials([Header("UserAgent")] string userAgent, [Body]HTTPWriteCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Update Netconf credentials
@@ -405,7 +404,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/netconf")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateNetconfCredentials([Header("UserAgent")] string userAgent, [Body]NetconfCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateNetconfCredentials([Body]NetconfCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Update SNMP read community
@@ -418,7 +417,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateSNMPReadCommunity([Header("UserAgent")] string userAgent, [Body]SNMPvReadCommunityDto request, string Content_Type);
+		Task<TaskIdResult> UpdateSNMPReadCommunity([Body]SNMPvReadCommunityDto request, string Content_Type);
 
 		/// <summary>
 		/// Update SNMP write community
@@ -431,7 +430,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateSNMPWriteCommunity([Header("UserAgent")] string userAgent, [Body]SNMPvWriteCommunityDto request, string Content_Type);
+		Task<TaskIdResult> UpdateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request, string Content_Type);
 
 		/// <summary>
 		/// Update SNMPv3 credentials
@@ -444,7 +443,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv3")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateSNMPv3Credentials([Header("UserAgent")] string userAgent, [Body]SNMPvCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateSNMPv3Credentials([Body]SNMPvCredentialDto request, string Content_Type);
 
 		/// <summary>
 		/// Updates an existing discovery by specified Id
@@ -457,7 +456,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/discovery")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdatesAnExistingDiscoveryBySpecifiedId([Header("UserAgent")] string userAgent, [Body]DiscoveryNIO request, string Content_Type);
-		#endregion Asynchronous Operations
+		Task<TaskIdResult> UpdatesAnExistingDiscoveryBySpecifiedId([Body]DiscoveryNIO request, string Content_Type);
 	}
 }

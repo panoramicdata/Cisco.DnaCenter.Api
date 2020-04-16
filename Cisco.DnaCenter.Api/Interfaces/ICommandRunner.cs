@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface ICommandRunner
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Get all keywords of CLIs accepted by command runner
 		/// </summary>
@@ -19,7 +18,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of LegitCliKeyResult</returns>
 		[Get("/dna/intent/api/v1/network-device-poller/cli/legit-reads")]
-		System.Threading.Tasks.Task<LegitCliKeyResult> GetAllKeywordsOfCLIsAcceptedByCommandRunner([Header("UserAgent")] string userAgent);
+		Task<LegitCliKeyResult> GetAllKeywordsOfCLIsAcceptedByCommandRunner([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Run read-only commands on devices to get their real-time configuration
@@ -32,7 +31,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/network-device-poller/cli/read-request")]
-		System.Threading.Tasks.Task<TaskIdResult> RunReadOnlyCommandsOnDevicesToGetTheirRealTimeConfiguration([Header("UserAgent")] string userAgent, [Body]CommandRunnerDto request, string Content_Type);
-		#endregion Asynchronous Operations
+		Task<TaskIdResult> RunReadOnlyCommandsOnDevicesToGetTheirRealTimeConfiguration([Body]CommandRunnerDto request, string Content_Type);
 	}
 }

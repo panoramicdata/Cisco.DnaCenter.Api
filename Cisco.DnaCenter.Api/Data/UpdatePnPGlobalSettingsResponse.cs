@@ -31,8 +31,8 @@ namespace Cisco.DnaCenter.Api.Data
 			this.DefaultProfile = DefaultProfile;
 			this.AcceptEula = AcceptEula;
 			this.Id = Id;
-			this._Id = _Id;
-			this._Version = _Version;
+			this.Id2 = _Id;
+			this.Version = _Version;
 		}
 
 		/// <summary>
@@ -74,12 +74,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "_id", EmitDefaultValue = false)]
-		public string? _Id { get; set; }
+		public string? Id2 { get; set; }
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
-		public decimal? _Version { get; set; }
+		public decimal? Version { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -95,8 +95,8 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  DefaultProfile: ").Append(DefaultProfile).Append("\n");
 			sb.Append("  AcceptEula: ").Append(AcceptEula).Append("\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
-			sb.Append("  _Id: ").Append(_Id).Append("\n");
-			sb.Append("  _Version: ").Append(_Version).Append("\n");
+			sb.Append("  _Id: ").Append(Id2).Append("\n");
+			sb.Append("  _Version: ").Append(Version).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}

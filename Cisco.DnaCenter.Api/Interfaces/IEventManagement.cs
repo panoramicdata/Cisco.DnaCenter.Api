@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IEventManagement
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Count of Event Subscriptions
 		/// </summary>
@@ -20,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="eventIds">List of subscriptions related to the respective eventIds</param>
 		/// <returns>Task of CountOfEventSubscriptionsResponse</returns>
 		[Get("/dna/intent/api/v1/event/subscription/count")]
-		System.Threading.Tasks.Task<CountOfEventSubscriptionsResponse> CountOfEventSubscriptions([Header("UserAgent")] string userAgent, [AliasAs("eventIds")]string eventIds);
+		Task<CountOfEventSubscriptionsResponse> CountOfEventSubscriptions([AliasAs("eventIds")]string eventIds);
 
 		/// <summary>
 		/// Count of Events
@@ -33,7 +32,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="eventId">The registered EventId should be provided (optional)</param>
 		/// <returns>Task of CountOfEventsResponse</returns>
 		[Get("/dna/intent/api/v1/events/count")]
-		System.Threading.Tasks.Task<CountOfEventsResponse> CountOfEvents([Header("UserAgent")] string userAgent, [AliasAs("tags")]string tags, [AliasAs("eventId")]string eventId = null);
+		Task<CountOfEventsResponse> CountOfEvents([AliasAs("tags")]string tags, [AliasAs("eventId")]string eventId = null);
 
 		/// <summary>
 		/// Count of Notifications
@@ -53,7 +52,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="source">source  (optional)</param>
 		/// <returns>Task of CountOfNotificationsResponse</returns>
 		[Get("/dna/intent/api/v1/event/event-series/count")]
-		System.Threading.Tasks.Task<CountOfNotificationsResponse> CountOfNotifications([Header("UserAgent")] string userAgent, [AliasAs("eventIds")]string eventIds = null, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("category")]string category = null, [AliasAs("type")]string type = null, [AliasAs("severity")]string severity = null, [AliasAs("domain")]string domain = null, [AliasAs("subDomain")]string subDomain = null, [AliasAs("source")]string source = null);
+		Task<CountOfNotificationsResponse> CountOfNotifications([AliasAs("eventIds")]string eventIds = null, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("category")]string category = null, [AliasAs("type")]string type = null, [AliasAs("severity")]string severity = null, [AliasAs("domain")]string domain = null, [AliasAs("subDomain")]string subDomain = null, [AliasAs("source")]string source = null);
 
 		/// <summary>
 		/// Create Event Subscriptions
@@ -66,7 +65,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Content Type</param>
 		/// <returns>Task of CreateEventSubscriptionsResponse</returns>
 		[Post("/dna/intent/api/v1/event/subscription")]
-		System.Threading.Tasks.Task<CreateEventSubscriptionsResponse> CreateEventSubscriptions([Header("UserAgent")] string userAgent, [Body]CreateEventSubscriptionsRequest request, string Content_Type);
+		Task<CreateEventSubscriptionsResponse> CreateEventSubscriptions([Body]CreateEventSubscriptionsRequest request, string Content_Type);
 
 		/// <summary>
 		/// Delete Event Subscriptions
@@ -79,7 +78,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="subscriptions">List of EventSubscriptionId&#39;s for removal</param>
 		/// <returns>Task of DeleteEventSubscriptionsResponse</returns>
 		[Delete("/dna/intent/api/v1/event/subscription")]
-		System.Threading.Tasks.Task<DeleteEventSubscriptionsResponse> DeleteEventSubscriptions([Header("UserAgent")] string userAgent, string Content_Type, [AliasAs("subscriptions")]string subscriptions);
+		Task<DeleteEventSubscriptionsResponse> DeleteEventSubscriptions(string Content_Type, [AliasAs("subscriptions")]string subscriptions);
 
 		/// <summary>
 		/// Get Event Subscriptions
@@ -95,7 +94,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order(asc/desc) (optional)</param>
 		/// <returns>Task of GetEventSubscriptionsResponse</returns>
 		[Get("/dna/intent/api/v1/event/subscription")]
-		System.Threading.Tasks.Task<GetEventSubscriptionsResponse> GetEventSubscriptions([Header("UserAgent")] string userAgent, [AliasAs("eventIds")]string eventIds = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GetEventSubscriptionsResponse> GetEventSubscriptions([AliasAs("eventIds")]string eventIds = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
 
 		/// <summary>
 		/// Get Events
@@ -112,7 +111,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order(asc/desc) (optional)</param>
 		/// <returns>Task of GetEventsResponse</returns>
 		[Get("/dna/intent/api/v1/events")]
-		System.Threading.Tasks.Task<GetEventsResponse> GetEvents([Header("UserAgent")] string userAgent, [AliasAs("tags")]string tags, [AliasAs("eventId")]string eventId = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GetEventsResponse> GetEvents([AliasAs("tags")]string tags, [AliasAs("eventId")]string eventId = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
 
 		/// <summary>
 		/// Get Notifications
@@ -136,7 +135,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order(asc/desc) (optional)</param>
 		/// <returns>Task of GetNotificationsResponse</returns>
 		[Get("/dna/intent/api/v1/event/event-series")]
-		System.Threading.Tasks.Task<GetNotificationsResponse> GetNotifications([Header("UserAgent")] string userAgent, [AliasAs("eventIds")]string eventIds = null, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("category")]string category = null, [AliasAs("type")]string type = null, [AliasAs("severity")]string severity = null, [AliasAs("domain")]string domain = null, [AliasAs("subDomain")]string subDomain = null, [AliasAs("source")]string source = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GetNotificationsResponse> GetNotifications([AliasAs("eventIds")]string eventIds = null, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("category")]string category = null, [AliasAs("type")]string type = null, [AliasAs("severity")]string severity = null, [AliasAs("domain")]string domain = null, [AliasAs("subDomain")]string subDomain = null, [AliasAs("source")]string source = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
 
 		/// <summary>
 		/// Get Status API for Events
@@ -148,7 +147,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="executionId">Execution ID</param>
 		/// <returns>Task of GetStatusAPIForEventsResponse</returns>
 		[Get("/dna/intent/api/v1/event/api-status/{executionId}")]
-		System.Threading.Tasks.Task<GetStatusAPIForEventsResponse> GetStatusAPIForEvents([Header("UserAgent")] string userAgent, [AliasAs("executionId")]string executionId);
+		Task<GetStatusAPIForEventsResponse> GetStatusAPIForEvents([AliasAs("executionId")]string executionId);
 
 		/// <summary>
 		/// Update Event Subscriptions
@@ -161,7 +160,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Content Type</param>
 		/// <returns>Task of UpdateEventSubscriptionsResponse</returns>
 		[Put("/dna/intent/api/v1/event/subscription")]
-		System.Threading.Tasks.Task<UpdateEventSubscriptionsResponse> UpdateEventSubscriptions([Header("UserAgent")] string userAgent, [Body]UpdateEventSubscriptionsRequest request, string Content_Type);
-		#endregion Asynchronous Operations
+		Task<UpdateEventSubscriptionsResponse> UpdateEventSubscriptions([Body]UpdateEventSubscriptionsRequest request, string Content_Type);
 	}
 }

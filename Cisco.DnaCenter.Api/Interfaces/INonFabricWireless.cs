@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface INonFabricWireless
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// AP Provision
 		/// </summary>
@@ -21,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput"> (optional, default to true)</param>
 		/// <returns>Task of APProvisionResponse</returns>
 		[Post("/dna/intent/api/v1/wireless/ap-provision")]
-		System.Threading.Tasks.Task<APProvisionResponse> APProvision([Header("UserAgent")] string userAgent, [Body]APProvisionRequest request, string __persistbapioutput = null);
+		Task<APProvisionResponse> APProvision([Body]APProvisionRequest request, string __persistbapioutput = null);
 
 		/// <summary>
 		/// Create and Provision SSID
@@ -34,7 +33,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
 		/// <returns>Task of CreateAndProvisionSSIDResponse</returns>
 		[Post("/dna/intent/api/v1/business/ssid")]
-		System.Threading.Tasks.Task<CreateAndProvisionSSIDResponse> CreateAndProvisionSSID([Header("UserAgent")] string userAgent, [Body]CreateAndProvisionSSIDRequest request, string __persistbapioutput);
+		Task<CreateAndProvisionSSIDResponse> CreateAndProvisionSSID([Body]CreateAndProvisionSSIDRequest request, string __persistbapioutput);
 
 		/// <summary>
 		/// Create Enterprise SSID
@@ -46,7 +45,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateEnterpriseSSIDResponse</returns>
 		[Post("/dna/intent/api/v1/enterprise-ssid")]
-		System.Threading.Tasks.Task<CreateEnterpriseSSIDResponse> CreateEnterpriseSSID([Header("UserAgent")] string userAgent, [Body]CreateEnterpriseSSIDRequest request);
+		Task<CreateEnterpriseSSIDResponse> CreateEnterpriseSSID([Body]CreateEnterpriseSSIDRequest request);
 
 		/// <summary>
 		/// Create or Update RF profile
@@ -58,7 +57,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateOrUpdateRFProfileResponse</returns>
 		[Post("/dna/intent/api/v1/wireless/rf-profile")]
-		System.Threading.Tasks.Task<CreateOrUpdateRFProfileResponse> CreateOrUpdateRFProfile([Header("UserAgent")] string userAgent, [Body]CreateOrUpdateRFProfileRequest request);
+		Task<CreateOrUpdateRFProfileResponse> CreateOrUpdateRFProfile([Body]CreateOrUpdateRFProfileRequest request);
 
 		/// <summary>
 		/// Create Wireless Profile
@@ -70,7 +69,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateWirelessProfileResponse</returns>
 		[Post("/dna/intent/api/v1/wireless/profile")]
-		System.Threading.Tasks.Task<CreateWirelessProfileResponse> CreateWirelessProfile([Header("UserAgent")] string userAgent, [Body]CreateWirelessProfileRequest request);
+		Task<CreateWirelessProfileResponse> CreateWirelessProfile([Body]CreateWirelessProfileRequest request);
 
 		/// <summary>
 		/// Delete Enterprise SSID
@@ -82,7 +81,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="ssidName">Enter the SSID name to be deleted</param>
 		/// <returns>Task of DeleteEnterpriseSSIDResponse</returns>
 		[Delete("/dna/intent/api/v1/enterprise-ssid/{ssidName}")]
-		System.Threading.Tasks.Task<DeleteEnterpriseSSIDResponse> DeleteEnterpriseSSID([Header("UserAgent")] string userAgent, [AliasAs("ssidName")]string ssidName);
+		Task<DeleteEnterpriseSSIDResponse> DeleteEnterpriseSSID([AliasAs("ssidName")]string ssidName);
 
 		/// <summary>
 		/// Delete RF profiles
@@ -94,7 +93,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="rf_profile_name"></param>
 		/// <returns>Task of DeleteRFProfilesResponse</returns>
 		[Delete("/dna/intent/api/v1/wireless/rf-profile/{rf-profile-name}")]
-		System.Threading.Tasks.Task<DeleteRFProfilesResponse> DeleteRFProfiles([Header("UserAgent")] string userAgent, [AliasAs("rf_profile_name")]string rf_profile_name);
+		Task<DeleteRFProfilesResponse> DeleteRFProfiles([AliasAs("rf_profile_name")]string rf_profile_name);
 
 		/// <summary>
 		/// Delete SSID and provision it to devices
@@ -108,7 +107,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="managedAPLocations"></param>
 		/// <returns>Task of DeleteSSIDAndProvisionItToDevicesResponse</returns>
 		[Delete("/dna/intent/api/v1/business/ssid/{ssidName}/{managedAPLocations}")]
-		System.Threading.Tasks.Task<DeleteSSIDAndProvisionItToDevicesResponse> DeleteSSIDAndProvisionItToDevices([Header("UserAgent")] string userAgent, string __persistbapioutput, [AliasAs("ssidName")]string ssidName, [AliasAs("managedAPLocations")]string managedAPLocations);
+		Task<DeleteSSIDAndProvisionItToDevicesResponse> DeleteSSIDAndProvisionItToDevices(string __persistbapioutput, [AliasAs("ssidName")]string ssidName, [AliasAs("managedAPLocations")]string managedAPLocations);
 
 		/// <summary>
 		/// Delete Wireless Profile
@@ -121,7 +120,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="wirelessProfileName"></param>
 		/// <returns>Task of DeleteWirelessProfileResponse</returns>
 		[Delete("/dna/intent/api/v1/wireless-profile/{wirelessProfileName}")]
-		System.Threading.Tasks.Task<DeleteWirelessProfileResponse> DeleteWirelessProfile([Header("UserAgent")] string userAgent, [Body]DeleteWirelessProfileRequest request, [AliasAs("wirelessProfileName")]string wirelessProfileName);
+		Task<DeleteWirelessProfileResponse> DeleteWirelessProfile([Body]DeleteWirelessProfileRequest request, [AliasAs("wirelessProfileName")]string wirelessProfileName);
 
 		/// <summary>
 		/// Get Enterprise SSID
@@ -133,7 +132,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="ssidName">Enter the enterprise SSID name that needs to be retrieved. If not entered, all the enterprise SSIDs will be retrieved. (optional, default to )</param>
 		/// <returns>Task of GetEnterpriseSSIDResponse</returns>
 		[Get("/dna/intent/api/v1/enterprise-ssid")]
-		System.Threading.Tasks.Task<GetEnterpriseSSIDResponse> GetEnterpriseSSID([Header("UserAgent")] string userAgent, [AliasAs("ssidName")]string ssidName = null);
+		Task<GetEnterpriseSSIDResponse> GetEnterpriseSSID([AliasAs("ssidName")]string ssidName = null);
 
 		/// <summary>
 		/// Get Wireless Profile
@@ -145,7 +144,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="profileName"> (optional, default to )</param>
 		/// <returns>Task of GetWirelessProfileResponse</returns>
 		[Get("/dna/intent/api/v1/wireless/profile")]
-		System.Threading.Tasks.Task<GetWirelessProfileResponse> GetWirelessProfile([Header("UserAgent")] string userAgent, [AliasAs("profileName")]string profileName = null);
+		Task<GetWirelessProfileResponse> GetWirelessProfile([AliasAs("profileName")]string profileName = null);
 
 		/// <summary>
 		/// Provision
@@ -158,7 +157,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
 		/// <returns>Task of ProvisionResponse</returns>
 		[Post("/dna/intent/api/v1/wireless/provision")]
-		System.Threading.Tasks.Task<ProvisionResponse> Provision([Header("UserAgent")] string userAgent, [Body]ProvisionRequest request, string __persistbapioutput);
+		Task<ProvisionResponse> Provision([Body]ProvisionRequest request, string __persistbapioutput);
 
 		/// <summary>
 		/// Provision update
@@ -171,7 +170,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
 		/// <returns>Task of ProvisionUpdateResponse</returns>
 		[Put("/dna/intent/api/v1/wireless/provision")]
-		System.Threading.Tasks.Task<ProvisionUpdateResponse> ProvisionUpdate([Header("UserAgent")] string userAgent, [Body]ProvisionUpdateRequest request, string __persistbapioutput);
+		Task<ProvisionUpdateResponse> ProvisionUpdate([Body]ProvisionUpdateRequest request, string __persistbapioutput);
 
 		/// <summary>
 		/// Retrieve RF profiles
@@ -183,7 +182,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="rf_profile_name"> (optional, default to )</param>
 		/// <returns>Task of RetrieveRFProfilesResponse</returns>
 		[Get("/dna/intent/api/v1/wireless/rf-profile")]
-		System.Threading.Tasks.Task<RetrieveRFProfilesResponse> RetrieveRFProfiles([Header("UserAgent")] string userAgent, [AliasAs("rf_profile_name")]string rf_profile_name = null);
+		Task<RetrieveRFProfilesResponse> RetrieveRFProfiles([AliasAs("rf_profile_name")]string rf_profile_name = null);
 
 		/// <summary>
 		/// Update Wireless Profile
@@ -195,7 +194,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdateWirelessProfileResponse</returns>
 		[Put("/dna/intent/api/v1/wireless/profile")]
-		System.Threading.Tasks.Task<UpdateWirelessProfileResponse> UpdateWirelessProfile([Header("UserAgent")] string userAgent, [Body]UpdateWirelessProfileRequest request);
-		#endregion Asynchronous Operations
+		Task<UpdateWirelessProfileResponse> UpdateWirelessProfile([Body]UpdateWirelessProfileRequest request);
 	}
 }

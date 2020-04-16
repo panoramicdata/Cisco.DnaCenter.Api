@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface ITask
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Get task by Id
 		/// </summary>
@@ -20,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">UUID of the Task</param>
 		/// <returns>Task of TaskDtoResponse</returns>
 		[Get("/dna/intent/api/v1/task/{taskId}")]
-		System.Threading.Tasks.Task<TaskDtoResponse> GetTaskById([Header("UserAgent")] string userAgent, [AliasAs("taskId")]string taskId);
+		Task<TaskDtoResponse> GetTaskById([AliasAs("taskId")]string taskId);
 
 		/// <summary>
 		/// Get task by OperationId
@@ -34,7 +33,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="limit">The maximum value of {limit} supported is 500. &lt;br/&gt; Base 1 indexing for {limit}, minimum value is 1</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task/operation/{operationId}/{offset}/{limit}")]
-		System.Threading.Tasks.Task<TaskDtoListResponse> GetTaskByOperationId([Header("UserAgent")] string userAgent, [AliasAs("operationId")]string operationId, [AliasAs("offset")]int? offset, [AliasAs("limit")]int? limit);
+		Task<TaskDtoListResponse> GetTaskByOperationId([AliasAs("operationId")]string operationId, [AliasAs("offset")]int? offset, [AliasAs("limit")]int? limit);
 
 		/// <summary>
 		/// Get task count
@@ -55,7 +54,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="parentId">Fetch tasks that have this parent Id (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/task/count")]
-		System.Threading.Tasks.Task<CountResult> GetTaskCount([Header("UserAgent")] string userAgent, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("data")]string data = null, [AliasAs("errorCode")]string errorCode = null, [AliasAs("serviceType")]string serviceType = null, [AliasAs("username")]string username = null, [AliasAs("progress")]string progress = null, [AliasAs("isError")]string isError = null, [AliasAs("failureReason")]string failureReason = null, [AliasAs("parentId")]string parentId = null);
+		Task<CountResult> GetTaskCount([AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("data")]string data = null, [AliasAs("errorCode")]string errorCode = null, [AliasAs("serviceType")]string serviceType = null, [AliasAs("username")]string username = null, [AliasAs("progress")]string progress = null, [AliasAs("isError")]string isError = null, [AliasAs("failureReason")]string failureReason = null, [AliasAs("parentId")]string parentId = null);
 
 		/// <summary>
 		/// Get task tree
@@ -67,7 +66,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">UUID of the Task</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task/{taskId}/tree")]
-		System.Threading.Tasks.Task<TaskDtoListResponse> GetTaskTree([Header("UserAgent")] string userAgent, [AliasAs("taskId")]string taskId);
+		Task<TaskDtoListResponse> GetTaskTree([AliasAs("taskId")]string taskId);
 
 		/// <summary>
 		/// Get tasks
@@ -92,7 +91,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">Sort order - asc or dsc (optional)</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task")]
-		System.Threading.Tasks.Task<TaskDtoListResponse> GetTasks([Header("UserAgent")] string userAgent, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("data")]string data = null, [AliasAs("errorCode")]string errorCode = null, [AliasAs("serviceType")]string serviceType = null, [AliasAs("username")]string username = null, [AliasAs("progress")]string progress = null, [AliasAs("isError")]string isError = null, [AliasAs("failureReason")]string failureReason = null, [AliasAs("parentId")]string parentId = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
-		#endregion Asynchronous Operations
+		Task<TaskDtoListResponse> GetTasks([AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("data")]string data = null, [AliasAs("errorCode")]string errorCode = null, [AliasAs("serviceType")]string serviceType = null, [AliasAs("username")]string username = null, [AliasAs("progress")]string progress = null, [AliasAs("isError")]string isError = null, [AliasAs("failureReason")]string failureReason = null, [AliasAs("parentId")]string parentId = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
 	}
 }

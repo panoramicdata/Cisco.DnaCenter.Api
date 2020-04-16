@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface ISiteDesign
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Get Device details by IP
 		/// </summary>
@@ -21,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="deviceIp">Device to which the provisioning detail has to be retrieved</param>
 		/// <returns>Task of GetDeviceDetailsByIPResponse</returns>
 		[Get("/dna/intent/api/v1/business/nfv/provisioningDetail")]
-		System.Threading.Tasks.Task<GetDeviceDetailsByIPResponse> GetDeviceDetailsByIP([Header("UserAgent")] string userAgent, [Body]GetDeviceDetailsByIPRequest request, [AliasAs("deviceIp")]string deviceIp);
+		Task<GetDeviceDetailsByIPResponse> GetDeviceDetailsByIP([Body]GetDeviceDetailsByIPRequest request, [AliasAs("deviceIp")]string deviceIp);
 
 		/// <summary>
 		/// NFV Provisioning Detail
@@ -36,7 +35,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__runsynctimeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
 		/// <returns>Task of NFVProvisioningDetailResponse</returns>
 		[Post("/dna/intent/api/v1/nfv-provision-detail")]
-		System.Threading.Tasks.Task<NFVProvisioningDetailResponse> NFVProvisioningDetail([Header("UserAgent")] string userAgent, [Body]NFVProvisioningDetailRequest request, bool? __runsync, bool? __persistbapioutput, decimal? __runsynctimeout = null);
+		Task<NFVProvisioningDetailResponse> NFVProvisioningDetail([Body]NFVProvisioningDetailRequest request, bool? __runsync, bool? __persistbapioutput, decimal? __runsynctimeout = null);
 
 		/// <summary>
 		/// Provision NFV
@@ -51,7 +50,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
 		/// <returns>Task of ProvisionNFVResponse</returns>
 		[Post("/dna/intent/api/v1/business/nfv")]
-		System.Threading.Tasks.Task<ProvisionNFVResponse> ProvisionNFV([Header("UserAgent")] string userAgent, [Body]ProvisionNFVRequest request, string __runsync, bool? __persistbapioutput, decimal? __timeout = null);
-		#endregion Asynchronous Operations
+		Task<ProvisionNFVResponse> ProvisionNFV([Body]ProvisionNFVRequest request, string __runsync, bool? __persistbapioutput, decimal? __timeout = null);
 	}
 }

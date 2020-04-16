@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IClients
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Get Client Detail
 		/// </summary>
@@ -21,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="timestamp">Epoch time(in milliseconds) when the Client health data is required (optional, default to )</param>
 		/// <returns>Task of GetClientDetailResponse</returns>
 		[Get("/dna/intent/api/v1/client-detail")]
-		System.Threading.Tasks.Task<GetClientDetailResponse> GetClientDetail([Header("UserAgent")] string userAgent, [AliasAs("macAddress")]string macAddress, [AliasAs("timestamp")]string timestamp = null);
+		Task<GetClientDetailResponse> GetClientDetail([AliasAs("macAddress")]string macAddress, [AliasAs("timestamp")]string timestamp = null);
 
 		/// <summary>
 		/// Get Client Enrichment Details
@@ -35,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="issueCategory">The category of the DNA event based on which the underlying issues need to be fetched (optional, default to )</param>
 		/// <returns>Task of GetClientEnrichmentDetailsResponse</returns>
 		[Get("/dna/intent/api/v1/client-enrichment-details")]
-		System.Threading.Tasks.Task<GetClientEnrichmentDetailsResponse> GetClientEnrichmentDetails([Header("UserAgent")] string userAgent, string entity_type, string entity_value, string issueCategory = null);
+		Task<GetClientEnrichmentDetailsResponse> GetClientEnrichmentDetails(string entity_type, string entity_value, string issueCategory = null);
 
 		/// <summary>
 		/// Get Overall Client Health
@@ -47,7 +46,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="timestamp">Epoch time(in milliseconds) when the Client health data is required (optional, default to )</param>
 		/// <returns>Task of GetOverallClientHealthResponse</returns>
 		[Get("/dna/intent/api/v1/client-health")]
-		System.Threading.Tasks.Task<GetOverallClientHealthResponse> GetOverallClientHealth([Header("UserAgent")] string userAgent, [AliasAs("timestamp")]string timestamp = null);
-		#endregion Asynchronous Operations
+		Task<GetOverallClientHealthResponse> GetOverallClientHealth([AliasAs("timestamp")]string timestamp = null);
 	}
 }

@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface ISites
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Assign Device To Site
 		/// </summary>
@@ -24,7 +23,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__runsynctimeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 55)</param>
 		/// <returns>Task of AssignDeviceToSiteResponse</returns>
 		[Post("/dna/system/api/v1/site/{siteId}/device")]
-		System.Threading.Tasks.Task<AssignDeviceToSiteResponse> AssignDeviceToSite([Header("UserAgent")] string userAgent, [Body]AssignDeviceToSiteRequest request, bool? __runsync, bool? __persistbapioutput, [AliasAs("siteId")]string siteId, decimal? __runsynctimeout = null);
+		Task<AssignDeviceToSiteResponse> AssignDeviceToSite([Body]AssignDeviceToSiteRequest request, bool? __runsync, bool? __persistbapioutput, [AliasAs("siteId")]string siteId, decimal? __runsynctimeout = null);
 
 		/// <summary>
 		/// Create Site
@@ -39,7 +38,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 30)</param>
 		/// <returns>Task of CreateSiteResponse</returns>
 		[Post("/dna/intent/api/v1/site")]
-		System.Threading.Tasks.Task<CreateSiteResponse> CreateSite([Header("UserAgent")] string userAgent, [Body]CreateSiteRequest request, bool? __runsync, bool? __persistbapioutput, decimal? __timeout = null);
+		Task<CreateSiteResponse> CreateSite([Body]CreateSiteRequest request, bool? __runsync, bool? __persistbapioutput, decimal? __timeout = null);
 
 		/// <summary>
 		/// Delete Site
@@ -51,7 +50,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteId">Site id to which site details to be deleted.</param>
 		/// <returns>Task of DeleteSiteResponse</returns>
 		[Delete("/dna/intent/api/v1/site/{siteId}")]
-		System.Threading.Tasks.Task<DeleteSiteResponse> DeleteSite([Header("UserAgent")] string userAgent, [AliasAs("siteId")]string siteId);
+		Task<DeleteSiteResponse> DeleteSite([AliasAs("siteId")]string siteId);
 
 		/// <summary>
 		/// Get Membership
@@ -63,7 +62,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteId">Site id to retrieve device associated with the site.</param>
 		/// <returns>Task of GetMembershipResponse</returns>
 		[Get("/dna/intent/api/v1/membership/{siteId}")]
-		System.Threading.Tasks.Task<GetMembershipResponse> GetMembership([Header("UserAgent")] string userAgent, [AliasAs("siteId")]string siteId);
+		Task<GetMembershipResponse> GetMembership([AliasAs("siteId")]string siteId);
 
 		/// <summary>
 		/// Get Site
@@ -79,7 +78,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="limit">Number of sites to be retrieved (optional, default to )</param>
 		/// <returns>Task of GetSiteResponse</returns>
 		[Get("/dna/intent/api/v1/site")]
-		System.Threading.Tasks.Task<GetSiteResponse> GetSite([Header("UserAgent")] string userAgent, [AliasAs("name")]string name = null, [AliasAs("siteId")]string siteId = null, [AliasAs("type")]string type = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null);
+		Task<GetSiteResponse> GetSite([AliasAs("name")]string name = null, [AliasAs("siteId")]string siteId = null, [AliasAs("type")]string type = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null);
 
 		/// <summary>
 		/// Get Site Count
@@ -91,7 +90,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteId"> Site id to retrieve site count. (optional, default to )</param>
 		/// <returns>Task of GetSiteCountResponse</returns>
 		[Get("/dna/intent/api/v1/site/count")]
-		System.Threading.Tasks.Task<GetSiteCountResponse> GetSiteCount([Header("UserAgent")] string userAgent, [AliasAs("siteId")]string siteId = null);
+		Task<GetSiteCountResponse> GetSiteCount([AliasAs("siteId")]string siteId = null);
 
 		/// <summary>
 		/// Get Site Health
@@ -103,7 +102,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="timestamp">Epoch time(in milliseconds) when the Site Hierarchy data is required (optional, default to )</param>
 		/// <returns>Task of GetSiteHealthResponse</returns>
 		[Get("/dna/intent/api/v1/site-health")]
-		System.Threading.Tasks.Task<GetSiteHealthResponse> GetSiteHealth([Header("UserAgent")] string userAgent, [AliasAs("timestamp")]string timestamp = null);
+		Task<GetSiteHealthResponse> GetSiteHealth([AliasAs("timestamp")]string timestamp = null);
 
 		/// <summary>
 		/// Update Site
@@ -119,7 +118,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
 		/// <returns>Task of UpdateSiteResponse</returns>
 		[Put("/dna/intent/api/v1/site/{siteId}")]
-		System.Threading.Tasks.Task<UpdateSiteResponse> UpdateSite([Header("UserAgent")] string userAgent, [Body]UpdateSiteRequest request, bool? __persistbapioutput, [AliasAs("siteId")]string siteId, bool? __runsync = null, decimal? __timeout = null);
-		#endregion Asynchronous Operations
+		Task<UpdateSiteResponse> UpdateSite([Body]UpdateSiteRequest request, bool? __persistbapioutput, [AliasAs("siteId")]string siteId, bool? __runsync = null, decimal? __timeout = null);
 	}
 }

@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface ISoftwareImageManagement
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Get software image details
 		/// </summary>
@@ -37,7 +36,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="offset">offset (optional)</param>
 		/// <returns>Task of ImageInfoListResponse</returns>
 		[Get("/dna/intent/api/v1/image/importation")]
-		System.Threading.Tasks.Task<ImageInfoListResponse> GetSoftwareImageDetails([Header("UserAgent")] string userAgent, [AliasAs("imageUuid")]string imageUuid = null, [AliasAs("name")]string name = null, [AliasAs("family")]string family = null, [AliasAs("applicationType")]string applicationType = null, [AliasAs("imageIntegrityStatus")]string imageIntegrityStatus = null, [AliasAs("_version")]string _version = null, [AliasAs("imageSeries")]string imageSeries = null, [AliasAs("imageName")]string imageName = null, [AliasAs("isTaggedGolden")]bool? isTaggedGolden = null, [AliasAs("isCCORecommended")]bool? isCCORecommended = null, [AliasAs("isCCOLatest")]bool? isCCOLatest = null, [AliasAs("createdTime")]int? createdTime = null, [AliasAs("imageSizeGreaterThan")]int? imageSizeGreaterThan = null, [AliasAs("imageSizeLesserThan")]int? imageSizeLesserThan = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null);
+		Task<ImageInfoListResponse> GetSoftwareImageDetails([AliasAs("imageUuid")]string imageUuid = null, [AliasAs("name")]string name = null, [AliasAs("family")]string family = null, [AliasAs("applicationType")]string applicationType = null, [AliasAs("imageIntegrityStatus")]string imageIntegrityStatus = null, [AliasAs("_version")]string _version = null, [AliasAs("imageSeries")]string imageSeries = null, [AliasAs("imageName")]string imageName = null, [AliasAs("isTaggedGolden")]bool? isTaggedGolden = null, [AliasAs("isCCORecommended")]bool? isCCORecommended = null, [AliasAs("isCCOLatest")]bool? isCCOLatest = null, [AliasAs("createdTime")]int? createdTime = null, [AliasAs("imageSizeGreaterThan")]int? imageSizeGreaterThan = null, [AliasAs("imageSizeLesserThan")]int? imageSizeLesserThan = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null);
 
 		/// <summary>
 		/// Import local software image
@@ -53,7 +52,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="thirdPartyApplicationType">Third Party Application Type (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/importation/source/file")]
-		System.Threading.Tasks.Task<TaskIdResult> ImportLocalSoftwareImage([Header("UserAgent")] string userAgent, string Content_Type, [AliasAs("isThirdParty")]bool? isThirdParty = null, [AliasAs("thirdPartyVendor")]string thirdPartyVendor = null, [AliasAs("thirdPartyImageFamily")]string thirdPartyImageFamily = null, [AliasAs("thirdPartyApplicationType")]string thirdPartyApplicationType = null);
+		Task<TaskIdResult> ImportLocalSoftwareImage(string Content_Type, [AliasAs("isThirdParty")]bool? isThirdParty = null, [AliasAs("thirdPartyVendor")]string thirdPartyVendor = null, [AliasAs("thirdPartyImageFamily")]string thirdPartyImageFamily = null, [AliasAs("thirdPartyApplicationType")]string thirdPartyApplicationType = null);
 
 		/// <summary>
 		/// Import software image via URL
@@ -69,7 +68,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="scheduleOrigin">Originator of this call (Optional) (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/importation/source/url")]
-		System.Threading.Tasks.Task<TaskIdResult> ImportSoftwareImageViaURL([Header("UserAgent")] string userAgent, [Body]ImageImportFromUrlDto request, string Content_Type, [AliasAs("scheduleAt")]string scheduleAt = null, [AliasAs("scheduleDesc")]string scheduleDesc = null, [AliasAs("scheduleOrigin")]string scheduleOrigin = null);
+		Task<TaskIdResult> ImportSoftwareImageViaURL([Body]ImageImportFromUrlDto request, string Content_Type, [AliasAs("scheduleAt")]string scheduleAt = null, [AliasAs("scheduleDesc")]string scheduleDesc = null, [AliasAs("scheduleOrigin")]string scheduleOrigin = null);
 
 		/// <summary>
 		/// Trigger software image activation
@@ -85,7 +84,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="scheduleValidate">scheduleValidate, validates data before schedule (Optional) (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/activation/device")]
-		System.Threading.Tasks.Task<TaskIdResult> TriggerSoftwareImageActivation([Header("UserAgent")] string userAgent, [Body]ActivateDto request, string Content_Type, string Client_Type = null, string Client_Url = null, [AliasAs("scheduleValidate")]bool? scheduleValidate = null);
+		Task<TaskIdResult> TriggerSoftwareImageActivation([Body]ActivateDto request, string Content_Type, string Client_Type = null, string Client_Url = null, [AliasAs("scheduleValidate")]bool? scheduleValidate = null);
 
 		/// <summary>
 		/// Trigger software image distribution
@@ -98,7 +97,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/distribution")]
-		System.Threading.Tasks.Task<TaskIdResult> TriggerSoftwareImageDistribution([Header("UserAgent")] string userAgent, [Body]DistributeDto request, string Content_Type);
-		#endregion Asynchronous Operations
+		Task<TaskIdResult> TriggerSoftwareImageDistribution([Body]DistributeDto request, string Content_Type);
 	}
 }

@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IConfigurationTemplates
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Create Project
 		/// </summary>
@@ -21,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/project")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateProject([Header("UserAgent")] string userAgent, [Body]ProjectDto request, string Content_Type);
+		Task<TaskIdResult> CreateProject([Body]ProjectDto request, string Content_Type);
 
 		/// <summary>
 		/// Create Template
@@ -35,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="projectId">projectId</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/project/{projectId}/template")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateTemplate([Header("UserAgent")] string userAgent, [Body]TemplateDto request, string Content_Type, [AliasAs("projectId")]string projectId);
+		Task<TaskIdResult> CreateTemplate([Body]TemplateDto request, string Content_Type, [AliasAs("projectId")]string projectId);
 
 		/// <summary>
 		/// Delete Project
@@ -47,7 +46,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="projectId">projectId</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/template-programmer/project/{projectId}")]
-		System.Threading.Tasks.Task<TaskIdResult> DeleteProject([Header("UserAgent")] string userAgent, [AliasAs("projectId")]string projectId);
+		Task<TaskIdResult> DeleteProject([AliasAs("projectId")]string projectId);
 
 		/// <summary>
 		/// Delete Template
@@ -59,7 +58,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="templateId">templateId</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/template-programmer/template/{templateId}")]
-		System.Threading.Tasks.Task<TaskIdResult> DeleteTemplate([Header("UserAgent")] string userAgent, [AliasAs("templateId")]string templateId);
+		Task<TaskIdResult> DeleteTemplate([AliasAs("templateId")]string templateId);
 
 		/// <summary>
 		/// Deploy Template
@@ -72,7 +71,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TemplateDeploymentStatusDto</returns>
 		[Post("/dna/intent/api/v1/template-programmer/template/deploy")]
-		System.Threading.Tasks.Task<TemplateDeploymentStatusDto> DeployTemplate([Header("UserAgent")] string userAgent, [Body]TemplateDeploymentInfo request, string Content_Type);
+		Task<TemplateDeploymentStatusDto> DeployTemplate([Body]TemplateDeploymentInfo request, string Content_Type);
 
 		/// <summary>
 		/// Get Projects
@@ -84,7 +83,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">Name of project to be searched (optional)</param>
 		/// <returns>Task of CollectionProjectDto</returns>
 		[Get("/dna/intent/api/v1/template-programmer/project")]
-		System.Threading.Tasks.Task<CollectionProjectDto> GetProjects([Header("UserAgent")] string userAgent, [AliasAs("name")]string name = null);
+		Task<CollectionProjectDto> GetProjects([AliasAs("name")]string name = null);
 
 		/// <summary>
 		/// Get Template deployment status
@@ -96,7 +95,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="deploymentId">deploymentId</param>
 		/// <returns>Task of TemplateDeploymentStatusDto</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template/deploy/status/{deploymentId}")]
-		System.Threading.Tasks.Task<TemplateDeploymentStatusDto> GetTemplateDeploymentStatus([Header("UserAgent")] string userAgent, [AliasAs("deploymentId")]string deploymentId);
+		Task<TemplateDeploymentStatusDto> GetTemplateDeploymentStatus([AliasAs("deploymentId")]string deploymentId);
 
 		/// <summary>
 		/// Get Template Details
@@ -109,7 +108,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="latestVersion">latestVersion (optional)</param>
 		/// <returns>Task of TemplateDto</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template/{templateId}")]
-		System.Threading.Tasks.Task<TemplateDto> GetTemplateDetails([Header("UserAgent")] string userAgent, [AliasAs("templateId")]string templateId, [AliasAs("latestVersion")]bool? latestVersion = null);
+		Task<TemplateDto> GetTemplateDetails([AliasAs("templateId")]string templateId, [AliasAs("latestVersion")]bool? latestVersion = null);
 
 		/// <summary>
 		/// Get Template Versions
@@ -121,7 +120,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="templateId">templateId</param>
 		/// <returns>Task of CollectionTemplateInfo</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template/version/{templateId}")]
-		System.Threading.Tasks.Task<CollectionTemplateInfo> GetTemplateVersions([Header("UserAgent")] string userAgent, [AliasAs("templateId")]string templateId);
+		Task<CollectionTemplateInfo> GetTemplateVersions([AliasAs("templateId")]string templateId);
 
 		/// <summary>
 		/// Gets the templates available
@@ -139,7 +138,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="filterConflictingTemplates">filterConflictingTemplates (optional)</param>
 		/// <returns>Task of CollectionTemplateInfo</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template")]
-		System.Threading.Tasks.Task<CollectionTemplateInfo> GetsTheTemplatesAvailable([Header("UserAgent")] string userAgent, [AliasAs("projectId")]string projectId = null, [AliasAs("softwareType")]string softwareType = null, [AliasAs("softwareVersion")]string softwareVersion = null, [AliasAs("productFamily")]string productFamily = null, [AliasAs("productSeries")]string productSeries = null, [AliasAs("productType")]string productType = null, [AliasAs("filterConflictingTemplates")]bool? filterConflictingTemplates = null);
+		Task<CollectionTemplateInfo> GetsTheTemplatesAvailable([AliasAs("projectId")]string projectId = null, [AliasAs("softwareType")]string softwareType = null, [AliasAs("softwareVersion")]string softwareVersion = null, [AliasAs("productFamily")]string productFamily = null, [AliasAs("productSeries")]string productSeries = null, [AliasAs("productType")]string productType = null, [AliasAs("filterConflictingTemplates")]bool? filterConflictingTemplates = null);
 
 		/// <summary>
 		/// Preview Template
@@ -152,7 +151,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TemplatePreviewResponseDto</returns>
 		[Put("/dna/intent/api/v1/template-programmer/template/preview")]
-		System.Threading.Tasks.Task<TemplatePreviewResponseDto> PreviewTemplate([Header("UserAgent")] string userAgent, [Body]TemplatePreviewRequestDto request, string Content_Type);
+		Task<TemplatePreviewResponseDto> PreviewTemplate([Body]TemplatePreviewRequestDto request, string Content_Type);
 
 		/// <summary>
 		/// Update Project
@@ -165,7 +164,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/template-programmer/project")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateProject([Header("UserAgent")] string userAgent, [Body]ProjectDto request, string Content_Type);
+		Task<TaskIdResult> UpdateProject([Body]ProjectDto request, string Content_Type);
 
 		/// <summary>
 		/// Update Template
@@ -178,7 +177,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/template-programmer/template")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateTemplate([Header("UserAgent")] string userAgent, [Body]TemplateDto request, string Content_Type);
+		Task<TaskIdResult> UpdateTemplate([Body]TemplateDto request, string Content_Type);
 
 		/// <summary>
 		/// Version Template
@@ -191,7 +190,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/template/version")]
-		System.Threading.Tasks.Task<TaskIdResult> VersionTemplate([Header("UserAgent")] string userAgent, [Body]TemplateVersionRequestDto request, string Content_Type);
-		#endregion Asynchronous Operations
+		Task<TaskIdResult> VersionTemplate([Body]TemplateVersionRequestDto request, string Content_Type);
 	}
 }

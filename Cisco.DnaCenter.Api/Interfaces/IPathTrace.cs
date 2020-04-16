@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IPathTrace
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Deletes Pathtrace by Id
 		/// </summary>
@@ -20,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
-		System.Threading.Tasks.Task<TaskIdResult> DeletesPathtraceById([Header("UserAgent")] string userAgent, [AliasAs("flowAnalysisId")]string flowAnalysisId);
+		Task<TaskIdResult> DeletesPathtraceById([AliasAs("flowAnalysisId")]string flowAnalysisId);
 
 		/// <summary>
 		/// Initiate a new Pathtrace
@@ -33,7 +32,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of FlowAnalysisRequestResultOutput</returns>
 		[Post("/dna/intent/api/v1/flow-analysis")]
-		System.Threading.Tasks.Task<FlowAnalysisRequestResultOutput> InitiateANewPathtrace([Header("UserAgent")] string userAgent, [Body]FlowAnalysisRequest request, string Content_Type);
+		Task<FlowAnalysisRequestResultOutput> InitiateANewPathtrace([Body]FlowAnalysisRequest request, string Content_Type);
 
 		/// <summary>
 		/// Retrieves previous Pathtrace
@@ -45,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of PathResponseResult</returns>
 		[Get("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
-		System.Threading.Tasks.Task<PathResponseResult> RetrievesPreviousPathtrace([Header("UserAgent")] string userAgent, [AliasAs("flowAnalysisId")]string flowAnalysisId);
+		Task<PathResponseResult> RetrievesPreviousPathtrace([AliasAs("flowAnalysisId")]string flowAnalysisId);
 
 		/// <summary>
 		/// Retrives all previous Pathtraces summary
@@ -71,7 +70,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="sortBy">Sort by this field (optional)</param>
 		/// <returns>Task of FlowAnalysisListOutput</returns>
 		[Get("/dna/intent/api/v1/flow-analysis")]
-		System.Threading.Tasks.Task<FlowAnalysisListOutput> RetrivesAllPreviousPathtracesSummary([Header("UserAgent")] string userAgent, [AliasAs("periodicRefresh")]bool? periodicRefresh = null, [AliasAs("sourceIP")]string sourceIP = null, [AliasAs("destIP")]string destIP = null, [AliasAs("sourcePort")]string sourcePort = null, [AliasAs("destPort")]string destPort = null, [AliasAs("gtCreateTime")]string gtCreateTime = null, [AliasAs("ltCreateTime")]string ltCreateTime = null, [AliasAs("protocol")]string protocol = null, [AliasAs("status")]string status = null, [AliasAs("taskId")]string taskId = null, [AliasAs("lastUpdateTime")]string lastUpdateTime = null, [AliasAs("limit")]string limit = null, [AliasAs("offset")]string offset = null, [AliasAs("order")]string order = null, [AliasAs("sortBy")]string sortBy = null);
-		#endregion Asynchronous Operations
+		Task<FlowAnalysisListOutput> RetrivesAllPreviousPathtracesSummary([AliasAs("periodicRefresh")]bool? periodicRefresh = null, [AliasAs("sourceIP")]string sourceIP = null, [AliasAs("destIP")]string destIP = null, [AliasAs("sourcePort")]string sourcePort = null, [AliasAs("destPort")]string destPort = null, [AliasAs("gtCreateTime")]string gtCreateTime = null, [AliasAs("ltCreateTime")]string ltCreateTime = null, [AliasAs("protocol")]string protocol = null, [AliasAs("status")]string status = null, [AliasAs("taskId")]string taskId = null, [AliasAs("lastUpdateTime")]string lastUpdateTime = null, [AliasAs("limit")]string limit = null, [AliasAs("offset")]string offset = null, [AliasAs("order")]string order = null, [AliasAs("sortBy")]string sortBy = null);
 	}
 }

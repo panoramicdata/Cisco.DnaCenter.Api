@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IUsers
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Get User Enrichment Details
 		/// </summary>
@@ -21,7 +20,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="entity_value">Contains the actual value for the entity type that has been defined</param>
 		/// <returns>Task of GetUserEnrichmentDetailsResponse</returns>
 		[Get("/dna/intent/api/v1/user-enrichment-details")]
-		System.Threading.Tasks.Task<GetUserEnrichmentDetailsResponse> GetUserEnrichmentDetails([Header("UserAgent")] string userAgent, string entity_type, string entity_value);
-		#endregion Asynchronous Operations
+		Task<GetUserEnrichmentDetailsResponse> GetUserEnrichmentDetails(string entity_type, string entity_value);
 	}
 }

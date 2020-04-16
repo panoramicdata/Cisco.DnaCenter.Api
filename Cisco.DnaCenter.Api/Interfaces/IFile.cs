@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IFile
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Download a file by fileId
 		/// </summary>
@@ -20,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="fileId">File Identification number</param>
 		/// <returns>Task of DownloadAFileByFileIdResponse</returns>
 		[Get("/dna/intent/api/v1/file/{fileId}")]
-		System.Threading.Tasks.Task<DownloadAFileByFileIdResponse> DownloadAFileByFileId([Header("UserAgent")] string userAgent, [AliasAs("fileId")]string fileId);
+		Task<DownloadAFileByFileIdResponse> DownloadAFileByFileId([AliasAs("fileId")]string fileId);
 
 		/// <summary>
 		/// Get list of available namespaces
@@ -31,7 +30,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of NameSpaceListResult</returns>
 		[Get("/dna/intent/api/v1/file/namespace")]
-		System.Threading.Tasks.Task<NameSpaceListResult> GetListOfAvailableNamespaces([Header("UserAgent")] string userAgent);
+		Task<NameSpaceListResult> GetListOfAvailableNamespaces([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Get list of files
@@ -43,7 +42,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="_nameSpace">A listing of fileId&#39;s</param>
 		/// <returns>Task of FileObjectListResult</returns>
 		[Get("/dna/intent/api/v1/file/namespace/{nameSpace}")]
-		System.Threading.Tasks.Task<FileObjectListResult> GetListOfFiles([Header("UserAgent")] string userAgent, [AliasAs("_nameSpace")]string _nameSpace);
-		#endregion Asynchronous Operations
+		Task<FileObjectListResult> GetListOfFiles([AliasAs("_nameSpace")]string _nameSpace);
 	}
 }

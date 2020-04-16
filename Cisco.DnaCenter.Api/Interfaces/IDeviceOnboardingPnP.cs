@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -9,8 +10,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IDeviceOnboardingPnP
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Add a Workflow
 		/// </summary>
@@ -22,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of AddAWorkflowResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-workflow")]
-		System.Threading.Tasks.Task<AddAWorkflowResponse> AddAWorkflow([Header("UserAgent")] string userAgent, [Body]Workflow request, string Content_Type);
+		Task<AddAWorkflowResponse> AddAWorkflow([Body]Workflow request, string Content_Type);
 
 		/// <summary>
 		/// Add Device
@@ -35,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of Device</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device")]
-		System.Threading.Tasks.Task<Device> AddDeviceToPnpDatabase([Header("UserAgent")] string userAgent, [Body]Device request, string Content_Type);
+		Task<Device> AddDeviceToPnpDatabase([Body]Device request, string Content_Type);
 
 		/// <summary>
 		/// Add Virtual Account
@@ -48,7 +47,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of AddVirtualAccountResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		System.Threading.Tasks.Task<AddVirtualAccountResponse> AddVirtualAccount([Header("UserAgent")] string userAgent, [Body]SAVAMapping request, string Content_Type);
+		Task<AddVirtualAccountResponse> AddVirtualAccount([Body]SAVAMapping request, string Content_Type);
 
 		/// <summary>
 		/// Claim a Device to a Site
@@ -61,7 +60,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of SiteClaimResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/site-claim")]
-		System.Threading.Tasks.Task<SiteClaimResponse> ClaimADeviceToASite([Header("UserAgent")] string userAgent, [Body]SiteProvisionRequest request, string Content_Type);
+		Task<SiteClaimResponse> ClaimADeviceToASite([Body]SiteProvisionRequest request, string Content_Type);
 
 		/// <summary>
 		/// Claim Device
@@ -74,7 +73,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of ClaimDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/claim")]
-		System.Threading.Tasks.Task<ClaimDeviceResponse> ClaimDevice([Header("UserAgent")] string userAgent, [Body]ClaimDeviceRequest request, string Content_Type);
+		Task<ClaimDeviceResponse> ClaimDevice([Body]ClaimDeviceRequest request, string Content_Type);
 
 		/// <summary>
 		/// Delete Device by Id from PnP
@@ -86,7 +85,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of DeleteDeviceByIdFromPnPResponse</returns>
 		[Delete("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		System.Threading.Tasks.Task<DeleteDeviceByIdFromPnPResponse> DeleteDeviceByIdFromPnP([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<DeleteDeviceByIdFromPnPResponse> DeleteDeviceByIdFromPnP([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Delete Workflow By Id
@@ -98,7 +97,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of DeleteWorkflowByIdResponse</returns>
 		[Delete("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
-		System.Threading.Tasks.Task<DeleteWorkflowByIdResponse> DeleteWorkflowById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<DeleteWorkflowByIdResponse> DeleteWorkflowById([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Deregister Virtual Account
@@ -111,7 +110,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">Virtual Account Name</param>
 		/// <returns>Task of DeregisterVirtualAccountResponse</returns>
 		[Delete("/dna/intent/api/v1/onboarding/pnp-settings/vacct")]
-		System.Threading.Tasks.Task<DeregisterVirtualAccountResponse> DeregisterVirtualAccount([Header("UserAgent")] string userAgent, [AliasAs("domain")]string domain, [AliasAs("name")]string name);
+		Task<DeregisterVirtualAccountResponse> DeregisterVirtualAccount([AliasAs("domain")]string domain, [AliasAs("name")]string name);
 
 		/// <summary>
 		/// Get Device by Id
@@ -123,7 +122,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of GetDeviceByIdResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		System.Threading.Tasks.Task<GetDeviceByIdResponse> GetDeviceById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<GetDeviceByIdResponse> GetDeviceById([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Get Device History
@@ -137,7 +136,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="sortOrder">Sort Order Ascending (asc) or Descending (des) (optional)</param>
 		/// <returns>Task of GetDeviceHistoryResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/history")]
-		System.Threading.Tasks.Task<GetDeviceHistoryResponse> GetDeviceHistory([Header("UserAgent")] string userAgent, [AliasAs("serialNumber")]string serialNumber, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null);
+		Task<GetDeviceHistoryResponse> GetDeviceHistory([AliasAs("serialNumber")]string serialNumber, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null);
 
 		/// <summary>
 		/// Get PnP global settings
@@ -148,7 +147,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetPnPGlobalSettingsResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings")]
-		System.Threading.Tasks.Task<GetPnPGlobalSettingsResponse> GetPnPGlobalSettings([Header("UserAgent")] string userAgent);
+		Task<GetPnPGlobalSettingsResponse> GetPnPGlobalSettings([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Get Device Count
@@ -173,7 +172,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="lastContact">Device Has Contacted lastContact &gt; 0 (optional)</param>
 		/// <returns>Task of GetDeviceCountResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/count")]
-		System.Threading.Tasks.Task<GetDeviceCountResponse> GetPnpDeviceCount([Header("UserAgent")] string userAgent, [AliasAs("serialNumber")]List<string> serialNumber = null, [AliasAs("state")]List<string> state = null, [AliasAs("onbState")]List<string> onbState = null, [AliasAs("cmState")]List<string> cmState = null, [AliasAs("name")]List<string> name = null, [AliasAs("pid")]List<string> pid = null, [AliasAs("source")]List<string> source = null, [AliasAs("projectId")]List<string> projectId = null, [AliasAs("workflowId")]List<string> workflowId = null, [AliasAs("projectName")]List<string> projectName = null, [AliasAs("workflowName")]List<string> workflowName = null, [AliasAs("smartAccountId")]List<string> smartAccountId = null, [AliasAs("virtualAccountId")]List<string> virtualAccountId = null, [AliasAs("lastContact")]bool? lastContact = null);
+		Task<GetDeviceCountResponse> GetPnpDeviceCount([AliasAs("serialNumber")]List<string> serialNumber = null, [AliasAs("state")]List<string> state = null, [AliasAs("onbState")]List<string> onbState = null, [AliasAs("cmState")]List<string> cmState = null, [AliasAs("name")]List<string> name = null, [AliasAs("pid")]List<string> pid = null, [AliasAs("source")]List<string> source = null, [AliasAs("projectId")]List<string> projectId = null, [AliasAs("workflowId")]List<string> workflowId = null, [AliasAs("projectName")]List<string> projectName = null, [AliasAs("workflowName")]List<string> workflowName = null, [AliasAs("smartAccountId")]List<string> smartAccountId = null, [AliasAs("virtualAccountId")]List<string> virtualAccountId = null, [AliasAs("lastContact")]bool? lastContact = null);
 
 		/// <summary>
 		/// Get Device list
@@ -202,7 +201,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="lastContact">Device Has Contacted lastContact &gt; 0 (optional)</param>
 		/// <returns>Task of Device</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device")]
-		System.Threading.Tasks.Task<Device> GetPnpDeviceList([Header("UserAgent")] string userAgent, [AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("serialNumber")]List<string> serialNumber = null, [AliasAs("state")]List<string> state = null, [AliasAs("onbState")]List<string> onbState = null, [AliasAs("cmState")]List<string> cmState = null, [AliasAs("name")]List<string> name = null, [AliasAs("pid")]List<string> pid = null, [AliasAs("source")]List<string> source = null, [AliasAs("projectId")]List<string> projectId = null, [AliasAs("workflowId")]List<string> workflowId = null, [AliasAs("projectName")]List<string> projectName = null, [AliasAs("workflowName")]List<string> workflowName = null, [AliasAs("smartAccountId")]List<string> smartAccountId = null, [AliasAs("virtualAccountId")]List<string> virtualAccountId = null, [AliasAs("lastContact")]bool? lastContact = null);
+		Task<Device> GetPnpDeviceList([AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("serialNumber")]List<string> serialNumber = null, [AliasAs("state")]List<string> state = null, [AliasAs("onbState")]List<string> onbState = null, [AliasAs("cmState")]List<string> cmState = null, [AliasAs("name")]List<string> name = null, [AliasAs("pid")]List<string> pid = null, [AliasAs("source")]List<string> source = null, [AliasAs("projectId")]List<string> projectId = null, [AliasAs("workflowId")]List<string> workflowId = null, [AliasAs("projectName")]List<string> projectName = null, [AliasAs("workflowName")]List<string> workflowName = null, [AliasAs("smartAccountId")]List<string> smartAccountId = null, [AliasAs("virtualAccountId")]List<string> virtualAccountId = null, [AliasAs("lastContact")]bool? lastContact = null);
 
 		/// <summary>
 		/// Get Smart Account List
@@ -213,7 +212,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetSmartAccountListResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings/sacct")]
-		System.Threading.Tasks.Task<GetSmartAccountListResponse> GetSmartAccountList([Header("UserAgent")] string userAgent);
+		Task<GetSmartAccountListResponse> GetSmartAccountList([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Get Sync Result for Virtual Account
@@ -226,7 +225,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">Virtual Account Name</param>
 		/// <returns>Task of GetSyncResultForVirtualAccountResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/sacct/{domain}/vacct/{name}/sync-result")]
-		System.Threading.Tasks.Task<GetSyncResultForVirtualAccountResponse> GetSyncResultForVirtualAccount([Header("UserAgent")] string userAgent, [AliasAs("domain")]string domain, [AliasAs("name")]string name);
+		Task<GetSyncResultForVirtualAccountResponse> GetSyncResultForVirtualAccount([AliasAs("domain")]string domain, [AliasAs("name")]string name);
 
 		/// <summary>
 		/// Get Virtual Account List
@@ -238,7 +237,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="domain">Smart Account Domain</param>
 		/// <returns>Task of GetVirtualAccountListResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings/sacct/{domain}/vacct")]
-		System.Threading.Tasks.Task<GetVirtualAccountListResponse> GetVirtualAccountList([Header("UserAgent")] string userAgent, [AliasAs("domain")]string domain);
+		Task<GetVirtualAccountListResponse> GetVirtualAccountList([AliasAs("domain")]string domain);
 
 		/// <summary>
 		/// Get Workflow by Id
@@ -250,7 +249,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of GetWorkflowByIdResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
-		System.Threading.Tasks.Task<GetWorkflowByIdResponse> GetWorkflowById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<GetWorkflowByIdResponse> GetWorkflowById([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Get Workflow Count
@@ -262,7 +261,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">Workflow Name (optional)</param>
 		/// <returns>Task of GetWorkflowCountResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-workflow/count")]
-		System.Threading.Tasks.Task<GetWorkflowCountResponse> GetWorkflowCount([Header("UserAgent")] string userAgent, [AliasAs("name")]List<string> name = null);
+		Task<GetWorkflowCountResponse> GetWorkflowCount([AliasAs("name")]List<string> name = null);
 
 		/// <summary>
 		/// Get Workflows
@@ -279,7 +278,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">Workflow Name (optional)</param>
 		/// <returns>Task of GetWorkflowsResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-workflow")]
-		System.Threading.Tasks.Task<GetWorkflowsResponse> GetWorkflows([Header("UserAgent")] string userAgent, [AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("type")]List<string> type = null, [AliasAs("name")]List<string> name = null);
+		Task<GetWorkflowsResponse> GetWorkflows([AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("type")]List<string> type = null, [AliasAs("name")]List<string> name = null);
 
 		/// <summary>
 		/// Import Devices in bulk
@@ -292,7 +291,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of ImportDevicesInBulkResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/import")]
-		System.Threading.Tasks.Task<ImportDevicesInBulkResponse> ImportDevicesInBulk([Header("UserAgent")] string userAgent, [Body]Device request, string Content_Type);
+		Task<ImportDevicesInBulkResponse> ImportDevicesInBulk([Body]Device request, string Content_Type);
 
 		/// <summary>
 		/// Preview Config
@@ -305,7 +304,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of DayZeroConfigPreviewResult</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/site-config-preview")]
-		System.Threading.Tasks.Task<DayZeroConfigPreviewResult> PreviewConfig([Header("UserAgent")] string userAgent, [Body]SiteProvisionRequest request, string Content_Type);
+		Task<DayZeroConfigPreviewResult> PreviewConfig([Body]SiteProvisionRequest request, string Content_Type);
 
 		/// <summary>
 		/// Reset Device
@@ -318,7 +317,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of ResetDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/reset")]
-		System.Threading.Tasks.Task<ResetDeviceResponse> ResetDevice([Header("UserAgent")] string userAgent, [Body]ResetRequest request, string Content_Type);
+		Task<ResetDeviceResponse> ResetDevice([Body]ResetRequest request, string Content_Type);
 
 		/// <summary>
 		/// Sync Virtual Account Devices
@@ -331,7 +330,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of SyncVirtualAccountDevicesResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/vacct-sync")]
-		System.Threading.Tasks.Task<SyncVirtualAccountDevicesResponse> SyncVirtualAccountDevices([Header("UserAgent")] string userAgent, [Body]SAVAMapping request, string Content_Type);
+		Task<SyncVirtualAccountDevicesResponse> SyncVirtualAccountDevices([Body]SAVAMapping request, string Content_Type);
 
 		/// <summary>
 		/// Un-Claim Device
@@ -344,7 +343,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of UnClaimDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/unclaim")]
-		System.Threading.Tasks.Task<UnClaimDeviceResponse> UnClaimDevice([Header("UserAgent")] string userAgent, [Body]UnclaimRequest request, string Content_Type);
+		Task<UnClaimDeviceResponse> UnClaimDevice([Body]UnclaimRequest request, string Content_Type);
 
 		/// <summary>
 		/// Update Device
@@ -358,7 +357,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of UpdateDeviceResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		System.Threading.Tasks.Task<UpdateDeviceResponse> UpdateDevice([Header("UserAgent")] string userAgent, [Body]Device request, string Content_Type, [AliasAs("id")]string id);
+		Task<UpdateDeviceResponse> UpdateDevice([Body]Device request, string Content_Type, [AliasAs("id")]string id);
 
 		/// <summary>
 		/// Update PnP global settings
@@ -371,7 +370,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of UpdatePnPGlobalSettingsResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings")]
-		System.Threading.Tasks.Task<UpdatePnPGlobalSettingsResponse> UpdatePnPGlobalSettings([Header("UserAgent")] string userAgent, [Body]Settings request, string Content_Type);
+		Task<UpdatePnPGlobalSettingsResponse> UpdatePnPGlobalSettings([Body]Settings request, string Content_Type);
 
 		/// <summary>
 		/// Update PnP Server Profile
@@ -384,7 +383,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of UpdatePnPServerProfileResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		System.Threading.Tasks.Task<UpdatePnPServerProfileResponse> UpdatePnPServerProfile([Header("UserAgent")] string userAgent, [Body]SAVAMapping request, string Content_Type);
+		Task<UpdatePnPServerProfileResponse> UpdatePnPServerProfile([Body]SAVAMapping request, string Content_Type);
 
 		/// <summary>
 		/// Update Workflow
@@ -398,7 +397,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of UpdateWorkflowResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
-		System.Threading.Tasks.Task<UpdateWorkflowResponse> UpdateWorkflow([Header("UserAgent")] string userAgent, [Body]Workflow request, string Content_Type, [AliasAs("id")]string id);
-		#endregion Asynchronous Operations
+		Task<UpdateWorkflowResponse> UpdateWorkflow([Body]Workflow request, string Content_Type, [AliasAs("id")]string id);
 	}
 }

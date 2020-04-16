@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface ITag
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Add members to the tag
 		/// </summary>
@@ -22,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Tag ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/tag/{id}/member")]
-		System.Threading.Tasks.Task<TaskIdResult> AddMembersToTheTag([Header("UserAgent")] string userAgent, [Body]Listentrystringliststring request, string Content_Type, [AliasAs("id")]string id);
+		Task<TaskIdResult> AddMembersToTheTag([Body]Listentrystringliststring request, string Content_Type, [AliasAs("id")]string id);
 
 		/// <summary>
 		/// Create Tag
@@ -35,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/tag")]
-		System.Threading.Tasks.Task<TaskIdResult> CreateTag([Header("UserAgent")] string userAgent, [Body]TagDto request, string Content_Type);
+		Task<TaskIdResult> CreateTag([Body]TagDto request, string Content_Type);
 
 		/// <summary>
 		/// Delete Tag
@@ -47,7 +46,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Tag ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/tag/{id}")]
-		System.Threading.Tasks.Task<TaskIdResult> DeleteTag([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<TaskIdResult> DeleteTag([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Get Tag
@@ -69,7 +68,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="systemTag">systemTag (optional)</param>
 		/// <returns>Task of TagListResult</returns>
 		[Get("/dna/intent/api/v1/tag")]
-		System.Threading.Tasks.Task<TagListResult> GetTag([Header("UserAgent")] string userAgent, [AliasAs("name")]string name = null, [AliasAs("additionalInfo_nameSpace")]string additionalInfo_nameSpace = null, [AliasAs("additionalInfo_attributes")]string additionalInfo_attributes = null, [AliasAs("level")]string level = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("size")]string size = null, [AliasAs("field")]string field = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null, [AliasAs("systemTag")]string systemTag = null);
+		Task<TagListResult> GetTag([AliasAs("name")]string name = null, [AliasAs("additionalInfo_nameSpace")]string additionalInfo_nameSpace = null, [AliasAs("additionalInfo_attributes")]string additionalInfo_attributes = null, [AliasAs("level")]string level = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("size")]string size = null, [AliasAs("field")]string field = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null, [AliasAs("systemTag")]string systemTag = null);
 
 		/// <summary>
 		/// Get Tag by Id
@@ -81,7 +80,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Tag ID</param>
 		/// <returns>Task of TagResult</returns>
 		[Get("/dna/intent/api/v1/tag/{id}")]
-		System.Threading.Tasks.Task<TagResult> GetTagById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id);
+		Task<TagResult> GetTagById([AliasAs("id")]string id);
 
 		/// <summary>
 		/// Get Tag Count
@@ -98,7 +97,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="systemTag">systemTag (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/tag/count")]
-		System.Threading.Tasks.Task<CountResult> GetTagCount([Header("UserAgent")] string userAgent, [AliasAs("name")]string name = null, [AliasAs("_nameSpace")]string _nameSpace = null, [AliasAs("attributeName")]string attributeName = null, [AliasAs("level")]string level = null, [AliasAs("size")]string size = null, [AliasAs("systemTag")]string systemTag = null);
+		Task<CountResult> GetTagCount([AliasAs("name")]string name = null, [AliasAs("_nameSpace")]string _nameSpace = null, [AliasAs("attributeName")]string attributeName = null, [AliasAs("level")]string level = null, [AliasAs("size")]string size = null, [AliasAs("systemTag")]string systemTag = null);
 
 		/// <summary>
 		/// Get Tag Member count
@@ -113,7 +112,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="level">level (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/tag/{id}/member/count")]
-		System.Threading.Tasks.Task<CountResult> GetTagMemberCount([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("memberType")]string memberType, [AliasAs("memberAssociationType")]string memberAssociationType = null, [AliasAs("level")]string level = null);
+		Task<CountResult> GetTagMemberCount([AliasAs("id")]string id, [AliasAs("memberType")]string memberType, [AliasAs("memberAssociationType")]string memberAssociationType = null, [AliasAs("level")]string level = null);
 
 		/// <summary>
 		/// Get Tag members by Id
@@ -130,7 +129,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="level">level (optional)</param>
 		/// <returns>Task of TagMembersResult</returns>
 		[Get("/dna/intent/api/v1/tag/{id}/member")]
-		System.Threading.Tasks.Task<TagMembersResult> GetTagMembersById([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("memberType")]string memberType, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("memberAssociationType")]string memberAssociationType = null, [AliasAs("level")]string level = null);
+		Task<TagMembersResult> GetTagMembersById([AliasAs("id")]string id, [AliasAs("memberType")]string memberType, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("memberAssociationType")]string memberAssociationType = null, [AliasAs("level")]string level = null);
 
 		/// <summary>
 		/// Get Tag resource types
@@ -141,7 +140,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of TagTypesResult</returns>
 		[Get("/dna/intent/api/v1/tag/member/type")]
-		System.Threading.Tasks.Task<TagTypesResult> GetTagResourceTypes([Header("UserAgent")] string userAgent);
+		Task<TagTypesResult> GetTagResourceTypes([Header("UserAgent")] string userAgent);
 
 		/// <summary>
 		/// Remove Tag member
@@ -154,7 +153,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="memberId">TagMember id to be removed from tag</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/tag/{id}/member/{memberId}")]
-		System.Threading.Tasks.Task<TaskIdResult> RemoveTagMember([Header("UserAgent")] string userAgent, [AliasAs("id")]string id, [AliasAs("memberId")]string memberId);
+		Task<TaskIdResult> RemoveTagMember([AliasAs("id")]string id, [AliasAs("memberId")]string memberId);
 
 		/// <summary>
 		/// Update Tag
@@ -167,7 +166,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/tag")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdateTag([Header("UserAgent")] string userAgent, [Body]TagDto request, string Content_Type);
+		Task<TaskIdResult> UpdateTag([Body]TagDto request, string Content_Type);
 
 		/// <summary>
 		/// Updates tag membership
@@ -180,7 +179,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/tag/member")]
-		System.Threading.Tasks.Task<TaskIdResult> UpdatesTagMembership([Header("UserAgent")] string userAgent, [Body]TagMemberDto request, string Content_Type);
-		#endregion Asynchronous Operations
+		Task<TaskIdResult> UpdatesTagMembership([Body]TagMemberDto request, string Content_Type);
 	}
 }

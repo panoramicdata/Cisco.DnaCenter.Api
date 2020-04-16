@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -8,8 +9,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// </summary>
 	public interface IAuthentication
 	{
-		#region Asynchronous Operations
-
 		/// <summary>
 		/// Authentication API
 		/// </summary>
@@ -21,7 +20,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Authorization">Basic Auth Base64 encoding of &lt;username&gt;:&lt;password&gt;</param>
 		/// <returns>Task of AuthenticationAPIResponse</returns>
 		[Post("/dna/system/api/v1/auth/token")]
-		System.Threading.Tasks.Task<AuthenticationAPIResponse> AuthenticationAPI([Header("UserAgent")] string userAgent, string Content_Type, string Authorization);
-		#endregion Asynchronous Operations
+		Task<AuthenticationAPIResponse> AuthenticationAPI(string Content_Type, string Authorization);
 	}
 }
