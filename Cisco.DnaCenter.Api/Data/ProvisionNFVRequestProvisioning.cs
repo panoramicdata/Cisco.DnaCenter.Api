@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		/// <param name="Site">Site.</param>
 		/// <param name="Device">Device.</param>
-		public ProvisionNFVRequestProvisioning(ProvisionNFVRequestSite Site = default, List<ProvisionNFVRequestDevice1> Device = default)
+		public ProvisionNFVRequestProvisioning(ProvisionNfvRequestSite Site = default, List<ProvisionNfvRequestDevice1> Device = default)
 		{
 			this.Site = Site;
 			this.Device = Device;
@@ -25,12 +25,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Site
 		/// </summary>
 		[DataMember(Name = "site", EmitDefaultValue = false)]
-		public ProvisionNFVRequestSite Site { get; set; }
+		public ProvisionNfvRequestSite Site { get; set; }
 		/// <summary>
 		/// Gets or Sets Device
 		/// </summary>
 		[DataMember(Name = "device", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestDevice1> Device { get; set; }
+		public List<ProvisionNfvRequestDevice1> Device { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

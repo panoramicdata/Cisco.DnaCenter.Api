@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CLICredentialDto
 	/// </summary>
 	[DataContract]
-	public partial class CLICredentialDto
+	public partial class CliCredentialDto
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "credentialType", EmitDefaultValue = false)]
 		public CredentialTypeEnum? CredentialType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CLICredentialDto" /> class.
+		/// Initializes a new instance of the <see cref="CliCredentialDto" /> class.
 		/// </summary>
 		/// <param name="Comments">Comments.</param>
 		/// <param name="CredentialType">CredentialType.</param>
@@ -48,7 +48,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="InstanceUuid">InstanceUuid.</param>
 		/// <param name="Password">Password.</param>
 		/// <param name="Username">Username.</param>
-		public CLICredentialDto(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? EnablePassword = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? Password = default, string? Username = default)
+		public CliCredentialDto(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? EnablePassword = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? Password = default, string? Username = default)
 		{
 			this.Comments = Comments;
 			this.CredentialType = CredentialType;

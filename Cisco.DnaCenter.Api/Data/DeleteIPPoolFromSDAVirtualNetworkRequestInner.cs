@@ -7,10 +7,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteIPPoolFromSDAVirtualNetworkRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class DeleteIPPoolFromSDAVirtualNetworkRequestInner
+	public partial class DeleteIpPoolFromSdaVirtualNetworkRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeleteIPPoolFromSDAVirtualNetworkRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="DeleteIpPoolFromSdaVirtualNetworkRequestInner" /> class.
 		/// </summary>
 		/// <param name="SiteNameHierarchy">SiteNameHierarchy.</param>
 		/// <param name="VirtualNetworkName">VirtualNetworkName.</param>
@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TrafficType">TrafficType.</param>
 		/// <param name="ScalableGroupName">ScalableGroupName.</param>
 		/// <param name="IsL2FloodingEnabled">IsL2FloodingEnabled.</param>
-		public DeleteIPPoolFromSDAVirtualNetworkRequestInner(string? SiteNameHierarchy = default, string? VirtualNetworkName = default, string? IpPoolName = default, string? AuthenticationPolicyName = default, string? TrafficType = default, string? ScalableGroupName = default, bool? IsL2FloodingEnabled = default)
+		public DeleteIpPoolFromSdaVirtualNetworkRequestInner(string? SiteNameHierarchy = default, string? VirtualNetworkName = default, string? IpPoolName = default, string? AuthenticationPolicyName = default, string? TrafficType = default, string? ScalableGroupName = default, bool? IsL2FloodingEnabled = default)
 		{
 			this.SiteNameHierarchy = SiteNameHierarchy;
 			this.VirtualNetworkName = VirtualNetworkName;

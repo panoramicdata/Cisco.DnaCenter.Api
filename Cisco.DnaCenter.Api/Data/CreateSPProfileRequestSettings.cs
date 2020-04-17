@@ -8,13 +8,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateSPProfileRequestSettings
 	/// </summary>
 	[DataContract]
-	public partial class CreateSPProfileRequestSettings
+	public partial class CreateSpProfileRequestSettings
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateSPProfileRequestSettings" /> class.
+		/// Initializes a new instance of the <see cref="CreateSpProfileRequestSettings" /> class.
 		/// </summary>
 		/// <param name="Qos">Qos.</param>
-		public CreateSPProfileRequestSettings(List<CreateSPProfileRequestSettingsQos> Qos = default)
+		public CreateSpProfileRequestSettings(List<CreateSpProfileRequestSettingsQos> Qos = default)
 		{
 			this.Qos = Qos;
 		}
@@ -23,7 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Qos
 		/// </summary>
 		[DataMember(Name = "qos", EmitDefaultValue = false)]
-		public List<CreateSPProfileRequestSettingsQos> Qos { get; set; }
+		public List<CreateSpProfileRequestSettingsQos> Qos { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

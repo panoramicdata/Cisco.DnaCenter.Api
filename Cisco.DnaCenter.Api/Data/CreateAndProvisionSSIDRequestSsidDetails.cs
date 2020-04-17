@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateAndProvisionSSIDRequestSsidDetails
 	/// </summary>
 	[DataContract]
-	public partial class CreateAndProvisionSSIDRequestSsidDetails
+	public partial class CreateAndProvisionSsidRequestSsidDetails
 	{
 		/// <summary>
 		/// Gets or Sets SecurityLevel
@@ -142,7 +142,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "fastTransition", EmitDefaultValue = false)]
 		public FastTransitionEnum? FastTransition { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateAndProvisionSSIDRequestSsidDetails" /> class.
+		/// Initializes a new instance of the <see cref="CreateAndProvisionSsidRequestSsidDetails" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="SecurityLevel">SecurityLevel.</param>
@@ -154,7 +154,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="EnableMACFiltering">EnableMACFiltering.</param>
 		/// <param name="FastTransition">FastTransition.</param>
 		/// <param name="WebAuthURL">WebAuthURL.</param>
-		public CreateAndProvisionSSIDRequestSsidDetails(string? Name = default, SecurityLevelEnum? SecurityLevel = default, bool? EnableFastLane = default, string? Passphrase = default, TrafficTypeEnum? TrafficType = default, bool? EnableBroadcastSSID = default, RadioPolicyEnum? RadioPolicy = default, bool? EnableMACFiltering = default, FastTransitionEnum? FastTransition = default, string? WebAuthURL = default)
+		public CreateAndProvisionSsidRequestSsidDetails(string? Name = default, SecurityLevelEnum? SecurityLevel = default, bool? EnableFastLane = default, string? Passphrase = default, TrafficTypeEnum? TrafficType = default, bool? EnableBroadcastSSID = default, RadioPolicyEnum? RadioPolicy = default, bool? EnableMACFiltering = default, FastTransitionEnum? FastTransition = default, string? WebAuthURL = default)
 		{
 			this.Name = Name;
 			this.SecurityLevel = SecurityLevel;

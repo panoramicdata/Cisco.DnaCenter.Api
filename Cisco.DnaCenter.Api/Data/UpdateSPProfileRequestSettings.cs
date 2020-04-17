@@ -8,13 +8,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateSPProfileRequestSettings
 	/// </summary>
 	[DataContract]
-	public partial class UpdateSPProfileRequestSettings
+	public partial class UpdateSpProfileRequestSettings
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateSPProfileRequestSettings" /> class.
+		/// Initializes a new instance of the <see cref="UpdateSpProfileRequestSettings" /> class.
 		/// </summary>
 		/// <param name="Qos">Qos.</param>
-		public UpdateSPProfileRequestSettings(List<UpdateSPProfileRequestSettingsQos> Qos = default)
+		public UpdateSpProfileRequestSettings(List<UpdateSpProfileRequestSettingsQos> Qos = default)
 		{
 			this.Qos = Qos;
 		}
@@ -23,7 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Qos
 		/// </summary>
 		[DataMember(Name = "qos", EmitDefaultValue = false)]
-		public List<UpdateSPProfileRequestSettingsQos> Qos { get; set; }
+		public List<UpdateSpProfileRequestSettingsQos> Qos { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

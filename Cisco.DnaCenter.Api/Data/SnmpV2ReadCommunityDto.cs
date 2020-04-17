@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPvReadCommunityDto
 	/// </summary>
 	[DataContract]
-	public partial class SNMPvReadCommunityDto
+	public partial class SnmpV2ReadCommunityDto
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "credentialType", EmitDefaultValue = false)]
 		public CredentialTypeEnum? CredentialType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SNMPvReadCommunityDto" /> class.
+		/// Initializes a new instance of the <see cref="SnmpV2ReadCommunityDto" /> class.
 		/// </summary>
 		/// <param name="Comments">Comments.</param>
 		/// <param name="CredentialType">CredentialType.</param>
@@ -46,7 +46,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="InstanceTenantId">InstanceTenantId.</param>
 		/// <param name="InstanceUuid">InstanceUuid.</param>
 		/// <param name="ReadCommunity">ReadCommunity.</param>
-		public SNMPvReadCommunityDto(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? ReadCommunity = default)
+		public SnmpV2ReadCommunityDto(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? ReadCommunity = default)
 		{
 			this.Comments = Comments;
 			this.CredentialType = CredentialType;

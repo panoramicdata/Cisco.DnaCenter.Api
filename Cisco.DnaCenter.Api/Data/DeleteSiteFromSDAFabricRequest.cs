@@ -6,16 +6,16 @@ using Newtonsoft.Json;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DeleteSiteFromSDAFabricRequest
+	/// DeleteSiteFromSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class DeleteSiteFromSDAFabricRequest : List<GetSDAFabricInfoRequestInner>
+	public partial class DeleteSiteFromSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeleteSiteFromSDAFabricRequest" /> class.
+		/// Initializes a new instance of the <see cref="DeleteSiteFromSdaFabricRequest" /> class.
 		/// </summary>
 		[JsonConstructor]
-		public DeleteSiteFromSDAFabricRequest()
+		public DeleteSiteFromSdaFabricRequest()
 		{
 		}
 
@@ -26,7 +26,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DeleteSiteFromSDAFabricRequest {\n");
+			sb.Append("class DeleteSiteFromSdaFabricRequest {\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}

@@ -8,14 +8,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestSiteProfile
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestSiteProfile
+	public partial class ProvisionNfvRequestSiteProfile
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestSiteProfile" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestSiteProfile" /> class.
 		/// </summary>
 		/// <param name="SiteProfileName">SiteProfileName.</param>
 		/// <param name="Device">Device.</param>
-		public ProvisionNFVRequestSiteProfile(string? SiteProfileName = default, List<ProvisionNFVRequestDevice> Device = default)
+		public ProvisionNfvRequestSiteProfile(string? SiteProfileName = default, List<ProvisionNfvRequestDevice> Device = default)
 		{
 			this.SiteProfileName = SiteProfileName;
 			this.Device = Device;
@@ -30,7 +30,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Device
 		/// </summary>
 		[DataMember(Name = "device", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestDevice> Device { get; set; }
+		public List<ProvisionNfvRequestDevice> Device { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

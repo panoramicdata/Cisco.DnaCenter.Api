@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsL3Handoff
+	/// GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsL3Handoff
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsL3Handoff" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="InstanceId">InstanceId.</param>
@@ -22,7 +22,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="RemoteIpAddress">RemoteIpAddress.</param>
 		/// <param name="VlanId">VlanId.</param>
 		/// <param name="VirtualNetwork">VirtualNetwork.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsL3Handoff(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, decimal? InstanceVersion = default, string? LocalIpAddress = default, string? RemoteIpAddress = default, int? VlanId = default, EditApplicationRequestInnerApplicationSet VirtualNetwork = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, decimal? InstanceVersion = default, string? LocalIpAddress = default, string? RemoteIpAddress = default, int? VlanId = default, EditApplicationRequestInnerApplicationSet VirtualNetwork = default)
 		{
 			this.Id = Id;
 			this.InstanceId = InstanceId;
@@ -93,7 +93,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsL3Handoff {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  InstanceId: ").Append(InstanceId).Append("\n");
 			sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");

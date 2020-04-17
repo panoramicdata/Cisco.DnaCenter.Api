@@ -8,10 +8,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// APProvisionRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class APProvisionRequestInner
+	public partial class ApProvisionRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="APProvisionRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="ApProvisionRequestInner" /> class.
 		/// </summary>
 		/// <param name="RfProfile">RfProfile.</param>
 		/// <param name="SiteId">SiteId.</param>
@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="DeviceName">DeviceName.</param>
 		/// <param name="CustomFlexGroupName">CustomFlexGroupName.</param>
 		/// <param name="CustomApGroupName">CustomApGroupName.</param>
-		public APProvisionRequestInner(string? RfProfile = default, string? SiteId = default, string? Type = default, string? DeviceName = default, List<string> CustomFlexGroupName = default, string? CustomApGroupName = default)
+		public ApProvisionRequestInner(string? RfProfile = default, string? SiteId = default, string? Type = default, string? DeviceName = default, List<string> CustomFlexGroupName = default, string? CustomApGroupName = default)
 		{
 			this.RfProfile = RfProfile;
 			this.SiteId = SiteId;
@@ -32,7 +32,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Gets or Sets RfProfile
 		/// </summary>
-		[DataMember(Name = "rfProfile", EmitDefaultValue = false)]
+		[DataMember(Name = "RfProfile", EmitDefaultValue = false)]
 		public string? RfProfile { get; set; }
 		/// <summary>
 		/// Gets or Sets SiteId

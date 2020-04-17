@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestCustomTemplate
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestCustomTemplate
+	public partial class ProvisionNfvRequestCustomTemplate
 	{
 		/// <summary>
 		/// Gets or Sets DeviceType
@@ -37,11 +37,11 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "deviceType", EmitDefaultValue = false)]
 		public DeviceTypeEnum? DeviceType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestCustomTemplate" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestCustomTemplate" /> class.
 		/// </summary>
 		/// <param name="DeviceType">DeviceType.</param>
 		/// <param name="Template">Template.</param>
-		public ProvisionNFVRequestCustomTemplate(DeviceTypeEnum? DeviceType = default, string? Template = default)
+		public ProvisionNfvRequestCustomTemplate(DeviceTypeEnum? DeviceType = default, string? Template = default)
 		{
 			this.DeviceType = DeviceType;
 			this.Template = Template;

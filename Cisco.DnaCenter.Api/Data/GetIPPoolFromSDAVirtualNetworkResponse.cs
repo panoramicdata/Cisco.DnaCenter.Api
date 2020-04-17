@@ -7,10 +7,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetIPPoolFromSDAVirtualNetworkResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetIPPoolFromSDAVirtualNetworkResponse
+	public partial class GetIpPoolFromSdaVirtualNetworkResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetIPPoolFromSDAVirtualNetworkResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetIpPoolFromSdaVirtualNetworkResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="ScalableGroupName">ScalableGroupName.</param>
 		/// <param name="IsL2FloodingEnabled">IsL2FloodingEnabled.</param>
 		/// <param name="IsThisCriticalPool">IsThisCriticalPool.</param>
-		public GetIPPoolFromSDAVirtualNetworkResponse(string? Status = default, string? Description = default, string? VirtualNetworkName = default, string? IpPoolName = default, string? AuthenticationPolicyName = default, string? TrafficType = default, string? ScalableGroupName = default, bool? IsL2FloodingEnabled = default, bool? IsThisCriticalPool = default)
+		public GetIpPoolFromSdaVirtualNetworkResponse(string? Status = default, string? Description = default, string? VirtualNetworkName = default, string? IpPoolName = default, string? AuthenticationPolicyName = default, string? TrafficType = default, string? ScalableGroupName = default, bool? IsL2FloodingEnabled = default, bool? IsThisCriticalPool = default)
 		{
 			this.Status = Status;
 			this.Description = Description;

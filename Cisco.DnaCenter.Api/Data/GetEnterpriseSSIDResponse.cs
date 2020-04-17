@@ -9,13 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetEnterpriseSSIDResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetEnterpriseSSIDResponse : List<GetEnterpriseSSIDResponseInner>
+	public partial class GetEnterpriseSsidResponse : List<GetEnterpriseSsidResponseInner>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetEnterpriseSSIDResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetEnterpriseSsidResponse" /> class.
 		/// </summary>
 		[JsonConstructor]
-		public GetEnterpriseSSIDResponse()
+		public GetEnterpriseSsidResponse()
 		{
 		}
 

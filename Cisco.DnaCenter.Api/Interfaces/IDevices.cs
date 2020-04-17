@@ -123,9 +123,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the config for all devices
 		/// </remarks>
-		/// <returns>Task of RawCliInfoNIOListResult</returns>
+		/// <returns>Task of RawCliInfoNioListResult</returns>
 		[Get("/dna/intent/api/v1/network-device/config")]
-		Task<RawCliInfoNIOListResult> GetDeviceConfigForAllDevicesAsync(
+		Task<RawCliInfoNioListResult> GetDeviceConfigForAllDevicesAsync(
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -307,9 +307,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Returns brief summary of device info such as hostname, management IP address for the given device Id
 		/// </remarks>
 		/// <param name="id">Device ID</param>
-		/// <returns>Task of NetworkDeviceBriefNIOResult</returns>
+		/// <returns>Task of NetworkDeviceBriefNioResult</returns>
 		[Get("/dna/intent/api/v1/network-device/{id}/brief")]
-		Task<NetworkDeviceBriefNIOResult> GetDeviceSummaryAsync(
+		Task<NetworkDeviceBriefNioResult> GetDeviceSummaryAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -663,7 +663,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/network-device/brief")]
 		Task<TaskIdResult> UpdateDeviceRoleAsync(
-			[Body]NetworkDeviceBriefNIO request,
+			[Body]NetworkDeviceBriefNio request,
 			CancellationToken cancellationToken = default);
 	}
 }

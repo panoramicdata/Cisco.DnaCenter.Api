@@ -8,14 +8,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SAVAMappingSyncResult
 	/// </summary>
 	[DataContract]
-	public partial class SAVAMappingSyncResult
+	public partial class SavaMappingSyncResult
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SAVAMappingSyncResult" /> class.
+		/// Initializes a new instance of the <see cref="SavaMappingSyncResult" /> class.
 		/// </summary>
 		/// <param name="SyncList">SyncList.</param>
 		/// <param name="SyncMsg">SyncMsg.</param>
-		public SAVAMappingSyncResult(List<SAVAMappingSyncResultSyncList> SyncList = default, string? SyncMsg = default)
+		public SavaMappingSyncResult(List<SavaMappingSyncResultSyncList> SyncList = default, string? SyncMsg = default)
 		{
 			this.SyncList = SyncList;
 			this.SyncMsg = SyncMsg;
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SyncList
 		/// </summary>
 		[DataMember(Name = "syncList", EmitDefaultValue = false)]
-		public List<SAVAMappingSyncResultSyncList> SyncList { get; set; }
+		public List<SavaMappingSyncResultSyncList> SyncList { get; set; }
 		/// <summary>
 		/// Gets or Sets SyncMsg
 		/// </summary>

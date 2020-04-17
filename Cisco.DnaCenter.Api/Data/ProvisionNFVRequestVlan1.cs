@@ -7,16 +7,16 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestVlan1
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestVlan1
+	public partial class ProvisionNfvRequestVlan1
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestVlan1" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestVlan1" /> class.
 		/// </summary>
 		/// <param name="Type">Type.</param>
 		/// <param name="Id">Id.</param>
 		/// <param name="Interfaces">Interfaces.</param>
 		/// <param name="Network">Network.</param>
-		public ProvisionNFVRequestVlan1(string? Type = default, string? Id = default, string? Interfaces = default, string? Network = default)
+		public ProvisionNfvRequestVlan1(string? Type = default, string? Id = default, string? Interfaces = default, string? Network = default)
 		{
 			this.Type = Type;
 			this.Id = Id;

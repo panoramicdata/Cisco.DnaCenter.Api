@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetVNFromSDAFabricResponse
+	/// GetVNFromSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetVNFromSDAFabricResponse
+	public partial class GetVnFromSdaFabricResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetVNFromSDAFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetVnFromSdaFabricResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Roles">Roles.</param>
 		/// <param name="DeviceManagementIpAddress">DeviceManagementIpAddress.</param>
 		/// <param name="SiteHierarchy">SiteHierarchy.</param>
-		public GetVNFromSDAFabricResponse(string? Status = default, string? Description = default, string? Name = default, List<string> Roles = default, string? DeviceManagementIpAddress = default, string? SiteHierarchy = default)
+		public GetVnFromSdaFabricResponse(string? Status = default, string? Description = default, string? Name = default, List<string> Roles = default, string? DeviceManagementIpAddress = default, string? SiteHierarchy = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -66,7 +66,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetVNFromSDAFabricResponse {\n");
+			sb.Append("class GetVNFromSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  Name: ").Append(Name).Append("\n");

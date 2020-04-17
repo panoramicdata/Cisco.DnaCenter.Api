@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettings
+	/// GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettings
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettings" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="InstanceId">InstanceId.</param>
@@ -30,7 +30,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="NodeType">NodeType.</param>
 		/// <param name="Storage">Storage.</param>
 		/// <param name="ExtConnectivitySettings">ExtConnectivitySettings.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object> ConnectedTo = default, decimal? Cpu = default, bool? DhcpEnabled = default, string? ExternalConnectivityIpPool = default, string? ExternalDomainRoutingProtocol = default, string? InternalDomainProtocolNumber = default, decimal? Memory = default, List<string> NodeType = default, decimal? Storage = default, List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsExtConnectivitySettings> ExtConnectivitySettings = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object> ConnectedTo = default, decimal? Cpu = default, bool? DhcpEnabled = default, string? ExternalConnectivityIpPool = default, string? ExternalDomainRoutingProtocol = default, string? InternalDomainProtocolNumber = default, decimal? Memory = default, List<string> NodeType = default, decimal? Storage = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings> ExtConnectivitySettings = default)
 		{
 			this.Id = Id;
 			this.InstanceId = InstanceId;
@@ -129,7 +129,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ExtConnectivitySettings
 		/// </summary>
 		[DataMember(Name = "extConnectivitySettings", EmitDefaultValue = false)]
-		public List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsExtConnectivitySettings> ExtConnectivitySettings { get; set; }
+		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings> ExtConnectivitySettings { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -137,7 +137,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettings {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  InstanceId: ").Append(InstanceId).Append("\n");
 			sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");

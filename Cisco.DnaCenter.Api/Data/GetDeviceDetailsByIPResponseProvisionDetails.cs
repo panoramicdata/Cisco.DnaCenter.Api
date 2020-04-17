@@ -8,10 +8,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDeviceDetailsByIPResponseProvisionDetails
 	/// </summary>
 	[DataContract]
-	public partial class GetDeviceDetailsByIPResponseProvisionDetails
+	public partial class GetDeviceDetailsByIpResponseProvisionDetails
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIPResponseProvisionDetails" /> class.
+		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpResponseProvisionDetails" /> class.
 		/// </summary>
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="EndTime">EndTime.</param>
@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TaskNodes">TaskNodes.</param>
 		/// <param name="Topology">Topology.</param>
 		/// <param name="BeginStep">BeginStep.</param>
-		public GetDeviceDetailsByIPResponseProvisionDetails(string? StartTime = default, string? EndTime = default, string? Duration = default, string? StatusMessage = default, string? Status = default, List<GetDeviceDetailsByIPResponseProvisionDetailsTaskNodes> TaskNodes = default, string? Topology = default, string? BeginStep = default)
+		public GetDeviceDetailsByIpResponseProvisionDetails(string? StartTime = default, string? EndTime = default, string? Duration = default, string? StatusMessage = default, string? Status = default, List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes> TaskNodes = default, string? Topology = default, string? BeginStep = default)
 		{
 			this.StartTime = StartTime;
 			this.EndTime = EndTime;
@@ -62,7 +62,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets TaskNodes
 		/// </summary>
 		[DataMember(Name = "taskNodes", EmitDefaultValue = false)]
-		public List<GetDeviceDetailsByIPResponseProvisionDetailsTaskNodes> TaskNodes { get; set; }
+		public List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes> TaskNodes { get; set; }
 		/// <summary>
 		/// Gets or Sets Topology
 		/// </summary>

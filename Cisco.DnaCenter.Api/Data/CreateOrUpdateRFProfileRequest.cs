@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// CreateOrUpdateRFProfileRequest
+	/// CreateOrUpdateRfProfileRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateOrUpdateRFProfileRequest
+	public partial class CreateOrUpdateRfProfileRequest
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateOrUpdateRFProfileRequest" /> class.
+		/// Initializes a new instance of the <see cref="CreateOrUpdateRfProfileRequest" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="DefaultRfProfile">DefaultRfProfile.</param>
@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="EnableBrownField">EnableBrownField.</param>
 		/// <param name="RadioTypeAProperties">RadioTypeAProperties.</param>
 		/// <param name="RadioTypeBProperties">RadioTypeBProperties.</param>
-		public CreateOrUpdateRFProfileRequest(string? Name = default, bool? DefaultRfProfile = default, bool? EnableRadioTypeA = default, bool? EnableRadioTypeB = default, string? ChannelWidth = default, bool? EnableCustom = default, bool? EnableBrownField = default, CreateOrUpdateRFProfileRequestRadioTypeAProperties RadioTypeAProperties = default, CreateOrUpdateRFProfileRequestRadioTypeAProperties RadioTypeBProperties = default)
+		public CreateOrUpdateRfProfileRequest(string? Name = default, bool? DefaultRfProfile = default, bool? EnableRadioTypeA = default, bool? EnableRadioTypeB = default, string? ChannelWidth = default, bool? EnableCustom = default, bool? EnableBrownField = default, CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeAProperties = default, CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeBProperties = default)
 		{
 			this.Name = Name;
 			this.DefaultRfProfile = DefaultRfProfile;
@@ -73,12 +73,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets RadioTypeAProperties
 		/// </summary>
 		[DataMember(Name = "radioTypeAProperties", EmitDefaultValue = false)]
-		public CreateOrUpdateRFProfileRequestRadioTypeAProperties RadioTypeAProperties { get; set; }
+		public CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeAProperties { get; set; }
 		/// <summary>
 		/// Gets or Sets RadioTypeBProperties
 		/// </summary>
 		[DataMember(Name = "radioTypeBProperties", EmitDefaultValue = false)]
-		public CreateOrUpdateRFProfileRequestRadioTypeAProperties RadioTypeBProperties { get; set; }
+		public CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeBProperties { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -86,7 +86,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class CreateOrUpdateRFProfileRequest {\n");
+			sb.Append("class CreateOrUpdateRfProfileRequest {\n");
 			sb.Append("  Name: ").Append(Name).Append("\n");
 			sb.Append("  DefaultRfProfile: ").Append(DefaultRfProfile).Append("\n");
 			sb.Append("  EnableRadioTypeA: ").Append(EnableRadioTypeA).Append("\n");

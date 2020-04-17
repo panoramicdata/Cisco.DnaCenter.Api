@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// AddPortAssignmentForUserDeviceInSDAFabricRequest
+	/// AddPortAssignmentForUserDeviceInSdaFabricRequest
 	/// </summary>
 	[DataContract]
 	public partial class AddPortAssignmentForUserDeviceInSdaFabricRequest : List<AddPortAssignmentForUserDeviceInSdaFabricRequestInner>
@@ -26,7 +26,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class AddPortAssignmentForUserDeviceInSDAFabricRequest {\n");
+			sb.Append("class AddPortAssignmentForUserDeviceInSdaFabricRequest {\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}

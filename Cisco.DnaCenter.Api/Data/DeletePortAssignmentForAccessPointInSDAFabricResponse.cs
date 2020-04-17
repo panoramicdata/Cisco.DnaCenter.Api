@@ -4,18 +4,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DeletePortAssignmentForAccessPointInSDAFabricResponse
+	/// DeletePortAssignmentForAccessPointInSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeletePortAssignmentForAccessPointInSDAFabricResponse
+	public partial class DeletePortAssignmentForAccessPointInSdaFabricResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeletePortAssignmentForAccessPointInSDAFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="DeletePortAssignmentForAccessPointInSdaFabricResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
-		public DeletePortAssignmentForAccessPointInSDAFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
+		public DeletePortAssignmentForAccessPointInSdaFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DeletePortAssignmentForAccessPointInSDAFabricResponse {\n");
+			sb.Append("class DeletePortAssignmentForAccessPointInSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  ExecutionStatusUrl: ").Append(ExecutionStatusUrl).Append("\n");

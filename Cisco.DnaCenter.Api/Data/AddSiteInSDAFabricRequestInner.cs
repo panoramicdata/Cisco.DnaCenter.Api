@@ -4,17 +4,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// AddSiteInSDAFabricRequestInner
+	/// AddSiteInSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class AddSiteInSDAFabricRequestInner
+	public partial class AddSiteInSdaFabricRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AddSiteInSDAFabricRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="AddSiteInSdaFabricRequestInner" /> class.
 		/// </summary>
 		/// <param name="FabricName">FabricName.</param>
 		/// <param name="SiteNameHierarchy">SiteNameHierarchy.</param>
-		public AddSiteInSDAFabricRequestInner(string? FabricName = default, string? SiteNameHierarchy = default)
+		public AddSiteInSdaFabricRequestInner(string? FabricName = default, string? SiteNameHierarchy = default)
 		{
 			this.FabricName = FabricName;
 			this.SiteNameHierarchy = SiteNameHierarchy;
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class AddSiteInSDAFabricRequestInner {\n");
+			sb.Append("class AddSiteInSdaFabricRequestInner {\n");
 			sb.Append("  FabricName: ").Append(FabricName).Append("\n");
 			sb.Append("  SiteNameHierarchy: ").Append(SiteNameHierarchy).Append("\n");
 			sb.Append("}\n");

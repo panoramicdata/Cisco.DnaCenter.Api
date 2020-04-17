@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestServices
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestServices
+	public partial class ProvisionNfvRequestServices
 	{
 		/// <summary>
 		/// Gets or Sets Type
@@ -85,7 +85,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestServices" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServices" /> class.
 		/// </summary>
 		/// <param name="Type">Type.</param>
 		/// <param name="Profile">Profile.</param>
@@ -93,7 +93,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Name">Name.</param>
 		/// <param name="ImageName">ImageName.</param>
 		/// <param name="Topology">Topology.</param>
-		public ProvisionNFVRequestServices(TypeEnum? Type = default, string? Profile = default, string? Mode = default, string? Name = default, string? ImageName = default, ProvisionNFVRequestTopology Topology = default)
+		public ProvisionNfvRequestServices(TypeEnum? Type = default, string? Profile = default, string? Mode = default, string? Name = default, string? ImageName = default, ProvisionNfvRequestTopology Topology = default)
 		{
 			this.Type = Type;
 			this.Profile = Profile;
@@ -127,7 +127,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Topology
 		/// </summary>
 		[DataMember(Name = "topology", EmitDefaultValue = false)]
-		public ProvisionNFVRequestTopology Topology { get; set; }
+		public ProvisionNfvRequestTopology Topology { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

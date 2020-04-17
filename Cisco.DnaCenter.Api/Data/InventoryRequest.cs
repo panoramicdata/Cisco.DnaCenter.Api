@@ -27,7 +27,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="NoAddNewDevice">NoAddNewDevice.</param>
 		/// <param name="ParentDiscoveryId">ParentDiscoveryId.</param>
 		/// <param name="PasswordList">PasswordList.</param>
-		/// <param name="PreferredMgmtIPMethod">PreferredMgmtIPMethod.</param>
+		/// <param name="PreferredManagementIpMethod">PreferredMgmtIPMethod.</param>
 		/// <param name="ProtocolOrder">ProtocolOrder.</param>
 		/// <param name="ReDiscovery">ReDiscovery.</param>
 		/// <param name="Retry">Retry.</param>
@@ -45,7 +45,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Timeout">Timeout.</param>
 		/// <param name="UpdateMgmtIp">UpdateMgmtIp.</param>
 		/// <param name="UserNameList">UserNameList.</param>
-		public InventoryRequest(int? CdpLevel = default, string? DiscoveryType = default, List<string> EnablePasswordList = default, List<string> GlobalCredentialIdList = default, InventoryRequestHttpReadCredential HttpReadCredential = default, InventoryRequestHttpReadCredential HttpWriteCredential = default, string? IpAddressList = default, List<string> IpFilterList = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, bool? NoAddNewDevice = default, string? ParentDiscoveryId = default, List<string> PasswordList = default, string? PreferredMgmtIPMethod = default, string? ProtocolOrder = default, bool? ReDiscovery = default, int? Retry = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpROCommunityDesc = default, string? SnmpRWCommunity = default, string? SnmpRWCommunityDesc = default, string? SnmpUserName = default, string? SnmpVersion = default, int? Timeout = default, bool? UpdateMgmtIp = default, List<string> UserNameList = default)
+		public InventoryRequest(int? CdpLevel = default, string? DiscoveryType = default, List<string> EnablePasswordList = default, List<string> GlobalCredentialIdList = default, InventoryRequestHttpReadCredential HttpReadCredential = default, InventoryRequestHttpReadCredential HttpWriteCredential = default, string? IpAddressList = default, List<string> IpFilterList = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, bool? NoAddNewDevice = default, string? ParentDiscoveryId = default, List<string> PasswordList = default, string? PreferredManagementIpMethod = default, string? ProtocolOrder = default, bool? ReDiscovery = default, int? Retry = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpROCommunityDesc = default, string? SnmpRWCommunity = default, string? SnmpRWCommunityDesc = default, string? SnmpUserName = default, string? SnmpVersion = default, int? Timeout = default, bool? UpdateMgmtIp = default, List<string> UserNameList = default)
 		{
 			this.CdpLevel = CdpLevel;
 			this.DiscoveryType = DiscoveryType;
@@ -61,7 +61,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.NoAddNewDevice = NoAddNewDevice;
 			this.ParentDiscoveryId = ParentDiscoveryId;
 			this.PasswordList = PasswordList;
-			this.PreferredMgmtIPMethod = PreferredMgmtIPMethod;
+			this.PreferredManagementIpMethod = PreferredManagementIpMethod;
 			this.ProtocolOrder = ProtocolOrder;
 			this.ReDiscovery = ReDiscovery;
 			this.Retry = Retry;
@@ -155,7 +155,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets PreferredMgmtIPMethod
 		/// </summary>
 		[DataMember(Name = "preferredMgmtIPMethod", EmitDefaultValue = false)]
-		public string? PreferredMgmtIPMethod { get; set; }
+		public string? PreferredManagementIpMethod { get; set; }
 		/// <summary>
 		/// Gets or Sets ProtocolOrder
 		/// </summary>
@@ -263,7 +263,7 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  NoAddNewDevice: ").Append(NoAddNewDevice).Append("\n");
 			sb.Append("  ParentDiscoveryId: ").Append(ParentDiscoveryId).Append("\n");
 			sb.Append("  PasswordList: ").Append(PasswordList).Append("\n");
-			sb.Append("  PreferredMgmtIPMethod: ").Append(PreferredMgmtIPMethod).Append("\n");
+			sb.Append("  PreferredMgmtIPMethod: ").Append(PreferredManagementIpMethod).Append("\n");
 			sb.Append("  ProtocolOrder: ").Append(ProtocolOrder).Append("\n");
 			sb.Append("  ReDiscovery: ").Append(ReDiscovery).Append("\n");
 			sb.Append("  Retry: ").Append(Retry).Append("\n");

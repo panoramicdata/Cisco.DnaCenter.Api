@@ -77,9 +77,9 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="SnmpUserName">SnmpUserName.</param>
 		/// <param name="SnmpVersion">SnmpVersion.</param>
 		/// <param name="Type">Type.</param>
-		/// <param name="UpdateMgmtIPaddressList">UpdateMgmtIPaddressList.</param>
+		/// <param name="UpdateManagementIpAddressList">UpdateMgmtIPaddressList.</param>
 		/// <param name="UserName">UserName.</param>
-		public InventoryDeviceInfo(string? CliTransport = default, bool? ComputeDevice = default, string? EnablePassword = default, string? ExtendedDiscoveryInfo = default, string? HttpPassword = default, string? HttpPort = default, bool? HttpSecure = default, string? HttpUserName = default, List<string> IpAddress = default, List<string> MerakiOrgId = default, string? NetconfPort = default, string? Password = default, string? SerialNumber = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpRWCommunity = default, int? SnmpRetry = default, int? SnmpTimeout = default, string? SnmpUserName = default, string? SnmpVersion = default, TypeEnum? Type = default, List<InventoryDeviceInfoUpdateMgmtIPaddressList> UpdateMgmtIPaddressList = default, string? UserName = default)
+		public InventoryDeviceInfo(string? CliTransport = default, bool? ComputeDevice = default, string? EnablePassword = default, string? ExtendedDiscoveryInfo = default, string? HttpPassword = default, string? HttpPort = default, bool? HttpSecure = default, string? HttpUserName = default, List<string> IpAddress = default, List<string> MerakiOrgId = default, string? NetconfPort = default, string? Password = default, string? SerialNumber = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpRWCommunity = default, int? SnmpRetry = default, int? SnmpTimeout = default, string? SnmpUserName = default, string? SnmpVersion = default, TypeEnum? Type = default, List<InventoryDeviceInfoUpdateManagementIpAddressList> UpdateManagementIpAddressList = default, string? UserName = default)
 		{
 			this.CliTransport = CliTransport;
 			this.ComputeDevice = ComputeDevice;
@@ -106,7 +106,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.SnmpUserName = SnmpUserName;
 			this.SnmpVersion = SnmpVersion;
 			this.Type = Type;
-			this.UpdateMgmtIPaddressList = UpdateMgmtIPaddressList;
+			this.UpdateManagementIpAddressList = UpdateManagementIpAddressList;
 			this.UserName = UserName;
 		}
 
@@ -234,7 +234,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets UpdateMgmtIPaddressList
 		/// </summary>
 		[DataMember(Name = "updateMgmtIPaddressList", EmitDefaultValue = false)]
-		public List<InventoryDeviceInfoUpdateMgmtIPaddressList> UpdateMgmtIPaddressList { get; set; }
+		public List<InventoryDeviceInfoUpdateManagementIpAddressList> UpdateManagementIpAddressList { get; set; }
 		/// <summary>
 		/// Gets or Sets UserName
 		/// </summary>
@@ -273,7 +273,7 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  SnmpUserName: ").Append(SnmpUserName).Append("\n");
 			sb.Append("  SnmpVersion: ").Append(SnmpVersion).Append("\n");
 			sb.Append("  Type: ").Append(Type).Append("\n");
-			sb.Append("  UpdateMgmtIPaddressList: ").Append(UpdateMgmtIPaddressList).Append("\n");
+			sb.Append("  UpdateMgmtIPaddressList: ").Append(UpdateManagementIpAddressList).Append("\n");
 			sb.Append("  UserName: ").Append(UserName).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();

@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateSPProfileRequestSettingsQos
 	/// </summary>
 	[DataContract]
-	public partial class CreateSPProfileRequestSettingsQos
+	public partial class CreateSpProfileRequestSettingsQos
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateSPProfileRequestSettingsQos" /> class.
+		/// Initializes a new instance of the <see cref="CreateSpProfileRequestSettingsQos" /> class.
 		/// </summary>
 		/// <param name="ProfileName">ProfileName.</param>
 		/// <param name="Model">Model.</param>
 		/// <param name="WanProvider">WanProvider.</param>
-		public CreateSPProfileRequestSettingsQos(string? ProfileName = default, string? Model = default, string? WanProvider = default)
+		public CreateSpProfileRequestSettingsQos(string? ProfileName = default, string? Model = default, string? WanProvider = default)
 		{
 			this.ProfileName = ProfileName;
 			this.Model = Model;

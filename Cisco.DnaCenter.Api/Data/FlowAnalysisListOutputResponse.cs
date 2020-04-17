@@ -1,6 +1,6 @@
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -15,30 +15,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		/// <param name="ControlPath">ControlPath.</param>
 		/// <param name="CreateTime">CreateTime.</param>
-		/// <param name="DestIP">DestIP.</param>
-		/// <param name="DestPort">DestPort.</param>
+		/// <param name="DestinationIp">DestinationIp.</param>
+		/// <param name="DestinationPort">		/// <param name="DestinationPort">DestPort.</param>
+.</param>
 		/// <param name="FailureReason">FailureReason.</param>
 		/// <param name="Id">Id.</param>
 		/// <param name="Inclusions">Inclusions.</param>
 		/// <param name="LastUpdateTime">LastUpdateTime.</param>
 		/// <param name="PeriodicRefresh">PeriodicRefresh.</param>
 		/// <param name="Protocol">Protocol.</param>
-		/// <param name="SourceIP">SourceIP.</param>
+		/// <param name="SourceIp">SourceIP.</param>
 		/// <param name="SourcePort">SourcePort.</param>
 		/// <param name="Status">Status.</param>
-		public FlowAnalysisListOutputResponse(bool? ControlPath = default, int? CreateTime = default, string? DestIP = default, string? DestPort = default, string? FailureReason = default, string? Id = default, List<string> Inclusions = default, int? LastUpdateTime = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIP = default, string? SourcePort = default, string? Status = default)
+		public FlowAnalysisListOutputResponse(bool? ControlPath = default, int? CreateTime = default, string? DestinationIp = default, string? DestinationPort = default, string? FailureReason = default, string? Id = default, List<string> Inclusions = default, int? LastUpdateTime = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default, string? Status = default)
 		{
 			this.ControlPath = ControlPath;
 			this.CreateTime = CreateTime;
-			this.DestIP = DestIP;
-			this.DestPort = DestPort;
+			this.DestinationIp = DestinationIp;
+			this.DestinationPort = DestinationPort;
 			this.FailureReason = FailureReason;
 			this.Id = Id;
 			this.Inclusions = Inclusions;
 			this.LastUpdateTime = LastUpdateTime;
 			this.PeriodicRefresh = PeriodicRefresh;
 			this.Protocol = Protocol;
-			this.SourceIP = SourceIP;
+			this.SourceIp = SourceIp;
 			this.SourcePort = SourcePort;
 			this.Status = Status;
 		}
@@ -57,12 +58,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets DestIP
 		/// </summary>
 		[DataMember(Name = "destIP", EmitDefaultValue = false)]
-		public string? DestIP { get; set; }
+		public string? DestinationIp { get; set; }
 		/// <summary>
 		/// Gets or Sets DestPort
 		/// </summary>
 		[DataMember(Name = "destPort", EmitDefaultValue = false)]
-		public string? DestPort { get; set; }
+		public string? DestinationPort { get; set; }
 		/// <summary>
 		/// Gets or Sets FailureReason
 		/// </summary>
@@ -97,7 +98,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SourceIP
 		/// </summary>
 		[DataMember(Name = "sourceIP", EmitDefaultValue = false)]
-		public string? SourceIP { get; set; }
+		public string? SourceIp { get; set; }
 		/// <summary>
 		/// Gets or Sets SourcePort
 		/// </summary>
@@ -118,15 +119,15 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("class FlowAnalysisListOutputResponse {\n");
 			sb.Append("  ControlPath: ").Append(ControlPath).Append("\n");
 			sb.Append("  CreateTime: ").Append(CreateTime).Append("\n");
-			sb.Append("  DestIP: ").Append(DestIP).Append("\n");
-			sb.Append("  DestPort: ").Append(DestPort).Append("\n");
+			sb.Append("  DestIP: ").Append(DestinationIp).Append("\n");
+			sb.Append("  DestPort: ").Append(DestinationPort).Append("\n");
 			sb.Append("  FailureReason: ").Append(FailureReason).Append("\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  Inclusions: ").Append(Inclusions).Append("\n");
 			sb.Append("  LastUpdateTime: ").Append(LastUpdateTime).Append("\n");
 			sb.Append("  PeriodicRefresh: ").Append(PeriodicRefresh).Append("\n");
 			sb.Append("  Protocol: ").Append(Protocol).Append("\n");
-			sb.Append("  SourceIP: ").Append(SourceIP).Append("\n");
+			sb.Append("  SourceIP: ").Append(SourceIp).Append("\n");
 			sb.Append("  SourcePort: ").Append(SourcePort).Append("\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("}\n");

@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// NetworkDeviceNIOListResultResponse
+	/// NetworkDeviceNioListResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class NetworkDeviceNIOListResultResponse
+	public partial class NetworkDeviceNioListResultResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="NetworkDeviceNIOListResultResponse" /> class.
+		/// Initializes a new instance of the <see cref="NetworkDeviceNioListResultResponse" /> class.
 		/// </summary>
 		/// <param name="AnchorWlcForAp">AnchorWlcForAp.</param>
 		/// <param name="AuthModelId">AuthModelId.</param>
@@ -58,7 +58,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="UpTime">UpTime.</param>
 		/// <param name="Vendor">Vendor.</param>
 		/// <param name="WlcApDeviceStatus">WlcApDeviceStatus.</param>
-		public NetworkDeviceNIOListResultResponse(string? AnchorWlcForAp = default, string? AuthModelId = default, int? AvgUpdateFrequency = default, string? BootDateTime = default, string? CliStatus = default, string? DuplicateDeviceId = default, string? ErrorCode = default, string? ErrorDescription = default, string? Family = default, string? Hostname = default, string? HttpStatus = default, string? Id = default, string? ImageName = default, string? IngressQueueConfig = default, string? InterfaceCount = default, string? InventoryCollectionStatus = default, string? InventoryReachabilityStatus = default, string? LastUpdated = default, string? LineCardCount = default, string? LineCardId = default, string? Location = default, string? LocationName = default, string? MacAddress = default, string? ManagementIpAddress = default, string? MemorySize = default, string? NetconfStatus = default, int? NumUpdates = default, string? PingStatus = default, string? PlatformId = default, string? PortRange = default, string? QosStatus = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? Role = default, string? RoleSource = default, string? SerialNumber = default, string? SnmpContact = default, string? SnmpLocation = default, string? SnmpStatus = default, string? SoftwareVersion = default, string? Tag = default, int? TagCount = default, string? Type = default, string? UpTime = default, string? Vendor = default, string? WlcApDeviceStatus = default)
+		public NetworkDeviceNioListResultResponse(string? AnchorWlcForAp = default, string? AuthModelId = default, int? AvgUpdateFrequency = default, string? BootDateTime = default, string? CliStatus = default, string? DuplicateDeviceId = default, string? ErrorCode = default, string? ErrorDescription = default, string? Family = default, string? Hostname = default, string? HttpStatus = default, string? Id = default, string? ImageName = default, string? IngressQueueConfig = default, string? InterfaceCount = default, string? InventoryCollectionStatus = default, string? InventoryReachabilityStatus = default, string? LastUpdated = default, string? LineCardCount = default, string? LineCardId = default, string? Location = default, string? LocationName = default, string? MacAddress = default, string? ManagementIpAddress = default, string? MemorySize = default, string? NetconfStatus = default, int? NumUpdates = default, string? PingStatus = default, string? PlatformId = default, string? PortRange = default, string? QosStatus = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? Role = default, string? RoleSource = default, string? SerialNumber = default, string? SnmpContact = default, string? SnmpLocation = default, string? SnmpStatus = default, string? SoftwareVersion = default, string? Tag = default, int? TagCount = default, string? Type = default, string? UpTime = default, string? Vendor = default, string? WlcApDeviceStatus = default)
 		{
 			this.AnchorWlcForAp = AnchorWlcForAp;
 			this.AuthModelId = AuthModelId;
@@ -345,7 +345,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class NetworkDeviceNIOListResultResponse {\n");
+			sb.Append("class NetworkDeviceNioListResultResponse {\n");
 			sb.Append("  AnchorWlcForAp: ").Append(AnchorWlcForAp).Append("\n");
 			sb.Append("  AuthModelId: ").Append(AuthModelId).Append("\n");
 			sb.Append("  AvgUpdateFrequency: ").Append(AvgUpdateFrequency).Append("\n");

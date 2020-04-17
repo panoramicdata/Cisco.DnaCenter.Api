@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestTopology
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestTopology
+	public partial class ProvisionNfvRequestTopology
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestTopology" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestTopology" /> class.
 		/// </summary>
 		/// <param name="Type">Type.</param>
 		/// <param name="Name">Name.</param>
 		/// <param name="AssignIp">AssignIp.</param>
-		public ProvisionNFVRequestTopology(string? Type = default, string? Name = default, string? AssignIp = default)
+		public ProvisionNfvRequestTopology(string? Type = default, string? Name = default, string? AssignIp = default)
 		{
 			this.Type = Type;
 			this.Name = Name;

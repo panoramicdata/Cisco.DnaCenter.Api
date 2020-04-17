@@ -7,14 +7,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// APProvisionResponseProvisionTasksSuccess
 	/// </summary>
 	[DataContract]
-	public partial class APProvisionResponseProvisionTasksSuccess
+	public partial class ApProvisionResponseProvisionTasksSuccess
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="APProvisionResponseProvisionTasksSuccess" /> class.
+		/// Initializes a new instance of the <see cref="ApProvisionResponseProvisionTasksSuccess" /> class.
 		/// </summary>
 		/// <param name="TaskId">TaskId.</param>
 		/// <param name="TaskUrl">TaskUrl.</param>
-		public APProvisionResponseProvisionTasksSuccess(string? TaskId = default, string? TaskUrl = default)
+		public ApProvisionResponseProvisionTasksSuccess(string? TaskId = default, string? TaskUrl = default)
 		{
 			this.TaskId = TaskId;
 			this.TaskUrl = TaskUrl;

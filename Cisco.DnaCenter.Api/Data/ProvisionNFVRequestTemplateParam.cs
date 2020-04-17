@@ -7,14 +7,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestTemplateParam
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestTemplateParam
+	public partial class ProvisionNfvRequestTemplateParam
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestTemplateParam" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestTemplateParam" /> class.
 		/// </summary>
 		/// <param name="Nfvis">Nfvis.</param>
 		/// <param name="Asav">Asav.</param>
-		public ProvisionNFVRequestTemplateParam(ProvisionNFVRequestTemplateParamNfvis Nfvis = default, ProvisionNFVRequestTemplateParamNfvis Asav = default)
+		public ProvisionNfvRequestTemplateParam(ProvisionNfvRequestTemplateParamNfvis Nfvis = default, ProvisionNfvRequestTemplateParamNfvis Asav = default)
 		{
 			this.Nfvis = Nfvis;
 			this.Asav = Asav;
@@ -24,12 +24,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Nfvis
 		/// </summary>
 		[DataMember(Name = "nfvis", EmitDefaultValue = false)]
-		public ProvisionNFVRequestTemplateParamNfvis Nfvis { get; set; }
+		public ProvisionNfvRequestTemplateParamNfvis Nfvis { get; set; }
 		/// <summary>
 		/// Gets or Sets Asav
 		/// </summary>
 		[DataMember(Name = "asav", EmitDefaultValue = false)]
-		public ProvisionNFVRequestTemplateParamNfvis Asav { get; set; }
+		public ProvisionNfvRequestTemplateParamNfvis Asav { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

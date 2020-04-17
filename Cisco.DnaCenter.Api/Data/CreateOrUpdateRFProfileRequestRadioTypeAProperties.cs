@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// CreateOrUpdateRFProfileRequestRadioTypeAProperties
+	/// CreateOrUpdateRfProfileRequestRadioTypeAProperties
 	/// </summary>
 	[DataContract]
-	public partial class CreateOrUpdateRFProfileRequestRadioTypeAProperties
+	public partial class CreateOrUpdateRfProfileRequestRadioTypeAProperties
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateOrUpdateRFProfileRequestRadioTypeAProperties" /> class.
+		/// Initializes a new instance of the <see cref="CreateOrUpdateRfProfileRequestRadioTypeAProperties" /> class.
 		/// </summary>
 		/// <param name="ParentProfile">ParentProfile.</param>
 		/// <param name="RadioChannels">RadioChannels.</param>
@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="RxSopThreshold">RxSopThreshold.</param>
 		/// <param name="MinPowerLevel">MinPowerLevel.</param>
 		/// <param name="MaxPowerLevel">MaxPowerLevel.</param>
-		public CreateOrUpdateRFProfileRequestRadioTypeAProperties(string? ParentProfile = default, string? RadioChannels = default, string? DataRates = default, string? MandatoryDataRates = default, decimal? PowerThresholdV1 = default, string? RxSopThreshold = default, decimal? MinPowerLevel = default, decimal? MaxPowerLevel = default)
+		public CreateOrUpdateRfProfileRequestRadioTypeAProperties(string? ParentProfile = default, string? RadioChannels = default, string? DataRates = default, string? MandatoryDataRates = default, decimal? PowerThresholdV1 = default, string? RxSopThreshold = default, decimal? MinPowerLevel = default, decimal? MaxPowerLevel = default)
 		{
 			this.ParentProfile = ParentProfile;
 			this.RadioChannels = RadioChannels;
@@ -79,7 +79,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class CreateOrUpdateRFProfileRequestRadioTypeAProperties {\n");
+			sb.Append("class CreateOrUpdateRfProfileRequestRadioTypeAProperties {\n");
 			sb.Append("  ParentProfile: ").Append(ParentProfile).Append("\n");
 			sb.Append("  RadioChannels: ").Append(RadioChannels).Append("\n");
 			sb.Append("  DataRates: ").Append(DataRates).Append("\n");

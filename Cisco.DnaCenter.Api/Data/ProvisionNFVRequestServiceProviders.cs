@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestServiceProviders
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestServiceProviders
+	public partial class ProvisionNfvRequestServiceProviders
 	{
 		/// <summary>
 		/// Gets or Sets LinkType
@@ -31,13 +31,13 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "linkType", EmitDefaultValue = false)]
 		public LinkTypeEnum? LinkType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestServiceProviders" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServiceProviders" /> class.
 		/// </summary>
 		/// <param name="ServiceProvider">ServiceProvider.</param>
 		/// <param name="LinkType">LinkType.</param>
 		/// <param name="Connect">Connect.</param>
 		/// <param name="DefaultGateway">DefaultGateway.</param>
-		public ProvisionNFVRequestServiceProviders(string? ServiceProvider = default, LinkTypeEnum? LinkType = default, bool? Connect = default, bool? DefaultGateway = default)
+		public ProvisionNfvRequestServiceProviders(string? ServiceProvider = default, LinkTypeEnum? LinkType = default, bool? Connect = default, bool? DefaultGateway = default)
 		{
 			this.ServiceProvider = ServiceProvider;
 			this.LinkType = LinkType;

@@ -7,17 +7,17 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestCustomServices
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestCustomServices
+	public partial class ProvisionNfvRequestCustomServices
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestCustomServices" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestCustomServices" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="ApplicationType">ApplicationType.</param>
 		/// <param name="Profile">Profile.</param>
 		/// <param name="Topology">Topology.</param>
 		/// <param name="ImageName">ImageName.</param>
-		public ProvisionNFVRequestCustomServices(string? Name = default, string? ApplicationType = default, string? Profile = default, ProvisionNFVRequestTopology Topology = default, string? ImageName = default)
+		public ProvisionNfvRequestCustomServices(string? Name = default, string? ApplicationType = default, string? Profile = default, ProvisionNfvRequestTopology Topology = default, string? ImageName = default)
 		{
 			this.Name = Name;
 			this.ApplicationType = ApplicationType;
@@ -45,7 +45,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Topology
 		/// </summary>
 		[DataMember(Name = "topology", EmitDefaultValue = false)]
-		public ProvisionNFVRequestTopology Topology { get; set; }
+		public ProvisionNfvRequestTopology Topology { get; set; }
 		/// <summary>
 		/// Gets or Sets ImageName
 		/// </summary>

@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DiscoveryJobNIOListResultResponse
+	/// DiscoveryJobNioListResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class DiscoveryJobNIOListResultResponse
+	public partial class DiscoveryJobNioListResultResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DiscoveryJobNIOListResultResponse" /> class.
+		/// Initializes a new instance of the <see cref="DiscoveryJobNioListResultResponse" /> class.
 		/// </summary>
 		/// <param name="AttributeInfo">AttributeInfo.</param>
 		/// <param name="CliStatus">CliStatus.</param>
@@ -29,7 +29,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="SnmpStatus">SnmpStatus.</param>
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="TaskId">TaskId.</param>
-		public DiscoveryJobNIOListResultResponse(Object AttributeInfo = default, string? CliStatus = default, string? DiscoveryStatus = default, string? EndTime = default, string? HttpStatus = default, string? Id = default, string? InventoryCollectionStatus = default, string? InventoryReachabilityStatus = default, string? IpAddress = default, string? JobStatus = default, string? Name = default, string? NetconfStatus = default, string? PingStatus = default, string? SnmpStatus = default, string? StartTime = default, string? TaskId = default)
+		public DiscoveryJobNioListResultResponse(Object AttributeInfo = default, string? CliStatus = default, string? DiscoveryStatus = default, string? EndTime = default, string? HttpStatus = default, string? Id = default, string? InventoryCollectionStatus = default, string? InventoryReachabilityStatus = default, string? IpAddress = default, string? JobStatus = default, string? Name = default, string? NetconfStatus = default, string? PingStatus = default, string? SnmpStatus = default, string? StartTime = default, string? TaskId = default)
 		{
 			this.AttributeInfo = AttributeInfo;
 			this.CliStatus = CliStatus;
@@ -136,7 +136,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DiscoveryJobNIOListResultResponse {\n");
+			sb.Append("class DiscoveryJobNioListResultResponse {\n");
 			sb.Append("  AttributeInfo: ").Append(AttributeInfo).Append("\n");
 			sb.Append("  CliStatus: ").Append(CliStatus).Append("\n");
 			sb.Append("  DiscoveryStatus: ").Append(DiscoveryStatus).Append("\n");

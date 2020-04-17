@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetDefaultAuthenticationProfileFromSDAFabricRequestInner
+	/// GetDefaultAuthenticationProfileFromSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class GetDefaultAuthenticationProfileFromSDAFabricRequestInner
+	public partial class GetDefaultAuthenticationProfileFromSdaFabricRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSDAFabricRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequestInner" /> class.
 		/// </summary>
 		/// <param name="DeviceManagementIpAddress">DeviceManagementIpAddress.</param>
 		/// <param name="SiteHierarchy">SiteHierarchy.</param>
@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="BorderSessionType">BorderSessionType.</param>
 		/// <param name="ConnectedToInternet">ConnectedToInternet.</param>
 		/// <param name="ExternalConnectivitySettings">ExternalConnectivitySettings.</param>
-		public GetDefaultAuthenticationProfileFromSDAFabricRequestInner(string? DeviceManagementIpAddress = default, string? SiteHierarchy = default, string? ExternalDomainRoutingProtocolName = default, string? ExternalConnectivityIpPoolName = default, string? InternalAutonomouSystemNumber = default, string? BorderSessionType = default, bool? ConnectedToInternet = default, List<GetDefaultAuthenticationProfileFromSDAFabricRequestInnerExternalConnectivitySettings> ExternalConnectivitySettings = default)
+		public GetDefaultAuthenticationProfileFromSdaFabricRequestInner(string? DeviceManagementIpAddress = default, string? SiteHierarchy = default, string? ExternalDomainRoutingProtocolName = default, string? ExternalConnectivityIpPoolName = default, string? InternalAutonomouSystemNumber = default, string? BorderSessionType = default, bool? ConnectedToInternet = default, List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings> ExternalConnectivitySettings = default)
 		{
 			this.DeviceManagementIpAddress = DeviceManagementIpAddress;
 			this.SiteHierarchy = SiteHierarchy;
@@ -72,7 +72,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ExternalConnectivitySettings
 		/// </summary>
 		[DataMember(Name = "externalConnectivitySettings", EmitDefaultValue = false)]
-		public List<GetDefaultAuthenticationProfileFromSDAFabricRequestInnerExternalConnectivitySettings> ExternalConnectivitySettings { get; set; }
+		public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings> ExternalConnectivitySettings { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -80,7 +80,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetDefaultAuthenticationProfileFromSDAFabricRequestInner {\n");
+			sb.Append("class GetDefaultAuthenticationProfileFromSdaFabricRequestInner {\n");
 			sb.Append("  DeviceManagementIpAddress: ").Append(DeviceManagementIpAddress).Append("\n");
 			sb.Append("  SiteHierarchy: ").Append(SiteHierarchy).Append("\n");
 			sb.Append("  ExternalDomainRoutingProtocolName: ").Append(ExternalDomainRoutingProtocolName).Append("\n");

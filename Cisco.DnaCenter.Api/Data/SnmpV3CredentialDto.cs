@@ -1,21 +1,21 @@
-using System.Text;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// SNMPvCredentialDto
+	/// SNMPv3CredentialDto
 	/// </summary>
 	[DataContract]
-	public partial class SNMPvCredentialDto : List<SNMPvCredentialDtoInner>
+	public partial class Snmpv3CredentialDto : List<SnmpV3CredentialDtoInner>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SNMPvCredentialDto" /> class.
+		/// Initializes a new instance of the <see cref="Snmpv3CredentialDto" /> class.
 		/// </summary>
 		[JsonConstructor]
-		public SNMPvCredentialDto()
+		public Snmpv3CredentialDto()
 		{
 		}
 

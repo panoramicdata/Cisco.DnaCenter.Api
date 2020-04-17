@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettings
+	/// GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettings
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettings" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="InstanceId">InstanceId.</param>
@@ -30,7 +30,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Ntp">Ntp.</param>
 		/// <param name="Snmp">Snmp.</param>
 		/// <param name="Syslogs">Syslogs.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object> Aaa = default, List<Object> Cmx = default, List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDhcp> Dhcp = default, List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDns> Dns = default, List<Object> Ldap = default, List<Object> NativeVlan = default, List<Object> Netflow = default, List<Object> Ntp = default, List<Object> Snmp = default, List<Object> Syslogs = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object> Aaa = default, List<Object> Cmx = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp> Dhcp = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns> Dns = default, List<Object> Ldap = default, List<Object> NativeVlan = default, List<Object> Netflow = default, List<Object> Ntp = default, List<Object> Snmp = default, List<Object> Syslogs = default)
 		{
 			this.Id = Id;
 			this.InstanceId = InstanceId;
@@ -94,12 +94,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Dhcp
 		/// </summary>
 		[DataMember(Name = "dhcp", EmitDefaultValue = false)]
-		public List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDhcp> Dhcp { get; set; }
+		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp> Dhcp { get; set; }
 		/// <summary>
 		/// Gets or Sets Dns
 		/// </summary>
 		[DataMember(Name = "dns", EmitDefaultValue = false)]
-		public List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDns> Dns { get; set; }
+		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns> Dns { get; set; }
 		/// <summary>
 		/// Gets or Sets Ldap
 		/// </summary>
@@ -137,7 +137,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettings {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  InstanceId: ").Append(InstanceId).Append("\n");
 			sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");

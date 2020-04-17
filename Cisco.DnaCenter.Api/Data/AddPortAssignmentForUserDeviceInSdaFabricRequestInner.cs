@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// AddPortAssignmentForUserDeviceInSDAFabricRequestInner
+	/// AddPortAssignmentForUserDeviceInSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
 	public partial class AddPortAssignmentForUserDeviceInSdaFabricRequestInner
@@ -65,7 +65,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class AddPortAssignmentForUserDeviceInSDAFabricRequestInner {\n");
+			sb.Append("class AddPortAssignmentForUserDeviceInSdaFabricRequestInner {\n");
 			sb.Append("  SiteNameHierarchy: ").Append(SiteNameHierarchy).Append("\n");
 			sb.Append("  DeviceManagementIpAddress: ").Append(DeviceManagementIpAddress).Append("\n");
 			sb.Append("  InterfaceName: ").Append(InterfaceName).Append("\n");

@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteSSIDAndProvisionItToDevicesResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteSSIDAndProvisionItToDevicesResponse
+	public partial class DeleteSsidAndProvisionToDevicesResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeleteSSIDAndProvisionItToDevicesResponse" /> class.
+		/// Initializes a new instance of the <see cref="DeleteSsidAndProvisionToDevicesResponse" /> class.
 		/// </summary>
 		/// <param name="ExecutionId">ExecutionId.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
 		/// <param name="Message">Message.</param>
-		public DeleteSSIDAndProvisionItToDevicesResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
+		public DeleteSsidAndProvisionToDevicesResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
 		{
 			this.ExecutionId = ExecutionId;
 			this.ExecutionStatusUrl = ExecutionStatusUrl;

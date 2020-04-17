@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// HTTPWriteCredentialDto
 	/// </summary>
 	[DataContract]
-	public partial class HTTPWriteCredentialDto
+	public partial class HttpWriteCredentialDto
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "credentialType", EmitDefaultValue = false)]
 		public CredentialTypeEnum? CredentialType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="HTTPWriteCredentialDto" /> class.
+		/// Initializes a new instance of the <see cref="HttpWriteCredentialDto" /> class.
 		/// </summary>
 		/// <param name="Comments">Comments.</param>
 		/// <param name="CredentialType">CredentialType.</param>
@@ -49,7 +49,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Port">Port.</param>
 		/// <param name="Secure">Secure.</param>
 		/// <param name="Username">Username.</param>
-		public HTTPWriteCredentialDto(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? Password = default, int? Port = default, bool? Secure = default, string? Username = default)
+		public HttpWriteCredentialDto(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? Password = default, int? Port = default, bool? Secure = default, string? Username = default)
 		{
 			this.Comments = Comments;
 			this.CredentialType = CredentialType;

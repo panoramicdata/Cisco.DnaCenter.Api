@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="VirtualAccountId">VirtualAccountId.</param>
 		/// <param name="AutoSyncPeriod">AutoSyncPeriod.</param>
 		/// <param name="SyncResultStr">SyncResultStr.</param>
-		public GetPnPGlobalSettingsResponseSavaMappingList(string? SyncStatus = default, decimal? SyncStartTime = default, GetSyncResultForVirtualAccountResponseSyncResult SyncResult = default, decimal? LastSync = default, string? TenantId = default, GetPnPGlobalSettingsResponseProfile Profile = default, string? Token = default, decimal? Expiry = default, string? CcoUser = default, string? SmartAccountId = default, string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default)
+		public GetPnPGlobalSettingsResponseSavaMappingList(string? SyncStatus = default, decimal? SyncStartTime = default, GetSyncResultForVirtualAccountResponseSyncResult SyncResult = default, decimal? LastSync = default, string? TenantId = default, GetPnpGlobalSettingsResponseProfile Profile = default, string? Token = default, decimal? Expiry = default, string? CcoUser = default, string? SmartAccountId = default, string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default)
 		{
 			this.SyncStatus = SyncStatus;
 			this.SyncStartTime = SyncStartTime;
@@ -71,7 +71,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Profile
 		/// </summary>
 		[DataMember(Name = "profile", EmitDefaultValue = false)]
-		public GetPnPGlobalSettingsResponseProfile Profile { get; set; }
+		public GetPnpGlobalSettingsResponseProfile Profile { get; set; }
 		/// <summary>
 		/// Gets or Sets Token
 		/// </summary>

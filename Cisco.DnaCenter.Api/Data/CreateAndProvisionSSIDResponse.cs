@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateAndProvisionSSIDResponse
 	/// </summary>
 	[DataContract]
-	public partial class CreateAndProvisionSSIDResponse
+	public partial class CreateAndProvisionSsidResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateAndProvisionSSIDResponse" /> class.
+		/// Initializes a new instance of the <see cref="CreateAndProvisionSsidResponse" /> class.
 		/// </summary>
 		/// <param name="ExecutionId">ExecutionId.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
 		/// <param name="Message">Message.</param>
-		public CreateAndProvisionSSIDResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
+		public CreateAndProvisionSsidResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
 		{
 			this.ExecutionId = ExecutionId;
 			this.ExecutionStatusUrl = ExecutionStatusUrl;

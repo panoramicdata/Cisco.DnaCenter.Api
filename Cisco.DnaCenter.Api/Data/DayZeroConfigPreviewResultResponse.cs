@@ -64,7 +64,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Gets or Sets RfProfile
 		/// </summary>
-		[DataMember(Name = "rfProfile", EmitDefaultValue = false)]
+		[DataMember(Name = "RfProfile", EmitDefaultValue = false)]
 		public string? RfProfile { get; set; }
 		/// <summary>
 		/// Gets or Sets SensorProfile

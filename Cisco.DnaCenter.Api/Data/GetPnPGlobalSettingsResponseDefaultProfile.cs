@@ -8,17 +8,17 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPnPGlobalSettingsResponseDefaultProfile
 	/// </summary>
 	[DataContract]
-	public partial class GetPnPGlobalSettingsResponseDefaultProfile
+	public partial class GetPnpGlobalSettingsResponseDefaultProfile
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetPnPGlobalSettingsResponseDefaultProfile" /> class.
+		/// Initializes a new instance of the <see cref="GetPnpGlobalSettingsResponseDefaultProfile" /> class.
 		/// </summary>
 		/// <param name="FqdnAddresses">FqdnAddresses.</param>
 		/// <param name="Proxy">Proxy.</param>
 		/// <param name="Cert">Cert.</param>
 		/// <param name="IpAddresses">IpAddresses.</param>
 		/// <param name="Port">Port.</param>
-		public GetPnPGlobalSettingsResponseDefaultProfile(List<string> FqdnAddresses = default, bool? Proxy = default, string? Cert = default, List<string> IpAddresses = default, decimal? Port = default)
+		public GetPnpGlobalSettingsResponseDefaultProfile(List<string> FqdnAddresses = default, bool? Proxy = default, string? Cert = default, List<string> IpAddresses = default, decimal? Port = default)
 		{
 			this.FqdnAddresses = FqdnAddresses;
 			this.Proxy = Proxy;

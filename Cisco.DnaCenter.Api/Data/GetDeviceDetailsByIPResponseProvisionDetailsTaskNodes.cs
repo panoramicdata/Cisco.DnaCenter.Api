@@ -8,10 +8,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDeviceDetailsByIPResponseProvisionDetailsTaskNodes
 	/// </summary>
 	[DataContract]
-	public partial class GetDeviceDetailsByIPResponseProvisionDetailsTaskNodes
+	public partial class GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIPResponseProvisionDetailsTaskNodes" /> class.
+		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes" /> class.
 		/// </summary>
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="EndTime">EndTime.</param>
@@ -27,7 +27,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="ParentTask">ParentTask.</param>
 		/// <param name="CliTemplateUserMessageDto">CliTemplateUserMessageDto.</param>
 		/// <param name="StepRan">StepRan.</param>
-		public GetDeviceDetailsByIPResponseProvisionDetailsTaskNodes(string? StartTime = default, string? EndTime = default, string? Duration = default, string? Status = default, string? NextTask = default, string? Name = default, string? Target = default, string? StatusMessage = default, string? Payload = default, Object ProvisionedNames = default, Object ErrorPayload = default, Object ParentTask = default, Object CliTemplateUserMessageDto = default, string? StepRan = default)
+		public GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes(string? StartTime = default, string? EndTime = default, string? Duration = default, string? Status = default, string? NextTask = default, string? Name = default, string? Target = default, string? StatusMessage = default, string? Payload = default, Object ProvisionedNames = default, Object ErrorPayload = default, Object ParentTask = default, Object CliTemplateUserMessageDto = default, string? StepRan = default)
 		{
 			this.StartTime = StartTime;
 			this.EndTime = EndTime;

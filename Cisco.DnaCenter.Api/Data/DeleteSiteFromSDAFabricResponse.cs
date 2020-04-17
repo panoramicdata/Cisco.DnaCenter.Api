@@ -4,18 +4,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DeleteSiteFromSDAFabricResponse
+	/// DeleteSiteFromSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteSiteFromSDAFabricResponse
+	public partial class DeleteSiteFromSdaFabricResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeleteSiteFromSDAFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="DeleteSiteFromSdaFabricResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
-		public DeleteSiteFromSDAFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
+		public DeleteSiteFromSdaFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DeleteSiteFromSDAFabricResponse {\n");
+			sb.Append("class DeleteSiteFromSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  ExecutionStatusUrl: ").Append(ExecutionStatusUrl).Append("\n");

@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPvCredentialDtoInner
 	/// </summary>
 	[DataContract]
-	public partial class SNMPvCredentialDtoInner
+	public partial class SnmpV3CredentialDtoInner
 	{
 		/// <summary>
 		/// Gets or Sets AuthType
@@ -118,7 +118,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "snmpMode", EmitDefaultValue = false)]
 		public SnmpModeEnum? SnmpMode { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SNMPvCredentialDtoInner" /> class.
+		/// Initializes a new instance of the <see cref="SnmpV3CredentialDtoInner" /> class.
 		/// </summary>
 		/// <param name="AuthPassword">AuthPassword.</param>
 		/// <param name="AuthType">AuthType.</param>
@@ -132,7 +132,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="PrivacyType">PrivacyType.</param>
 		/// <param name="SnmpMode">SnmpMode.</param>
 		/// <param name="Username">Username.</param>
-		public SNMPvCredentialDtoInner(string? AuthPassword = default, AuthTypeEnum? AuthType = default, string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? PrivacyPassword = default, PrivacyTypeEnum? PrivacyType = default, SnmpModeEnum? SnmpMode = default, string? Username = default)
+		public SnmpV3CredentialDtoInner(string? AuthPassword = default, AuthTypeEnum? AuthType = default, string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? PrivacyPassword = default, PrivacyTypeEnum? PrivacyType = default, SnmpModeEnum? SnmpMode = default, string? Username = default)
 		{
 			this.AuthPassword = AuthPassword;
 			this.AuthType = AuthType;

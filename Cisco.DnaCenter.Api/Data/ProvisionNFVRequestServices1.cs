@@ -7,25 +7,25 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestServices1
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestServices1
+	public partial class ProvisionNfvRequestServices1
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestServices1" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServices1" /> class.
 		/// </summary>
 		/// <param name="Type">Type.</param>
 		/// <param name="Mode">Mode.</param>
 		/// <param name="SystemIp">SystemIp.</param>
-		/// <param name="CentralManagerIP">CentralManagerIP.</param>
+		/// <param name="CentralManagerIp">CentralManagerIP.</param>
 		/// <param name="CentralRegistrationKey">CentralRegistrationKey.</param>
 		/// <param name="CommonKey">CommonKey.</param>
 		/// <param name="AdminPasswordHash">AdminPasswordHash.</param>
 		/// <param name="Disk">Disk.</param>
-		public ProvisionNFVRequestServices1(string? Type = default, string? Mode = default, string? SystemIp = default, string? CentralManagerIP = default, string? CentralRegistrationKey = default, string? CommonKey = default, string? AdminPasswordHash = default, string? Disk = default)
+		public ProvisionNfvRequestServices1(string? Type = default, string? Mode = default, string? SystemIp = default, string? CentralManagerIp = default, string? CentralRegistrationKey = default, string? CommonKey = default, string? AdminPasswordHash = default, string? Disk = default)
 		{
 			this.Type = Type;
 			this.Mode = Mode;
 			this.SystemIp = SystemIp;
-			this.CentralManagerIP = CentralManagerIP;
+			this.CentralManagerIp = CentralManagerIp;
 			this.CentralRegistrationKey = CentralRegistrationKey;
 			this.CommonKey = CommonKey;
 			this.AdminPasswordHash = AdminPasswordHash;
@@ -51,7 +51,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets CentralManagerIP
 		/// </summary>
 		[DataMember(Name = "centralManagerIP", EmitDefaultValue = false)]
-		public string? CentralManagerIP { get; set; }
+		public string? CentralManagerIp { get; set; }
 		/// <summary>
 		/// Gets or Sets CentralRegistrationKey
 		/// </summary>
@@ -83,7 +83,7 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  Type: ").Append(Type).Append("\n");
 			sb.Append("  Mode: ").Append(Mode).Append("\n");
 			sb.Append("  SystemIp: ").Append(SystemIp).Append("\n");
-			sb.Append("  CentralManagerIP: ").Append(CentralManagerIP).Append("\n");
+			sb.Append("  CentralManagerIP: ").Append(CentralManagerIp).Append("\n");
 			sb.Append("  CentralRegistrationKey: ").Append(CentralRegistrationKey).Append("\n");
 			sb.Append("  CommonKey: ").Append(CommonKey).Append("\n");
 			sb.Append("  AdminPasswordHash: ").Append(AdminPasswordHash).Append("\n");

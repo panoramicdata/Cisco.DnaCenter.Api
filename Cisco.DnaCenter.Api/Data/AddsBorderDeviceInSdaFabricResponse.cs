@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// AddsBorderDeviceInSDAFabricResponse
+	/// AddsBorderDeviceInSdaFabricResponse
 	/// </summary>
 	[DataContract]
 	public partial class AddsBorderDeviceInSdaFabricResponse
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class AddsBorderDeviceInSDAFabricResponse {\n");
+			sb.Append("class AddsBorderDeviceInSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  ExecutionStatusUrl: ").Append(ExecutionStatusUrl).Append("\n");

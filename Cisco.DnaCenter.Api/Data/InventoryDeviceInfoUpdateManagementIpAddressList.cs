@@ -7,14 +7,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// InventoryDeviceInfoUpdateMgmtIPaddressList
 	/// </summary>
 	[DataContract]
-	public partial class InventoryDeviceInfoUpdateMgmtIPaddressList
+	public partial class InventoryDeviceInfoUpdateManagementIpAddressList
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InventoryDeviceInfoUpdateMgmtIPaddressList" /> class.
+		/// Initializes a new instance of the <see cref="InventoryDeviceInfoUpdateManagementIpAddressList" /> class.
 		/// </summary>
 		/// <param name="ExistMgmtIpAddress">ExistMgmtIpAddress.</param>
 		/// <param name="NewMgmtIpAddress">NewMgmtIpAddress.</param>
-		public InventoryDeviceInfoUpdateMgmtIPaddressList(string? ExistMgmtIpAddress = default, string? NewMgmtIpAddress = default)
+		public InventoryDeviceInfoUpdateManagementIpAddressList(string? ExistMgmtIpAddress = default, string? NewMgmtIpAddress = default)
 		{
 			this.ExistMgmtIpAddress = ExistMgmtIpAddress;
 			this.NewMgmtIpAddress = NewMgmtIpAddress;

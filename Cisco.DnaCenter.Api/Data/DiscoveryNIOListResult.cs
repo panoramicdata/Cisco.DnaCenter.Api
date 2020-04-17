@@ -5,17 +5,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DiscoveryNIOListResult
+	/// DiscoveryNioListResult
 	/// </summary>
 	[DataContract]
-	public partial class DiscoveryNIOListResult
+	public partial class DiscoveryNioListResult
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DiscoveryNIOListResult" /> class.
+		/// Initializes a new instance of the <see cref="DiscoveryNioListResult" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
 		/// <param name="_Version">_Version.</param>
-		public DiscoveryNIOListResult(List<DiscoveryNIOResultResponse> Response = default, string? _Version = default)
+		public DiscoveryNioListResult(List<DiscoveryNioResultResponse> Response = default, string? _Version = default)
 		{
 			this.Response = Response;
 			this._Version = _Version;
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
-		public List<DiscoveryNIOResultResponse> Response { get; set; }
+		public List<DiscoveryNioResultResponse> Response { get; set; }
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
@@ -38,7 +38,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DiscoveryNIOListResult {\n");
+			sb.Append("class DiscoveryNioListResult {\n");
 			sb.Append("  Response: ").Append(Response).Append("\n");
 			sb.Append("  _Version: ").Append(_Version).Append("\n");
 			sb.Append("}\n");

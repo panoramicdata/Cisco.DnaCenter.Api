@@ -7,10 +7,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdatePnPServerProfileResponse
 	/// </summary>
 	[DataContract]
-	public partial class UpdatePnPServerProfileResponse
+	public partial class UpdatePnpServerProfileResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdatePnPServerProfileResponse" /> class.
+		/// Initializes a new instance of the <see cref="UpdatePnpServerProfileResponse" /> class.
 		/// </summary>
 		/// <param name="VirtualAccountId">VirtualAccountId.</param>
 		/// <param name="AutoSyncPeriod">AutoSyncPeriod.</param>
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="SmartAccountId">SmartAccountId.</param>
 		/// <param name="Expiry">Expiry.</param>
 		/// <param name="SyncStatus">SyncStatus.</param>
-		public UpdatePnPServerProfileResponse(string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default, GetSyncResultForVirtualAccountResponseProfile Profile = default, string? CcoUser = default, GetSyncResultForVirtualAccountResponseSyncResult SyncResult = default, string? Token = default, decimal? SyncStartTime = default, decimal? LastSync = default, string? TenantId = default, string? SmartAccountId = default, decimal? Expiry = default, string? SyncStatus = default)
+		public UpdatePnpServerProfileResponse(string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default, GetSyncResultForVirtualAccountResponseProfile Profile = default, string? CcoUser = default, GetSyncResultForVirtualAccountResponseSyncResult SyncResult = default, string? Token = default, decimal? SyncStartTime = default, decimal? LastSync = default, string? TenantId = default, string? SmartAccountId = default, decimal? Expiry = default, string? SyncStatus = default)
 		{
 			this.VirtualAccountId = VirtualAccountId;
 			this.AutoSyncPeriod = AutoSyncPeriod;

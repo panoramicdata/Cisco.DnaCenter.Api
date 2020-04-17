@@ -4,16 +4,16 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetDefaultAuthenticationProfileFromSDAFabricRequestInnerVirtualNetwork
+	/// GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork
 	/// </summary>
 	[DataContract]
-	public partial class GetDefaultAuthenticationProfileFromSDAFabricRequestInnerVirtualNetwork
+	public partial class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSDAFabricRequestInnerVirtualNetwork" /> class.
+		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork" /> class.
 		/// </summary>
 		/// <param name="VirtualNetworkName">VirtualNetworkName.</param>
-		public GetDefaultAuthenticationProfileFromSDAFabricRequestInnerVirtualNetwork(string? VirtualNetworkName = default)
+		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork(string? VirtualNetworkName = default)
 		{
 			this.VirtualNetworkName = VirtualNetworkName;
 		}
@@ -30,7 +30,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetDefaultAuthenticationProfileFromSDAFabricRequestInnerVirtualNetwork {\n");
+			sb.Append("class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork {\n");
 			sb.Append("  VirtualNetworkName: ").Append(VirtualNetworkName).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();

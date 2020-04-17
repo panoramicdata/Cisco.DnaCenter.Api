@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateEnterpriseSSIDRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateEnterpriseSSIDRequest
+	public partial class CreateEnterpriseSsidRequest
 	{
 		/// <summary>
 		/// Gets or Sets SecurityLevel
@@ -136,7 +136,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "fastTransition", EmitDefaultValue = false)]
 		public FastTransitionEnum? FastTransition { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateEnterpriseSSIDRequest" /> class.
+		/// Initializes a new instance of the <see cref="CreateEnterpriseSsidRequest" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="SecurityLevel">SecurityLevel.</param>
@@ -147,7 +147,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="RadioPolicy">RadioPolicy.</param>
 		/// <param name="EnableBroadcastSSID">EnableBroadcastSSID.</param>
 		/// <param name="FastTransition">FastTransition.</param>
-		public CreateEnterpriseSSIDRequest(string? Name = default, SecurityLevelEnum? SecurityLevel = default, string? Passphrase = default, bool? EnableFastLane = default, bool? EnableMACFiltering = default, TrafficTypeEnum? TrafficType = default, RadioPolicyEnum? RadioPolicy = default, bool? EnableBroadcastSSID = default, FastTransitionEnum? FastTransition = default)
+		public CreateEnterpriseSsidRequest(string? Name = default, SecurityLevelEnum? SecurityLevel = default, string? Passphrase = default, bool? EnableFastLane = default, bool? EnableMACFiltering = default, TrafficTypeEnum? TrafficType = default, RadioPolicyEnum? RadioPolicy = default, bool? EnableBroadcastSSID = default, FastTransitionEnum? FastTransition = default)
 		{
 			this.Name = Name;
 			this.SecurityLevel = SecurityLevel;

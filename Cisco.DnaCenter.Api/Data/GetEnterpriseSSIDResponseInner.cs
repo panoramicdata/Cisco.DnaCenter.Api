@@ -8,10 +8,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetEnterpriseSSIDResponseInner
 	/// </summary>
 	[DataContract]
-	public partial class GetEnterpriseSSIDResponseInner
+	public partial class GetEnterpriseSsidResponseInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetEnterpriseSSIDResponseInner" /> class.
+		/// Initializes a new instance of the <see cref="GetEnterpriseSsidResponseInner" /> class.
 		/// </summary>
 		/// <param name="InstanceUuid">InstanceUuid.</param>
 		/// <param name="_Version">_Version.</param>
@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="GroupUuid">GroupUuid.</param>
 		/// <param name="InheritedGroupUuid">InheritedGroupUuid.</param>
 		/// <param name="InheritedGroupName">InheritedGroupName.</param>
-		public GetEnterpriseSSIDResponseInner(string? InstanceUuid = default, int? _Version = default, List<GetEnterpriseSSIDResponseInnerSsidDetails> SsidDetails = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
+		public GetEnterpriseSsidResponseInner(string? InstanceUuid = default, int? _Version = default, List<GetEnterpriseSsidResponseInnerSsidDetails> SsidDetails = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
 		{
 			this.InstanceUuid = InstanceUuid;
 			this._Version = _Version;
@@ -43,7 +43,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SsidDetails
 		/// </summary>
 		[DataMember(Name = "ssidDetails", EmitDefaultValue = false)]
-		public List<GetEnterpriseSSIDResponseInnerSsidDetails> SsidDetails { get; set; }
+		public List<GetEnterpriseSsidResponseInnerSsidDetails> SsidDetails { get; set; }
 		/// <summary>
 		/// Gets or Sets GroupUuid
 		/// </summary>

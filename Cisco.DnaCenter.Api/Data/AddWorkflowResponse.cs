@@ -8,10 +8,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddAWorkflowResponse
 	/// </summary>
 	[DataContract]
-	public partial class AddAWorkflowResponse
+	public partial class AddWorkflowResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AddAWorkflowResponse" /> class.
+		/// Initializes a new instance of the <see cref="AddWorkflowResponse" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="State">State.</param>
@@ -32,7 +32,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Name">Name.</param>
 		/// <param name="_Version">_Version.</param>
 		/// <param name="TenantId">TenantId.</param>
-		public AddAWorkflowResponse(string? Id = default, string? State = default, string? Type = default, string? Description = default, decimal? LastupdateOn = default, string? ImageId = default, decimal? CurrTaskIdx = default, decimal? AddedOn = default, List<DeviceSystemResetWorkflowTasks> Tasks = default, bool? AddToInventory = default, string? InstanceType = default, decimal? EndTime = default, decimal? ExecTime = default, decimal? StartTime = default, string? UseState = default, string? ConfigId = default, string? Name = default, decimal? _Version = default, string? TenantId = default)
+		public AddWorkflowResponse(string? Id = default, string? State = default, string? Type = default, string? Description = default, decimal? LastupdateOn = default, string? ImageId = default, decimal? CurrTaskIdx = default, decimal? AddedOn = default, List<DeviceSystemResetWorkflowTasks> Tasks = default, bool? AddToInventory = default, string? InstanceType = default, decimal? EndTime = default, decimal? ExecTime = default, decimal? StartTime = default, string? UseState = default, string? ConfigId = default, string? Name = default, decimal? _Version = default, string? TenantId = default)
 		{
 			this.Id = Id;
 			this.State = State;

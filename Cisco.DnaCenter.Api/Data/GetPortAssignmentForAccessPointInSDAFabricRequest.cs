@@ -6,16 +6,16 @@ using Newtonsoft.Json;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetPortAssignmentForAccessPointInSDAFabricRequest
+	/// GetPortAssignmentForAccessPointInSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class GetPortAssignmentForAccessPointInSDAFabricRequest : List<DeletePortAssignmentForAccessPointInSDAFabricRequestInner>
+	public partial class GetPortAssignmentForAccessPointInSdaFabricRequest : List<DeletePortAssignmentForAccessPointInSdaFabricRequestInner>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetPortAssignmentForAccessPointInSDAFabricRequest" /> class.
+		/// Initializes a new instance of the <see cref="GetPortAssignmentForAccessPointInSdaFabricRequest" /> class.
 		/// </summary>
 		[JsonConstructor]
-		public GetPortAssignmentForAccessPointInSDAFabricRequest()
+		public GetPortAssignmentForAccessPointInSdaFabricRequest()
 		{
 		}
 
@@ -26,7 +26,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetPortAssignmentForAccessPointInSDAFabricRequest {\n");
+			sb.Append("class GetPortAssignmentForAccessPointInSdaFabricRequest {\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}

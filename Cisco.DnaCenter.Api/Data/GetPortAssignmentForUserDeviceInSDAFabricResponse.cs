@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetPortAssignmentForUserDeviceInSDAFabricResponse
+	/// GetPortAssignmentForUserDeviceInSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetPortAssignmentForUserDeviceInSDAFabricResponse
+	public partial class GetPortAssignmentForUserDeviceInSdaFabricResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetPortAssignmentForUserDeviceInSDAFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetPortAssignmentForUserDeviceInSdaFabricResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="VoiceIpAddressPoolName">VoiceIpAddressPoolName.</param>
 		/// <param name="ScalableGroupName">ScalableGroupName.</param>
 		/// <param name="AuthenticateTemplateName">AuthenticateTemplateName.</param>
-		public GetPortAssignmentForUserDeviceInSDAFabricResponse(string? Status = default, string? Description = default, string? SiteNameHierarchy = default, string? DeviceManagementIpAddress = default, string? InterfaceName = default, string? DataIpAddressPoolName = default, string? VoiceIpAddressPoolName = default, string? ScalableGroupName = default, string? AuthenticateTemplateName = default)
+		public GetPortAssignmentForUserDeviceInSdaFabricResponse(string? Status = default, string? Description = default, string? SiteNameHierarchy = default, string? DeviceManagementIpAddress = default, string? InterfaceName = default, string? DataIpAddressPoolName = default, string? VoiceIpAddressPoolName = default, string? ScalableGroupName = default, string? AuthenticateTemplateName = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -86,7 +86,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetPortAssignmentForUserDeviceInSDAFabricResponse {\n");
+			sb.Append("class GetPortAssignmentForUserDeviceInSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  SiteNameHierarchy: ").Append(SiteNameHierarchy).Append("\n");

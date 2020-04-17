@@ -4,17 +4,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetSDAFabricInfoRequestInner
+	/// GetSdaFabricInfoRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class GetSDAFabricInfoRequestInner
+	public partial class GetSdaFabricInfoRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetSDAFabricInfoRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="GetSdaFabricInfoRequestInner" /> class.
 		/// </summary>
 		/// <param name="DeviceManagementIpAddress">DeviceManagementIpAddress.</param>
 		/// <param name="SiteNameHierarchy">SiteNameHierarchy.</param>
-		public GetSDAFabricInfoRequestInner(string? DeviceManagementIpAddress = default, string? SiteNameHierarchy = default)
+		public GetSdaFabricInfoRequestInner(string? DeviceManagementIpAddress = default, string? SiteNameHierarchy = default)
 		{
 			this.DeviceManagementIpAddress = DeviceManagementIpAddress;
 			this.SiteNameHierarchy = SiteNameHierarchy;
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetSDAFabricInfoRequestInner {\n");
+			sb.Append("class GetSdaFabricInfoRequestInner {\n");
 			sb.Append("  DeviceManagementIpAddress: ").Append(DeviceManagementIpAddress).Append("\n");
 			sb.Append("  SiteNameHierarchy: ").Append(SiteNameHierarchy).Append("\n");
 			sb.Append("}\n");

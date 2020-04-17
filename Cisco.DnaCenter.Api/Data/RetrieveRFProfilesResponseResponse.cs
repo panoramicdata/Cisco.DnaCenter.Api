@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// RetrieveRFProfilesResponseResponse
+	/// RetrieveRfProfilesResponseResponse
 	/// </summary>
 	[DataContract]
-	public partial class RetrieveRFProfilesResponseResponse
+	public partial class RetrieveRfProfilesResponseResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="RetrieveRFProfilesResponseResponse" /> class.
+		/// Initializes a new instance of the <see cref="RetrieveRfProfilesResponseResponse" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="ParentProfileA">ParentProfileA.</param>
@@ -35,7 +35,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="RxSopThresholdB">RxSopThresholdB.</param>
 		/// <param name="DefaultRfProfile">DefaultRfProfile.</param>
 		/// <param name="EnableBrownField">EnableBrownField.</param>
-		public RetrieveRFProfilesResponseResponse(string? Name = default, string? ParentProfileA = default, string? ParentProfileB = default, bool? EnableARadioType = default, bool? EnableBRadioType = default, string? ChannelWidth = default, string? ARadioChannels = default, string? BRadioChannels = default, string? DataRatesA = default, string? DataRatesB = default, string? MandatoryDataRatesA = default, string? MandatoryDataRatesB = default, bool? EnableCustom = default, string? MinPowerLevelA = default, string? MinPowerLevelB = default, string? MaxPowerLevelA = default, string? MaxPowerLevelB = default, int? PowerThresholdV1A = default, int? PowerThresholdV1B = default, string? RxSopThresholdA = default, string? RxSopThresholdB = default, bool? DefaultRfProfile = default, bool? EnableBrownField = default)
+		public RetrieveRfProfilesResponseResponse(string? Name = default, string? ParentProfileA = default, string? ParentProfileB = default, bool? EnableARadioType = default, bool? EnableBRadioType = default, string? ChannelWidth = default, string? ARadioChannels = default, string? BRadioChannels = default, string? DataRatesA = default, string? DataRatesB = default, string? MandatoryDataRatesA = default, string? MandatoryDataRatesB = default, bool? EnableCustom = default, string? MinPowerLevelA = default, string? MinPowerLevelB = default, string? MaxPowerLevelA = default, string? MaxPowerLevelB = default, int? PowerThresholdV1A = default, int? PowerThresholdV1B = default, string? RxSopThresholdA = default, string? RxSopThresholdB = default, bool? DefaultRfProfile = default, bool? EnableBrownField = default)
 		{
 			this.Name = Name;
 			this.ParentProfileA = ParentProfileA;
@@ -184,7 +184,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class RetrieveRFProfilesResponseResponse {\n");
+			sb.Append("class RetrieveRfProfilesResponseResponse {\n");
 			sb.Append("  Name: ").Append(Name).Append("\n");
 			sb.Append("  ParentProfileA: ").Append(ParentProfileA).Append("\n");
 			sb.Append("  ParentProfileB: ").Append(ParentProfileB).Append("\n");

@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponsePayload
+	/// GetsBorderDeviceDetailFromSdaFabricResponsePayload
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponsePayload
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayload
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponsePayload" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayload" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="InstanceId">InstanceId.</param>
@@ -49,7 +49,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TransitNetworks">TransitNetworks.</param>
 		/// <param name="VirtualNetwork">VirtualNetwork.</param>
 		/// <param name="Wlan">Wlan.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayload(string? Id = default, int? InstanceId = default, int? AuthEntityId = default, string? DisplayName = default, int? AuthEntityClass = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, int? CreateTime = default, bool? Deployed = default, bool? IsSeeded = default, bool? IsStale = default, int? LastUpdateTime = default, string? Name = default, string? _Namespace = default, string? ProvisioningState = default, int? ResourceVersion = default, List<Object> TargetIdList = default, string? Type = default, List<Object> CfsChangeInfo = default, List<Object> CustomProvisions = default, List<Object> Configs = default, List<Object> ManagedSites = default, string? NetworkDeviceId = default, List<string> Roles = default, bool? SaveWanConnectivityDetailsOnly = default, string? SiteId = default, List<Object> AkcSettingsCfs = default, List<Object> DeviceInterfaceInfo = default, GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettings DeviceSettings = default, GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettings NetworkWideSettings = default, List<Object> OtherDevice = default, List<EditApplicationRequestInnerApplicationSet> TransitNetworks = default, List<Object> VirtualNetwork = default, List<Object> Wlan = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayload(string? Id = default, int? InstanceId = default, int? AuthEntityId = default, string? DisplayName = default, int? AuthEntityClass = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, int? CreateTime = default, bool? Deployed = default, bool? IsSeeded = default, bool? IsStale = default, int? LastUpdateTime = default, string? Name = default, string? _Namespace = default, string? ProvisioningState = default, int? ResourceVersion = default, List<Object> TargetIdList = default, string? Type = default, List<Object> CfsChangeInfo = default, List<Object> CustomProvisions = default, List<Object> Configs = default, List<Object> ManagedSites = default, string? NetworkDeviceId = default, List<string> Roles = default, bool? SaveWanConnectivityDetailsOnly = default, string? SiteId = default, List<Object> AkcSettingsCfs = default, List<Object> DeviceInterfaceInfo = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings DeviceSettings = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings NetworkWideSettings = default, List<Object> OtherDevice = default, List<EditApplicationRequestInnerApplicationSet> TransitNetworks = default, List<Object> VirtualNetwork = default, List<Object> Wlan = default)
 		{
 			this.Id = Id;
 			this.InstanceId = InstanceId;
@@ -237,12 +237,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets DeviceSettings
 		/// </summary>
 		[DataMember(Name = "deviceSettings", EmitDefaultValue = false)]
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettings DeviceSettings { get; set; }
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings DeviceSettings { get; set; }
 		/// <summary>
 		/// Gets or Sets NetworkWideSettings
 		/// </summary>
 		[DataMember(Name = "networkWideSettings", EmitDefaultValue = false)]
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettings NetworkWideSettings { get; set; }
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings NetworkWideSettings { get; set; }
 		/// <summary>
 		/// Gets or Sets OtherDevice
 		/// </summary>
@@ -270,7 +270,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponsePayload {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponsePayload {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  InstanceId: ").Append(InstanceId).Append("\n");
 			sb.Append("  AuthEntityId: ").Append(AuthEntityId).Append("\n");

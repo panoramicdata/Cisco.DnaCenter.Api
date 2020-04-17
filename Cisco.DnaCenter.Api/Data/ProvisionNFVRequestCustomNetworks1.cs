@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestCustomNetworks1
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestCustomNetworks1
+	public partial class ProvisionNfvRequestCustomNetworks1
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestCustomNetworks1" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestCustomNetworks1" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="Port">Port.</param>
 		/// <param name="IpAddressPool">IpAddressPool.</param>
-		public ProvisionNFVRequestCustomNetworks1(string? Name = default, string? Port = default, string? IpAddressPool = default)
+		public ProvisionNfvRequestCustomNetworks1(string? Name = default, string? Port = default, string? IpAddressPool = default)
 		{
 			this.Name = Name;
 			this.Port = Port;

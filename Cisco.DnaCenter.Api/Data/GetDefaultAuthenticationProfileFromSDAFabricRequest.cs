@@ -6,16 +6,16 @@ using Newtonsoft.Json;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetDefaultAuthenticationProfileFromSDAFabricRequest
+	/// GetDefaultAuthenticationProfileFromSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class GetDefaultAuthenticationProfileFromSDAFabricRequest : List<GetDefaultAuthenticationProfileFromSDAFabricRequestInner>
+	public partial class GetDefaultAuthenticationProfileFromSdaFabricRequest : List<GetDefaultAuthenticationProfileFromSdaFabricRequestInner>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSDAFabricRequest" /> class.
+		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequest" /> class.
 		/// </summary>
 		[JsonConstructor]
-		public GetDefaultAuthenticationProfileFromSDAFabricRequest()
+		public GetDefaultAuthenticationProfileFromSdaFabricRequest()
 		{
 		}
 
@@ -26,7 +26,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetDefaultAuthenticationProfileFromSDAFabricRequest {\n");
+			sb.Append("class GetDefaultAuthenticationProfileFromSdaFabricRequest {\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}

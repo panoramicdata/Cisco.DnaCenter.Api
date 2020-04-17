@@ -4,13 +4,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DeletePortAssignmentForAccessPointInSDAFabricRequestInner
+	/// DeletePortAssignmentForAccessPointInSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class DeletePortAssignmentForAccessPointInSDAFabricRequestInner
+	public partial class DeletePortAssignmentForAccessPointInSdaFabricRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeletePortAssignmentForAccessPointInSDAFabricRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="DeletePortAssignmentForAccessPointInSdaFabricRequestInner" /> class.
 		/// </summary>
 		/// <param name="SiteNameHierarchy">SiteNameHierarchy.</param>
 		/// <param name="DeviceManagementIpAddress">DeviceManagementIpAddress.</param>
@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="VoiceIpAddressPoolName">VoiceIpAddressPoolName.</param>
 		/// <param name="ScalableGroupName">ScalableGroupName.</param>
 		/// <param name="AuthenticateTemplateName">AuthenticateTemplateName.</param>
-		public DeletePortAssignmentForAccessPointInSDAFabricRequestInner(string? SiteNameHierarchy = default, string? DeviceManagementIpAddress = default, string? InterfaceName = default, string? DataIpAddressPoolName = default, string? VoiceIpAddressPoolName = default, string? ScalableGroupName = default, string? AuthenticateTemplateName = default)
+		public DeletePortAssignmentForAccessPointInSdaFabricRequestInner(string? SiteNameHierarchy = default, string? DeviceManagementIpAddress = default, string? InterfaceName = default, string? DataIpAddressPoolName = default, string? VoiceIpAddressPoolName = default, string? ScalableGroupName = default, string? AuthenticateTemplateName = default)
 		{
 			this.SiteNameHierarchy = SiteNameHierarchy;
 			this.DeviceManagementIpAddress = DeviceManagementIpAddress;
@@ -72,7 +72,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DeletePortAssignmentForAccessPointInSDAFabricRequestInner {\n");
+			sb.Append("class DeletePortAssignmentForAccessPointInSdaFabricRequestInner {\n");
 			sb.Append("  SiteNameHierarchy: ").Append(SiteNameHierarchy).Append("\n");
 			sb.Append("  DeviceManagementIpAddress: ").Append(DeviceManagementIpAddress).Append("\n");
 			sb.Append("  InterfaceName: ").Append(InterfaceName).Append("\n");

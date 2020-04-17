@@ -4,18 +4,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// UpdateDefaultAuthenticationProfileTemplateInSDAFabricResponse
+	/// UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class UpdateDefaultAuthenticationProfileTemplateInSDAFabricResponse
+	public partial class UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateDefaultAuthenticationProfileTemplateInSDAFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
-		public UpdateDefaultAuthenticationProfileTemplateInSDAFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
+		public UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class UpdateDefaultAuthenticationProfileTemplateInSDAFabricResponse {\n");
+			sb.Append("class UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  ExecutionStatusUrl: ").Append(ExecutionStatusUrl).Append("\n");

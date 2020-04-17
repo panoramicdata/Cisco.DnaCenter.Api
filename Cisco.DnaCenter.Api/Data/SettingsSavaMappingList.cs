@@ -64,7 +64,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TenantId">TenantId.</param>
 		/// <param name="Token">Token.</param>
 		/// <param name="VirtualAccountId">VirtualAccountId.</param>
-		public SettingsSavaMappingList(int? AutoSyncPeriod = default, string? CcoUser = default, int? Expiry = default, int? LastSync = default, SAVAMappingProfile Profile = default, string? SmartAccountId = default, SAVAMappingSyncResult SyncResult = default, string? SyncResultStr = default, int? SyncStartTime = default, SyncStatusEnum? SyncStatus = default, string? TenantId = default, string? Token = default, string? VirtualAccountId = default)
+		public SettingsSavaMappingList(int? AutoSyncPeriod = default, string? CcoUser = default, int? Expiry = default, int? LastSync = default, SavaMappingProfile Profile = default, string? SmartAccountId = default, SavaMappingSyncResult SyncResult = default, string? SyncResultStr = default, int? SyncStartTime = default, SyncStatusEnum? SyncStatus = default, string? TenantId = default, string? Token = default, string? VirtualAccountId = default)
 		{
 			this.AutoSyncPeriod = AutoSyncPeriod;
 			this.CcoUser = CcoUser;
@@ -105,7 +105,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Profile
 		/// </summary>
 		[DataMember(Name = "profile", EmitDefaultValue = false)]
-		public SAVAMappingProfile Profile { get; set; }
+		public SavaMappingProfile Profile { get; set; }
 		/// <summary>
 		/// Gets or Sets SmartAccountId
 		/// </summary>
@@ -115,7 +115,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SyncResult
 		/// </summary>
 		[DataMember(Name = "syncResult", EmitDefaultValue = false)]
-		public SAVAMappingSyncResult SyncResult { get; set; }
+		public SavaMappingSyncResult SyncResult { get; set; }
 		/// <summary>
 		/// Gets or Sets SyncResultStr
 		/// </summary>

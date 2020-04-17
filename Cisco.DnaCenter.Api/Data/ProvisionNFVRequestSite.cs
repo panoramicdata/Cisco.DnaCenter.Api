@@ -7,16 +7,16 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestSite
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestSite
+	public partial class ProvisionNfvRequestSite
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestSite" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestSite" /> class.
 		/// </summary>
 		/// <param name="SiteProfileName">SiteProfileName.</param>
 		/// <param name="Area">Area.</param>
 		/// <param name="Building">Building.</param>
 		/// <param name="Floor">Floor.</param>
-		public ProvisionNFVRequestSite(string? SiteProfileName = default, CreateSiteRequestSiteArea Area = default, ProvisionNFVRequestSiteBuilding Building = default, ProvisionNFVRequestSiteFloor Floor = default)
+		public ProvisionNfvRequestSite(string? SiteProfileName = default, CreateSiteRequestSiteArea Area = default, ProvisionNfvRequestSiteBuilding Building = default, ProvisionNfvRequestSiteFloor Floor = default)
 		{
 			this.SiteProfileName = SiteProfileName;
 			this.Area = Area;
@@ -38,12 +38,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Building
 		/// </summary>
 		[DataMember(Name = "building", EmitDefaultValue = false)]
-		public ProvisionNFVRequestSiteBuilding Building { get; set; }
+		public ProvisionNfvRequestSiteBuilding Building { get; set; }
 		/// <summary>
 		/// Gets or Sets Floor
 		/// </summary>
 		[DataMember(Name = "floor", EmitDefaultValue = false)]
-		public ProvisionNFVRequestSiteFloor Floor { get; set; }
+		public ProvisionNfvRequestSiteFloor Floor { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

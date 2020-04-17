@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DiscoveryNIO
+	/// DiscoveryNio
 	/// </summary>
 	[DataContract]
-	public partial class DiscoveryNIO
+	public partial class DiscoveryNio
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DiscoveryNIO" /> class.
+		/// Initializes a new instance of the <see cref="DiscoveryNio" /> class.
 		/// </summary>
 		/// <param name="AttributeInfo">AttributeInfo.</param>
 		/// <param name="CdpLevel">CdpLevel.</param>
@@ -34,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="NumDevices">NumDevices.</param>
 		/// <param name="ParentDiscoveryId">ParentDiscoveryId.</param>
 		/// <param name="PasswordList">PasswordList.</param>
-		/// <param name="PreferredMgmtIPMethod">PreferredMgmtIPMethod.</param>
+		/// <param name="PreferredManagementIpMethod">PreferredMgmtIPMethod.</param>
 		/// <param name="ProtocolOrder">ProtocolOrder.</param>
 		/// <param name="RetryCount">RetryCount.</param>
 		/// <param name="SnmpAuthPassphrase">SnmpAuthPassphrase.</param>
@@ -50,7 +50,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TimeOut">TimeOut.</param>
 		/// <param name="UpdateMgmtIp">UpdateMgmtIp.</param>
 		/// <param name="UserNameList">UserNameList.</param>
-		public DiscoveryNIO(Object AttributeInfo = default, int? CdpLevel = default, string? DeviceIds = default, string? DiscoveryCondition = default, string? DiscoveryStatus = default, string? DiscoveryType = default, string? EnablePasswordList = default, List<string> GlobalCredentialIdList = default, InventoryRequestHttpReadCredential HttpReadCredential = default, InventoryRequestHttpReadCredential HttpWriteCredential = default, string? Id = default, string? IpAddressList = default, string? IpFilterList = default, bool? IsAutoCdp = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, int? NumDevices = default, string? ParentDiscoveryId = default, string? PasswordList = default, string? PreferredMgmtIPMethod = default, string? ProtocolOrder = default, int? RetryCount = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpRoCommunity = default, string? SnmpRoCommunityDesc = default, string? SnmpRwCommunity = default, string? SnmpRwCommunityDesc = default, string? SnmpUserName = default, int? TimeOut = default, bool? UpdateMgmtIp = default, string? UserNameList = default)
+		public DiscoveryNio(Object AttributeInfo = default, int? CdpLevel = default, string? DeviceIds = default, string? DiscoveryCondition = default, string? DiscoveryStatus = default, string? DiscoveryType = default, string? EnablePasswordList = default, List<string> GlobalCredentialIdList = default, InventoryRequestHttpReadCredential HttpReadCredential = default, InventoryRequestHttpReadCredential HttpWriteCredential = default, string? Id = default, string? IpAddressList = default, string? IpFilterList = default, bool? IsAutoCdp = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, int? NumDevices = default, string? ParentDiscoveryId = default, string? PasswordList = default, string? PreferredManagementIpMethod = default, string? ProtocolOrder = default, int? RetryCount = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpRoCommunity = default, string? SnmpRoCommunityDesc = default, string? SnmpRwCommunity = default, string? SnmpRwCommunityDesc = default, string? SnmpUserName = default, int? TimeOut = default, bool? UpdateMgmtIp = default, string? UserNameList = default)
 		{
 			this.AttributeInfo = AttributeInfo;
 			this.CdpLevel = CdpLevel;
@@ -72,7 +72,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.NumDevices = NumDevices;
 			this.ParentDiscoveryId = ParentDiscoveryId;
 			this.PasswordList = PasswordList;
-			this.PreferredMgmtIPMethod = PreferredMgmtIPMethod;
+			this.PreferredManagementIpMethod = PreferredManagementIpMethod;
 			this.ProtocolOrder = ProtocolOrder;
 			this.RetryCount = RetryCount;
 			this.SnmpAuthPassphrase = SnmpAuthPassphrase;
@@ -194,7 +194,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets PreferredMgmtIPMethod
 		/// </summary>
 		[DataMember(Name = "preferredMgmtIPMethod", EmitDefaultValue = false)]
-		public string? PreferredMgmtIPMethod { get; set; }
+		public string? PreferredManagementIpMethod { get; set; }
 		/// <summary>
 		/// Gets or Sets ProtocolOrder
 		/// </summary>
@@ -277,7 +277,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DiscoveryNIO {\n");
+			sb.Append("class DiscoveryNio {\n");
 			sb.Append("  AttributeInfo: ").Append(AttributeInfo).Append("\n");
 			sb.Append("  CdpLevel: ").Append(CdpLevel).Append("\n");
 			sb.Append("  DeviceIds: ").Append(DeviceIds).Append("\n");
@@ -298,7 +298,7 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  NumDevices: ").Append(NumDevices).Append("\n");
 			sb.Append("  ParentDiscoveryId: ").Append(ParentDiscoveryId).Append("\n");
 			sb.Append("  PasswordList: ").Append(PasswordList).Append("\n");
-			sb.Append("  PreferredMgmtIPMethod: ").Append(PreferredMgmtIPMethod).Append("\n");
+			sb.Append("  PreferredMgmtIPMethod: ").Append(PreferredManagementIpMethod).Append("\n");
 			sb.Append("  ProtocolOrder: ").Append(ProtocolOrder).Append("\n");
 			sb.Append("  RetryCount: ").Append(RetryCount).Append("\n");
 			sb.Append("  SnmpAuthPassphrase: ").Append(SnmpAuthPassphrase).Append("\n");

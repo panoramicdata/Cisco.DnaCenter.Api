@@ -1,7 +1,8 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
-using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -19,7 +20,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/cli")]
-		Task<TaskIdResult> CreateCLICredentials([Body]CLICredentialDto request);
+		Task<TaskIdResult> CreateCliCredentialsAsync(
+			[Body]CliCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create HTTP read credentials
@@ -30,7 +33,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-read")]
-		Task<TaskIdResult> CreateHTTPReadCredentials([Body]HTTPReadCredentialDto request);
+		Task<TaskIdResult> CreateHttpReadCredentialsAsync(
+			[Body]HttpReadCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create HTTP write credentials
@@ -41,7 +46,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-write")]
-		Task<TaskIdResult> CreateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request);
+		Task<TaskIdResult> CreateHttpWriteCredentialsAsync(
+			[Body]HttpWriteCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create Netconf credentials
@@ -52,7 +59,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/netconf")]
-		Task<TaskIdResult> CreateNetconfCredentials([Body]NetconfCredentialDto request);
+		Task<TaskIdResult> CreateNetconfCredentialsAsync(
+			[Body]NetconfCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create SNMP read community
@@ -63,7 +72,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
-		Task<TaskIdResult> CreateSNMPReadCommunity([Body]SNMPvReadCommunityDto request);
+		Task<TaskIdResult> CreateSnmpV2ReadCommunityAsync(
+			[Body]SnmpV2ReadCommunityDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create SNMP write community
@@ -74,7 +85,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
-		Task<TaskIdResult> CreateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request);
+		Task<TaskIdResult> CreateSnmpV2WriteCommunity([Body]SnmpV2WriteCommunityDto request);
 
 		/// <summary>
 		/// Create SNMPv3 credentials
@@ -85,7 +96,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv3")]
-		Task<TaskIdResult> CreateSNMPv3Credentials([Body]SNMPvCredentialDto request);
+		Task<TaskIdResult> CreateSNMPv3Credentials([Body]Snmpv3CredentialDto request);
 
 		/// <summary>
 		/// Create/Update SNMP properties
@@ -106,7 +117,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery")]
-		Task<TaskIdResult> DeleteAllDiscovery();
+		Task<TaskIdResult> DeleteAllDiscoveryAsync(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete discovery by Id
@@ -117,7 +129,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Discovery ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery/{id}")]
-		Task<TaskIdResult> DeleteDiscoveryById([AliasAs("id")]string id);
+		Task<TaskIdResult> DeleteDiscoveryByIdAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete discovery by specified range
@@ -129,7 +143,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="recordsToDelete">Number of records to delete</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery/{startIndex}/{recordsToDelete}")]
-		Task<TaskIdResult> DeleteDiscoveryBySpecifiedRange([AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToDelete")]int? recordsToDelete);
+		Task<TaskIdResult> DeleteDiscoveryBySpecifiedRangeAcsync(
+			[AliasAs("startIndex")]int? startIndex,
+			[AliasAs("recordsToDelete")]int? recordsToDelete,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete global credentials by Id
@@ -140,7 +157,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="globalCredentialId">ID of global-credential</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
-		Task<TaskIdResult> DeleteGlobalCredentialsById([AliasAs("globalCredentialId")]string globalCredentialId);
+		Task<TaskIdResult> DeleteGlobalCredentialsByIdAsync(
+			[AliasAs("globalCredentialId")]string globalCredentialId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get count of all discovery jobs
@@ -150,7 +169,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/count")]
-		Task<CountResult> GetCountOfAllDiscoveryJobs();
+		Task<CountResult> GetCountOfAllDiscoveryJobsAsync(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Credential sub type by credential Id
@@ -161,7 +181,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Global Credential ID</param>
 		/// <returns>Task of GlobalCredentialSubTypeResult</returns>
 		[Get("/dna/intent/api/v1/global-credential/{id}")]
-		Task<GlobalCredentialSubTypeResult> GetCredentialSubTypeByCredentialId([AliasAs("id")]string id);
+		Task<GlobalCredentialSubTypeResult> GetCredentialSubTypeByCredentialIdAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Devices discovered by Id
@@ -173,7 +195,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">taskId (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/network-device/count")]
-		Task<CountResult> GetDevicesDiscoveredById([AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null);
+		Task<CountResult> GetDevicesDiscoveredByIdAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("taskId")]string taskId = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Discovered devices by range
@@ -185,9 +210,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="startIndex">Start index</param>
 		/// <param name="recordsToReturn">Number of records to return</param>
 		/// <param name="taskId">taskId (optional)</param>
-		/// <returns>Task of NetworkDeviceNIOListResult</returns>
+		/// <returns>Task of NetworkDeviceNioListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/network-device/{startIndex}/{recordsToReturn}")]
-		Task<NetworkDeviceNIOListResult> GetDiscoveredDevicesByRange([AliasAs("id")]string id, [AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToReturn")]int? recordsToReturn, [AliasAs("taskId")]string taskId = null);
+		Task<NetworkDeviceNioListResult> GetDiscoveredDevicesByRangeAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("startIndex")]int? startIndex,
+			[AliasAs("recordsToReturn")]int? recordsToReturn,
+			[AliasAs("taskId")]string taskId = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Discovered network devices by discovery Id
@@ -197,9 +227,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="id">Discovery ID</param>
 		/// <param name="taskId">taskId (optional)</param>
-		/// <returns>Task of NetworkDeviceNIOListResult</returns>
+		/// <returns>Task of NetworkDeviceNioListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/network-device")]
-		Task<NetworkDeviceNIOListResult> GetDiscoveredNetworkDevicesByDiscoveryId([AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null);
+		Task<NetworkDeviceNioListResult> GetDiscoveredNetworkDevicesByDiscoveryIdAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("taskId")]string taskId = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Discoveries by range
@@ -209,9 +242,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="startIndex">Start index</param>
 		/// <param name="recordsToReturn">Number of records to return</param>
-		/// <returns>Task of DiscoveryNIOListResult</returns>
+		/// <returns>Task of DiscoveryNioListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{startIndex}/{recordsToReturn}")]
-		Task<DiscoveryNIOListResult> GetDiscoveriesByRange([AliasAs("startIndex")]int? startIndex, [AliasAs("recordsToReturn")]int? recordsToReturn);
+		Task<DiscoveryNioListResult> GetDiscoveriesByRangeAsync(
+			[AliasAs("startIndex")]int? startIndex,
+			[AliasAs("recordsToReturn")]int? recordsToReturn,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Discovery by Id
@@ -220,9 +256,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Returns discovery by Discovery ID. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
 		/// <param name="id">Discovery ID</param>
-		/// <returns>Task of DiscoveryNIOResult</returns>
+		/// <returns>Task of DiscoveryNioResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}")]
-		Task<DiscoveryNIOResult> GetDiscoveryById([AliasAs("id")]string id);
+		Task<DiscoveryNioResult> GetDiscoveryById(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Discovery jobs by IP
@@ -234,9 +272,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="offset">offset (optional)</param>
 		/// <param name="limit">limit (optional)</param>
 		/// <param name="name">name (optional)</param>
-		/// <returns>Task of DiscoveryJobNIOListResult</returns>
+		/// <returns>Task of DiscoveryJobNioListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/job")]
-		Task<DiscoveryJobNIOListResult> GetDiscoveryJobsByIP([AliasAs("ipAddress")]string ipAddress, [AliasAs("offset")]int? offset = null, [AliasAs("limit")]int? limit = null, [AliasAs("name")]string name = null);
+		Task<DiscoveryJobNioListResult> GetDiscoveryJobsByIpAsync(
+			[AliasAs("ipAddress")]string ipAddress,
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("name")]string name = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Global credentials
@@ -249,7 +292,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order (optional)</param>
 		/// <returns>Task of GlobalCredentialListResult</returns>
 		[Get("/dna/intent/api/v1/global-credential")]
-		Task<GlobalCredentialListResult> GetGlobalCredentials([AliasAs("credentialSubType")]string credentialSubType, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GlobalCredentialListResult> GetGlobalCredentialsAsync(
+			[AliasAs("credentialSubType")]string credentialSubType,
+			[AliasAs("sortBy")]string sortBy = null,
+			[AliasAs("order")]string order = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get list of discoveries by discovery Id
@@ -261,9 +308,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="offset">offset (optional)</param>
 		/// <param name="limit">limit (optional)</param>
 		/// <param name="ipAddress">ipAddress (optional)</param>
-		/// <returns>Task of DiscoveryJobNIOListResult</returns>
+		/// <returns>Task of DiscoveryJobNioListResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/job")]
-		Task<DiscoveryJobNIOListResult> GetListOfDiscoveriesByDiscoveryId([AliasAs("id")]string id, [AliasAs("offset")]int? offset = null, [AliasAs("limit")]int? limit = null, [AliasAs("ipAddress")]string ipAddress = null);
+		Task<DiscoveryJobNioListResult> GetListOfDiscoveriesByDiscoveryIdAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("ipAddress")]string ipAddress = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get network devices from Discovery
@@ -283,7 +335,18 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="httpStatus">httpStatus (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}/summary")]
-		Task<CountResult> GetNetworkDevicesFromDiscovery([AliasAs("id")]string id, [AliasAs("taskId")]string taskId = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("ipAddress")]List<string> ipAddress = null, [AliasAs("pingStatus")]List<string> pingStatus = null, [AliasAs("snmpStatus")]List<string> snmpStatus = null, [AliasAs("cliStatus")]List<string> cliStatus = null, [AliasAs("netconfStatus")]List<string> netconfStatus = null, [AliasAs("httpStatus")]List<string> httpStatus = null);
+		Task<CountResult> GetNetworkDevicesFromDiscoveryAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("taskId")]string taskId = null,
+			[AliasAs("sortBy")]string sortBy = null,
+			[AliasAs("sortOrder")]string sortOrder = null,
+			[AliasAs("ipAddress")]List<string> ipAddress = null,
+			[AliasAs("pingStatus")]List<string> pingStatus = null,
+			[AliasAs("snmpStatus")]List<string> snmpStatus = null,
+			[AliasAs("cliStatus")]List<string> cliStatus = null,
+			[AliasAs("netconfStatus")]List<string> netconfStatus = null,
+			[AliasAs("httpStatus")]List<string> httpStatus = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get SNMP properties
@@ -293,7 +356,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of SystemPropertyListResult</returns>
 		[Get("/dna/intent/api/v1/snmp-property")]
-		Task<SystemPropertyListResult> GetSNMPProperties();
+		Task<SystemPropertyListResult> GetSnmpProperties(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Start discovery
@@ -304,7 +368,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/discovery")]
-		Task<TaskIdResult> StartDiscovery([Body]InventoryRequest request);
+		Task<TaskIdResult> StartDiscovery(
+			[Body]InventoryRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update CLI credentials
@@ -315,7 +381,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/cli")]
-		Task<TaskIdResult> UpdateCLICredentials([Body]CLICredentialDto request);
+		Task<TaskIdResult> UpdateCliCredentialsAsync(
+			[Body]CliCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update global credentials
@@ -327,7 +395,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="globalCredentialId">Global credential Uuid</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
-		Task<TaskIdResult> UpdateGlobalCredentials([Body]SitesInfoDto request, string Content_Type, [AliasAs("globalCredentialId")]string globalCredentialId);
+		Task<TaskIdResult> UpdateGlobalCredentialsAsync(
+			[Body]SitesInfoDto request,
+			string Content_Type,
+			[AliasAs("globalCredentialId")]string globalCredentialId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update HTTP read credential
@@ -338,7 +410,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-read")]
-		Task<TaskIdResult> UpdateHTTPReadCredential([Body]HTTPReadCredentialDto request);
+		Task<TaskIdResult> UpdateHttpReadCredentialAsync(
+			[Body]HttpReadCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update HTTP write credentials
@@ -349,7 +423,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-write")]
-		Task<TaskIdResult> UpdateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request);
+		Task<TaskIdResult> UpdateHttpWriteCredentialsAsync(
+			[Body]HttpWriteCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update Netconf credentials
@@ -360,7 +436,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/netconf")]
-		Task<TaskIdResult> UpdateNetconfCredentials([Body]NetconfCredentialDto request);
+		Task<TaskIdResult> UpdateNetconfCredentials(
+			[Body]NetconfCredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update SNMP read community
@@ -371,7 +449,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
-		Task<TaskIdResult> UpdateSNMPReadCommunity([Body]SNMPvReadCommunityDto request);
+		Task<TaskIdResult> UpdateSnmpReadCommunityAsync(
+			[Body]SnmpV2ReadCommunityDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update SNMP write community
@@ -382,7 +462,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
-		Task<TaskIdResult> UpdateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request);
+		Task<TaskIdResult> UpdateSnmpWriteCommunityAsync(
+			[Body]SnmpV2WriteCommunityDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update SNMPv3 credentials
@@ -393,7 +475,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv3")]
-		Task<TaskIdResult> UpdateSNMPv3Credentials([Body]SNMPvCredentialDto request);
+		Task<TaskIdResult> UpdateSnmpv3CredentialsAsync(
+			[Body]Snmpv3CredentialDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Updates an existing discovery by specified Id
@@ -404,6 +488,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/discovery")]
-		Task<TaskIdResult> UpdatesAnExistingDiscoveryBySpecifiedId([Body]DiscoveryNIO request);
+		Task<TaskIdResult> UpdatesAnExistingDiscoveryBySpecifiedIdAsync(
+			[Body]DiscoveryNio request,
+			CancellationToken cancellationToken = default);
 	}
 }

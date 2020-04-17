@@ -7,10 +7,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestSiteFloor
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestSiteFloor
+	public partial class ProvisionNfvRequestSiteFloor
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestSiteFloor" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestSiteFloor" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="ParentName">ParentName.</param>
@@ -18,7 +18,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Width">Width.</param>
 		/// <param name="Length">Length.</param>
 		/// <param name="Height">Height.</param>
-		public ProvisionNFVRequestSiteFloor(string? Name = default, string? ParentName = default, string? RfModel = default, decimal? Width = default, decimal? Length = default, decimal? Height = default)
+		public ProvisionNfvRequestSiteFloor(string? Name = default, string? ParentName = default, string? RfModel = default, decimal? Width = default, decimal? Length = default, decimal? Height = default)
 		{
 			this.Name = Name;
 			this.ParentName = ParentName;

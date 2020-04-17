@@ -54,7 +54,7 @@ namespace Cisco.DnaCenter.Api
 			Clients = RestService.For<IClients>(_httpClient);
 			CommandRunner = RestService.For<ICommandRunner>(_httpClient);
 			ConfigurationTemplates = RestService.For<IConfigurationTemplates>(_httpClient);
-			DeviceOnboardingPnP = RestService.For<IDeviceOnboardingPnp>(_httpClient);
+			DeviceOnboardingPnP = RestService.For<IDeviceOnboardingPnP>(_httpClient);
 			Devices = RestService.For<IDevices>(_httpClient);
 			EventManagement = RestService.For<IEventManagement>(_httpClient);
 			Files = RestService.For<IFiles>(_httpClient);
@@ -123,7 +123,7 @@ namespace Cisco.DnaCenter.Api
 		public IConfigurationTemplates ConfigurationTemplates { get; }
 
 		/// <inheritdoc />
-		public IDeviceOnboardingPnp DeviceOnboardingPnP { get; }
+		public IDeviceOnboardingPnP DeviceOnboardingPnP { get; }
 
 		/// <inheritdoc />
 		public IDevices Devices { get; }

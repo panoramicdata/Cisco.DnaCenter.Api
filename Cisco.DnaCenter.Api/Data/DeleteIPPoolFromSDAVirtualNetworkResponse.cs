@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteIPPoolFromSDAVirtualNetworkResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteIPPoolFromSDAVirtualNetworkResponse
+	public partial class DeleteIpPoolFromSdaVirtualNetworkResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeleteIPPoolFromSDAVirtualNetworkResponse" /> class.
+		/// Initializes a new instance of the <see cref="DeleteIpPoolFromSdaVirtualNetworkResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
-		public DeleteIPPoolFromSDAVirtualNetworkResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
+		public DeleteIpPoolFromSdaVirtualNetworkResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
 		{
 			this.Status = Status;
 			this.Description = Description;

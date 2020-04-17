@@ -7,16 +7,16 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateSPProfileRequestSettingsQos
 	/// </summary>
 	[DataContract]
-	public partial class UpdateSPProfileRequestSettingsQos
+	public partial class UpdateSpProfileRequestSettingsQos
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateSPProfileRequestSettingsQos" /> class.
+		/// Initializes a new instance of the <see cref="UpdateSpProfileRequestSettingsQos" /> class.
 		/// </summary>
 		/// <param name="ProfileName">ProfileName.</param>
 		/// <param name="Model">Model.</param>
 		/// <param name="WanProvider">WanProvider.</param>
 		/// <param name="OldProfileName">OldProfileName.</param>
-		public UpdateSPProfileRequestSettingsQos(string? ProfileName = default, string? Model = default, string? WanProvider = default, string? OldProfileName = default)
+		public UpdateSpProfileRequestSettingsQos(string? ProfileName = default, string? Model = default, string? WanProvider = default, string? OldProfileName = default)
 		{
 			this.ProfileName = ProfileName;
 			this.Model = Model;

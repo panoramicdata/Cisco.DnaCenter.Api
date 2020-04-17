@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateSPProfileResponse
 	/// </summary>
 	[DataContract]
-	public partial class UpdateSPProfileResponse
+	public partial class UpdateSpProfileResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateSPProfileResponse" /> class.
+		/// Initializes a new instance of the <see cref="UpdateSpProfileResponse" /> class.
 		/// </summary>
 		/// <param name="ExecutionId">ExecutionId.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
 		/// <param name="Message">Message.</param>
-		public UpdateSPProfileResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
+		public UpdateSpProfileResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
 		{
 			this.ExecutionId = ExecutionId;
 			this.ExecutionStatusUrl = ExecutionStatusUrl;

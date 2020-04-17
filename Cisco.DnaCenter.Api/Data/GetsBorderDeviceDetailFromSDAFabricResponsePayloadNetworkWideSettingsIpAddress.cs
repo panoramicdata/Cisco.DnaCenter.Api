@@ -4,19 +4,19 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsIpAddress
+	/// GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsIpAddress
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsIpAddress" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="PaddedAddress">PaddedAddress.</param>
 		/// <param name="AddressType">AddressType.</param>
 		/// <param name="Address">Address.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsIpAddress(string? Id = default, string? PaddedAddress = default, string? AddressType = default, string? Address = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress(string? Id = default, string? PaddedAddress = default, string? AddressType = default, string? Address = default)
 		{
 			this.Id = Id;
 			this.PaddedAddress = PaddedAddress;
@@ -51,7 +51,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsIpAddress {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  PaddedAddress: ").Append(PaddedAddress).Append("\n");
 			sb.Append("  AddressType: ").Append(AddressType).Append("\n");

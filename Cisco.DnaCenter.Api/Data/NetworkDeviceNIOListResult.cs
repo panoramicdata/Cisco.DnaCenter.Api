@@ -5,17 +5,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// NetworkDeviceNIOListResult
+	/// NetworkDeviceNioListResult
 	/// </summary>
 	[DataContract]
-	public partial class NetworkDeviceNIOListResult
+	public partial class NetworkDeviceNioListResult
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="NetworkDeviceNIOListResult" /> class.
+		/// Initializes a new instance of the <see cref="NetworkDeviceNioListResult" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
 		/// <param name="_Version">_Version.</param>
-		public NetworkDeviceNIOListResult(List<NetworkDeviceNIOListResultResponse> Response = default, string? _Version = default)
+		public NetworkDeviceNioListResult(List<NetworkDeviceNioListResultResponse> Response = default, string? _Version = default)
 		{
 			this.Response = Response;
 			this._Version = _Version;
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
-		public List<NetworkDeviceNIOListResultResponse> Response { get; set; }
+		public List<NetworkDeviceNioListResultResponse> Response { get; set; }
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
@@ -38,7 +38,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class NetworkDeviceNIOListResult {\n");
+			sb.Append("class NetworkDeviceNioListResult {\n");
 			sb.Append("  Response: ").Append(Response).Append("\n");
 			sb.Append("  _Version: ").Append(_Version).Append("\n");
 			sb.Append("}\n");

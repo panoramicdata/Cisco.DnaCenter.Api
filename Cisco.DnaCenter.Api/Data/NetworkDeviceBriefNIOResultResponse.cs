@@ -4,18 +4,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// NetworkDeviceBriefNIOResultResponse
+	/// NetworkDeviceBriefNioResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class NetworkDeviceBriefNIOResultResponse
+	public partial class NetworkDeviceBriefNioResultResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="NetworkDeviceBriefNIOResultResponse" /> class.
+		/// Initializes a new instance of the <see cref="NetworkDeviceBriefNioResultResponse" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="Role">Role.</param>
 		/// <param name="RoleSource">RoleSource.</param>
-		public NetworkDeviceBriefNIOResultResponse(string? Id = default, string? Role = default, string? RoleSource = default)
+		public NetworkDeviceBriefNioResultResponse(string? Id = default, string? Role = default, string? RoleSource = default)
 		{
 			this.Id = Id;
 			this.Role = Role;
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class NetworkDeviceBriefNIOResultResponse {\n");
+			sb.Append("class NetworkDeviceBriefNioResultResponse {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  Role: ").Append(Role).Append("\n");
 			sb.Append("  RoleSource: ").Append(RoleSource).Append("\n");

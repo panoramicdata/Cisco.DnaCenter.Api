@@ -7,10 +7,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetEnterpriseSSIDResponseInnerSsidDetails
 	/// </summary>
 	[DataContract]
-	public partial class GetEnterpriseSSIDResponseInnerSsidDetails
+	public partial class GetEnterpriseSsidResponseInnerSsidDetails
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetEnterpriseSSIDResponseInnerSsidDetails" /> class.
+		/// Initializes a new instance of the <see cref="GetEnterpriseSsidResponseInnerSsidDetails" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="WlanType">WlanType.</param>
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="FastTransition">FastTransition.</param>
 		/// <param name="RadioPolicy">RadioPolicy.</param>
 		/// <param name="EnableBroadcastSSID">EnableBroadcastSSID.</param>
-		public GetEnterpriseSSIDResponseInnerSsidDetails(string? Name = default, string? WlanType = default, bool? EnableFastLane = default, string? SecurityLevel = default, string? AuthServer = default, string? Passphrase = default, string? TrafficType = default, bool? EnableMACFiltering = default, bool? IsEnabled = default, bool? IsFabric = default, string? FastTransition = default, string? RadioPolicy = default, bool? EnableBroadcastSSID = default)
+		public GetEnterpriseSsidResponseInnerSsidDetails(string? Name = default, string? WlanType = default, bool? EnableFastLane = default, string? SecurityLevel = default, string? AuthServer = default, string? Passphrase = default, string? TrafficType = default, bool? EnableMACFiltering = default, bool? IsEnabled = default, bool? IsFabric = default, string? FastTransition = default, string? RadioPolicy = default, bool? EnableBroadcastSSID = default)
 		{
 			this.Name = Name;
 			this.WlanType = WlanType;

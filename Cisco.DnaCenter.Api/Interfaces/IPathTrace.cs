@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -18,7 +19,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
-		Task<TaskIdResult> DeletesPathtraceById([AliasAs("flowAnalysisId")]string flowAnalysisId);
+		Task<TaskIdResult> DeletesPathtraceByIdAsync(
+			[AliasAs("flowAnalysisId")]string flowAnalysisId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Initiate a new Pathtrace
@@ -29,7 +32,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of FlowAnalysisRequestResultOutput</returns>
 		[Post("/dna/intent/api/v1/flow-analysis")]
-		Task<FlowAnalysisRequestResultOutput> InitiateANewPathtrace([Body]FlowAnalysisRequest request);
+		Task<FlowAnalysisRequestResultOutput> InitiateANewPathtraceAsync(
+			[Body]FlowAnalysisRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Retrieves previous Pathtrace
@@ -40,7 +45,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of PathResponseResult</returns>
 		[Get("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
-		Task<PathResponseResult> RetrievesPreviousPathtrace([AliasAs("flowAnalysisId")]string flowAnalysisId);
+		Task<PathResponseResult> RetrievesPreviousPathtraceAsync(
+			[AliasAs("flowAnalysisId")]string flowAnalysisId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Retrives all previous Pathtraces summary
@@ -65,6 +72,22 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="sortBy">Sort by this field (optional)</param>
 		/// <returns>Task of FlowAnalysisListOutput</returns>
 		[Get("/dna/intent/api/v1/flow-analysis")]
-		Task<FlowAnalysisListOutput> RetrivesAllPreviousPathtracesSummary([AliasAs("periodicRefresh")]bool? periodicRefresh = null, [AliasAs("sourceIP")]string sourceIP = null, [AliasAs("destIP")]string destIP = null, [AliasAs("sourcePort")]string sourcePort = null, [AliasAs("destPort")]string destPort = null, [AliasAs("gtCreateTime")]string gtCreateTime = null, [AliasAs("ltCreateTime")]string ltCreateTime = null, [AliasAs("protocol")]string protocol = null, [AliasAs("status")]string status = null, [AliasAs("taskId")]string taskId = null, [AliasAs("lastUpdateTime")]string lastUpdateTime = null, [AliasAs("limit")]string limit = null, [AliasAs("offset")]string offset = null, [AliasAs("order")]string order = null, [AliasAs("sortBy")]string sortBy = null);
+		Task<FlowAnalysisListOutput> RetrivesAllPreviousPathtracesSummaryAsync(
+			[AliasAs("periodicRefresh")]bool? periodicRefresh = null,
+			[AliasAs("sourceIP")]string sourceIP = null,
+			[AliasAs("destIP")]string destIP = null,
+			[AliasAs("sourcePort")]string sourcePort = null,
+			[AliasAs("destPort")]string destPort = null,
+			[AliasAs("gtCreateTime")]string gtCreateTime = null,
+			[AliasAs("ltCreateTime")]string ltCreateTime = null,
+			[AliasAs("protocol")]string protocol = null,
+			[AliasAs("status")]string status = null,
+			[AliasAs("taskId")]string taskId = null,
+			[AliasAs("lastUpdateTime")]string lastUpdateTime = null,
+			[AliasAs("limit")]string limit = null,
+			[AliasAs("offset")]string offset = null,
+			[AliasAs("order")]string order = null,
+			[AliasAs("sortBy")]string sortBy = null,
+			CancellationToken cancellationToken = default);
 	}
 }

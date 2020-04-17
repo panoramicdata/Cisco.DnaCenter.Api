@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface IDeviceOnboardingPnp
+	public interface IDeviceOnboardingPnP
 	{
 		/// <summary>
 		/// Add a Workflow
@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddAWorkflowResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-workflow")]
-		Task<AddAWorkflowResponse> AddWorkflowAsync(
+		Task<AddWorkflowResponse> AddWorkflowAsync(
 			[Body]Workflow request,
 			CancellationToken cancellationToken = default);
 
@@ -155,7 +155,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of GetPnPGlobalSettingsResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings")]
-		Task<GetPnPGlobalSettingsResponse> GetPnpGlobalSettingsAsync(
+		Task<GetPnpGlobalSettingsResponse> GetPnpGlobalSettingsAsync(
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -422,7 +422,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdatePnPGlobalSettingsResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings")]
-		Task<UpdatePnPGlobalSettingsResponse> UpdatePnPGlobalSettingsAsync(
+		Task<UpdatePnpGlobalSettingsResponse> UpdatePnPGlobalSettingsAsync(
 			[Body]Settings request,
 			CancellationToken cancellationToken = default);
 
@@ -435,7 +435,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdatePnPServerProfileResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		Task<UpdatePnPServerProfileResponse> UpdatePnPServerProfileAsync(
+		Task<UpdatePnpServerProfileResponse> UpdatePnPServerProfileAsync(
 			[Body]SavaMapping request,
 			CancellationToken cancellationToken = default);
 

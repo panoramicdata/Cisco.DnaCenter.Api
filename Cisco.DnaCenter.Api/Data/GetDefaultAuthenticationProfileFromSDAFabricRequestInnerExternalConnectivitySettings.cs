@@ -5,18 +5,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetDefaultAuthenticationProfileFromSDAFabricRequestInnerExternalConnectivitySettings
+	/// GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings
 	/// </summary>
 	[DataContract]
-	public partial class GetDefaultAuthenticationProfileFromSDAFabricRequestInnerExternalConnectivitySettings
+	public partial class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSDAFabricRequestInnerExternalConnectivitySettings" /> class.
+		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings" /> class.
 		/// </summary>
 		/// <param name="InterfaceName">InterfaceName.</param>
 		/// <param name="ExternalAutonomouSystemNumber">ExternalAutonomouSystemNumber.</param>
 		/// <param name="L3Handoff">L3Handoff.</param>
-		public GetDefaultAuthenticationProfileFromSDAFabricRequestInnerExternalConnectivitySettings(string? InterfaceName = default, string? ExternalAutonomouSystemNumber = default, List<GetDefaultAuthenticationProfileFromSDAFabricRequestInnerL3Handoff> L3Handoff = default)
+		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings(string? InterfaceName = default, string? ExternalAutonomouSystemNumber = default, List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff> L3Handoff = default)
 		{
 			this.InterfaceName = InterfaceName;
 			this.ExternalAutonomouSystemNumber = ExternalAutonomouSystemNumber;
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets L3Handoff
 		/// </summary>
 		[DataMember(Name = "l3Handoff", EmitDefaultValue = false)]
-		public List<GetDefaultAuthenticationProfileFromSDAFabricRequestInnerL3Handoff> L3Handoff { get; set; }
+		public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff> L3Handoff { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -45,7 +45,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetDefaultAuthenticationProfileFromSDAFabricRequestInnerExternalConnectivitySettings {\n");
+			sb.Append("class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings {\n");
 			sb.Append("  InterfaceName: ").Append(InterfaceName).Append("\n");
 			sb.Append("  ExternalAutonomouSystemNumber: ").Append(ExternalAutonomouSystemNumber).Append("\n");
 			sb.Append("  L3Handoff: ").Append(L3Handoff).Append("\n");

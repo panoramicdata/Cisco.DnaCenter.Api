@@ -14,11 +14,11 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="UpdateNetworkRequestSettingsSyslogServer" /> class.
 		/// </summary>
 		/// <param name="IpAddresses">IpAddresses.</param>
-		/// <param name="ConfigureDnacIP">ConfigureDnacIP.</param>
-		public UpdateNetworkRequestSettingsSyslogServer(List<string> IpAddresses = default, bool? ConfigureDnacIP = default)
+		/// <param name="ConfigureDnacIp">ConfigureDnacIP.</param>
+		public UpdateNetworkRequestSettingsSyslogServer(List<string> IpAddresses = default, bool? ConfigureDnacIp = default)
 		{
 			this.IpAddresses = IpAddresses;
-			this.ConfigureDnacIP = ConfigureDnacIP;
+			this.ConfigureDnacIp = ConfigureDnacIp;
 		}
 
 		/// <summary>
@@ -30,7 +30,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ConfigureDnacIP
 		/// </summary>
 		[DataMember(Name = "configureDnacIP", EmitDefaultValue = false)]
-		public bool? ConfigureDnacIP { get; set; }
+		public bool? ConfigureDnacIp { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -40,7 +40,7 @@ namespace Cisco.DnaCenter.Api.Data
 			var sb = new StringBuilder();
 			sb.Append("class UpdateNetworkRequestSettingsSyslogServer {\n");
 			sb.Append("  IpAddresses: ").Append(IpAddresses).Append("\n");
-			sb.Append("  ConfigureDnacIP: ").Append(ConfigureDnacIP).Append("\n");
+			sb.Append("  ConfigureDnacIP: ").Append(ConfigureDnacIp).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}

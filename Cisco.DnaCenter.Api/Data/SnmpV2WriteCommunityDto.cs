@@ -1,21 +1,21 @@
-using System.Text;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// SNMPvWriteCommunityDto
+	/// SNMPv2WriteCommunityDto
 	/// </summary>
 	[DataContract]
-	public partial class SNMPvWriteCommunityDto : List<SNMPvWriteCommunityDtoInner>
+	public partial class SnmpV2WriteCommunityDto : List<SnmpV2WriteCommunityDtoInner>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SNMPvWriteCommunityDto" /> class.
+		/// Initializes a new instance of the <see cref="SnmpV2WriteCommunityDto" /> class.
 		/// </summary>
 		[JsonConstructor]
-		public SNMPvWriteCommunityDto()
+		public SnmpV2WriteCommunityDto()
 		{
 		}
 

@@ -1,5 +1,5 @@
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -16,17 +16,17 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="IpAddress">IpAddress.</param>
 		/// <param name="Mask">Mask.</param>
 		/// <param name="NetworkAddress">NetworkAddress.</param>
-		/// <param name="NumberOfIPs">NumberOfIPs.</param>
+		/// <param name="IpCount">NumberOfIPs.</param>
 		/// <param name="Prefix">Prefix.</param>
 		/// <param name="VlanNumber">VlanNumber.</param>
 		/// <param name="VlanType">VlanType.</param>
-		public VlanListResultResponse(string? InterfaceName = default, string? IpAddress = default, int? Mask = default, string? NetworkAddress = default, int? NumberOfIPs = default, string? Prefix = default, int? VlanNumber = default, string? VlanType = default)
+		public VlanListResultResponse(string? InterfaceName = default, string? IpAddress = default, int? Mask = default, string? NetworkAddress = default, int? IpCount = default, string? Prefix = default, int? VlanNumber = default, string? VlanType = default)
 		{
 			this.InterfaceName = InterfaceName;
 			this.IpAddress = IpAddress;
 			this.Mask = Mask;
 			this.NetworkAddress = NetworkAddress;
-			this.NumberOfIPs = NumberOfIPs;
+			this.IpCount = IpCount;
 			this.Prefix = Prefix;
 			this.VlanNumber = VlanNumber;
 			this.VlanType = VlanType;
@@ -56,7 +56,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets NumberOfIPs
 		/// </summary>
 		[DataMember(Name = "numberOfIPs", EmitDefaultValue = false)]
-		public int? NumberOfIPs { get; set; }
+		public int? IpCount { get; set; }
 		/// <summary>
 		/// Gets or Sets Prefix
 		/// </summary>
@@ -84,7 +84,7 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  IpAddress: ").Append(IpAddress).Append("\n");
 			sb.Append("  Mask: ").Append(Mask).Append("\n");
 			sb.Append("  NetworkAddress: ").Append(NetworkAddress).Append("\n");
-			sb.Append("  NumberOfIPs: ").Append(NumberOfIPs).Append("\n");
+			sb.Append("  NumberOfIPs: ").Append(IpCount).Append("\n");
 			sb.Append("  Prefix: ").Append(Prefix).Append("\n");
 			sb.Append("  VlanNumber: ").Append(VlanNumber).Append("\n");
 			sb.Append("  VlanType: ").Append(VlanType).Append("\n");

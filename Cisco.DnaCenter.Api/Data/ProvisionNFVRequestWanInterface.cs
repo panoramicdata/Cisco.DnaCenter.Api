@@ -7,17 +7,17 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestWanInterface
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestWanInterface
+	public partial class ProvisionNfvRequestWanInterface
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestWanInterface" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestWanInterface" /> class.
 		/// </summary>
 		/// <param name="IpAddress">IpAddress.</param>
 		/// <param name="InterfaceName">InterfaceName.</param>
 		/// <param name="Subnetmask">Subnetmask.</param>
 		/// <param name="Bandwidth">Bandwidth.</param>
 		/// <param name="Gateway">Gateway.</param>
-		public ProvisionNFVRequestWanInterface(string? IpAddress = default, string? InterfaceName = default, string? Subnetmask = default, string? Bandwidth = default, string? Gateway = default)
+		public ProvisionNfvRequestWanInterface(string? IpAddress = default, string? InterfaceName = default, string? Subnetmask = default, string? Bandwidth = default, string? Gateway = default)
 		{
 			this.IpAddress = IpAddress;
 			this.InterfaceName = InterfaceName;

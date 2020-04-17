@@ -7,10 +7,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SAVAMappingProfile
 	/// </summary>
 	[DataContract]
-	public partial class SAVAMappingProfile
+	public partial class SavaMappingProfile
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SAVAMappingProfile" /> class.
+		/// Initializes a new instance of the <see cref="SavaMappingProfile" /> class.
 		/// </summary>
 		/// <param name="AddressFqdn">AddressFqdn.</param>
 		/// <param name="AddressIpV4">AddressIpV4.</param>
@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Port">Port.</param>
 		/// <param name="ProfileId">ProfileId.</param>
 		/// <param name="Proxy">Proxy.</param>
-		public SAVAMappingProfile(string? AddressFqdn = default, string? AddressIpV4 = default, string? Cert = default, bool? MakeDefault = default, string? Name = default, int? Port = default, string? ProfileId = default, bool? Proxy = default)
+		public SavaMappingProfile(string? AddressFqdn = default, string? AddressIpV4 = default, string? Cert = default, bool? MakeDefault = default, string? Name = default, int? Port = default, string? ProfileId = default, bool? Proxy = default)
 		{
 			this.AddressFqdn = AddressFqdn;
 			this.AddressIpV4 = AddressIpV4;

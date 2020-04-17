@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// RawCliInfoNIOListResultResponse
+	/// RawCliInfoNioListResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class RawCliInfoNIOListResultResponse
+	public partial class RawCliInfoNioListResultResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="RawCliInfoNIOListResultResponse" /> class.
+		/// Initializes a new instance of the <see cref="RawCliInfoNioListResultResponse" /> class.
 		/// </summary>
 		/// <param name="AttributeInfo">AttributeInfo.</param>
 		/// <param name="CdpNeighbors">CdpNeighbors.</param>
@@ -24,7 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="RunningConfig">RunningConfig.</param>
 		/// <param name="Snmp">Snmp.</param>
 		/// <param name="_Version">_Version.</param>
-		public RawCliInfoNIOListResultResponse(Object AttributeInfo = default, string? CdpNeighbors = default, string? HealthMonitor = default, string? Id = default, string? IntfDescription = default, string? Inventory = default, string? IpIntfBrief = default, string? MacAddressTable = default, string? RunningConfig = default, string? Snmp = default, string? _Version = default)
+		public RawCliInfoNioListResultResponse(Object AttributeInfo = default, string? CdpNeighbors = default, string? HealthMonitor = default, string? Id = default, string? IntfDescription = default, string? Inventory = default, string? IpIntfBrief = default, string? MacAddressTable = default, string? RunningConfig = default, string? Snmp = default, string? _Version = default)
 		{
 			this.AttributeInfo = AttributeInfo;
 			this.CdpNeighbors = CdpNeighbors;
@@ -101,7 +101,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class RawCliInfoNIOListResultResponse {\n");
+			sb.Append("class RawCliInfoNioListResultResponse {\n");
 			sb.Append("  AttributeInfo: ").Append(AttributeInfo).Append("\n");
 			sb.Append("  CdpNeighbors: ").Append(CdpNeighbors).Append("\n");
 			sb.Append("  HealthMonitor: ").Append(HealthMonitor).Append("\n");

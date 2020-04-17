@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteSPProfileResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteSPProfileResponse
+	public partial class DeleteSpProfileResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeleteSPProfileResponse" /> class.
+		/// Initializes a new instance of the <see cref="DeleteSpProfileResponse" /> class.
 		/// </summary>
 		/// <param name="ExecutionId">ExecutionId.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
 		/// <param name="Message">Message.</param>
-		public DeleteSPProfileResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
+		public DeleteSpProfileResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
 		{
 			this.ExecutionId = ExecutionId;
 			this.ExecutionStatusUrl = ExecutionStatusUrl;

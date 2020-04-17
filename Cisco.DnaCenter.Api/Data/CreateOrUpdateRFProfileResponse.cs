@@ -4,18 +4,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// CreateOrUpdateRFProfileResponse
+	/// CreateOrUpdateRfProfileResponse
 	/// </summary>
 	[DataContract]
-	public partial class CreateOrUpdateRFProfileResponse
+	public partial class CreateOrUpdateRfProfileResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateOrUpdateRFProfileResponse" /> class.
+		/// Initializes a new instance of the <see cref="CreateOrUpdateRfProfileResponse" /> class.
 		/// </summary>
 		/// <param name="ExecutionId">ExecutionId.</param>
 		/// <param name="ExecutionUrl">ExecutionUrl.</param>
 		/// <param name="Message">Message.</param>
-		public CreateOrUpdateRFProfileResponse(string? ExecutionId = default, string? ExecutionUrl = default, string? Message = default)
+		public CreateOrUpdateRfProfileResponse(string? ExecutionId = default, string? ExecutionUrl = default, string? Message = default)
 		{
 			this.ExecutionId = ExecutionId;
 			this.ExecutionUrl = ExecutionUrl;
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class CreateOrUpdateRFProfileResponse {\n");
+			sb.Append("class CreateOrUpdateRfProfileResponse {\n");
 			sb.Append("  ExecutionId: ").Append(ExecutionId).Append("\n");
 			sb.Append("  ExecutionUrl: ").Append(ExecutionUrl).Append("\n");
 			sb.Append("  Message: ").Append(Message).Append("\n");

@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestDevice
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestDevice
+	public partial class ProvisionNfvRequestDevice
 	{
 		/// <summary>
 		/// Gets or Sets DeviceType
@@ -38,7 +38,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "deviceType", EmitDefaultValue = false)]
 		public DeviceTypeEnum? DeviceType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestDevice" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestDevice" /> class.
 		/// </summary>
 		/// <param name="DeviceType">DeviceType.</param>
 		/// <param name="TagName">TagName.</param>
@@ -49,7 +49,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="CustomNetworks">CustomNetworks.</param>
 		/// <param name="Vlan">Vlan.</param>
 		/// <param name="CustomTemplate">CustomTemplate.</param>
-		public ProvisionNFVRequestDevice(DeviceTypeEnum? DeviceType = default, string? TagName = default, List<ProvisionNFVRequestServiceProviders> ServiceProviders = default, bool? Dia = default, List<ProvisionNFVRequestServices> Services = default, List<ProvisionNFVRequestCustomServices> CustomServices = default, List<ProvisionNFVRequestCustomNetworks> CustomNetworks = default, List<ProvisionNFVRequestVlan> Vlan = default, List<ProvisionNFVRequestCustomTemplate> CustomTemplate = default)
+		public ProvisionNfvRequestDevice(DeviceTypeEnum? DeviceType = default, string? TagName = default, List<ProvisionNfvRequestServiceProviders> ServiceProviders = default, bool? Dia = default, List<ProvisionNfvRequestServices> Services = default, List<ProvisionNfvRequestCustomServices> CustomServices = default, List<ProvisionNfvRequestCustomNetworks> CustomNetworks = default, List<ProvisionNfvRequestVlan> Vlan = default, List<ProvisionNfvRequestCustomTemplate> CustomTemplate = default)
 		{
 			this.DeviceType = DeviceType;
 			this.TagName = TagName;
@@ -71,7 +71,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ServiceProviders
 		/// </summary>
 		[DataMember(Name = "serviceProviders", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestServiceProviders> ServiceProviders { get; set; }
+		public List<ProvisionNfvRequestServiceProviders> ServiceProviders { get; set; }
 		/// <summary>
 		/// Gets or Sets Dia
 		/// </summary>
@@ -81,27 +81,27 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Services
 		/// </summary>
 		[DataMember(Name = "services", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestServices> Services { get; set; }
+		public List<ProvisionNfvRequestServices> Services { get; set; }
 		/// <summary>
 		/// Gets or Sets CustomServices
 		/// </summary>
 		[DataMember(Name = "customServices", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestCustomServices> CustomServices { get; set; }
+		public List<ProvisionNfvRequestCustomServices> CustomServices { get; set; }
 		/// <summary>
 		/// Gets or Sets CustomNetworks
 		/// </summary>
 		[DataMember(Name = "customNetworks", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestCustomNetworks> CustomNetworks { get; set; }
+		public List<ProvisionNfvRequestCustomNetworks> CustomNetworks { get; set; }
 		/// <summary>
 		/// Gets or Sets Vlan
 		/// </summary>
 		[DataMember(Name = "vlan", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestVlan> Vlan { get; set; }
+		public List<ProvisionNfvRequestVlan> Vlan { get; set; }
 		/// <summary>
 		/// Gets or Sets CustomTemplate
 		/// </summary>
 		[DataMember(Name = "customTemplate", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestCustomTemplate> CustomTemplate { get; set; }
+		public List<ProvisionNfvRequestCustomTemplate> CustomTemplate { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

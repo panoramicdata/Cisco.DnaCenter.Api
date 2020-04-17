@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPvWriteCommunityDtoInner
 	/// </summary>
 	[DataContract]
-	public partial class SNMPvWriteCommunityDtoInner
+	public partial class SnmpV2WriteCommunityDtoInner
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "credentialType", EmitDefaultValue = false)]
 		public CredentialTypeEnum? CredentialType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SNMPvWriteCommunityDtoInner" /> class.
+		/// Initializes a new instance of the <see cref="SnmpV2WriteCommunityDtoInner" /> class.
 		/// </summary>
 		/// <param name="Comments">Comments.</param>
 		/// <param name="CredentialType">CredentialType.</param>
@@ -46,7 +46,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="InstanceTenantId">InstanceTenantId.</param>
 		/// <param name="InstanceUuid">InstanceUuid.</param>
 		/// <param name="WriteCommunity">WriteCommunity.</param>
-		public SNMPvWriteCommunityDtoInner(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? WriteCommunity = default)
+		public SnmpV2WriteCommunityDtoInner(string? Comments = default, CredentialTypeEnum? CredentialType = default, string? Description = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, string? WriteCommunity = default)
 		{
 			this.Comments = Comments;
 			this.CredentialType = CredentialType;

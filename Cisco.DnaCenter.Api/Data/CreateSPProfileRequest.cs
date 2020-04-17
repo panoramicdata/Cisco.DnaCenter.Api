@@ -7,13 +7,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateSPProfileRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateSPProfileRequest
+	public partial class CreateSpProfileRequest
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateSPProfileRequest" /> class.
+		/// Initializes a new instance of the <see cref="CreateSpProfileRequest" /> class.
 		/// </summary>
 		/// <param name="Settings">Settings.</param>
-		public CreateSPProfileRequest(CreateSPProfileRequestSettings Settings = default)
+		public CreateSpProfileRequest(CreateSpProfileRequestSettings Settings = default)
 		{
 			this.Settings = Settings;
 		}
@@ -22,7 +22,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Settings
 		/// </summary>
 		[DataMember(Name = "settings", EmitDefaultValue = false)]
-		public CreateSPProfileRequestSettings Settings { get; set; }
+		public CreateSpProfileRequestSettings Settings { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

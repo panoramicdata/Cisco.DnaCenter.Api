@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsExtConnectivitySettings
+	/// GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsExtConnectivitySettings
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsExtConnectivitySettings" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="InstanceId">InstanceId.</param>
@@ -26,7 +26,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="PolicySgtTag">PolicySgtTag.</param>
 		/// <param name="L2Handoff">L2Handoff.</param>
 		/// <param name="L3Handoff">L3Handoff.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsExtConnectivitySettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, string? ExternalDomainProtocolNumber = default, string? InterfaceUuid = default, bool? PolicyPropagationEnabled = default, decimal? PolicySgtTag = default, List<Object> L2Handoff = default, List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsL3Handoff> L3Handoff = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, string? ExternalDomainProtocolNumber = default, string? InterfaceUuid = default, bool? PolicyPropagationEnabled = default, decimal? PolicySgtTag = default, List<Object> L2Handoff = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff> L3Handoff = default)
 		{
 			this.Id = Id;
 			this.InstanceId = InstanceId;
@@ -101,7 +101,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets L3Handoff
 		/// </summary>
 		[DataMember(Name = "l3Handoff", EmitDefaultValue = false)]
-		public List<GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsL3Handoff> L3Handoff { get; set; }
+		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff> L3Handoff { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -109,7 +109,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponsePayloadDeviceSettingsExtConnectivitySettings {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  InstanceId: ").Append(InstanceId).Append("\n");
 			sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");

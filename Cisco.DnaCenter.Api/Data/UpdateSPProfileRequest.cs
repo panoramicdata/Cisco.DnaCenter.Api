@@ -7,13 +7,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateSPProfileRequest
 	/// </summary>
 	[DataContract]
-	public partial class UpdateSPProfileRequest
+	public partial class UpdateSpProfileRequest
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateSPProfileRequest" /> class.
+		/// Initializes a new instance of the <see cref="UpdateSpProfileRequest" /> class.
 		/// </summary>
 		/// <param name="Settings">Settings.</param>
-		public UpdateSPProfileRequest(UpdateSPProfileRequestSettings Settings = default)
+		public UpdateSpProfileRequest(UpdateSpProfileRequestSettings Settings = default)
 		{
 			this.Settings = Settings;
 		}
@@ -22,7 +22,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Settings
 		/// </summary>
 		[DataMember(Name = "settings", EmitDefaultValue = false)]
-		public UpdateSPProfileRequestSettings Settings { get; set; }
+		public UpdateSpProfileRequestSettings Settings { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

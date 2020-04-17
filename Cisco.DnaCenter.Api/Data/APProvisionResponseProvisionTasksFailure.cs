@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// APProvisionResponseProvisionTasksFailure
 	/// </summary>
 	[DataContract]
-	public partial class APProvisionResponseProvisionTasksFailure
+	public partial class ApProvisionResponseProvisionTasksFailure
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="APProvisionResponseProvisionTasksFailure" /> class.
+		/// Initializes a new instance of the <see cref="ApProvisionResponseProvisionTasksFailure" /> class.
 		/// </summary>
 		/// <param name="TaskId">TaskId.</param>
 		/// <param name="TaskUrl">TaskUrl.</param>
 		/// <param name="FailureReason">FailureReason.</param>
-		public APProvisionResponseProvisionTasksFailure(string? TaskId = default, string? TaskUrl = default, string? FailureReason = default)
+		public ApProvisionResponseProvisionTasksFailure(string? TaskId = default, string? TaskUrl = default, string? FailureReason = default)
 		{
 			this.TaskId = TaskId;
 			this.TaskUrl = TaskUrl;

@@ -4,18 +4,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponse
+	/// GetsBorderDeviceDetailFromSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponse
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
 		/// <param name="Payload">Payload.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponse(string? Status = default, string? Description = default, GetsBorderDeviceDetailFromSDAFabricResponsePayload Payload = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponse(string? Status = default, string? Description = default, GetsBorderDeviceDetailFromSdaFabricResponsePayload Payload = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -36,7 +36,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Payload
 		/// </summary>
 		[DataMember(Name = "payload", EmitDefaultValue = false)]
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayload Payload { get; set; }
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayload Payload { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponse {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  Payload: ").Append(Payload).Append("\n");

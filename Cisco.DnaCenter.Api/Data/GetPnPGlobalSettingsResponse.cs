@@ -8,10 +8,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPnPGlobalSettingsResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetPnPGlobalSettingsResponse
+	public partial class GetPnpGlobalSettingsResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetPnPGlobalSettingsResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetPnpGlobalSettingsResponse" /> class.
 		/// </summary>
 		/// <param name="SavaMappingList">SavaMappingList.</param>
 		/// <param name="TaskTimeOuts">TaskTimeOuts.</param>
@@ -22,7 +22,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Id">Id.</param>
 		/// <param name="Id">Id.</param>
 		/// <param name="_Version">_Version.</param>
-		public GetPnPGlobalSettingsResponse(List<GetPnPGlobalSettingsResponseSavaMappingList> SavaMappingList = default, GetPnPGlobalSettingsResponseTaskTimeOuts TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials AaaCredentials = default, GetPnPGlobalSettingsResponseDefaultProfile DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)
+		public GetPnpGlobalSettingsResponse(List<GetPnPGlobalSettingsResponseSavaMappingList> SavaMappingList = default, GetPnpGlobalSettingsResponseTaskTimeOuts TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials AaaCredentials = default, GetPnpGlobalSettingsResponseDefaultProfile DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)
 		{
 			this.SavaMappingList = SavaMappingList;
 			this.TaskTimeOuts = TaskTimeOuts;
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets TaskTimeOuts
 		/// </summary>
 		[DataMember(Name = "taskTimeOuts", EmitDefaultValue = false)]
-		public GetPnPGlobalSettingsResponseTaskTimeOuts TaskTimeOuts { get; set; }
+		public GetPnpGlobalSettingsResponseTaskTimeOuts TaskTimeOuts { get; set; }
 		/// <summary>
 		/// Gets or Sets TenantId
 		/// </summary>
@@ -59,7 +59,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets DefaultProfile
 		/// </summary>
 		[DataMember(Name = "defaultProfile", EmitDefaultValue = false)]
-		public GetPnPGlobalSettingsResponseDefaultProfile DefaultProfile { get; set; }
+		public GetPnpGlobalSettingsResponseDefaultProfile DefaultProfile { get; set; }
 		/// <summary>
 		/// Gets or Sets AcceptEula
 		/// </summary>

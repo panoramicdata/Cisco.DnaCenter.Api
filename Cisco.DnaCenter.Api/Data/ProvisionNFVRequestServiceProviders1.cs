@@ -7,14 +7,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestServiceProviders1
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestServiceProviders1
+	public partial class ProvisionNfvRequestServiceProviders1
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestServiceProviders1" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServiceProviders1" /> class.
 		/// </summary>
 		/// <param name="ServiceProvider">ServiceProvider.</param>
 		/// <param name="WanInterface">WanInterface.</param>
-		public ProvisionNFVRequestServiceProviders1(string? ServiceProvider = default, ProvisionNFVRequestWanInterface WanInterface = default)
+		public ProvisionNfvRequestServiceProviders1(string? ServiceProvider = default, ProvisionNfvRequestWanInterface WanInterface = default)
 		{
 			this.ServiceProvider = ServiceProvider;
 			this.WanInterface = WanInterface;
@@ -29,7 +29,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets WanInterface
 		/// </summary>
 		[DataMember(Name = "wanInterface", EmitDefaultValue = false)]
-		public ProvisionNFVRequestWanInterface WanInterface { get; set; }
+		public ProvisionNfvRequestWanInterface WanInterface { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

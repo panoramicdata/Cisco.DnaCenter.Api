@@ -4,17 +4,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDhcp
+	/// GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDhcp
+	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDhcp" /> class.
+		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="IpAddress">IpAddress.</param>
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDhcp(string? Id = default, GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsIpAddress IpAddress = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp(string? Id = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress IpAddress = default)
 		{
 			this.Id = Id;
 			this.IpAddress = IpAddress;
@@ -29,7 +29,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets IpAddress
 		/// </summary>
 		[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
-		public GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsIpAddress IpAddress { get; set; }
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress IpAddress { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetsBorderDeviceDetailFromSDAFabricResponsePayloadNetworkWideSettingsDhcp {\n");
+			sb.Append("class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  IpAddress: ").Append(IpAddress).Append("\n");
 			sb.Append("}\n");

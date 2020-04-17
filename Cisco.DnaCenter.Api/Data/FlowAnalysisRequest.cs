@@ -1,6 +1,6 @@
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -14,22 +14,22 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="FlowAnalysisRequest" /> class.
 		/// </summary>
 		/// <param name="ControlPath">ControlPath.</param>
-		/// <param name="DestIP">DestIP.</param>
-		/// <param name="DestPort">DestPort.</param>
+		/// <param name="DestinationIp">DestIP.</param>
+		/// <param name="DestinationPort">DestPort.</param>
 		/// <param name="Inclusions">Inclusions.</param>
 		/// <param name="PeriodicRefresh">PeriodicRefresh.</param>
 		/// <param name="Protocol">Protocol.</param>
-		/// <param name="SourceIP">SourceIP.</param>
+		/// <param name="SourceIp">SourceIP.</param>
 		/// <param name="SourcePort">SourcePort.</param>
-		public FlowAnalysisRequest(bool? ControlPath = default, string? DestIP = default, string? DestPort = default, List<string> Inclusions = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIP = default, string? SourcePort = default)
+		public FlowAnalysisRequest(bool? ControlPath = default, string? DestinationIp = default, string? DestinationPort = default, List<string> Inclusions = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default)
 		{
 			this.ControlPath = ControlPath;
-			this.DestIP = DestIP;
-			this.DestPort = DestPort;
+			this.DestinationIp = DestinationIp;
+			this.DestinationPort = DestinationPort;
 			this.Inclusions = Inclusions;
 			this.PeriodicRefresh = PeriodicRefresh;
 			this.Protocol = Protocol;
-			this.SourceIP = SourceIP;
+			this.SourceIp = SourceIp;
 			this.SourcePort = SourcePort;
 		}
 
@@ -42,12 +42,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets DestIP
 		/// </summary>
 		[DataMember(Name = "destIP", EmitDefaultValue = false)]
-		public string? DestIP { get; set; }
+		public string? DestinationIp { get; set; }
 		/// <summary>
 		/// Gets or Sets DestPort
 		/// </summary>
 		[DataMember(Name = "destPort", EmitDefaultValue = false)]
-		public string? DestPort { get; set; }
+		public string? DestinationPort { get; set; }
 		/// <summary>
 		/// Gets or Sets Inclusions
 		/// </summary>
@@ -67,7 +67,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SourceIP
 		/// </summary>
 		[DataMember(Name = "sourceIP", EmitDefaultValue = false)]
-		public string? SourceIP { get; set; }
+		public string? SourceIp { get; set; }
 		/// <summary>
 		/// Gets or Sets SourcePort
 		/// </summary>
@@ -82,12 +82,12 @@ namespace Cisco.DnaCenter.Api.Data
 			var sb = new StringBuilder();
 			sb.Append("class FlowAnalysisRequest {\n");
 			sb.Append("  ControlPath: ").Append(ControlPath).Append("\n");
-			sb.Append("  DestIP: ").Append(DestIP).Append("\n");
-			sb.Append("  DestPort: ").Append(DestPort).Append("\n");
+			sb.Append("  DestIP: ").Append(DestinationIp).Append("\n");
+			sb.Append("  DestPort: ").Append(DestinationPort).Append("\n");
 			sb.Append("  Inclusions: ").Append(Inclusions).Append("\n");
 			sb.Append("  PeriodicRefresh: ").Append(PeriodicRefresh).Append("\n");
 			sb.Append("  Protocol: ").Append(Protocol).Append("\n");
-			sb.Append("  SourceIP: ").Append(SourceIP).Append("\n");
+			sb.Append("  SourceIP: ").Append(SourceIp).Append("\n");
 			sb.Append("  SourcePort: ").Append(SourcePort).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();

@@ -5,16 +5,16 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// RetrieveRFProfilesResponse
+	/// RetrieveRfProfilesResponse
 	/// </summary>
 	[DataContract]
-	public partial class RetrieveRFProfilesResponse
+	public partial class RetrieveRfProfilesResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="RetrieveRFProfilesResponse" /> class.
+		/// Initializes a new instance of the <see cref="RetrieveRfProfilesResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-		public RetrieveRFProfilesResponse(List<RetrieveRFProfilesResponseResponse> Response = default)
+		public RetrieveRfProfilesResponse(List<RetrieveRfProfilesResponseResponse> Response = default)
 		{
 			this.Response = Response;
 		}
@@ -23,7 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
-		public List<RetrieveRFProfilesResponseResponse> Response { get; set; }
+		public List<RetrieveRfProfilesResponseResponse> Response { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
@@ -31,7 +31,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class RetrieveRFProfilesResponse {\n");
+			sb.Append("class RetrieveRfProfilesResponse {\n");
 			sb.Append("  Response: ").Append(Response).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();

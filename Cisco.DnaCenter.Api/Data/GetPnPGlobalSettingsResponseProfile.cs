@@ -7,10 +7,10 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPnPGlobalSettingsResponseProfile
 	/// </summary>
 	[DataContract]
-	public partial class GetPnPGlobalSettingsResponseProfile
+	public partial class GetPnpGlobalSettingsResponseProfile
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetPnPGlobalSettingsResponseProfile" /> class.
+		/// Initializes a new instance of the <see cref="GetPnpGlobalSettingsResponseProfile" /> class.
 		/// </summary>
 		/// <param name="Port">Port.</param>
 		/// <param name="AddressIpV4">AddressIpV4.</param>
@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="MakeDefault">MakeDefault.</param>
 		/// <param name="Cert">Cert.</param>
 		/// <param name="Name">Name.</param>
-		public GetPnPGlobalSettingsResponseProfile(decimal? Port = default, string? AddressIpV4 = default, string? AddressFqdn = default, string? ProfileId = default, bool? Proxy = default, bool? MakeDefault = default, string? Cert = default, string? Name = default)
+		public GetPnpGlobalSettingsResponseProfile(decimal? Port = default, string? AddressIpV4 = default, string? AddressFqdn = default, string? ProfileId = default, bool? Proxy = default, bool? MakeDefault = default, string? Cert = default, string? Name = default)
 		{
 			this.Port = Port;
 			this.AddressIpV4 = AddressIpV4;

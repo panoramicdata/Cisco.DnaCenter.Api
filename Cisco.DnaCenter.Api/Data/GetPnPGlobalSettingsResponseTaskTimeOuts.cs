@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPnPGlobalSettingsResponseTaskTimeOuts
 	/// </summary>
 	[DataContract]
-	public partial class GetPnPGlobalSettingsResponseTaskTimeOuts
+	public partial class GetPnpGlobalSettingsResponseTaskTimeOuts
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetPnPGlobalSettingsResponseTaskTimeOuts" /> class.
+		/// Initializes a new instance of the <see cref="GetPnpGlobalSettingsResponseTaskTimeOuts" /> class.
 		/// </summary>
 		/// <param name="ImageDownloadTimeOut">ImageDownloadTimeOut.</param>
 		/// <param name="ConfigTimeOut">ConfigTimeOut.</param>
 		/// <param name="GeneralTimeOut">GeneralTimeOut.</param>
-		public GetPnPGlobalSettingsResponseTaskTimeOuts(decimal? ImageDownloadTimeOut = default, decimal? ConfigTimeOut = default, decimal? GeneralTimeOut = default)
+		public GetPnpGlobalSettingsResponseTaskTimeOuts(decimal? ImageDownloadTimeOut = default, decimal? ConfigTimeOut = default, decimal? GeneralTimeOut = default)
 		{
 			this.ImageDownloadTimeOut = ImageDownloadTimeOut;
 			this.ConfigTimeOut = ConfigTimeOut;

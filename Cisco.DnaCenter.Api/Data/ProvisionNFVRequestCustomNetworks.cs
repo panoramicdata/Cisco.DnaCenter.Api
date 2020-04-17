@@ -8,17 +8,17 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestCustomNetworks
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestCustomNetworks
+	public partial class ProvisionNfvRequestCustomNetworks
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestCustomNetworks" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestCustomNetworks" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="ServicesToConnect">ServicesToConnect.</param>
 		/// <param name="ConnectionType">ConnectionType.</param>
 		/// <param name="NetworkMode">NetworkMode.</param>
 		/// <param name="Vlan">Vlan.</param>
-		public ProvisionNFVRequestCustomNetworks(string? Name = default, List<ProvisionNFVRequestServicesToConnect> ServicesToConnect = default, string? ConnectionType = default, string? NetworkMode = default, string? Vlan = default)
+		public ProvisionNfvRequestCustomNetworks(string? Name = default, List<ProvisionNfvRequestServicesToConnect> ServicesToConnect = default, string? ConnectionType = default, string? NetworkMode = default, string? Vlan = default)
 		{
 			this.Name = Name;
 			this.ServicesToConnect = ServicesToConnect;
@@ -36,7 +36,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ServicesToConnect
 		/// </summary>
 		[DataMember(Name = "servicesToConnect", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestServicesToConnect> ServicesToConnect { get; set; }
+		public List<ProvisionNfvRequestServicesToConnect> ServicesToConnect { get; set; }
 		/// <summary>
 		/// Gets or Sets ConnectionType
 		/// </summary>

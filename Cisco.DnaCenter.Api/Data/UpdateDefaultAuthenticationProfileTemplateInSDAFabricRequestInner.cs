@@ -4,17 +4,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// UpdateDefaultAuthenticationProfileTemplateInSDAFabricRequestInner
+	/// UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class UpdateDefaultAuthenticationProfileTemplateInSDAFabricRequestInner
+	public partial class UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateDefaultAuthenticationProfileTemplateInSDAFabricRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequestInner" /> class.
 		/// </summary>
 		/// <param name="SiteNameHierarchy">SiteNameHierarchy.</param>
 		/// <param name="AuthenticateTemplateName">AuthenticateTemplateName.</param>
-		public UpdateDefaultAuthenticationProfileTemplateInSDAFabricRequestInner(string? SiteNameHierarchy = default, string? AuthenticateTemplateName = default)
+		public UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequestInner(string? SiteNameHierarchy = default, string? AuthenticateTemplateName = default)
 		{
 			this.SiteNameHierarchy = SiteNameHierarchy;
 			this.AuthenticateTemplateName = AuthenticateTemplateName;
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class UpdateDefaultAuthenticationProfileTemplateInSDAFabricRequestInner {\n");
+			sb.Append("class UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequestInner {\n");
 			sb.Append("  SiteNameHierarchy: ").Append(SiteNameHierarchy).Append("\n");
 			sb.Append("  AuthenticateTemplateName: ").Append(AuthenticateTemplateName).Append("\n");
 			sb.Append("}\n");

@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of GetDeviceDetailsByIPResponse</returns>
 		[Get("/dna/intent/api/v1/business/nfv/provisioningDetail")]
 		Task<GetDeviceDetailsByIpResponse> GetDeviceDetailsByIpAsync(
-			[Body]GetDeviceDetailsByIPRequest request,
+			[Body]GetDeviceDetailsByIpRequest request,
 			[AliasAs("deviceIp")]string deviceIp,
 			CancellationToken cancellationToken = default);
 
@@ -57,7 +57,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of ProvisionNFVResponse</returns>
 		[Post("/dna/intent/api/v1/business/nfv")]
 		Task<ProvisionNfvResponse> ProvisionNfvAsync(
-			[Body]ProvisionNFVRequest request,
+			[Body]ProvisionNfvRequest request,
 			string __runsync,
 			bool? __persistbapioutput,
 			decimal? __timeout = null,

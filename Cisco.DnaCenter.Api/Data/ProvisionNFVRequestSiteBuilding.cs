@@ -7,17 +7,17 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestSiteBuilding
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestSiteBuilding
+	public partial class ProvisionNfvRequestSiteBuilding
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequestSiteBuilding" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestSiteBuilding" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
 		/// <param name="Address">Address.</param>
 		/// <param name="Latitude">Latitude.</param>
 		/// <param name="Longitude">Longitude.</param>
 		/// <param name="ParentName">ParentName.</param>
-		public ProvisionNFVRequestSiteBuilding(string? Name = default, string? Address = default, decimal? Latitude = default, decimal? Longitude = default, string? ParentName = default)
+		public ProvisionNfvRequestSiteBuilding(string? Name = default, string? Address = default, decimal? Latitude = default, decimal? Longitude = default, string? ParentName = default)
 		{
 			this.Name = Name;
 			this.Address = Address;

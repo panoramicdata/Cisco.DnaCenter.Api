@@ -6,10 +6,10 @@ using Newtonsoft.Json;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// AddEdgeDeviceInSDAFabricRequest
+	/// AddEdgeDeviceInSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class AddEdgeDeviceInSdaFabricRequest : List<GetSDAFabricInfoRequestInner>
+	public partial class AddEdgeDeviceInSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddEdgeDeviceInSdaFabricRequest" /> class.
@@ -26,7 +26,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class AddEdgeDeviceInSDAFabricRequest {\n");
+			sb.Append("class AddEdgeDeviceInSdaFabricRequest {\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}

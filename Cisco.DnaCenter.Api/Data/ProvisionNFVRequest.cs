@@ -8,14 +8,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequest
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequest
+	public partial class ProvisionNfvRequest
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVRequest" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequest" /> class.
 		/// </summary>
 		/// <param name="SiteProfile">SiteProfile.</param>
 		/// <param name="Provisioning">Provisioning.</param>
-		public ProvisionNFVRequest(List<ProvisionNFVRequestSiteProfile> SiteProfile = default, List<ProvisionNFVRequestProvisioning> Provisioning = default)
+		public ProvisionNfvRequest(List<ProvisionNfvRequestSiteProfile> SiteProfile = default, List<ProvisionNFVRequestProvisioning> Provisioning = default)
 		{
 			this.SiteProfile = SiteProfile;
 			this.Provisioning = Provisioning;
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SiteProfile
 		/// </summary>
 		[DataMember(Name = "siteProfile", EmitDefaultValue = false)]
-		public List<ProvisionNFVRequestSiteProfile> SiteProfile { get; set; }
+		public List<ProvisionNfvRequestSiteProfile> SiteProfile { get; set; }
 		/// <summary>
 		/// Gets or Sets Provisioning
 		/// </summary>

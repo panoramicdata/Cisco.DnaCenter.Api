@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// APProvisionResponse
 	/// </summary>
 	[DataContract]
-	public partial class APProvisionResponse
+	public partial class ApProvisionResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="APProvisionResponse" /> class.
+		/// Initializes a new instance of the <see cref="ApProvisionResponse" /> class.
 		/// </summary>
 		/// <param name="ExecutionId">ExecutionId.</param>
 		/// <param name="ExecutionUrl">ExecutionUrl.</param>
 		/// <param name="ProvisionTasks">ProvisionTasks.</param>
-		public APProvisionResponse(string? ExecutionId = default, string? ExecutionUrl = default, APProvisionResponseProvisionTasks ProvisionTasks = default)
+		public ApProvisionResponse(string? ExecutionId = default, string? ExecutionUrl = default, ApProvisionResponseProvisionTasks ProvisionTasks = default)
 		{
 			this.ExecutionId = ExecutionId;
 			this.ExecutionUrl = ExecutionUrl;
@@ -36,7 +36,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ProvisionTasks
 		/// </summary>
 		[DataMember(Name = "provisionTasks", EmitDefaultValue = false)]
-		public APProvisionResponseProvisionTasks ProvisionTasks { get; set; }
+		public ApProvisionResponseProvisionTasks ProvisionTasks { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

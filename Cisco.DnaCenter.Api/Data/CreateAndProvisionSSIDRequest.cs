@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateAndProvisionSSIDRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateAndProvisionSSIDRequest
+	public partial class CreateAndProvisionSsidRequest
 	{
 		/// <summary>
 		/// Gets or Sets SsidType
@@ -38,14 +38,14 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "ssidType", EmitDefaultValue = false)]
 		public SsidTypeEnum? SsidType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateAndProvisionSSIDRequest" /> class.
+		/// Initializes a new instance of the <see cref="CreateAndProvisionSsidRequest" /> class.
 		/// </summary>
 		/// <param name="ManagedAPLocations">ManagedAPLocations.</param>
 		/// <param name="SsidDetails">SsidDetails.</param>
 		/// <param name="SsidType">SsidType.</param>
 		/// <param name="EnableFabric">EnableFabric.</param>
 		/// <param name="FlexConnect">FlexConnect.</param>
-		public CreateAndProvisionSSIDRequest(List<string> ManagedAPLocations = default, CreateAndProvisionSSIDRequestSsidDetails SsidDetails = default, SsidTypeEnum? SsidType = default, bool? EnableFabric = default, GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect = default)
+		public CreateAndProvisionSsidRequest(List<string> ManagedAPLocations = default, CreateAndProvisionSsidRequestSsidDetails SsidDetails = default, SsidTypeEnum? SsidType = default, bool? EnableFabric = default, GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect = default)
 		{
 			this.ManagedAPLocations = ManagedAPLocations;
 			this.SsidDetails = SsidDetails;
@@ -63,7 +63,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SsidDetails
 		/// </summary>
 		[DataMember(Name = "ssidDetails", EmitDefaultValue = false)]
-		public CreateAndProvisionSSIDRequestSsidDetails SsidDetails { get; set; }
+		public CreateAndProvisionSsidRequestSsidDetails SsidDetails { get; set; }
 		/// <summary>
 		/// Gets or Sets EnableFabric
 		/// </summary>

@@ -4,18 +4,18 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DeletesBorderDeviceFromSDAFabricResponse
+	/// DeletesBorderDeviceFromSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeletesBorderDeviceFromSDAFabricResponse
+	public partial class DeleteBorderDeviceFromSdaFabricResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeletesBorderDeviceFromSDAFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="DeleteBorderDeviceFromSdaFabricResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
-		public DeletesBorderDeviceFromSDAFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
+		public DeleteBorderDeviceFromSdaFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DeletesBorderDeviceFromSDAFabricResponse {\n");
+			sb.Append("class DeletesBorderDeviceFromSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  ExecutionStatusUrl: ").Append(ExecutionStatusUrl).Append("\n");

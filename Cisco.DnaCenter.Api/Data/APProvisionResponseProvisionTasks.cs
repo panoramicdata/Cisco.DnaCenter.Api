@@ -8,14 +8,14 @@ namespace Cisco.DnaCenter.Api.Data
 	/// APProvisionResponseProvisionTasks
 	/// </summary>
 	[DataContract]
-	public partial class APProvisionResponseProvisionTasks
+	public partial class ApProvisionResponseProvisionTasks
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="APProvisionResponseProvisionTasks" /> class.
+		/// Initializes a new instance of the <see cref="ApProvisionResponseProvisionTasks" /> class.
 		/// </summary>
 		/// <param name="Success">Success.</param>
 		/// <param name="Failure">Failure.</param>
-		public APProvisionResponseProvisionTasks(List<APProvisionResponseProvisionTasksSuccess> Success = default, APProvisionResponseProvisionTasksFailure Failure = default)
+		public ApProvisionResponseProvisionTasks(List<ApProvisionResponseProvisionTasksSuccess> Success = default, ApProvisionResponseProvisionTasksFailure Failure = default)
 		{
 			this.Success = Success;
 			this.Failure = Failure;
@@ -25,12 +25,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Success
 		/// </summary>
 		[DataMember(Name = "success", EmitDefaultValue = false)]
-		public List<APProvisionResponseProvisionTasksSuccess> Success { get; set; }
+		public List<ApProvisionResponseProvisionTasksSuccess> Success { get; set; }
 		/// <summary>
 		/// Gets or Sets Failure
 		/// </summary>
 		[DataMember(Name = "failure", EmitDefaultValue = false)]
-		public APProvisionResponseProvisionTasksFailure Failure { get; set; }
+		public ApProvisionResponseProvisionTasksFailure Failure { get; set; }
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

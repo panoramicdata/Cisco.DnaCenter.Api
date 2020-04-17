@@ -12,16 +12,16 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionRequestInnerDynamicInterfaces" /> class.
 		/// </summary>
-		/// <param name="InterfaceIPAddress">InterfaceIPAddress.</param>
-		/// <param name="InterfaceNetmaskInCIDR">InterfaceNetmaskInCIDR.</param>
+		/// <param name="InterfaceIpAddress">InterfaceIPAddress.</param>
+		/// <param name="InterfaceNetmaskInCidr">InterfaceNetmaskInCIDR.</param>
 		/// <param name="InterfaceGateway">InterfaceGateway.</param>
 		/// <param name="LagOrPortNumber">LagOrPortNumber.</param>
 		/// <param name="VlanId">VlanId.</param>
 		/// <param name="InterfaceName">InterfaceName.</param>
-		public ProvisionRequestInnerDynamicInterfaces(string? InterfaceIPAddress = default, int? InterfaceNetmaskInCIDR = default, string? InterfaceGateway = default, int? LagOrPortNumber = default, int? VlanId = default, string? InterfaceName = default)
+		public ProvisionRequestInnerDynamicInterfaces(string? InterfaceIpAddress = default, int? InterfaceNetmaskInCidr = default, string? InterfaceGateway = default, int? LagOrPortNumber = default, int? VlanId = default, string? InterfaceName = default)
 		{
-			this.InterfaceIPAddress = InterfaceIPAddress;
-			this.InterfaceNetmaskInCIDR = InterfaceNetmaskInCIDR;
+			this.InterfaceIpAddress = InterfaceIpAddress;
+			this.InterfaceNetmaskInCidr = InterfaceNetmaskInCidr;
 			this.InterfaceGateway = InterfaceGateway;
 			this.LagOrPortNumber = LagOrPortNumber;
 			this.VlanId = VlanId;
@@ -32,12 +32,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets InterfaceIPAddress
 		/// </summary>
 		[DataMember(Name = "interfaceIPAddress", EmitDefaultValue = false)]
-		public string? InterfaceIPAddress { get; set; }
+		public string? InterfaceIpAddress { get; set; }
 		/// <summary>
 		/// Gets or Sets InterfaceNetmaskInCIDR
 		/// </summary>
 		[DataMember(Name = "interfaceNetmaskInCIDR", EmitDefaultValue = false)]
-		public int? InterfaceNetmaskInCIDR { get; set; }
+		public int? InterfaceNetmaskInCidr { get; set; }
 		/// <summary>
 		/// Gets or Sets InterfaceGateway
 		/// </summary>
@@ -66,8 +66,8 @@ namespace Cisco.DnaCenter.Api.Data
 		{
 			var sb = new StringBuilder();
 			sb.Append("class ProvisionRequestInnerDynamicInterfaces {\n");
-			sb.Append("  InterfaceIPAddress: ").Append(InterfaceIPAddress).Append("\n");
-			sb.Append("  InterfaceNetmaskInCIDR: ").Append(InterfaceNetmaskInCIDR).Append("\n");
+			sb.Append("  InterfaceIPAddress: ").Append(InterfaceIpAddress).Append("\n");
+			sb.Append("  InterfaceNetmaskInCIDR: ").Append(InterfaceNetmaskInCidr).Append("\n");
 			sb.Append("  InterfaceGateway: ").Append(InterfaceGateway).Append("\n");
 			sb.Append("  LagOrPortNumber: ").Append(LagOrPortNumber).Append("\n");
 			sb.Append("  VlanId: ").Append(VlanId).Append("\n");

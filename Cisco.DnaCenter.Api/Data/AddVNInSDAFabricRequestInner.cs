@@ -4,17 +4,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// AddVNInSDAFabricRequestInner
+	/// AddVNInSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class AddVNInSDAFabricRequestInner
+	public partial class AddVNInSdaFabricRequestInner
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AddVNInSDAFabricRequestInner" /> class.
+		/// Initializes a new instance of the <see cref="AddVNInSdaFabricRequestInner" /> class.
 		/// </summary>
 		/// <param name="VirtualNetworkName">VirtualNetworkName.</param>
 		/// <param name="SiteNameHierarchy">SiteNameHierarchy.</param>
-		public AddVNInSDAFabricRequestInner(string? VirtualNetworkName = default, string? SiteNameHierarchy = default)
+		public AddVNInSdaFabricRequestInner(string? VirtualNetworkName = default, string? SiteNameHierarchy = default)
 		{
 			this.VirtualNetworkName = VirtualNetworkName;
 			this.SiteNameHierarchy = SiteNameHierarchy;
@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class AddVNInSDAFabricRequestInner {\n");
+			sb.Append("class AddVNInSdaFabricRequestInner {\n");
 			sb.Append("  VirtualNetworkName: ").Append(VirtualNetworkName).Append("\n");
 			sb.Append("  SiteNameHierarchy: ").Append(SiteNameHierarchy).Append("\n");
 			sb.Append("}\n");

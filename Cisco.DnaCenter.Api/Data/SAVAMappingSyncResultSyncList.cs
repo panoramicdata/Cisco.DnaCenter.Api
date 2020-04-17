@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SAVAMappingSyncResultSyncList
 	/// </summary>
 	[DataContract]
-	public partial class SAVAMappingSyncResultSyncList
+	public partial class SavaMappingSyncResultSyncList
 	{
 		/// <summary>
 		/// Gets or Sets SyncType
@@ -50,11 +50,11 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "syncType", EmitDefaultValue = false)]
 		public SyncTypeEnum? SyncType { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SAVAMappingSyncResultSyncList" /> class.
+		/// Initializes a new instance of the <see cref="SavaMappingSyncResultSyncList" /> class.
 		/// </summary>
 		/// <param name="DeviceSnList">DeviceSnList.</param>
 		/// <param name="SyncType">SyncType.</param>
-		public SAVAMappingSyncResultSyncList(List<string> DeviceSnList = default, SyncTypeEnum? SyncType = default)
+		public SavaMappingSyncResultSyncList(List<string> DeviceSnList = default, SyncTypeEnum? SyncType = default)
 		{
 			this.DeviceSnList = DeviceSnList;
 			this.SyncType = SyncType;
