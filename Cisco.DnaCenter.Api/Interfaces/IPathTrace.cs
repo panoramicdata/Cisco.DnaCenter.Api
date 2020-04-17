@@ -29,10 +29,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of FlowAnalysisRequestResultOutput</returns>
 		[Post("/dna/intent/api/v1/flow-analysis")]
-		Task<FlowAnalysisRequestResultOutput> InitiateANewPathtrace([Body]FlowAnalysisRequest request, string Content_Type);
+		Task<FlowAnalysisRequestResultOutput> InitiateANewPathtrace([Body]FlowAnalysisRequest request);
 
 		/// <summary>
 		/// Retrieves previous Pathtrace

@@ -41,8 +41,8 @@ namespace Cisco.DnaCenter.Api
 			else
 			{
 				// We are creating an HttpClient (one was not provided), so set _httpClient so that we know to dispose of it later.
-				_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(_options.Token);
-				_httpClient = new HttpClient()
+				_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(_options.Token, _logger);
+				_httpClient = new HttpClient(_authenticatedHttpClientHandler)
 				{
 					BaseAddress = _options.Uri
 				};
@@ -95,7 +95,9 @@ namespace Cisco.DnaCenter.Api
 			{
 				var base64UsernameAndPassword = _options.GetBase64UsernamePassword();
 				authenticationResponse = await Authentication
-					.Authenticate("application/json", base64UsernameAndPassword)
+					.Authenticate(
+						"application/json",
+						$"Basic: {base64UsernameAndPassword}")
 					.ConfigureAwait(false);
 			}
 			catch (Exception e)

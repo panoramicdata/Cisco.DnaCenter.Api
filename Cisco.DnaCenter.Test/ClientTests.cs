@@ -1,5 +1,3 @@
-using Cisco.DnaCenter.Api;
-using System;
 using Xunit;
 using Xunit.Abstractions;
 

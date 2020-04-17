@@ -17,7 +17,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="id">Tag ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/tag/{id}/member")]
@@ -31,10 +30,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/tag")]
-		Task<TaskIdResult> CreateTag([Body]TagDto request, string Content_Type);
+		Task<TaskIdResult> CreateTag([Body]TagDto request);
 
 		/// <summary>
 		/// Delete Tag
@@ -163,10 +161,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/tag")]
-		Task<TaskIdResult> UpdateTag([Body]TagDto request, string Content_Type);
+		Task<TaskIdResult> UpdateTag([Body]TagDto request);
 
 		/// <summary>
 		/// Updates tag membership
@@ -176,9 +173,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/tag/member")]
-		Task<TaskIdResult> UpdatesTagMembership([Body]TagMemberDto request, string Content_Type);
+		Task<TaskIdResult> UpdatesTagMembership([Body]TagMemberDto request);
 	}
 }

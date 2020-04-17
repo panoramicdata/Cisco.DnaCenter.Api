@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Test
 		private DnaCenterClient? _client;
 		private readonly bool _autoConnectClient;
 
-		public Tests(ITestOutputHelper testOutputHelper, bool autoConnectClient = false)
+		public Tests(ITestOutputHelper testOutputHelper, bool autoConnectClient = true)
 		{
 			Logger = testOutputHelper.BuildLogger();
 			_autoConnectClient = autoConnectClient;

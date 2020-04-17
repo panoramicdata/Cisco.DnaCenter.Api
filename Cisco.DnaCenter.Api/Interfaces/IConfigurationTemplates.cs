@@ -17,10 +17,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/project")]
-		Task<TaskIdResult> CreateProject([Body]ProjectDto request, string Content_Type);
+		Task<TaskIdResult> CreateProject([Body]ProjectDto request);
 
 		/// <summary>
 		/// Create Template
@@ -30,7 +29,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="projectId">projectId</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/project/{projectId}/template")]
@@ -68,10 +66,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TemplateDeploymentStatusDto</returns>
 		[Post("/dna/intent/api/v1/template-programmer/template/deploy")]
-		Task<TemplateDeploymentStatusDto> DeployTemplate([Body]TemplateDeploymentInfo request, string Content_Type);
+		Task<TemplateDeploymentStatusDto> DeployTemplate([Body]TemplateDeploymentInfo request);
 
 		/// <summary>
 		/// Get Projects
@@ -148,10 +145,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TemplatePreviewResponseDto</returns>
 		[Put("/dna/intent/api/v1/template-programmer/template/preview")]
-		Task<TemplatePreviewResponseDto> PreviewTemplate([Body]TemplatePreviewRequestDto request, string Content_Type);
+		Task<TemplatePreviewResponseDto> PreviewTemplate([Body]TemplatePreviewRequestDto request);
 
 		/// <summary>
 		/// Update Project
@@ -161,10 +157,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/template-programmer/project")]
-		Task<TaskIdResult> UpdateProject([Body]ProjectDto request, string Content_Type);
+		Task<TaskIdResult> UpdateProject([Body]ProjectDto request);
 
 		/// <summary>
 		/// Update Template
@@ -174,10 +169,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/template-programmer/template")]
-		Task<TaskIdResult> UpdateTemplate([Body]TemplateDto request, string Content_Type);
+		Task<TaskIdResult> UpdateTemplate([Body]TemplateDto request);
 
 		/// <summary>
 		/// Version Template
@@ -187,9 +181,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/template/version")]
-		Task<TaskIdResult> VersionTemplate([Body]TemplateVersionRequestDto request, string Content_Type);
+		Task<TaskIdResult> VersionTemplate([Body]TemplateVersionRequestDto request);
 	}
 }

@@ -28,9 +28,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/network-device-poller/cli/read-request")]
-		Task<TaskIdResult> RunReadOnlyCommandsOnDevicesToGetTheirRealTimeConfiguration([Body]CommandRunnerDto request, string Content_Type);
+		Task<TaskIdResult> RunReadOnlyCommandsOnDevicesToGetTheirRealTimeConfiguration([Body]CommandRunnerDto request);
 	}
 }

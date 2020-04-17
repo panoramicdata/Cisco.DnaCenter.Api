@@ -65,7 +65,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Content Type</param>
 		/// <returns>Task of CreateEventSubscriptionsResponse</returns>
 		[Post("/dna/intent/api/v1/event/subscription")]
-		Task<CreateEventSubscriptionsResponse> CreateEventSubscriptions([Body]CreateEventSubscriptionsRequest request, string Content_Type);
+		Task<CreateEventSubscriptionsResponse> CreateEventSubscriptions([Body]CreateEventSubscriptionsRequest request);
 
 		/// <summary>
 		/// Delete Event Subscriptions
@@ -160,6 +160,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="Content_Type">Content Type</param>
 		/// <returns>Task of UpdateEventSubscriptionsResponse</returns>
 		[Put("/dna/intent/api/v1/event/subscription")]
-		Task<UpdateEventSubscriptionsResponse> UpdateEventSubscriptions([Body]UpdateEventSubscriptionsRequest request, string Content_Type);
+		Task<UpdateEventSubscriptionsResponse> UpdateEventSubscriptions([Body]UpdateEventSubscriptionsRequest request);
 	}
 }

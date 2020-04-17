@@ -18,10 +18,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of AddAWorkflowResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-workflow")]
-		Task<AddAWorkflowResponse> AddAWorkflow([Body]Workflow request, string Content_Type);
+		Task<AddAWorkflowResponse> AddAWorkflow([Body]Workflow request);
 
 		/// <summary>
 		/// Add Device
@@ -31,10 +30,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of Device</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device")]
-		Task<Device> AddDeviceToPnpDatabase([Body]Device request, string Content_Type);
+		Task<Device> AddDeviceToPnpDatabase([Body]Device request);
 
 		/// <summary>
 		/// Add Virtual Account
@@ -44,10 +42,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of AddVirtualAccountResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		Task<AddVirtualAccountResponse> AddVirtualAccount([Body]SAVAMapping request, string Content_Type);
+		Task<AddVirtualAccountResponse> AddVirtualAccount([Body]SAVAMapping request);
 
 		/// <summary>
 		/// Claim a Device to a Site
@@ -57,10 +54,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of SiteClaimResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/site-claim")]
-		Task<SiteClaimResponse> ClaimADeviceToASite([Body]SiteProvisionRequest request, string Content_Type);
+		Task<SiteClaimResponse> ClaimADeviceToASite([Body]SiteProvisionRequest request);
 
 		/// <summary>
 		/// Claim Device
@@ -70,10 +66,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of ClaimDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/claim")]
-		Task<ClaimDeviceResponse> ClaimDevice([Body]ClaimDeviceRequest request, string Content_Type);
+		Task<ClaimDeviceResponse> ClaimDevice([Body]ClaimDeviceRequest request);
 
 		/// <summary>
 		/// Delete Device by Id from PnP
@@ -288,10 +283,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of ImportDevicesInBulkResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/import")]
-		Task<ImportDevicesInBulkResponse> ImportDevicesInBulk([Body]Device request, string Content_Type);
+		Task<ImportDevicesInBulkResponse> ImportDevicesInBulk([Body]Device request);
 
 		/// <summary>
 		/// Preview Config
@@ -301,10 +295,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of DayZeroConfigPreviewResult</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/site-config-preview")]
-		Task<DayZeroConfigPreviewResult> PreviewConfig([Body]SiteProvisionRequest request, string Content_Type);
+		Task<DayZeroConfigPreviewResult> PreviewConfig([Body]SiteProvisionRequest request);
 
 		/// <summary>
 		/// Reset Device
@@ -314,10 +307,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of ResetDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/reset")]
-		Task<ResetDeviceResponse> ResetDevice([Body]ResetRequest request, string Content_Type);
+		Task<ResetDeviceResponse> ResetDevice([Body]ResetRequest request);
 
 		/// <summary>
 		/// Sync Virtual Account Devices
@@ -327,10 +319,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of SyncVirtualAccountDevicesResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/vacct-sync")]
-		Task<SyncVirtualAccountDevicesResponse> SyncVirtualAccountDevices([Body]SAVAMapping request, string Content_Type);
+		Task<SyncVirtualAccountDevicesResponse> SyncVirtualAccountDevices([Body]SAVAMapping request);
 
 		/// <summary>
 		/// Un-Claim Device
@@ -340,10 +331,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of UnClaimDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/unclaim")]
-		Task<UnClaimDeviceResponse> UnClaimDevice([Body]UnclaimRequest request, string Content_Type);
+		Task<UnClaimDeviceResponse> UnClaimDevice([Body]UnclaimRequest request);
 
 		/// <summary>
 		/// Update Device
@@ -353,7 +343,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="id">id</param>
 		/// <returns>Task of UpdateDeviceResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
@@ -367,10 +356,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of UpdatePnPGlobalSettingsResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings")]
-		Task<UpdatePnPGlobalSettingsResponse> UpdatePnPGlobalSettings([Body]Settings request, string Content_Type);
+		Task<UpdatePnPGlobalSettingsResponse> UpdatePnPGlobalSettings([Body]Settings request);
 
 		/// <summary>
 		/// Update PnP Server Profile
@@ -380,10 +368,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of UpdatePnPServerProfileResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		Task<UpdatePnPServerProfileResponse> UpdatePnPServerProfile([Body]SAVAMapping request, string Content_Type);
+		Task<UpdatePnPServerProfileResponse> UpdatePnPServerProfile([Body]SAVAMapping request);
 
 		/// <summary>
 		/// Update Workflow
@@ -393,7 +380,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="id">id</param>
 		/// <returns>Task of UpdateWorkflowResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]

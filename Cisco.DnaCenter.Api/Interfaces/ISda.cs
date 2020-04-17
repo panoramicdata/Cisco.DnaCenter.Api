@@ -163,7 +163,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of DeleteEdgeDeviceFromSDAFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/edge-device")]
-		Task<DeleteEdgeDeviceFromSDAFabricResponse> DeleteEdgeDeviceFromSDAFabric([AliasAs("deviceIPAddress")]string deviceIPAddress);
+		Task<DeleteEdgeDeviceFromSdaFabricResponse> DeleteEdgeDeviceFromSDAFabric([AliasAs("deviceIPAddress")]string deviceIPAddress);
 
 		/// <summary>
 		/// **BETA** - Delete IP Pool from SDA Virtual Network

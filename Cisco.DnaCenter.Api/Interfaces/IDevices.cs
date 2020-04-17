@@ -1,7 +1,7 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
-using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
@@ -18,10 +18,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/network-device")]
-		Task<TaskIdResult> AddDevice([Body]InventoryDeviceInfo request, string Content_Type);
+		Task<TaskIdResult> AddDevice([Body]InventoryDeviceInfo request);
 
 		/// <summary>
 		/// Delete Device by Id
@@ -44,10 +43,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/network-device/file")]
-		Task<TaskIdResult> ExportDeviceList([Body]ExportDeviceDto request, string Content_Type);
+		Task<TaskIdResult> ExportDeviceList([Body]ExportDeviceDto request);
 
 		/// <summary>
 		/// Get all interfaces
@@ -530,10 +528,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/network-device")]
-		Task<TaskIdResult> SyncDevices([Body]InventoryDeviceInfo request, string Content_Type);
+		Task<TaskIdResult> SyncDevices([Body]InventoryDeviceInfo request);
 
 		/// <summary>
 		/// Sync Devices
@@ -543,7 +540,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="forceSync">forceSync (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/network-device/sync")]
@@ -557,9 +553,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/network-device/brief")]
-		Task<TaskIdResult> UpdateDeviceRole([Body]NetworkDeviceBriefNIO request, string Content_Type);
+		Task<TaskIdResult> UpdateDeviceRole([Body]NetworkDeviceBriefNIO request);
 	}
 }

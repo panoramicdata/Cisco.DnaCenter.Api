@@ -45,7 +45,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Fetches a software image from local file system and uploads to DNA Center. Supported software image files extensions are bin, img, tar, smu, pie, aes, iso, ova, tar_gz and qcow2
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="isThirdParty">Third party Image check (optional)</param>
 		/// <param name="thirdPartyVendor">Third Party Vendor (optional)</param>
 		/// <param name="thirdPartyImageFamily">Third Party image family (optional)</param>
@@ -62,7 +61,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="scheduleAt">Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the distribution should be scheduled (Optional)  (optional)</param>
 		/// <param name="scheduleDesc">Custom Description (Optional) (optional)</param>
 		/// <param name="scheduleOrigin">Originator of this call (Optional) (optional)</param>
@@ -78,7 +76,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="Client_Type">Client-type (Optional) (optional)</param>
 		/// <param name="Client_Url">Client-url (Optional) (optional)</param>
 		/// <param name="scheduleValidate">scheduleValidate, validates data before schedule (Optional) (optional)</param>
@@ -94,9 +91,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/distribution")]
-		Task<TaskIdResult> TriggerSoftwareImageDistribution([Body]DistributeDto request, string Content_Type);
+		Task<TaskIdResult> TriggerSoftwareImageDistribution([Body]DistributeDto request);
 	}
 }

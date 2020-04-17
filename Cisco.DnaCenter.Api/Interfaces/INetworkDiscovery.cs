@@ -18,10 +18,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/cli")]
-		Task<TaskIdResult> CreateCLICredentials([Body]CLICredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateCLICredentials([Body]CLICredentialDto request);
 
 		/// <summary>
 		/// Create HTTP read credentials
@@ -31,10 +30,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-read")]
-		Task<TaskIdResult> CreateHTTPReadCredentials([Body]HTTPReadCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateHTTPReadCredentials([Body]HTTPReadCredentialDto request);
 
 		/// <summary>
 		/// Create HTTP write credentials
@@ -44,10 +42,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-write")]
-		Task<TaskIdResult> CreateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request);
 
 		/// <summary>
 		/// Create Netconf credentials
@@ -57,10 +54,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/netconf")]
-		Task<TaskIdResult> CreateNetconfCredentials([Body]NetconfCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateNetconfCredentials([Body]NetconfCredentialDto request);
 
 		/// <summary>
 		/// Create SNMP read community
@@ -70,10 +66,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
-		Task<TaskIdResult> CreateSNMPReadCommunity([Body]SNMPvReadCommunityDto request, string Content_Type);
+		Task<TaskIdResult> CreateSNMPReadCommunity([Body]SNMPvReadCommunityDto request);
 
 		/// <summary>
 		/// Create SNMP write community
@@ -83,10 +78,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
-		Task<TaskIdResult> CreateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request, string Content_Type);
+		Task<TaskIdResult> CreateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request);
 
 		/// <summary>
 		/// Create SNMPv3 credentials
@@ -96,10 +90,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv3")]
-		Task<TaskIdResult> CreateSNMPv3Credentials([Body]SNMPvCredentialDto request, string Content_Type);
+		Task<TaskIdResult> CreateSNMPv3Credentials([Body]SNMPvCredentialDto request);
 
 		/// <summary>
 		/// Create/Update SNMP properties
@@ -109,10 +102,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/snmp-property")]
-		Task<TaskIdResult> CreateUpdateSNMPProperties([Body]SystemPropertyNameAndIntValueDto request, string Content_Type);
+		Task<TaskIdResult> CreateUpdateSNMPProperties([Body]SystemPropertyNameAndIntValueDto request);
 
 		/// <summary>
 		/// Delete all discovery
@@ -335,10 +327,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/discovery")]
-		Task<TaskIdResult> StartDiscovery([Body]InventoryRequest request, string Content_Type);
+		Task<TaskIdResult> StartDiscovery([Body]InventoryRequest request);
 
 		/// <summary>
 		/// Update CLI credentials
@@ -348,10 +339,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/cli")]
-		Task<TaskIdResult> UpdateCLICredentials([Body]CLICredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateCLICredentials([Body]CLICredentialDto request);
 
 		/// <summary>
 		/// Update global credentials
@@ -361,7 +351,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <param name="globalCredentialId">Global credential Uuid</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
@@ -375,10 +364,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-read")]
-		Task<TaskIdResult> UpdateHTTPReadCredential([Body]HTTPReadCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateHTTPReadCredential([Body]HTTPReadCredentialDto request);
 
 		/// <summary>
 		/// Update HTTP write credentials
@@ -388,10 +376,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-write")]
-		Task<TaskIdResult> UpdateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateHTTPWriteCredentials([Body]HTTPWriteCredentialDto request);
 
 		/// <summary>
 		/// Update Netconf credentials
@@ -401,10 +388,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/netconf")]
-		Task<TaskIdResult> UpdateNetconfCredentials([Body]NetconfCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateNetconfCredentials([Body]NetconfCredentialDto request);
 
 		/// <summary>
 		/// Update SNMP read community
@@ -414,10 +400,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
-		Task<TaskIdResult> UpdateSNMPReadCommunity([Body]SNMPvReadCommunityDto request, string Content_Type);
+		Task<TaskIdResult> UpdateSNMPReadCommunity([Body]SNMPvReadCommunityDto request);
 
 		/// <summary>
 		/// Update SNMP write community
@@ -427,10 +412,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
-		Task<TaskIdResult> UpdateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request, string Content_Type);
+		Task<TaskIdResult> UpdateSNMPWriteCommunity([Body]SNMPvWriteCommunityDto request);
 
 		/// <summary>
 		/// Update SNMPv3 credentials
@@ -440,10 +424,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv3")]
-		Task<TaskIdResult> UpdateSNMPv3Credentials([Body]SNMPvCredentialDto request, string Content_Type);
+		Task<TaskIdResult> UpdateSNMPv3Credentials([Body]SNMPvCredentialDto request);
 
 		/// <summary>
 		/// Updates an existing discovery by specified Id
@@ -453,9 +436,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Request body content type</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/discovery")]
-		Task<TaskIdResult> UpdatesAnExistingDiscoveryBySpecifiedId([Body]DiscoveryNIO request, string Content_Type);
+		Task<TaskIdResult> UpdatesAnExistingDiscoveryBySpecifiedId([Body]DiscoveryNIO request);
 	}
 }
