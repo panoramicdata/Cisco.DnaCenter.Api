@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -15,12 +16,15 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds members to the tag specified by id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="id">Tag ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/tag/{id}/member")]
-		Task<TaskIdResult> AddMembersToTheTag([Body]Listentrystringliststring request, string Content_Type, [AliasAs("id")]string id);
+		Task<TaskIdResult> AddMembersToTheTagAsync(
+			[Body]Listentrystringliststring request,
+			string Content_Type,
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create Tag
@@ -28,11 +32,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Creates tag with specified tag attributes
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/tag")]
-		Task<TaskIdResult> CreateTag([Body]TagDto request);
+		Task<TaskIdResult> CreateTagAsync(
+			[Body]TagDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Tag
@@ -40,11 +45,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deletes a tag specified by id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Tag ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/tag/{id}")]
-		Task<TaskIdResult> DeleteTag([AliasAs("id")]string id);
+		Task<TaskIdResult> DeleteTagAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Tag
@@ -52,7 +58,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the tags for given filter criteria
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="name">Tag name is mandatory when filter operation is used. (optional)</param>
 		/// <param name="additionalInfo_nameSpace">nameSpace (optional)</param>
 		/// <param name="additionalInfo_attributes">attributeName (optional)</param>
@@ -66,7 +71,19 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="systemTag">systemTag (optional)</param>
 		/// <returns>Task of TagListResult</returns>
 		[Get("/dna/intent/api/v1/tag")]
-		Task<TagListResult> GetTag([AliasAs("name")]string name = null, [AliasAs("additionalInfo_nameSpace")]string additionalInfo_nameSpace = null, [AliasAs("additionalInfo_attributes")]string additionalInfo_attributes = null, [AliasAs("level")]string level = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("size")]string size = null, [AliasAs("field")]string field = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null, [AliasAs("systemTag")]string systemTag = null);
+		Task<TagListResult> GetTagAsync(
+			[AliasAs("name")]string name = null,
+			[AliasAs("additionalInfo_nameSpace")]string additionalInfo_nameSpace = null,
+			[AliasAs("additionalInfo_attributes")]string additionalInfo_attributes = null,
+			[AliasAs("level")]string level = null,
+			[AliasAs("offset")]string offset = null,
+			[AliasAs("limit")]string limit = null,
+			[AliasAs("size")]string size = null,
+			[AliasAs("field")]string field = null,
+			[AliasAs("sortBy")]string sortBy = null,
+			[AliasAs("order")]string order = null,
+			[AliasAs("systemTag")]string systemTag = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Tag by Id
@@ -74,11 +91,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns tag specified by Id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Tag ID</param>
 		/// <returns>Task of TagResult</returns>
 		[Get("/dna/intent/api/v1/tag/{id}")]
-		Task<TagResult> GetTagById([AliasAs("id")]string id);
+		Task<TagResult> GetTagByIdAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Tag Count
@@ -86,7 +104,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns tag count
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="name">tagName (optional)</param>
 		/// <param name="_nameSpace">nameSpace (optional)</param>
 		/// <param name="attributeName">attributeName (optional)</param>
@@ -95,7 +112,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="systemTag">systemTag (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/tag/count")]
-		Task<CountResult> GetTagCount([AliasAs("name")]string name = null, [AliasAs("_nameSpace")]string _nameSpace = null, [AliasAs("attributeName")]string attributeName = null, [AliasAs("level")]string level = null, [AliasAs("size")]string size = null, [AliasAs("systemTag")]string systemTag = null);
+		Task<CountResult> GetTagCountAsync(
+			[AliasAs("name")]string name = null,
+			[AliasAs("_nameSpace")]string _nameSpace = null,
+			[AliasAs("attributeName")]string attributeName = null,
+			[AliasAs("level")]string level = null,
+			[AliasAs("size")]string size = null,
+			[AliasAs("systemTag")]string systemTag = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Tag Member count
@@ -103,14 +127,18 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the number of members in a given tag
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Tag ID</param>
 		/// <param name="memberType">memberType</param>
 		/// <param name="memberAssociationType">memberAssociationType (optional)</param>
 		/// <param name="level">level (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/tag/{id}/member/count")]
-		Task<CountResult> GetTagMemberCount([AliasAs("id")]string id, [AliasAs("memberType")]string memberType, [AliasAs("memberAssociationType")]string memberAssociationType = null, [AliasAs("level")]string level = null);
+		Task<CountResult> GetTagMemberCountAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("memberType")]string memberType,
+			[AliasAs("memberAssociationType")]string memberAssociationType = null,
+			[AliasAs("level")]string level = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Tag members by Id
@@ -118,7 +146,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns tag members specified by id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Tag ID</param>
 		/// <param name="memberType">Entity type of the member. Possible values can be retrieved by using /tag/member/type API</param>
 		/// <param name="offset">Used for pagination. It indicates the starting row number out of available member records (optional)</param>
@@ -127,7 +154,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="level">level (optional)</param>
 		/// <returns>Task of TagMembersResult</returns>
 		[Get("/dna/intent/api/v1/tag/{id}/member")]
-		Task<TagMembersResult> GetTagMembersById([AliasAs("id")]string id, [AliasAs("memberType")]string memberType, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("memberAssociationType")]string memberAssociationType = null, [AliasAs("level")]string level = null);
+		Task<TagMembersResult> GetTagMembersByIdAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("memberType")]string memberType,
+			[AliasAs("offset")]string offset = null,
+			[AliasAs("limit")]string limit = null,
+			[AliasAs("memberAssociationType")]string memberAssociationType = null,
+			[AliasAs("level")]string level = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Tag resource types
@@ -135,10 +169,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns list of supported resource types
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of TagTypesResult</returns>
 		[Get("/dna/intent/api/v1/tag/member/type")]
-		Task<TagTypesResult> GetTagResourceTypes();
+		Task<TagTypesResult> GetTagResourceTypesAsync(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Remove Tag member
@@ -146,12 +180,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Removes Tag member from the tag specified by id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Tag ID</param>
 		/// <param name="memberId">TagMember id to be removed from tag</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/tag/{id}/member/{memberId}")]
-		Task<TaskIdResult> RemoveTagMember([AliasAs("id")]string id, [AliasAs("memberId")]string memberId);
+		Task<TaskIdResult> RemoveTagMemberAsync(
+			[AliasAs("id")]string id,
+			[AliasAs("memberId")]string memberId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update Tag
@@ -159,11 +195,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates a tag specified by id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/tag")]
-		Task<TaskIdResult> UpdateTag([Body]TagDto request);
+		Task<TaskIdResult> UpdateTagAsync(
+			[Body]TagDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Updates tag membership
@@ -171,10 +208,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates tag membership. As part of the request payload through this API, only the specified members are added / retained to the given input tags. Possible values of memberType attribute in the request payload can be queried by using the /tag/member/type API
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/tag/member")]
-		Task<TaskIdResult> UpdatesTagMembership([Body]TagMemberDto request);
+		Task<TaskIdResult> UpdatesTagMembershipAsync(
+			[Body]TagMemberDto request,
+			CancellationToken cancellationToken = default);
 	}
 }

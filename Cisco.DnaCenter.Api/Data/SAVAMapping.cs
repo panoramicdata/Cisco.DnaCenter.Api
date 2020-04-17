@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SAVAMapping
 	/// </summary>
 	[DataContract]
-	public partial class SAVAMapping
+	public partial class SavaMapping
 	{
 		/// <summary>
 		/// Gets or Sets SyncStatus
@@ -49,7 +49,7 @@ namespace Cisco.DnaCenter.Api.Data
 		[DataMember(Name = "syncStatus", EmitDefaultValue = false)]
 		public SyncStatusEnum? SyncStatus { get; set; }
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SAVAMapping" /> class.
+		/// Initializes a new instance of the <see cref="SavaMapping" /> class.
 		/// </summary>
 		/// <param name="AutoSyncPeriod">AutoSyncPeriod.</param>
 		/// <param name="CcoUser">CcoUser.</param>
@@ -64,7 +64,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TenantId">TenantId.</param>
 		/// <param name="Token">Token.</param>
 		/// <param name="VirtualAccountId">VirtualAccountId.</param>
-		public SAVAMapping(int? AutoSyncPeriod = default, string? CcoUser = default, int? Expiry = default, int? LastSync = default, SAVAMappingProfile Profile = default, string? SmartAccountId = default, SAVAMappingSyncResult SyncResult = default, string? SyncResultStr = default, int? SyncStartTime = default, SyncStatusEnum? SyncStatus = default, string? TenantId = default, string? Token = default, string? VirtualAccountId = default)
+		public SavaMapping(int? AutoSyncPeriod = default, string? CcoUser = default, int? Expiry = default, int? LastSync = default, SAVAMappingProfile Profile = default, string? SmartAccountId = default, SAVAMappingSyncResult SyncResult = default, string? SyncResultStr = default, int? SyncStartTime = default, SyncStatusEnum? SyncStatus = default, string? TenantId = default, string? Token = default, string? VirtualAccountId = default)
 		{
 			this.AutoSyncPeriod = AutoSyncPeriod;
 			this.CcoUser = CcoUser;

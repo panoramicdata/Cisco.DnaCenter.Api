@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -15,11 +16,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns a task by specified id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="taskId">UUID of the Task</param>
 		/// <returns>Task of TaskDtoResponse</returns>
 		[Get("/dna/intent/api/v1/task/{taskId}")]
-		Task<TaskDtoResponse> GetTaskById([AliasAs("taskId")]string taskId);
+		Task<TaskDtoResponse> GetTaskByIdAsync(
+			[AliasAs("taskId")]string taskId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get task by OperationId
@@ -27,13 +29,16 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns root tasks associated with an Operationid
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="operationId">operationId</param>
 		/// <param name="offset">Index, minimum value is 0</param>
 		/// <param name="limit">The maximum value of {limit} supported is 500. &lt;br/&gt; Base 1 indexing for {limit}, minimum value is 1</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task/operation/{operationId}/{offset}/{limit}")]
-		Task<TaskDtoListResponse> GetTaskByOperationId([AliasAs("operationId")]string operationId, [AliasAs("offset")]int? offset, [AliasAs("limit")]int? limit);
+		Task<TaskDtoListResponse> GetTaskByOperationIdAsync(
+			[AliasAs("operationId")]string operationId,
+			[AliasAs("offset")]int? offset,
+			[AliasAs("limit")]int? limit,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get task count
@@ -41,7 +46,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns Task count
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="startTime">This is the epoch start time from which tasks need to be fetched (optional)</param>
 		/// <param name="endTime">This is the epoch end time upto which audit records need to be fetched (optional)</param>
 		/// <param name="data">Fetch tasks that contains this data (optional)</param>
@@ -54,7 +58,18 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="parentId">Fetch tasks that have this parent Id (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/task/count")]
-		Task<CountResult> GetTaskCount([AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("data")]string data = null, [AliasAs("errorCode")]string errorCode = null, [AliasAs("serviceType")]string serviceType = null, [AliasAs("username")]string username = null, [AliasAs("progress")]string progress = null, [AliasAs("isError")]string isError = null, [AliasAs("failureReason")]string failureReason = null, [AliasAs("parentId")]string parentId = null);
+		Task<CountResult> GetTaskCountAsync(
+			[AliasAs("startTime")]string startTime = null,
+			[AliasAs("endTime")]string endTime = null,
+			[AliasAs("data")]string data = null,
+			[AliasAs("errorCode")]string errorCode = null,
+			[AliasAs("serviceType")]string serviceType = null,
+			[AliasAs("username")]string username = null,
+			[AliasAs("progress")]string progress = null,
+			[AliasAs("isError")]string isError = null,
+			[AliasAs("failureReason")]string failureReason = null,
+			[AliasAs("parentId")]string parentId = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get task tree
@@ -62,11 +77,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns a task with its children tasks by based on their id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="taskId">UUID of the Task</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task/{taskId}/tree")]
-		Task<TaskDtoListResponse> GetTaskTree([AliasAs("taskId")]string taskId);
+		Task<TaskDtoListResponse> GetTaskTreeAsync(
+			[AliasAs("taskId")]string taskId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get tasks
@@ -74,7 +90,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns task(s) based on filter criteria
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="startTime">This is the epoch start time from which tasks need to be fetched (optional)</param>
 		/// <param name="endTime">This is the epoch end time upto which audit records need to be fetched (optional)</param>
 		/// <param name="data">Fetch tasks that contains this data (optional)</param>
@@ -91,6 +106,21 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">Sort order - asc or dsc (optional)</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task")]
-		Task<TaskDtoListResponse> GetTasks([AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("data")]string data = null, [AliasAs("errorCode")]string errorCode = null, [AliasAs("serviceType")]string serviceType = null, [AliasAs("username")]string username = null, [AliasAs("progress")]string progress = null, [AliasAs("isError")]string isError = null, [AliasAs("failureReason")]string failureReason = null, [AliasAs("parentId")]string parentId = null, [AliasAs("offset")]string offset = null, [AliasAs("limit")]string limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<TaskDtoListResponse> GetTasksAsync(
+			[AliasAs("startTime")]string startTime = null,
+			[AliasAs("endTime")]string endTime = null,
+			[AliasAs("data")]string data = null,
+			[AliasAs("errorCode")]string errorCode = null,
+			[AliasAs("serviceType")]string serviceType = null,
+			[AliasAs("username")]string username = null,
+			[AliasAs("progress")]string progress = null,
+			[AliasAs("isError")]string isError = null,
+			[AliasAs("failureReason")]string failureReason = null,
+			[AliasAs("parentId")]string parentId = null,
+			[AliasAs("offset")]string offset = null,
+			[AliasAs("limit")]string limit = null,
+			[AliasAs("sortBy")]string sortBy = null,
+			[AliasAs("order")]string order = null,
+			CancellationToken cancellationToken = default);
 	}
 }

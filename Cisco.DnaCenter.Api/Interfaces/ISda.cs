@@ -15,7 +15,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add control plane device in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddControlPlaneDeviceInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/control-plane-device")]
@@ -27,7 +26,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add default authentication profile in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddDefaultAuthenticationProfileInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/authentication-profile")]
@@ -39,7 +37,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add edge device in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddEdgeDeviceInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/edge-device")]
@@ -51,7 +48,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/fabric")]
@@ -63,7 +59,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add IP Pool in SDA Virtual Network
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddIPPoolInSDAVirtualNetworkResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/virtualnetwork/ippool")]
@@ -75,7 +70,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add Port assignment for access point in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddPortAssignmentForAccessPointInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
@@ -87,7 +81,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add Port assignment for user device in SDA Fabric.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddPortAssignmentForUserDeviceInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/hostonboarding/user-device")]
@@ -99,7 +92,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add Site in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddSiteInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/fabric-site")]
@@ -111,7 +103,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Add virtual network (VN) in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddVNInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/virtual-network")]
@@ -123,7 +114,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Adds border device in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddsBorderDeviceInSDAFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/border-device")]
@@ -135,7 +125,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete control plane device in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of DeleteControlPlaneDeviceInSDAFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/control-plane-device")]
@@ -147,7 +136,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete default authentication profile from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="siteNameHierarchy">siteNameHierarchy</param>
 		/// <returns>Task of DeleteDefaultAuthenticationProfileFromSDAFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/authentication-profile")]
@@ -159,7 +147,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete edge device from SDA Fabric.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of DeleteEdgeDeviceFromSDAFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/edge-device")]
@@ -171,7 +158,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete IP Pool from SDA Virtual Network
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="ipPoolName">ipPoolName</param>
 		/// <param name="virtualNetworkName">virtualNetworkName</param>
@@ -185,7 +171,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete Port assignment for access point in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="device_ip">device-ip</param>
 		/// <param name="interfaceName">interfaceName</param>
@@ -199,7 +184,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete Port assignment for user device in SDA Fabric.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="device_ip">device-ip</param>
 		/// <param name="interfaceName">interfaceName</param>
@@ -213,7 +197,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="fabricName">Fabric Name</param>
 		/// <returns>Task of DeleteSDAFabricResponse</returns>
@@ -226,7 +209,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete Site from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="siteNameHierarchy">Site Name Hierarchy</param>
 		/// <returns>Task of DeleteSiteFromSDAFabricResponse</returns>
@@ -239,7 +221,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Delete virtual network (VN) from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="virtualNetworkName">virtualNetworkName</param>
 		/// <param name="siteNameHierarchy">siteNameHierarchy</param>
 		/// <returns>Task of DeleteVNFromSDAFabricResponse</returns>
@@ -252,7 +233,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Deletes border device from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of DeletesBorderDeviceFromSDAFabricResponse</returns>
@@ -265,7 +245,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get control plane device from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of GetControlPlaneDeviceFromSDAFabricResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/control-plane-device")]
@@ -277,7 +256,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get default authentication profile from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="siteNameHierarchy">siteNameHierarchy</param>
 		/// <returns>Task of GetDefaultAuthenticationProfileFromSDAFabricResponse</returns>
@@ -290,7 +268,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get device info from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of GetDeviceInfoFromSDAFabricResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/device")]
@@ -302,7 +279,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get edge device from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of GetEdgeDeviceFromSDAFabricResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/edge-device")]
@@ -314,7 +290,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get IP Pool from SDA Virtual Network
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="ipPoolName">ipPoolName</param>
 		/// <param name="virtualNetworkName">virtualNetworkName</param>
@@ -328,7 +303,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get Port assignment for access point in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="device_ip">device-ip</param>
 		/// <param name="interfaceName">interfaceName</param>
@@ -342,7 +316,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get Port assignment for user device in SDA Fabric.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="device_ip">device-ip</param>
 		/// <param name="interfaceName">interfaceName</param>
@@ -356,7 +329,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get SDA Fabric Info
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="fabricName">Fabric Name</param>
 		/// <returns>Task of GetSDAFabricInfoResponse</returns>
@@ -369,7 +341,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get Site info from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="siteNameHierarchy">Site Name Hierarchy</param>
 		/// <returns>Task of GetSiteFromSDAFabricResponse</returns>
@@ -382,7 +353,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Get virtual network (VN) from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="virtualNetworkName">virtualNetworkName</param>
 		/// <param name="siteNameHierarchy">siteNameHierarchy</param>
 		/// <returns>Task of GetVNFromSDAFabricResponse</returns>
@@ -395,7 +365,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Gets border device detail from SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of GetsBorderDeviceDetailFromSDAFabricResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/border-device")]
@@ -407,7 +376,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// **BETA** - Update default authentication profile template in SDA Fabric
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdateDefaultAuthenticationProfileTemplateInSDAFabricResponse</returns>
 		[Put("/dna/intent/api/v1/business/sda/authentication-profile")]

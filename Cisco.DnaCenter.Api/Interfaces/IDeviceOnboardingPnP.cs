@@ -1,14 +1,15 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
-using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
 {
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface IDeviceOnboardingPnP
+	public interface IDeviceOnboardingPnp
 	{
 		/// <summary>
 		/// Add a Workflow
@@ -16,11 +17,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds a PnP Workflow along with the relevant tasks in the workflow into the PnP database
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddAWorkflowResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-workflow")]
-		Task<AddAWorkflowResponse> AddAWorkflow([Body]Workflow request);
+		Task<AddAWorkflowResponse> AddWorkflowAsync(
+			[Body]Workflow request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Add Device
@@ -28,11 +30,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds a device to the PnP database.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of Device</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device")]
-		Task<Device> AddDeviceToPnpDatabase([Body]Device request);
+		Task<Device> AddDeviceToPnpDatabaseAsync(
+			[Body]Device request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Add Virtual Account
@@ -40,11 +43,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Registers a Smart Account, Virtual Account and the relevant server profile info with the PnP System &amp; database. The devices present in the registered virtual account are synced with the PnP database as well. The response payload returns the new profile
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddVirtualAccountResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		Task<AddVirtualAccountResponse> AddVirtualAccount([Body]SAVAMapping request);
+		Task<AddVirtualAccountResponse> AddVirtualAccountAsync(
+			[Body]SavaMapping request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Claim a Device to a Site
@@ -52,11 +56,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Claim a device based on DNA-C Site based design process. Different parameters are required for different device platforms.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of SiteClaimResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/site-claim")]
-		Task<SiteClaimResponse> ClaimADeviceToASite([Body]SiteProvisionRequest request);
+		Task<SiteClaimResponse> ClaimDeviceToSiteAsync(
+			[Body]SiteProvisionRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Claim Device
@@ -64,11 +69,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Claims one of more devices with specified workflow
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of ClaimDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/claim")]
-		Task<ClaimDeviceResponse> ClaimDevice([Body]ClaimDeviceRequest request);
+		Task<ClaimDeviceResponse> ClaimDeviceAsync(
+			[Body]ClaimDeviceRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Device by Id from PnP
@@ -76,11 +82,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deletes specified device from PnP database
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">id</param>
 		/// <returns>Task of DeleteDeviceByIdFromPnPResponse</returns>
 		[Delete("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		Task<DeleteDeviceByIdFromPnPResponse> DeleteDeviceByIdFromPnP([AliasAs("id")]string id);
+		Task<DeleteDeviceByIdFromPnPResponse> DeleteDeviceByIdFromPnpAysnc(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Workflow By Id
@@ -88,11 +95,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deletes a workflow specified by id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">id</param>
 		/// <returns>Task of DeleteWorkflowByIdResponse</returns>
 		[Delete("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
-		Task<DeleteWorkflowByIdResponse> DeleteWorkflowById([AliasAs("id")]string id);
+		Task<DeleteWorkflowByIdResponse> DeleteWorkflowByIdAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Deregister Virtual Account
@@ -100,12 +108,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deregisters the specified smart account &amp; virtual account info and the associated device information from the PnP System &amp; database. The devices associated with the deregistered virtual account are removed from the PnP database as well. The response payload contains the deregistered smart &amp; virtual account information
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="domain">Smart Account Domain</param>
 		/// <param name="name">Virtual Account Name</param>
 		/// <returns>Task of DeregisterVirtualAccountResponse</returns>
 		[Delete("/dna/intent/api/v1/onboarding/pnp-settings/vacct")]
-		Task<DeregisterVirtualAccountResponse> DeregisterVirtualAccount([AliasAs("domain")]string domain, [AliasAs("name")]string name);
+		Task<DeregisterVirtualAccountResponse> DeregisterVirtualAccountAsync(
+			[AliasAs("domain")]string domain,
+			[AliasAs("name")]string name,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Device by Id
@@ -113,11 +123,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns device details specified by device id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">id</param>
 		/// <returns>Task of GetDeviceByIdResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		Task<GetDeviceByIdResponse> GetDeviceById([AliasAs("id")]string id);
+		Task<GetDeviceByIdResponse> GetDeviceByIdAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Device History
@@ -125,13 +136,16 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns history for a specific device. Serial number is a required parameter
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="serialNumber">Device Serial Number</param>
 		/// <param name="sort">Comma seperated list of fields to sort on (optional)</param>
 		/// <param name="sortOrder">Sort Order Ascending (asc) or Descending (des) (optional)</param>
 		/// <returns>Task of GetDeviceHistoryResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/history")]
-		Task<GetDeviceHistoryResponse> GetDeviceHistory([AliasAs("serialNumber")]string serialNumber, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null);
+		Task<GetDeviceHistoryResponse> GetDeviceHistoryAsync(
+			[AliasAs("serialNumber")]string serialNumber,
+			[AliasAs("sort")]List<string> sort = null,
+			[AliasAs("sortOrder")]string sortOrder = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get PnP global settings
@@ -139,10 +153,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns global PnP settings of the user
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetPnPGlobalSettingsResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings")]
-		Task<GetPnPGlobalSettingsResponse> GetPnPGlobalSettings();
+		Task<GetPnPGlobalSettingsResponse> GetPnpGlobalSettingsAsync(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Device Count
@@ -150,7 +164,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the device count based on filter criteria. This is useful for pagination
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="serialNumber">Device Serial Number (optional)</param>
 		/// <param name="state">Device State (optional)</param>
 		/// <param name="onbState">Device Onboarding State (optional)</param>
@@ -167,7 +180,22 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="lastContact">Device Has Contacted lastContact &gt; 0 (optional)</param>
 		/// <returns>Task of GetDeviceCountResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/count")]
-		Task<GetDeviceCountResponse> GetPnpDeviceCount([AliasAs("serialNumber")]List<string> serialNumber = null, [AliasAs("state")]List<string> state = null, [AliasAs("onbState")]List<string> onbState = null, [AliasAs("cmState")]List<string> cmState = null, [AliasAs("name")]List<string> name = null, [AliasAs("pid")]List<string> pid = null, [AliasAs("source")]List<string> source = null, [AliasAs("projectId")]List<string> projectId = null, [AliasAs("workflowId")]List<string> workflowId = null, [AliasAs("projectName")]List<string> projectName = null, [AliasAs("workflowName")]List<string> workflowName = null, [AliasAs("smartAccountId")]List<string> smartAccountId = null, [AliasAs("virtualAccountId")]List<string> virtualAccountId = null, [AliasAs("lastContact")]bool? lastContact = null);
+		Task<GetDeviceCountResponse> GetPnpDeviceCountAsync(
+			[AliasAs("serialNumber")]List<string> serialNumber = null,
+			[AliasAs("state")]List<string> state = null,
+			[AliasAs("onbState")]List<string> onbState = null,
+			[AliasAs("cmState")]List<string> cmState = null,
+			[AliasAs("name")]List<string> name = null,
+			[AliasAs("pid")]List<string> pid = null,
+			[AliasAs("source")]List<string> source = null,
+			[AliasAs("projectId")]List<string> projectId = null,
+			[AliasAs("workflowId")]List<string> workflowId = null,
+			[AliasAs("projectName")]List<string> projectName = null,
+			[AliasAs("workflowName")]List<string> workflowName = null,
+			[AliasAs("smartAccountId")]List<string> smartAccountId = null,
+			[AliasAs("virtualAccountId")]List<string> virtualAccountId = null,
+			[AliasAs("lastContact")]bool? lastContact = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Device list
@@ -175,7 +203,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns list of devices based on filter crieteria. If a limit is not specified, it will default to return 50 devices. Pagination and sorting are also supported by this endpoint
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="limit">Limits number of results (optional)</param>
 		/// <param name="offset">Index of first result (optional)</param>
 		/// <param name="sort">Comma seperated list of fields to sort on (optional)</param>
@@ -196,7 +223,26 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="lastContact">Device Has Contacted lastContact &gt; 0 (optional)</param>
 		/// <returns>Task of Device</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device")]
-		Task<Device> GetPnpDeviceList([AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("serialNumber")]List<string> serialNumber = null, [AliasAs("state")]List<string> state = null, [AliasAs("onbState")]List<string> onbState = null, [AliasAs("cmState")]List<string> cmState = null, [AliasAs("name")]List<string> name = null, [AliasAs("pid")]List<string> pid = null, [AliasAs("source")]List<string> source = null, [AliasAs("projectId")]List<string> projectId = null, [AliasAs("workflowId")]List<string> workflowId = null, [AliasAs("projectName")]List<string> projectName = null, [AliasAs("workflowName")]List<string> workflowName = null, [AliasAs("smartAccountId")]List<string> smartAccountId = null, [AliasAs("virtualAccountId")]List<string> virtualAccountId = null, [AliasAs("lastContact")]bool? lastContact = null);
+		Task<Device> GetPnpDeviceListAsync(
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("sort")]List<string> sort = null,
+			[AliasAs("sortOrder")]string sortOrder = null,
+			[AliasAs("serialNumber")]List<string> serialNumber = null,
+			[AliasAs("state")]List<string> state = null,
+			[AliasAs("onbState")]List<string> onbState = null,
+			[AliasAs("cmState")]List<string> cmState = null,
+			[AliasAs("name")]List<string> name = null,
+			[AliasAs("pid")]List<string> pid = null,
+			[AliasAs("source")]List<string> source = null,
+			[AliasAs("projectId")]List<string> projectId = null,
+			[AliasAs("workflowId")]List<string> workflowId = null,
+			[AliasAs("projectName")]List<string> projectName = null,
+			[AliasAs("workflowName")]List<string> workflowName = null,
+			[AliasAs("smartAccountId")]List<string> smartAccountId = null,
+			[AliasAs("virtualAccountId")]List<string> virtualAccountId = null,
+			[AliasAs("lastContact")]bool? lastContact = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Smart Account List
@@ -204,10 +250,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the list of Smart Account domains
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetSmartAccountListResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings/sacct")]
-		Task<GetSmartAccountListResponse> GetSmartAccountList();
+		Task<GetSmartAccountListResponse> GetSmartAccountListAsync(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Sync Result for Virtual Account
@@ -215,12 +261,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the summary of devices synced from the given smart account &amp; virtual account with PnP
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="domain">Smart Account Domain</param>
 		/// <param name="name">Virtual Account Name</param>
 		/// <returns>Task of GetSyncResultForVirtualAccountResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/sacct/{domain}/vacct/{name}/sync-result")]
-		Task<GetSyncResultForVirtualAccountResponse> GetSyncResultForVirtualAccount([AliasAs("domain")]string domain, [AliasAs("name")]string name);
+		Task<GetSyncResultForVirtualAccountResponse> GetSyncResultForVirtualAccountAsync(
+			[AliasAs("domain")]string domain,
+			[AliasAs("name")]string name,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Virtual Account List
@@ -228,11 +276,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns list of virtual accounts associated with the specified smart account
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="domain">Smart Account Domain</param>
 		/// <returns>Task of GetVirtualAccountListResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings/sacct/{domain}/vacct")]
-		Task<GetVirtualAccountListResponse> GetVirtualAccountList([AliasAs("domain")]string domain);
+		Task<GetVirtualAccountListResponse> GetVirtualAccountListAsync(
+			[AliasAs("domain")]string domain,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Workflow by Id
@@ -240,11 +289,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns a workflow specified by id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">id</param>
 		/// <returns>Task of GetWorkflowByIdResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
-		Task<GetWorkflowByIdResponse> GetWorkflowById([AliasAs("id")]string id);
+		Task<GetWorkflowByIdResponse> GetWorkflowByIdAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Workflow Count
@@ -252,11 +302,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the workflow count
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="name">Workflow Name (optional)</param>
 		/// <returns>Task of GetWorkflowCountResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-workflow/count")]
-		Task<GetWorkflowCountResponse> GetWorkflowCount([AliasAs("name")]List<string> name = null);
+		Task<GetWorkflowCountResponse> GetWorkflowCountAsync(
+			[AliasAs("name")]List<string> name = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Workflows
@@ -264,7 +315,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the list of workflows based on filter criteria. If a limit is not specified, it will default to return 50 workflows. Pagination and sorting are also supported by this endpoint
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="limit">Limits number of results (optional)</param>
 		/// <param name="offset">Index of first result (optional)</param>
 		/// <param name="sort">Comma seperated lost of fields to sort on (optional)</param>
@@ -273,7 +323,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">Workflow Name (optional)</param>
 		/// <returns>Task of GetWorkflowsResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-workflow")]
-		Task<GetWorkflowsResponse> GetWorkflows([AliasAs("limit")]int? limit = null, [AliasAs("offset")]int? offset = null, [AliasAs("sort")]List<string> sort = null, [AliasAs("sortOrder")]string sortOrder = null, [AliasAs("type")]List<string> type = null, [AliasAs("name")]List<string> name = null);
+		Task<GetWorkflowsResponse> GetWorkflowsAsync(
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("sort")]List<string> sort = null,
+			[AliasAs("sortOrder")]string sortOrder = null,
+			[AliasAs("type")]List<string> type = null,
+			[AliasAs("name")]List<string> name = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Import Devices in bulk
@@ -281,11 +338,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Add devices to PnP in bulk
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of ImportDevicesInBulkResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/import")]
-		Task<ImportDevicesInBulkResponse> ImportDevicesInBulk([Body]Device request);
+		Task<ImportDevicesInBulkResponse> ImportDevicesInBulkAsync(
+			[Body]Device request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Preview Config
@@ -293,11 +351,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Triggers a preview for site-based Day 0 Configuration
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of DayZeroConfigPreviewResult</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/site-config-preview")]
-		Task<DayZeroConfigPreviewResult> PreviewConfig([Body]SiteProvisionRequest request);
+		Task<DayZeroConfigPreviewResult> PreviewConfigAsync(
+			[Body]SiteProvisionRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Reset Device
@@ -305,11 +364,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Recovers a device from a Workflow Execution Error state
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of ResetDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/reset")]
-		Task<ResetDeviceResponse> ResetDevice([Body]ResetRequest request);
+		Task<ResetDeviceResponse> ResetDeviceAsync(
+			[Body]ResetRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Sync Virtual Account Devices
@@ -317,11 +377,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Synchronizes the device info from the given smart account &amp; virtual account with the PnP database. The response payload returns a list of synced devices
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of SyncVirtualAccountDevicesResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/vacct-sync")]
-		Task<SyncVirtualAccountDevicesResponse> SyncVirtualAccountDevices([Body]SAVAMapping request);
+		Task<SyncVirtualAccountDevicesResponse> SyncVirtualAccountDevicesAsync(
+			[Body]SavaMapping request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Un-Claim Device
@@ -329,11 +390,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Un-Claims one of more devices with specified workflow
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of UnClaimDeviceResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/unclaim")]
-		Task<UnClaimDeviceResponse> UnClaimDevice([Body]UnclaimRequest request);
+		Task<UnClaimDeviceResponse> UnClaimDeviceAsync(
+			[Body]UnclaimRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update Device
@@ -341,12 +403,15 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates device details specified by device id in PnP database
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="id">id</param>
 		/// <returns>Task of UpdateDeviceResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		Task<UpdateDeviceResponse> UpdateDevice([Body]Device request, string Content_Type, [AliasAs("id")]string id);
+		Task<UpdateDeviceResponse> UpdateDeviceAsync(
+			[Body]Device request,
+			string Content_Type,
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update PnP global settings
@@ -354,11 +419,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates the user&#39;s list of global PnP settings
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdatePnPGlobalSettingsResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings")]
-		Task<UpdatePnPGlobalSettingsResponse> UpdatePnPGlobalSettings([Body]Settings request);
+		Task<UpdatePnPGlobalSettingsResponse> UpdatePnPGlobalSettingsAsync(
+			[Body]Settings request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update PnP Server Profile
@@ -366,11 +432,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates the PnP Server profile in a registered Virtual Account in the PnP database. The response payload returns the updated smart &amp; virtual account info
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdatePnPServerProfileResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		Task<UpdatePnPServerProfileResponse> UpdatePnPServerProfile([Body]SAVAMapping request);
+		Task<UpdatePnPServerProfileResponse> UpdatePnPServerProfileAsync(
+			[Body]SavaMapping request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update Workflow
@@ -378,11 +445,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates an existing workflow
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="id">id</param>
 		/// <returns>Task of UpdateWorkflowResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
-		Task<UpdateWorkflowResponse> UpdateWorkflow([Body]Workflow request, string Content_Type, [AliasAs("id")]string id);
+		Task<UpdateWorkflowResponse> UpdateWorkflowAsync(
+			[Body]Workflow request,
+			string Content_Type,
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 	}
 }

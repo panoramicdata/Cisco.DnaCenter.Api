@@ -7,13 +7,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CountOfEventsResponse
 	/// </summary>
 	[DataContract]
-	public partial class CountOfEventsResponse
+	public partial class EventCountResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CountOfEventsResponse" /> class.
+		/// Initializes a new instance of the <see cref="EventCountResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-		public CountOfEventsResponse(decimal? Response = default)
+		public EventCountResponse(decimal? Response = default)
 		{
 			this.Response = Response;
 		}

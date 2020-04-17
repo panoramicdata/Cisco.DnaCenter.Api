@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -15,10 +16,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get valid keywords
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of LegitCliKeyResult</returns>
 		[Get("/dna/intent/api/v1/network-device-poller/cli/legit-reads")]
-		Task<LegitCliKeyResult> GetAllKeywordsOfCLIsAcceptedByCommandRunner();
+		Task<LegitCliKeyResult> GetAllKeywordsOfCLIsAcceptedByCommandRunnerAsync(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Run read-only commands on devices to get their real-time configuration
@@ -26,10 +27,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Submit request for read-only CLIs
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/network-device-poller/cli/read-request")]
-		Task<TaskIdResult> RunReadOnlyCommandsOnDevicesToGetTheirRealTimeConfiguration([Body]CommandRunnerDto request);
+		Task<TaskIdResult> RunReadOnlyCommandsOnDevicesToGetTheirRealTimeConfigurationAsync(
+			[Body]CommandRunnerDto request,
+			CancellationToken cancellationToken = default);
 	}
 }

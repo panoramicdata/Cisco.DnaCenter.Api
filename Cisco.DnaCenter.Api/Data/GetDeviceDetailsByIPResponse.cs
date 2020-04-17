@@ -7,13 +7,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDeviceDetailsByIPResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetDeviceDetailsByIPResponse
+	public partial class GetDeviceDetailsByIpResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIPResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpResponse" /> class.
 		/// </summary>
 		/// <param name="ProvisionDetails">ProvisionDetails.</param>
-		public GetDeviceDetailsByIPResponse(GetDeviceDetailsByIPResponseProvisionDetails ProvisionDetails = default)
+		public GetDeviceDetailsByIpResponse(GetDeviceDetailsByIPResponseProvisionDetails ProvisionDetails = default)
 		{
 			this.ProvisionDetails = ProvisionDetails;
 		}

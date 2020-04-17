@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -15,11 +16,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Creates a new project
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/project")]
-		Task<TaskIdResult> CreateProject([Body]ProjectDto request);
+		Task<TaskIdResult> CreateProjectAsync(
+			[Body]ProjectDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create Template
@@ -27,12 +29,15 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Creates a new template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="projectId">projectId</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/project/{projectId}/template")]
-		Task<TaskIdResult> CreateTemplate([Body]TemplateDto request, string Content_Type, [AliasAs("projectId")]string projectId);
+		Task<TaskIdResult> CreateTemplateAsync(
+			[Body]TemplateDto request,
+			string Content_Type,
+			[AliasAs("projectId")]string projectId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Project
@@ -40,11 +45,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deletes an existing Project
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="projectId">projectId</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/template-programmer/project/{projectId}")]
-		Task<TaskIdResult> DeleteProject([AliasAs("projectId")]string projectId);
+		Task<TaskIdResult> DeleteProjectAsync(
+			[AliasAs("projectId")]string projectId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Template
@@ -52,11 +58,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deletes an existing template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="templateId">templateId</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/template-programmer/template/{templateId}")]
-		Task<TaskIdResult> DeleteTemplate([AliasAs("templateId")]string templateId);
+		Task<TaskIdResult> DeleteTemplateAsync(
+			[AliasAs("templateId")]string templateId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Deploy Template
@@ -64,11 +71,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deploys a template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TemplateDeploymentStatusDto</returns>
 		[Post("/dna/intent/api/v1/template-programmer/template/deploy")]
-		Task<TemplateDeploymentStatusDto> DeployTemplate([Body]TemplateDeploymentInfo request);
+		Task<TemplateDeploymentStatusDto> DeployTemplateAsync(
+			[Body]TemplateDeploymentInfo request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Projects
@@ -76,11 +84,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the projects in the system
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="name">Name of project to be searched (optional)</param>
 		/// <returns>Task of CollectionProjectDto</returns>
 		[Get("/dna/intent/api/v1/template-programmer/project")]
-		Task<CollectionProjectDto> GetProjects([AliasAs("name")]string name = null);
+		Task<CollectionProjectDto> GetProjectsAsync(
+			[AliasAs("name")]string name = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Template deployment status
@@ -88,11 +97,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the status of a deployed template.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="deploymentId">deploymentId</param>
 		/// <returns>Task of TemplateDeploymentStatusDto</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template/deploy/status/{deploymentId}")]
-		Task<TemplateDeploymentStatusDto> GetTemplateDeploymentStatus([AliasAs("deploymentId")]string deploymentId);
+		Task<TemplateDeploymentStatusDto> GetTemplateDeploymentStatusAsync(
+			[AliasAs("deploymentId")]string deploymentId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Template Details
@@ -100,12 +110,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns details of the specified template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="templateId">templateId</param>
 		/// <param name="latestVersion">latestVersion (optional)</param>
 		/// <returns>Task of TemplateDto</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template/{templateId}")]
-		Task<TemplateDto> GetTemplateDetails([AliasAs("templateId")]string templateId, [AliasAs("latestVersion")]bool? latestVersion = null);
+		Task<TemplateDto> GetTemplateDetailsAsync(
+			[AliasAs("templateId")]string templateId,
+			[AliasAs("latestVersion")]bool? latestVersion = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Template Versions
@@ -113,11 +125,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the versions of a specified template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="templateId">templateId</param>
 		/// <returns>Task of CollectionTemplateInfo</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template/version/{templateId}")]
-		Task<CollectionTemplateInfo> GetTemplateVersions([AliasAs("templateId")]string templateId);
+		Task<CollectionTemplateInfo> GetTemplateVersionsAsync(
+			[AliasAs("templateId")]string templateId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Gets the templates available
@@ -125,7 +138,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// List the templates available
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="projectId">projectId (optional)</param>
 		/// <param name="softwareType">softwareType (optional)</param>
 		/// <param name="softwareVersion">softwareVersion (optional)</param>
@@ -135,7 +147,15 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="filterConflictingTemplates">filterConflictingTemplates (optional)</param>
 		/// <returns>Task of CollectionTemplateInfo</returns>
 		[Get("/dna/intent/api/v1/template-programmer/template")]
-		Task<CollectionTemplateInfo> GetsTheTemplatesAvailable([AliasAs("projectId")]string projectId = null, [AliasAs("softwareType")]string softwareType = null, [AliasAs("softwareVersion")]string softwareVersion = null, [AliasAs("productFamily")]string productFamily = null, [AliasAs("productSeries")]string productSeries = null, [AliasAs("productType")]string productType = null, [AliasAs("filterConflictingTemplates")]bool? filterConflictingTemplates = null);
+		Task<CollectionTemplateInfo> GetsAvailableTemplatesAsync(
+			[AliasAs("projectId")]string projectId = null,
+			[AliasAs("softwareType")]string softwareType = null,
+			[AliasAs("softwareVersion")]string softwareVersion = null,
+			[AliasAs("productFamily")]string productFamily = null,
+			[AliasAs("productSeries")]string productSeries = null,
+			[AliasAs("productType")]string productType = null,
+			[AliasAs("filterConflictingTemplates")]bool? filterConflictingTemplates = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Preview Template
@@ -143,11 +163,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Previews an existing template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TemplatePreviewResponseDto</returns>
 		[Put("/dna/intent/api/v1/template-programmer/template/preview")]
-		Task<TemplatePreviewResponseDto> PreviewTemplate([Body]TemplatePreviewRequestDto request);
+		Task<TemplatePreviewResponseDto> PreviewTemplate(
+			[Body]TemplatePreviewRequestDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update Project
@@ -155,11 +176,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates an existing project
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/template-programmer/project")]
-		Task<TaskIdResult> UpdateProject([Body]ProjectDto request);
+		Task<TaskIdResult> UpdateProjectAsync([Body]ProjectDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update Template
@@ -167,11 +188,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates an existing template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/template-programmer/template")]
-		Task<TaskIdResult> UpdateTemplate([Body]TemplateDto request);
+		Task<TaskIdResult> UpdateTemplateAsync([Body]TemplateDto request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Version Template
@@ -179,10 +200,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Creates Versioning for the current contents of the template
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/template-programmer/template/version")]
-		Task<TaskIdResult> VersionTemplate([Body]TemplateVersionRequestDto request);
+		Task<TaskIdResult> VersionTemplateAsync([Body]TemplateVersionRequestDto request,
+			CancellationToken cancellationToken = default);
 	}
 }

@@ -8,15 +8,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetStatusAPIForEventsResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetStatusAPIForEventsResponse
+	public partial class GetEventStatusApisResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetStatusAPIForEventsResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetEventStatusApisResponse" /> class.
 		/// </summary>
 		/// <param name="ErrorMessage">ErrorMessage.</param>
 		/// <param name="ApiStatus">ApiStatus.</param>
 		/// <param name="StatusMessage">StatusMessage.</param>
-		public GetStatusAPIForEventsResponse(Object ErrorMessage = default, string? ApiStatus = default, string? StatusMessage = default)
+		public GetEventStatusApisResponse(Object ErrorMessage = default, string? ApiStatus = default, string? StatusMessage = default)
 		{
 			this.ErrorMessage = ErrorMessage;
 			this.ApiStatus = ApiStatus;

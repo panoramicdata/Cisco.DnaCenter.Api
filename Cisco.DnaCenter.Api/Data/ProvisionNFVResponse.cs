@@ -7,15 +7,15 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVResponse
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVResponse
+	public partial class ProvisionNfvResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ProvisionNFVResponse" /> class.
+		/// Initializes a new instance of the <see cref="ProvisionNfvResponse" /> class.
 		/// </summary>
 		/// <param name="ExecutionId">ExecutionId.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
 		/// <param name="Message">Message.</param>
-		public ProvisionNFVResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
+		public ProvisionNfvResponse(string? ExecutionId = default, string? ExecutionStatusUrl = default, string? Message = default)
 		{
 			this.ExecutionId = ExecutionId;
 			this.ExecutionStatusUrl = ExecutionStatusUrl;

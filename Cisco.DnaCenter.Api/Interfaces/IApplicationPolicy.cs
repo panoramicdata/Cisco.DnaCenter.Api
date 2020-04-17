@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -15,11 +16,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Create new Custom application
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateApplicationResponse</returns>
 		[Post("/dna/intent/api/v1/applications")]
-		Task<CreateApplicationResponse> CreateApplication([Body]CreateApplicationRequest request);
+		Task<CreateApplicationResponse> CreateApplicationAsync(
+			[Body]CreateApplicationRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create Application Set
@@ -27,11 +29,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Create new custom application-set/s
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateApplicationSetResponse</returns>
 		[Post("/dna/intent/api/v1/application-policy-application-set")]
-		Task<CreateApplicationSetResponse> CreateApplicationSet([Body]CreateApplicationSetRequest request);
+		Task<CreateApplicationSetResponse> CreateApplicationSetAsync(
+			[Body]CreateApplicationSetRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Application
@@ -39,11 +42,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Delete existing application by its id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Application&#39;s Id</param>
 		/// <returns>Task of DeleteApplicationResponse</returns>
 		[Delete("/dna/intent/api/v1/applications")]
-		Task<DeleteApplicationResponse> DeleteApplication([AliasAs("id")]string id);
+		Task<DeleteApplicationResponse> DeleteApplicationAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Application Set
@@ -51,11 +55,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Delete existing application-set by it&#39;s id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id"></param>
 		/// <returns>Task of DeleteApplicationSetResponse</returns>
 		[Delete("/dna/intent/api/v1/application-policy-application-set")]
-		Task<DeleteApplicationSetResponse> DeleteApplicationSet([AliasAs("id")]string id);
+		Task<DeleteApplicationSetResponse> DeleteApplicationSetAsync(
+			[AliasAs("id")]string id,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Edit Application
@@ -63,11 +68,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Edit the attributes of an existing application
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of EditApplicationResponse</returns>
 		[Put("/dna/intent/api/v1/applications")]
-		Task<EditApplicationResponse> EditApplication([Body]EditApplicationRequest request);
+		Task<EditApplicationResponse> EditApplicationAsync(
+			[Body]EditApplicationRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Application Sets
@@ -75,13 +81,16 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get appllication-sets by offset/limit or by name
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="offset"> (optional, default to 1)</param>
 		/// <param name="limit"> (optional, default to 500)</param>
 		/// <param name="name"> (optional, default to )</param>
 		/// <returns>Task of GetApplicationSetsResponse</returns>
 		[Get("/dna/intent/api/v1/application-policy-application-set")]
-		Task<GetApplicationSetsResponse> GetApplicationSets([AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("name")]string name = null);
+		Task<GetApplicationSetsResponse> GetApplicationSetsAsync(
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("name")]string name = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Application Sets Count
@@ -89,10 +98,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get the number of existing application-sets
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetApplicationSetsCountResponse</returns>
 		[Get("/dna/intent/api/v1/application-policy-application-set-count")]
-		Task<GetApplicationSetsCountResponse> GetApplicationSetsCount();
+		Task<GetApplicationSetsCountResponse> GetApplicationSetsCountAsync(
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Applications
@@ -100,13 +109,16 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get applications by offset/limit or by name
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="offset">The offset of the first application to be returned (optional, default to 1)</param>
 		/// <param name="limit">The maximum number of applications to be returned (optional, default to 500)</param>
 		/// <param name="name">Application&#39;s name (optional, default to )</param>
 		/// <returns>Task of GetApplicationsResponse</returns>
 		[Get("/dna/intent/api/v1/applications")]
-		Task<GetApplicationsResponse> GetApplications([AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("name")]string name = null);
+		Task<GetApplicationsResponse> GetApplicationsAsync(
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("name")]string name = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Applications Count
@@ -114,9 +126,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get the number of all existing applications
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of GetApplicationsCountResponse</returns>
 		[Get("/dna/intent/api/v1/applications-count")]
-		Task<GetApplicationsCountResponse> GetApplicationsCount();
+		Task<GetApplicationsCountResponse> GetApplicationsCountAsync(
+			CancellationToken cancellationToken = default);
 	}
 }

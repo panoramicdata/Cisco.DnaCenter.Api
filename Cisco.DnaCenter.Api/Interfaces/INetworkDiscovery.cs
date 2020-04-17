@@ -16,7 +16,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds global CLI credential
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/cli")]
@@ -28,7 +27,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds HTTP read credentials
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-read")]
@@ -40,7 +38,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds global HTTP write credentials
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/http-write")]
@@ -52,7 +49,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds global netconf credentials
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/netconf")]
@@ -64,7 +60,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds global SNMP read community
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
@@ -76,7 +71,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds global SNMP write community
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
@@ -88,7 +82,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds global SNMPv3 credentials
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/global-credential/snmpv3")]
@@ -100,7 +93,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Adds SNMP properties
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/snmp-property")]
@@ -112,7 +104,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Stops all the discoveries and removes them
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery")]
 		Task<TaskIdResult> DeleteAllDiscovery();
@@ -123,7 +114,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Stops the discovery for the given Discovery ID and removes it. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Discovery ID</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/discovery/{id}")]
@@ -135,7 +125,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Stops discovery for the given range and removes them
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="startIndex">Start index</param>
 		/// <param name="recordsToDelete">Number of records to delete</param>
 		/// <returns>Task of TaskIdResult</returns>
@@ -148,7 +137,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deletes global credential for the given ID
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="globalCredentialId">ID of global-credential</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
@@ -160,7 +148,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the count of all available discovery jobs
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/discovery/count")]
 		Task<CountResult> GetCountOfAllDiscoveryJobs();
@@ -171,7 +158,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the credential sub type for the given Id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Global Credential ID</param>
 		/// <returns>Task of GlobalCredentialSubTypeResult</returns>
 		[Get("/dna/intent/api/v1/global-credential/{id}")]
@@ -183,7 +169,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the count of network devices discovered in the given discovery. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Discovery ID</param>
 		/// <param name="taskId">taskId (optional)</param>
 		/// <returns>Task of CountResult</returns>
@@ -196,7 +181,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the network devices discovered for the given discovery and for the given range. The maximum number of records that can be retrieved is 500. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Discovery ID</param>
 		/// <param name="startIndex">Start index</param>
 		/// <param name="recordsToReturn">Number of records to return</param>
@@ -211,7 +195,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the network devices discovered for the given Discovery ID. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Discovery ID</param>
 		/// <param name="taskId">taskId (optional)</param>
 		/// <returns>Task of NetworkDeviceNIOListResult</returns>
@@ -224,7 +207,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the discovery by specified range
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="startIndex">Start index</param>
 		/// <param name="recordsToReturn">Number of records to return</param>
 		/// <returns>Task of DiscoveryNIOListResult</returns>
@@ -237,7 +219,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns discovery by Discovery ID. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Discovery ID</param>
 		/// <returns>Task of DiscoveryNIOResult</returns>
 		[Get("/dna/intent/api/v1/discovery/{id}")]
@@ -249,7 +230,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the list of discovery jobs for the given IP
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="ipAddress">ipAddress</param>
 		/// <param name="offset">offset (optional)</param>
 		/// <param name="limit">limit (optional)</param>
@@ -264,7 +244,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns global credential for the given credential sub type
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="credentialSubType">Credential type as CLI / SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY / SNMPV3 / HTTP_WRITE / HTTP_READ / NETCONF</param>
 		/// <param name="sortBy">sortBy (optional)</param>
 		/// <param name="order">order (optional)</param>
@@ -278,7 +257,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the list of discovery jobs for the given Discovery ID. The results can be optionally filtered based on IP. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Discovery ID</param>
 		/// <param name="offset">offset (optional)</param>
 		/// <param name="limit">limit (optional)</param>
@@ -293,7 +271,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the network devices from a discovery job based on given filters. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="id">Discovery ID</param>
 		/// <param name="taskId">taskId (optional)</param>
 		/// <param name="sortBy">sortBy (optional)</param>
@@ -314,7 +291,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns SNMP properties
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <returns>Task of SystemPropertyListResult</returns>
 		[Get("/dna/intent/api/v1/snmp-property")]
 		Task<SystemPropertyListResult> GetSNMPProperties();
@@ -325,7 +301,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Initiates discovery with the given parameters
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/discovery")]
@@ -337,7 +312,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates global CLI credentials
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/cli")]
@@ -349,7 +323,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Update global credential for network devices in site(s)
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="globalCredentialId">Global credential Uuid</param>
 		/// <returns>Task of TaskIdResult</returns>
@@ -362,7 +335,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates global HTTP Read credential
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-read")]
@@ -374,7 +346,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates global HTTP write credentials
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/http-write")]
@@ -386,7 +357,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates global netconf credentials
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/netconf")]
@@ -398,7 +368,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates global SNMP read community
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
@@ -410,7 +379,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates global SNMP write community
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
@@ -422,7 +390,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates global SNMPv3 credential
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/global-credential/snmpv3")]
@@ -434,7 +401,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Stops or starts an existing discovery
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/discovery")]

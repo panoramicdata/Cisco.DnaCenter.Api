@@ -15,7 +15,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Deletes a flow analysis request by its id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
@@ -27,7 +26,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Initiates a new flow analysis with periodic refresh and stat collection options. Returns a request id and a task id to get results and follow progress.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <returns>Task of FlowAnalysisRequestResultOutput</returns>
 		[Post("/dna/intent/api/v1/flow-analysis")]
@@ -39,7 +37,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns result of a previously requested flow analysis by its Flow Analysis id
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of PathResponseResult</returns>
 		[Get("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
@@ -51,7 +48,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns a summary of all flow analyses stored. Results can be filtered by specified parameters.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="periodicRefresh">Is analysis periodically refreshed? (optional)</param>
 		/// <param name="sourceIP">Source IP address (optional)</param>
 		/// <param name="destIP">Destination IP adress (optional)</param>

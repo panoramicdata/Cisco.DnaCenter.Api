@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -15,12 +16,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns provisioning device information for the specified IP address.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="deviceIp">Device to which the provisioning detail has to be retrieved</param>
 		/// <returns>Task of GetDeviceDetailsByIPResponse</returns>
 		[Get("/dna/intent/api/v1/business/nfv/provisioningDetail")]
-		Task<GetDeviceDetailsByIPResponse> GetDeviceDetailsByIP([Body]GetDeviceDetailsByIPRequest request, [AliasAs("deviceIp")]string deviceIp);
+		Task<GetDeviceDetailsByIpResponse> GetDeviceDetailsByIpAsync(
+			[Body]GetDeviceDetailsByIPRequest request,
+			[AliasAs("deviceIp")]string deviceIp,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// NFV Provisioning Detail
@@ -28,14 +31,18 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Checks the provisioning detail of an ENCS device including log information.
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="__runsync">Enable this parameter to execute the API and return a response synchronously</param>
 		/// <param name="__persistbapioutput">Persist bapi sync response</param>
 		/// <param name="__runsynctimeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
 		/// <returns>Task of NFVProvisioningDetailResponse</returns>
 		[Post("/dna/intent/api/v1/nfv-provision-detail")]
-		Task<NFVProvisioningDetailResponse> NFVProvisioningDetail([Body]NFVProvisioningDetailRequest request, bool? __runsync, bool? __persistbapioutput, decimal? __runsynctimeout = null);
+		Task<NfvProvisioningDetailResponse> NfvProvisioningDetail(
+			[Body]NfvProvisioningDetailRequest request,
+			bool? __runsync,
+			bool? __persistbapioutput,
+			decimal? __runsynctimeout = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Provision NFV
@@ -43,13 +50,17 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Design and Provision single/multi NFV device with given site/area/building/floor .
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
 		/// <param name="__runsync">Enable this parameter to execute the API and return a response synchronously</param>
 		/// <param name="__persistbapioutput">Persist bapi sync response</param>
 		/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
 		/// <returns>Task of ProvisionNFVResponse</returns>
 		[Post("/dna/intent/api/v1/business/nfv")]
-		Task<ProvisionNFVResponse> ProvisionNFV([Body]ProvisionNFVRequest request, string __runsync, bool? __persistbapioutput, decimal? __timeout = null);
+		Task<ProvisionNfvResponse> ProvisionNfvAsync(
+			[Body]ProvisionNFVRequest request,
+			string __runsync,
+			bool? __persistbapioutput,
+			decimal? __timeout = null,
+			CancellationToken cancellationToken = default);
 	}
 }

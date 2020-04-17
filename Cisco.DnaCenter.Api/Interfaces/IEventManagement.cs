@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -15,11 +16,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Returns the Count of EventSubscriptions
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="eventIds">List of subscriptions related to the respective eventIds</param>
 		/// <returns>Task of CountOfEventSubscriptionsResponse</returns>
 		[Get("/dna/intent/api/v1/event/subscription/count")]
-		Task<CountOfEventSubscriptionsResponse> CountOfEventSubscriptions([AliasAs("eventIds")]string eventIds);
+		Task<EventSubscriptionCountResponse> GetEventSubscriptionCountAsync(
+			[AliasAs("eventIds")]string eventIds,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Count of Events
@@ -27,12 +29,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get the count of registered events with provided eventIds or tags as mandatory
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="tags">The registered Tags should be provided</param>
 		/// <param name="eventId">The registered EventId should be provided (optional)</param>
 		/// <returns>Task of CountOfEventsResponse</returns>
 		[Get("/dna/intent/api/v1/events/count")]
-		Task<CountOfEventsResponse> CountOfEvents([AliasAs("tags")]string tags, [AliasAs("eventId")]string eventId = null);
+		Task<EventCountResponse> GetEventCountAsync(
+			[AliasAs("tags")]string tags,
+			[AliasAs("eventId")]string eventId = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Count of Notifications
@@ -40,7 +44,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get the Count of Published Notifications
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="eventIds">The registered EventIds should be provided (optional)</param>
 		/// <param name="startTime">StartTime  (optional)</param>
 		/// <param name="endTime">endTime  (optional)</param>
@@ -52,7 +55,17 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="source">source  (optional)</param>
 		/// <returns>Task of CountOfNotificationsResponse</returns>
 		[Get("/dna/intent/api/v1/event/event-series/count")]
-		Task<CountOfNotificationsResponse> CountOfNotifications([AliasAs("eventIds")]string eventIds = null, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("category")]string category = null, [AliasAs("type")]string type = null, [AliasAs("severity")]string severity = null, [AliasAs("domain")]string domain = null, [AliasAs("subDomain")]string subDomain = null, [AliasAs("source")]string source = null);
+		Task<NotificationCountResponse> GetNotificationCountAsync(
+			[AliasAs("eventIds")]string eventIds = null,
+			[AliasAs("startTime")]string startTime = null,
+			[AliasAs("endTime")]string endTime = null,
+			[AliasAs("category")]string category = null,
+			[AliasAs("type")]string type = null,
+			[AliasAs("severity")]string severity = null,
+			[AliasAs("domain")]string domain = null,
+			[AliasAs("subDomain")]string subDomain = null,
+			[AliasAs("source")]string source = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Create Event Subscriptions
@@ -60,12 +73,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Subscribe SubscriptionEndpoint to list of registered events
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Content Type</param>
 		/// <returns>Task of CreateEventSubscriptionsResponse</returns>
 		[Post("/dna/intent/api/v1/event/subscription")]
-		Task<CreateEventSubscriptionsResponse> CreateEventSubscriptions([Body]CreateEventSubscriptionsRequest request);
+		Task<CreateEventSubscriptionsResponse> CreateEventSubscriptionsAsync(
+			[Body]CreateEventSubscriptionsRequest request,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Delete Event Subscriptions
@@ -73,12 +86,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Delete EventSubscriptions
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-		/// <param name="Content_Type">Content Type</param>
 		/// <param name="subscriptions">List of EventSubscriptionId&#39;s for removal</param>
 		/// <returns>Task of DeleteEventSubscriptionsResponse</returns>
 		[Delete("/dna/intent/api/v1/event/subscription")]
-		Task<DeleteEventSubscriptionsResponse> DeleteEventSubscriptions(string Content_Type, [AliasAs("subscriptions")]string subscriptions);
+		Task<DeleteEventSubscriptionsResponse> DeleteEventSubscriptionsAsync(
+			[AliasAs("subscriptions")]string subscriptions,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Event Subscriptions
@@ -86,7 +99,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Gets the list of Subscriptions&#39;s based on provided offset and limit
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="eventIds">List of subscriptions related to the respective eventIds (optional)</param>
 		/// <param name="offset">The number of Subscriptions&#39;s to offset in the resultset whose default value 0 (optional)</param>
 		/// <param name="limit">The number of Subscriptions&#39;s to limit in the resultset whose default value 10 (optional)</param>
@@ -94,7 +106,13 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order(asc/desc) (optional)</param>
 		/// <returns>Task of GetEventSubscriptionsResponse</returns>
 		[Get("/dna/intent/api/v1/event/subscription")]
-		Task<GetEventSubscriptionsResponse> GetEventSubscriptions([AliasAs("eventIds")]string eventIds = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GetEventSubscriptionsResponse> GetEventSubscriptionsAsync(
+			[AliasAs("eventIds")]string eventIds = null,
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("sortBy")]string sortBy = null,
+			[AliasAs("order")]string order = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Events
@@ -102,7 +120,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Gets the list of registered Events with provided eventIds or tags as mandatory
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="tags">The registered Tags should be provided</param>
 		/// <param name="eventId">The registered EventId should be provided (optional)</param>
 		/// <param name="offset">The number of Registries to offset in the resultset whose default value 0 (optional)</param>
@@ -111,7 +128,14 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order(asc/desc) (optional)</param>
 		/// <returns>Task of GetEventsResponse</returns>
 		[Get("/dna/intent/api/v1/events")]
-		Task<GetEventsResponse> GetEvents([AliasAs("tags")]string tags, [AliasAs("eventId")]string eventId = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GetEventsResponse> GetEventsAsync(
+			[AliasAs("tags")]string tags,
+			[AliasAs("eventId")]string eventId = null,
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("sortBy")]string sortBy = null,
+			[AliasAs("order")]string order = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Notifications
@@ -119,7 +143,6 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get the list of Published Notifications
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="eventIds">The registered EventIds should be provided (optional)</param>
 		/// <param name="startTime">StartTime  (optional)</param>
 		/// <param name="endTime">endTime  (optional)</param>
@@ -135,7 +158,21 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">order(asc/desc) (optional)</param>
 		/// <returns>Task of GetNotificationsResponse</returns>
 		[Get("/dna/intent/api/v1/event/event-series")]
-		Task<GetNotificationsResponse> GetNotifications([AliasAs("eventIds")]string eventIds = null, [AliasAs("startTime")]string startTime = null, [AliasAs("endTime")]string endTime = null, [AliasAs("category")]string category = null, [AliasAs("type")]string type = null, [AliasAs("severity")]string severity = null, [AliasAs("domain")]string domain = null, [AliasAs("subDomain")]string subDomain = null, [AliasAs("source")]string source = null, [AliasAs("offset")]decimal? offset = null, [AliasAs("limit")]decimal? limit = null, [AliasAs("sortBy")]string sortBy = null, [AliasAs("order")]string order = null);
+		Task<GetNotificationsResponse> GetNotificationsAsync(
+			[AliasAs("eventIds")]string eventIds = null,
+			[AliasAs("startTime")]string startTime = null,
+			[AliasAs("endTime")]string endTime = null,
+			[AliasAs("category")]string category = null,
+			[AliasAs("type")]string type = null,
+			[AliasAs("severity")]string severity = null,
+			[AliasAs("domain")]string domain = null,
+			[AliasAs("subDomain")]string subDomain = null,
+			[AliasAs("source")]string source = null,
+			[AliasAs("offset")]int? offset = null,
+			[AliasAs("limit")]int? limit = null,
+			[AliasAs("sortBy")]string sortBy = null,
+			[AliasAs("order")]string order = null,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Get Status API for Events
@@ -143,11 +180,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Get the Status of events API calls with provided executionId as mandatory path parameter
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="executionId">Execution ID</param>
 		/// <returns>Task of GetStatusAPIForEventsResponse</returns>
 		[Get("/dna/intent/api/v1/event/api-status/{executionId}")]
-		Task<GetStatusAPIForEventsResponse> GetStatusAPIForEvents([AliasAs("executionId")]string executionId);
+		Task<GetEventStatusApisResponse> GetEventStatusApis(
+			[AliasAs("executionId")]string executionId,
+			CancellationToken cancellationToken = default);
 
 		/// <summary>
 		/// Update Event Subscriptions
@@ -155,11 +193,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Update SubscriptionEndpoint to list of registered events
 		/// </remarks>
-		/// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
 		/// <param name="request">request</param>
-		/// <param name="Content_Type">Content Type</param>
 		/// <returns>Task of UpdateEventSubscriptionsResponse</returns>
 		[Put("/dna/intent/api/v1/event/subscription")]
-		Task<UpdateEventSubscriptionsResponse> UpdateEventSubscriptions([Body]UpdateEventSubscriptionsRequest request);
+		Task<UpdateEventSubscriptionsResponse> UpdateEventSubscriptionsAsync(
+			[Body]UpdateEventSubscriptionsRequest request,
+			CancellationToken cancellationToken = default);
 	}
 }
