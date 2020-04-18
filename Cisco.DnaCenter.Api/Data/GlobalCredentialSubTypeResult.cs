@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GlobalCredentialSubTypeResult
 	/// </summary>
 	[DataContract]
-	public partial class GlobalCredentialSubTypeResult
+	public class GlobalCredentialSubTypeResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GlobalCredentialSubTypeResult" /> class.

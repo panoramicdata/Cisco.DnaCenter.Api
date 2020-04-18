@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceSystemResetWorkflowWorkItemList
 	/// </summary>
 	[DataContract]
-	public partial class DeviceSystemResetWorkflowWorkItemList
+	public class DeviceSystemResetWorkflowWorkItemList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceSystemResetWorkflowWorkItemList" /> class.

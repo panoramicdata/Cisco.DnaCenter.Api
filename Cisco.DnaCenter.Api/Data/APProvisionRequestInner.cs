@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// APProvisionRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class ApProvisionRequestInner
+	public class ApProvisionRequestInner
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ApProvisionRequestInner" /> class.

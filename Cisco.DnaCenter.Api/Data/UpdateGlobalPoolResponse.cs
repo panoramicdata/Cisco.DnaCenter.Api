@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateGlobalPoolResponse
 	/// </summary>
 	[DataContract]
-	public partial class UpdateGlobalPoolResponse
+	public class UpdateGlobalPoolResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateGlobalPoolResponse" /> class.

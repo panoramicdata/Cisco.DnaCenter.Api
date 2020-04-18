@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetEnterpriseSSIDResponseInner
 	/// </summary>
 	[DataContract]
-	public partial class GetEnterpriseSsidResponseInner
+	public class GetEnterpriseSsidResponseInner
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetEnterpriseSsidResponseInner" /> class.

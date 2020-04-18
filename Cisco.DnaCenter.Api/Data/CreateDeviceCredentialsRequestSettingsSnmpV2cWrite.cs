@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateDeviceCredentialsRequestSettingsSnmpV2cWrite
 	/// </summary>
 	[DataContract]
-	public partial class CreateDeviceCredentialsRequestSettingsSnmpV2cWrite
+	public class CreateDeviceCredentialsRequestSettingsSnmpV2cWrite
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateDeviceCredentialsRequestSettingsSnmpV2cWrite" /> class.

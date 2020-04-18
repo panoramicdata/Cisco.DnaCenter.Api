@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SuccessResultList
 	/// </summary>
 	[DataContract]
-	public partial class SuccessResultList
+	public class SuccessResultList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SuccessResultList" /> class.

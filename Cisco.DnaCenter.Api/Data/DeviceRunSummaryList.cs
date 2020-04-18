@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceRunSummaryList
 	/// </summary>
 	[DataContract]
-	public partial class DeviceRunSummaryList
+	public class DeviceRunSummaryList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceRunSummaryList" /> class.

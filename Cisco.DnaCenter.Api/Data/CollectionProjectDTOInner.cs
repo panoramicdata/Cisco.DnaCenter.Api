@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CollectionProjectDtoInner
 	/// </summary>
 	[DataContract]
-	public partial class CollectionProjectDtoInner
+	public class CollectionProjectDtoInner
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CollectionProjectDtoInner" /> class.

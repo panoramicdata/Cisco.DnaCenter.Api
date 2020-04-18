@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionRequestInnerDynamicInterfaces
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionRequestInnerDynamicInterfaces
+	public class ProvisionRequestInnerDynamicInterfaces
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionRequestInnerDynamicInterfaces" /> class.

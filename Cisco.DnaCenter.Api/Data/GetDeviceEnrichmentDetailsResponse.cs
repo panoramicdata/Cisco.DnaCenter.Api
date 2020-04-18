@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDeviceEnrichmentDetailsResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetDeviceEnrichmentDetailsResponse : List<GetDeviceEnrichmentDetailsResponseInner>
+	public class GetDeviceEnrichmentDetailsResponse : List<GetDeviceEnrichmentDetailsResponseInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetDeviceEnrichmentDetailsResponse" /> class.

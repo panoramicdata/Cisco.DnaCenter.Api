@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateDeviceCredentialsRequestSettingsSnmpV3
 	/// </summary>
 	[DataContract]
-	public partial class CreateDeviceCredentialsRequestSettingsSnmpV3
+	public class CreateDeviceCredentialsRequestSettingsSnmpV3
 	{
 		/// <summary>
 		/// Gets or Sets PrivacyType

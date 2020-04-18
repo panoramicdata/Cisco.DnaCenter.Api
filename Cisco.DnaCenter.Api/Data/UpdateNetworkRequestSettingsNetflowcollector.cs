@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateNetworkRequestSettingsNetflowcollector
 	/// </summary>
 	[DataContract]
-	public partial class UpdateNetworkRequestSettingsNetflowcollector
+	public class UpdateNetworkRequestSettingsNetflowcollector
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateNetworkRequestSettingsNetflowcollector" /> class.

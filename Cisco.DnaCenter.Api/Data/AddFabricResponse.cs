@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class AddFabricResponse
+	public class AddFabricResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddFabricResponse" /> class.

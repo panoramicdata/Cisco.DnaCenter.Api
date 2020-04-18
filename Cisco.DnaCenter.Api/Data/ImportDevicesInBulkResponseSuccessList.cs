@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ImportDevicesInBulkResponseSuccessList
 	/// </summary>
 	[DataContract]
-	public partial class ImportDevicesInBulkResponseSuccessList
+	public class ImportDevicesInBulkResponseSuccessList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ImportDevicesInBulkResponseSuccessList" /> class.

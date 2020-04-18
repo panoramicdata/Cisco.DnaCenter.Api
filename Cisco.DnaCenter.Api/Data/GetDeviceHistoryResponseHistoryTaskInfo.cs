@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDeviceHistoryResponseHistoryTaskInfo
 	/// </summary>
 	[DataContract]
-	public partial class GetDeviceHistoryResponseHistoryTaskInfo
+	public class GetDeviceHistoryResponseHistoryTaskInfo
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetDeviceHistoryResponseHistoryTaskInfo" /> class.

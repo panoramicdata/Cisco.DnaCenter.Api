@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CollectionTemplateInfoInnerVersionsInfo
 	/// </summary>
 	[DataContract]
-	public partial class CollectionTemplateInfoInnerVersionsInfo
+	public class CollectionTemplateInfoInnerVersionsInfo
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CollectionTemplateInfoInnerVersionsInfo" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// WirelessInfoResult
 	/// </summary>
 	[DataContract]
-	public partial class WirelessInfoResult
+	public class WirelessInfoResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="WirelessInfoResult" /> class.

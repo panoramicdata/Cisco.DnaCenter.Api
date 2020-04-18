@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateDto
 	/// </summary>
 	[DataContract]
-	public partial class TemplateDto
+	public class TemplateDto
 	{
 		/// <summary>
 		/// Gets or Sets FailurePolicy

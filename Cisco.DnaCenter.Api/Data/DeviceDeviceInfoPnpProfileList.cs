@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDeviceInfoPnpProfileList
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDeviceInfoPnpProfileList
+	public class DeviceDeviceInfoPnpProfileList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDeviceInfoPnpProfileList" /> class.

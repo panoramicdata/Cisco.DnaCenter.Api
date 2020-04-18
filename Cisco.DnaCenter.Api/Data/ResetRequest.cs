@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ResetRequest
 	/// </summary>
 	[DataContract]
-	public partial class ResetRequest
+	public class ResetRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ResetRequest" /> class.

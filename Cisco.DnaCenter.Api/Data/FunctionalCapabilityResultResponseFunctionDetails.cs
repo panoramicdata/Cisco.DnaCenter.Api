@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// FunctionalCapabilityResultResponseFunctionDetails
 	/// </summary>
 	[DataContract]
-	public partial class FunctionalCapabilityResultResponseFunctionDetails
+	public class FunctionalCapabilityResultResponseFunctionDetails
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="FunctionalCapabilityResultResponseFunctionDetails" /> class.

@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// FileObjectListResult
 	/// </summary>
 	[DataContract]
-	public partial class FileObjectListResult
+	public class FileObjectListResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="FileObjectListResult" /> class.

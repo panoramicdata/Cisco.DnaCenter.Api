@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionRequest
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionRequest : List<ProvisionRequestInner>
+	public class ProvisionRequest : List<ProvisionRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionRequest" /> class.

@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SitesInfoDto
 	/// </summary>
 	[DataContract]
-	public partial class SitesInfoDto
+	public class SitesInfoDto
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SitesInfoDto" /> class.

@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateNetworkRequestSettingsDnsServer
 	/// </summary>
 	[DataContract]
-	public partial class UpdateNetworkRequestSettingsDnsServer
+	public class UpdateNetworkRequestSettingsDnsServer
 	{
 		/// <summary>
 		/// Gets or Sets DomainName

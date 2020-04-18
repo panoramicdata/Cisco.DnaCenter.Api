@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateNetworkRequestSettingsMessageOfTheday
 	/// </summary>
 	[DataContract]
-	public partial class UpdateNetworkRequestSettingsMessageOfTheday
+	public class UpdateNetworkRequestSettingsMessageOfTheday
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateNetworkRequestSettingsMessageOfTheday" /> class.

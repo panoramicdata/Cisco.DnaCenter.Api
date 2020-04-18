@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetSdaFabricInfoRequest
 	/// </summary>
 	[DataContract]
-	public partial class GetSdaFabricInfoRequest : List<GetSdaFabricInfoRequestInner>
+	public class GetSdaFabricInfoRequest : List<GetSdaFabricInfoRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetSdaFabricInfoRequest" /> class.

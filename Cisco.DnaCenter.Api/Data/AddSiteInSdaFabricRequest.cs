@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddSiteInSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class AddSiteInSdaFabricRequest : List<AddSiteInSdaFabricRequestInner>
+	public class AddSiteInSdaFabricRequest : List<AddSiteInSdaFabricRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddSiteInSdaFabricRequest" /> class.

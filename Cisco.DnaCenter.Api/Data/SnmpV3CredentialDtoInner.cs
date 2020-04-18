@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPvCredentialDtoInner
 	/// </summary>
 	[DataContract]
-	public partial class SnmpV3CredentialDtoInner
+	public class SnmpV3CredentialDtoInner
 	{
 		/// <summary>
 		/// Gets or Sets AuthType

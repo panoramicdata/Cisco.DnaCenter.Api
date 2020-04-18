@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateSiteResponse
 	/// </summary>
 	[DataContract]
-	public partial class CreateSiteResponse
+	public class CreateSiteResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateSiteResponse" /> class.

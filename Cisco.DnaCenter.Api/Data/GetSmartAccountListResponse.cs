@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetSmartAccountListResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetSmartAccountListResponse : List<string>
+	public class GetSmartAccountListResponse : List<string>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetSmartAccountListResponse" /> class.

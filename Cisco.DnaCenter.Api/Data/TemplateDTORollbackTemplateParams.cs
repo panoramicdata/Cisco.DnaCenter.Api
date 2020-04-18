@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateDtoRollbackTemplateParams
 	/// </summary>
 	[DataContract]
-	public partial class TemplateDtoRollbackTemplateParams
+	public class TemplateDtoRollbackTemplateParams
 	{
 		/// <summary>
 		/// Gets or Sets DataType

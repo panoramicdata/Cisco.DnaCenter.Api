@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DistributeDtoInner
 	/// </summary>
 	[DataContract]
-	public partial class DistributeDtoInner
+	public class DistributeDtoInner
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DistributeDtoInner" /> class.

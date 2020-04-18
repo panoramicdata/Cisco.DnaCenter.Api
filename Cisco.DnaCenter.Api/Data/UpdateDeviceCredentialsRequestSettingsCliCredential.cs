@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateDeviceCredentialsRequestSettingsCliCredential
 	/// </summary>
 	[DataContract]
-	public partial class UpdateDeviceCredentialsRequestSettingsCliCredential
+	public class UpdateDeviceCredentialsRequestSettingsCliCredential
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateDeviceCredentialsRequestSettingsCliCredential" /> class.

@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// Workflow
 	/// </summary>
 	[DataContract]
-	public partial class Workflow
+	public class Workflow
 	{
 		/// <summary>
 		/// Gets or Sets InstanceType

@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// WirelessInfoResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class WirelessInfoResultResponse
+	public class WirelessInfoResultResponse
 	{
 		/// <summary>
 		/// Gets or Sets WirelessLicenseInfo

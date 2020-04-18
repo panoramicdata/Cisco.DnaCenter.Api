@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateWorkflowResponse
 	/// </summary>
 	[DataContract]
-	public partial class UpdateWorkflowResponse
+	public class UpdateWorkflowResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateWorkflowResponse" /> class.

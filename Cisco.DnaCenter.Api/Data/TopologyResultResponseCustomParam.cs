@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TopologyResultResponseCustomParam
 	/// </summary>
 	[DataContract]
-	public partial class TopologyResultResponseCustomParam
+	public class TopologyResultResponseCustomParam
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TopologyResultResponseCustomParam" /> class.

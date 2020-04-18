@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// InventoryDeviceInfo
 	/// </summary>
 	[DataContract]
-	public partial class InventoryDeviceInfo
+	public class InventoryDeviceInfo
 	{
 		/// <summary>
 		/// Gets or Sets Type

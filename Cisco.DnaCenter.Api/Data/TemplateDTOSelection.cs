@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateDtoSelection
 	/// </summary>
 	[DataContract]
-	public partial class TemplateDtoSelection
+	public class TemplateDtoSelection
 	{
 		/// <summary>
 		/// Gets or Sets SelectionType

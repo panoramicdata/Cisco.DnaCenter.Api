@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestProvisioning
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestProvisioning
+	public class ProvisionNFVRequestProvisioning
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNFVRequestProvisioning" /> class.

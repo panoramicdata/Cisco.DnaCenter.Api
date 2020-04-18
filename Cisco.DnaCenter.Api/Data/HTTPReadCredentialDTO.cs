@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// HTTPReadCredentialDto
 	/// </summary>
 	[DataContract]
-	public partial class HttpReadCredentialDto : List<InventoryRequestHttpReadCredential>
+	public class HttpReadCredentialDto : List<InventoryRequestHttpReadCredential>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="HttpReadCredentialDto" /> class.

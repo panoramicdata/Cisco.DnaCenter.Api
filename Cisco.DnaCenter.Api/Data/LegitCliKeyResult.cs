@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// LegitCliKeyResult
 	/// </summary>
 	[DataContract]
-	public partial class LegitCliKeyResult
+	public class LegitCliKeyResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LegitCliKeyResult" /> class.

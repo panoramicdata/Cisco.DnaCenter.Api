@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TagDtoDynamicRules
 	/// </summary>
 	[DataContract]
-	public partial class TagDtoDynamicRules
+	public class TagDtoDynamicRules
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TagDtoDynamicRules" /> class.

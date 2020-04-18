@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPv3CredentialDto
 	/// </summary>
 	[DataContract]
-	public partial class Snmpv3CredentialDto : List<SnmpV3CredentialDtoInner>
+	public class Snmpv3CredentialDto : List<SnmpV3CredentialDtoInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Snmpv3CredentialDto" /> class.

@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SystemPropertyListResult
 	/// </summary>
 	[DataContract]
-	public partial class SystemPropertyListResult
+	public class SystemPropertyListResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SystemPropertyListResult" /> class.

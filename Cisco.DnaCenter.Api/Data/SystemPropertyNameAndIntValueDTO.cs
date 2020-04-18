@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SystemPropertyNameAndIntValueDto
 	/// </summary>
 	[DataContract]
-	public partial class SystemPropertyNameAndIntValueDto : List<SystemPropertyListResultResponse>
+	public class SystemPropertyNameAndIntValueDto : List<SystemPropertyListResultResponse>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SystemPropertyNameAndIntValueDto" /> class.

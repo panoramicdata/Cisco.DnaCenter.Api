@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ImageImportFromUrlDto
 	/// </summary>
 	[DataContract]
-	public partial class ImageImportFromUrlDto : List<ImageImportFromUrlDtoInner>
+	public class ImageImportFromUrlDto : List<ImageImportFromUrlDtoInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ImageImportFromUrlDto" /> class.

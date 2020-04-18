@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPvWriteCommunityDtoInner
 	/// </summary>
 	[DataContract]
-	public partial class SnmpV2WriteCommunityDtoInner
+	public class SnmpV2WriteCommunityDtoInner
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType

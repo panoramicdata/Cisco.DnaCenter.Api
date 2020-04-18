@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestSiteBuilding
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNfvRequestSiteBuilding
+	public class ProvisionNfvRequestSiteBuilding
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestSiteBuilding" /> class.

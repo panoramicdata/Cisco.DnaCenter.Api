@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddVirtualAccountResponse
 	/// </summary>
 	[DataContract]
-	public partial class AddVirtualAccountResponse
+	public class AddVirtualAccountResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddVirtualAccountResponse" /> class.

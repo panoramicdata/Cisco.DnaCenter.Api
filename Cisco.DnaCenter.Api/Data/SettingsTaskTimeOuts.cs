@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SettingsTaskTimeOuts
 	/// </summary>
 	[DataContract]
-	public partial class SettingsTaskTimeOuts
+	public class SettingsTaskTimeOuts
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SettingsTaskTimeOuts" /> class.

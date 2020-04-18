@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetSdaFabricInfoResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetSdaFabricInfoResponse
+	public class GetSdaFabricInfoResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetSdaFabricInfoResponse" /> class.

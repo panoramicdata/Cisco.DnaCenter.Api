@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CountResult
 	/// </summary>
 	[DataContract]
-	public partial class CountResult
+	public class CountResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CountResult" /> class.

@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetSyncResultForVirtualAccountResponseSyncResultSyncList
 	/// </summary>
 	[DataContract]
-	public partial class GetSyncResultForVirtualAccountResponseSyncResultSyncList
+	public class GetSyncResultForVirtualAccountResponseSyncResultSyncList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetSyncResultForVirtualAccountResponseSyncResultSyncList" /> class.

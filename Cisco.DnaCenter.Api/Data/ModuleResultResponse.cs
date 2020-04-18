@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ModuleResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class ModuleResultResponse
+	public class ModuleResultResponse
 	{
 		/// <summary>
 		/// Gets or Sets IsFieldReplaceable

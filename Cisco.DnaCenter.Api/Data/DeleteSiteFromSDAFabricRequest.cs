@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteSiteFromSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class DeleteSiteFromSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
+	public class DeleteSiteFromSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteSiteFromSdaFabricRequest" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DayZeroConfigPreviewResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class DayZeroConfigPreviewResultResponse
+	public class DayZeroConfigPreviewResultResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DayZeroConfigPreviewResultResponse" /> class.

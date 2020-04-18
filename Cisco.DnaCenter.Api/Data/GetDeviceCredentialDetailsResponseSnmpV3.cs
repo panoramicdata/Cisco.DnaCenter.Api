@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDeviceCredentialDetailsResponseSnmpV3
 	/// </summary>
 	[DataContract]
-	public partial class GetDeviceCredentialDetailsResponseSnmpV3
+	public class GetDeviceCredentialDetailsResponseSnmpV3
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetDeviceCredentialDetailsResponseSnmpV3" /> class.

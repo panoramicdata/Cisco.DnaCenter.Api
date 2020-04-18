@@ -11,7 +11,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// FunctionalCapabilityResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class FunctionalCapabilityResultResponse
+	public class FunctionalCapabilityResultResponse
 	{
 		/// <summary>
 		/// Gets or Sets FunctionOpState

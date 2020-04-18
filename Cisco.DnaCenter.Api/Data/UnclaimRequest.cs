@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UnclaimRequest
 	/// </summary>
 	[DataContract]
-	public partial class UnclaimRequest
+	public class UnclaimRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.

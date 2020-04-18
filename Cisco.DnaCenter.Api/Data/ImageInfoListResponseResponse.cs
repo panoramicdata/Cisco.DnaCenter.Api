@@ -11,7 +11,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ImageInfoListResponseResponse
 	/// </summary>
 	[DataContract]
-	public partial class ImageInfoListResponseResponse
+	public class ImageInfoListResponseResponse
 	{
 		/// <summary>
 		/// Gets or Sets ImportSourceType

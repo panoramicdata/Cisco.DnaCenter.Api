@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetStatusAPIForEventsResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetEventStatusApisResponse
+	public class GetEventStatusApisResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetEventStatusApisResponse" /> class.

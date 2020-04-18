@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetApplicationSetsResponseIdentitySource
 	/// </summary>
 	[DataContract]
-	public partial class GetApplicationSetsResponseIdentitySource
+	public class GetApplicationSetsResponseIdentitySource
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetApplicationSetsResponseIdentitySource" /> class.

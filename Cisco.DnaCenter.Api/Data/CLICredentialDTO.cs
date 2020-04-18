@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CLICredentialDto
 	/// </summary>
 	[DataContract]
-	public partial class CliCredentialDto
+	public class CliCredentialDto
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType

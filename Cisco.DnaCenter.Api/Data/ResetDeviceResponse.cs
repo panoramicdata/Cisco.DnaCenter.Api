@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ResetDeviceResponse
 	/// </summary>
 	[DataContract]
-	public partial class ResetDeviceResponse
+	public class ResetDeviceResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ResetDeviceResponse" /> class.

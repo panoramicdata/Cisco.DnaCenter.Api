@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SAVAMappingSyncResultSyncList
 	/// </summary>
 	[DataContract]
-	public partial class SavaMappingSyncResultSyncList
+	public class SavaMappingSyncResultSyncList
 	{
 		/// <summary>
 		/// Gets or Sets SyncType

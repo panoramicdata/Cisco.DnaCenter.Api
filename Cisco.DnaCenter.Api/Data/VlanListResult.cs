@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// VlanListResult
 	/// </summary>
 	[DataContract]
-	public partial class VlanListResult
+	public class VlanListResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="VlanListResult" /> class.

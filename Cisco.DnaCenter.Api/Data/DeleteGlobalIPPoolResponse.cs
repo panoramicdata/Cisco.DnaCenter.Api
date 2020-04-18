@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteGlobalIPPoolResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteGlobalIpPoolResponse
+	public class DeleteGlobalIpPoolResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteGlobalIpPoolResponse" /> class.

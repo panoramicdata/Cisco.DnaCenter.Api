@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ModuleListResult
 	/// </summary>
 	[DataContract]
-	public partial class ModuleListResult
+	public class ModuleListResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ModuleListResult" /> class.

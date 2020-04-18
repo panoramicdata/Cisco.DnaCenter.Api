@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeletesBorderDeviceFromSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class DeleteBorderDeviceFromSdaFabricRequest
+	public class DeleteBorderDeviceFromSdaFabricRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteBorderDeviceFromSdaFabricRequest" /> class.

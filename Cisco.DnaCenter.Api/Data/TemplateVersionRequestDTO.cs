@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateVersionRequestDto
 	/// </summary>
 	[DataContract]
-	public partial class TemplateVersionRequestDto
+	public class TemplateVersionRequestDto
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateVersionRequestDto" /> class.

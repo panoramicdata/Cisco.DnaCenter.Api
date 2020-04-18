@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestDevice
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNfvRequestDevice
+	public class ProvisionNfvRequestDevice
 	{
 		/// <summary>
 		/// Gets or Sets DeviceType

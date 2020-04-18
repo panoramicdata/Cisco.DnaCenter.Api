@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPnPGlobalSettingsResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetPnpGlobalSettingsResponse
+	public class GetPnpGlobalSettingsResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetPnpGlobalSettingsResponse" /> class.

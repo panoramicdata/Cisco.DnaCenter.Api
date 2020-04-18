@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPnPGlobalSettingsResponseTaskTimeOuts
 	/// </summary>
 	[DataContract]
-	public partial class GetPnpGlobalSettingsResponseTaskTimeOuts
+	public class GetPnpGlobalSettingsResponseTaskTimeOuts
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetPnpGlobalSettingsResponseTaskTimeOuts" /> class.

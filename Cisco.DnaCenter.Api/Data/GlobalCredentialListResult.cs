@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GlobalCredentialListResult
 	/// </summary>
 	[DataContract]
-	public partial class GlobalCredentialListResult
+	public class GlobalCredentialListResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GlobalCredentialListResult" /> class.

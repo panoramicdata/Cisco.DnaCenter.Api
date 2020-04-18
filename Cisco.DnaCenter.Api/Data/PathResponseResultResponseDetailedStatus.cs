@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// PathResponseResultResponseDetailedStatus
 	/// </summary>
 	[DataContract]
-	public partial class PathResponseResultResponseDetailedStatus
+	public class PathResponseResultResponseDetailedStatus
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PathResponseResultResponseDetailedStatus" /> class.

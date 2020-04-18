@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDeviceInfoPreWorkflowCliOuputs
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDeviceInfoPreWorkflowCliOuputs
+	public class DeviceDeviceInfoPreWorkflowCliOuputs
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDeviceInfoPreWorkflowCliOuputs" /> class.

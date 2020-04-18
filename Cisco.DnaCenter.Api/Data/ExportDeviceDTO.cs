@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ExportDeviceDto
 	/// </summary>
 	[DataContract]
-	public partial class ExportDeviceDto
+	public class ExportDeviceDto
 	{
 		/// <summary>
 		/// Gets or Sets OperationEnum

@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestCustomTemplate
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNfvRequestCustomTemplate
+	public class ProvisionNfvRequestCustomTemplate
 	{
 		/// <summary>
 		/// Gets or Sets DeviceType

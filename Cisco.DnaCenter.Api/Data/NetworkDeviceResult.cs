@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// NetworkDeviceResult
 	/// </summary>
 	[DataContract]
-	public partial class NetworkDeviceResult
+	public class NetworkDeviceResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NetworkDeviceResult" /> class.

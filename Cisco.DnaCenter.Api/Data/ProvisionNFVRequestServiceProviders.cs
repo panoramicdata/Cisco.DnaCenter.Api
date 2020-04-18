@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestServiceProviders
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNfvRequestServiceProviders
+	public class ProvisionNfvRequestServiceProviders
 	{
 		/// <summary>
 		/// Gets or Sets LinkType

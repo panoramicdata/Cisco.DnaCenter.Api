@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateSiteRequestSiteFloor
 	/// </summary>
 	[DataContract]
-	public partial class CreateSiteRequestSiteFloor
+	public class CreateSiteRequestSiteFloor
 	{
 		/// <summary>
 		/// Gets or Sets RfModel

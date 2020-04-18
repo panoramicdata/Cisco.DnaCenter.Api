@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// HTTPWriteCredentialDto
 	/// </summary>
 	[DataContract]
-	public partial class HttpWriteCredentialDto
+	public class HttpWriteCredentialDto
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType

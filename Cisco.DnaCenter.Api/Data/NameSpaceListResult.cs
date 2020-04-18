@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// NameSpaceListResult
 	/// </summary>
 	[DataContract]
-	public partial class NameSpaceListResult
+	public class NameSpaceListResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NameSpaceListResult" /> class.

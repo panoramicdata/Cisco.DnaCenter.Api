@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AuthenticationAPIResponse
 	/// </summary>
 	[DataContract]
-	public partial class AuthenticationResponse
+	public class AuthenticationResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.

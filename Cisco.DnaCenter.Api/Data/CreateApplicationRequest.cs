@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateApplicationRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateApplicationRequest : List<CreateApplicationRequestInner>
+	public class CreateApplicationRequest : List<CreateApplicationRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateApplicationRequest" /> class.

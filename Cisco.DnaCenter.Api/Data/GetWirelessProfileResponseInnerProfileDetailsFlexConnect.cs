@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetWirelessProfileResponseInnerProfileDetailsFlexConnect
 	/// </summary>
 	[DataContract]
-	public partial class GetWirelessProfileResponseInnerProfileDetailsFlexConnect
+	public class GetWirelessProfileResponseInnerProfileDetailsFlexConnect
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetWirelessProfileResponseInnerProfileDetailsFlexConnect" /> class.

@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TagMembersResult
 	/// </summary>
 	[DataContract]
-	public partial class TagMembersResult
+	public class TagMembersResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TagMembersResult" /> class.

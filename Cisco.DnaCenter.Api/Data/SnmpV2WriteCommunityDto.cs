@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPv2WriteCommunityDto
 	/// </summary>
 	[DataContract]
-	public partial class SnmpV2WriteCommunityDto : List<SnmpV2WriteCommunityDtoInner>
+	public class SnmpV2WriteCommunityDto : List<SnmpV2WriteCommunityDtoInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SnmpV2WriteCommunityDto" /> class.

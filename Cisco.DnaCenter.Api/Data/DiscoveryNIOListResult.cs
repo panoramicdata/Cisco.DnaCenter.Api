@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DiscoveryNioListResult
 	/// </summary>
 	[DataContract]
-	public partial class DiscoveryNioListResult
+	public class DiscoveryNioListResult
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DiscoveryNioListResult" /> class.

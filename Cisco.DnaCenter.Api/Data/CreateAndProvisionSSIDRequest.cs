@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateAndProvisionSSIDRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateAndProvisionSsidRequest
+	public class CreateAndProvisionSsidRequest
 	{
 		/// <summary>
 		/// Gets or Sets SsidType

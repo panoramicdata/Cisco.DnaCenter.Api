@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDeviceInfoStackInfo
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDeviceInfoStackInfo
+	public class DeviceDeviceInfoStackInfo
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDeviceInfoStackInfo" /> class.

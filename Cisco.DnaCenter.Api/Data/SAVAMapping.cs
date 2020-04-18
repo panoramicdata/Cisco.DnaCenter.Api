@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SAVAMapping
 	/// </summary>
 	[DataContract]
-	public partial class SavaMapping
+	public class SavaMapping
 	{
 		/// <summary>
 		/// Gets or Sets SyncStatus

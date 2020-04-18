@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateNetworkRequestSettingsClientAndEndpointAaa
 	/// </summary>
 	[DataContract]
-	public partial class UpdateNetworkRequestSettingsClientAndEndpointAaa
+	public class UpdateNetworkRequestSettingsClientAndEndpointAaa
 	{
 		/// <summary>
 		/// Gets or Sets IpAddress

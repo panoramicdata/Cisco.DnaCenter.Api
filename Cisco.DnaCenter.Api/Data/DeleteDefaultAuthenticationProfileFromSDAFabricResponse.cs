@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteDefaultAuthenticationProfileFromSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteDefaultAuthenticationProfileFromSdaFabricResponse
+	public class DeleteDefaultAuthenticationProfileFromSdaFabricResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteDefaultAuthenticationProfileFromSdaFabricResponse" /> class.

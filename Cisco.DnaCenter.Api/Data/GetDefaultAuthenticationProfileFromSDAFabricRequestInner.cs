@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDefaultAuthenticationProfileFromSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class GetDefaultAuthenticationProfileFromSdaFabricRequestInner
+	public class GetDefaultAuthenticationProfileFromSdaFabricRequestInner
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequestInner" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// EditApplicationResponse
 	/// </summary>
 	[DataContract]
-	public partial class EditApplicationResponse
+	public class EditApplicationResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EditApplicationResponse" /> class.

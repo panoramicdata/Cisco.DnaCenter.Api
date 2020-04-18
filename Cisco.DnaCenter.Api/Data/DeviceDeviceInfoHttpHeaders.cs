@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDeviceInfoHttpHeaders
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDeviceInfoHttpHeaders
+	public class DeviceDeviceInfoHttpHeaders
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDeviceInfoHttpHeaders" /> class.

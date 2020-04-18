@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetWorkflowsResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetWorkflowsResponse : List<DeviceSystemResetWorkflow>
+	public class GetWorkflowsResponse : List<DeviceSystemResetWorkflow>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetWorkflowsResponse" /> class.

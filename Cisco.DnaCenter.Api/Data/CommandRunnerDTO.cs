@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CommandRunnerDto
 	/// </summary>
 	[DataContract]
-	public partial class CommandRunnerDto
+	public class CommandRunnerDto
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CommandRunnerDto" /> class.

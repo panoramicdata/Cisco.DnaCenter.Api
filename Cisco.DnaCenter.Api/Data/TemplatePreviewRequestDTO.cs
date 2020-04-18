@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplatePreviewRequestDto
 	/// </summary>
 	[DataContract]
-	public partial class TemplatePreviewRequestDto
+	public class TemplatePreviewRequestDto
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplatePreviewRequestDto" /> class.

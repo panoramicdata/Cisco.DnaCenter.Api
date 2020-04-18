@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateOrUpdateRfProfileRequestRadioTypeAProperties
 	/// </summary>
 	[DataContract]
-	public partial class CreateOrUpdateRfProfileRequestRadioTypeAProperties
+	public class CreateOrUpdateRfProfileRequestRadioTypeAProperties
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateOrUpdateRfProfileRequestRadioTypeAProperties" /> class.

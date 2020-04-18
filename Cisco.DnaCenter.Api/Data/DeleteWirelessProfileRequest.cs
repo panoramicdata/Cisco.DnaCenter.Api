@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteWirelessProfileRequest
 	/// </summary>
 	[DataContract]
-	public partial class DeleteWirelessProfileRequest
+	public class DeleteWirelessProfileRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteWirelessProfileRequest" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddIPPoolInSDAVirtualNetworkResponse
 	/// </summary>
 	[DataContract]
-	public partial class AddIpPoolInSdaVirtualNetworkResponse
+	public class AddIpPoolInSdaVirtualNetworkResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddIpPoolInSdaVirtualNetworkResponse" /> class.

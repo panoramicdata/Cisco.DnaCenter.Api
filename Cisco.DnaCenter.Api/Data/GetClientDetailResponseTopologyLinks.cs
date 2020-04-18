@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetClientDetailResponseTopologyLinks
 	/// </summary>
 	[DataContract]
-	public partial class GetClientDetailResponseTopologyLinks
+	public class GetClientDetailResponseTopologyLinks
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetClientDetailResponseTopologyLinks" /> class.

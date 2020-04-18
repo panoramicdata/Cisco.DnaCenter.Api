@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// WorkflowTasks
 	/// </summary>
 	[DataContract]
-	public partial class WorkflowTasks
+	public class WorkflowTasks
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="WorkflowTasks" /> class.

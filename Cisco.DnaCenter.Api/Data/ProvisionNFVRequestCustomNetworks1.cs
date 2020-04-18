@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestCustomNetworks1
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNfvRequestCustomNetworks1
+	public class ProvisionNfvRequestCustomNetworks1
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestCustomNetworks1" /> class.

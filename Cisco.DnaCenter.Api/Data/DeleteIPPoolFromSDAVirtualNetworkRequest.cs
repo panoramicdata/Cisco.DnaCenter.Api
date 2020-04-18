@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteIPPoolFromSDAVirtualNetworkRequest
 	/// </summary>
 	[DataContract]
-	public partial class DeleteIpPoolFromSdaVirtualNetworkRequest : List<DeleteIpPoolFromSdaVirtualNetworkRequestInner>
+	public class DeleteIpPoolFromSdaVirtualNetworkRequest : List<DeleteIpPoolFromSdaVirtualNetworkRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteIpPoolFromSdaVirtualNetworkRequest" /> class.

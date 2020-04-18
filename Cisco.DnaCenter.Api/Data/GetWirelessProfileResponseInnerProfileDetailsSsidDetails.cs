@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetWirelessProfileResponseInnerProfileDetailsSsidDetails
 	/// </summary>
 	[DataContract]
-	public partial class GetWirelessProfileResponseInnerProfileDetailsSsidDetails
+	public class GetWirelessProfileResponseInnerProfileDetailsSsidDetails
 	{
 		/// <summary>
 		/// Gets or Sets Type

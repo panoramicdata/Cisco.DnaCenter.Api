@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GlobalCredentialListResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class GlobalCredentialListResultResponse
+	public class GlobalCredentialListResultResponse
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType

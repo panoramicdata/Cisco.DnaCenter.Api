@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteApplicationResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteApplicationResponse
+	public class DeleteApplicationResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteApplicationResponse" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateDtoContainingTemplates
 	/// </summary>
 	[DataContract]
-	public partial class TemplateDtoContainingTemplates
+	public class TemplateDtoContainingTemplates
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateDtoContainingTemplates" /> class.

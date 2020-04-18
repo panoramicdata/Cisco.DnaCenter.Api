@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// RetrieveRfProfilesResponse
 	/// </summary>
 	[DataContract]
-	public partial class RetrieveRfProfilesResponse
+	public class RetrieveRfProfilesResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="RetrieveRfProfilesResponse" /> class.

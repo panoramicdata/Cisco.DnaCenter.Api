@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SNMPvReadCommunityDto
 	/// </summary>
 	[DataContract]
-	public partial class SnmpV2ReadCommunityDto
+	public class SnmpV2ReadCommunityDto
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType

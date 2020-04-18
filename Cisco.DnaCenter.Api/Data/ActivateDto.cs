@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ActivateDto
 	/// </summary>
 	[DataContract]
-	public partial class ActivateDto : List<ActivateDtoInner>
+	public class ActivateDto : List<ActivateDtoInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ActivateDto" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// FlowAnalysisRequestResultOutputResponse
 	/// </summary>
 	[DataContract]
-	public partial class FlowAnalysisRequestResultOutputResponse
+	public class FlowAnalysisRequestResultOutputResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="FlowAnalysisRequestResultOutputResponse" /> class.

@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateNetworkRequestSettingsNetworkAaa
 	/// </summary>
 	[DataContract]
-	public partial class UpdateNetworkRequestSettingsNetworkAaa
+	public class UpdateNetworkRequestSettingsNetworkAaa
 	{
 		/// <summary>
 		/// Gets or Sets Servers

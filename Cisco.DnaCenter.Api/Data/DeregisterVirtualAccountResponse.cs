@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeregisterVirtualAccountResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeregisterVirtualAccountResponse
+	public class DeregisterVirtualAccountResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeregisterVirtualAccountResponse" /> class.

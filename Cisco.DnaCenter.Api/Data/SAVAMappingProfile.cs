@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SAVAMappingProfile
 	/// </summary>
 	[DataContract]
-	public partial class SavaMappingProfile
+	public class SavaMappingProfile
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SavaMappingProfile" /> class.

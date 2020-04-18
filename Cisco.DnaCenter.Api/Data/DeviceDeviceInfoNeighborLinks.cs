@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDeviceInfoNeighborLinks
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDeviceInfoNeighborLinks
+	public class DeviceDeviceInfoNeighborLinks
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDeviceInfoNeighborLinks" /> class.

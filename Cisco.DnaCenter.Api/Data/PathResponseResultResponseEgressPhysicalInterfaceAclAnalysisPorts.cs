@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts
 	/// </summary>
 	[DataContract]
-	public partial class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts
+	public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts" /> class.

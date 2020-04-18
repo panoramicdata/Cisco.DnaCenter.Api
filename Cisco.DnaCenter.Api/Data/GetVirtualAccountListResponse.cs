@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetVirtualAccountListResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetVirtualAccountListResponse : List<string>
+	public class GetVirtualAccountListResponse : List<string>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetVirtualAccountListResponse" /> class.

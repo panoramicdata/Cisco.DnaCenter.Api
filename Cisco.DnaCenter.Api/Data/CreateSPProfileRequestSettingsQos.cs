@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateSPProfileRequestSettingsQos
 	/// </summary>
 	[DataContract]
-	public partial class CreateSpProfileRequestSettingsQos
+	public class CreateSpProfileRequestSettingsQos
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateSpProfileRequestSettingsQos" /> class.

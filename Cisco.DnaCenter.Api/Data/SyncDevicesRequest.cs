@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SyncDevicesRequest
 	/// </summary>
 	[DataContract]
-	public partial class SyncDevicesRequest : List<Object>
+	public class SyncDevicesRequest : List<Object>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SyncDevicesRequest" /> class.

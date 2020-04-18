@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetOverallNetworkHealthResponseHealthDistirubution
 	/// </summary>
 	[DataContract]
-	public partial class GetOverallNetworkHealthResponseHealthDistirubution
+	public class GetOverallNetworkHealthResponseHealthDistirubution
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetOverallNetworkHealthResponseHealthDistirubution" /> class.

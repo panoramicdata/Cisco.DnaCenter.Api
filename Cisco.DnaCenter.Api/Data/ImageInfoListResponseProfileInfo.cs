@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ImageInfoListResponseProfileInfo
 	/// </summary>
 	[DataContract]
-	public partial class ImageInfoListResponseProfileInfo
+	public class ImageInfoListResponseProfileInfo
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ImageInfoListResponseProfileInfo" /> class.

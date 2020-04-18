@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionResponse
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionResponse
+	public class ProvisionResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionResponse" /> class.

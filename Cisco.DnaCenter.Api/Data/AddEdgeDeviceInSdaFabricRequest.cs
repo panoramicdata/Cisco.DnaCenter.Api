@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddEdgeDeviceInSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class AddEdgeDeviceInSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
+	public class AddEdgeDeviceInSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddEdgeDeviceInSdaFabricRequest" /> class.

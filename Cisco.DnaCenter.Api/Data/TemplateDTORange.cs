@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateDtoRange
 	/// </summary>
 	[DataContract]
-	public partial class TemplateDtoRange
+	public class TemplateDtoRange
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateDtoRange" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetIPPoolFromSDAVirtualNetworkResponse
 	/// </summary>
 	[DataContract]
-	public partial class GetIPPoolFromSDAVirtualNetworkResponse
+	public class GetIPPoolFromSDAVirtualNetworkResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetIPPoolFromSDAVirtualNetworkResponse" /> class.

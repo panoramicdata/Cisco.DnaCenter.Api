@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// InventoryDeviceInfoUpdateMgmtIPaddressList
 	/// </summary>
 	[DataContract]
-	public partial class InventoryDeviceInfoUpdateManagementIpAddressList
+	public class InventoryDeviceInfoUpdateManagementIpAddressList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InventoryDeviceInfoUpdateManagementIpAddressList" /> class.

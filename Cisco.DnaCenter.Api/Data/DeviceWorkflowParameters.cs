@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceWorkflowParameters
 	/// </summary>
 	[DataContract]
-	public partial class DeviceWorkflowParameters
+	public class DeviceWorkflowParameters
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceWorkflowParameters" /> class.

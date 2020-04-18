@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SettingsDefaultProfile
 	/// </summary>
 	[DataContract]
-	public partial class SettingsDefaultProfile
+	public class SettingsDefaultProfile
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SettingsDefaultProfile" /> class.

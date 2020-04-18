@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// InventoryRequest
 	/// </summary>
 	[DataContract]
-	public partial class InventoryRequest
+	public class InventoryRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InventoryRequest" /> class.

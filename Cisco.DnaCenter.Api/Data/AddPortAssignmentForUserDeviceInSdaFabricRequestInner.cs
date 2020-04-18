@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddPortAssignmentForUserDeviceInSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class AddPortAssignmentForUserDeviceInSdaFabricRequestInner
+	public class AddPortAssignmentForUserDeviceInSdaFabricRequestInner
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddPortAssignmentForUserDeviceInSdaFabricRequestInner" /> class.

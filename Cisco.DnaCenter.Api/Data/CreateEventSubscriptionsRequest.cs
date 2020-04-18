@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateEventSubscriptionsRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateEventSubscriptionsRequest : List<CreateEventSubscriptionsRequestInner>
+	public class CreateEventSubscriptionsRequest : List<CreateEventSubscriptionsRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequest" /> class.

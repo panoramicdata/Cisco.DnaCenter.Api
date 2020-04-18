@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDeviceInfoFileSystemList
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDeviceInfoFileSystemList
+	public class DeviceDeviceInfoFileSystemList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDeviceInfoFileSystemList" /> class.

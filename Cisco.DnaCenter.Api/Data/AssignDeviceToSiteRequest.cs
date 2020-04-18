@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AssignDeviceToSiteRequest
 	/// </summary>
 	[DataContract]
-	public partial class AssignDeviceToSiteRequest
+	public class AssignDeviceToSiteRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AssignDeviceToSiteRequest" /> class.

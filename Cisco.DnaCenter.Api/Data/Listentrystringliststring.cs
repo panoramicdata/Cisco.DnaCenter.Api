@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// Listentrystringliststring
 	/// </summary>
 	[DataContract]
-	public partial class Listentrystringliststring
+	public class Listentrystringliststring
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Listentrystringliststring" /> class.

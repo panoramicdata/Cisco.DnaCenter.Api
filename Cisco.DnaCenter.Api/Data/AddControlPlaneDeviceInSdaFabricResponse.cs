@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddControlPlaneDeviceInSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class AddControlPlaneDeviceInSdaFabricResponse
+	public class AddControlPlaneDeviceInSdaFabricResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddControlPlaneDeviceInSdaFabricResponse" /> class.

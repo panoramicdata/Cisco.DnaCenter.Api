@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateNetworkRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateNetworkRequest
+	public class CreateNetworkRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateNetworkRequest" /> class.

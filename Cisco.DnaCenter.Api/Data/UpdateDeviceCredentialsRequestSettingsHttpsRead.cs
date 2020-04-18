@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateDeviceCredentialsRequestSettingsHttpsRead
 	/// </summary>
 	[DataContract]
-	public partial class UpdateDeviceCredentialsRequestSettingsHttpsRead
+	public class UpdateDeviceCredentialsRequestSettingsHttpsRead
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateDeviceCredentialsRequestSettingsHttpsRead" /> class.

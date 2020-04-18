@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetWirelessProfileResponseInnerProfileDetails
 	/// </summary>
 	[DataContract]
-	public partial class GetWirelessProfileResponseInnerProfileDetails
+	public class GetWirelessProfileResponseInnerProfileDetails
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetWirelessProfileResponseInnerProfileDetails" /> class.

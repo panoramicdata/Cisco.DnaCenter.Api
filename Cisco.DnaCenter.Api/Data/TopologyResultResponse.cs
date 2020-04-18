@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TopologyResultResponse
 	/// </summary>
 	[DataContract]
-	public partial class TopologyResultResponse
+	public class TopologyResultResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TopologyResultResponse" /> class.

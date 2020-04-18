@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteWorkflowByIdResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteWorkflowByIdResponse
+	public class DeleteWorkflowByIdResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteWorkflowByIdResponse" /> class.

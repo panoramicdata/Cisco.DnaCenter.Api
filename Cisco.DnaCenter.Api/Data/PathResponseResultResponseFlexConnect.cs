@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// PathResponseResultResponseFlexConnect
 	/// </summary>
 	[DataContract]
-	public partial class PathResponseResultResponseFlexConnect
+	public class PathResponseResultResponseFlexConnect
 	{
 		/// <summary>
 		/// Gets or Sets Authentication

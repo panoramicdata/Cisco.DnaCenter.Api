@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPortAssignmentForAccessPointInSdaFabricRequest
 	/// </summary>
 	[DataContract]
-	public partial class GetPortAssignmentForAccessPointInSdaFabricRequest : List<DeletePortAssignmentForAccessPointInSdaFabricRequestInner>
+	public class GetPortAssignmentForAccessPointInSdaFabricRequest : List<DeletePortAssignmentForAccessPointInSdaFabricRequestInner>
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetPortAssignmentForAccessPointInSdaFabricRequest" /> class.

@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateGlobalPoolRequest
 	/// </summary>
 	[DataContract]
-	public partial class CreateGlobalPoolRequest
+	public class CreateGlobalPoolRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateGlobalPoolRequest" /> class.

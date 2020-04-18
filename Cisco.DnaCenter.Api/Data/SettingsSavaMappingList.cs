@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// SettingsSavaMappingList
 	/// </summary>
 	[DataContract]
-	public partial class SettingsSavaMappingList
+	public class SettingsSavaMappingList
 	{
 		/// <summary>
 		/// Gets or Sets SyncStatus

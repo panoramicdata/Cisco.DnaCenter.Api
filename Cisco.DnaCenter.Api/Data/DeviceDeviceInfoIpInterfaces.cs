@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDeviceInfoIpInterfaces
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDeviceInfoIpInterfaces
+	public class DeviceDeviceInfoIpInterfaces
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDeviceInfoIpInterfaces" /> class.

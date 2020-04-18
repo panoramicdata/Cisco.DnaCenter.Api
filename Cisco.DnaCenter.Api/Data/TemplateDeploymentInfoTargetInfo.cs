@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateDeploymentInfoTargetInfo
 	/// </summary>
 	[DataContract]
-	public partial class TemplateDeploymentInfoTargetInfo
+	public class TemplateDeploymentInfoTargetInfo
 	{
 		/// <summary>
 		/// Gets or Sets Type

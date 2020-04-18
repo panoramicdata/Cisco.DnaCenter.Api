@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateSPProfileResponse
 	/// </summary>
 	[DataContract]
-	public partial class UpdateSpProfileResponse
+	public class UpdateSpProfileResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateSpProfileResponse" /> class.

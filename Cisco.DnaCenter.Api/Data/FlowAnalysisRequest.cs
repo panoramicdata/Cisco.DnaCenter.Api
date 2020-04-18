@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// FlowAnalysisRequest
 	/// </summary>
 	[DataContract]
-	public partial class FlowAnalysisRequest
+	public class FlowAnalysisRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="FlowAnalysisRequest" /> class.

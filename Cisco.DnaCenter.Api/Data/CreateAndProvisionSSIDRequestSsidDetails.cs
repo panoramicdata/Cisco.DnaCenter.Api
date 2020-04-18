@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateAndProvisionSSIDRequestSsidDetails
 	/// </summary>
 	[DataContract]
-	public partial class CreateAndProvisionSsidRequestSsidDetails
+	public class CreateAndProvisionSsidRequestSsidDetails
 	{
 		/// <summary>
 		/// Gets or Sets SecurityLevel

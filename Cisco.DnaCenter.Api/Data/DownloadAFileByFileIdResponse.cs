@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DownloadAFileByFileIdResponse
 	/// </summary>
 	[DataContract]
-	public partial class DownloadFileByFileIdResponse
+	public class DownloadFileByFileIdResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DownloadFileByFileIdResponse" /> class.

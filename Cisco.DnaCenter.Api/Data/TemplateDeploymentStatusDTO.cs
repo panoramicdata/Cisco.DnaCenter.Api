@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TemplateDeploymentStatusDto
 	/// </summary>
 	[DataContract]
-	public partial class TemplateDeploymentStatusDto
+	public class TemplateDeploymentStatusDto
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateDeploymentStatusDto" /> class.

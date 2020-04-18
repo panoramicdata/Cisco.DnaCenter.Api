@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// EditApplicationRequestInnerNetworkApplications
 	/// </summary>
 	[DataContract]
-	public partial class EditApplicationRequestInnerNetworkApplications
+	public class EditApplicationRequestInnerNetworkApplications
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EditApplicationRequestInnerNetworkApplications" /> class.

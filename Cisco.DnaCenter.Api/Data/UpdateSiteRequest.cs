@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateSiteRequest
 	/// </summary>
 	[DataContract]
-	public partial class UpdateSiteRequest
+	public class UpdateSiteRequest
 	{
 		/// <summary>
 		/// Gets or Sets Type

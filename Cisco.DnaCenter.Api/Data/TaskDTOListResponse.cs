@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TaskDtoListResponse
 	/// </summary>
 	[DataContract]
-	public partial class TaskDtoListResponse
+	public class TaskDtoListResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TaskDtoListResponse" /> class.

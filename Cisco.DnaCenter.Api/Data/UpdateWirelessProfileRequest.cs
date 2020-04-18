@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateWirelessProfileRequest
 	/// </summary>
 	[DataContract]
-	public partial class UpdateWirelessProfileRequest
+	public class UpdateWirelessProfileRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateWirelessProfileRequest" /> class.

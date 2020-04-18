@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateEventSubscriptionsRequestInnerFilter
 	/// </summary>
 	[DataContract]
-	public partial class CreateEventSubscriptionsRequestInnerFilter
+	public class CreateEventSubscriptionsRequestInnerFilter
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.

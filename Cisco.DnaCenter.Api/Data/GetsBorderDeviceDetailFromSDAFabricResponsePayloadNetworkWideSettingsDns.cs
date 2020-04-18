@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns
 	/// </summary>
 	[DataContract]
-	public partial class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns
+	public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns" /> class.

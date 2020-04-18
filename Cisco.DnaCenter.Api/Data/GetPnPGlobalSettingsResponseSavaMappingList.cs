@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetPnPGlobalSettingsResponseSavaMappingList
 	/// </summary>
 	[DataContract]
-	public partial class GetPnPGlobalSettingsResponseSavaMappingList
+	public class GetPnPGlobalSettingsResponseSavaMappingList
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetPnPGlobalSettingsResponseSavaMappingList" /> class.

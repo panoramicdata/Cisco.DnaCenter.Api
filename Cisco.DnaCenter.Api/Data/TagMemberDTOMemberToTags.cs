@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// TagMemberDtoMemberToTags
 	/// </summary>
 	[DataContract]
-	public partial class TagMemberDtoMemberToTags
+	public class TagMemberDtoMemberToTags
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TagMemberDtoMemberToTags" /> class.

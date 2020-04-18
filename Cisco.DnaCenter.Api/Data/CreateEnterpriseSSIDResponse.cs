@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateEnterpriseSSIDResponse
 	/// </summary>
 	[DataContract]
-	public partial class CreateEnterpriseSsidResponse
+	public class CreateEnterpriseSsidResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateEnterpriseSsidResponse" /> class.

@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProjectDto
 	/// </summary>
 	[DataContract]
-	public partial class ProjectDto
+	public class ProjectDto
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProjectDto" /> class.

@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// Device
 	/// </summary>
 	[DataContract]
-	public partial class Device
+	public class Device
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Device" /> class.

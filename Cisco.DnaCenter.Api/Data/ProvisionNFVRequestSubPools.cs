@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ProvisionNFVRequestSubPools
 	/// </summary>
 	[DataContract]
-	public partial class ProvisionNFVRequestSubPools
+	public class ProvisionNFVRequestSubPools
 	{
 		/// <summary>
 		/// Gets or Sets Type

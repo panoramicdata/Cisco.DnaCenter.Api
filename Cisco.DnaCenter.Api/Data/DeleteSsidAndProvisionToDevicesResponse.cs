@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteSSIDAndProvisionItToDevicesResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteSsidAndProvisionToDevicesResponse
+	public class DeleteSsidAndProvisionToDevicesResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteSsidAndProvisionToDevicesResponse" /> class.

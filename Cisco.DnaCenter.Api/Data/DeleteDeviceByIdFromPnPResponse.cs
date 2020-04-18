@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteDeviceByIdFromPnPResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteDeviceByIdFromPnPResponse
+	public class DeleteDeviceByIdFromPnPResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteDeviceByIdFromPnPResponse" /> class.

@@ -10,7 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// CreateGlobalPoolRequestSettingsIppool
 	/// </summary>
 	[DataContract]
-	public partial class CreateGlobalPoolRequestSettingsIppool
+	public class CreateGlobalPoolRequestSettingsIppool
 	{
 		/// <summary>
 		/// Gets or Sets Type

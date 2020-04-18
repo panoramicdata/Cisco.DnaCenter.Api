@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// ClaimDeviceRequest
 	/// </summary>
 	[DataContract]
-	public partial class ClaimDeviceRequest
+	public class ClaimDeviceRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ClaimDeviceRequest" /> class.

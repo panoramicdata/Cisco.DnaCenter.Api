@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AssignCredentialToSiteRequest
 	/// </summary>
 	[DataContract]
-	public partial class AssignCredentialToSiteRequest
+	public class AssignCredentialToSiteRequest
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AssignCredentialToSiteRequest" /> class.

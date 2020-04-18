@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// UpdateNetworkRequestSettingsSyslogServer
 	/// </summary>
 	[DataContract]
-	public partial class UpdateNetworkRequestSettingsSyslogServer
+	public class UpdateNetworkRequestSettingsSyslogServer
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateNetworkRequestSettingsSyslogServer" /> class.

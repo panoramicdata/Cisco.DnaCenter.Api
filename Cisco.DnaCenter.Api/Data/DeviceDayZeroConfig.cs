@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeviceDayZeroConfig
 	/// </summary>
 	[DataContract]
-	public partial class DeviceDayZeroConfig
+	public class DeviceDayZeroConfig
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeviceDayZeroConfig" /> class.

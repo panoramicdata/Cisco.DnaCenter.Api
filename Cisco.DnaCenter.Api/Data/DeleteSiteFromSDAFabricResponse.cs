@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// DeleteSiteFromSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public partial class DeleteSiteFromSdaFabricResponse
+	public class DeleteSiteFromSdaFabricResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteSiteFromSdaFabricResponse" /> class.

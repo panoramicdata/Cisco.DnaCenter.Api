@@ -9,7 +9,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// InventoryRequestHttpReadCredential
 	/// </summary>
 	[DataContract]
-	public partial class InventoryRequestHttpReadCredential
+	public class InventoryRequestHttpReadCredential
 	{
 		/// <summary>
 		/// Gets or Sets CredentialType

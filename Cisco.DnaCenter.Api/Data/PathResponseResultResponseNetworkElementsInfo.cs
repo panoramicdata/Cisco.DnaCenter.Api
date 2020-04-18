@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// PathResponseResultResponseNetworkElementsInfo
 	/// </summary>
 	[DataContract]
-	public partial class PathResponseResultResponseNetworkElementsInfo
+	public class PathResponseResultResponseNetworkElementsInfo
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PathResponseResultResponseNetworkElementsInfo" /> class.

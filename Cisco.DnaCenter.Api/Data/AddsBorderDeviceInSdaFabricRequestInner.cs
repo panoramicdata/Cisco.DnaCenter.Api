@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// AddsBorderDeviceInSdaFabricRequestInner
 	/// </summary>
 	[DataContract]
-	public partial class AddsBorderDeviceInSdaFabricRequestInner
+	public class AddsBorderDeviceInSdaFabricRequestInner
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddsBorderDeviceInSdaFabricRequestInner" /> class.
