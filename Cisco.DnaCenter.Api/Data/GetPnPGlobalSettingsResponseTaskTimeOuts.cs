@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetPnPGlobalSettingsResponseTaskTimeOuts
+	/// GetPnpGlobalSettingsResponseTaskTimeOuts
 	/// </summary>
 	[DataContract]
 	public class GetPnpGlobalSettingsResponseTaskTimeOuts
@@ -44,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetPnPGlobalSettingsResponseTaskTimeOuts {\n");
+			sb.Append("class GetPnpGlobalSettingsResponseTaskTimeOuts {\n");
 			sb.Append("  ImageDownloadTimeOut: ").Append(ImageDownloadTimeOut).Append("\n");
 			sb.Append("  ConfigTimeOut: ").Append(ConfigTimeOut).Append("\n");
 			sb.Append("  GeneralTimeOut: ").Append(GeneralTimeOut).Append("\n");

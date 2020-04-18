@@ -5,7 +5,7 @@ using System.Text;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// UpdatePnPGlobalSettingsResponse
+	/// UpdatePnpGlobalSettingsResponse
 	/// </summary>
 	[DataContract]
 	public class UpdatePnpGlobalSettingsResponse
@@ -22,7 +22,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Id">Id.</param>
 		/// <param name="Id">Id.</param>
 		/// <param name="_Version">_Version.</param>
-		public UpdatePnpGlobalSettingsResponse(List<GetPnPGlobalSettingsResponseSavaMappingList> SavaMappingList = default, GetPnpGlobalSettingsResponseTaskTimeOuts TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials AaaCredentials = default, GetPnpGlobalSettingsResponseDefaultProfile DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)
+		public UpdatePnpGlobalSettingsResponse(List<GetPnpGlobalSettingsResponseSavaMappingList> SavaMappingList = default, GetPnpGlobalSettingsResponseTaskTimeOuts TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials AaaCredentials = default, GetPnpGlobalSettingsResponseDefaultProfile DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)
 		{
 			this.SavaMappingList = SavaMappingList;
 			this.TaskTimeOuts = TaskTimeOuts;
@@ -39,7 +39,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets SavaMappingList
 		/// </summary>
 		[DataMember(Name = "savaMappingList", EmitDefaultValue = false)]
-		public List<GetPnPGlobalSettingsResponseSavaMappingList> SavaMappingList { get; set; }
+		public List<GetPnpGlobalSettingsResponseSavaMappingList> SavaMappingList { get; set; }
 		/// <summary>
 		/// Gets or Sets TaskTimeOuts
 		/// </summary>
@@ -87,7 +87,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class UpdatePnPGlobalSettingsResponse {\n");
+			sb.Append("class UpdatePnpGlobalSettingsResponse {\n");
 			sb.Append("  SavaMappingList: ").Append(SavaMappingList).Append("\n");
 			sb.Append("  TaskTimeOuts: ").Append(TaskTimeOuts).Append("\n");
 			sb.Append("  TenantId: ").Append(TenantId).Append("\n");

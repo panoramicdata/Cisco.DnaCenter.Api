@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetPnPGlobalSettingsResponseDefaultProfile
+	/// GetPnpGlobalSettingsResponseDefaultProfile
 	/// </summary>
 	[DataContract]
 	public class GetPnpGlobalSettingsResponseDefaultProfile
@@ -59,7 +59,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetPnPGlobalSettingsResponseDefaultProfile {\n");
+			sb.Append("class GetPnpGlobalSettingsResponseDefaultProfile {\n");
 			sb.Append("  FqdnAddresses: ").Append(FqdnAddresses).Append("\n");
 			sb.Append("  Proxy: ").Append(Proxy).Append("\n");
 			sb.Append("  Cert: ").Append(Cert).Append("\n");

@@ -9,13 +9,13 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface IDeviceOnboardingPnP
+	public interface IDeviceOnboardingPnp
 	{
 		/// <summary>
 		/// Add a Workflow
 		/// </summary>
 		/// <remarks>
-		/// Adds a PnP Workflow along with the relevant tasks in the workflow into the PnP database
+		/// Adds a Pnp Workflow along with the relevant tasks in the workflow into the Pnp database
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddAWorkflowResponse</returns>
@@ -28,7 +28,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Add Device
 		/// </summary>
 		/// <remarks>
-		/// Adds a device to the PnP database.
+		/// Adds a device to the Pnp database.
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of Device</returns>
@@ -41,7 +41,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Add Virtual Account
 		/// </summary>
 		/// <remarks>
-		/// Registers a Smart Account, Virtual Account and the relevant server profile info with the PnP System &amp; database. The devices present in the registered virtual account are synced with the PnP database as well. The response payload returns the new profile
+		/// Registers a Smart Account, Virtual Account and the relevant server profile info with the Pnp System &amp; database. The devices present in the registered virtual account are synced with the Pnp database as well. The response payload returns the new profile
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of AddVirtualAccountResponse</returns>
@@ -77,15 +77,15 @@ namespace Cisco.DnaCenter.Api.Interfaces
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
-		/// Delete Device by Id from PnP
+		/// Delete Device by Id from Pnp
 		/// </summary>
 		/// <remarks>
-		/// Deletes specified device from PnP database
+		/// Deletes specified device from Pnp database
 		/// </remarks>
 		/// <param name="id">id</param>
-		/// <returns>Task of DeleteDeviceByIdFromPnPResponse</returns>
+		/// <returns>Task of DeleteDeviceByIdFromPnpResponse</returns>
 		[Delete("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		Task<DeleteDeviceByIdFromPnPResponse> DeleteDeviceByIdFromPnpAysnc(
+		Task<DeleteDeviceByIdFromPnpResponse> DeleteDeviceByIdFromPnpAysnc(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -106,7 +106,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Deregister Virtual Account
 		/// </summary>
 		/// <remarks>
-		/// Deregisters the specified smart account &amp; virtual account info and the associated device information from the PnP System &amp; database. The devices associated with the deregistered virtual account are removed from the PnP database as well. The response payload contains the deregistered smart &amp; virtual account information
+		/// Deregisters the specified smart account &amp; virtual account info and the associated device information from the Pnp System &amp; database. The devices associated with the deregistered virtual account are removed from the Pnp database as well. The response payload contains the deregistered smart &amp; virtual account information
 		/// </remarks>
 		/// <param name="domain">Smart Account Domain</param>
 		/// <param name="name">Virtual Account Name</param>
@@ -148,12 +148,12 @@ namespace Cisco.DnaCenter.Api.Interfaces
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
-		/// Get PnP global settings
+		/// Get Pnp global settings
 		/// </summary>
 		/// <remarks>
-		/// Returns global PnP settings of the user
+		/// Returns global Pnp settings of the user
 		/// </remarks>
-		/// <returns>Task of GetPnPGlobalSettingsResponse</returns>
+		/// <returns>Task of GetPnpGlobalSettingsResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-settings")]
 		Task<GetPnpGlobalSettingsResponse> GetPnpGlobalSettingsAsync(
 			CancellationToken cancellationToken = default);
@@ -259,7 +259,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Get Sync Result for Virtual Account
 		/// </summary>
 		/// <remarks>
-		/// Returns the summary of devices synced from the given smart account &amp; virtual account with PnP
+		/// Returns the summary of devices synced from the given smart account &amp; virtual account with Pnp
 		/// </remarks>
 		/// <param name="domain">Smart Account Domain</param>
 		/// <param name="name">Virtual Account Name</param>
@@ -336,7 +336,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Import Devices in bulk
 		/// </summary>
 		/// <remarks>
-		/// Add devices to PnP in bulk
+		/// Add devices to Pnp in bulk
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of ImportDevicesInBulkResponse</returns>
@@ -375,7 +375,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Sync Virtual Account Devices
 		/// </summary>
 		/// <remarks>
-		/// Synchronizes the device info from the given smart account &amp; virtual account with the PnP database. The response payload returns a list of synced devices
+		/// Synchronizes the device info from the given smart account &amp; virtual account with the Pnp database. The response payload returns a list of synced devices
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of SyncVirtualAccountDevicesResponse</returns>
@@ -401,7 +401,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// Update Device
 		/// </summary>
 		/// <remarks>
-		/// Updates device details specified by device id in PnP database
+		/// Updates device details specified by device id in Pnp database
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <param name="id">id</param>
@@ -414,28 +414,28 @@ namespace Cisco.DnaCenter.Api.Interfaces
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
-		/// Update PnP global settings
+		/// Update Pnp global settings
 		/// </summary>
 		/// <remarks>
-		/// Updates the user&#39;s list of global PnP settings
+		/// Updates the user&#39;s list of global Pnp settings
 		/// </remarks>
 		/// <param name="request">request</param>
-		/// <returns>Task of UpdatePnPGlobalSettingsResponse</returns>
+		/// <returns>Task of UpdatePnpGlobalSettingsResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings")]
-		Task<UpdatePnpGlobalSettingsResponse> UpdatePnPGlobalSettingsAsync(
+		Task<UpdatePnpGlobalSettingsResponse> UpdatePnpGlobalSettingsAsync(
 			[Body]Settings request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
-		/// Update PnP Server Profile
+		/// Update Pnp Server Profile
 		/// </summary>
 		/// <remarks>
-		/// Updates the PnP Server profile in a registered Virtual Account in the PnP database. The response payload returns the updated smart &amp; virtual account info
+		/// Updates the Pnp Server profile in a registered Virtual Account in the Pnp database. The response payload returns the updated smart &amp; virtual account info
 		/// </remarks>
 		/// <param name="request">request</param>
-		/// <returns>Task of UpdatePnPServerProfileResponse</returns>
+		/// <returns>Task of UpdatePnpServerProfileResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
-		Task<UpdatePnpServerProfileResponse> UpdatePnPServerProfileAsync(
+		Task<UpdatePnpServerProfileResponse> UpdatePnpServerProfileAsync(
 			[Body]SavaMapping request,
 			CancellationToken cancellationToken = default);
 

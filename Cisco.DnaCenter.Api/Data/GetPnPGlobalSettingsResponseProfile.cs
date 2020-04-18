@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetPnPGlobalSettingsResponseProfile
+	/// GetPnpGlobalSettingsResponseProfile
 	/// </summary>
 	[DataContract]
 	public class GetPnpGlobalSettingsResponseProfile
@@ -79,7 +79,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetPnPGlobalSettingsResponseProfile {\n");
+			sb.Append("class GetPnpGlobalSettingsResponseProfile {\n");
 			sb.Append("  Port: ").Append(Port).Append("\n");
 			sb.Append("  AddressIpV4: ").Append(AddressIpV4).Append("\n");
 			sb.Append("  AddressFqdn: ").Append(AddressFqdn).Append("\n");

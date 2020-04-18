@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// UpdatePnPServerProfileResponse
+	/// UpdatePnpServerProfileResponse
 	/// </summary>
 	[DataContract]
 	public class UpdatePnpServerProfileResponse
@@ -114,7 +114,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class UpdatePnPServerProfileResponse {\n");
+			sb.Append("class UpdatePnpServerProfileResponse {\n");
 			sb.Append("  VirtualAccountId: ").Append(VirtualAccountId).Append("\n");
 			sb.Append("  AutoSyncPeriod: ").Append(AutoSyncPeriod).Append("\n");
 			sb.Append("  SyncResultStr: ").Append(SyncResultStr).Append("\n");

@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// DeleteDeviceByIdFromPnPResponse
+	/// DeleteDeviceByIdFromPnpResponse
 	/// </summary>
 	[DataContract]
-	public class DeleteDeviceByIdFromPnPResponse
+	public class DeleteDeviceByIdFromPnpResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DeleteDeviceByIdFromPnPResponse" /> class.
+		/// Initializes a new instance of the <see cref="DeleteDeviceByIdFromPnpResponse" /> class.
 		/// </summary>
 		/// <param name="Id">Id.</param>
 		/// <param name="DeviceInfo">DeviceInfo.</param>
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="DayZeroConfigPreview">DayZeroConfigPreview.</param>
 		/// <param name="_Version">_Version.</param>
 		/// <param name="TenantId">TenantId.</param>
-		public DeleteDeviceByIdFromPnPResponse(string? Id = default, DeviceDeviceInfo DeviceInfo = default, DeviceSystemResetWorkflow SystemResetWorkflow = default, DeviceSystemResetWorkflow SystemWorkflow = default, DeviceSystemResetWorkflow Workflow = default, List<DeviceRunSummaryList> RunSummaryList = default, DeviceWorkflowParameters WorkflowParameters = default, DeviceDayZeroConfig DayZeroConfig = default, Object DayZeroConfigPreview = default, decimal? _Version = default, string? TenantId = default)
+		public DeleteDeviceByIdFromPnpResponse(string? Id = default, DeviceDeviceInfo DeviceInfo = default, DeviceSystemResetWorkflow SystemResetWorkflow = default, DeviceSystemResetWorkflow SystemWorkflow = default, DeviceSystemResetWorkflow Workflow = default, List<DeviceRunSummaryList> RunSummaryList = default, DeviceWorkflowParameters WorkflowParameters = default, DeviceDayZeroConfig DayZeroConfig = default, Object DayZeroConfigPreview = default, decimal? _Version = default, string? TenantId = default)
 		{
 			this.Id = Id;
 			this.DeviceInfo = DeviceInfo;
@@ -102,7 +102,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class DeleteDeviceByIdFromPnPResponse {\n");
+			sb.Append("class DeleteDeviceByIdFromPnpResponse {\n");
 			sb.Append("  Id: ").Append(Id).Append("\n");
 			sb.Append("  DeviceInfo: ").Append(DeviceInfo).Append("\n");
 			sb.Append("  SystemResetWorkflow: ").Append(SystemResetWorkflow).Append("\n");
