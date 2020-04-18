@@ -16,8 +16,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="ControlPath">ControlPath.</param>
 		/// <param name="CreateTime">CreateTime.</param>
 		/// <param name="DestinationIp">DestinationIp.</param>
-		/// <param name="DestinationPort">		/// <param name="DestinationPort">DestPort.</param>
-.</param>
+		/// <param name="DestinationPort">DestinationPort</param>
 		/// <param name="FailureReason">FailureReason.</param>
 		/// <param name="Id">Id.</param>
 		/// <param name="Inclusions">Inclusions.</param>

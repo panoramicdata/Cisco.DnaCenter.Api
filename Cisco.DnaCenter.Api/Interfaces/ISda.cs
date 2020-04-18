@@ -355,7 +355,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="virtualNetworkName">virtualNetworkName</param>
 		/// <returns>Task of GetIPPoolFromSDAVirtualNetworkResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/virtualnetwork/ippool")]
-		Task<GetIpPoolFromSdaVirtualNetworkResponse> GetIpPoolFromSdaVirtualNetworkAsync(
+		Task<GetIPPoolFromSDAVirtualNetworkResponse> GetIpPoolFromSdaVirtualNetworkAsync(
 			[Body]GetIpPoolFromSdaVirtualNetworkRequest request,
 			[AliasAs("ipPoolName")]string ipPoolName,
 			[AliasAs("virtualNetworkName")]string virtualNetworkName,
