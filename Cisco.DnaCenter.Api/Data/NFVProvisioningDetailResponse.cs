@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// NFVProvisioningDetailResponse
 	/// </summary>
 	[DataContract]
-	public partial class NfvProvisioningDetailResponse
+	public class NfvProvisioningDetailResponse
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NfvProvisioningDetailResponse" /> class.

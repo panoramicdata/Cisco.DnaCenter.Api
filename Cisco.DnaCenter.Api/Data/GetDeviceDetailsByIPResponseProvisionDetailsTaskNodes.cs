@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetDeviceDetailsByIPResponseProvisionDetailsTaskNodes
 	/// </summary>
 	[DataContract]
-	public partial class GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes
+	public class GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes" /> class.
