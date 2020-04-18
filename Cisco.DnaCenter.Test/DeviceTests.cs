@@ -11,11 +11,11 @@ namespace Cisco.DnaCenter.Test
 		}
 
 		[Fact]
-		public async void CreateClient()
+		public async void GetAllInterfacesAsync_Succeeds()
 		{
 			var interfaces = await Client
 				.Devices
-				.GetAllInterfaces()
+				.GetAllInterfacesAsync()
 				.ConfigureAwait(false);
 
 			interfaces.Should().NotBeNull();
