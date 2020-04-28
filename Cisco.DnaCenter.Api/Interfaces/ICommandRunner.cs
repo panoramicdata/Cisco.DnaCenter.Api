@@ -18,7 +18,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of LegitCliKeyResult</returns>
 		[Get("/dna/intent/api/v1/network-device-poller/cli/legit-reads")]
-		Task<LegitCliKeyResult> GetAllKeywordsOfCLIsAcceptedByCommandRunnerAsync(
+		Task<LegitCliKeyResult> GetAllKeywordsOfClisAcceptedByCommandRunnerAsync(
 			CancellationToken cancellationToken = default);
 
 		/// <summary>

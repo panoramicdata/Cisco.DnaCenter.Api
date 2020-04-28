@@ -37,7 +37,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__runsynctimeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
 		/// <returns>Task of NFVProvisioningDetailResponse</returns>
 		[Post("/dna/intent/api/v1/nfv-provision-detail")]
-		Task<NfvProvisioningDetailResponse> NfvProvisioningDetail(
+		Task<NfvProvisioningDetailResponse> NfvProvisioningDetailAsync(
 			[Body]NfvProvisioningDetailRequest request,
 			bool? __runsync,
 			bool? __persistbapioutput,

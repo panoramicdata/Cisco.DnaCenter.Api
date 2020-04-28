@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
-		Task<TaskIdResult> DeletesPathtraceByIdAsync(
+		Task<TaskIdResult> DeleteAsync(
 			[AliasAs("flowAnalysisId")]string flowAnalysisId,
 			CancellationToken cancellationToken = default);
 
@@ -32,7 +32,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of FlowAnalysisRequestResultOutput</returns>
 		[Post("/dna/intent/api/v1/flow-analysis")]
-		Task<FlowAnalysisRequestResultOutput> InitiateANewPathtraceAsync(
+		Task<FlowAnalysisRequestResultOutput> CreateAsync(
 			[Body]FlowAnalysisRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -45,7 +45,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="flowAnalysisId">Flow analysis request id</param>
 		/// <returns>Task of PathResponseResult</returns>
 		[Get("/dna/intent/api/v1/flow-analysis/{flowAnalysisId}")]
-		Task<PathResponseResult> RetrievesPreviousPathtraceAsync(
+		Task<PathResponseResult> GetAsync(
 			[AliasAs("flowAnalysisId")]string flowAnalysisId,
 			CancellationToken cancellationToken = default);
 
@@ -72,7 +72,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="sortBy">Sort by this field (optional)</param>
 		/// <returns>Task of FlowAnalysisListOutput</returns>
 		[Get("/dna/intent/api/v1/flow-analysis")]
-		Task<FlowAnalysisListOutput> RetrivesAllPreviousPathtracesSummaryAsync(
+		Task<FlowAnalysisListOutput> GetAllAsync(
 			[AliasAs("periodicRefresh")]bool? periodicRefresh = null,
 			[AliasAs("sourceIP")]string sourceIP = null,
 			[AliasAs("destIP")]string destIP = null,

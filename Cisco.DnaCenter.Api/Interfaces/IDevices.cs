@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/network-device")]
-		Task<TaskIdResult> AddDeviceAsync(
+		Task<TaskIdResult> CreateAsync(
 			[Body]InventoryDeviceInfo request,
 			CancellationToken cancellationToken = default);
 
@@ -34,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="isForceDelete">isForceDelete (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Delete("/dna/intent/api/v1/network-device/{id}")]
-		Task<TaskIdResult> DeleteDeviceByIdAsync(
+		Task<TaskIdResult> DeleteAsync(
 			[AliasAs("id")]string id,
 			[AliasAs("isForceDelete")]bool? isForceDelete = null,
 			CancellationToken cancellationToken = default);
@@ -48,7 +48,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/network-device/file")]
-		Task<TaskIdResult> ExportDeviceListAsync(
+		Task<TaskIdResult> GetAllAsync(
 			[Body]ExportDeviceDto request,
 			CancellationToken cancellationToken = default);
 
@@ -76,7 +76,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Device ID</param>
 		/// <returns>Task of NetworkDeviceResult</returns>
 		[Get("/dna/intent/api/v1/network-device/{id}")]
-		Task<NetworkDeviceResult> GetDeviceByIdAsync(
+		Task<NetworkDeviceResult> GetAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -89,7 +89,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="serialNumber">Device serial number</param>
 		/// <returns>Task of NetworkDeviceResult</returns>
 		[Get("/dna/intent/api/v1/network-device/serial-number/{serialNumber}")]
-		Task<NetworkDeviceResult> GetDeviceBySerialNumberAsync(
+		Task<NetworkDeviceResult> GetBySerialNumberAsync(
 			[AliasAs("serialNumber")]string serialNumber,
 			CancellationToken cancellationToken = default);
 
@@ -125,7 +125,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of RawCliInfoNioListResult</returns>
 		[Get("/dna/intent/api/v1/network-device/config")]
-		Task<RawCliInfoNioListResult> GetDeviceConfigForAllDevicesAsync(
+		Task<RawCliInfoNioListResult> GetAllConfigsAsync(
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -136,7 +136,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/network-device/count")]
-		Task<CountResult> GetDeviceCountAsync(
+		Task<CountResult> GetCountAsync(
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -150,7 +150,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="timestamp">Epoch time(in milliseconds) when the device data is required (optional, default to )</param>
 		/// <returns>Task of GetDeviceDetailResponse</returns>
 		[Get("/dna/intent/api/v1/device-detail")]
-		Task<GetDeviceDetailResponse> GetDeviceDetailAsync(
+		Task<GetDeviceDetailResponse> GetAsync(
 			[AliasAs("searchBy")]string searchBy,
 			[AliasAs("identifier")]string identifier,
 			[AliasAs("timestamp")]string timestamp = null,
@@ -179,7 +179,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/interface/count")]
-		Task<CountResult> GetDeviceInterfaceCountAsync(
+		Task<CountResult> GetInterfaceCountAsync(
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -191,7 +191,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="deviceId">Device ID</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/interface/network-device/{deviceId}/count")]
-		Task<CountResult> GetDeviceInterfaceCountByDeviceIdAsync(
+		Task<CountResult> GetInterfaceCountAsync(
 			[AliasAs("deviceId")]string deviceId,
 			CancellationToken cancellationToken = default);
 
@@ -205,7 +205,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="interfaceType">Vlan assocaited with sub-interface (optional)</param>
 		/// <returns>Task of VlanListResult</returns>
 		[Get("/dna/intent/api/v1/network-device/{id}/vlan")]
-		Task<VlanListResult> GetDeviceInterfaceVlansAsync(
+		Task<VlanListResult> GetInterfaceVlansAsync(
 			[AliasAs("id")]string id,
 			[AliasAs("interfaceType")]string interfaceType = null,
 			CancellationToken cancellationToken = default);
@@ -221,7 +221,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="recordsToReturn">Number of records to return</param>
 		/// <returns>Task of DeviceIfListResult</returns>
 		[Get("/dna/intent/api/v1/interface/network-device/{deviceId}/{startIndex}/{recordsToReturn}")]
-		Task<DeviceIfListResult> GetDeviceInterfacesBySpecifiedRangeAsync(
+		Task<DeviceIfListResult> GetInterfacesBySpecifiedRangeAsync(
 			[AliasAs("deviceId")]string deviceId,
 			[AliasAs("startIndex")]int? startIndex,
 			[AliasAs("recordsToReturn")]int? recordsToReturn,
@@ -266,7 +266,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Accepts comma separated id&#39;s and return list of network-devices for the given id&#39;s. If invalid or not-found id&#39;s are provided, null entry will be returned in the list. (optional)</param>
 		/// <returns>Task of NetworkDeviceListResult</returns>
 		[Get("/dna/intent/api/v1/network-device")]
-		Task<NetworkDeviceListResult> GetDeviceListAsync(
+		Task<NetworkDeviceListResult> GetAllAsync(
 			[AliasAs("hostname")]List<string> hostname = null,
 			[AliasAs("managementIpAddress")]List<string> managementIpAddress = null,
 			[AliasAs("macAddress")]List<string> macAddress = null,
@@ -309,7 +309,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Device ID</param>
 		/// <returns>Task of NetworkDeviceBriefNioResult</returns>
 		[Get("/dna/intent/api/v1/network-device/{id}/brief")]
-		Task<NetworkDeviceBriefNioResult> GetDeviceSummaryAsync(
+		Task<NetworkDeviceBriefNioResult> GetSummaryAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -322,7 +322,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Functional Capability UUID</param>
 		/// <returns>Task of FunctionalCapabilityResult</returns>
 		[Get("/dna/intent/api/v1/network-device/functional-capability/{id}")]
-		Task<FunctionalCapabilityResult> GetFunctionalCapabilityByIdAsync(
+		Task<FunctionalCapabilityResult> GetFunctionalCapabilityAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -336,7 +336,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="functionName">functionName (optional)</param>
 		/// <returns>Task of FunctionalCapabilityListResult</returns>
 		[Get("/dna/intent/api/v1/network-device/functional-capability")]
-		Task<FunctionalCapabilityListResult> GetFunctionalCapabilityForDevicesAsync(
+		Task<FunctionalCapabilityListResult> GetFunctionalCapabilityAsync(
 			[AliasAs("deviceId")]string deviceId,
 			[AliasAs("functionName")]List<string> functionName = null,
 			CancellationToken cancellationToken = default);
@@ -436,7 +436,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of ModuleResult</returns>
 		[Get("/dna/intent/api/v1/network-device/module/{id}")]
-		Task<ModuleResult> GetModuleInfoByIdAsync(
+		Task<ModuleResult> GetModuleInfoAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -474,7 +474,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="ipAddress">Device IP address</param>
 		/// <returns>Task of NetworkDeviceResult</returns>
 		[Get("/dna/intent/api/v1/network-device/ip-address/{ipAddress}")]
-		Task<NetworkDeviceResult> GetNetworkDeviceByIpAsync(
+		Task<NetworkDeviceResult> GetByIpAsync(
 			[AliasAs("ipAddress")]string ipAddress,
 			CancellationToken cancellationToken = default);
 
@@ -488,7 +488,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="recordsToReturn">Number of records to return</param>
 		/// <returns>Task of NetworkDeviceListResult</returns>
 		[Get("/dna/intent/api/v1/network-device/{startIndex}/{recordsToReturn}")]
-		Task<NetworkDeviceListResult> GetNetworkDeviceByPaginationRangeAsync(
+		Task<NetworkDeviceListResult> GetByPaginationRangeAsync(
 			[AliasAs("startIndex")]int? startIndex,
 			[AliasAs("recordsToReturn")]int? recordsToReturn,
 			CancellationToken cancellationToken = default);
@@ -513,7 +513,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of SuccessResultList</returns>
 		[Get("/dna/intent/api/v1/network-device/{id}/meraki-organization")]
-		Task<SuccessResultList> GetOrganizationListForMerakiAsync(
+		Task<SuccessResultList> GetMerakiOrganizationListAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -526,7 +526,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Device ID</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/network-device/{id}/collection-schedule")]
-		Task<CountResult> GetPollingIntervalByIdAsync(
+		Task<CountResult> GetPollingIntervalAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -538,7 +538,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/network-device/collection-schedule/global")]
-		Task<CountResult> GetPollingIntervalForAllDevicesAsync(
+		Task<CountResult> GetPollingIntervalAsync(
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -550,7 +550,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">Device ID</param>
 		/// <returns>Task of WirelessInfoResult</returns>
 		[Get("/dna/intent/api/v1/network-device/{id}/wireless-info")]
-		Task<WirelessInfoResult> GetWirelessLanControllerDetailsByIdAsync(
+		Task<WirelessInfoResult> GetWirelessLanControllerDetailsAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -599,7 +599,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="limit">limit (optional)</param>
 		/// <returns>Task of RetrievesAllNetworkDevicesResponse</returns>
 		[Get("/dna/intent/api/v1/network-device/autocomplete")]
-		Task<RetrievesAllNetworkDevicesResponse> RetrievesAllNetworkDevicesAsync(
+		Task<RetrievesAllNetworkDevicesResponse> GetAllAutoCompleteAsync(
 			[AliasAs("vrfName")]string vrfName = null,
 			[AliasAs("managementIpAddress")]string managementIpAddress = null,
 			[AliasAs("hostname")]string hostname = null,
@@ -633,7 +633,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/network-device")]
-		Task<TaskIdResult> SyncDevicesAsync(
+		Task<TaskIdResult> SyncAsync(
 			[Body]InventoryDeviceInfo request,
 			CancellationToken cancellationToken = default);
 
@@ -647,7 +647,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="forceSync">forceSync (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Put("/dna/intent/api/v1/network-device/sync")]
-		Task<TaskIdResult> SyncNetworkDevicesAsync(
+		Task<TaskIdResult> SyncAsync(
 			[Body]SyncDevicesRequest request,
 			string Content_Type,
 			[AliasAs("forceSync")]bool? forceSync = null,

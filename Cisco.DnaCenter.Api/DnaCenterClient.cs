@@ -6,6 +6,7 @@ using Refit;
 using System;
 using System.Data;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api
@@ -16,9 +17,10 @@ namespace Cisco.DnaCenter.Api
 	public class DnaCenterClient : IDisposable
 	{
 		private HttpClient? _httpClient;
-		private bool _isConnected;
 		private readonly ILogger _logger;
 		private readonly DnaCenterClientOptions _options;
+
+		public bool IsConnected { get; private set; }
 
 		public DnaCenterClient(DnaCenterClientOptions options, ILogger? logger = null)
 		{
@@ -41,7 +43,7 @@ namespace Cisco.DnaCenter.Api
 			else
 			{
 				// We are creating an HttpClient (one was not provided), so set _httpClient so that we know to dispose of it later.
-				_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(_options.Token, _logger);
+				_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(this, _options.Token, _logger);
 				_httpClient = new HttpClient(_authenticatedHttpClientHandler)
 				{
 					BaseAddress = _options.Uri
@@ -66,21 +68,21 @@ namespace Cisco.DnaCenter.Api
 			Sda = RestService.For<ISda>(_httpClient);
 			SiteDesign = RestService.For<ISiteDesign>(_httpClient);
 			Sites = RestService.For<ISites>(_httpClient);
-			SoftwareImageManagement = RestService.For<ISoftwareImageManagement>(_httpClient);
+			SoftwareImages = RestService.For<ISoftwareImages>(_httpClient);
 			Tags = RestService.For<ITags>(_httpClient);
 			Tasks = RestService.For<ITasks>(_httpClient);
 			Topologies = RestService.For<ITopologies>(_httpClient);
 			Users = RestService.For<IUsers>(_httpClient);
 		}
 
-		public async Task ConnectAsync()
+		public async Task ConnectAsync(CancellationToken cancellationToken = default)
 		{
 			if (!_options.IsUsernamePasswordAuthenticated)
 			{
 				throw new InvalidOperationException("There is no need to connect.  An HttpClient or Token were already provided.");
 			}
 
-			if (_isConnected)
+			if (IsConnected)
 			{
 				throw new InvalidOperationException("Already connected.");
 			}
@@ -95,7 +97,7 @@ namespace Cisco.DnaCenter.Api
 			{
 				var base64UsernameAndPassword = _options.GetBase64UsernamePassword();
 				authenticationResponse = await Authentication
-					.Authenticate($"Basic: {base64UsernameAndPassword}")
+					.Authenticate($"Basic: {base64UsernameAndPassword}", cancellationToken)
 					.ConfigureAwait(false);
 			}
 			catch (Exception e)
@@ -104,7 +106,7 @@ namespace Cisco.DnaCenter.Api
 				throw;
 			}
 			_authenticatedHttpClientHandler.Token = authenticationResponse.Token ?? throw new DataException("Api returned null Token.");
-			_isConnected = true;
+			IsConnected = true;
 		}
 
 		/// <inheritdoc />
@@ -159,7 +161,7 @@ namespace Cisco.DnaCenter.Api
 		public ISites Sites { get; }
 
 		/// <inheritdoc />
-		public ISoftwareImageManagement SoftwareImageManagement { get; }
+		public ISoftwareImages SoftwareImages { get; }
 
 		/// <inheritdoc />
 		public ITags Tags { get; }

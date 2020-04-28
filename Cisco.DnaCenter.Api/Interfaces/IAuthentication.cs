@@ -1,5 +1,6 @@
 using Cisco.DnaCenter.Api.Data;
 using Refit;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Interfaces
@@ -19,6 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of AuthenticationAPIResponse</returns>
 		[Post("/dna/system/api/v1/auth/token")]
 		Task<AuthenticationResponse> Authenticate(
-			[Header("Authorization")]string authorization);
+			[Header("Authorization")]string authorization,
+			CancellationToken cancellationToken = default);
 	}
 }

@@ -183,7 +183,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="executionId">Execution ID</param>
 		/// <returns>Task of GetStatusAPIForEventsResponse</returns>
 		[Get("/dna/intent/api/v1/event/api-status/{executionId}")]
-		Task<GetEventStatusApisResponse> GetEventStatusApis(
+		Task<GetEventStatusApisResponse> GetEventStatusApisAsync(
 			[AliasAs("executionId")]string executionId,
 			CancellationToken cancellationToken = default);
 

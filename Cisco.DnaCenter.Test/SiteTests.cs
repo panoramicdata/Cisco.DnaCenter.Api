@@ -6,33 +6,37 @@ using Xunit.Abstractions;
 
 namespace Cisco.DnaCenter.Test
 {
-	public class DeviceTests : Tests
+	public class SiteTests : Tests
 	{
-		public DeviceTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
+		public SiteTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
 		{
 		}
 
 		[Fact]
 		public async void GetDeviceListAsync_Succeeds()
 		{
-			var devices = await GetDevices().ConfigureAwait(false);
+			var sites = await GetSitesAsync().ConfigureAwait(false);
 
-			var device = devices.Response[0];
+			var sitesResponse = sites.Response[0];
 
-			device.Should().NotBeNull();
-			device.Id.Should().NotBeNull();
-			var deviceId = devices.Response[0].Id!;
+			sitesResponse.Should().NotBeNull();
+			sitesResponse.Id.Should().NotBeNull();
+			var siteId = sites.Response[0].Id!;
 
 			// Get details for the first device
-			var deviceDetails = await Client
-				.Devices
-				.GetAsync(deviceId)
+			var siteDetails = await Client
+				.Sites
+				.GetAllAsync(siteId: siteId)
 				.ConfigureAwait(false);
-			deviceDetails.Response.Should().NotBeNull();
-			deviceDetails.Response.SerialNumber.Should().NotBeNullOrEmpty();
+			siteDetails.Response.Should().NotBeEmpty();
+
+			var firstSite = siteDetails.Response[0];
+
+			firstSite.Id.Should().Be(siteId);
+			firstSite.Name.Should().NotBeNullOrEmpty();
 		}
 
-		private async Task<NetworkDeviceListResult> GetDevices()
+		private async Task<NetworkDeviceListResult> GetSitesAsync()
 		{
 			var devices = await Client
 				.Devices

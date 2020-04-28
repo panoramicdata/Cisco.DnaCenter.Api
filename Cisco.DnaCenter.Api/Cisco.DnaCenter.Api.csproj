@@ -19,6 +19,8 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
+		<PackageReleaseNotes>Many breaking changes.  As this is a relatively new library, please forgive the breakage - we hope you won't be affected.
+However, this overhaul papers over a lot of the inconsistencies in the Open API.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -10,10 +10,19 @@ namespace Cisco.DnaCenter.Test
 		}
 
 		[Fact]
-		public async void CreateClient()
+		public async void ConnectAsync_Succeeds()
 		{
 			await Client
 				.ConnectAsync()
+				.ConfigureAwait(false);
+		}
+
+		[Fact]
+		public async void NoConnectAsync_Succeeds()
+		{
+			await Client
+				.Devices
+				.GetCountAsync()
 				.ConfigureAwait(false);
 		}
 	}

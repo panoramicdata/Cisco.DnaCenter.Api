@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="fileId">File Identification number</param>
 		/// <returns>Task of DownloadAFileByFileIdResponse</returns>
 		[Get("/dna/intent/api/v1/file/{fileId}")]
-		Task<DownloadFileByFileIdResponse> DownloadFileByFileIdAsync(
+		Task<DownloadFileByFileIdResponse> GetAsync(
 			[AliasAs("fileId")]string fileId,
 			CancellationToken cancellationToken = default);
 
@@ -43,7 +43,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="_nameSpace">A listing of fileId&#39;s</param>
 		/// <returns>Task of FileObjectListResult</returns>
 		[Get("/dna/intent/api/v1/file/namespace/{nameSpace}")]
-		Task<FileObjectListResult> GetFilesAsync(
+		Task<FileObjectListResult> GetAllAsync(
 			[AliasAs("nameSpace")]string nameSpace,
 			CancellationToken cancellationToken = default);
 	}

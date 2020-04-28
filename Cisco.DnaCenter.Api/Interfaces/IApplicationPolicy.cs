@@ -71,7 +71,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of EditApplicationResponse</returns>
 		[Put("/dna/intent/api/v1/applications")]
-		Task<EditApplicationResponse> EditApplicationAsync(
+		Task<EditApplicationResponse> UpdateApplicationAsync(
 			[Body]EditApplicationRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -114,7 +114,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="name">Application&#39;s name (optional, default to )</param>
 		/// <returns>Task of GetApplicationsResponse</returns>
 		[Get("/dna/intent/api/v1/applications")]
-		Task<GetApplicationsResponse> GetApplicationsAsync(
+		Task<GetApplicationsResponse> GetAllAsync(
 			[AliasAs("offset")]int? offset = null,
 			[AliasAs("limit")]int? limit = null,
 			[AliasAs("name")]string name = null,
@@ -128,7 +128,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of GetApplicationsCountResponse</returns>
 		[Get("/dna/intent/api/v1/applications-count")]
-		Task<GetApplicationsCountResponse> GetApplicationsCountAsync(
+		Task<GetApplicationsCountResponse> GetApplicationCountAsync(
 			CancellationToken cancellationToken = default);
 	}
 }

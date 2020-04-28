@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">UUID of the Task</param>
 		/// <returns>Task of TaskDtoResponse</returns>
 		[Get("/dna/intent/api/v1/task/{taskId}")]
-		Task<TaskDtoResponse> GetTaskByIdAsync(
+		Task<TaskDtoResponse> GetByIdAsync(
 			[AliasAs("taskId")]string taskId,
 			CancellationToken cancellationToken = default);
 
@@ -34,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="limit">The maximum value of {limit} supported is 500. &lt;br/&gt; Base 1 indexing for {limit}, minimum value is 1</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task/operation/{operationId}/{offset}/{limit}")]
-		Task<TaskDtoListResponse> GetTaskByOperationIdAsync(
+		Task<TaskDtoListResponse> GetByOperationIdAsync(
 			[AliasAs("operationId")]string operationId,
 			[AliasAs("offset")]int? offset,
 			[AliasAs("limit")]int? limit,
@@ -58,7 +58,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="parentId">Fetch tasks that have this parent Id (optional)</param>
 		/// <returns>Task of CountResult</returns>
 		[Get("/dna/intent/api/v1/task/count")]
-		Task<CountResult> GetTaskCountAsync(
+		Task<CountResult> GetCountAsync(
 			[AliasAs("startTime")]string startTime = null,
 			[AliasAs("endTime")]string endTime = null,
 			[AliasAs("data")]string data = null,
@@ -80,7 +80,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="taskId">UUID of the Task</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task/{taskId}/tree")]
-		Task<TaskDtoListResponse> GetTaskTreeAsync(
+		Task<TaskDtoListResponse> GetTreeAsync(
 			[AliasAs("taskId")]string taskId,
 			CancellationToken cancellationToken = default);
 
@@ -106,7 +106,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="order">Sort order - asc or dsc (optional)</param>
 		/// <returns>Task of TaskDtoListResponse</returns>
 		[Get("/dna/intent/api/v1/task")]
-		Task<TaskDtoListResponse> GetTasksAsync(
+		Task<TaskDtoListResponse> GetAllAsync(
 			[AliasAs("startTime")]string startTime = null,
 			[AliasAs("endTime")]string endTime = null,
 			[AliasAs("data")]string data = null,

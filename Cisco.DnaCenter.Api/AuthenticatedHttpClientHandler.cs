@@ -8,9 +8,10 @@ namespace Cisco.DnaCenter.Api
 {
 	public class AuthenticatedHttpClientHandler : HttpClientHandler
 	{
-		private readonly LogLevel _levelToLogAt = LogLevel.Trace;
+		private readonly LogLevel _levelToLogAt;
 		private string? _token;
 		private readonly ILogger _logger;
+		private readonly DnaCenterClient _dnaCenterClient;
 
 		public string Token
 		{
@@ -20,8 +21,12 @@ namespace Cisco.DnaCenter.Api
 			}
 		}
 
-		public AuthenticatedHttpClientHandler(string? token, ILogger logger)
+		public AuthenticatedHttpClientHandler(
+			DnaCenterClient dnaCenterClient,
+			string? token,
+			ILogger logger)
 		{
+			_dnaCenterClient = dnaCenterClient;
 			_token = token;
 			_logger = logger ?? throw new ArgumentNullException(nameof(logger));
 		}
@@ -36,7 +41,11 @@ namespace Cisco.DnaCenter.Api
 				// However, if the user is attempting a secure call, throw an exception
 				if (!request.RequestUri.AbsoluteUri.EndsWith("/dna/system/api/v1/auth/token"))
 				{
-					throw new InvalidOperationException("Call ConnectAsync() to obtain an authentication token before making other calls.");
+					// We're not connected, so connect now (just in time)
+					await _dnaCenterClient
+						.ConnectAsync(cancellationToken)
+						.ConfigureAwait(false);
+					request.Headers.Add("X-Auth-Token", _token);
 				}
 			}
 			else

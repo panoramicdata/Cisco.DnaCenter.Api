@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="timestamp">Epoch time(in milliseconds) when the Client health data is required (optional, default to )</param>
 		/// <returns>Task of GetClientDetailResponse</returns>
 		[Get("/dna/intent/api/v1/client-detail")]
-		Task<GetClientDetailResponse> GetClientDetailAsync(
+		Task<GetClientDetailResponse> GetAsync(
 			[AliasAs("macAddress")]string macAddress,
 			[AliasAs("timestamp")]string timestamp = null,
 			CancellationToken cancellationToken = default);
@@ -36,7 +36,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="issueCategory">The category of the DNA event based on which the underlying issues need to be fetched (optional, default to )</param>
 		/// <returns>Task of GetClientEnrichmentDetailsResponse</returns>
 		[Get("/dna/intent/api/v1/client-enrichment-details")]
-		Task<GetClientEnrichmentDetailsResponse> GetClientEnrichmentDetailsAsync(
+		Task<GetClientEnrichmentDetailsResponse> GetEnrichmentDetailsAsync(
 			string entity_type,
 			string entity_value,
 			string issueCategory = null,
@@ -51,7 +51,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="timestamp">Epoch time(in milliseconds) when the Client health data is required (optional, default to )</param>
 		/// <returns>Task of GetOverallClientHealthResponse</returns>
 		[Get("/dna/intent/api/v1/client-health")]
-		Task<GetOverallClientHealthResponse> GetOverallClientHealthAsync(
+		Task<GetOverallClientHealthResponse> GetOverallHealthAsync(
 			[AliasAs("timestamp")]string timestamp = null,
 			CancellationToken cancellationToken = default);
 	}

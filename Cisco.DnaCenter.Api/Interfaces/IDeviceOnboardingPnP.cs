@@ -126,7 +126,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">id</param>
 		/// <returns>Task of GetDeviceByIdResponse</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
-		Task<GetDeviceByIdResponse> GetDeviceByIdAsync(
+		Task<GetDeviceByIdResponse> GetDeviceAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 

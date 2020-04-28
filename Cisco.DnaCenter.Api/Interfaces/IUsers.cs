@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="entity_value">Contains the actual value for the entity type that has been defined</param>
 		/// <returns>Task of GetUserEnrichmentDetailsResponse</returns>
 		[Get("/dna/intent/api/v1/user-enrichment-details")]
-		Task<GetUserEnrichmentDetailsResponse> GetUserEnrichmentDetailsAsync(
+		Task<GetUserEnrichmentDetailsResponse> GetAsync(
 			string entity_type,
 			string entity_value,
 			CancellationToken cancellationToken = default);

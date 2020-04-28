@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 	/// <summary>
 	/// Represents a collection of functions to interact with the API endpoints
 	/// </summary>
-	public interface ISoftwareImageManagement
+	public interface ISoftwareImages
 	{
 		/// <summary>
 		/// Get software image details
@@ -36,7 +36,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="offset">offset (optional)</param>
 		/// <returns>Task of ImageInfoListResponse</returns>
 		[Get("/dna/intent/api/v1/image/importation")]
-		Task<ImageInfoListResponse> GetSoftwareImageDetailsAsync(
+		Task<ImageInfoListResponse> GetAllAsync(
 			[AliasAs("imageUuid")]string imageUuid = null,
 			[AliasAs("name")]string name = null,
 			[AliasAs("family")]string family = null,
@@ -69,7 +69,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="thirdPartyApplicationType">Third Party Application Type (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/importation/source/file")]
-		Task<TaskIdResult> ImportLocalSoftwareImageAsync(
+		Task<TaskIdResult> ImportLocalAsync(
 			string Content_Type,
 			[AliasAs("isThirdParty")]bool? isThirdParty = null,
 			[AliasAs("thirdPartyVendor")]string thirdPartyVendor = null,
@@ -89,7 +89,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="scheduleOrigin">Originator of this call (Optional) (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/importation/source/url")]
-		Task<TaskIdResult> ImportSoftwareImageViaUrlAsync(
+		Task<TaskIdResult> ImportViaUrlAsync(
 			[Body]ImageImportFromUrlDto request,
 			string Content_Type,
 			[AliasAs("scheduleAt")]string scheduleAt = null,
@@ -109,7 +109,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="scheduleValidate">scheduleValidate, validates data before schedule (Optional) (optional)</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/activation/device")]
-		Task<TaskIdResult> TriggerSoftwareImageActivationAsync(
+		Task<TaskIdResult> TriggerActivationAsync(
 			[Body]ActivateDto request,
 			string Content_Type,
 			string Client_Type = null,
@@ -126,7 +126,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
 		[Post("/dna/intent/api/v1/image/distribution")]
-		Task<TaskIdResult> TriggerSoftwareImageDistributionAsync(
+		Task<TaskIdResult> TriggerDistributionAsync(
 			[Body]DistributeDto request,
 			CancellationToken cancellationToken = default);
 	}
