@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
@@ -8,13 +7,13 @@ namespace Cisco.DnaCenter.Api.Data
 	/// GetSiteResponse
 	/// </summary>
 	[DataContract]
-	public class GetSiteResponse
+	public class GetSiteSingleResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetSiteResponse" /> class.
+		/// Initializes a new instance of the <see cref="GetSiteSingleResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-		public GetSiteResponse(List<GetSiteResponseResponse> Response = default)
+		public GetSiteSingleResponse(GetSiteResponseResponse Response = default)
 		{
 			this.Response = Response;
 		}
@@ -23,7 +22,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
-		public List<GetSiteResponseResponse> Response { get; set; }
+		public GetSiteResponseResponse Response { get; set; }
 
 		/// <summary>
 		/// Returns the string presentation of the object

@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="SiteNameHierarchy">SiteNameHierarchy.</param>
 		/// <param name="InstanceTenantId">InstanceTenantId.</param>
 		/// <param name="Id">Id.</param>
-		public GetSiteResponseResponse(string? ParentId = default, string? Name = default, List<string> AdditionalInfo = default, string? SiteHierarchy = default, string? SiteNameHierarchy = default, string? InstanceTenantId = default, string? Id = default)
+		public GetSiteResponseResponse(string? ParentId = default, string? Name = default, List<AdditionalInfo> AdditionalInfo = default, string? SiteHierarchy = default, string? SiteNameHierarchy = default, string? InstanceTenantId = default, string? Id = default)
 		{
 			this.ParentId = ParentId;
 			this.Name = Name;
@@ -47,7 +47,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets AdditionalInfo
 		/// </summary>
 		[DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
-		public List<string> AdditionalInfo { get; set; }
+		public List<AdditionalInfo> AdditionalInfo { get; set; }
 
 		/// <summary>
 		/// Gets or Sets SiteHierarchy

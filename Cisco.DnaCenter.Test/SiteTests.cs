@@ -24,16 +24,17 @@ namespace Cisco.DnaCenter.Test
 			var siteId = sites.Response[0].Id!;
 
 			// Get details for the first device
-			var siteDetails = await Client
+			var getSiteResponse = await Client
 				.Sites
-				.GetAllAsync(siteId: siteId)
+				.GetAsync(siteId)
 				.ConfigureAwait(false);
-			siteDetails.Response.Should().NotBeEmpty();
+			getSiteResponse.Should().BeOfType<GetSiteSingleResponse>();
+			getSiteResponse.Should().NotBeNull();
 
-			var firstSite = siteDetails.Response[0];
+			var response = getSiteResponse.Response;
 
-			firstSite.Id.Should().Be(siteId);
-			firstSite.Name.Should().NotBeNullOrEmpty();
+			response.Id.Should().Be(siteId);
+			response.Name.Should().NotBeNullOrEmpty();
 		}
 
 		private async Task<GetSiteResponse> GetSitesAsync()
