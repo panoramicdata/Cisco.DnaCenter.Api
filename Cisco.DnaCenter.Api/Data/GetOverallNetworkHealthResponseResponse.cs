@@ -40,46 +40,55 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "time", EmitDefaultValue = false)]
 		public string? Time { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthScore
 		/// </summary>
 		[DataMember(Name = "healthScore", EmitDefaultValue = false)]
 		public int? HealthScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TotalCount
 		/// </summary>
 		[DataMember(Name = "totalCount", EmitDefaultValue = false)]
 		public int? TotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GoodCount
 		/// </summary>
 		[DataMember(Name = "goodCount", EmitDefaultValue = false)]
 		public int? GoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UnmonCount
 		/// </summary>
 		[DataMember(Name = "unmonCount", EmitDefaultValue = false)]
 		public decimal? UnmonCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FairCount
 		/// </summary>
 		[DataMember(Name = "fairCount", EmitDefaultValue = false)]
 		public int? FairCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets BadCount
 		/// </summary>
 		[DataMember(Name = "badCount", EmitDefaultValue = false)]
 		public decimal? BadCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Entity
 		/// </summary>
 		[DataMember(Name = "entity", EmitDefaultValue = false)]
 		public Object Entity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TimeinMillis
 		/// </summary>
 		[DataMember(Name = "timeinMillis", EmitDefaultValue = false)]
 		public int? TimeinMillis { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectName
 		/// </summary>
 		[DataMember(Name = "projectName", EmitDefaultValue = false)]
 		public string? ProjectName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectId
 		/// </summary>
 		[DataMember(Name = "projectId", EmitDefaultValue = false)]
 		public string? ProjectId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateId
 		/// </summary>
 		[DataMember(Name = "templateId", EmitDefaultValue = false)]
 		public string? TemplateId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VersionsInfo
 		/// </summary>
 		[DataMember(Name = "versionsInfo", EmitDefaultValue = false)]
 		public List<CollectionTemplateInfoInnerVersionsInfo> VersionsInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Composite
 		/// </summary>
 		[DataMember(Name = "composite", EmitDefaultValue = false)]
 		public bool? Composite { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

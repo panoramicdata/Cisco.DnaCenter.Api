@@ -39,46 +39,55 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "localInterfaceName", EmitDefaultValue = false)]
 		public string? LocalInterfaceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocalShortInterfaceName
 		/// </summary>
 		[DataMember(Name = "localShortInterfaceName", EmitDefaultValue = false)]
 		public string? LocalShortInterfaceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocalMacAddress
 		/// </summary>
 		[DataMember(Name = "localMacAddress", EmitDefaultValue = false)]
 		public string? LocalMacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RemoteInterfaceName
 		/// </summary>
 		[DataMember(Name = "remoteInterfaceName", EmitDefaultValue = false)]
 		public string? RemoteInterfaceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RemoteShortInterfaceName
 		/// </summary>
 		[DataMember(Name = "remoteShortInterfaceName", EmitDefaultValue = false)]
 		public string? RemoteShortInterfaceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RemoteMacAddress
 		/// </summary>
 		[DataMember(Name = "remoteMacAddress", EmitDefaultValue = false)]
 		public string? RemoteMacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RemoteDeviceName
 		/// </summary>
 		[DataMember(Name = "remoteDeviceName", EmitDefaultValue = false)]
 		public string? RemoteDeviceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RemotePlatform
 		/// </summary>
 		[DataMember(Name = "remotePlatform", EmitDefaultValue = false)]
 		public string? RemotePlatform { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RemoteVersion
 		/// </summary>
 		[DataMember(Name = "remoteVersion", EmitDefaultValue = false)]
 		public string? RemoteVersion { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

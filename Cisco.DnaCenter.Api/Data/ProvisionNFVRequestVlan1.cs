@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Interfaces
 		/// </summary>
 		[DataMember(Name = "interfaces", EmitDefaultValue = false)]
 		public string? Interfaces { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Network
 		/// </summary>
 		[DataMember(Name = "network", EmitDefaultValue = false)]
 		public string? Network { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -33,31 +33,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "state", EmitDefaultValue = false)]
 		public string? State { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Command
 		/// </summary>
 		[DataMember(Name = "command", EmitDefaultValue = false)]
 		public string? Command { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OutputStr
 		/// </summary>
 		[DataMember(Name = "outputStr", EmitDefaultValue = false)]
 		public string? OutputStr { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public decimal? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public decimal? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TimeTaken
 		/// </summary>
 		[DataMember(Name = "timeTaken", EmitDefaultValue = false)]
 		public decimal? TimeTaken { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

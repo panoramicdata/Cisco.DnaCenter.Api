@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "cpuStatistics", EmitDefaultValue = false)]
 		public PathResponseResultResponseDeviceStatisticsCpuStatistics CpuStatistics { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MemoryStatistics
 		/// </summary>
 		[DataMember(Name = "memoryStatistics", EmitDefaultValue = false)]
 		public PathResponseResultResponseDeviceStatisticsMemoryStatistics MemoryStatistics { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

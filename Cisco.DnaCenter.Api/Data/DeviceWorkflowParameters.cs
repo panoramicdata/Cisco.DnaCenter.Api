@@ -30,21 +30,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "topOfStackSerialNumber", EmitDefaultValue = false)]
 		public string? TopOfStackSerialNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LicenseLevel
 		/// </summary>
 		[DataMember(Name = "licenseLevel", EmitDefaultValue = false)]
 		public string? LicenseLevel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LicenseType
 		/// </summary>
 		[DataMember(Name = "licenseType", EmitDefaultValue = false)]
 		public string? LicenseType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConfigList
 		/// </summary>
 		[DataMember(Name = "configList", EmitDefaultValue = false)]
 		public List<DeviceWorkflowParametersConfigList> ConfigList { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -58,16 +58,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "domainName", EmitDefaultValue = false)]
 		public DomainNameEnum? DomainName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PrimaryIpAddress
 		/// </summary>
 		[DataMember(Name = "primaryIpAddress", EmitDefaultValue = false)]
 		public PrimaryIpAddressEnum? PrimaryIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SecondaryIpAddress
 		/// </summary>
 		[DataMember(Name = "secondaryIpAddress", EmitDefaultValue = false)]
 		public SecondaryIpAddressEnum? SecondaryIpAddress { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateNetworkRequestSettingsDnsServer" /> class.
 		/// </summary>

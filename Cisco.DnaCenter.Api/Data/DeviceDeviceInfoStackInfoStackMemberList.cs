@@ -45,61 +45,73 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "serialNumber", EmitDefaultValue = false)]
 		public string? SerialNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets State
 		/// </summary>
 		[DataMember(Name = "state", EmitDefaultValue = false)]
 		public string? State { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Role
 		/// </summary>
 		[DataMember(Name = "role", EmitDefaultValue = false)]
 		public string? Role { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddress
 		/// </summary>
 		[DataMember(Name = "macAddress", EmitDefaultValue = false)]
 		public string? MacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Pid
 		/// </summary>
 		[DataMember(Name = "pid", EmitDefaultValue = false)]
 		public string? Pid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LicenseLevel
 		/// </summary>
 		[DataMember(Name = "licenseLevel", EmitDefaultValue = false)]
 		public string? LicenseLevel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LicenseType
 		/// </summary>
 		[DataMember(Name = "licenseType", EmitDefaultValue = false)]
 		public string? LicenseType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SudiSerialNumber
 		/// </summary>
 		[DataMember(Name = "sudiSerialNumber", EmitDefaultValue = false)]
 		public string? SudiSerialNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HardwareVersion
 		/// </summary>
 		[DataMember(Name = "hardwareVersion", EmitDefaultValue = false)]
 		public string? HardwareVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StackNumber
 		/// </summary>
 		[DataMember(Name = "stackNumber", EmitDefaultValue = false)]
 		public decimal? StackNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareVersion
 		/// </summary>
 		[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
 		public string? SoftwareVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Priority
 		/// </summary>
 		[DataMember(Name = "priority", EmitDefaultValue = false)]
 		public decimal? Priority { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "systemTag", EmitDefaultValue = false)]
 		public bool? SystemTag { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DynamicRules
 		/// </summary>
 		[DataMember(Name = "dynamicRules", EmitDefaultValue = false)]
 		public List<TagDtoDynamicRules> DynamicRules { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

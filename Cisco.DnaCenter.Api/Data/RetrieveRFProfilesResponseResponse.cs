@@ -67,116 +67,139 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentProfileA
 		/// </summary>
 		[DataMember(Name = "parentProfileA", EmitDefaultValue = false)]
 		public string? ParentProfileA { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentProfileB
 		/// </summary>
 		[DataMember(Name = "parentProfileB", EmitDefaultValue = false)]
 		public string? ParentProfileB { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableARadioType
 		/// </summary>
 		[DataMember(Name = "enableARadioType", EmitDefaultValue = false)]
 		public bool? EnableARadioType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableBRadioType
 		/// </summary>
 		[DataMember(Name = "enableBRadioType", EmitDefaultValue = false)]
 		public bool? EnableBRadioType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ChannelWidth
 		/// </summary>
 		[DataMember(Name = "channelWidth", EmitDefaultValue = false)]
 		public string? ChannelWidth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ARadioChannels
 		/// </summary>
 		[DataMember(Name = "aRadioChannels", EmitDefaultValue = false)]
 		public string? ARadioChannels { get; set; }
+
 		/// <summary>
 		/// Gets or Sets BRadioChannels
 		/// </summary>
 		[DataMember(Name = "bRadioChannels", EmitDefaultValue = false)]
 		public string? BRadioChannels { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DataRatesA
 		/// </summary>
 		[DataMember(Name = "dataRatesA", EmitDefaultValue = false)]
 		public string? DataRatesA { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DataRatesB
 		/// </summary>
 		[DataMember(Name = "dataRatesB", EmitDefaultValue = false)]
 		public string? DataRatesB { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MandatoryDataRatesA
 		/// </summary>
 		[DataMember(Name = "mandatoryDataRatesA", EmitDefaultValue = false)]
 		public string? MandatoryDataRatesA { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MandatoryDataRatesB
 		/// </summary>
 		[DataMember(Name = "mandatoryDataRatesB", EmitDefaultValue = false)]
 		public string? MandatoryDataRatesB { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableCustom
 		/// </summary>
 		[DataMember(Name = "enableCustom", EmitDefaultValue = false)]
 		public bool? EnableCustom { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MinPowerLevelA
 		/// </summary>
 		[DataMember(Name = "minPowerLevelA", EmitDefaultValue = false)]
 		public string? MinPowerLevelA { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MinPowerLevelB
 		/// </summary>
 		[DataMember(Name = "minPowerLevelB", EmitDefaultValue = false)]
 		public string? MinPowerLevelB { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MaxPowerLevelA
 		/// </summary>
 		[DataMember(Name = "maxPowerLevelA", EmitDefaultValue = false)]
 		public string? MaxPowerLevelA { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MaxPowerLevelB
 		/// </summary>
 		[DataMember(Name = "maxPowerLevelB", EmitDefaultValue = false)]
 		public string? MaxPowerLevelB { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PowerThresholdV1A
 		/// </summary>
 		[DataMember(Name = "powerThresholdV1A", EmitDefaultValue = false)]
 		public int? PowerThresholdV1A { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PowerThresholdV1B
 		/// </summary>
 		[DataMember(Name = "powerThresholdV1B", EmitDefaultValue = false)]
 		public int? PowerThresholdV1B { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RxSopThresholdA
 		/// </summary>
 		[DataMember(Name = "rxSopThresholdA", EmitDefaultValue = false)]
 		public string? RxSopThresholdA { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RxSopThresholdB
 		/// </summary>
 		[DataMember(Name = "rxSopThresholdB", EmitDefaultValue = false)]
 		public string? RxSopThresholdB { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DefaultRfProfile
 		/// </summary>
 		[DataMember(Name = "defaultRfProfile", EmitDefaultValue = false)]
 		public bool? DefaultRfProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableBrownField
 		/// </summary>
 		[DataMember(Name = "enableBrownField", EmitDefaultValue = false)]
 		public bool? EnableBrownField { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

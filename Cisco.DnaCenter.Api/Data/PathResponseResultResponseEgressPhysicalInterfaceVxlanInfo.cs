@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "dscp", EmitDefaultValue = false)]
 		public string? Dscp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Vnid
 		/// </summary>
 		[DataMember(Name = "vnid", EmitDefaultValue = false)]
 		public string? Vnid { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

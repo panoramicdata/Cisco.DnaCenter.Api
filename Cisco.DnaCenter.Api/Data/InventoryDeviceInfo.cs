@@ -49,6 +49,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InventoryDeviceInfo" /> class.
 		/// </summary>
@@ -115,131 +116,157 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "cliTransport", EmitDefaultValue = false)]
 		public string? CliTransport { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ComputeDevice
 		/// </summary>
 		[DataMember(Name = "computeDevice", EmitDefaultValue = false)]
 		public bool? ComputeDevice { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnablePassword
 		/// </summary>
 		[DataMember(Name = "enablePassword", EmitDefaultValue = false)]
 		public string? EnablePassword { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExtendedDiscoveryInfo
 		/// </summary>
 		[DataMember(Name = "extendedDiscoveryInfo", EmitDefaultValue = false)]
 		public string? ExtendedDiscoveryInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpPassword
 		/// </summary>
 		[DataMember(Name = "httpPassword", EmitDefaultValue = false)]
 		public string? HttpPassword { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpPort
 		/// </summary>
 		[DataMember(Name = "httpPort", EmitDefaultValue = false)]
 		public string? HttpPort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpSecure
 		/// </summary>
 		[DataMember(Name = "httpSecure", EmitDefaultValue = false)]
 		public bool? HttpSecure { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpUserName
 		/// </summary>
 		[DataMember(Name = "httpUserName", EmitDefaultValue = false)]
 		public string? HttpUserName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpAddress
 		/// </summary>
 		[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
 		public List<string> IpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MerakiOrgId
 		/// </summary>
 		[DataMember(Name = "merakiOrgId", EmitDefaultValue = false)]
 		public List<string> MerakiOrgId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetconfPort
 		/// </summary>
 		[DataMember(Name = "netconfPort", EmitDefaultValue = false)]
 		public string? NetconfPort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Password
 		/// </summary>
 		[DataMember(Name = "password", EmitDefaultValue = false)]
 		public string? Password { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SerialNumber
 		/// </summary>
 		[DataMember(Name = "serialNumber", EmitDefaultValue = false)]
 		public string? SerialNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpAuthPassphrase
 		/// </summary>
 		[DataMember(Name = "snmpAuthPassphrase", EmitDefaultValue = false)]
 		public string? SnmpAuthPassphrase { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpAuthProtocol
 		/// </summary>
 		[DataMember(Name = "snmpAuthProtocol", EmitDefaultValue = false)]
 		public string? SnmpAuthProtocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpMode
 		/// </summary>
 		[DataMember(Name = "snmpMode", EmitDefaultValue = false)]
 		public string? SnmpMode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpPrivPassphrase
 		/// </summary>
 		[DataMember(Name = "snmpPrivPassphrase", EmitDefaultValue = false)]
 		public string? SnmpPrivPassphrase { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpPrivProtocol
 		/// </summary>
 		[DataMember(Name = "snmpPrivProtocol", EmitDefaultValue = false)]
 		public string? SnmpPrivProtocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpROCommunity
 		/// </summary>
 		[DataMember(Name = "snmpROCommunity", EmitDefaultValue = false)]
 		public string? SnmpROCommunity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpRWCommunity
 		/// </summary>
 		[DataMember(Name = "snmpRWCommunity", EmitDefaultValue = false)]
 		public string? SnmpRWCommunity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpRetry
 		/// </summary>
 		[DataMember(Name = "snmpRetry", EmitDefaultValue = false)]
 		public int? SnmpRetry { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpTimeout
 		/// </summary>
 		[DataMember(Name = "snmpTimeout", EmitDefaultValue = false)]
 		public int? SnmpTimeout { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpUserName
 		/// </summary>
 		[DataMember(Name = "snmpUserName", EmitDefaultValue = false)]
 		public string? SnmpUserName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpVersion
 		/// </summary>
 		[DataMember(Name = "snmpVersion", EmitDefaultValue = false)]
 		public string? SnmpVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UpdateMgmtIPaddressList
 		/// </summary>
 		[DataMember(Name = "updateMgmtIPaddressList", EmitDefaultValue = false)]
 		public List<InventoryDeviceInfoUpdateManagementIpAddressList> UpdateManagementIpAddressList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UserName
 		/// </summary>
 		[DataMember(Name = "userName", EmitDefaultValue = false)]
 		public string? UserName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

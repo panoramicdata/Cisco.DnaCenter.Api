@@ -81,151 +81,181 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "adminStatus", EmitDefaultValue = false)]
 		public string? AdminStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClassName
 		/// </summary>
 		[DataMember(Name = "className", EmitDefaultValue = false)]
 		public string? ClassName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceId
 		/// </summary>
 		[DataMember(Name = "deviceId", EmitDefaultValue = false)]
 		public string? DeviceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Duplex
 		/// </summary>
 		[DataMember(Name = "duplex", EmitDefaultValue = false)]
 		public string? Duplex { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IfIndex
 		/// </summary>
 		[DataMember(Name = "ifIndex", EmitDefaultValue = false)]
 		public string? IfIndex { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceUuid
 		/// </summary>
 		[DataMember(Name = "instanceUuid", EmitDefaultValue = false)]
 		public string? InstanceUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceType
 		/// </summary>
 		[DataMember(Name = "interfaceType", EmitDefaultValue = false)]
 		public string? InterfaceType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv4Address
 		/// </summary>
 		[DataMember(Name = "ipv4Address", EmitDefaultValue = false)]
 		public string? Ipv4Address { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv4Mask
 		/// </summary>
 		[DataMember(Name = "ipv4Mask", EmitDefaultValue = false)]
 		public string? Ipv4Mask { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsisSupport
 		/// </summary>
 		[DataMember(Name = "isisSupport", EmitDefaultValue = false)]
 		public string? IsisSupport { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdated
 		/// </summary>
 		[DataMember(Name = "lastUpdated", EmitDefaultValue = false)]
 		public string? LastUpdated { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddress
 		/// </summary>
 		[DataMember(Name = "macAddress", EmitDefaultValue = false)]
 		public string? MacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MappedPhysicalInterfaceId
 		/// </summary>
 		[DataMember(Name = "mappedPhysicalInterfaceId", EmitDefaultValue = false)]
 		public string? MappedPhysicalInterfaceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MappedPhysicalInterfaceName
 		/// </summary>
 		[DataMember(Name = "mappedPhysicalInterfaceName", EmitDefaultValue = false)]
 		public string? MappedPhysicalInterfaceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MediaType
 		/// </summary>
 		[DataMember(Name = "mediaType", EmitDefaultValue = false)]
 		public string? MediaType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NativeVlanId
 		/// </summary>
 		[DataMember(Name = "nativeVlanId", EmitDefaultValue = false)]
 		public string? NativeVlanId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OspfSupport
 		/// </summary>
 		[DataMember(Name = "ospfSupport", EmitDefaultValue = false)]
 		public string? OspfSupport { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Pid
 		/// </summary>
 		[DataMember(Name = "pid", EmitDefaultValue = false)]
 		public string? Pid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PortMode
 		/// </summary>
 		[DataMember(Name = "portMode", EmitDefaultValue = false)]
 		public string? PortMode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PortName
 		/// </summary>
 		[DataMember(Name = "portName", EmitDefaultValue = false)]
 		public string? PortName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PortType
 		/// </summary>
 		[DataMember(Name = "portType", EmitDefaultValue = false)]
 		public string? PortType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SerialNo
 		/// </summary>
 		[DataMember(Name = "serialNo", EmitDefaultValue = false)]
 		public string? SerialNo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Series
 		/// </summary>
 		[DataMember(Name = "series", EmitDefaultValue = false)]
 		public string? Series { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Speed
 		/// </summary>
 		[DataMember(Name = "speed", EmitDefaultValue = false)]
 		public string? Speed { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Status
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VlanId
 		/// </summary>
 		[DataMember(Name = "vlanId", EmitDefaultValue = false)]
 		public string? VlanId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VoiceVlan
 		/// </summary>
 		[DataMember(Name = "voiceVlan", EmitDefaultValue = false)]
 		public string? VoiceVlan { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

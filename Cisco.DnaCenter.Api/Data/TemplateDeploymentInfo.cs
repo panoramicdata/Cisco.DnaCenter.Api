@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "forcePushTemplate", EmitDefaultValue = false)]
 		public bool? ForcePushTemplate { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsComposite
 		/// </summary>
 		[DataMember(Name = "isComposite", EmitDefaultValue = false)]
 		public bool? IsComposite { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MainTemplateId
 		/// </summary>
 		[DataMember(Name = "mainTemplateId", EmitDefaultValue = false)]
 		public string? MainTemplateId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MemberTemplateDeploymentInfo
 		/// </summary>
 		[DataMember(Name = "memberTemplateDeploymentInfo", EmitDefaultValue = false)]
 		public List<string> MemberTemplateDeploymentInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TargetInfo
 		/// </summary>
 		[DataMember(Name = "targetInfo", EmitDefaultValue = false)]
 		public List<TemplateDeploymentInfoTargetInfo> TargetInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateId
 		/// </summary>
 		[DataMember(Name = "templateId", EmitDefaultValue = false)]
 		public string? TemplateId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

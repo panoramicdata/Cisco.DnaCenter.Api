@@ -55,6 +55,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "failurePolicy", EmitDefaultValue = false)]
 		public FailurePolicyEnum? FailurePolicy { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateDto" /> class.
 		/// </summary>
@@ -111,106 +112,127 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "author", EmitDefaultValue = false)]
 		public string? Author { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Composite
 		/// </summary>
 		[DataMember(Name = "composite", EmitDefaultValue = false)]
 		public bool? Composite { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ContainingTemplates
 		/// </summary>
 		[DataMember(Name = "containingTemplates", EmitDefaultValue = false)]
 		public List<TemplateDtoContainingTemplates> ContainingTemplates { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CreateTime
 		/// </summary>
 		[DataMember(Name = "createTime", EmitDefaultValue = false)]
 		public int? CreateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceTypes
 		/// </summary>
 		[DataMember(Name = "deviceTypes", EmitDefaultValue = false)]
 		public List<TemplateDtoDeviceTypes> DeviceTypes { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
 		public int? LastUpdateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentTemplateId
 		/// </summary>
 		[DataMember(Name = "parentTemplateId", EmitDefaultValue = false)]
 		public string? ParentTemplateId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectId
 		/// </summary>
 		[DataMember(Name = "projectId", EmitDefaultValue = false)]
 		public string? ProjectId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectName
 		/// </summary>
 		[DataMember(Name = "projectName", EmitDefaultValue = false)]
 		public string? ProjectName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RollbackTemplateContent
 		/// </summary>
 		[DataMember(Name = "rollbackTemplateContent", EmitDefaultValue = false)]
 		public string? RollbackTemplateContent { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RollbackTemplateParams
 		/// </summary>
 		[DataMember(Name = "rollbackTemplateParams", EmitDefaultValue = false)]
 		public List<TemplateDtoRollbackTemplateParams> RollbackTemplateParams { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareType
 		/// </summary>
 		[DataMember(Name = "softwareType", EmitDefaultValue = false)]
 		public string? SoftwareType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareVariant
 		/// </summary>
 		[DataMember(Name = "softwareVariant", EmitDefaultValue = false)]
 		public string? SoftwareVariant { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareVersion
 		/// </summary>
 		[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
 		public string? SoftwareVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
 		public List<string> Tags { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateContent
 		/// </summary>
 		[DataMember(Name = "templateContent", EmitDefaultValue = false)]
 		public string? TemplateContent { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateParams
 		/// </summary>
 		[DataMember(Name = "templateParams", EmitDefaultValue = false)]
 		public List<TemplateDtoRollbackTemplateParams> TemplateParams { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public string? _Version { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

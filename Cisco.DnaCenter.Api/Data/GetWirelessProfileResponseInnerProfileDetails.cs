@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Sites
 		/// </summary>
 		[DataMember(Name = "sites", EmitDefaultValue = false)]
 		public List<string> Sites { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SsidDetails
 		/// </summary>
 		[DataMember(Name = "ssidDetails", EmitDefaultValue = false)]
 		public List<GetWirelessProfileResponseInnerProfileDetailsSsidDetails> SsidDetails { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

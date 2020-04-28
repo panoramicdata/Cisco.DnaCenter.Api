@@ -43,6 +43,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "instanceType", EmitDefaultValue = false)]
 		public InstanceTypeEnum? InstanceType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Workflow" /> class.
 		/// </summary>
@@ -93,91 +94,109 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "_id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AddToInventory
 		/// </summary>
 		[DataMember(Name = "addToInventory", EmitDefaultValue = false)]
 		public bool? AddToInventory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AddedOn
 		/// </summary>
 		[DataMember(Name = "addedOn", EmitDefaultValue = false)]
 		public int? AddedOn { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConfigId
 		/// </summary>
 		[DataMember(Name = "configId", EmitDefaultValue = false)]
 		public string? ConfigId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CurrTaskIdx
 		/// </summary>
 		[DataMember(Name = "currTaskIdx", EmitDefaultValue = false)]
 		public int? CurrTaskIdx { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public int? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExecTime
 		/// </summary>
 		[DataMember(Name = "execTime", EmitDefaultValue = false)]
 		public int? ExecTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageId
 		/// </summary>
 		[DataMember(Name = "imageId", EmitDefaultValue = false)]
 		public string? ImageId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastupdateOn
 		/// </summary>
 		[DataMember(Name = "lastupdateOn", EmitDefaultValue = false)]
 		public int? LastupdateOn { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public int? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets State
 		/// </summary>
 		[DataMember(Name = "state", EmitDefaultValue = false)]
 		public string? State { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tasks
 		/// </summary>
 		[DataMember(Name = "tasks", EmitDefaultValue = false)]
 		public List<WorkflowTasks> Tasks { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TenantId
 		/// </summary>
 		[DataMember(Name = "tenantId", EmitDefaultValue = false)]
 		public string? TenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UseState
 		/// </summary>
 		[DataMember(Name = "useState", EmitDefaultValue = false)]
 		public string? UseState { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public int? _Version { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

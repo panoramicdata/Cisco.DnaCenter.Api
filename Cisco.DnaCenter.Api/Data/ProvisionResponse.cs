@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "executionId", EmitDefaultValue = false)]
 		public string? ExecutionId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExecutionUrl
 		/// </summary>
 		[DataMember(Name = "executionUrl", EmitDefaultValue = false)]
 		public string? ExecutionUrl { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProvisioningTasks
 		/// </summary>
 		[DataMember(Name = "provisioningTasks", EmitDefaultValue = false)]
 		public ProvisionResponseProvisioningTasks ProvisioningTasks { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

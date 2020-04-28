@@ -36,6 +36,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetWirelessProfileResponseInnerProfileDetailsSsidDetails" /> class.
 		/// </summary>
@@ -58,21 +59,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableFabric
 		/// </summary>
 		[DataMember(Name = "enableFabric", EmitDefaultValue = false)]
 		public bool? EnableFabric { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FlexConnect
 		/// </summary>
 		[DataMember(Name = "flexConnect", EmitDefaultValue = false)]
 		public GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceName
 		/// </summary>
 		[DataMember(Name = "interfaceName", EmitDefaultValue = false)]
 		public string? InterfaceName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

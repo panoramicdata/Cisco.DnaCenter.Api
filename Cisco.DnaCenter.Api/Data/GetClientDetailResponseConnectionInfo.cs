@@ -43,56 +43,67 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "hostType", EmitDefaultValue = false)]
 		public string? HostType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NwDeviceName
 		/// </summary>
 		[DataMember(Name = "nwDeviceName", EmitDefaultValue = false)]
 		public string? NwDeviceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NwDeviceMac
 		/// </summary>
 		[DataMember(Name = "nwDeviceMac", EmitDefaultValue = false)]
 		public string? NwDeviceMac { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Band
 		/// </summary>
 		[DataMember(Name = "band", EmitDefaultValue = false)]
 		public string? Band { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SpatialStream
 		/// </summary>
 		[DataMember(Name = "spatialStream", EmitDefaultValue = false)]
 		public string? SpatialStream { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Channel
 		/// </summary>
 		[DataMember(Name = "channel", EmitDefaultValue = false)]
 		public string? Channel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ChannelWidth
 		/// </summary>
 		[DataMember(Name = "channelWidth", EmitDefaultValue = false)]
 		public string? ChannelWidth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Wmm
 		/// </summary>
 		[DataMember(Name = "wmm", EmitDefaultValue = false)]
 		public string? Wmm { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Uapsd
 		/// </summary>
 		[DataMember(Name = "uapsd", EmitDefaultValue = false)]
 		public string? Uapsd { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Timestamp
 		/// </summary>
 		[DataMember(Name = "timestamp", EmitDefaultValue = false)]
 		public int? Timestamp { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

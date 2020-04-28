@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deviceResetList", EmitDefaultValue = false)]
 		public List<ResetRequestDeviceResetList> DeviceResetList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectId
 		/// </summary>
 		[DataMember(Name = "projectId", EmitDefaultValue = false)]
 		public string? ProjectId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WorkflowId
 		/// </summary>
 		[DataMember(Name = "workflowId", EmitDefaultValue = false)]
 		public string? WorkflowId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

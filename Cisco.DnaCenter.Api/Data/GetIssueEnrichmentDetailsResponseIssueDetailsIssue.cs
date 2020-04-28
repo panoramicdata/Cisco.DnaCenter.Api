@@ -49,66 +49,79 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "issueId", EmitDefaultValue = false)]
 		public string? IssueId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueSource
 		/// </summary>
 		[DataMember(Name = "issueSource", EmitDefaultValue = false)]
 		public string? IssueSource { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueCategory
 		/// </summary>
 		[DataMember(Name = "issueCategory", EmitDefaultValue = false)]
 		public string? IssueCategory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueName
 		/// </summary>
 		[DataMember(Name = "issueName", EmitDefaultValue = false)]
 		public string? IssueName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueDescription
 		/// </summary>
 		[DataMember(Name = "issueDescription", EmitDefaultValue = false)]
 		public string? IssueDescription { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueEntity
 		/// </summary>
 		[DataMember(Name = "issueEntity", EmitDefaultValue = false)]
 		public string? IssueEntity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueEntityValue
 		/// </summary>
 		[DataMember(Name = "issueEntityValue", EmitDefaultValue = false)]
 		public string? IssueEntityValue { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueSeverity
 		/// </summary>
 		[DataMember(Name = "issueSeverity", EmitDefaultValue = false)]
 		public string? IssueSeverity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssuePriority
 		/// </summary>
 		[DataMember(Name = "issuePriority", EmitDefaultValue = false)]
 		public string? IssuePriority { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueSummary
 		/// </summary>
 		[DataMember(Name = "issueSummary", EmitDefaultValue = false)]
 		public string? IssueSummary { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueTimestamp
 		/// </summary>
 		[DataMember(Name = "issueTimestamp", EmitDefaultValue = false)]
 		public int? IssueTimestamp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SuggestedActions
 		/// </summary>
 		[DataMember(Name = "suggestedActions", EmitDefaultValue = false)]
 		public List<GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions> SuggestedActions { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImpactedHosts
 		/// </summary>
 		[DataMember(Name = "impactedHosts", EmitDefaultValue = false)]
 		public List<Object> ImpactedHosts { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

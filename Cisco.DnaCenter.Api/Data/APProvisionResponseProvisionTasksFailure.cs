@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "taskId", EmitDefaultValue = false)]
 		public string? TaskId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TaskUrl
 		/// </summary>
 		[DataMember(Name = "taskUrl", EmitDefaultValue = false)]
 		public string? TaskUrl { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FailureReason
 		/// </summary>
 		[DataMember(Name = "failureReason", EmitDefaultValue = false)]
 		public string? FailureReason { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

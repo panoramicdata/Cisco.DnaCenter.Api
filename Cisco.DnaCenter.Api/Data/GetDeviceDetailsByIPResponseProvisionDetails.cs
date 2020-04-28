@@ -38,41 +38,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public string? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public string? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Duration
 		/// </summary>
 		[DataMember(Name = "duration", EmitDefaultValue = false)]
 		public string? Duration { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StatusMessage
 		/// </summary>
 		[DataMember(Name = "statusMessage", EmitDefaultValue = false)]
 		public string? StatusMessage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Status
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TaskNodes
 		/// </summary>
 		[DataMember(Name = "taskNodes", EmitDefaultValue = false)]
 		public List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes> TaskNodes { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Topology
 		/// </summary>
 		[DataMember(Name = "topology", EmitDefaultValue = false)]
 		public string? Topology { get; set; }
+
 		/// <summary>
 		/// Gets or Sets BeginStep
 		/// </summary>
 		[DataMember(Name = "beginStep", EmitDefaultValue = false)]
 		public string? BeginStep { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

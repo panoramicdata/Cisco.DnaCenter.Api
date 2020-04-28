@@ -41,51 +41,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "complete", EmitDefaultValue = false)]
 		public bool? Complete { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Config
 		/// </summary>
 		[DataMember(Name = "config", EmitDefaultValue = false)]
 		public string? Config { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Error
 		/// </summary>
 		[DataMember(Name = "error", EmitDefaultValue = false)]
 		public bool? Error { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ErrorMessage
 		/// </summary>
 		[DataMember(Name = "errorMessage", EmitDefaultValue = false)]
 		public string? ErrorMessage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExpiredTime
 		/// </summary>
 		[DataMember(Name = "expiredTime", EmitDefaultValue = false)]
 		public int? ExpiredTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RfProfile
 		/// </summary>
 		[DataMember(Name = "RfProfile", EmitDefaultValue = false)]
 		public string? RfProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SensorProfile
 		/// </summary>
 		[DataMember(Name = "sensorProfile", EmitDefaultValue = false)]
 		public string? SensorProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteId
 		/// </summary>
 		[DataMember(Name = "siteId", EmitDefaultValue = false)]
 		public string? SiteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public int? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TaskId
 		/// </summary>
 		[DataMember(Name = "taskId", EmitDefaultValue = false)]
 		public string? TaskId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

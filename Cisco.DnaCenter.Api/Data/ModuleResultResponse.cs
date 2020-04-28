@@ -81,11 +81,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "isFieldReplaceable", EmitDefaultValue = false)]
 		public IsFieldReplaceableEnum? IsFieldReplaceable { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsReportingAlarmsAllowed
 		/// </summary>
 		[DataMember(Name = "isReportingAlarmsAllowed", EmitDefaultValue = false)]
 		public IsReportingAlarmsAllowedEnum? IsReportingAlarmsAllowed { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ModuleResultResponse" /> class.
 		/// </summary>
@@ -130,71 +132,85 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "assemblyNumber", EmitDefaultValue = false)]
 		public string? AssemblyNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AssemblyRevision
 		/// </summary>
 		[DataMember(Name = "assemblyRevision", EmitDefaultValue = false)]
 		public string? AssemblyRevision { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AttributeInfo
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ContainmentEntity
 		/// </summary>
 		[DataMember(Name = "containmentEntity", EmitDefaultValue = false)]
 		public string? ContainmentEntity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EntityPhysicalIndex
 		/// </summary>
 		[DataMember(Name = "entityPhysicalIndex", EmitDefaultValue = false)]
 		public string? EntityPhysicalIndex { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Manufacturer
 		/// </summary>
 		[DataMember(Name = "manufacturer", EmitDefaultValue = false)]
 		public string? Manufacturer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ModuleIndex
 		/// </summary>
 		[DataMember(Name = "moduleIndex", EmitDefaultValue = false)]
 		public int? ModuleIndex { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OperationalStateCode
 		/// </summary>
 		[DataMember(Name = "operationalStateCode", EmitDefaultValue = false)]
 		public string? OperationalStateCode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PartNumber
 		/// </summary>
 		[DataMember(Name = "partNumber", EmitDefaultValue = false)]
 		public string? PartNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SerialNumber
 		/// </summary>
 		[DataMember(Name = "serialNumber", EmitDefaultValue = false)]
 		public string? SerialNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VendorEquipmentType
 		/// </summary>
 		[DataMember(Name = "vendorEquipmentType", EmitDefaultValue = false)]
 		public string? VendorEquipmentType { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

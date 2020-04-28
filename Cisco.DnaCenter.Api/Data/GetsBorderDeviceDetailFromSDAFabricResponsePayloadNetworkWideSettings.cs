@@ -55,81 +55,97 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceId
 		/// </summary>
 		[DataMember(Name = "instanceId", EmitDefaultValue = false)]
 		public int? InstanceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeployPending
 		/// </summary>
 		[DataMember(Name = "deployPending", EmitDefaultValue = false)]
 		public string? DeployPending { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceVersion
 		/// </summary>
 		[DataMember(Name = "instanceVersion", EmitDefaultValue = false)]
 		public int? InstanceVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Aaa
 		/// </summary>
 		[DataMember(Name = "aaa", EmitDefaultValue = false)]
 		public List<Object> Aaa { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Cmx
 		/// </summary>
 		[DataMember(Name = "cmx", EmitDefaultValue = false)]
 		public List<Object> Cmx { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Dhcp
 		/// </summary>
 		[DataMember(Name = "dhcp", EmitDefaultValue = false)]
 		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp> Dhcp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Dns
 		/// </summary>
 		[DataMember(Name = "dns", EmitDefaultValue = false)]
 		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns> Dns { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ldap
 		/// </summary>
 		[DataMember(Name = "ldap", EmitDefaultValue = false)]
 		public List<Object> Ldap { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NativeVlan
 		/// </summary>
 		[DataMember(Name = "nativeVlan", EmitDefaultValue = false)]
 		public List<Object> NativeVlan { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Netflow
 		/// </summary>
 		[DataMember(Name = "netflow", EmitDefaultValue = false)]
 		public List<Object> Netflow { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ntp
 		/// </summary>
 		[DataMember(Name = "ntp", EmitDefaultValue = false)]
 		public List<Object> Ntp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Snmp
 		/// </summary>
 		[DataMember(Name = "snmp", EmitDefaultValue = false)]
 		public List<Object> Snmp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Syslogs
 		/// </summary>
 		[DataMember(Name = "syslogs", EmitDefaultValue = false)]
 		public List<Object> Syslogs { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

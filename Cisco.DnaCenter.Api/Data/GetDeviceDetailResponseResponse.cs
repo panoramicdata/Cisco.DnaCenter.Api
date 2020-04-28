@@ -109,221 +109,265 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "HALastResetReason", EmitDefaultValue = false)]
 		public string? HALastResetReason { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ManagementIpAddr
 		/// </summary>
 		[DataMember(Name = "managementIpAddr", EmitDefaultValue = false)]
 		public string? ManagementIpAddr { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HAPrimaryPowerStatus
 		/// </summary>
 		[DataMember(Name = "HAPrimaryPowerStatus", EmitDefaultValue = false)]
 		public string? HAPrimaryPowerStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RedundancyMode
 		/// </summary>
 		[DataMember(Name = "redundancyMode", EmitDefaultValue = false)]
 		public string? RedundancyMode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CommunicationState
 		/// </summary>
 		[DataMember(Name = "communicationState", EmitDefaultValue = false)]
 		public string? CommunicationState { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NwDeviceName
 		/// </summary>
 		[DataMember(Name = "nwDeviceName", EmitDefaultValue = false)]
 		public string? NwDeviceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RedundancyUnit
 		/// </summary>
 		[DataMember(Name = "redundancyUnit", EmitDefaultValue = false)]
 		public string? RedundancyUnit { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PlatformId
 		/// </summary>
 		[DataMember(Name = "platformId", EmitDefaultValue = false)]
 		public string? PlatformId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RedundancyPeerState
 		/// </summary>
 		[DataMember(Name = "redundancyPeerState", EmitDefaultValue = false)]
 		public string? RedundancyPeerState { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NwDeviceId
 		/// </summary>
 		[DataMember(Name = "nwDeviceId", EmitDefaultValue = false)]
 		public string? NwDeviceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RedundancyState
 		/// </summary>
 		[DataMember(Name = "redundancyState", EmitDefaultValue = false)]
 		public string? RedundancyState { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NwDeviceRole
 		/// </summary>
 		[DataMember(Name = "nwDeviceRole", EmitDefaultValue = false)]
 		public string? NwDeviceRole { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NwDeviceFamily
 		/// </summary>
 		[DataMember(Name = "nwDeviceFamily", EmitDefaultValue = false)]
 		public string? NwDeviceFamily { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddress
 		/// </summary>
 		[DataMember(Name = "macAddress", EmitDefaultValue = false)]
 		public string? MacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CollectionStatus
 		/// </summary>
 		[DataMember(Name = "collectionStatus", EmitDefaultValue = false)]
 		public string? CollectionStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceSeries
 		/// </summary>
 		[DataMember(Name = "deviceSeries", EmitDefaultValue = false)]
 		public string? DeviceSeries { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OsType
 		/// </summary>
 		[DataMember(Name = "osType", EmitDefaultValue = false)]
 		public string? OsType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientCount
 		/// </summary>
 		[DataMember(Name = "clientCount", EmitDefaultValue = false)]
 		public string? ClientCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HASecondaryPowerStatus
 		/// </summary>
 		[DataMember(Name = "HASecondaryPowerStatus", EmitDefaultValue = false)]
 		public string? HASecondaryPowerStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareVersion
 		/// </summary>
 		[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
 		public string? SoftwareVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NwDeviceType
 		/// </summary>
 		[DataMember(Name = "nwDeviceType", EmitDefaultValue = false)]
 		public string? NwDeviceType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OverallHealth
 		/// </summary>
 		[DataMember(Name = "overallHealth", EmitDefaultValue = false)]
 		public int? OverallHealth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MemoryScore
 		/// </summary>
 		[DataMember(Name = "memoryScore", EmitDefaultValue = false)]
 		public int? MemoryScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CpuScore
 		/// </summary>
 		[DataMember(Name = "cpuScore", EmitDefaultValue = false)]
 		public int? CpuScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NoiseScore
 		/// </summary>
 		[DataMember(Name = "noiseScore", EmitDefaultValue = false)]
 		public int? NoiseScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UtilizationScore
 		/// </summary>
 		[DataMember(Name = "utilizationScore", EmitDefaultValue = false)]
 		public int? UtilizationScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AirQualityScore
 		/// </summary>
 		[DataMember(Name = "airQualityScore", EmitDefaultValue = false)]
 		public int? AirQualityScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterferenceScore
 		/// </summary>
 		[DataMember(Name = "interferenceScore", EmitDefaultValue = false)]
 		public int? InterferenceScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WqeScore
 		/// </summary>
 		[DataMember(Name = "wqeScore", EmitDefaultValue = false)]
 		public int? WqeScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FreeMbufScore
 		/// </summary>
 		[DataMember(Name = "freeMbufScore", EmitDefaultValue = false)]
 		public int? FreeMbufScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PacketPoolScore
 		/// </summary>
 		[DataMember(Name = "packetPoolScore", EmitDefaultValue = false)]
 		public int? PacketPoolScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FreeTimerScore
 		/// </summary>
 		[DataMember(Name = "freeTimerScore", EmitDefaultValue = false)]
 		public int? FreeTimerScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Memory
 		/// </summary>
 		[DataMember(Name = "memory", EmitDefaultValue = false)]
 		public string? Memory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Cpu
 		/// </summary>
 		[DataMember(Name = "cpu", EmitDefaultValue = false)]
 		public string? Cpu { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Noise
 		/// </summary>
 		[DataMember(Name = "noise", EmitDefaultValue = false)]
 		public string? Noise { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Utilization
 		/// </summary>
 		[DataMember(Name = "utilization", EmitDefaultValue = false)]
 		public string? Utilization { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AirQuality
 		/// </summary>
 		[DataMember(Name = "airQuality", EmitDefaultValue = false)]
 		public string? AirQuality { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Interference
 		/// </summary>
 		[DataMember(Name = "interference", EmitDefaultValue = false)]
 		public string? Interference { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Wqe
 		/// </summary>
 		[DataMember(Name = "wqe", EmitDefaultValue = false)]
 		public string? Wqe { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FreeMbuf
 		/// </summary>
 		[DataMember(Name = "freeMbuf", EmitDefaultValue = false)]
 		public string? FreeMbuf { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PacketPool
 		/// </summary>
 		[DataMember(Name = "packetPool", EmitDefaultValue = false)]
 		public string? PacketPool { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FreeTimer
 		/// </summary>
 		[DataMember(Name = "freeTimer", EmitDefaultValue = false)]
 		public string? FreeTimer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Location
 		/// </summary>
 		[DataMember(Name = "location", EmitDefaultValue = false)]
 		public string? Location { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Timestamp
 		/// </summary>
 		[DataMember(Name = "timestamp", EmitDefaultValue = false)]
 		public string? Timestamp { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

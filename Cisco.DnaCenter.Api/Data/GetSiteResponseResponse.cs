@@ -1,6 +1,6 @@
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -36,36 +36,43 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "parentId", EmitDefaultValue = false)]
 		public string? ParentId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AdditionalInfo
 		/// </summary>
 		[DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
 		public List<string> AdditionalInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteHierarchy
 		/// </summary>
 		[DataMember(Name = "siteHierarchy", EmitDefaultValue = false)]
 		public string? SiteHierarchy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteNameHierarchy
 		/// </summary>
 		[DataMember(Name = "siteNameHierarchy", EmitDefaultValue = false)]
 		public string? SiteNameHierarchy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

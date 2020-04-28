@@ -84,6 +84,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServices" /> class.
 		/// </summary>
@@ -108,26 +109,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "profile", EmitDefaultValue = false)]
 		public string? Profile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Mode
 		/// </summary>
 		[DataMember(Name = "mode", EmitDefaultValue = false)]
 		public string? Mode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageName
 		/// </summary>
 		[DataMember(Name = "imageName", EmitDefaultValue = false)]
 		public string? ImageName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Topology
 		/// </summary>
 		[DataMember(Name = "topology", EmitDefaultValue = false)]
 		public ProvisionNfvRequestTopology Topology { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

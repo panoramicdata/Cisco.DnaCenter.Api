@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "siteNameHierarchy", EmitDefaultValue = false)]
 		public string? SiteNameHierarchy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthenticateTemplateName
 		/// </summary>
 		[DataMember(Name = "authenticateTemplateName", EmitDefaultValue = false)]
 		public string? AuthenticateTemplateName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

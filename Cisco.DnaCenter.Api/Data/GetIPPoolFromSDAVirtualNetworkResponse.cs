@@ -39,46 +39,55 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VirtualNetworkName
 		/// </summary>
 		[DataMember(Name = "virtualNetworkName", EmitDefaultValue = false)]
 		public string? VirtualNetworkName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpPoolName
 		/// </summary>
 		[DataMember(Name = "ipPoolName", EmitDefaultValue = false)]
 		public string? IpPoolName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthenticationPolicyName
 		/// </summary>
 		[DataMember(Name = "authenticationPolicyName", EmitDefaultValue = false)]
 		public string? AuthenticationPolicyName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TrafficType
 		/// </summary>
 		[DataMember(Name = "trafficType", EmitDefaultValue = false)]
 		public string? TrafficType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ScalableGroupName
 		/// </summary>
 		[DataMember(Name = "scalableGroupName", EmitDefaultValue = false)]
 		public string? ScalableGroupName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsL2FloodingEnabled
 		/// </summary>
 		[DataMember(Name = "isL2FloodingEnabled", EmitDefaultValue = false)]
 		public bool? IsL2FloodingEnabled { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsThisCriticalPool
 		/// </summary>
 		[DataMember(Name = "isThisCriticalPool", EmitDefaultValue = false)]
 		public bool? IsThisCriticalPool { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

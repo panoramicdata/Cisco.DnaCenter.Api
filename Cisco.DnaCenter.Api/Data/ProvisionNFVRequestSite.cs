@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "siteProfileName", EmitDefaultValue = false)]
 		public string? SiteProfileName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Area
 		/// </summary>
 		[DataMember(Name = "area", EmitDefaultValue = false)]
 		public CreateSiteRequestSiteArea Area { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Building
 		/// </summary>
 		[DataMember(Name = "building", EmitDefaultValue = false)]
 		public ProvisionNfvRequestSiteBuilding Building { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Floor
 		/// </summary>
 		[DataMember(Name = "floor", EmitDefaultValue = false)]
 		public ProvisionNfvRequestSiteFloor Floor { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

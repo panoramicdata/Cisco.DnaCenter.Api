@@ -55,6 +55,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "dataType", EmitDefaultValue = false)]
 		public DataTypeEnum? DataType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateDtoRollbackTemplateParams" /> class.
 		/// </summary>
@@ -101,81 +102,97 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "binding", EmitDefaultValue = false)]
 		public string? Binding { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DefaultValue
 		/// </summary>
 		[DataMember(Name = "defaultValue", EmitDefaultValue = false)]
 		public string? DefaultValue { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Group
 		/// </summary>
 		[DataMember(Name = "group", EmitDefaultValue = false)]
 		public string? Group { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstructionText
 		/// </summary>
 		[DataMember(Name = "instructionText", EmitDefaultValue = false)]
 		public string? InstructionText { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Key
 		/// </summary>
 		[DataMember(Name = "key", EmitDefaultValue = false)]
 		public string? Key { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NotParam
 		/// </summary>
 		[DataMember(Name = "notParam", EmitDefaultValue = false)]
 		public bool? NotParam { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Order
 		/// </summary>
 		[DataMember(Name = "order", EmitDefaultValue = false)]
 		public int? Order { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParamArray
 		/// </summary>
 		[DataMember(Name = "paramArray", EmitDefaultValue = false)]
 		public bool? ParamArray { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParameterName
 		/// </summary>
 		[DataMember(Name = "parameterName", EmitDefaultValue = false)]
 		public string? ParameterName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Provider
 		/// </summary>
 		[DataMember(Name = "provider", EmitDefaultValue = false)]
 		public string? Provider { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Range
 		/// </summary>
 		[DataMember(Name = "range", EmitDefaultValue = false)]
 		public List<TemplateDtoRange> Range { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Required
 		/// </summary>
 		[DataMember(Name = "required", EmitDefaultValue = false)]
 		public bool? Required { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Selection
 		/// </summary>
 		[DataMember(Name = "selection", EmitDefaultValue = false)]
 		public TemplateDtoSelection Selection { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

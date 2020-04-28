@@ -50,71 +50,85 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public string? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public string? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Duration
 		/// </summary>
 		[DataMember(Name = "duration", EmitDefaultValue = false)]
 		public string? Duration { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Status
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NextTask
 		/// </summary>
 		[DataMember(Name = "nextTask", EmitDefaultValue = false)]
 		public string? NextTask { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Target
 		/// </summary>
 		[DataMember(Name = "target", EmitDefaultValue = false)]
 		public string? Target { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StatusMessage
 		/// </summary>
 		[DataMember(Name = "statusMessage", EmitDefaultValue = false)]
 		public string? StatusMessage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Payload
 		/// </summary>
 		[DataMember(Name = "payload", EmitDefaultValue = false)]
 		public string? Payload { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProvisionedNames
 		/// </summary>
 		[DataMember(Name = "provisionedNames", EmitDefaultValue = false)]
 		public Object ProvisionedNames { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ErrorPayload
 		/// </summary>
 		[DataMember(Name = "errorPayload", EmitDefaultValue = false)]
 		public Object ErrorPayload { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentTask
 		/// </summary>
 		[DataMember(Name = "parentTask", EmitDefaultValue = false)]
 		public Object ParentTask { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CliTemplateUserMessageDto
 		/// </summary>
 		[DataMember(Name = "cliTemplateUserMessageDto", EmitDefaultValue = false)]
 		public Object CliTemplateUserMessageDto { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StepRan
 		/// </summary>
 		[DataMember(Name = "stepRan", EmitDefaultValue = false)]
 		public string? StepRan { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

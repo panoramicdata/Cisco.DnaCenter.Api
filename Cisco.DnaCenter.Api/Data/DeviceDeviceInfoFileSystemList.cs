@@ -33,31 +33,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Writeable
 		/// </summary>
 		[DataMember(Name = "writeable", EmitDefaultValue = false)]
 		public bool? Writeable { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Freespace
 		/// </summary>
 		[DataMember(Name = "freespace", EmitDefaultValue = false)]
 		public decimal? Freespace { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Readable
 		/// </summary>
 		[DataMember(Name = "readable", EmitDefaultValue = false)]
 		public bool? Readable { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Size
 		/// </summary>
 		[DataMember(Name = "size", EmitDefaultValue = false)]
 		public decimal? Size { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -56,86 +56,103 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
 		public Object AdditionalInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndPortID
 		/// </summary>
 		[DataMember(Name = "endPortID", EmitDefaultValue = false)]
 		public string? EndPortID { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndPortIpv4Address
 		/// </summary>
 		[DataMember(Name = "endPortIpv4Address", EmitDefaultValue = false)]
 		public string? EndPortIpv4Address { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndPortIpv4Mask
 		/// </summary>
 		[DataMember(Name = "endPortIpv4Mask", EmitDefaultValue = false)]
 		public string? EndPortIpv4Mask { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndPortName
 		/// </summary>
 		[DataMember(Name = "endPortName", EmitDefaultValue = false)]
 		public string? EndPortName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndPortSpeed
 		/// </summary>
 		[DataMember(Name = "endPortSpeed", EmitDefaultValue = false)]
 		public string? EndPortSpeed { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GreyOut
 		/// </summary>
 		[DataMember(Name = "greyOut", EmitDefaultValue = false)]
 		public bool? GreyOut { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LinkStatus
 		/// </summary>
 		[DataMember(Name = "linkStatus", EmitDefaultValue = false)]
 		public string? LinkStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Source
 		/// </summary>
 		[DataMember(Name = "source", EmitDefaultValue = false)]
 		public string? Source { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartPortID
 		/// </summary>
 		[DataMember(Name = "startPortID", EmitDefaultValue = false)]
 		public string? StartPortID { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartPortIpv4Address
 		/// </summary>
 		[DataMember(Name = "startPortIpv4Address", EmitDefaultValue = false)]
 		public string? StartPortIpv4Address { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartPortIpv4Mask
 		/// </summary>
 		[DataMember(Name = "startPortIpv4Mask", EmitDefaultValue = false)]
 		public string? StartPortIpv4Mask { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartPortName
 		/// </summary>
 		[DataMember(Name = "startPortName", EmitDefaultValue = false)]
 		public string? StartPortName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartPortSpeed
 		/// </summary>
 		[DataMember(Name = "startPortSpeed", EmitDefaultValue = false)]
 		public string? StartPortSpeed { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tag
 		/// </summary>
 		[DataMember(Name = "tag", EmitDefaultValue = false)]
 		public string? Tag { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Target
 		/// </summary>
 		[DataMember(Name = "target", EmitDefaultValue = false)]
 		public string? Target { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

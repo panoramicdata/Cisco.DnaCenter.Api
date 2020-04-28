@@ -24,6 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
 		public List<GetSiteResponseResponse> Response { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

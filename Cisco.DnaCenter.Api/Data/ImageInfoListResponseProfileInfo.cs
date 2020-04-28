@@ -36,36 +36,43 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExtendedAttributes
 		/// </summary>
 		[DataMember(Name = "extendedAttributes", EmitDefaultValue = false)]
 		public Object ExtendedAttributes { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Memory
 		/// </summary>
 		[DataMember(Name = "memory", EmitDefaultValue = false)]
 		public int? Memory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProductType
 		/// </summary>
 		[DataMember(Name = "productType", EmitDefaultValue = false)]
 		public string? ProductType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProfileName
 		/// </summary>
 		[DataMember(Name = "profileName", EmitDefaultValue = false)]
 		public string? ProfileName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Shares
 		/// </summary>
 		[DataMember(Name = "shares", EmitDefaultValue = false)]
 		public int? Shares { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VCpu
 		/// </summary>
 		[DataMember(Name = "vCpu", EmitDefaultValue = false)]
 		public int? VCpu { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

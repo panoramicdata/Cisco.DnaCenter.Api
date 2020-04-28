@@ -66,111 +66,133 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "accuracyList", EmitDefaultValue = false)]
 		public List<PathResponseResultResponseAccuracyList> AccuracyList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DetailedStatus
 		/// </summary>
 		[DataMember(Name = "detailedStatus", EmitDefaultValue = false)]
 		public PathResponseResultResponseDetailedStatus DetailedStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceStatistics
 		/// </summary>
 		[DataMember(Name = "deviceStatistics", EmitDefaultValue = false)]
 		public PathResponseResultResponseDeviceStatistics DeviceStatistics { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceStatsCollection
 		/// </summary>
 		[DataMember(Name = "deviceStatsCollection", EmitDefaultValue = false)]
 		public string? DeviceStatsCollection { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceStatsCollectionFailureReason
 		/// </summary>
 		[DataMember(Name = "deviceStatsCollectionFailureReason", EmitDefaultValue = false)]
 		public string? DeviceStatsCollectionFailureReason { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EgressPhysicalInterface
 		/// </summary>
 		[DataMember(Name = "egressPhysicalInterface", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterface EgressPhysicalInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EgressVirtualInterface
 		/// </summary>
 		[DataMember(Name = "egressVirtualInterface", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterface EgressVirtualInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FlexConnect
 		/// </summary>
 		[DataMember(Name = "flexConnect", EmitDefaultValue = false)]
 		public PathResponseResultResponseFlexConnect FlexConnect { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IngressPhysicalInterface
 		/// </summary>
 		[DataMember(Name = "ingressPhysicalInterface", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterface IngressPhysicalInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IngressVirtualInterface
 		/// </summary>
 		[DataMember(Name = "ingressVirtualInterface", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterface IngressVirtualInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ip
 		/// </summary>
 		[DataMember(Name = "ip", EmitDefaultValue = false)]
 		public string? Ip { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LinkInformationSource
 		/// </summary>
 		[DataMember(Name = "linkInformationSource", EmitDefaultValue = false)]
 		public string? LinkInformationSource { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PerfMonCollection
 		/// </summary>
 		[DataMember(Name = "perfMonCollection", EmitDefaultValue = false)]
 		public string? PerfMonCollection { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PerfMonCollectionFailureReason
 		/// </summary>
 		[DataMember(Name = "perfMonCollectionFailureReason", EmitDefaultValue = false)]
 		public string? PerfMonCollectionFailureReason { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PerfMonStatistics
 		/// </summary>
 		[DataMember(Name = "perfMonStatistics", EmitDefaultValue = false)]
 		public List<PathResponseResultResponsePerfMonStatistics> PerfMonStatistics { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Role
 		/// </summary>
 		[DataMember(Name = "role", EmitDefaultValue = false)]
 		public string? Role { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ssid
 		/// </summary>
 		[DataMember(Name = "ssid", EmitDefaultValue = false)]
 		public string? Ssid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tunnels
 		/// </summary>
 		[DataMember(Name = "tunnels", EmitDefaultValue = false)]
 		public List<string> Tunnels { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WlanId
 		/// </summary>
 		[DataMember(Name = "wlanId", EmitDefaultValue = false)]
 		public string? WlanId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

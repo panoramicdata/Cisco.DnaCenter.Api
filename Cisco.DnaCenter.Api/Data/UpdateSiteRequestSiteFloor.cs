@@ -48,6 +48,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "rfModel", EmitDefaultValue = false)]
 		public RfModelEnum? RfModel { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateSiteRequestSiteFloor" /> class.
 		/// </summary>
@@ -70,21 +71,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Width
 		/// </summary>
 		[DataMember(Name = "width", EmitDefaultValue = false)]
 		public decimal? Width { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Length
 		/// </summary>
 		[DataMember(Name = "length", EmitDefaultValue = false)]
 		public decimal? Length { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Height
 		/// </summary>
 		[DataMember(Name = "height", EmitDefaultValue = false)]
 		public decimal? Height { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

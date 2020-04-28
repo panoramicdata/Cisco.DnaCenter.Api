@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "bannerMessage", EmitDefaultValue = false)]
 		public string? BannerMessage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RetainExistingBanner
 		/// </summary>
 		[DataMember(Name = "retainExistingBanner", EmitDefaultValue = false)]
 		public bool? RetainExistingBanner { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -42,51 +42,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "dhcpServer", EmitDefaultValue = false)]
 		public List<string> DhcpServer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DnsServer
 		/// </summary>
 		[DataMember(Name = "dnsServer", EmitDefaultValue = false)]
 		public UpdateNetworkRequestSettingsDnsServer DnsServer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SyslogServer
 		/// </summary>
 		[DataMember(Name = "syslogServer", EmitDefaultValue = false)]
 		public UpdateNetworkRequestSettingsSyslogServer SyslogServer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpServer
 		/// </summary>
 		[DataMember(Name = "snmpServer", EmitDefaultValue = false)]
 		public UpdateNetworkRequestSettingsSyslogServer SnmpServer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Netflowcollector
 		/// </summary>
 		[DataMember(Name = "netflowcollector", EmitDefaultValue = false)]
 		public UpdateNetworkRequestSettingsNetflowcollector Netflowcollector { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NtpServer
 		/// </summary>
 		[DataMember(Name = "ntpServer", EmitDefaultValue = false)]
 		public List<string> NtpServer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Timezone
 		/// </summary>
 		[DataMember(Name = "timezone", EmitDefaultValue = false)]
 		public string? Timezone { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MessageOfTheday
 		/// </summary>
 		[DataMember(Name = "messageOfTheday", EmitDefaultValue = false)]
 		public UpdateNetworkRequestSettingsMessageOfTheday MessageOfTheday { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkAaa
 		/// </summary>
 		[DataMember(Name = "network_aaa", EmitDefaultValue = false)]
 		public UpdateNetworkRequestSettingsNetworkAaa NetworkAaa { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientAndEndpointAaa
 		/// </summary>
 		[DataMember(Name = "clientAndEndpoint_aaa", EmitDefaultValue = false)]
 		public UpdateNetworkRequestSettingsClientAndEndpointAaa ClientAndEndpointAaa { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

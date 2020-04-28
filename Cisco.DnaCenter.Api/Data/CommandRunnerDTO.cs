@@ -32,26 +32,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "commands", EmitDefaultValue = false)]
 		public List<string> Commands { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceUuids
 		/// </summary>
 		[DataMember(Name = "deviceUuids", EmitDefaultValue = false)]
 		public List<string> DeviceUuids { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Timeout
 		/// </summary>
 		[DataMember(Name = "timeout", EmitDefaultValue = false)]
 		public int? Timeout { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

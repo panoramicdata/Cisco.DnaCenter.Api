@@ -24,6 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "qos", EmitDefaultValue = false)]
 		public List<CreateSpProfileRequestSettingsQos> Qos { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

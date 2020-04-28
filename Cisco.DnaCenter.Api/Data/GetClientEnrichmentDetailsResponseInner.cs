@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "userDetails", EmitDefaultValue = false)]
 		public GetClientEnrichmentDetailsResponseInnerUserDetails UserDetails { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectedDevice
 		/// </summary>
 		[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
 		public List<GetClientEnrichmentDetailsResponseInnerConnectedDevice> ConnectedDevice { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueDetails
 		/// </summary>
 		[DataMember(Name = "issueDetails", EmitDefaultValue = false)]
 		public GetClientEnrichmentDetailsResponseInnerIssueDetails IssueDetails { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

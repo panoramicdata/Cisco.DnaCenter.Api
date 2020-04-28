@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "virtualNetwork", EmitDefaultValue = false)]
 		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork VirtualNetwork { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

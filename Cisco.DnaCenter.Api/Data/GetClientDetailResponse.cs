@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "detail", EmitDefaultValue = false)]
 		public GetClientDetailResponseDetail Detail { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectionInfo
 		/// </summary>
 		[DataMember(Name = "connectionInfo", EmitDefaultValue = false)]
 		public GetClientDetailResponseConnectionInfo ConnectionInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Topology
 		/// </summary>
 		[DataMember(Name = "topology", EmitDefaultValue = false)]
 		public GetClientDetailResponseTopology Topology { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

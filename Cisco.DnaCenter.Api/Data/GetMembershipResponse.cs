@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "site", EmitDefaultValue = false)]
 		public GetMembershipResponseSite Site { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Device
 		/// </summary>
 		[DataMember(Name = "device", EmitDefaultValue = false)]
 		public List<GetMembershipResponseDevice> Device { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

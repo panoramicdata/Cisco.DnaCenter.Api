@@ -49,71 +49,85 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "adminStatus", EmitDefaultValue = false)]
 		public string? AdminStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InputPackets
 		/// </summary>
 		[DataMember(Name = "inputPackets", EmitDefaultValue = false)]
 		public int? InputPackets { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InputQueueCount
 		/// </summary>
 		[DataMember(Name = "inputQueueCount", EmitDefaultValue = false)]
 		public int? InputQueueCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InputQueueDrops
 		/// </summary>
 		[DataMember(Name = "inputQueueDrops", EmitDefaultValue = false)]
 		public int? InputQueueDrops { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InputQueueFlushes
 		/// </summary>
 		[DataMember(Name = "inputQueueFlushes", EmitDefaultValue = false)]
 		public int? InputQueueFlushes { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InputQueueMaxDepth
 		/// </summary>
 		[DataMember(Name = "inputQueueMaxDepth", EmitDefaultValue = false)]
 		public int? InputQueueMaxDepth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InputRatebps
 		/// </summary>
 		[DataMember(Name = "inputRatebps", EmitDefaultValue = false)]
 		public int? InputRatebps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OperationalStatus
 		/// </summary>
 		[DataMember(Name = "operationalStatus", EmitDefaultValue = false)]
 		public string? OperationalStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OutputDrop
 		/// </summary>
 		[DataMember(Name = "outputDrop", EmitDefaultValue = false)]
 		public int? OutputDrop { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OutputPackets
 		/// </summary>
 		[DataMember(Name = "outputPackets", EmitDefaultValue = false)]
 		public int? OutputPackets { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OutputQueueCount
 		/// </summary>
 		[DataMember(Name = "outputQueueCount", EmitDefaultValue = false)]
 		public int? OutputQueueCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OutputQueueDepth
 		/// </summary>
 		[DataMember(Name = "outputQueueDepth", EmitDefaultValue = false)]
 		public int? OutputQueueDepth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OutputRatebps
 		/// </summary>
 		[DataMember(Name = "outputRatebps", EmitDefaultValue = false)]
 		public int? OutputRatebps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RefreshedAt
 		/// </summary>
 		[DataMember(Name = "refreshedAt", EmitDefaultValue = false)]
 		public int? RefreshedAt { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

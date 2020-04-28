@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Role
 		/// </summary>
 		[DataMember(Name = "role", EmitDefaultValue = false)]
 		public string? Role { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RoleSource
 		/// </summary>
 		[DataMember(Name = "roleSource", EmitDefaultValue = false)]
 		public string? RoleSource { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

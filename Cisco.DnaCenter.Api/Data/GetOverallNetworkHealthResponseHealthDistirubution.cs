@@ -47,61 +47,73 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "category", EmitDefaultValue = false)]
 		public string? Category { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TotalCount
 		/// </summary>
 		[DataMember(Name = "totalCount", EmitDefaultValue = false)]
 		public int? TotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthScore
 		/// </summary>
 		[DataMember(Name = "healthScore", EmitDefaultValue = false)]
 		public int? HealthScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GoodPercentage
 		/// </summary>
 		[DataMember(Name = "goodPercentage", EmitDefaultValue = false)]
 		public int? GoodPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets BadPercentage
 		/// </summary>
 		[DataMember(Name = "badPercentage", EmitDefaultValue = false)]
 		public decimal? BadPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FairPercentage
 		/// </summary>
 		[DataMember(Name = "fairPercentage", EmitDefaultValue = false)]
 		public decimal? FairPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UnmonPercentage
 		/// </summary>
 		[DataMember(Name = "unmonPercentage", EmitDefaultValue = false)]
 		public decimal? UnmonPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GoodCount
 		/// </summary>
 		[DataMember(Name = "goodCount", EmitDefaultValue = false)]
 		public int? GoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets BadCount
 		/// </summary>
 		[DataMember(Name = "badCount", EmitDefaultValue = false)]
 		public decimal? BadCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FairCount
 		/// </summary>
 		[DataMember(Name = "fairCount", EmitDefaultValue = false)]
 		public decimal? FairCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UnmonCount
 		/// </summary>
 		[DataMember(Name = "unmonCount", EmitDefaultValue = false)]
 		public decimal? UnmonCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets KpiMetrics
 		/// </summary>
 		[DataMember(Name = "kpiMetrics", EmitDefaultValue = false)]
 		public List<Object> KpiMetrics { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

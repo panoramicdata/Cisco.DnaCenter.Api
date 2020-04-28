@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "params", EmitDefaultValue = false)]
 		public Object _Params { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateId
 		/// </summary>
 		[DataMember(Name = "templateId", EmitDefaultValue = false)]
 		public string? TemplateId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -95,181 +95,217 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CdpLevel
 		/// </summary>
 		[DataMember(Name = "cdpLevel", EmitDefaultValue = false)]
 		public int? CdpLevel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceIds
 		/// </summary>
 		[DataMember(Name = "deviceIds", EmitDefaultValue = false)]
 		public string? DeviceIds { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DiscoveryCondition
 		/// </summary>
 		[DataMember(Name = "discoveryCondition", EmitDefaultValue = false)]
 		public string? DiscoveryCondition { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DiscoveryStatus
 		/// </summary>
 		[DataMember(Name = "discoveryStatus", EmitDefaultValue = false)]
 		public string? DiscoveryStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DiscoveryType
 		/// </summary>
 		[DataMember(Name = "discoveryType", EmitDefaultValue = false)]
 		public string? DiscoveryType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnablePasswordList
 		/// </summary>
 		[DataMember(Name = "enablePasswordList", EmitDefaultValue = false)]
 		public string? EnablePasswordList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GlobalCredentialIdList
 		/// </summary>
 		[DataMember(Name = "globalCredentialIdList", EmitDefaultValue = false)]
 		public List<string> GlobalCredentialIdList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpReadCredential
 		/// </summary>
 		[DataMember(Name = "httpReadCredential", EmitDefaultValue = false)]
 		public InventoryRequestHttpReadCredential HttpReadCredential { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpWriteCredential
 		/// </summary>
 		[DataMember(Name = "httpWriteCredential", EmitDefaultValue = false)]
 		public InventoryRequestHttpReadCredential HttpWriteCredential { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpAddressList
 		/// </summary>
 		[DataMember(Name = "ipAddressList", EmitDefaultValue = false)]
 		public string? IpAddressList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpFilterList
 		/// </summary>
 		[DataMember(Name = "ipFilterList", EmitDefaultValue = false)]
 		public string? IpFilterList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsAutoCdp
 		/// </summary>
 		[DataMember(Name = "isAutoCdp", EmitDefaultValue = false)]
 		public bool? IsAutoCdp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LldpLevel
 		/// </summary>
 		[DataMember(Name = "lldpLevel", EmitDefaultValue = false)]
 		public int? LldpLevel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetconfPort
 		/// </summary>
 		[DataMember(Name = "netconfPort", EmitDefaultValue = false)]
 		public string? NetconfPort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumDevices
 		/// </summary>
 		[DataMember(Name = "numDevices", EmitDefaultValue = false)]
 		public int? NumDevices { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentDiscoveryId
 		/// </summary>
 		[DataMember(Name = "parentDiscoveryId", EmitDefaultValue = false)]
 		public string? ParentDiscoveryId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PasswordList
 		/// </summary>
 		[DataMember(Name = "passwordList", EmitDefaultValue = false)]
 		public string? PasswordList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PreferredMgmtIPMethod
 		/// </summary>
 		[DataMember(Name = "preferredMgmtIPMethod", EmitDefaultValue = false)]
 		public string? PreferredManagementIpMethod { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProtocolOrder
 		/// </summary>
 		[DataMember(Name = "protocolOrder", EmitDefaultValue = false)]
 		public string? ProtocolOrder { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RetryCount
 		/// </summary>
 		[DataMember(Name = "retryCount", EmitDefaultValue = false)]
 		public int? RetryCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpAuthPassphrase
 		/// </summary>
 		[DataMember(Name = "snmpAuthPassphrase", EmitDefaultValue = false)]
 		public string? SnmpAuthPassphrase { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpAuthProtocol
 		/// </summary>
 		[DataMember(Name = "snmpAuthProtocol", EmitDefaultValue = false)]
 		public string? SnmpAuthProtocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpMode
 		/// </summary>
 		[DataMember(Name = "snmpMode", EmitDefaultValue = false)]
 		public string? SnmpMode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpPrivPassphrase
 		/// </summary>
 		[DataMember(Name = "snmpPrivPassphrase", EmitDefaultValue = false)]
 		public string? SnmpPrivPassphrase { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpPrivProtocol
 		/// </summary>
 		[DataMember(Name = "snmpPrivProtocol", EmitDefaultValue = false)]
 		public string? SnmpPrivProtocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpRoCommunity
 		/// </summary>
 		[DataMember(Name = "snmpRoCommunity", EmitDefaultValue = false)]
 		public string? SnmpRoCommunity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpRoCommunityDesc
 		/// </summary>
 		[DataMember(Name = "snmpRoCommunityDesc", EmitDefaultValue = false)]
 		public string? SnmpRoCommunityDesc { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpRwCommunity
 		/// </summary>
 		[DataMember(Name = "snmpRwCommunity", EmitDefaultValue = false)]
 		public string? SnmpRwCommunity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpRwCommunityDesc
 		/// </summary>
 		[DataMember(Name = "snmpRwCommunityDesc", EmitDefaultValue = false)]
 		public string? SnmpRwCommunityDesc { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpUserName
 		/// </summary>
 		[DataMember(Name = "snmpUserName", EmitDefaultValue = false)]
 		public string? SnmpUserName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TimeOut
 		/// </summary>
 		[DataMember(Name = "timeOut", EmitDefaultValue = false)]
 		public int? TimeOut { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UpdateMgmtIp
 		/// </summary>
 		[DataMember(Name = "updateMgmtIp", EmitDefaultValue = false)]
 		public bool? UpdateMgmtIp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UserNameList
 		/// </summary>
 		[DataMember(Name = "userNameList", EmitDefaultValue = false)]
 		public string? UserNameList { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

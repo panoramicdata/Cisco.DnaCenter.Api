@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "profileName", EmitDefaultValue = false)]
 		public string? ProfileName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Model
 		/// </summary>
 		[DataMember(Name = "model", EmitDefaultValue = false)]
 		public string? Model { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WanProvider
 		/// </summary>
 		[DataMember(Name = "wanProvider", EmitDefaultValue = false)]
 		public string? WanProvider { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OldProfileName
 		/// </summary>
 		[DataMember(Name = "oldProfileName", EmitDefaultValue = false)]
 		public string? OldProfileName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

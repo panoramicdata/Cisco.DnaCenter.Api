@@ -37,41 +37,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "parentProfile", EmitDefaultValue = false)]
 		public string? ParentProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RadioChannels
 		/// </summary>
 		[DataMember(Name = "radioChannels", EmitDefaultValue = false)]
 		public string? RadioChannels { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DataRates
 		/// </summary>
 		[DataMember(Name = "dataRates", EmitDefaultValue = false)]
 		public string? DataRates { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MandatoryDataRates
 		/// </summary>
 		[DataMember(Name = "mandatoryDataRates", EmitDefaultValue = false)]
 		public string? MandatoryDataRates { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PowerThresholdV1
 		/// </summary>
 		[DataMember(Name = "powerThresholdV1", EmitDefaultValue = false)]
 		public decimal? PowerThresholdV1 { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RxSopThreshold
 		/// </summary>
 		[DataMember(Name = "rxSopThreshold", EmitDefaultValue = false)]
 		public string? RxSopThreshold { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MinPowerLevel
 		/// </summary>
 		[DataMember(Name = "minPowerLevel", EmitDefaultValue = false)]
 		public decimal? MinPowerLevel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MaxPowerLevel
 		/// </summary>
 		[DataMember(Name = "maxPowerLevel", EmitDefaultValue = false)]
 		public decimal? MaxPowerLevel { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

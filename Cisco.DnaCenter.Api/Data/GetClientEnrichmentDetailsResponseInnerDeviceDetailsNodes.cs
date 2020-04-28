@@ -56,86 +56,103 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "role", EmitDefaultValue = false)]
 		public string? Role { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceType
 		/// </summary>
 		[DataMember(Name = "deviceType", EmitDefaultValue = false)]
 		public Object DeviceType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PlatformId
 		/// </summary>
 		[DataMember(Name = "platformId", EmitDefaultValue = false)]
 		public Object PlatformId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Family
 		/// </summary>
 		[DataMember(Name = "family", EmitDefaultValue = false)]
 		public Object Family { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ip
 		/// </summary>
 		[DataMember(Name = "ip", EmitDefaultValue = false)]
 		public Object Ip { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareVersion
 		/// </summary>
 		[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
 		public Object SoftwareVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UserId
 		/// </summary>
 		[DataMember(Name = "userId", EmitDefaultValue = false)]
 		public Object UserId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NodeType
 		/// </summary>
 		[DataMember(Name = "nodeType", EmitDefaultValue = false)]
 		public Object NodeType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RadioFrequency
 		/// </summary>
 		[DataMember(Name = "radioFrequency", EmitDefaultValue = false)]
 		public Object RadioFrequency { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Clients
 		/// </summary>
 		[DataMember(Name = "clients", EmitDefaultValue = false)]
 		public decimal? Clients { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Count
 		/// </summary>
 		[DataMember(Name = "count", EmitDefaultValue = false)]
 		public Object Count { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthScore
 		/// </summary>
 		[DataMember(Name = "healthScore", EmitDefaultValue = false)]
 		public Object HealthScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Level
 		/// </summary>
 		[DataMember(Name = "level", EmitDefaultValue = false)]
 		public decimal? Level { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FabricGroup
 		/// </summary>
 		[DataMember(Name = "fabricGroup", EmitDefaultValue = false)]
 		public Object FabricGroup { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

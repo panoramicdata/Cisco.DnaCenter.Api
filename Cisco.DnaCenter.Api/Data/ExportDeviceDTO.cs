@@ -37,6 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "operationEnum", EmitDefaultValue = false)]
 		public OperationEnumEnum? OperationEnum { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ExportDeviceDto" /> class.
 		/// </summary>
@@ -59,21 +60,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deviceUuids", EmitDefaultValue = false)]
 		public List<string> DeviceUuids { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Parameters
 		/// </summary>
 		[DataMember(Name = "parameters", EmitDefaultValue = false)]
 		public List<string> Parameters { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Password
 		/// </summary>
 		[DataMember(Name = "password", EmitDefaultValue = false)]
 		public string? Password { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

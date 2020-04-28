@@ -40,46 +40,55 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "state", EmitDefaultValue = false)]
 		public string? State { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CurrWorkItemIdx
 		/// </summary>
 		[DataMember(Name = "currWorkItemIdx", EmitDefaultValue = false)]
 		public decimal? CurrWorkItemIdx { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TaskSeqNo
 		/// </summary>
 		[DataMember(Name = "taskSeqNo", EmitDefaultValue = false)]
 		public decimal? TaskSeqNo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public decimal? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public decimal? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WorkItemList
 		/// </summary>
 		[DataMember(Name = "workItemList", EmitDefaultValue = false)]
 		public List<DeviceSystemResetWorkflowWorkItemList> WorkItemList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TimeTaken
 		/// </summary>
 		[DataMember(Name = "timeTaken", EmitDefaultValue = false)]
 		public decimal? TimeTaken { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

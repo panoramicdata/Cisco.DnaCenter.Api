@@ -39,46 +39,55 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DefaultRfProfile
 		/// </summary>
 		[DataMember(Name = "defaultRfProfile", EmitDefaultValue = false)]
 		public bool? DefaultRfProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableRadioTypeA
 		/// </summary>
 		[DataMember(Name = "enableRadioTypeA", EmitDefaultValue = false)]
 		public bool? EnableRadioTypeA { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableRadioTypeB
 		/// </summary>
 		[DataMember(Name = "enableRadioTypeB", EmitDefaultValue = false)]
 		public bool? EnableRadioTypeB { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ChannelWidth
 		/// </summary>
 		[DataMember(Name = "channelWidth", EmitDefaultValue = false)]
 		public string? ChannelWidth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableCustom
 		/// </summary>
 		[DataMember(Name = "enableCustom", EmitDefaultValue = false)]
 		public bool? EnableCustom { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableBrownField
 		/// </summary>
 		[DataMember(Name = "enableBrownField", EmitDefaultValue = false)]
 		public bool? EnableBrownField { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RadioTypeAProperties
 		/// </summary>
 		[DataMember(Name = "radioTypeAProperties", EmitDefaultValue = false)]
 		public CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeAProperties { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RadioTypeBProperties
 		/// </summary>
 		[DataMember(Name = "radioTypeBProperties", EmitDefaultValue = false)]
 		public CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeBProperties { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -37,6 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "wirelessLicenseInfo", EmitDefaultValue = false)]
 		public WirelessLicenseInfoEnum? WirelessLicenseInfo { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="WirelessInfoResultResponse" /> class.
 		/// </summary>
@@ -73,56 +74,67 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "adminEnabledPorts", EmitDefaultValue = false)]
 		public List<int?> AdminEnabledPorts { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApGroupName
 		/// </summary>
 		[DataMember(Name = "apGroupName", EmitDefaultValue = false)]
 		public string? ApGroupName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceId
 		/// </summary>
 		[DataMember(Name = "deviceId", EmitDefaultValue = false)]
 		public string? DeviceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EthMacAddress
 		/// </summary>
 		[DataMember(Name = "ethMacAddress", EmitDefaultValue = false)]
 		public string? EthMacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FlexGroupName
 		/// </summary>
 		[DataMember(Name = "flexGroupName", EmitDefaultValue = false)]
 		public string? FlexGroupName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceUuid
 		/// </summary>
 		[DataMember(Name = "instanceUuid", EmitDefaultValue = false)]
 		public string? InstanceUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LagModeEnabled
 		/// </summary>
 		[DataMember(Name = "lagModeEnabled", EmitDefaultValue = false)]
 		public bool? LagModeEnabled { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetconfEnabled
 		/// </summary>
 		[DataMember(Name = "netconfEnabled", EmitDefaultValue = false)]
 		public bool? NetconfEnabled { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WirelessPackageInstalled
 		/// </summary>
 		[DataMember(Name = "wirelessPackageInstalled", EmitDefaultValue = false)]
 		public bool? WirelessPackageInstalled { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

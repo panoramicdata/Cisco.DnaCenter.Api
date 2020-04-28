@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "config", EmitDefaultValue = false)]
 		public string? Config { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

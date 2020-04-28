@@ -24,6 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ippool", EmitDefaultValue = false)]
 		public List<CreateGlobalPoolRequestSettingsIppool> Ippool { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -45,56 +45,67 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "_id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceInfo
 		/// </summary>
 		[DataMember(Name = "deviceInfo", EmitDefaultValue = false)]
 		public DeviceDeviceInfo DeviceInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SystemResetWorkflow
 		/// </summary>
 		[DataMember(Name = "systemResetWorkflow", EmitDefaultValue = false)]
 		public DeviceSystemResetWorkflow SystemResetWorkflow { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SystemWorkflow
 		/// </summary>
 		[DataMember(Name = "systemWorkflow", EmitDefaultValue = false)]
 		public DeviceSystemResetWorkflow SystemWorkflow { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Workflow
 		/// </summary>
 		[DataMember(Name = "workflow", EmitDefaultValue = false)]
 		public DeviceSystemResetWorkflow Workflow { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RunSummaryList
 		/// </summary>
 		[DataMember(Name = "runSummaryList", EmitDefaultValue = false)]
 		public List<DeviceRunSummaryList> RunSummaryList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WorkflowParameters
 		/// </summary>
 		[DataMember(Name = "workflowParameters", EmitDefaultValue = false)]
 		public DeviceWorkflowParameters WorkflowParameters { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DayZeroConfig
 		/// </summary>
 		[DataMember(Name = "dayZeroConfig", EmitDefaultValue = false)]
 		public DeviceDayZeroConfig DayZeroConfig { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DayZeroConfigPreview
 		/// </summary>
 		[DataMember(Name = "dayZeroConfigPreview", EmitDefaultValue = false)]
 		public Object DayZeroConfigPreview { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public decimal? _Version { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TenantId
 		/// </summary>
 		[DataMember(Name = "tenantId", EmitDefaultValue = false)]
 		public string? TenantId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

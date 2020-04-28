@@ -52,76 +52,91 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "instanceId", EmitDefaultValue = false)]
 		public string? InstanceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EventId
 		/// </summary>
 		[DataMember(Name = "eventId", EmitDefaultValue = false)]
 		public string? EventId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Namespace
 		/// </summary>
 		[DataMember(Name = "namespace", EmitDefaultValue = false)]
 		public string? _Namespace { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Category
 		/// </summary>
 		[DataMember(Name = "category", EmitDefaultValue = false)]
 		public string? Category { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Severity
 		/// </summary>
 		[DataMember(Name = "severity", EmitDefaultValue = false)]
 		public decimal? Severity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Timestamp
 		/// </summary>
 		[DataMember(Name = "timestamp", EmitDefaultValue = false)]
 		public decimal? Timestamp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Domain
 		/// </summary>
 		[DataMember(Name = "domain", EmitDefaultValue = false)]
 		public string? Domain { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SubDomain
 		/// </summary>
 		[DataMember(Name = "subDomain", EmitDefaultValue = false)]
 		public string? SubDomain { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Source
 		/// </summary>
 		[DataMember(Name = "source", EmitDefaultValue = false)]
 		public string? Source { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Context
 		/// </summary>
 		[DataMember(Name = "context", EmitDefaultValue = false)]
 		public string? Context { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Details
 		/// </summary>
 		[DataMember(Name = "details", EmitDefaultValue = false)]
 		public Object Details { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TenantId
 		/// </summary>
 		[DataMember(Name = "tenantId", EmitDefaultValue = false)]
 		public string? TenantId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

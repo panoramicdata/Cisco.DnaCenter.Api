@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "provisionDetails", EmitDefaultValue = false)]
 		public GetDeviceDetailsByIpResponseProvisionDetails ProvisionDetails { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ipAddresses", EmitDefaultValue = false)]
 		public List<string> IpAddresses { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConfigureDnacIP
 		/// </summary>
 		[DataMember(Name = "configureDnacIP", EmitDefaultValue = false)]
 		public bool? ConfigureDnacIp { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

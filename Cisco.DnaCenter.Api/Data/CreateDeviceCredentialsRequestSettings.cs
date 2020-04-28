@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "cliCredential", EmitDefaultValue = false)]
 		public List<CreateDeviceCredentialsRequestSettingsCliCredential> CliCredential { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpV2cRead
 		/// </summary>
 		[DataMember(Name = "snmpV2cRead", EmitDefaultValue = false)]
 		public List<CreateDeviceCredentialsRequestSettingsSnmpV2cRead> SnmpV2cRead { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpV2cWrite
 		/// </summary>
 		[DataMember(Name = "snmpV2cWrite", EmitDefaultValue = false)]
 		public List<CreateDeviceCredentialsRequestSettingsSnmpV2cWrite> SnmpV2cWrite { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpV3
 		/// </summary>
 		[DataMember(Name = "snmpV3", EmitDefaultValue = false)]
 		public List<CreateDeviceCredentialsRequestSettingsSnmpV3> SnmpV3 { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpsRead
 		/// </summary>
 		[DataMember(Name = "httpsRead", EmitDefaultValue = false)]
 		public List<CreateDeviceCredentialsRequestSettingsHttpsRead> HttpsRead { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpsWrite
 		/// </summary>
 		[DataMember(Name = "httpsWrite", EmitDefaultValue = false)]
 		public List<CreateDeviceCredentialsRequestSettingsHttpsRead> HttpsWrite { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

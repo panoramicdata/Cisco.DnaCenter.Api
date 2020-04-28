@@ -42,51 +42,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deploymentId", EmitDefaultValue = false)]
 		public string? DeploymentId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeploymentName
 		/// </summary>
 		[DataMember(Name = "deploymentName", EmitDefaultValue = false)]
 		public string? DeploymentName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Devices
 		/// </summary>
 		[DataMember(Name = "devices", EmitDefaultValue = false)]
 		public List<TemplateDeploymentStatusDtoDevices> Devices { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Duration
 		/// </summary>
 		[DataMember(Name = "duration", EmitDefaultValue = false)]
 		public string? Duration { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public string? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectName
 		/// </summary>
 		[DataMember(Name = "projectName", EmitDefaultValue = false)]
 		public string? ProjectName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public string? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Status
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateName
 		/// </summary>
 		[DataMember(Name = "templateName", EmitDefaultValue = false)]
 		public string? TemplateName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateVersion
 		/// </summary>
 		[DataMember(Name = "templateVersion", EmitDefaultValue = false)]
 		public string? TemplateVersion { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

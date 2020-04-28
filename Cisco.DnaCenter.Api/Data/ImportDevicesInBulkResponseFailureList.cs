@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "index", EmitDefaultValue = false)]
 		public decimal? Index { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SerialNum
 		/// </summary>
 		[DataMember(Name = "serialNum", EmitDefaultValue = false)]
 		public string? SerialNum { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Msg
 		/// </summary>
 		[DataMember(Name = "msg", EmitDefaultValue = false)]
 		public string? Msg { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -40,46 +40,55 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "configFileUrl", EmitDefaultValue = false)]
 		public string? ConfigFileUrl { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConfigId
 		/// </summary>
 		[DataMember(Name = "configId", EmitDefaultValue = false)]
 		public string? ConfigId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceClaimList
 		/// </summary>
 		[DataMember(Name = "deviceClaimList", EmitDefaultValue = false)]
 		public List<ResetRequestDeviceResetList> DeviceClaimList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FileServiceId
 		/// </summary>
 		[DataMember(Name = "fileServiceId", EmitDefaultValue = false)]
 		public string? FileServiceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageId
 		/// </summary>
 		[DataMember(Name = "imageId", EmitDefaultValue = false)]
 		public string? ImageId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageUrl
 		/// </summary>
 		[DataMember(Name = "imageUrl", EmitDefaultValue = false)]
 		public string? ImageUrl { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PopulateInventory
 		/// </summary>
 		[DataMember(Name = "populateInventory", EmitDefaultValue = false)]
 		public bool? PopulateInventory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectId
 		/// </summary>
 		[DataMember(Name = "projectId", EmitDefaultValue = false)]
 		public string? ProjectId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WorkflowId
 		/// </summary>
 		[DataMember(Name = "workflowId", EmitDefaultValue = false)]
 		public string? WorkflowId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

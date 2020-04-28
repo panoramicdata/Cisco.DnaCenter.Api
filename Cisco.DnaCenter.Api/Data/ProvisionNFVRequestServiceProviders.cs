@@ -30,6 +30,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "linkType", EmitDefaultValue = false)]
 		public LinkTypeEnum? LinkType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServiceProviders" /> class.
 		/// </summary>
@@ -50,16 +51,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "serviceProvider", EmitDefaultValue = false)]
 		public string? ServiceProvider { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Connect
 		/// </summary>
 		[DataMember(Name = "connect", EmitDefaultValue = false)]
 		public bool? Connect { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DefaultGateway
 		/// </summary>
 		[DataMember(Name = "defaultGateway", EmitDefaultValue = false)]
 		public bool? DefaultGateway { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

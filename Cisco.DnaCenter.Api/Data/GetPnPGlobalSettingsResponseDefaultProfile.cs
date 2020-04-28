@@ -32,26 +32,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "fqdnAddresses", EmitDefaultValue = false)]
 		public List<string> FqdnAddresses { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Proxy
 		/// </summary>
 		[DataMember(Name = "proxy", EmitDefaultValue = false)]
 		public bool? Proxy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Cert
 		/// </summary>
 		[DataMember(Name = "cert", EmitDefaultValue = false)]
 		public string? Cert { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpAddresses
 		/// </summary>
 		[DataMember(Name = "ipAddresses", EmitDefaultValue = false)]
 		public List<string> IpAddresses { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Port
 		/// </summary>
 		[DataMember(Name = "port", EmitDefaultValue = false)]
 		public decimal? Port { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

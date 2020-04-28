@@ -37,6 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ssidType", EmitDefaultValue = false)]
 		public SsidTypeEnum? SsidType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateAndProvisionSsidRequest" /> class.
 		/// </summary>
@@ -59,21 +60,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "managedAPLocations", EmitDefaultValue = false)]
 		public List<string> ManagedAPLocations { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SsidDetails
 		/// </summary>
 		[DataMember(Name = "ssidDetails", EmitDefaultValue = false)]
 		public CreateAndProvisionSsidRequestSsidDetails SsidDetails { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableFabric
 		/// </summary>
 		[DataMember(Name = "enableFabric", EmitDefaultValue = false)]
 		public bool? EnableFabric { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FlexConnect
 		/// </summary>
 		[DataMember(Name = "flexConnect", EmitDefaultValue = false)]
 		public GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "physicalInterface", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterface PhysicalInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VirtualInterface
 		/// </summary>
 		[DataMember(Name = "virtualInterface", EmitDefaultValue = false)]
 		public List<PathResponseResultResponseEgressPhysicalInterface> VirtualInterface { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

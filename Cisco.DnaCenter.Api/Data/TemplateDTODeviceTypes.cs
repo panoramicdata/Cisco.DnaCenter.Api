@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "productFamily", EmitDefaultValue = false)]
 		public string? ProductFamily { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProductSeries
 		/// </summary>
 		[DataMember(Name = "productSeries", EmitDefaultValue = false)]
 		public string? ProductSeries { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProductType
 		/// </summary>
 		[DataMember(Name = "productType", EmitDefaultValue = false)]
 		public string? ProductType { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

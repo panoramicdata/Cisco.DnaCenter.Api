@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "supportsStackWorkflows", EmitDefaultValue = false)]
 		public bool? SupportsStackWorkflows { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsFullRing
 		/// </summary>
 		[DataMember(Name = "isFullRing", EmitDefaultValue = false)]
 		public bool? IsFullRing { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StackMemberList
 		/// </summary>
 		[DataMember(Name = "stackMemberList", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoStackInfoStackMemberList> StackMemberList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StackRingProtocol
 		/// </summary>
 		[DataMember(Name = "stackRingProtocol", EmitDefaultValue = false)]
 		public string? StackRingProtocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ValidLicenseLevels
 		/// </summary>
 		[DataMember(Name = "validLicenseLevels", EmitDefaultValue = false)]
 		public List<string> ValidLicenseLevels { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TotalMemberCount
 		/// </summary>
 		[DataMember(Name = "totalMemberCount", EmitDefaultValue = false)]
 		public decimal? TotalMemberCount { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

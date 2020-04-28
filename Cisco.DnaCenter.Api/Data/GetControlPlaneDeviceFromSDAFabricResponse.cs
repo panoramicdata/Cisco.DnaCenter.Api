@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Roles
 		/// </summary>
 		[DataMember(Name = "roles", EmitDefaultValue = false)]
 		public List<string> Roles { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceManagementIpAddress
 		/// </summary>
 		[DataMember(Name = "deviceManagementIpAddress", EmitDefaultValue = false)]
 		public string? DeviceManagementIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteHierarchy
 		/// </summary>
 		[DataMember(Name = "siteHierarchy", EmitDefaultValue = false)]
 		public string? SiteHierarchy { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -41,51 +41,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "classMapName", EmitDefaultValue = false)]
 		public string? ClassMapName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DropRate
 		/// </summary>
 		[DataMember(Name = "dropRate", EmitDefaultValue = false)]
 		public int? DropRate { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumBytes
 		/// </summary>
 		[DataMember(Name = "numBytes", EmitDefaultValue = false)]
 		public int? NumBytes { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumPackets
 		/// </summary>
 		[DataMember(Name = "numPackets", EmitDefaultValue = false)]
 		public int? NumPackets { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OfferedRate
 		/// </summary>
 		[DataMember(Name = "offeredRate", EmitDefaultValue = false)]
 		public int? OfferedRate { get; set; }
+
 		/// <summary>
 		/// Gets or Sets QueueBandwidthbps
 		/// </summary>
 		[DataMember(Name = "queueBandwidthbps", EmitDefaultValue = false)]
 		public string? QueueBandwidthbps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets QueueDepth
 		/// </summary>
 		[DataMember(Name = "queueDepth", EmitDefaultValue = false)]
 		public int? QueueDepth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets QueueNoBufferDrops
 		/// </summary>
 		[DataMember(Name = "queueNoBufferDrops", EmitDefaultValue = false)]
 		public int? QueueNoBufferDrops { get; set; }
+
 		/// <summary>
 		/// Gets or Sets QueueTotalDrops
 		/// </summary>
 		[DataMember(Name = "queueTotalDrops", EmitDefaultValue = false)]
 		public int? QueueTotalDrops { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RefreshedAt
 		/// </summary>
 		[DataMember(Name = "refreshedAt", EmitDefaultValue = false)]
 		public int? RefreshedAt { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

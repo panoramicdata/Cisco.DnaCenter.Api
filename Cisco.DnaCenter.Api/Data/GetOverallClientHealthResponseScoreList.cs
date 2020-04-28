@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "scoreCategory", EmitDefaultValue = false)]
 		public GetOverallClientHealthResponseScoreCategory ScoreCategory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ScoreValue
 		/// </summary>
 		[DataMember(Name = "scoreValue", EmitDefaultValue = false)]
 		public int? ScoreValue { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientCount
 		/// </summary>
 		[DataMember(Name = "clientCount", EmitDefaultValue = false)]
 		public int? ClientCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientUniqueCount
 		/// </summary>
 		[DataMember(Name = "clientUniqueCount", EmitDefaultValue = false)]
 		public Object ClientUniqueCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Starttime
 		/// </summary>
 		[DataMember(Name = "starttime", EmitDefaultValue = false)]
 		public int? Starttime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Endtime
 		/// </summary>
 		[DataMember(Name = "endtime", EmitDefaultValue = false)]
 		public int? Endtime { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

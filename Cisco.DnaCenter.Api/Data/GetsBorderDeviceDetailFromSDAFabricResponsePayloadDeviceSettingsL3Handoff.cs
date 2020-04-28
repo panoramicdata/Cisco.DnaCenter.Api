@@ -41,51 +41,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceId
 		/// </summary>
 		[DataMember(Name = "instanceId", EmitDefaultValue = false)]
 		public int? InstanceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeployPending
 		/// </summary>
 		[DataMember(Name = "deployPending", EmitDefaultValue = false)]
 		public string? DeployPending { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceVersion
 		/// </summary>
 		[DataMember(Name = "instanceVersion", EmitDefaultValue = false)]
 		public decimal? InstanceVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocalIpAddress
 		/// </summary>
 		[DataMember(Name = "localIpAddress", EmitDefaultValue = false)]
 		public string? LocalIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RemoteIpAddress
 		/// </summary>
 		[DataMember(Name = "remoteIpAddress", EmitDefaultValue = false)]
 		public string? RemoteIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VlanId
 		/// </summary>
 		[DataMember(Name = "vlanId", EmitDefaultValue = false)]
 		public int? VlanId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VirtualNetwork
 		/// </summary>
 		[DataMember(Name = "virtualNetwork", EmitDefaultValue = false)]
 		public EditApplicationRequestInnerApplicationSet VirtualNetwork { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

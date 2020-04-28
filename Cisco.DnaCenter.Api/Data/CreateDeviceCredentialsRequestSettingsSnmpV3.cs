@@ -82,16 +82,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "privacyType", EmitDefaultValue = false)]
 		public PrivacyTypeEnum? PrivacyType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthType
 		/// </summary>
 		[DataMember(Name = "authType", EmitDefaultValue = false)]
 		public AuthTypeEnum? AuthType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpMode
 		/// </summary>
 		[DataMember(Name = "snmpMode", EmitDefaultValue = false)]
 		public SnmpModeEnum? SnmpMode { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateDeviceCredentialsRequestSettingsSnmpV3" /> class.
 		/// </summary>
@@ -118,21 +121,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Username
 		/// </summary>
 		[DataMember(Name = "username", EmitDefaultValue = false)]
 		public string? Username { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PrivacyPassword
 		/// </summary>
 		[DataMember(Name = "privacyPassword", EmitDefaultValue = false)]
 		public string? PrivacyPassword { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthPassword
 		/// </summary>
 		[DataMember(Name = "authPassword", EmitDefaultValue = false)]
 		public string? AuthPassword { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

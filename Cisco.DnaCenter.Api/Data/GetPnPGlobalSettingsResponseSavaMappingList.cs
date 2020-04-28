@@ -47,66 +47,79 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "syncStatus", EmitDefaultValue = false)]
 		public string? SyncStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SyncStartTime
 		/// </summary>
 		[DataMember(Name = "syncStartTime", EmitDefaultValue = false)]
 		public decimal? SyncStartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SyncResult
 		/// </summary>
 		[DataMember(Name = "syncResult", EmitDefaultValue = false)]
 		public GetSyncResultForVirtualAccountResponseSyncResult SyncResult { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastSync
 		/// </summary>
 		[DataMember(Name = "lastSync", EmitDefaultValue = false)]
 		public decimal? LastSync { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TenantId
 		/// </summary>
 		[DataMember(Name = "tenantId", EmitDefaultValue = false)]
 		public string? TenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Profile
 		/// </summary>
 		[DataMember(Name = "profile", EmitDefaultValue = false)]
 		public GetPnpGlobalSettingsResponseProfile Profile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Token
 		/// </summary>
 		[DataMember(Name = "token", EmitDefaultValue = false)]
 		public string? Token { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Expiry
 		/// </summary>
 		[DataMember(Name = "expiry", EmitDefaultValue = false)]
 		public decimal? Expiry { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CcoUser
 		/// </summary>
 		[DataMember(Name = "ccoUser", EmitDefaultValue = false)]
 		public string? CcoUser { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SmartAccountId
 		/// </summary>
 		[DataMember(Name = "smartAccountId", EmitDefaultValue = false)]
 		public string? SmartAccountId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VirtualAccountId
 		/// </summary>
 		[DataMember(Name = "virtualAccountId", EmitDefaultValue = false)]
 		public string? VirtualAccountId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AutoSyncPeriod
 		/// </summary>
 		[DataMember(Name = "autoSyncPeriod", EmitDefaultValue = false)]
 		public decimal? AutoSyncPeriod { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SyncResultStr
 		/// </summary>
 		[DataMember(Name = "syncResultStr", EmitDefaultValue = false)]
 		public string? SyncResultStr { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

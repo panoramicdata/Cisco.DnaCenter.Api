@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deviceUuid", EmitDefaultValue = false)]
 		public string? DeviceUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageUuid
 		/// </summary>
 		[DataMember(Name = "imageUuid", EmitDefaultValue = false)]
 		public string? ImageUuid { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

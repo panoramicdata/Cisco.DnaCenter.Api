@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "RfProfile", EmitDefaultValue = false)]
 		public string? RfProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteId
 		/// </summary>
 		[DataMember(Name = "siteId", EmitDefaultValue = false)]
 		public string? SiteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceName
 		/// </summary>
 		[DataMember(Name = "deviceName", EmitDefaultValue = false)]
 		public string? DeviceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CustomFlexGroupName
 		/// </summary>
 		[DataMember(Name = "customFlexGroupName", EmitDefaultValue = false)]
 		public List<string> CustomFlexGroupName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CustomApGroupName
 		/// </summary>
 		[DataMember(Name = "customApGroupName", EmitDefaultValue = false)]
 		public string? CustomApGroupName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

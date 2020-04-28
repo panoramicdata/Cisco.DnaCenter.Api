@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "configParameters", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoHttpHeaders> ConfigParameters { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConfigId
 		/// </summary>
 		[DataMember(Name = "configId", EmitDefaultValue = false)]
 		public string? ConfigId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

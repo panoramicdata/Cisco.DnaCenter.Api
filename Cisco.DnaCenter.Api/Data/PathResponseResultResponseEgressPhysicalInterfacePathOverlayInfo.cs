@@ -37,41 +37,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "controlPlane", EmitDefaultValue = false)]
 		public string? ControlPlane { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DataPacketEncapsulation
 		/// </summary>
 		[DataMember(Name = "dataPacketEncapsulation", EmitDefaultValue = false)]
 		public string? DataPacketEncapsulation { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DestIp
 		/// </summary>
 		[DataMember(Name = "destIp", EmitDefaultValue = false)]
 		public string? DestIp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DestPort
 		/// </summary>
 		[DataMember(Name = "destPort", EmitDefaultValue = false)]
 		public string? DestPort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SourceIp
 		/// </summary>
 		[DataMember(Name = "sourceIp", EmitDefaultValue = false)]
 		public string? SourceIp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SourcePort
 		/// </summary>
 		[DataMember(Name = "sourcePort", EmitDefaultValue = false)]
 		public string? SourcePort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VxlanInfo
 		/// </summary>
 		[DataMember(Name = "vxlanInfo", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterfaceVxlanInfo VxlanInfo { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

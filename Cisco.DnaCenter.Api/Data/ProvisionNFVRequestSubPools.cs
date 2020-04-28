@@ -54,6 +54,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNFVRequestSubPools" /> class.
 		/// </summary>
@@ -76,21 +77,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpSubnet
 		/// </summary>
 		[DataMember(Name = "ipSubnet", EmitDefaultValue = false)]
 		public string? IpSubnet { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Gateway
 		/// </summary>
 		[DataMember(Name = "gateway", EmitDefaultValue = false)]
 		public string? Gateway { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentPoolName
 		/// </summary>
 		[DataMember(Name = "parentPoolName", EmitDefaultValue = false)]
 		public string? ParentPoolName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -31,21 +31,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "jsonArrayResponse", EmitDefaultValue = false)]
 		public List<Object> JsonArrayResponse { get; set; }
+
 		/// <summary>
 		/// Gets or Sets JsonResponse
 		/// </summary>
 		[DataMember(Name = "jsonResponse", EmitDefaultValue = false)]
 		public Object JsonResponse { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Message
 		/// </summary>
 		[DataMember(Name = "message", EmitDefaultValue = false)]
 		public string? Message { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StatusCode
 		/// </summary>
 		[DataMember(Name = "statusCode", EmitDefaultValue = false)]
 		public decimal? StatusCode { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

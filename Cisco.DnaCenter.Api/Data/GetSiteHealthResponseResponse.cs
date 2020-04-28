@@ -106,211 +106,253 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "siteName", EmitDefaultValue = false)]
 		public string? SiteName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteId
 		/// </summary>
 		[DataMember(Name = "siteId", EmitDefaultValue = false)]
 		public string? SiteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentSiteId
 		/// </summary>
 		[DataMember(Name = "parentSiteId", EmitDefaultValue = false)]
 		public string? ParentSiteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentSiteName
 		/// </summary>
 		[DataMember(Name = "parentSiteName", EmitDefaultValue = false)]
 		public string? ParentSiteName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteType
 		/// </summary>
 		[DataMember(Name = "siteType", EmitDefaultValue = false)]
 		public string? SiteType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Latitude
 		/// </summary>
 		[DataMember(Name = "latitude", EmitDefaultValue = false)]
 		public Object Latitude { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Longitude
 		/// </summary>
 		[DataMember(Name = "longitude", EmitDefaultValue = false)]
 		public Object Longitude { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthyNetworkDevicePercentage
 		/// </summary>
 		[DataMember(Name = "healthyNetworkDevicePercentage", EmitDefaultValue = false)]
 		public string? HealthyNetworkDevicePercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthyClientsPercentage
 		/// </summary>
 		[DataMember(Name = "healthyClientsPercentage", EmitDefaultValue = false)]
 		public string? HealthyClientsPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientHealthWired
 		/// </summary>
 		[DataMember(Name = "clientHealthWired", EmitDefaultValue = false)]
 		public string? ClientHealthWired { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientHealthWireless
 		/// </summary>
 		[DataMember(Name = "clientHealthWireless", EmitDefaultValue = false)]
 		public Object ClientHealthWireless { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumberOfClients
 		/// </summary>
 		[DataMember(Name = "numberOfClients", EmitDefaultValue = false)]
 		public string? NumberOfClients { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientNumberOfIssues
 		/// </summary>
 		[DataMember(Name = "clientNumberOfIssues", EmitDefaultValue = false)]
 		public Object ClientNumberOfIssues { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkNumberOfIssues
 		/// </summary>
 		[DataMember(Name = "networkNumberOfIssues", EmitDefaultValue = false)]
 		public Object NetworkNumberOfIssues { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumberOfNetworkDevice
 		/// </summary>
 		[DataMember(Name = "numberOfNetworkDevice", EmitDefaultValue = false)]
 		public string? NumberOfNetworkDevice { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkHealthAverage
 		/// </summary>
 		[DataMember(Name = "networkHealthAverage", EmitDefaultValue = false)]
 		public Object NetworkHealthAverage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkHealthAccess
 		/// </summary>
 		[DataMember(Name = "networkHealthAccess", EmitDefaultValue = false)]
 		public string? NetworkHealthAccess { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkHealthCore
 		/// </summary>
 		[DataMember(Name = "networkHealthCore", EmitDefaultValue = false)]
 		public string? NetworkHealthCore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkHealthDistribution
 		/// </summary>
 		[DataMember(Name = "networkHealthDistribution", EmitDefaultValue = false)]
 		public string? NetworkHealthDistribution { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkHealthRouter
 		/// </summary>
 		[DataMember(Name = "networkHealthRouter", EmitDefaultValue = false)]
 		public string? NetworkHealthRouter { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkHealthWireless
 		/// </summary>
 		[DataMember(Name = "networkHealthWireless", EmitDefaultValue = false)]
 		public Object NetworkHealthWireless { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkHealthOthers
 		/// </summary>
 		[DataMember(Name = "networkHealthOthers", EmitDefaultValue = false)]
 		public Object NetworkHealthOthers { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumberOfWiredClients
 		/// </summary>
 		[DataMember(Name = "numberOfWiredClients", EmitDefaultValue = false)]
 		public string? NumberOfWiredClients { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumberOfWirelessClients
 		/// </summary>
 		[DataMember(Name = "numberOfWirelessClients", EmitDefaultValue = false)]
 		public Object NumberOfWirelessClients { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WiredGoodClients
 		/// </summary>
 		[DataMember(Name = "wiredGoodClients", EmitDefaultValue = false)]
 		public string? WiredGoodClients { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WirelessGoodClients
 		/// </summary>
 		[DataMember(Name = "wirelessGoodClients", EmitDefaultValue = false)]
 		public Object WirelessGoodClients { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientIssueCount
 		/// </summary>
 		[DataMember(Name = "clientIssueCount", EmitDefaultValue = false)]
 		public Object ClientIssueCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OverallGoodDevices
 		/// </summary>
 		[DataMember(Name = "overallGoodDevices", EmitDefaultValue = false)]
 		public string? OverallGoodDevices { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AccessGoodCount
 		/// </summary>
 		[DataMember(Name = "accessGoodCount", EmitDefaultValue = false)]
 		public string? AccessGoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AccessTotalCount
 		/// </summary>
 		[DataMember(Name = "accessTotalCount", EmitDefaultValue = false)]
 		public string? AccessTotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CoreGoodCount
 		/// </summary>
 		[DataMember(Name = "coreGoodCount", EmitDefaultValue = false)]
 		public string? CoreGoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CoreTotalCount
 		/// </summary>
 		[DataMember(Name = "coreTotalCount", EmitDefaultValue = false)]
 		public string? CoreTotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DistributionGoodCount
 		/// </summary>
 		[DataMember(Name = "distributionGoodCount", EmitDefaultValue = false)]
 		public string? DistributionGoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DistributionTotalCount
 		/// </summary>
 		[DataMember(Name = "distributionTotalCount", EmitDefaultValue = false)]
 		public string? DistributionTotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RouterGoodCount
 		/// </summary>
 		[DataMember(Name = "routerGoodCount", EmitDefaultValue = false)]
 		public string? RouterGoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RouterTotalCount
 		/// </summary>
 		[DataMember(Name = "routerTotalCount", EmitDefaultValue = false)]
 		public string? RouterTotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WirelessDeviceGoodCount
 		/// </summary>
 		[DataMember(Name = "wirelessDeviceGoodCount", EmitDefaultValue = false)]
 		public string? WirelessDeviceGoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WirelessDeviceTotalCount
 		/// </summary>
 		[DataMember(Name = "wirelessDeviceTotalCount", EmitDefaultValue = false)]
 		public string? WirelessDeviceTotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationHealth
 		/// </summary>
 		[DataMember(Name = "applicationHealth", EmitDefaultValue = false)]
 		public Object ApplicationHealth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationGoodCount
 		/// </summary>
 		[DataMember(Name = "applicationGoodCount", EmitDefaultValue = false)]
 		public Object ApplicationGoodCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationTotalCount
 		/// </summary>
 		[DataMember(Name = "applicationTotalCount", EmitDefaultValue = false)]
 		public Object ApplicationTotalCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationBytesTotalCount
 		/// </summary>
 		[DataMember(Name = "applicationBytesTotalCount", EmitDefaultValue = false)]
 		public Object ApplicationBytesTotalCount { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

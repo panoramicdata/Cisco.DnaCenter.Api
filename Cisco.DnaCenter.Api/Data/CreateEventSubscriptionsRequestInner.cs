@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "subscriptionId", EmitDefaultValue = false)]
 		public string? SubscriptionId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public string? _Version { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SubscriptionEndpoints
 		/// </summary>
 		[DataMember(Name = "subscriptionEndpoints", EmitDefaultValue = false)]
 		public List<CreateEventSubscriptionsRequestInnerSubscriptionEndpoints> SubscriptionEndpoints { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Filter
 		/// </summary>
 		[DataMember(Name = "filter", EmitDefaultValue = false)]
 		public CreateEventSubscriptionsRequestInnerFilter Filter { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

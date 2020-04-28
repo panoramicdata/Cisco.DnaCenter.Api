@@ -24,6 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "device", EmitDefaultValue = false)]
 		public List<AssignDeviceToSiteRequestDevice> Device { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

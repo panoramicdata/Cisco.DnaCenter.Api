@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "profileDetails", EmitDefaultValue = false)]
 		public GetWirelessProfileResponseInnerProfileDetails ProfileDetails { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "serviceProvider", EmitDefaultValue = false)]
 		public string? ServiceProvider { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WanInterface
 		/// </summary>
 		[DataMember(Name = "wanInterface", EmitDefaultValue = false)]
 		public ProvisionNfvRequestWanInterface WanInterface { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

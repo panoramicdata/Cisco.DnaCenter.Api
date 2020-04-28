@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "mdfId", EmitDefaultValue = false)]
 		public string? MdfId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProductId
 		/// </summary>
 		[DataMember(Name = "productId", EmitDefaultValue = false)]
 		public List<string> ProductId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProductName
 		/// </summary>
 		[DataMember(Name = "productName", EmitDefaultValue = false)]
 		public string? ProductName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

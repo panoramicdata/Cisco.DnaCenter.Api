@@ -93,176 +93,211 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceId
 		/// </summary>
 		[DataMember(Name = "instanceId", EmitDefaultValue = false)]
 		public int? InstanceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthEntityId
 		/// </summary>
 		[DataMember(Name = "authEntityId", EmitDefaultValue = false)]
 		public int? AuthEntityId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthEntityClass
 		/// </summary>
 		[DataMember(Name = "authEntityClass", EmitDefaultValue = false)]
 		public int? AuthEntityClass { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeployPending
 		/// </summary>
 		[DataMember(Name = "deployPending", EmitDefaultValue = false)]
 		public string? DeployPending { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceVersion
 		/// </summary>
 		[DataMember(Name = "instanceVersion", EmitDefaultValue = false)]
 		public int? InstanceVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CreateTime
 		/// </summary>
 		[DataMember(Name = "createTime", EmitDefaultValue = false)]
 		public int? CreateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Deployed
 		/// </summary>
 		[DataMember(Name = "deployed", EmitDefaultValue = false)]
 		public bool? Deployed { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsSeeded
 		/// </summary>
 		[DataMember(Name = "isSeeded", EmitDefaultValue = false)]
 		public bool? IsSeeded { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsStale
 		/// </summary>
 		[DataMember(Name = "isStale", EmitDefaultValue = false)]
 		public bool? IsStale { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
 		public int? LastUpdateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Namespace
 		/// </summary>
 		[DataMember(Name = "namespace", EmitDefaultValue = false)]
 		public string? _Namespace { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProvisioningState
 		/// </summary>
 		[DataMember(Name = "provisioningState", EmitDefaultValue = false)]
 		public string? ProvisioningState { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ResourceVersion
 		/// </summary>
 		[DataMember(Name = "resourceVersion", EmitDefaultValue = false)]
 		public int? ResourceVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TargetIdList
 		/// </summary>
 		[DataMember(Name = "targetIdList", EmitDefaultValue = false)]
 		public List<Object> TargetIdList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CfsChangeInfo
 		/// </summary>
 		[DataMember(Name = "cfsChangeInfo", EmitDefaultValue = false)]
 		public List<Object> CfsChangeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CustomProvisions
 		/// </summary>
 		[DataMember(Name = "customProvisions", EmitDefaultValue = false)]
 		public List<Object> CustomProvisions { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Configs
 		/// </summary>
 		[DataMember(Name = "configs", EmitDefaultValue = false)]
 		public List<Object> Configs { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ManagedSites
 		/// </summary>
 		[DataMember(Name = "managedSites", EmitDefaultValue = false)]
 		public List<Object> ManagedSites { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkDeviceId
 		/// </summary>
 		[DataMember(Name = "networkDeviceId", EmitDefaultValue = false)]
 		public string? NetworkDeviceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Roles
 		/// </summary>
 		[DataMember(Name = "roles", EmitDefaultValue = false)]
 		public List<string> Roles { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SaveWanConnectivityDetailsOnly
 		/// </summary>
 		[DataMember(Name = "saveWanConnectivityDetailsOnly", EmitDefaultValue = false)]
 		public bool? SaveWanConnectivityDetailsOnly { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteId
 		/// </summary>
 		[DataMember(Name = "siteId", EmitDefaultValue = false)]
 		public string? SiteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AkcSettingsCfs
 		/// </summary>
 		[DataMember(Name = "akcSettingsCfs", EmitDefaultValue = false)]
 		public List<Object> AkcSettingsCfs { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceInterfaceInfo
 		/// </summary>
 		[DataMember(Name = "deviceInterfaceInfo", EmitDefaultValue = false)]
 		public List<Object> DeviceInterfaceInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceSettings
 		/// </summary>
 		[DataMember(Name = "deviceSettings", EmitDefaultValue = false)]
 		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings DeviceSettings { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkWideSettings
 		/// </summary>
 		[DataMember(Name = "networkWideSettings", EmitDefaultValue = false)]
 		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings NetworkWideSettings { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OtherDevice
 		/// </summary>
 		[DataMember(Name = "otherDevice", EmitDefaultValue = false)]
 		public List<Object> OtherDevice { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TransitNetworks
 		/// </summary>
 		[DataMember(Name = "transitNetworks", EmitDefaultValue = false)]
 		public List<EditApplicationRequestInnerApplicationSet> TransitNetworks { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VirtualNetwork
 		/// </summary>
 		[DataMember(Name = "virtualNetwork", EmitDefaultValue = false)]
 		public List<Object> VirtualNetwork { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Wlan
 		/// </summary>
 		[DataMember(Name = "wlan", EmitDefaultValue = false)]
 		public List<Object> Wlan { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

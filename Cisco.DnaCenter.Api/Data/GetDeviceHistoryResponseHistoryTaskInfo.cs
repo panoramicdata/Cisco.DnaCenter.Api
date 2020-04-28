@@ -32,26 +32,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TimeTaken
 		/// </summary>
 		[DataMember(Name = "timeTaken", EmitDefaultValue = false)]
 		public decimal? TimeTaken { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WorkItemList
 		/// </summary>
 		[DataMember(Name = "workItemList", EmitDefaultValue = false)]
 		public List<GetDeviceHistoryResponseHistoryTaskInfoWorkItemList> WorkItemList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AddnDetails
 		/// </summary>
 		[DataMember(Name = "addnDetails", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoHttpHeaders> AddnDetails { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

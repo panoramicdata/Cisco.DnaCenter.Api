@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "virtualNetworkName", EmitDefaultValue = false)]
 		public string? VirtualNetworkName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteNameHierarchy
 		/// </summary>
 		[DataMember(Name = "siteNameHierarchy", EmitDefaultValue = false)]
 		public string? SiteNameHierarchy { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

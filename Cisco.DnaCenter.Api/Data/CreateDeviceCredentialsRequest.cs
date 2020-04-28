@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "settings", EmitDefaultValue = false)]
 		public CreateDeviceCredentialsRequestSettings Settings { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

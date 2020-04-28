@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "detailedStatus", EmitDefaultValue = false)]
 		public PathResponseResultResponseDetailedStatus DetailedStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdate
 		/// </summary>
 		[DataMember(Name = "lastUpdate", EmitDefaultValue = false)]
 		public string? LastUpdate { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkElements
 		/// </summary>
 		[DataMember(Name = "networkElements", EmitDefaultValue = false)]
 		public List<PathResponseResultResponseNetworkElements> NetworkElements { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkElementsInfo
 		/// </summary>
 		[DataMember(Name = "networkElementsInfo", EmitDefaultValue = false)]
 		public List<PathResponseResultResponseNetworkElementsInfo> NetworkElementsInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Properties
 		/// </summary>
 		[DataMember(Name = "properties", EmitDefaultValue = false)]
 		public List<string> Properties { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Request
 		/// </summary>
 		[DataMember(Name = "request", EmitDefaultValue = false)]
 		public FlowAnalysisListOutputResponse Request { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

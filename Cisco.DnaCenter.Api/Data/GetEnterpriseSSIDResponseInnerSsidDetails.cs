@@ -47,66 +47,79 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WlanType
 		/// </summary>
 		[DataMember(Name = "wlanType", EmitDefaultValue = false)]
 		public string? WlanType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableFastLane
 		/// </summary>
 		[DataMember(Name = "enableFastLane", EmitDefaultValue = false)]
 		public bool? EnableFastLane { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SecurityLevel
 		/// </summary>
 		[DataMember(Name = "securityLevel", EmitDefaultValue = false)]
 		public string? SecurityLevel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthServer
 		/// </summary>
 		[DataMember(Name = "authServer", EmitDefaultValue = false)]
 		public string? AuthServer { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Passphrase
 		/// </summary>
 		[DataMember(Name = "passphrase", EmitDefaultValue = false)]
 		public string? Passphrase { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TrafficType
 		/// </summary>
 		[DataMember(Name = "trafficType", EmitDefaultValue = false)]
 		public string? TrafficType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableMACFiltering
 		/// </summary>
 		[DataMember(Name = "enableMACFiltering", EmitDefaultValue = false)]
 		public bool? EnableMACFiltering { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsEnabled
 		/// </summary>
 		[DataMember(Name = "isEnabled", EmitDefaultValue = false)]
 		public bool? IsEnabled { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsFabric
 		/// </summary>
 		[DataMember(Name = "isFabric", EmitDefaultValue = false)]
 		public bool? IsFabric { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FastTransition
 		/// </summary>
 		[DataMember(Name = "fastTransition", EmitDefaultValue = false)]
 		public string? FastTransition { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RadioPolicy
 		/// </summary>
 		[DataMember(Name = "radioPolicy", EmitDefaultValue = false)]
 		public string? RadioPolicy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableBroadcastSSID
 		/// </summary>
 		[DataMember(Name = "enableBroadcastSSID", EmitDefaultValue = false)]
 		public bool? EnableBroadcastSSID { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

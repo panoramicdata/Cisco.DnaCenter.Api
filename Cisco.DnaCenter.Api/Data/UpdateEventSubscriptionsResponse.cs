@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "statusUri", EmitDefaultValue = false)]
 		public string? StatusUri { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "destPorts", EmitDefaultValue = false)]
 		public List<string> DestPorts { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SourcePorts
 		/// </summary>
 		[DataMember(Name = "sourcePorts", EmitDefaultValue = false)]
 		public List<string> SourcePorts { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

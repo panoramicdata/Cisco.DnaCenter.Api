@@ -38,41 +38,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "_id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AaaCredentials
 		/// </summary>
 		[DataMember(Name = "aaaCredentials", EmitDefaultValue = false)]
 		public DeviceDeviceInfoAaaCredentials AaaCredentials { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AcceptEula
 		/// </summary>
 		[DataMember(Name = "acceptEula", EmitDefaultValue = false)]
 		public bool? AcceptEula { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DefaultProfile
 		/// </summary>
 		[DataMember(Name = "defaultProfile", EmitDefaultValue = false)]
 		public SettingsDefaultProfile DefaultProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SavaMappingList
 		/// </summary>
 		[DataMember(Name = "savaMappingList", EmitDefaultValue = false)]
 		public List<SettingsSavaMappingList> SavaMappingList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TaskTimeOuts
 		/// </summary>
 		[DataMember(Name = "taskTimeOuts", EmitDefaultValue = false)]
 		public SettingsTaskTimeOuts TaskTimeOuts { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TenantId
 		/// </summary>
 		[DataMember(Name = "tenantId", EmitDefaultValue = false)]
 		public string? TenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public int? _Version { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

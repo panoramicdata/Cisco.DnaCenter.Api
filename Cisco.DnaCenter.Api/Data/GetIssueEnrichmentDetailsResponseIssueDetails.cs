@@ -24,6 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "issue", EmitDefaultValue = false)]
 		public List<GetIssueEnrichmentDetailsResponseIssueDetailsIssue> Issue { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

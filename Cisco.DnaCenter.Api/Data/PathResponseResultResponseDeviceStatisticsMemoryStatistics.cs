@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "memoryUsage", EmitDefaultValue = false)]
 		public int? MemoryUsage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RefreshedAt
 		/// </summary>
 		[DataMember(Name = "refreshedAt", EmitDefaultValue = false)]
 		public int? RefreshedAt { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TotalMemory
 		/// </summary>
 		[DataMember(Name = "totalMemory", EmitDefaultValue = false)]
 		public int? TotalMemory { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

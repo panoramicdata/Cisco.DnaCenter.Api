@@ -39,46 +39,55 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "hostType", EmitDefaultValue = false)]
 		public string? HostType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostName
 		/// </summary>
 		[DataMember(Name = "hostName", EmitDefaultValue = false)]
 		public string? HostName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostOs
 		/// </summary>
 		[DataMember(Name = "hostOs", EmitDefaultValue = false)]
 		public string? HostOs { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ssid
 		/// </summary>
 		[DataMember(Name = "ssid", EmitDefaultValue = false)]
 		public string? Ssid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectedInterface
 		/// </summary>
 		[DataMember(Name = "connectedInterface", EmitDefaultValue = false)]
 		public string? ConnectedInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddress
 		/// </summary>
 		[DataMember(Name = "macAddress", EmitDefaultValue = false)]
 		public string? MacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FailedAttempts
 		/// </summary>
 		[DataMember(Name = "failedAttempts", EmitDefaultValue = false)]
 		public int? FailedAttempts { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Location
 		/// </summary>
 		[DataMember(Name = "location", EmitDefaultValue = false)]
 		public GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation Location { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Timestamp
 		/// </summary>
 		[DataMember(Name = "timestamp", EmitDefaultValue = false)]
 		public int? Timestamp { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

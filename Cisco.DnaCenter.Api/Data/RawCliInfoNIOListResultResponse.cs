@@ -44,56 +44,67 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CdpNeighbors
 		/// </summary>
 		[DataMember(Name = "cdpNeighbors", EmitDefaultValue = false)]
 		public string? CdpNeighbors { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthMonitor
 		/// </summary>
 		[DataMember(Name = "healthMonitor", EmitDefaultValue = false)]
 		public string? HealthMonitor { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IntfDescription
 		/// </summary>
 		[DataMember(Name = "intfDescription", EmitDefaultValue = false)]
 		public string? IntfDescription { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Inventory
 		/// </summary>
 		[DataMember(Name = "inventory", EmitDefaultValue = false)]
 		public string? Inventory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpIntfBrief
 		/// </summary>
 		[DataMember(Name = "ipIntfBrief", EmitDefaultValue = false)]
 		public string? IpIntfBrief { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddressTable
 		/// </summary>
 		[DataMember(Name = "macAddressTable", EmitDefaultValue = false)]
 		public string? MacAddressTable { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RunningConfig
 		/// </summary>
 		[DataMember(Name = "runningConfig", EmitDefaultValue = false)]
 		public string? RunningConfig { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Snmp
 		/// </summary>
 		[DataMember(Name = "snmp", EmitDefaultValue = false)]
 		public string? Snmp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public string? _Version { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

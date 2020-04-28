@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "memberToTags", EmitDefaultValue = false)]
 		public List<TagMemberDtoMemberToTags> MemberToTags { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MemberType
 		/// </summary>
 		[DataMember(Name = "memberType", EmitDefaultValue = false)]
 		public string? MemberType { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

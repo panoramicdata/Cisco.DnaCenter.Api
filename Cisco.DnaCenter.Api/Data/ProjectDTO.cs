@@ -37,36 +37,43 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "createTime", EmitDefaultValue = false)]
 		public int? CreateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
 		public int? LastUpdateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
 		public List<string> Tags { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Templates
 		/// </summary>
 		[DataMember(Name = "templates", EmitDefaultValue = false)]
 		public Object Templates { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

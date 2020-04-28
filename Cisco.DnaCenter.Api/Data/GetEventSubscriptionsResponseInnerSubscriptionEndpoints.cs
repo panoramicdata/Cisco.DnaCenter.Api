@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "instanceId", EmitDefaultValue = false)]
 		public string? InstanceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SubscriptionDetails
 		/// </summary>
 		[DataMember(Name = "subscriptionDetails", EmitDefaultValue = false)]
 		public CreateEventSubscriptionsRequestInnerSubscriptionDetails SubscriptionDetails { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

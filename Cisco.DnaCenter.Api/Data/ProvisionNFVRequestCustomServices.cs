@@ -31,26 +31,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationType
 		/// </summary>
 		[DataMember(Name = "applicationType", EmitDefaultValue = false)]
 		public string? ApplicationType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Profile
 		/// </summary>
 		[DataMember(Name = "profile", EmitDefaultValue = false)]
 		public string? Profile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Topology
 		/// </summary>
 		[DataMember(Name = "topology", EmitDefaultValue = false)]
 		public ProvisionNfvRequestTopology Topology { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageName
 		/// </summary>
 		[DataMember(Name = "imageName", EmitDefaultValue = false)]
 		public string? ImageName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

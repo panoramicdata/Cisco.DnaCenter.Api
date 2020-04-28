@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "area", EmitDefaultValue = false)]
 		public CreateSiteRequestSiteArea Area { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Building
 		/// </summary>
 		[DataMember(Name = "building", EmitDefaultValue = false)]
 		public CreateSiteRequestSiteBuilding Building { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Floor
 		/// </summary>
 		[DataMember(Name = "floor", EmitDefaultValue = false)]
 		public UpdateSiteRequestSiteFloor Floor { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

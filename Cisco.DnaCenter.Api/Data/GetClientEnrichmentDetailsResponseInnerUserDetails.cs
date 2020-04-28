@@ -71,121 +71,145 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectionStatus
 		/// </summary>
 		[DataMember(Name = "connectionStatus", EmitDefaultValue = false)]
 		public string? ConnectionStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostType
 		/// </summary>
 		[DataMember(Name = "hostType", EmitDefaultValue = false)]
 		public string? HostType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UserId
 		/// </summary>
 		[DataMember(Name = "userId", EmitDefaultValue = false)]
 		public string? UserId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostName
 		/// </summary>
 		[DataMember(Name = "hostName", EmitDefaultValue = false)]
 		public Object HostName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostOs
 		/// </summary>
 		[DataMember(Name = "hostOs", EmitDefaultValue = false)]
 		public Object HostOs { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostVersion
 		/// </summary>
 		[DataMember(Name = "hostVersion", EmitDefaultValue = false)]
 		public Object HostVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SubType
 		/// </summary>
 		[DataMember(Name = "subType", EmitDefaultValue = false)]
 		public Object SubType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdated
 		/// </summary>
 		[DataMember(Name = "lastUpdated", EmitDefaultValue = false)]
 		public int? LastUpdated { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthScore
 		/// </summary>
 		[DataMember(Name = "healthScore", EmitDefaultValue = false)]
 		public List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore> HealthScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostMac
 		/// </summary>
 		[DataMember(Name = "hostMac", EmitDefaultValue = false)]
 		public string? HostMac { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostIpV4
 		/// </summary>
 		[DataMember(Name = "hostIpV4", EmitDefaultValue = false)]
 		public string? HostIpV4 { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HostIpV6
 		/// </summary>
 		[DataMember(Name = "hostIpV6", EmitDefaultValue = false)]
 		public List<Object> HostIpV6 { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthType
 		/// </summary>
 		[DataMember(Name = "authType", EmitDefaultValue = false)]
 		public Object AuthType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VlanId
 		/// </summary>
 		[DataMember(Name = "vlanId", EmitDefaultValue = false)]
 		public string? VlanId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ssid
 		/// </summary>
 		[DataMember(Name = "ssid", EmitDefaultValue = false)]
 		public Object Ssid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Location
 		/// </summary>
 		[DataMember(Name = "location", EmitDefaultValue = false)]
 		public Object Location { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientConnection
 		/// </summary>
 		[DataMember(Name = "clientConnection", EmitDefaultValue = false)]
 		public string? ClientConnection { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectedDevice
 		/// </summary>
 		[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
 		public List<Object> ConnectedDevice { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IssueCount
 		/// </summary>
 		[DataMember(Name = "issueCount", EmitDefaultValue = false)]
 		public decimal? IssueCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Rssi
 		/// </summary>
 		[DataMember(Name = "rssi", EmitDefaultValue = false)]
 		public Object Rssi { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Snr
 		/// </summary>
 		[DataMember(Name = "snr", EmitDefaultValue = false)]
 		public Object Snr { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DataRate
 		/// </summary>
 		[DataMember(Name = "dataRate", EmitDefaultValue = false)]
 		public Object DataRate { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Port
 		/// </summary>
 		[DataMember(Name = "port", EmitDefaultValue = false)]
 		public Object Port { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

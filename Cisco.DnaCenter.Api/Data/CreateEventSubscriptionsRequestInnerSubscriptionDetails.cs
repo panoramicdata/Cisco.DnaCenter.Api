@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Url
 		/// </summary>
 		[DataMember(Name = "url", EmitDefaultValue = false)]
 		public string? Url { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Method
 		/// </summary>
 		[DataMember(Name = "method", EmitDefaultValue = false)]
 		public string? Method { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectorType
 		/// </summary>
 		[DataMember(Name = "connectorType", EmitDefaultValue = false)]
 		public string? ConnectorType { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

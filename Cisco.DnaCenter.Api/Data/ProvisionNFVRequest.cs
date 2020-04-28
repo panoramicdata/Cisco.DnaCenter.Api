@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "siteProfile", EmitDefaultValue = false)]
 		public List<ProvisionNfvRequestSiteProfile> SiteProfile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Provisioning
 		/// </summary>
 		[DataMember(Name = "provisioning", EmitDefaultValue = false)]
 		public List<ProvisionNFVRequestProvisioning> Provisioning { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

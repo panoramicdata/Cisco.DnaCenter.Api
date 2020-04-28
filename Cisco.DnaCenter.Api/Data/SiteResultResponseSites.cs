@@ -41,51 +41,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GroupNameHierarchy
 		/// </summary>
 		[DataMember(Name = "groupNameHierarchy", EmitDefaultValue = false)]
 		public string? GroupNameHierarchy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Latitude
 		/// </summary>
 		[DataMember(Name = "latitude", EmitDefaultValue = false)]
 		public string? Latitude { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocationAddress
 		/// </summary>
 		[DataMember(Name = "locationAddress", EmitDefaultValue = false)]
 		public string? LocationAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocationCountry
 		/// </summary>
 		[DataMember(Name = "locationCountry", EmitDefaultValue = false)]
 		public string? LocationCountry { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocationType
 		/// </summary>
 		[DataMember(Name = "locationType", EmitDefaultValue = false)]
 		public string? LocationType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Longitude
 		/// </summary>
 		[DataMember(Name = "longitude", EmitDefaultValue = false)]
 		public string? Longitude { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentId
 		/// </summary>
 		[DataMember(Name = "parentId", EmitDefaultValue = false)]
 		public string? ParentId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

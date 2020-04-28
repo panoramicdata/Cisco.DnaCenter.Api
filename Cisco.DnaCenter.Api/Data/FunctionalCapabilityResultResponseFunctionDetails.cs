@@ -30,21 +30,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PropertyName
 		/// </summary>
 		[DataMember(Name = "propertyName", EmitDefaultValue = false)]
 		public string? PropertyName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StringValue
 		/// </summary>
 		[DataMember(Name = "stringValue", EmitDefaultValue = false)]
 		public string? StringValue { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

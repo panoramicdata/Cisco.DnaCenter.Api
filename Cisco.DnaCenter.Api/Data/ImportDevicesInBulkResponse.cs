@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "successList", EmitDefaultValue = false)]
 		public List<ImportDevicesInBulkResponseSuccessList> SuccessList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FailureList
 		/// </summary>
 		[DataMember(Name = "failureList", EmitDefaultValue = false)]
 		public List<ImportDevicesInBulkResponseFailureList> FailureList { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

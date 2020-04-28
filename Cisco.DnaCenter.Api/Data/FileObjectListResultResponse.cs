@@ -47,61 +47,73 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DownloadPath
 		/// </summary>
 		[DataMember(Name = "downloadPath", EmitDefaultValue = false)]
 		public string? DownloadPath { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Encrypted
 		/// </summary>
 		[DataMember(Name = "encrypted", EmitDefaultValue = false)]
 		public bool? Encrypted { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FileFormat
 		/// </summary>
 		[DataMember(Name = "fileFormat", EmitDefaultValue = false)]
 		public string? FileFormat { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FileSize
 		/// </summary>
 		[DataMember(Name = "fileSize", EmitDefaultValue = false)]
 		public string? FileSize { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Md5Checksum
 		/// </summary>
 		[DataMember(Name = "md5Checksum", EmitDefaultValue = false)]
 		public string? Md5Checksum { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _NameSpace
 		/// </summary>
 		[DataMember(Name = "nameSpace", EmitDefaultValue = false)]
 		public string? _NameSpace { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SftpServerList
 		/// </summary>
 		[DataMember(Name = "sftpServerList", EmitDefaultValue = false)]
 		public List<Object> SftpServerList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Sha1Checksum
 		/// </summary>
 		[DataMember(Name = "sha1Checksum", EmitDefaultValue = false)]
 		public string? Sha1Checksum { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TaskId
 		/// </summary>
 		[DataMember(Name = "taskId", EmitDefaultValue = false)]
 		public Object TaskId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

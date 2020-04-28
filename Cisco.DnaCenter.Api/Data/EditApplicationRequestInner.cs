@@ -32,26 +32,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkApplications
 		/// </summary>
 		[DataMember(Name = "networkApplications", EmitDefaultValue = false)]
 		public List<EditApplicationRequestInnerNetworkApplications> NetworkApplications { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkIdentity
 		/// </summary>
 		[DataMember(Name = "networkIdentity", EmitDefaultValue = false)]
 		public List<EditApplicationRequestInnerNetworkIdentity> NetworkIdentity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationSet
 		/// </summary>
 		[DataMember(Name = "applicationSet", EmitDefaultValue = false)]
 		public EditApplicationRequestInnerApplicationSet ApplicationSet { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

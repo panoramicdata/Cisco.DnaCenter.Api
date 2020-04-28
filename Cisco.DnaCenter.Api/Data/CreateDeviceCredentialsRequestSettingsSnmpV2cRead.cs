@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ReadCommunity
 		/// </summary>
 		[DataMember(Name = "readCommunity", EmitDefaultValue = false)]
 		public string? ReadCommunity { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

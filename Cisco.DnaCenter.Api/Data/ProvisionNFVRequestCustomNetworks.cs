@@ -32,26 +32,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ServicesToConnect
 		/// </summary>
 		[DataMember(Name = "servicesToConnect", EmitDefaultValue = false)]
 		public List<ProvisionNfvRequestServicesToConnect> ServicesToConnect { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectionType
 		/// </summary>
 		[DataMember(Name = "connectionType", EmitDefaultValue = false)]
 		public string? ConnectionType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkMode
 		/// </summary>
 		[DataMember(Name = "networkMode", EmitDefaultValue = false)]
 		public string? NetworkMode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Vlan
 		/// </summary>
 		[DataMember(Name = "vlan", EmitDefaultValue = false)]
 		public string? Vlan { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

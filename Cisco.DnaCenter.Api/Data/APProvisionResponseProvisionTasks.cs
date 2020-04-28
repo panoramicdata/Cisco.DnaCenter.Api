@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "success", EmitDefaultValue = false)]
 		public List<ApProvisionResponseProvisionTasksSuccess> Success { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Failure
 		/// </summary>
 		[DataMember(Name = "failure", EmitDefaultValue = false)]
 		public ApProvisionResponseProvisionTasksFailure Failure { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

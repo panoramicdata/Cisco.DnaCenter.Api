@@ -49,6 +49,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "syncType", EmitDefaultValue = false)]
 		public SyncTypeEnum? SyncType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SavaMappingSyncResultSyncList" /> class.
 		/// </summary>
@@ -65,6 +66,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deviceSnList", EmitDefaultValue = false)]
 		public List<string> DeviceSnList { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

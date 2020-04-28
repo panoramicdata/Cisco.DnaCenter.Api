@@ -24,6 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "eventIds", EmitDefaultValue = false)]
 		public List<string> EventIds { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

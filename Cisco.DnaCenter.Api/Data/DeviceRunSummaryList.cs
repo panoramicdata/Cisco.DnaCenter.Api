@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "details", EmitDefaultValue = false)]
 		public string? Details { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HistoryTaskInfo
 		/// </summary>
 		[DataMember(Name = "historyTaskInfo", EmitDefaultValue = false)]
 		public DeviceHistoryTaskInfo HistoryTaskInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ErrorFlag
 		/// </summary>
 		[DataMember(Name = "errorFlag", EmitDefaultValue = false)]
 		public bool? ErrorFlag { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Timestamp
 		/// </summary>
 		[DataMember(Name = "timestamp", EmitDefaultValue = false)]
 		public decimal? Timestamp { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

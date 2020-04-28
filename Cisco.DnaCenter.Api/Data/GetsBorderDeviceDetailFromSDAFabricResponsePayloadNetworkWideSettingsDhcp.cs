@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpAddress
 		/// </summary>
 		[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
 		public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress IpAddress { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

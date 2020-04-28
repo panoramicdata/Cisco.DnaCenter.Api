@@ -37,41 +37,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Mode
 		/// </summary>
 		[DataMember(Name = "mode", EmitDefaultValue = false)]
 		public string? Mode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SystemIp
 		/// </summary>
 		[DataMember(Name = "systemIp", EmitDefaultValue = false)]
 		public string? SystemIp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CentralManagerIP
 		/// </summary>
 		[DataMember(Name = "centralManagerIP", EmitDefaultValue = false)]
 		public string? CentralManagerIp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CentralRegistrationKey
 		/// </summary>
 		[DataMember(Name = "centralRegistrationKey", EmitDefaultValue = false)]
 		public string? CentralRegistrationKey { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CommonKey
 		/// </summary>
 		[DataMember(Name = "commonKey", EmitDefaultValue = false)]
 		public string? CommonKey { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AdminPasswordHash
 		/// </summary>
 		[DataMember(Name = "adminPasswordHash", EmitDefaultValue = false)]
 		public string? AdminPasswordHash { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Disk
 		/// </summary>
 		[DataMember(Name = "disk", EmitDefaultValue = false)]
 		public string? Disk { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

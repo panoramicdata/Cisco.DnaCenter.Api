@@ -57,91 +57,109 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "byteRate", EmitDefaultValue = false)]
 		public int? ByteRate { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DestIpAddress
 		/// </summary>
 		[DataMember(Name = "destIpAddress", EmitDefaultValue = false)]
 		public string? DestIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DestPort
 		/// </summary>
 		[DataMember(Name = "destPort", EmitDefaultValue = false)]
 		public string? DestPort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InputInterface
 		/// </summary>
 		[DataMember(Name = "inputInterface", EmitDefaultValue = false)]
 		public string? InputInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv4DSCP
 		/// </summary>
 		[DataMember(Name = "ipv4DSCP", EmitDefaultValue = false)]
 		public string? Ipv4DSCP { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv4TTL
 		/// </summary>
 		[DataMember(Name = "ipv4TTL", EmitDefaultValue = false)]
 		public int? Ipv4TTL { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OutputInterface
 		/// </summary>
 		[DataMember(Name = "outputInterface", EmitDefaultValue = false)]
 		public string? OutputInterface { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PacketBytes
 		/// </summary>
 		[DataMember(Name = "packetBytes", EmitDefaultValue = false)]
 		public int? PacketBytes { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PacketCount
 		/// </summary>
 		[DataMember(Name = "packetCount", EmitDefaultValue = false)]
 		public int? PacketCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PacketLoss
 		/// </summary>
 		[DataMember(Name = "packetLoss", EmitDefaultValue = false)]
 		public int? PacketLoss { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PacketLossPercentage
 		/// </summary>
 		[DataMember(Name = "packetLossPercentage", EmitDefaultValue = false)]
 		public decimal? PacketLossPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RefreshedAt
 		/// </summary>
 		[DataMember(Name = "refreshedAt", EmitDefaultValue = false)]
 		public int? RefreshedAt { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RtpJitterMax
 		/// </summary>
 		[DataMember(Name = "rtpJitterMax", EmitDefaultValue = false)]
 		public int? RtpJitterMax { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RtpJitterMean
 		/// </summary>
 		[DataMember(Name = "rtpJitterMean", EmitDefaultValue = false)]
 		public int? RtpJitterMean { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RtpJitterMin
 		/// </summary>
 		[DataMember(Name = "rtpJitterMin", EmitDefaultValue = false)]
 		public int? RtpJitterMin { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SourceIpAddress
 		/// </summary>
 		[DataMember(Name = "sourceIpAddress", EmitDefaultValue = false)]
 		public string? SourceIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SourcePort
 		/// </summary>
 		[DataMember(Name = "sourcePort", EmitDefaultValue = false)]
 		public string? SourcePort { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

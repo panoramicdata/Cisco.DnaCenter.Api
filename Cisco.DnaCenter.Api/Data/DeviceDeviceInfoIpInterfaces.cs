@@ -33,26 +33,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddress
 		/// </summary>
 		[DataMember(Name = "macAddress", EmitDefaultValue = false)]
 		public string? MacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv4Address
 		/// </summary>
 		[DataMember(Name = "ipv4Address", EmitDefaultValue = false)]
 		public Object Ipv4Address { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv6AddressList
 		/// </summary>
 		[DataMember(Name = "ipv6AddressList", EmitDefaultValue = false)]
 		public List<Object> Ipv6AddressList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

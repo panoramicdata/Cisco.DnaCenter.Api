@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "scoreCategory", EmitDefaultValue = false)]
 		public string? ScoreCategory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Value
 		/// </summary>
 		[DataMember(Name = "value", EmitDefaultValue = false)]
 		public string? Value { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

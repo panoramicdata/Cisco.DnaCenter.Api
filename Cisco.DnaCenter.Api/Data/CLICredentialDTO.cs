@@ -36,6 +36,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "credentialType", EmitDefaultValue = false)]
 		public CredentialTypeEnum? CredentialType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CliCredentialDto" /> class.
 		/// </summary>
@@ -66,41 +67,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "comments", EmitDefaultValue = false)]
 		public string? Comments { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnablePassword
 		/// </summary>
 		[DataMember(Name = "enablePassword", EmitDefaultValue = false)]
 		public string? EnablePassword { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceUuid
 		/// </summary>
 		[DataMember(Name = "instanceUuid", EmitDefaultValue = false)]
 		public string? InstanceUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Password
 		/// </summary>
 		[DataMember(Name = "password", EmitDefaultValue = false)]
 		public string? Password { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Username
 		/// </summary>
 		[DataMember(Name = "username", EmitDefaultValue = false)]
 		public string? Username { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

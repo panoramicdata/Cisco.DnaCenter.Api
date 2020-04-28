@@ -35,31 +35,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "siteId", EmitDefaultValue = false)]
 		public string? SiteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteType
 		/// </summary>
 		[DataMember(Name = "siteType", EmitDefaultValue = false)]
 		public string? SiteType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Area
 		/// </summary>
 		[DataMember(Name = "area", EmitDefaultValue = false)]
 		public string? Area { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Building
 		/// </summary>
 		[DataMember(Name = "building", EmitDefaultValue = false)]
 		public string? Building { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Floor
 		/// </summary>
 		[DataMember(Name = "floor", EmitDefaultValue = false)]
 		public Object Floor { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApsImpacted
 		/// </summary>
 		[DataMember(Name = "apsImpacted", EmitDefaultValue = false)]
 		public List<Object> ApsImpacted { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

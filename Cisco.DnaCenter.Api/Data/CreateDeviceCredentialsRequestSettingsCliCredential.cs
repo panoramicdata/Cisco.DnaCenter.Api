@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Username
 		/// </summary>
 		[DataMember(Name = "username", EmitDefaultValue = false)]
 		public string? Username { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Password
 		/// </summary>
 		[DataMember(Name = "password", EmitDefaultValue = false)]
 		public string? Password { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnablePassword
 		/// </summary>
 		[DataMember(Name = "enablePassword", EmitDefaultValue = false)]
 		public string? EnablePassword { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

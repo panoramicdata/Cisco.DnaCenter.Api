@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "status", EmitDefaultValue = false)]
 		public string? Status { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Payload
 		/// </summary>
 		[DataMember(Name = "payload", EmitDefaultValue = false)]
 		public GetsBorderDeviceDetailFromSdaFabricResponsePayload Payload { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

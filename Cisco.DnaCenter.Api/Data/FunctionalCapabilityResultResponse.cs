@@ -50,6 +50,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "functionOpState", EmitDefaultValue = false)]
 		public FunctionOpStateEnum? FunctionOpState { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="FunctionalCapabilityResultResponse" /> class.
 		/// </summary>
@@ -72,21 +73,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FunctionDetails
 		/// </summary>
 		[DataMember(Name = "functionDetails", EmitDefaultValue = false)]
 		public List<FunctionalCapabilityResultResponseFunctionDetails> FunctionDetails { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FunctionName
 		/// </summary>
 		[DataMember(Name = "functionName", EmitDefaultValue = false)]
 		public string? FunctionName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "idRef", EmitDefaultValue = false)]
 		public string? IdRef { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

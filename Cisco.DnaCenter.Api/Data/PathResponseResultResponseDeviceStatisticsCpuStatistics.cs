@@ -29,21 +29,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "fiveMinUsageInPercentage", EmitDefaultValue = false)]
 		public decimal? FiveMinUsageInPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FiveSecsUsageInPercentage
 		/// </summary>
 		[DataMember(Name = "fiveSecsUsageInPercentage", EmitDefaultValue = false)]
 		public decimal? FiveSecsUsageInPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OneMinUsageInPercentage
 		/// </summary>
 		[DataMember(Name = "oneMinUsageInPercentage", EmitDefaultValue = false)]
 		public decimal? OneMinUsageInPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RefreshedAt
 		/// </summary>
 		[DataMember(Name = "refreshedAt", EmitDefaultValue = false)]
 		public int? RefreshedAt { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

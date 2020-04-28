@@ -55,81 +55,97 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceId
 		/// </summary>
 		[DataMember(Name = "instanceId", EmitDefaultValue = false)]
 		public int? InstanceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeployPending
 		/// </summary>
 		[DataMember(Name = "deployPending", EmitDefaultValue = false)]
 		public string? DeployPending { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceVersion
 		/// </summary>
 		[DataMember(Name = "instanceVersion", EmitDefaultValue = false)]
 		public int? InstanceVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectedTo
 		/// </summary>
 		[DataMember(Name = "connectedTo", EmitDefaultValue = false)]
 		public List<Object> ConnectedTo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Cpu
 		/// </summary>
 		[DataMember(Name = "cpu", EmitDefaultValue = false)]
 		public decimal? Cpu { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DhcpEnabled
 		/// </summary>
 		[DataMember(Name = "dhcpEnabled", EmitDefaultValue = false)]
 		public bool? DhcpEnabled { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExternalConnectivityIpPool
 		/// </summary>
 		[DataMember(Name = "externalConnectivityIpPool", EmitDefaultValue = false)]
 		public string? ExternalConnectivityIpPool { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExternalDomainRoutingProtocol
 		/// </summary>
 		[DataMember(Name = "externalDomainRoutingProtocol", EmitDefaultValue = false)]
 		public string? ExternalDomainRoutingProtocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InternalDomainProtocolNumber
 		/// </summary>
 		[DataMember(Name = "internalDomainProtocolNumber", EmitDefaultValue = false)]
 		public string? InternalDomainProtocolNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Memory
 		/// </summary>
 		[DataMember(Name = "memory", EmitDefaultValue = false)]
 		public decimal? Memory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NodeType
 		/// </summary>
 		[DataMember(Name = "nodeType", EmitDefaultValue = false)]
 		public List<string> NodeType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Storage
 		/// </summary>
 		[DataMember(Name = "storage", EmitDefaultValue = false)]
 		public decimal? Storage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExtConnectivitySettings
 		/// </summary>
 		[DataMember(Name = "extConnectivitySettings", EmitDefaultValue = false)]
 		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings> ExtConnectivitySettings { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

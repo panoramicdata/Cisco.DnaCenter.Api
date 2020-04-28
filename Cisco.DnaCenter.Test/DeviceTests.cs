@@ -13,7 +13,7 @@ namespace Cisco.DnaCenter.Test
 		}
 
 		[Fact]
-		public async void GetDeviceListAsync_Succeeds()
+		public async void GetAllAsync_Succeeds()
 		{
 			var devices = await GetDevices().ConfigureAwait(false);
 

@@ -54,81 +54,97 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CliStatus
 		/// </summary>
 		[DataMember(Name = "cliStatus", EmitDefaultValue = false)]
 		public string? CliStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DiscoveryStatus
 		/// </summary>
 		[DataMember(Name = "discoveryStatus", EmitDefaultValue = false)]
 		public string? DiscoveryStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public string? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpStatus
 		/// </summary>
 		[DataMember(Name = "httpStatus", EmitDefaultValue = false)]
 		public string? HttpStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InventoryCollectionStatus
 		/// </summary>
 		[DataMember(Name = "inventoryCollectionStatus", EmitDefaultValue = false)]
 		public string? InventoryCollectionStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InventoryReachabilityStatus
 		/// </summary>
 		[DataMember(Name = "inventoryReachabilityStatus", EmitDefaultValue = false)]
 		public string? InventoryReachabilityStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpAddress
 		/// </summary>
 		[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
 		public string? IpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets JobStatus
 		/// </summary>
 		[DataMember(Name = "jobStatus", EmitDefaultValue = false)]
 		public string? JobStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetconfStatus
 		/// </summary>
 		[DataMember(Name = "netconfStatus", EmitDefaultValue = false)]
 		public string? NetconfStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PingStatus
 		/// </summary>
 		[DataMember(Name = "pingStatus", EmitDefaultValue = false)]
 		public string? PingStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpStatus
 		/// </summary>
 		[DataMember(Name = "snmpStatus", EmitDefaultValue = false)]
 		public string? SnmpStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public string? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TaskId
 		/// </summary>
 		[DataMember(Name = "taskId", EmitDefaultValue = false)]
 		public string? TaskId { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

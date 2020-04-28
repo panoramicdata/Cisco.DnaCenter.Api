@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "errorCode", EmitDefaultValue = false)]
 		public int? ErrorCode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Message
 		/// </summary>
 		[DataMember(Name = "message", EmitDefaultValue = false)]
 		public string? Message { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Detail
 		/// </summary>
 		[DataMember(Name = "detail", EmitDefaultValue = false)]
 		public string? Detail { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

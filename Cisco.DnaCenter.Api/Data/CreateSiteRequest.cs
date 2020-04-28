@@ -42,6 +42,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateSiteRequest" /> class.
 		/// </summary>
@@ -58,6 +59,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "site", EmitDefaultValue = false)]
 		public CreateSiteRequestSite Site { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Links
 		/// </summary>
 		[DataMember(Name = "links", EmitDefaultValue = false)]
 		public List<TopologyResultResponseLinks> Links { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Nodes
 		/// </summary>
 		[DataMember(Name = "nodes", EmitDefaultValue = false)]
 		public List<TopologyResultResponseNodes> Nodes { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

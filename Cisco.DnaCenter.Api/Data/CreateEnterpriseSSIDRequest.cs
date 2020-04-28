@@ -120,21 +120,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "securityLevel", EmitDefaultValue = false)]
 		public SecurityLevelEnum? SecurityLevel { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TrafficType
 		/// </summary>
 		[DataMember(Name = "trafficType", EmitDefaultValue = false)]
 		public TrafficTypeEnum? TrafficType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RadioPolicy
 		/// </summary>
 		[DataMember(Name = "radioPolicy", EmitDefaultValue = false)]
 		public RadioPolicyEnum? RadioPolicy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FastTransition
 		/// </summary>
 		[DataMember(Name = "fastTransition", EmitDefaultValue = false)]
 		public FastTransitionEnum? FastTransition { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateEnterpriseSsidRequest" /> class.
 		/// </summary>
@@ -165,26 +169,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Passphrase
 		/// </summary>
 		[DataMember(Name = "passphrase", EmitDefaultValue = false)]
 		public string? Passphrase { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableFastLane
 		/// </summary>
 		[DataMember(Name = "enableFastLane", EmitDefaultValue = false)]
 		public bool? EnableFastLane { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableMACFiltering
 		/// </summary>
 		[DataMember(Name = "enableMACFiltering", EmitDefaultValue = false)]
 		public bool? EnableMACFiltering { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EnableBroadcastSSID
 		/// </summary>
 		[DataMember(Name = "enableBroadcastSSID", EmitDefaultValue = false)]
 		public bool? EnableBroadcastSSID { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -55,86 +55,103 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AppProtocol
 		/// </summary>
 		[DataMember(Name = "appProtocol", EmitDefaultValue = false)]
 		public string? AppProtocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationSubType
 		/// </summary>
 		[DataMember(Name = "applicationSubType", EmitDefaultValue = false)]
 		public string? ApplicationSubType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationType
 		/// </summary>
 		[DataMember(Name = "applicationType", EmitDefaultValue = false)]
 		public string? ApplicationType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CategoryId
 		/// </summary>
 		[DataMember(Name = "categoryId", EmitDefaultValue = false)]
 		public string? CategoryId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets EngineId
 		/// </summary>
 		[DataMember(Name = "engineId", EmitDefaultValue = false)]
 		public string? EngineId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HelpString
 		/// </summary>
 		[DataMember(Name = "helpString", EmitDefaultValue = false)]
 		public string? HelpString { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LongDescription
 		/// </summary>
 		[DataMember(Name = "longDescription", EmitDefaultValue = false)]
 		public string? LongDescription { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Popularity
 		/// </summary>
 		[DataMember(Name = "popularity", EmitDefaultValue = false)]
 		public string? Popularity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Rank
 		/// </summary>
 		[DataMember(Name = "rank", EmitDefaultValue = false)]
 		public string? Rank { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TrafficClass
 		/// </summary>
 		[DataMember(Name = "trafficClass", EmitDefaultValue = false)]
 		public string? TrafficClass { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ServerName
 		/// </summary>
 		[DataMember(Name = "serverName", EmitDefaultValue = false)]
 		public string? ServerName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Url
 		/// </summary>
 		[DataMember(Name = "url", EmitDefaultValue = false)]
 		public string? Url { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Dscp
 		/// </summary>
 		[DataMember(Name = "dscp", EmitDefaultValue = false)]
 		public string? Dscp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IgnoreConflict
 		/// </summary>
 		[DataMember(Name = "ignoreConflict", EmitDefaultValue = false)]
 		public string? IgnoreConflict { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -61,96 +61,115 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ipPoolName", EmitDefaultValue = false)]
 		public string? IpPoolName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DhcpServerIps
 		/// </summary>
 		[DataMember(Name = "dhcpServerIps", EmitDefaultValue = false)]
 		public List<string> DhcpServerIps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Gateways
 		/// </summary>
 		[DataMember(Name = "gateways", EmitDefaultValue = false)]
 		public List<string> Gateways { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CreateTime
 		/// </summary>
 		[DataMember(Name = "createTime", EmitDefaultValue = false)]
 		public string? CreateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
 		public string? LastUpdateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TotalIpAddressCount
 		/// </summary>
 		[DataMember(Name = "totalIpAddressCount", EmitDefaultValue = false)]
 		public string? TotalIpAddressCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UsedIpAddressCount
 		/// </summary>
 		[DataMember(Name = "usedIpAddressCount", EmitDefaultValue = false)]
 		public string? UsedIpAddressCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentUuid
 		/// </summary>
 		[DataMember(Name = "parentUuid", EmitDefaultValue = false)]
 		public string? ParentUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Owner
 		/// </summary>
 		[DataMember(Name = "owner", EmitDefaultValue = false)]
 		public string? Owner { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Shared
 		/// </summary>
 		[DataMember(Name = "shared", EmitDefaultValue = false)]
 		public string? Shared { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Overlapping
 		/// </summary>
 		[DataMember(Name = "overlapping", EmitDefaultValue = false)]
 		public string? Overlapping { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConfigureExternalDhcp
 		/// </summary>
 		[DataMember(Name = "configureExternalDhcp", EmitDefaultValue = false)]
 		public string? ConfigureExternalDhcp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UsedPercentage
 		/// </summary>
 		[DataMember(Name = "usedPercentage", EmitDefaultValue = false)]
 		public string? UsedPercentage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ClientOptions
 		/// </summary>
 		[DataMember(Name = "clientOptions", EmitDefaultValue = false)]
 		public Object ClientOptions { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DnsServerIps
 		/// </summary>
 		[DataMember(Name = "dnsServerIps", EmitDefaultValue = false)]
 		public List<string> DnsServerIps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Context
 		/// </summary>
 		[DataMember(Name = "context", EmitDefaultValue = false)]
 		public List<GetGlobalPoolResponseContext> Context { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv6
 		/// </summary>
 		[DataMember(Name = "ipv6", EmitDefaultValue = false)]
 		public string? Ipv6 { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpPoolCidr
 		/// </summary>
 		[DataMember(Name = "ipPoolCidr", EmitDefaultValue = false)]
 		public string? IpPoolCidr { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

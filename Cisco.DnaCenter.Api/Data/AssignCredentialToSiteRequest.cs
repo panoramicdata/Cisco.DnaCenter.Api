@@ -33,31 +33,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "cliId", EmitDefaultValue = false)]
 		public string? CliId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpV2ReadId
 		/// </summary>
 		[DataMember(Name = "snmpV2ReadId", EmitDefaultValue = false)]
 		public string? SnmpV2ReadId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpV2WriteId
 		/// </summary>
 		[DataMember(Name = "snmpV2WriteId", EmitDefaultValue = false)]
 		public string? SnmpV2WriteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpRead
 		/// </summary>
 		[DataMember(Name = "httpRead", EmitDefaultValue = false)]
 		public string? HttpRead { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpWrite
 		/// </summary>
 		[DataMember(Name = "httpWrite", EmitDefaultValue = false)]
 		public string? HttpWrite { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpV3Id
 		/// </summary>
 		[DataMember(Name = "snmpV3Id", EmitDefaultValue = false)]
 		public string? SnmpV3Id { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

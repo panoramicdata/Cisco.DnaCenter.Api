@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MaxValue
 		/// </summary>
 		[DataMember(Name = "maxValue", EmitDefaultValue = false)]
 		public int? MaxValue { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MinValue
 		/// </summary>
 		[DataMember(Name = "minValue", EmitDefaultValue = false)]
 		public int? MinValue { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

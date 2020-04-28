@@ -56,11 +56,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "authentication", EmitDefaultValue = false)]
 		public AuthenticationEnum? Authentication { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DataSwitching
 		/// </summary>
 		[DataMember(Name = "dataSwitching", EmitDefaultValue = false)]
 		public DataSwitchingEnum? DataSwitching { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PathResponseResultResponseFlexConnect" /> class.
 		/// </summary>
@@ -85,21 +87,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "egressAclAnalysis", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis EgressAclAnalysis { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IngressAclAnalysis
 		/// </summary>
 		[DataMember(Name = "ingressAclAnalysis", EmitDefaultValue = false)]
 		public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis IngressAclAnalysis { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WirelessLanControllerId
 		/// </summary>
 		[DataMember(Name = "wirelessLanControllerId", EmitDefaultValue = false)]
 		public string? WirelessLanControllerId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WirelessLanControllerName
 		/// </summary>
 		[DataMember(Name = "wirelessLanControllerName", EmitDefaultValue = false)]
 		public string? WirelessLanControllerName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

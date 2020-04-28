@@ -35,31 +35,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "source", EmitDefaultValue = false)]
 		public string? Source { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LinkStatus
 		/// </summary>
 		[DataMember(Name = "linkStatus", EmitDefaultValue = false)]
 		public string? LinkStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Label
 		/// </summary>
 		[DataMember(Name = "label", EmitDefaultValue = false)]
 		public List<Object> Label { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Target
 		/// </summary>
 		[DataMember(Name = "target", EmitDefaultValue = false)]
 		public string? Target { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public Object Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PortUtilization
 		/// </summary>
 		[DataMember(Name = "portUtilization", EmitDefaultValue = false)]
 		public Object PortUtilization { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -36,6 +36,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deviceType", EmitDefaultValue = false)]
 		public DeviceTypeEnum? DeviceType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestCustomTemplate" /> class.
 		/// </summary>
@@ -52,6 +53,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "template", EmitDefaultValue = false)]
 		public string? Template { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

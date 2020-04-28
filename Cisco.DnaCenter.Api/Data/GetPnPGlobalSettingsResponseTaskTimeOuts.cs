@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "imageDownloadTimeOut", EmitDefaultValue = false)]
 		public decimal? ImageDownloadTimeOut { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConfigTimeOut
 		/// </summary>
 		[DataMember(Name = "configTimeOut", EmitDefaultValue = false)]
 		public decimal? ConfigTimeOut { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GeneralTimeOut
 		/// </summary>
 		[DataMember(Name = "generalTimeOut", EmitDefaultValue = false)]
 		public decimal? GeneralTimeOut { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

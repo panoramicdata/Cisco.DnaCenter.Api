@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "existMgmtIpAddress", EmitDefaultValue = false)]
 		public string? ExistMgmtIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NewMgmtIpAddress
 		/// </summary>
 		[DataMember(Name = "newMgmtIpAddress", EmitDefaultValue = false)]
 		public string? NewMgmtIpAddress { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

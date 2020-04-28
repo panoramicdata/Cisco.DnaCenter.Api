@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "cliPreview", EmitDefaultValue = false)]
 		public string? CliPreview { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TemplateId
 		/// </summary>
 		[DataMember(Name = "templateId", EmitDefaultValue = false)]
 		public string? TemplateId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ValidationErrors
 		/// </summary>
 		[DataMember(Name = "validationErrors", EmitDefaultValue = false)]
 		public Object ValidationErrors { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

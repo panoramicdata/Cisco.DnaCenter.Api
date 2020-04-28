@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "device_ip", EmitDefaultValue = false)]
 		public string? DeviceIp { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

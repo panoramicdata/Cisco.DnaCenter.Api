@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "aclTraceCalculation", EmitDefaultValue = false)]
 		public string? AclTraceCalculation { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AclTraceCalculationFailureReason
 		/// </summary>
 		[DataMember(Name = "aclTraceCalculationFailureReason", EmitDefaultValue = false)]
 		public string? AclTraceCalculationFailureReason { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

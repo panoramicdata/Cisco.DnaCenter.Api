@@ -33,31 +33,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "interfaceIPAddress", EmitDefaultValue = false)]
 		public string? InterfaceIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceNetmaskInCIDR
 		/// </summary>
 		[DataMember(Name = "interfaceNetmaskInCIDR", EmitDefaultValue = false)]
 		public int? InterfaceNetmaskInCidr { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceGateway
 		/// </summary>
 		[DataMember(Name = "interfaceGateway", EmitDefaultValue = false)]
 		public string? InterfaceGateway { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LagOrPortNumber
 		/// </summary>
 		[DataMember(Name = "lagOrPortNumber", EmitDefaultValue = false)]
 		public int? LagOrPortNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VlanId
 		/// </summary>
 		[DataMember(Name = "vlanId", EmitDefaultValue = false)]
 		public int? VlanId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceName
 		/// </summary>
 		[DataMember(Name = "interfaceName", EmitDefaultValue = false)]
 		public string? InterfaceName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

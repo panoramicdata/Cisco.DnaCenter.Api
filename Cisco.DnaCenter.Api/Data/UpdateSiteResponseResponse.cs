@@ -44,56 +44,67 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
 		public string? EndTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public string? _Version { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
 		public string? StartTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Progress
 		/// </summary>
 		[DataMember(Name = "progress", EmitDefaultValue = false)]
 		public string? Progress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Data
 		/// </summary>
 		[DataMember(Name = "data", EmitDefaultValue = false)]
 		public string? Data { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ServiceType
 		/// </summary>
 		[DataMember(Name = "serviceType", EmitDefaultValue = false)]
 		public string? ServiceType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OperationIdList
 		/// </summary>
 		[DataMember(Name = "operationIdList", EmitDefaultValue = false)]
 		public List<string> OperationIdList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsError
 		/// </summary>
 		[DataMember(Name = "isError", EmitDefaultValue = false)]
 		public string? IsError { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RootId
 		/// </summary>
 		[DataMember(Name = "rootId", EmitDefaultValue = false)]
 		public string? RootId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

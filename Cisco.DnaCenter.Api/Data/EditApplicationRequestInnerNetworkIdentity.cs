@@ -33,31 +33,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LowerPort
 		/// </summary>
 		[DataMember(Name = "lowerPort", EmitDefaultValue = false)]
 		public string? LowerPort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ports
 		/// </summary>
 		[DataMember(Name = "ports", EmitDefaultValue = false)]
 		public string? Ports { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UpperPort
 		/// </summary>
 		[DataMember(Name = "upperPort", EmitDefaultValue = false)]
 		public string? UpperPort { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

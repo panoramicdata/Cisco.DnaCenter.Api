@@ -37,41 +37,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "authPassword", EmitDefaultValue = false)]
 		public string? AuthPassword { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthType
 		/// </summary>
 		[DataMember(Name = "authType", EmitDefaultValue = false)]
 		public string? AuthType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpMode
 		/// </summary>
 		[DataMember(Name = "snmpMode", EmitDefaultValue = false)]
 		public string? SnmpMode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PrivacyPassword
 		/// </summary>
 		[DataMember(Name = "privacyPassword", EmitDefaultValue = false)]
 		public string? PrivacyPassword { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PrivacyType
 		/// </summary>
 		[DataMember(Name = "privacyType", EmitDefaultValue = false)]
 		public string? PrivacyType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Username
 		/// </summary>
 		[DataMember(Name = "username", EmitDefaultValue = false)]
 		public string? Username { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

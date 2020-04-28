@@ -42,51 +42,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "instanceType", EmitDefaultValue = false)]
 		public string? InstanceType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceUuid
 		/// </summary>
 		[DataMember(Name = "instanceUuid", EmitDefaultValue = false)]
 		public string? InstanceUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Namespace
 		/// </summary>
 		[DataMember(Name = "namespace", EmitDefaultValue = false)]
 		public string? _Namespace { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Key
 		/// </summary>
 		[DataMember(Name = "key", EmitDefaultValue = false)]
 		public string? Key { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public int? _Version { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Value
 		/// </summary>
 		[DataMember(Name = "value", EmitDefaultValue = false)]
 		public List<UpdateNetworkRequestSettingsSyslogServer> Value { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GroupUuid
 		/// </summary>
 		[DataMember(Name = "groupUuid", EmitDefaultValue = false)]
 		public string? GroupUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InheritedGroupUuid
 		/// </summary>
 		[DataMember(Name = "inheritedGroupUuid", EmitDefaultValue = false)]
 		public string? InheritedGroupUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InheritedGroupName
 		/// </summary>
 		[DataMember(Name = "inheritedGroupName", EmitDefaultValue = false)]
 		public string? InheritedGroupName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -43,51 +43,61 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public string? _Version { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
 		public List<GetOverallNetworkHealthResponseResponse> Response { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MeasuredBy
 		/// </summary>
 		[DataMember(Name = "measuredBy", EmitDefaultValue = false)]
 		public string? MeasuredBy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LatestMeasuredByEntity
 		/// </summary>
 		[DataMember(Name = "latestMeasuredByEntity", EmitDefaultValue = false)]
 		public Object LatestMeasuredByEntity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LatestHealthScore
 		/// </summary>
 		[DataMember(Name = "latestHealthScore", EmitDefaultValue = false)]
 		public int? LatestHealthScore { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MonitoredDevices
 		/// </summary>
 		[DataMember(Name = "monitoredDevices", EmitDefaultValue = false)]
 		public int? MonitoredDevices { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MonitoredHealthyDevices
 		/// </summary>
 		[DataMember(Name = "monitoredHealthyDevices", EmitDefaultValue = false)]
 		public int? MonitoredHealthyDevices { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MonitoredUnHealthyDevices
 		/// </summary>
 		[DataMember(Name = "monitoredUnHealthyDevices", EmitDefaultValue = false)]
 		public int? MonitoredUnHealthyDevices { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UnMonitoredDevices
 		/// </summary>
 		[DataMember(Name = "unMonitoredDevices", EmitDefaultValue = false)]
 		public decimal? UnMonitoredDevices { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HealthDistirubution
 		/// </summary>
 		[DataMember(Name = "healthDistirubution", EmitDefaultValue = false)]
 		public List<GetOverallNetworkHealthResponseHealthDistirubution> HealthDistirubution { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

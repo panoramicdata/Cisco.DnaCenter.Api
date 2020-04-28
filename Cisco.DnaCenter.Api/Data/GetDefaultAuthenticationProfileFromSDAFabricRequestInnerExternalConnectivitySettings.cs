@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "interfaceName", EmitDefaultValue = false)]
 		public string? InterfaceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExternalAutonomouSystemNumber
 		/// </summary>
 		[DataMember(Name = "externalAutonomouSystemNumber", EmitDefaultValue = false)]
 		public string? ExternalAutonomouSystemNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets L3Handoff
 		/// </summary>
 		[DataMember(Name = "l3Handoff", EmitDefaultValue = false)]
 		public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff> L3Handoff { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

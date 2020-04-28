@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "activateLowerImageVersion", EmitDefaultValue = false)]
 		public bool? ActivateLowerImageVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceUpgradeMode
 		/// </summary>
 		[DataMember(Name = "deviceUpgradeMode", EmitDefaultValue = false)]
 		public string? DeviceUpgradeMode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceUuid
 		/// </summary>
 		[DataMember(Name = "deviceUuid", EmitDefaultValue = false)]
 		public string? DeviceUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DistributeIfNeeded
 		/// </summary>
 		[DataMember(Name = "distributeIfNeeded", EmitDefaultValue = false)]
 		public bool? DistributeIfNeeded { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageUuidList
 		/// </summary>
 		[DataMember(Name = "imageUuidList", EmitDefaultValue = false)]
 		public List<string> ImageUuidList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SmuImageUuidList
 		/// </summary>
 		[DataMember(Name = "smuImageUuidList", EmitDefaultValue = false)]
 		public List<string> SmuImageUuidList { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -37,41 +37,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "proxy", EmitDefaultValue = false)]
 		public bool? Proxy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MakeDefault
 		/// </summary>
 		[DataMember(Name = "makeDefault", EmitDefaultValue = false)]
 		public bool? MakeDefault { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Port
 		/// </summary>
 		[DataMember(Name = "port", EmitDefaultValue = false)]
 		public decimal? Port { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProfileId
 		/// </summary>
 		[DataMember(Name = "profileId", EmitDefaultValue = false)]
 		public string? ProfileId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AddressIpV4
 		/// </summary>
 		[DataMember(Name = "addressIpV4", EmitDefaultValue = false)]
 		public string? AddressIpV4 { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Cert
 		/// </summary>
 		[DataMember(Name = "cert", EmitDefaultValue = false)]
 		public string? Cert { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AddressFqdn
 		/// </summary>
 		[DataMember(Name = "addressFqdn", EmitDefaultValue = false)]
 		public string? AddressFqdn { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

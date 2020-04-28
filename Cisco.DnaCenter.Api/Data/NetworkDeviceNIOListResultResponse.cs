@@ -113,231 +113,277 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "anchorWlcForAp", EmitDefaultValue = false)]
 		public string? AnchorWlcForAp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthModelId
 		/// </summary>
 		[DataMember(Name = "authModelId", EmitDefaultValue = false)]
 		public string? AuthModelId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AvgUpdateFrequency
 		/// </summary>
 		[DataMember(Name = "avgUpdateFrequency", EmitDefaultValue = false)]
 		public int? AvgUpdateFrequency { get; set; }
+
 		/// <summary>
 		/// Gets or Sets BootDateTime
 		/// </summary>
 		[DataMember(Name = "bootDateTime", EmitDefaultValue = false)]
 		public string? BootDateTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CliStatus
 		/// </summary>
 		[DataMember(Name = "cliStatus", EmitDefaultValue = false)]
 		public string? CliStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DuplicateDeviceId
 		/// </summary>
 		[DataMember(Name = "duplicateDeviceId", EmitDefaultValue = false)]
 		public string? DuplicateDeviceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ErrorCode
 		/// </summary>
 		[DataMember(Name = "errorCode", EmitDefaultValue = false)]
 		public string? ErrorCode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ErrorDescription
 		/// </summary>
 		[DataMember(Name = "errorDescription", EmitDefaultValue = false)]
 		public string? ErrorDescription { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Family
 		/// </summary>
 		[DataMember(Name = "family", EmitDefaultValue = false)]
 		public string? Family { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Hostname
 		/// </summary>
 		[DataMember(Name = "hostname", EmitDefaultValue = false)]
 		public string? Hostname { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpStatus
 		/// </summary>
 		[DataMember(Name = "httpStatus", EmitDefaultValue = false)]
 		public string? HttpStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageName
 		/// </summary>
 		[DataMember(Name = "imageName", EmitDefaultValue = false)]
 		public string? ImageName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IngressQueueConfig
 		/// </summary>
 		[DataMember(Name = "ingressQueueConfig", EmitDefaultValue = false)]
 		public string? IngressQueueConfig { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceCount
 		/// </summary>
 		[DataMember(Name = "interfaceCount", EmitDefaultValue = false)]
 		public string? InterfaceCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InventoryCollectionStatus
 		/// </summary>
 		[DataMember(Name = "inventoryCollectionStatus", EmitDefaultValue = false)]
 		public string? InventoryCollectionStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InventoryReachabilityStatus
 		/// </summary>
 		[DataMember(Name = "inventoryReachabilityStatus", EmitDefaultValue = false)]
 		public string? InventoryReachabilityStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdated
 		/// </summary>
 		[DataMember(Name = "lastUpdated", EmitDefaultValue = false)]
 		public string? LastUpdated { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LineCardCount
 		/// </summary>
 		[DataMember(Name = "lineCardCount", EmitDefaultValue = false)]
 		public string? LineCardCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LineCardId
 		/// </summary>
 		[DataMember(Name = "lineCardId", EmitDefaultValue = false)]
 		public string? LineCardId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Location
 		/// </summary>
 		[DataMember(Name = "location", EmitDefaultValue = false)]
 		public string? Location { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocationName
 		/// </summary>
 		[DataMember(Name = "locationName", EmitDefaultValue = false)]
 		public string? LocationName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddress
 		/// </summary>
 		[DataMember(Name = "macAddress", EmitDefaultValue = false)]
 		public string? MacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ManagementIpAddress
 		/// </summary>
 		[DataMember(Name = "managementIpAddress", EmitDefaultValue = false)]
 		public string? ManagementIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MemorySize
 		/// </summary>
 		[DataMember(Name = "memorySize", EmitDefaultValue = false)]
 		public string? MemorySize { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetconfStatus
 		/// </summary>
 		[DataMember(Name = "netconfStatus", EmitDefaultValue = false)]
 		public string? NetconfStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NumUpdates
 		/// </summary>
 		[DataMember(Name = "numUpdates", EmitDefaultValue = false)]
 		public int? NumUpdates { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PingStatus
 		/// </summary>
 		[DataMember(Name = "pingStatus", EmitDefaultValue = false)]
 		public string? PingStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PlatformId
 		/// </summary>
 		[DataMember(Name = "platformId", EmitDefaultValue = false)]
 		public string? PlatformId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PortRange
 		/// </summary>
 		[DataMember(Name = "portRange", EmitDefaultValue = false)]
 		public string? PortRange { get; set; }
+
 		/// <summary>
 		/// Gets or Sets QosStatus
 		/// </summary>
 		[DataMember(Name = "qosStatus", EmitDefaultValue = false)]
 		public string? QosStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ReachabilityFailureReason
 		/// </summary>
 		[DataMember(Name = "reachabilityFailureReason", EmitDefaultValue = false)]
 		public string? ReachabilityFailureReason { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ReachabilityStatus
 		/// </summary>
 		[DataMember(Name = "reachabilityStatus", EmitDefaultValue = false)]
 		public string? ReachabilityStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Role
 		/// </summary>
 		[DataMember(Name = "role", EmitDefaultValue = false)]
 		public string? Role { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RoleSource
 		/// </summary>
 		[DataMember(Name = "roleSource", EmitDefaultValue = false)]
 		public string? RoleSource { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SerialNumber
 		/// </summary>
 		[DataMember(Name = "serialNumber", EmitDefaultValue = false)]
 		public string? SerialNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpContact
 		/// </summary>
 		[DataMember(Name = "snmpContact", EmitDefaultValue = false)]
 		public string? SnmpContact { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpLocation
 		/// </summary>
 		[DataMember(Name = "snmpLocation", EmitDefaultValue = false)]
 		public string? SnmpLocation { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SnmpStatus
 		/// </summary>
 		[DataMember(Name = "snmpStatus", EmitDefaultValue = false)]
 		public string? SnmpStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareVersion
 		/// </summary>
 		[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
 		public string? SoftwareVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tag
 		/// </summary>
 		[DataMember(Name = "tag", EmitDefaultValue = false)]
 		public string? Tag { get; set; }
+
 		/// <summary>
 		/// Gets or Sets TagCount
 		/// </summary>
 		[DataMember(Name = "tagCount", EmitDefaultValue = false)]
 		public int? TagCount { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UpTime
 		/// </summary>
 		[DataMember(Name = "upTime", EmitDefaultValue = false)]
 		public string? UpTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Vendor
 		/// </summary>
 		[DataMember(Name = "vendor", EmitDefaultValue = false)]
 		public string? Vendor { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WlcApDeviceStatus
 		/// </summary>
 		[DataMember(Name = "wlcApDeviceStatus", EmitDefaultValue = false)]
 		public string? WlcApDeviceStatus { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

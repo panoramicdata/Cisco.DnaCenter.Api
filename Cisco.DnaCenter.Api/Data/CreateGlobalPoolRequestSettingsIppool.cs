@@ -51,11 +51,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpAddressSpace
 		/// </summary>
 		[DataMember(Name = "IpAddressSpace", EmitDefaultValue = false)]
 		public IpAddressSpaceEnum? IpAddressSpace { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateGlobalPoolRequestSettingsIppool" /> class.
 		/// </summary>
@@ -82,26 +84,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ipPoolName", EmitDefaultValue = false)]
 		public string? IpPoolName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpPoolCidr
 		/// </summary>
 		[DataMember(Name = "ipPoolCidr", EmitDefaultValue = false)]
 		public string? IpPoolCidr { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Gateway
 		/// </summary>
 		[DataMember(Name = "gateway", EmitDefaultValue = false)]
 		public string? Gateway { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DhcpServerIps
 		/// </summary>
 		[DataMember(Name = "dhcpServerIps", EmitDefaultValue = false)]
 		public List<string> DhcpServerIps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DnsServerIps
 		/// </summary>
 		[DataMember(Name = "dnsServerIps", EmitDefaultValue = false)]
 		public List<string> DnsServerIps { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -31,26 +31,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "profileName", EmitDefaultValue = false)]
 		public string? ProfileName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DiscoveryCreated
 		/// </summary>
 		[DataMember(Name = "discoveryCreated", EmitDefaultValue = false)]
 		public bool? DiscoveryCreated { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CreatedBy
 		/// </summary>
 		[DataMember(Name = "createdBy", EmitDefaultValue = false)]
 		public string? CreatedBy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PrimaryEndpoint
 		/// </summary>
 		[DataMember(Name = "primaryEndpoint", EmitDefaultValue = false)]
 		public DeviceDeviceInfoPrimaryEndpoint PrimaryEndpoint { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SecondaryEndpoint
 		/// </summary>
 		[DataMember(Name = "secondaryEndpoint", EmitDefaultValue = false)]
 		public DeviceDeviceInfoPrimaryEndpoint SecondaryEndpoint { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

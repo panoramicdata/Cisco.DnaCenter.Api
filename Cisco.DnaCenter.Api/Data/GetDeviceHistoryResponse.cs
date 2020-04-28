@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
 		public List<GetDeviceHistoryResponseResponse> Response { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StatusCode
 		/// </summary>
 		[DataMember(Name = "statusCode", EmitDefaultValue = false)]
 		public decimal? StatusCode { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

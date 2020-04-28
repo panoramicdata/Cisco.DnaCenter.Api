@@ -38,41 +38,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deviceManagementIpAddress", EmitDefaultValue = false)]
 		public string? DeviceManagementIpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteNameHierarchy
 		/// </summary>
 		[DataMember(Name = "siteNameHierarchy", EmitDefaultValue = false)]
 		public string? SiteNameHierarchy { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExternalDomainRoutingProtocolName
 		/// </summary>
 		[DataMember(Name = "externalDomainRoutingProtocolName", EmitDefaultValue = false)]
 		public string? ExternalDomainRoutingProtocolName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExternalConnectivityIpPoolName
 		/// </summary>
 		[DataMember(Name = "externalConnectivityIpPoolName", EmitDefaultValue = false)]
 		public string? ExternalConnectivityIpPoolName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InternalAutonomouSystemNumber
 		/// </summary>
 		[DataMember(Name = "internalAutonomouSystemNumber", EmitDefaultValue = false)]
 		public string? InternalAutonomouSystemNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets BorderSessionType
 		/// </summary>
 		[DataMember(Name = "borderSessionType", EmitDefaultValue = false)]
 		public string? BorderSessionType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ConnectedToInternet
 		/// </summary>
 		[DataMember(Name = "connectedToInternet", EmitDefaultValue = false)]
 		public bool? ConnectedToInternet { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExternalConnectivitySettings
 		/// </summary>
 		[DataMember(Name = "externalConnectivitySettings", EmitDefaultValue = false)]
 		public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings> ExternalConnectivitySettings { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

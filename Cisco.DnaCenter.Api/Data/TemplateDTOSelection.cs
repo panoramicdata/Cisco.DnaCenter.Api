@@ -37,6 +37,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "selectionType", EmitDefaultValue = false)]
 		public SelectionTypeEnum? SelectionType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateDtoSelection" /> class.
 		/// </summary>
@@ -55,11 +56,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SelectionValues
 		/// </summary>
 		[DataMember(Name = "selectionValues", EmitDefaultValue = false)]
 		public Object SelectionValues { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -31,26 +31,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Label
 		/// </summary>
 		[DataMember(Name = "label", EmitDefaultValue = false)]
 		public string? Label { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ParentNodeId
 		/// </summary>
 		[DataMember(Name = "parentNodeId", EmitDefaultValue = false)]
 		public string? ParentNodeId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets X
 		/// </summary>
 		[DataMember(Name = "x", EmitDefaultValue = false)]
 		public int? X { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Y
 		/// </summary>
 		[DataMember(Name = "y", EmitDefaultValue = false)]
 		public int? Y { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

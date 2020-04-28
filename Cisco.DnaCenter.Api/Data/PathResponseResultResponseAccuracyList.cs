@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "percent", EmitDefaultValue = false)]
 		public int? Percent { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Reason
 		/// </summary>
 		[DataMember(Name = "reason", EmitDefaultValue = false)]
 		public string? Reason { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

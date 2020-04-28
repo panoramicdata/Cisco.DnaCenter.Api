@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "deviceName", EmitDefaultValue = false)]
 		public string? DeviceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ManagedAPLocations
 		/// </summary>
 		[DataMember(Name = "managedAPLocations", EmitDefaultValue = false)]
 		public List<string> ManagedAPLocations { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DynamicInterfaces
 		/// </summary>
 		[DataMember(Name = "dynamicInterfaces", EmitDefaultValue = false)]
 		public List<ProvisionRequestInnerDynamicInterfaces> DynamicInterfaces { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

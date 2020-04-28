@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "cli", EmitDefaultValue = false)]
 		public string? Cli { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CliOutput
 		/// </summary>
 		[DataMember(Name = "cliOutput", EmitDefaultValue = false)]
 		public string? CliOutput { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

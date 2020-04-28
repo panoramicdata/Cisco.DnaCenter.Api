@@ -13,7 +13,7 @@ namespace Cisco.DnaCenter.Test
 		}
 
 		[Fact]
-		public async void GetDeviceListAsync_Succeeds()
+		public async void GetSitesAsync_Succeeds()
 		{
 			var sites = await GetSitesAsync().ConfigureAwait(false);
 
@@ -36,44 +36,17 @@ namespace Cisco.DnaCenter.Test
 			firstSite.Name.Should().NotBeNullOrEmpty();
 		}
 
-		private async Task<NetworkDeviceListResult> GetSitesAsync()
+		private async Task<GetSiteResponse> GetSitesAsync()
 		{
-			var devices = await Client
-				.Devices
+			var sites = await Client
+				.Sites
 				.GetAllAsync()
 				.ConfigureAwait(false);
 
-			devices.Should().BeOfType<NetworkDeviceListResult>();
-			devices.Should().NotBeNull();
-			devices.Response.Should().NotBeNullOrEmpty();
-			return devices;
-		}
-
-		[Fact]
-		public async void GetAllInterfacesAsync_Succeeds()
-		{
-			var interfaces = await Client
-				.Devices
-				.GetAllInterfacesAsync()
-				.ConfigureAwait(false);
-
-			interfaces.Should().BeOfType<DeviceIfListResult>();
-			interfaces.Should().NotBeNull();
-			interfaces.Response.Should().NotBeNullOrEmpty();
-		}
-
-		[Fact]
-		public async void GetDeviceCountAsync_Succeeds()
-		{
-			var deviceCount = await Client
-				.Devices
-				.GetCountAsync()
-				.ConfigureAwait(false);
-
-			deviceCount.Should().BeOfType<CountResult>();
-			deviceCount.Response.Should().NotBeNull();
-			deviceCount.Response.HasValue.Should().BeTrue();
-			deviceCount.Response.Value.Should().NotBe(0);
+			sites.Should().BeOfType<GetSiteResponse>();
+			sites.Should().NotBeNull();
+			sites.Response.Should().NotBeNullOrEmpty();
+			return sites;
 		}
 	}
 }

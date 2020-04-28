@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "fabricName", EmitDefaultValue = false)]
 		public string? FabricName { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -31,26 +31,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
 		public string? IpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceName
 		/// </summary>
 		[DataMember(Name = "interfaceName", EmitDefaultValue = false)]
 		public string? InterfaceName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Subnetmask
 		/// </summary>
 		[DataMember(Name = "subnetmask", EmitDefaultValue = false)]
 		public string? Subnetmask { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Bandwidth
 		/// </summary>
 		[DataMember(Name = "bandwidth", EmitDefaultValue = false)]
 		public string? Bandwidth { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Gateway
 		/// </summary>
 		[DataMember(Name = "gateway", EmitDefaultValue = false)]
 		public string? Gateway { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

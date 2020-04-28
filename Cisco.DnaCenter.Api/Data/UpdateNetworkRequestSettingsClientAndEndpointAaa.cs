@@ -44,11 +44,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
 		public IpAddressEnum? IpAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SharedSecret
 		/// </summary>
 		[DataMember(Name = "sharedSecret", EmitDefaultValue = false)]
 		public SharedSecretEnum? SharedSecret { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateNetworkRequestSettingsClientAndEndpointAaa" /> class.
 		/// </summary>
@@ -71,16 +73,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "servers", EmitDefaultValue = false)]
 		public string? Servers { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Network
 		/// </summary>
 		[DataMember(Name = "network", EmitDefaultValue = false)]
 		public string? Network { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

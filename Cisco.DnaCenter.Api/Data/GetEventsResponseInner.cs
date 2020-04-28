@@ -49,66 +49,79 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "eventId", EmitDefaultValue = false)]
 		public string? EventId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _NameSpace
 		/// </summary>
 		[DataMember(Name = "nameSpace", EmitDefaultValue = false)]
 		public string? _NameSpace { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public string? _Version { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Category
 		/// </summary>
 		[DataMember(Name = "category", EmitDefaultValue = false)]
 		public string? Category { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Domain
 		/// </summary>
 		[DataMember(Name = "domain", EmitDefaultValue = false)]
 		public string? Domain { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SubDomain
 		/// </summary>
 		[DataMember(Name = "subDomain", EmitDefaultValue = false)]
 		public string? SubDomain { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public string? Type { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
 		public List<string> Tags { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Severity
 		/// </summary>
 		[DataMember(Name = "severity", EmitDefaultValue = false)]
 		public decimal? Severity { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Details
 		/// </summary>
 		[DataMember(Name = "details", EmitDefaultValue = false)]
 		public Object Details { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SubscriptionTypes
 		/// </summary>
 		[DataMember(Name = "subscriptionTypes", EmitDefaultValue = false)]
 		public List<string> SubscriptionTypes { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

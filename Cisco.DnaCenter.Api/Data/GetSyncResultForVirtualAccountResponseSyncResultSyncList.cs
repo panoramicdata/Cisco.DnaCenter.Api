@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "syncType", EmitDefaultValue = false)]
 		public string? SyncType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceSnList
 		/// </summary>
 		[DataMember(Name = "deviceSnList", EmitDefaultValue = false)]
 		public List<string> DeviceSnList { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

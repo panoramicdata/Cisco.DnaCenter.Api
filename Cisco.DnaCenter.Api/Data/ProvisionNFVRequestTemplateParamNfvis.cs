@@ -23,6 +23,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "var1", EmitDefaultValue = false)]
 		public string? Var1 { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -73,126 +73,151 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "aclApplied", EmitDefaultValue = false)]
 		public bool? AclApplied { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AdditionalInfo
 		/// </summary>
 		[DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
 		public Object AdditionalInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CustomParam
 		/// </summary>
 		[DataMember(Name = "customParam", EmitDefaultValue = false)]
 		public TopologyResultResponseCustomParam CustomParam { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DataPathId
 		/// </summary>
 		[DataMember(Name = "dataPathId", EmitDefaultValue = false)]
 		public string? DataPathId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceType
 		/// </summary>
 		[DataMember(Name = "deviceType", EmitDefaultValue = false)]
 		public string? DeviceType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Family
 		/// </summary>
 		[DataMember(Name = "family", EmitDefaultValue = false)]
 		public string? Family { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Fixed
 		/// </summary>
 		[DataMember(Name = "fixed", EmitDefaultValue = false)]
 		public bool? _Fixed { get; set; }
+
 		/// <summary>
 		/// Gets or Sets GreyOut
 		/// </summary>
 		[DataMember(Name = "greyOut", EmitDefaultValue = false)]
 		public bool? GreyOut { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ip
 		/// </summary>
 		[DataMember(Name = "ip", EmitDefaultValue = false)]
 		public string? Ip { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Label
 		/// </summary>
 		[DataMember(Name = "label", EmitDefaultValue = false)]
 		public string? Label { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NetworkType
 		/// </summary>
 		[DataMember(Name = "networkType", EmitDefaultValue = false)]
 		public string? NetworkType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NodeType
 		/// </summary>
 		[DataMember(Name = "nodeType", EmitDefaultValue = false)]
 		public string? NodeType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Order
 		/// </summary>
 		[DataMember(Name = "order", EmitDefaultValue = false)]
 		public int? Order { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OsType
 		/// </summary>
 		[DataMember(Name = "osType", EmitDefaultValue = false)]
 		public string? OsType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PlatformId
 		/// </summary>
 		[DataMember(Name = "platformId", EmitDefaultValue = false)]
 		public string? PlatformId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Role
 		/// </summary>
 		[DataMember(Name = "role", EmitDefaultValue = false)]
 		public string? Role { get; set; }
+
 		/// <summary>
 		/// Gets or Sets RoleSource
 		/// </summary>
 		[DataMember(Name = "roleSource", EmitDefaultValue = false)]
 		public string? RoleSource { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SoftwareVersion
 		/// </summary>
 		[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
 		public string? SoftwareVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
 		public List<string> Tags { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UpperNode
 		/// </summary>
 		[DataMember(Name = "upperNode", EmitDefaultValue = false)]
 		public string? UpperNode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UserId
 		/// </summary>
 		[DataMember(Name = "userId", EmitDefaultValue = false)]
 		public string? UserId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VlanId
 		/// </summary>
 		[DataMember(Name = "vlanId", EmitDefaultValue = false)]
 		public string? VlanId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets X
 		/// </summary>
 		[DataMember(Name = "x", EmitDefaultValue = false)]
 		public int? X { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Y
 		/// </summary>
 		[DataMember(Name = "y", EmitDefaultValue = false)]
 		public int? Y { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "enableFlexConnect", EmitDefaultValue = false)]
 		public bool? EnableFlexConnect { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LocalToVlan
 		/// </summary>
 		[DataMember(Name = "localToVlan", EmitDefaultValue = false)]
 		public int? LocalToVlan { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

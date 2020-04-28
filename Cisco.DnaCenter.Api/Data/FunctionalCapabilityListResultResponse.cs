@@ -31,21 +31,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
 		public Object AttributeInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceId
 		/// </summary>
 		[DataMember(Name = "deviceId", EmitDefaultValue = false)]
 		public string? DeviceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FunctionalCapability
 		/// </summary>
 		[DataMember(Name = "functionalCapability", EmitDefaultValue = false)]
 		public List<FunctionalCapabilityResultResponse> FunctionalCapability { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

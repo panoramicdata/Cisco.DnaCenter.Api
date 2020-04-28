@@ -61,6 +61,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
 		public TypeEnum? Type { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TemplateDeploymentInfoTargetInfo" /> class.
 		/// </summary>
@@ -81,16 +82,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "hostName", EmitDefaultValue = false)]
 		public string? HostName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Params
 		/// </summary>
 		[DataMember(Name = "params", EmitDefaultValue = false)]
 		public Object _Params { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

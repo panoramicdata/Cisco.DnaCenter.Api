@@ -28,16 +28,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "aclName", EmitDefaultValue = false)]
 		public string? AclName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MatchingAces
 		/// </summary>
 		[DataMember(Name = "matchingAces", EmitDefaultValue = false)]
 		public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingAces> MatchingAces { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Result
 		/// </summary>
 		[DataMember(Name = "result", EmitDefaultValue = false)]
 		public string? Result { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

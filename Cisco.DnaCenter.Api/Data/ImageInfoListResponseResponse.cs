@@ -50,6 +50,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "importSourceType", EmitDefaultValue = false)]
 		public ImportSourceTypeEnum? ImportSourceType { get; set; }
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ImageInfoListResponseResponse" /> class.
 		/// </summary>
@@ -106,106 +107,127 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "applicableDevicesForImage", EmitDefaultValue = false)]
 		public List<ImageInfoListResponseApplicableDevicesForImage> ApplicableDevicesForImage { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ApplicationType
 		/// </summary>
 		[DataMember(Name = "applicationType", EmitDefaultValue = false)]
 		public string? ApplicationType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CreatedTime
 		/// </summary>
 		[DataMember(Name = "createdTime", EmitDefaultValue = false)]
 		public string? CreatedTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExtendedAttributes
 		/// </summary>
 		[DataMember(Name = "extendedAttributes", EmitDefaultValue = false)]
 		public Object ExtendedAttributes { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Family
 		/// </summary>
 		[DataMember(Name = "family", EmitDefaultValue = false)]
 		public string? Family { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Feature
 		/// </summary>
 		[DataMember(Name = "feature", EmitDefaultValue = false)]
 		public string? Feature { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FileServiceId
 		/// </summary>
 		[DataMember(Name = "fileServiceId", EmitDefaultValue = false)]
 		public string? FileServiceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FileSize
 		/// </summary>
 		[DataMember(Name = "fileSize", EmitDefaultValue = false)]
 		public string? FileSize { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageIntegrityStatus
 		/// </summary>
 		[DataMember(Name = "imageIntegrityStatus", EmitDefaultValue = false)]
 		public string? ImageIntegrityStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageName
 		/// </summary>
 		[DataMember(Name = "imageName", EmitDefaultValue = false)]
 		public string? ImageName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageSeries
 		/// </summary>
 		[DataMember(Name = "imageSeries", EmitDefaultValue = false)]
 		public List<string> ImageSeries { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageSource
 		/// </summary>
 		[DataMember(Name = "imageSource", EmitDefaultValue = false)]
 		public string? ImageSource { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageType
 		/// </summary>
 		[DataMember(Name = "imageType", EmitDefaultValue = false)]
 		public string? ImageType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageUuid
 		/// </summary>
 		[DataMember(Name = "imageUuid", EmitDefaultValue = false)]
 		public string? ImageUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IsTaggedGolden
 		/// </summary>
 		[DataMember(Name = "isTaggedGolden", EmitDefaultValue = false)]
 		public bool? IsTaggedGolden { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Md5Checksum
 		/// </summary>
 		[DataMember(Name = "md5Checksum", EmitDefaultValue = false)]
 		public string? Md5Checksum { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProfileInfo
 		/// </summary>
 		[DataMember(Name = "profileInfo", EmitDefaultValue = false)]
 		public List<ImageInfoListResponseProfileInfo> ProfileInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ShaCheckSum
 		/// </summary>
 		[DataMember(Name = "shaCheckSum", EmitDefaultValue = false)]
 		public string? ShaCheckSum { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Vendor
 		/// </summary>
 		[DataMember(Name = "vendor", EmitDefaultValue = false)]
 		public string? Vendor { get; set; }
+
 		/// <summary>
 		/// Gets or Sets _Version
 		/// </summary>
 		[DataMember(Name = "version", EmitDefaultValue = false)]
 		public string? _Version { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

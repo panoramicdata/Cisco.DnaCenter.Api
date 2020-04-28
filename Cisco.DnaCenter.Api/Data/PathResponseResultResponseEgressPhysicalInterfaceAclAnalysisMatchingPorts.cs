@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ports", EmitDefaultValue = false)]
 		public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts> Ports { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -32,26 +32,31 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "ipPoolName", EmitDefaultValue = false)]
 		public string? IpPoolName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Gateway
 		/// </summary>
 		[DataMember(Name = "gateway", EmitDefaultValue = false)]
 		public string? Gateway { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DhcpServerIps
 		/// </summary>
 		[DataMember(Name = "dhcpServerIps", EmitDefaultValue = false)]
 		public List<string> DhcpServerIps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DnsServerIps
 		/// </summary>
 		[DataMember(Name = "dnsServerIps", EmitDefaultValue = false)]
 		public List<string> DnsServerIps { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Id
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

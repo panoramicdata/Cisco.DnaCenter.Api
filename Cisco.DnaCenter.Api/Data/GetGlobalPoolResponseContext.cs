@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "owner", EmitDefaultValue = false)]
 		public string? Owner { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ContextKey
 		/// </summary>
 		[DataMember(Name = "contextKey", EmitDefaultValue = false)]
 		public string? ContextKey { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ContextValue
 		/// </summary>
 		[DataMember(Name = "contextValue", EmitDefaultValue = false)]
 		public string? ContextValue { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

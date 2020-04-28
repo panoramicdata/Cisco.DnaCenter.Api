@@ -34,31 +34,37 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "port", EmitDefaultValue = false)]
 		public decimal? Port { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv4Address
 		/// </summary>
 		[DataMember(Name = "ipv4Address", EmitDefaultValue = false)]
 		public Object Ipv4Address { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Ipv6Address
 		/// </summary>
 		[DataMember(Name = "ipv6Address", EmitDefaultValue = false)]
 		public Object Ipv6Address { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Fqdn
 		/// </summary>
 		[DataMember(Name = "fqdn", EmitDefaultValue = false)]
 		public string? Fqdn { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Certificate
 		/// </summary>
 		[DataMember(Name = "certificate", EmitDefaultValue = false)]
 		public string? Certificate { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

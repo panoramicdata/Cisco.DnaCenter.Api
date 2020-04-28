@@ -125,256 +125,307 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "source", EmitDefaultValue = false)]
 		public string? Source { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SerialNumber
 		/// </summary>
 		[DataMember(Name = "serialNumber", EmitDefaultValue = false)]
 		public string? SerialNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Stack
 		/// </summary>
 		[DataMember(Name = "stack", EmitDefaultValue = false)]
 		public bool? Stack { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Mode
 		/// </summary>
 		[DataMember(Name = "mode", EmitDefaultValue = false)]
 		public string? Mode { get; set; }
+
 		/// <summary>
 		/// Gets or Sets State
 		/// </summary>
 		[DataMember(Name = "state", EmitDefaultValue = false)]
 		public string? State { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Location
 		/// </summary>
 		[DataMember(Name = "location", EmitDefaultValue = false)]
 		public DeviceDeviceInfoLocation Location { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Description
 		/// </summary>
 		[DataMember(Name = "description", EmitDefaultValue = false)]
 		public string? Description { get; set; }
+
 		/// <summary>
 		/// Gets or Sets OnbState
 		/// </summary>
 		[DataMember(Name = "onbState", EmitDefaultValue = false)]
 		public string? OnbState { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthenticatedMicNumber
 		/// </summary>
 		[DataMember(Name = "authenticatedMicNumber", EmitDefaultValue = false)]
 		public string? AuthenticatedMicNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthenticatedSudiSerialNo
 		/// </summary>
 		[DataMember(Name = "authenticatedSudiSerialNo", EmitDefaultValue = false)]
 		public string? AuthenticatedSudiSerialNo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CapabilitiesSupported
 		/// </summary>
 		[DataMember(Name = "capabilitiesSupported", EmitDefaultValue = false)]
 		public List<string> CapabilitiesSupported { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FeaturesSupported
 		/// </summary>
 		[DataMember(Name = "featuresSupported", EmitDefaultValue = false)]
 		public List<string> FeaturesSupported { get; set; }
+
 		/// <summary>
 		/// Gets or Sets CmState
 		/// </summary>
 		[DataMember(Name = "cmState", EmitDefaultValue = false)]
 		public string? CmState { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FirstContact
 		/// </summary>
 		[DataMember(Name = "firstContact", EmitDefaultValue = false)]
 		public decimal? FirstContact { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastContact
 		/// </summary>
 		[DataMember(Name = "lastContact", EmitDefaultValue = false)]
 		public decimal? LastContact { get; set; }
+
 		/// <summary>
 		/// Gets or Sets MacAddress
 		/// </summary>
 		[DataMember(Name = "macAddress", EmitDefaultValue = false)]
 		public string? MacAddress { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Pid
 		/// </summary>
 		[DataMember(Name = "pid", EmitDefaultValue = false)]
 		public string? Pid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceSudiSerialNos
 		/// </summary>
 		[DataMember(Name = "deviceSudiSerialNos", EmitDefaultValue = false)]
 		public List<string> DeviceSudiSerialNos { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastUpdateOn
 		/// </summary>
 		[DataMember(Name = "lastUpdateOn", EmitDefaultValue = false)]
 		public decimal? LastUpdateOn { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WorkflowId
 		/// </summary>
 		[DataMember(Name = "workflowId", EmitDefaultValue = false)]
 		public string? WorkflowId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets WorkflowName
 		/// </summary>
 		[DataMember(Name = "workflowName", EmitDefaultValue = false)]
 		public string? WorkflowName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectId
 		/// </summary>
 		[DataMember(Name = "projectId", EmitDefaultValue = false)]
 		public string? ProjectId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ProjectName
 		/// </summary>
 		[DataMember(Name = "projectName", EmitDefaultValue = false)]
 		public string? ProjectName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeviceType
 		/// </summary>
 		[DataMember(Name = "deviceType", EmitDefaultValue = false)]
 		public string? DeviceType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AgentType
 		/// </summary>
 		[DataMember(Name = "agentType", EmitDefaultValue = false)]
 		public string? AgentType { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageVersion
 		/// </summary>
 		[DataMember(Name = "imageVersion", EmitDefaultValue = false)]
 		public string? ImageVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets FileSystemList
 		/// </summary>
 		[DataMember(Name = "fileSystemList", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoFileSystemList> FileSystemList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PnpProfileList
 		/// </summary>
 		[DataMember(Name = "pnpProfileList", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoPnpProfileList> PnpProfileList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ImageFile
 		/// </summary>
 		[DataMember(Name = "imageFile", EmitDefaultValue = false)]
 		public string? ImageFile { get; set; }
+
 		/// <summary>
 		/// Gets or Sets HttpHeaders
 		/// </summary>
 		[DataMember(Name = "httpHeaders", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoHttpHeaders> HttpHeaders { get; set; }
+
 		/// <summary>
 		/// Gets or Sets NeighborLinks
 		/// </summary>
 		[DataMember(Name = "neighborLinks", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoNeighborLinks> NeighborLinks { get; set; }
+
 		/// <summary>
 		/// Gets or Sets LastSyncTime
 		/// </summary>
 		[DataMember(Name = "lastSyncTime", EmitDefaultValue = false)]
 		public decimal? LastSyncTime { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpInterfaces
 		/// </summary>
 		[DataMember(Name = "ipInterfaces", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoIpInterfaces> IpInterfaces { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Hostname
 		/// </summary>
 		[DataMember(Name = "hostname", EmitDefaultValue = false)]
 		public string? Hostname { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AuthStatus
 		/// </summary>
 		[DataMember(Name = "authStatus", EmitDefaultValue = false)]
 		public string? AuthStatus { get; set; }
+
 		/// <summary>
 		/// Gets or Sets StackInfo
 		/// </summary>
 		[DataMember(Name = "stackInfo", EmitDefaultValue = false)]
 		public DeviceDeviceInfoStackInfo StackInfo { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ReloadRequested
 		/// </summary>
 		[DataMember(Name = "reloadRequested", EmitDefaultValue = false)]
 		public bool? ReloadRequested { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AddedOn
 		/// </summary>
 		[DataMember(Name = "addedOn", EmitDefaultValue = false)]
 		public decimal? AddedOn { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteId
 		/// </summary>
 		[DataMember(Name = "siteId", EmitDefaultValue = false)]
 		public string? SiteId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AaaCredentials
 		/// </summary>
 		[DataMember(Name = "aaaCredentials", EmitDefaultValue = false)]
 		public DeviceDeviceInfoAaaCredentials AaaCredentials { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UserMicNumbers
 		/// </summary>
 		[DataMember(Name = "userMicNumbers", EmitDefaultValue = false)]
 		public List<string> UserMicNumbers { get; set; }
+
 		/// <summary>
 		/// Gets or Sets UserSudiSerialNos
 		/// </summary>
 		[DataMember(Name = "userSudiSerialNos", EmitDefaultValue = false)]
 		public List<string> UserSudiSerialNos { get; set; }
+
 		/// <summary>
 		/// Gets or Sets AddnMacAddrs
 		/// </summary>
 		[DataMember(Name = "addnMacAddrs", EmitDefaultValue = false)]
 		public List<string> AddnMacAddrs { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PreWorkflowCliOuputs
 		/// </summary>
 		[DataMember(Name = "preWorkflowCliOuputs", EmitDefaultValue = false)]
 		public List<DeviceDeviceInfoPreWorkflowCliOuputs> PreWorkflowCliOuputs { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
 		public Object Tags { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SudiRequired
 		/// </summary>
 		[DataMember(Name = "sudiRequired", EmitDefaultValue = false)]
 		public bool? SudiRequired { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SmartAccountId
 		/// </summary>
 		[DataMember(Name = "smartAccountId", EmitDefaultValue = false)]
 		public string? SmartAccountId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets VirtualAccountId
 		/// </summary>
 		[DataMember(Name = "virtualAccountId", EmitDefaultValue = false)]
 		public string? VirtualAccountId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PopulateInventory
 		/// </summary>
 		[DataMember(Name = "populateInventory", EmitDefaultValue = false)]
 		public bool? PopulateInventory { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SiteName
 		/// </summary>
 		[DataMember(Name = "siteName", EmitDefaultValue = false)]
 		public string? SiteName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Name
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

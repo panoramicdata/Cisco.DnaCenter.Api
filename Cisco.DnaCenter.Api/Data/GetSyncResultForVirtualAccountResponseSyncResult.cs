@@ -26,11 +26,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "syncList", EmitDefaultValue = false)]
 		public List<GetSyncResultForVirtualAccountResponseSyncResultSyncList> SyncList { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SyncMsg
 		/// </summary>
 		[DataMember(Name = "syncMsg", EmitDefaultValue = false)]
 		public string? SyncMsg { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

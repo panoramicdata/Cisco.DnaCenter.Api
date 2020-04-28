@@ -47,61 +47,73 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "id", EmitDefaultValue = false)]
 		public string? Id { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceId
 		/// </summary>
 		[DataMember(Name = "instanceId", EmitDefaultValue = false)]
 		public int? InstanceId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DisplayName
 		/// </summary>
 		[DataMember(Name = "displayName", EmitDefaultValue = false)]
 		public string? DisplayName { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceTenantId
 		/// </summary>
 		[DataMember(Name = "instanceTenantId", EmitDefaultValue = false)]
 		public string? InstanceTenantId { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DeployPending
 		/// </summary>
 		[DataMember(Name = "deployPending", EmitDefaultValue = false)]
 		public string? DeployPending { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InstanceVersion
 		/// </summary>
 		[DataMember(Name = "instanceVersion", EmitDefaultValue = false)]
 		public int? InstanceVersion { get; set; }
+
 		/// <summary>
 		/// Gets or Sets ExternalDomainProtocolNumber
 		/// </summary>
 		[DataMember(Name = "externalDomainProtocolNumber", EmitDefaultValue = false)]
 		public string? ExternalDomainProtocolNumber { get; set; }
+
 		/// <summary>
 		/// Gets or Sets InterfaceUuid
 		/// </summary>
 		[DataMember(Name = "interfaceUuid", EmitDefaultValue = false)]
 		public string? InterfaceUuid { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PolicyPropagationEnabled
 		/// </summary>
 		[DataMember(Name = "policyPropagationEnabled", EmitDefaultValue = false)]
 		public bool? PolicyPropagationEnabled { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PolicySgtTag
 		/// </summary>
 		[DataMember(Name = "policySgtTag", EmitDefaultValue = false)]
 		public decimal? PolicySgtTag { get; set; }
+
 		/// <summary>
 		/// Gets or Sets L2Handoff
 		/// </summary>
 		[DataMember(Name = "l2Handoff", EmitDefaultValue = false)]
 		public List<Object> L2Handoff { get; set; }
+
 		/// <summary>
 		/// Gets or Sets L3Handoff
 		/// </summary>
 		[DataMember(Name = "l3Handoff", EmitDefaultValue = false)]
 		public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff> L3Handoff { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

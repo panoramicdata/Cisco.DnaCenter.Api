@@ -27,16 +27,19 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "name", EmitDefaultValue = false)]
 		public string? Name { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Port
 		/// </summary>
 		[DataMember(Name = "port", EmitDefaultValue = false)]
 		public string? Port { get; set; }
+
 		/// <summary>
 		/// Gets or Sets IpAddressPool
 		/// </summary>
 		[DataMember(Name = "ipAddressPool", EmitDefaultValue = false)]
 		public string? IpAddressPool { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -38,41 +38,49 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "controlPath", EmitDefaultValue = false)]
 		public bool? ControlPath { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DestIP
 		/// </summary>
 		[DataMember(Name = "destIP", EmitDefaultValue = false)]
 		public string? DestinationIp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets DestPort
 		/// </summary>
 		[DataMember(Name = "destPort", EmitDefaultValue = false)]
 		public string? DestinationPort { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Inclusions
 		/// </summary>
 		[DataMember(Name = "inclusions", EmitDefaultValue = false)]
 		public List<string> Inclusions { get; set; }
+
 		/// <summary>
 		/// Gets or Sets PeriodicRefresh
 		/// </summary>
 		[DataMember(Name = "periodicRefresh", EmitDefaultValue = false)]
 		public bool? PeriodicRefresh { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Protocol
 		/// </summary>
 		[DataMember(Name = "protocol", EmitDefaultValue = false)]
 		public string? Protocol { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SourceIP
 		/// </summary>
 		[DataMember(Name = "sourceIP", EmitDefaultValue = false)]
 		public string? SourceIp { get; set; }
+
 		/// <summary>
 		/// Gets or Sets SourcePort
 		/// </summary>
 		[DataMember(Name = "sourcePort", EmitDefaultValue = false)]
 		public string? SourcePort { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>

@@ -25,11 +25,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "nfvis", EmitDefaultValue = false)]
 		public ProvisionNfvRequestTemplateParamNfvis Nfvis { get; set; }
+
 		/// <summary>
 		/// Gets or Sets Asav
 		/// </summary>
 		[DataMember(Name = "asav", EmitDefaultValue = false)]
 		public ProvisionNfvRequestTemplateParamNfvis Asav { get; set; }
+
 		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
