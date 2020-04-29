@@ -59,7 +59,7 @@ The DNA Center Intent API documentation can be found here:
 
 ## Testing
 
-You can test this using a Meraki Sandbox here:
+You can test this using a DNA Center Sandbox here:
 
 - [Cisco DNA Center AO 1.3.1.4](https://devnetsandbox.cisco.com/RM/Diagram/Index/471eb739-323e-4805-b2a6-d0ec813dc8fc?diagramType=Topology)
 - [Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/b8d7aa34-aa8f-4bf2-9c42-302aaa2daafb?diagramType=Topology)
