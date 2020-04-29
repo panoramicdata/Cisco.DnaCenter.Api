@@ -61,6 +61,7 @@ The DNA Center Intent API documentation can be found here:
 
 You can test this using a Meraki Sandbox here:
 
-- [DNA Center Always On](https://devnetsandbox.cisco.com/RM/Diagram/Index/c3c949dc-30af-498b-9d77-4f1c07d835f9?diagramType=Topology)
+- [Cisco DNA Center AO 1.3.1.4](https://devnetsandbox.cisco.com/RM/Diagram/Index/471eb739-323e-4805-b2a6-d0ec813dc8fc?diagramType=Topology)
+- [Cisco DNA Center Lab 1](https://devnetsandbox.cisco.com/RM/Diagram/Index/b8d7aa34-aa8f-4bf2-9c42-302aaa2daafb?diagramType=Topology)
 
 After signing in, look in the lower left hand side of the page for your URL, username and password.
