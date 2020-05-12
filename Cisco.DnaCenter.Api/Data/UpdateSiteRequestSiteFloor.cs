@@ -1,7 +1,5 @@
-using System.Text;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -11,43 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 	[DataContract]
 	public class UpdateSiteRequestSiteFloor
 	{
-		/// <summary>
-		/// Gets or Sets RfModel
-		/// </summary>
-		[JsonConverter(typeof(StringEnumConverter))]
-		public enum RfModelEnum
-		{
 
-			/// <summary>
-			/// Enum CubesAndWalledOffices for "Cubes And Walled Offices"
-			/// </summary>
-			[EnumMember(Value = "Cubes And Walled Offices")]
-			CubesAndWalledOffices,
-
-			/// <summary>
-			/// Enum DrywallOfficeOnly for "Drywall Office Only"
-			/// </summary>
-			[EnumMember(Value = "Drywall Office Only")]
-			DrywallOfficeOnly,
-
-			/// <summary>
-			/// Enum IndoorHighCeiling for "Indoor High Ceiling"
-			/// </summary>
-			[EnumMember(Value = "Indoor High Ceiling")]
-			IndoorHighCeiling,
-
-			/// <summary>
-			/// Enum OutdoorOpenSpace for "Outdoor Open Space"
-			/// </summary>
-			[EnumMember(Value = "Outdoor Open Space")]
-			OutdoorOpenSpace
-		}
 
 		/// <summary>
 		/// Gets or Sets RfModel
 		/// </summary>
 		[DataMember(Name = "rfModel", EmitDefaultValue = false)]
-		public RfModelEnum? RfModel { get; set; }
+		public RfModel? RfModel { get; set; }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateSiteRequestSiteFloor" /> class.
@@ -57,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Width">Width.</param>
 		/// <param name="Length">Length.</param>
 		/// <param name="Height">Height.</param>
-		public UpdateSiteRequestSiteFloor(string? Name = default, RfModelEnum? RfModel = default, decimal? Width = default, decimal? Length = default, decimal? Height = default)
+		public UpdateSiteRequestSiteFloor(string? Name = default, RfModel? RfModel = default, decimal? Width = default, decimal? Length = default, decimal? Height = default)
 		{
 			this.Name = Name;
 			this.RfModel = RfModel;

@@ -61,6 +61,7 @@ namespace Cisco.DnaCenter.Api
 			EventManagement = RestService.For<IEventManagement>(_httpClient);
 			Files = RestService.For<IFiles>(_httpClient);
 			Issues = RestService.For<IIssues>(_httpClient);
+			Maps = RestService.For<IMaps>(_httpClient);
 			NetworkDiscovery = RestService.For<INetworkDiscovery>(_httpClient);
 			NetworkSettings = RestService.For<INetworkSettings>(_httpClient);
 			NonFabricWireless = RestService.For<INonFabricWireless>(_httpClient);
@@ -138,6 +139,9 @@ namespace Cisco.DnaCenter.Api
 
 		/// <inheritdoc />
 		public IIssues Issues { get; }
+
+		/// <inheritdoc />
+		public IMaps Maps { get; }
 
 		/// <inheritdoc />
 		public INetworkDiscovery NetworkDiscovery { get; }
