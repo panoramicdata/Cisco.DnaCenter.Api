@@ -1,5 +1,7 @@
 ﻿using Cisco.DnaCenter.Api.Data;
 using FluentAssertions;
+using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -70,6 +72,28 @@ namespace Cisco.DnaCenter.Test
 			deviceCount.Response.Should().NotBeNull();
 			deviceCount.Response.HasValue.Should().BeTrue();
 			deviceCount.Response.Value.Should().NotBe(0);
+		}
+
+		[Fact]
+		public async void GitHub_Demo()
+		{
+			var sites = await Client
+				.Sites
+				.GetAllAsync()
+				.ConfigureAwait(false);
+
+			var firstSite = sites.Response[0];
+
+			var devicesResponse = await Client
+				.Devices
+				.GetAllAsync(locationName: new List<string> { firstSite.SiteNameHierarchy })
+				.ConfigureAwait(false);
+
+			Logger.LogInformation("Devices:");
+			foreach (var device in devicesResponse.Response)
+			{
+				Logger.LogInformation($"    - {device.SerialNumber}: {device.Hostname}");
+			}
 		}
 	}
 }
