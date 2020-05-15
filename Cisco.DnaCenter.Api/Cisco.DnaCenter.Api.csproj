@@ -17,7 +17,8 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Added Maps.GetRfModelsAsync.</PackageReleaseNotes>
+		<PackageReleaseNotes>Added initial Business endpoint.
+Added GetFinalExecutionStatusAsync.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

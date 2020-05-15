@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using Refit;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -53,6 +54,7 @@ namespace Cisco.DnaCenter.Api
 
 			ApplicationPoliies = RestService.For<IApplicationPolicies>(_httpClient);
 			Authentication = RestService.For<IAuthentication>(_httpClient);
+			Business = RestService.For<IBusiness>(_httpClient);
 			Clients = RestService.For<IClients>(_httpClient);
 			CommandRunner = RestService.For<ICommandRunner>(_httpClient);
 			ConfigurationTemplates = RestService.For<IConfigurationTemplates>(_httpClient);
@@ -117,6 +119,9 @@ namespace Cisco.DnaCenter.Api
 		public IAuthentication Authentication { get; }
 
 		/// <inheritdoc />
+		public IBusiness Business { get; }
+
+		/// <inheritdoc />
 		public IClients Clients { get; }
 
 		/// <inheritdoc />
@@ -178,6 +183,57 @@ namespace Cisco.DnaCenter.Api
 
 		/// <inheritdoc />
 		public IUsers Users { get; }
+
+		public async Task<ExecutionStatus> GetFinalExecutionStatusAsync(
+			string executionId,
+			TimeSpan? timeout = null,
+			TimeSpan? pollingDelay = null,
+			TimeSpan? initialDelay = null,
+			CancellationToken cancellationToken = default
+			)
+		{
+			if (executionId is null)
+			{
+				throw new ArgumentNullException(nameof(executionId));
+			}
+
+			var timeoutStopwatch = Stopwatch.StartNew();
+			pollingDelay ??= TimeSpan.FromMilliseconds(500);
+			timeout ??= TimeSpan.MaxValue;
+
+			// The user may have some knowledge that there is a minimum delay before it is worth polling.
+			if (initialDelay != null)
+			{
+				await Task.Delay(initialDelay.Value, cancellationToken).ConfigureAwait(false);
+			}
+
+			while (true)
+			{
+				if (cancellationToken.IsCancellationRequested)
+				{
+					cancellationToken.ThrowIfCancellationRequested();
+				}
+
+				var executionStatus = await Business
+					.GetExecutionStatusAsync(executionId, cancellationToken)
+					.ConfigureAwait(false);
+
+				switch (executionStatus.Status)
+				{
+					case ExecutionStatusStatus.Success:
+					case ExecutionStatusStatus.Failure:
+						return executionStatus;
+					case ExecutionStatusStatus.Pending:
+						if (timeoutStopwatch.Elapsed > timeout)
+						{
+							return executionStatus;
+						}
+						break;
+				}
+
+				await Task.Delay(pollingDelay.Value, cancellationToken).ConfigureAwait(false);
+			}
+		}
 
 		#region IDisposable Support
 		private bool _disposedValue = false; // To detect redundant calls

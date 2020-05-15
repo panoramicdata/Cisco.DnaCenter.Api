@@ -49,5 +49,41 @@ namespace Cisco.DnaCenter.Test
 			sites.Response.Should().NotBeNullOrEmpty();
 			return sites;
 		}
+
+		[Fact]
+		private async Task FloorCrud_Succeeds()
+		{
+			var createSitesResponse = await Client
+				.Sites
+				.CreateAsync(new CreateSiteRequest
+				{
+					Type = CreateSiteRequest.TypeEnum.Floor,
+					Site = new CreateSiteRequestSite
+					{
+						Floor = new CreateSiteRequestSiteFloor
+						{
+							Name = "Ground Floor",
+							ParentName = "Global/Welsh Schools/School 2/Campus 1/Main Building",
+							Height = 100,
+							Width = 100,
+							Length = 100,
+							RfModel = RfModel.CubesAndWalledOffices
+						}
+					}
+				}, false, true)
+				.ConfigureAwait(false);
+
+			createSitesResponse.Should().BeOfType<CreateSiteResponse>();
+			createSitesResponse.Should().NotBeNull();
+			createSitesResponse.ExecutionId.Should().NotBeNull();
+
+			var executionStatus = await Client
+				.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!)
+				.ConfigureAwait(false);
+
+			executionStatus.Should().BeOfType<ExecutionStatus>();
+			executionStatus.Should().NotBeNull();
+			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+		}
 	}
 }

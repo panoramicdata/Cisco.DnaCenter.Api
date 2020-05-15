@@ -10,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 	public class UpdateSiteRequestSiteFloor
 	{
 
-
 		/// <summary>
 		/// Gets or Sets RfModel
 		/// </summary>
