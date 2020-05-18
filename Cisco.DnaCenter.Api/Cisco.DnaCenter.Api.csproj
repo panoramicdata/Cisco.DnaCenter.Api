@@ -17,8 +17,10 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Added initial Business endpoint.
-Added GetFinalExecutionStatusAsync.</PackageReleaseNotes>
+		<PackageReleaseNotes>
+			Refactored ExecutionResponse and ExecutionStatusResponse classes.
+			Completed the AreaCrud_Succeeds unit test.
+		</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
