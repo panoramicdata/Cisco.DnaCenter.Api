@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteId">site id to assign credential.</param>
 		/// <returns>Task of AssignCredentialToSiteResponse</returns>
 		[Post("/dna/intent/api/v1/credential-to-site/{siteId}")]
-		Task<AssignCredentialToSiteResponse> AssignCredentialToSiteAsync(
+		Task<ExecutionStatusResponse> AssignCredentialToSiteAsync(
 			[Body]AssignCredentialToSiteRequest request,
 			string __persistbapioutput,
 			[AliasAs("siteId")]string siteId,
@@ -36,7 +36,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateDeviceCredentialsResponse</returns>
 		[Post("/dna/intent/api/v1/device-credential")]
-		Task<CreateDeviceCredentialsResponse> CreateDeviceCredentialsAsync(
+		Task<ExecutionStatusResponse> CreateDeviceCredentialsAsync(
 			[Body]CreateDeviceCredentialsRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -50,7 +50,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput"> Persist bapi sync response (optional, default to true)</param>
 		/// <returns>Task of CreateGlobalPoolResponse</returns>
 		[Post("/dna/intent/api/v1/global-pool")]
-		Task<CreateGlobalPoolResponse> CreateGlobalPoolAsync(
+		Task<ExecutionStatusResponse> CreateGlobalPoolAsync(
 			[Body]CreateGlobalPoolRequest request,
 			string __persistbapioutput = null,
 			CancellationToken cancellationToken = default);
@@ -66,7 +66,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput">Persist bapi sync response (optional, default to true)</param>
 		/// <returns>Task of CreateNetworkResponse</returns>
 		[Post("/dna/intent/api/v1/network/{siteId}")]
-		Task<CreateNetworkResponse> CreateNetworkAsync(
+		Task<ExecutionStatusResponse> CreateNetworkAsync(
 			[Body]CreateNetworkRequest request,
 			[AliasAs("siteId")]string siteId,
 			bool? __persistbapioutput = null,
@@ -81,7 +81,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateSPProfileResponse</returns>
 		[Post("/dna/intent/api/v1/service-provider")]
-		Task<CreateSpProfileResponse> CreateSpProfileAsync(
+		Task<ExecutionStatusResponse> CreateSpProfileAsync(
 			[Body]CreateSpProfileRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -94,7 +94,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">global credential id</param>
 		/// <returns>Task of DeleteDeviceCredentialResponse</returns>
 		[Delete("/dna/intent/api/v1/device-credential/{id}")]
-		Task<DeleteDeviceCredentialResponse> DeleteDeviceCredentialAsync(
+		Task<ExecutionResponse> DeleteDeviceCredentialAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -107,7 +107,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="id">global pool id</param>
 		/// <returns>Task of DeleteGlobalIPPoolResponse</returns>
 		[Delete("/dna/intent/api/v1/global-pool/{id}")]
-		Task<DeleteGlobalIpPoolResponse> DeleteGlobalIpPoolAsync(
+		Task<ExecutionStatusResponse> DeleteGlobalIpPoolAsync(
 			[AliasAs("id")]string id,
 			CancellationToken cancellationToken = default);
 
@@ -120,7 +120,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="sp_profile_name">sp profile name</param>
 		/// <returns>Task of DeleteSPProfileResponse</returns>
 		[Delete("/dna/intent/api/v1/sp-profile/{spProfileName}")]
-		Task<DeleteSpProfileResponse> DeleteSpProfileAsync(
+		Task<ExecutionStatusResponse> DeleteSpProfileAsync(
 			[AliasAs("spProfileName")]string spProfileName,
 			CancellationToken cancellationToken = default);
 
@@ -185,7 +185,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdateDeviceCredentialsResponse</returns>
 		[Put("/dna/intent/api/v1/device-credential")]
-		Task<UpdateDeviceCredentialsResponse> UpdateDeviceCredentialsAsync(
+		Task<ExecutionStatusResponse> UpdateDeviceCredentialsAsync(
 			[Body]UpdateDeviceCredentialsRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -198,7 +198,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdateGlobalPoolResponse</returns>
 		[Put("/dna/intent/api/v1/global-pool")]
-		Task<UpdateGlobalPoolResponse> UpdateGlobalPoolAsync(
+		Task<ExecutionStatusResponse> UpdateGlobalPoolAsync(
 			[Body]UpdateGlobalPoolRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -213,7 +213,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput">Persist bapi sync response (optional, default to true)</param>
 		/// <returns>Task of UpdateNetworkResponse</returns>
 		[Put("/dna/intent/api/v1/network/{siteId}")]
-		Task<UpdateNetworkResponse> UpdateNetworkAsync(
+		Task<ExecutionStatusResponse> UpdateNetworkAsync(
 			[Body]UpdateNetworkRequest request,
 			[AliasAs("siteId")]string siteId,
 			bool? __persistbapioutput = null);
@@ -227,7 +227,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdateSPProfileResponse</returns>
 		[Put("/dna/intent/api/v1/service-provider")]
-		Task<UpdateSpProfileResponse> UpdateSPProfileAsync(
+		Task<ExecutionStatusResponse> UpdateSPProfileAsync(
 			[Body]UpdateSpProfileRequest request,
 			CancellationToken cancellationToken = default);
 	}

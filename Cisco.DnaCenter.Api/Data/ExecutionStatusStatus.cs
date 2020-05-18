@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api.Data
 	public enum ExecutionStatusStatus
 	{
 		[EnumMember(Value = "IN_PROGRESS")]
-		Pending,
+		InProgress,
 
 		[EnumMember(Value = "SUCCESS")]
 		Success,

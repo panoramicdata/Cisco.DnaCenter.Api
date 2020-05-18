@@ -1,5 +1,7 @@
 ﻿using Cisco.DnaCenter.Api.Data;
 using FluentAssertions;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -51,29 +53,28 @@ namespace Cisco.DnaCenter.Test
 		}
 
 		[Fact]
-		private async Task FloorCrud_Succeeds()
+		private async Task AreaCrud_Succeeds()
 		{
+			// Create
+			var guid = Guid.NewGuid().ToString().Substring(0, 10);
+			const string parentName = "Global";
 			var createSitesResponse = await Client
 				.Sites
 				.CreateAsync(new CreateSiteRequest
 				{
-					Type = CreateSiteRequest.TypeEnum.Floor,
+					Type = CreateSiteRequest.TypeEnum.Area,
 					Site = new CreateSiteRequestSite
 					{
-						Floor = new CreateSiteRequestSiteFloor
+						Area = new CreateSiteRequestSiteArea
 						{
-							Name = "Ground Floor",
-							ParentName = "Global/Welsh Schools/School 2/Campus 1/Main Building",
-							Height = 100,
-							Width = 100,
-							Length = 100,
-							RfModel = RfModel.CubesAndWalledOffices
+							Name = guid,
+							ParentName = parentName
 						}
 					}
 				}, false, true)
 				.ConfigureAwait(false);
 
-			createSitesResponse.Should().BeOfType<CreateSiteResponse>();
+			createSitesResponse.Should().BeOfType<ExecutionStatusResponse>();
 			createSitesResponse.Should().NotBeNull();
 			createSitesResponse.ExecutionId.Should().NotBeNull();
 
@@ -83,6 +84,45 @@ namespace Cisco.DnaCenter.Test
 
 			executionStatus.Should().BeOfType<ExecutionStatus>();
 			executionStatus.Should().NotBeNull();
+			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+
+			//	Get all sites
+			var sitesResponse = await Client
+				.Sites
+				.GetAllAsync()
+				.ConfigureAwait(false);
+
+			var site = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
+			site.Should().NotBeNull();
+			site.Should().BeOfType<GetSiteResponseResponse>();
+			site.Id.Should().NotBeNullOrEmpty();
+
+			// Read
+			var siteById = await Client
+				.Sites
+				.GetAsync(site.Id!)
+				.ConfigureAwait(false);
+
+			siteById.Should().BeOfType<GetSiteSingleResponse>();
+			siteById.Should().NotBeNull();
+			siteById.Response.Should().NotBeNull();
+			siteById.Response.Should().BeOfType<GetSiteResponseResponse>();
+			siteById.Response.Name.Should().Be(guid);
+
+			// Delete
+			var deleteSiteResponse = await Client
+				.Sites
+				.DeleteAsync(site.Id!)
+				.ConfigureAwait(false);
+
+			deleteSiteResponse.Should().BeOfType<ExecutionStatusResponse>();
+			deleteSiteResponse.Should().NotBeNull();
+
+			executionStatus = await Client
+				.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!)
+				.ConfigureAwait(false);
+
+
 			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 		}
 	}

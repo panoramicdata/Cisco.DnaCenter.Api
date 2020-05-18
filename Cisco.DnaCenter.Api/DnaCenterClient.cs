@@ -223,7 +223,7 @@ namespace Cisco.DnaCenter.Api
 					case ExecutionStatusStatus.Success:
 					case ExecutionStatusStatus.Failure:
 						return executionStatus;
-					case ExecutionStatusStatus.Pending:
+					case ExecutionStatusStatus.InProgress:
 						if (timeoutStopwatch.Elapsed > timeout)
 						{
 							return executionStatus;

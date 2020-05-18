@@ -1,21 +1,21 @@
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// AddsBorderDeviceInSdaFabricResponse
+	/// AddControlPlaneDeviceInSdaFabricResponse
 	/// </summary>
 	[DataContract]
-	public class AddsBorderDeviceInSdaFabricResponse
+	public class ExecutionResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="AddsBorderDeviceInSdaFabricResponse" /> class.
+		/// Initializes a new instance of the <see cref="ExecutionResponse" /> class.
 		/// </summary>
 		/// <param name="Status">Status.</param>
 		/// <param name="Description">Description.</param>
 		/// <param name="ExecutionStatusUrl">ExecutionStatusUrl.</param>
-		public AddsBorderDeviceInSdaFabricResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
+		public ExecutionResponse(string? Status = default, string? Description = default, string? ExecutionStatusUrl = default)
 		{
 			this.Status = Status;
 			this.Description = Description;
@@ -47,7 +47,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class AddsBorderDeviceInSdaFabricResponse {\n");
+			sb.Append("class AddControlPlaneDeviceInSdaFabricResponse {\n");
 			sb.Append("  Status: ").Append(Status).Append("\n");
 			sb.Append("  Description: ").Append(Description).Append("\n");
 			sb.Append("  ExecutionStatusUrl: ").Append(ExecutionStatusUrl).Append("\n");

@@ -23,7 +23,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__runsynctimeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 55)</param>
 		/// <returns>Task of AssignDeviceToSiteResponse</returns>
 		[Post("/dna/system/api/v1/site/{siteId}/device")]
-		Task<AssignDeviceToSiteResponse> AssignDeviceAsync(
+		Task<ExecutionStatusResponse> AssignDeviceAsync(
 			[Body]AssignDeviceToSiteRequest request,
 			bool? __runsync,
 			bool? __persistbapioutput,
@@ -43,7 +43,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 30)</param>
 		/// <returns>Task of CreateSiteResponse</returns>
 		[Post("/dna/intent/api/v1/site")]
-		Task<CreateSiteResponse> CreateAsync(
+		Task<ExecutionStatusResponse> CreateAsync(
 			[Body]CreateSiteRequest request,
 			bool? __runsync,
 			bool? __persistbapioutput,
@@ -59,7 +59,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteId">Site id to which site details to be deleted.</param>
 		/// <returns>Task of DeleteSiteResponse</returns>
 		[Delete("/dna/intent/api/v1/site/{siteId}")]
-		Task<DeleteSiteResponse> DeleteAsync(
+		Task<ExecutionStatusResponse> DeleteAsync(
 			[AliasAs("siteId")]string siteId,
 			CancellationToken cancellationToken = default);
 
@@ -153,7 +153,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
 		/// <returns>Task of UpdateSiteResponse</returns>
 		[Put("/dna/intent/api/v1/site/{siteId}")]
-		Task<UpdateSiteResponse> UpdateAsync(
+		Task<ExecutionStatusResponse> UpdateAsync(
 			[Body]UpdateSiteRequest request,
 			bool? __persistbapioutput,
 			[AliasAs("siteId")]string siteId,

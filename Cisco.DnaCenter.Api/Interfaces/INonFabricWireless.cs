@@ -35,7 +35,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
 		/// <returns>Task of CreateAndProvisionSSIDResponse</returns>
 		[Post("/dna/intent/api/v1/business/ssid")]
-		Task<CreateAndProvisionSsidResponse> CreateAndProvisionSsidAsync(
+		Task<ExecutionStatusResponse> CreateAndProvisionSsidAsync(
 			[Body]CreateAndProvisionSsidRequest request,
 			string __persistbapioutput,
 			CancellationToken cancellationToken = default);
@@ -49,7 +49,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateEnterpriseSSIDResponse</returns>
 		[Post("/dna/intent/api/v1/enterprise-ssid")]
-		Task<CreateEnterpriseSsidResponse> CreateEnterpriseSsidAsync(
+		Task<ExecutionStatusResponse> CreateEnterpriseSsidAsync(
 			[Body]CreateEnterpriseSsidRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -75,7 +75,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of CreateWirelessProfileResponse</returns>
 		[Post("/dna/intent/api/v1/wireless/profile")]
-		Task<CreateWirelessProfileResponse> CreateWirelessProfileAsync(
+		Task<ExecutionStatusResponse> CreateWirelessProfileAsync(
 			[Body]CreateWirelessProfileRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -88,7 +88,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="ssidName">Enter the SSID name to be deleted</param>
 		/// <returns>Task of DeleteEnterpriseSSIDResponse</returns>
 		[Delete("/dna/intent/api/v1/enterprise-ssid/{ssidName}")]
-		Task<DeleteEnterpriseSsidResponse> DeleteEnterpriseSsidAsync(
+		Task<ExecutionStatusResponse> DeleteEnterpriseSsidAsync(
 			[AliasAs("ssidName")]string ssidName,
 			CancellationToken cancellationToken = default);
 
@@ -116,7 +116,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="managedAPLocations"></param>
 		/// <returns>Task of DeleteSSIDAndProvisionItToDevicesResponse</returns>
 		[Delete("/dna/intent/api/v1/business/ssid/{ssidName}/{managedAPLocations}")]
-		Task<DeleteSsidAndProvisionToDevicesResponse> DeleteSsidAndProvisionItToDevicesAsync(
+		Task<ExecutionStatusResponse> DeleteSsidAndProvisionItToDevicesAsync(
 			string __persistbapioutput,
 			[AliasAs("ssidName")]string ssidName,
 			[AliasAs("managedAPLocations")]string managedAPLocations,
@@ -132,7 +132,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="wirelessProfileName"></param>
 		/// <returns>Task of DeleteWirelessProfileResponse</returns>
 		[Delete("/dna/intent/api/v1/wireless-profile/{wirelessProfileName}")]
-		Task<DeleteWirelessProfileResponse> DeleteWirelessProfileAsync(
+		Task<ExecutionStatusResponse> DeleteWirelessProfileAsync(
 			[Body]DeleteWirelessProfileRequest request,
 			[AliasAs("wirelessProfileName")]string wirelessProfileName,
 			CancellationToken cancellationToken = default);
@@ -215,7 +215,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdateWirelessProfileResponse</returns>
 		[Put("/dna/intent/api/v1/wireless/profile")]
-		Task<UpdateWirelessProfileResponse> UpdateWirelessProfileAsync(
+		Task<ExecutionStatusResponse> UpdateWirelessProfileAsync(
 			[Body]UpdateWirelessProfileRequest request,
 			CancellationToken cancellationToken = default);
 	}

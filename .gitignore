@@ -350,4 +350,5 @@ MigrationBackup/
 .ionide/
 
 # Appsettings
+appsettings.*.json
 appsettings.json

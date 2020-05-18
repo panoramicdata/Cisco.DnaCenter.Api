@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddControlPlaneDeviceInSdaFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/control-plane-device")]
-		Task<AddControlPlaneDeviceInSdaFabricResponse> AddControlPlaneDeviceInSdaFabricAsync(
+		Task<ExecutionResponse> AddControlPlaneDeviceInSdaFabricAsync(
 			[Body]AddControlPlaneDeviceInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -32,7 +32,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddDefaultAuthenticationProfileInSdaFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/authentication-profile")]
-		Task<AddDefaultAuthenticationProfileInSdaFabricResponse> AddDefaultAuthenticationProfileInSdaFabricAsync(
+		Task<ExecutionResponse> AddDefaultAuthenticationProfileInSdaFabricAsync(
 			[Body]AddDefaultAuthenticationProfileInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -45,7 +45,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddEdgeDeviceInSdaFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/edge-device")]
-		Task<AddEdgeDeviceInSdaFabricResponse> AddEdgeDeviceInSdaFabricAsync(
+		Task<ExecutionResponse> AddEdgeDeviceInSdaFabricAsync(
 			[Body]AddEdgeDeviceInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -58,7 +58,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/fabric")]
-		Task<AddFabricResponse> AddFabricAsync(
+		Task<ExecutionResponse> AddFabricAsync(
 			[Body]AddFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -71,7 +71,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddIPPoolInSDAVirtualNetworkResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/virtualnetwork/ippool")]
-		Task<AddIpPoolInSdaVirtualNetworkResponse> AddIpPoolInSdaVirtualNetwork(
+		Task<ExecutionResponse> AddIpPoolInSdaVirtualNetwork(
 			[Body]AddIpPoolInSDAVirtualNetworkRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -84,7 +84,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddPortAssignmentForAccessPointInSdaFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
-		Task<AddPortAssignmentForAccessPointInSdaFabricResponse> AddPortAssignmentForAccessPointInSdaFabricAsync(
+		Task<ExecutionResponse> AddPortAssignmentForAccessPointInSdaFabricAsync(
 			[Body]AddPortAssignmentForAccessPointInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -97,7 +97,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddPortAssignmentForUserDeviceInSdaFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/hostonboarding/user-device")]
-		Task<AddPortAssignmentForUserDeviceInSdaFabricResponse> AddPortAssignmentForUserDeviceInSdaFabric(
+		Task<ExecutionResponse> AddPortAssignmentForUserDeviceInSdaFabric(
 			[Body]AddPortAssignmentForUserDeviceInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -110,7 +110,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddSiteInSdaFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/fabric-site")]
-		Task<AddSiteInSdaFabricResponse> AddSiteInSdaFabricAsync(
+		Task<ExecutionResponse> AddSiteInSdaFabricAsync(
 			[Body]AddSiteInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -136,7 +136,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of AddsBorderDeviceInSdaFabricResponse</returns>
 		[Post("/dna/intent/api/v1/business/sda/border-device")]
-		Task<AddsBorderDeviceInSdaFabricResponse> AddsBorderDeviceInSdaFabricAsync(
+		Task<ExecutionResponse> AddsBorderDeviceInSdaFabricAsync(
 			[Body]AddsBorderDeviceInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 
@@ -149,7 +149,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of DeleteControlPlaneDeviceInSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/control-plane-device")]
-		Task<DeleteControlPlaneDeviceInSdaFabricResponse> DeleteControlPlaneDeviceInSdaFabricAsync(
+		Task<ExecutionResponse> DeleteControlPlaneDeviceInSdaFabricAsync(
 			[AliasAs("deviceIPAddress")]string deviceIPAddress,
 			CancellationToken cancellationToken = default);
 
@@ -162,7 +162,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteNameHierarchy">siteNameHierarchy</param>
 		/// <returns>Task of DeleteDefaultAuthenticationProfileFromSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/authentication-profile")]
-		Task<DeleteDefaultAuthenticationProfileFromSdaFabricResponse> DeleteDefaultAuthenticationProfileFromSdaFabricAsync(
+		Task<ExecutionResponse> DeleteDefaultAuthenticationProfileFromSdaFabricAsync(
 			[AliasAs("siteNameHierarchy")]string siteNameHierarchy,
 			CancellationToken cancellationToken = default);
 
@@ -175,7 +175,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="deviceIpAddress">Device IP Address</param>
 		/// <returns>Task of DeleteEdgeDeviceFromSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/edge-device")]
-		Task<DeleteEdgeDeviceFromSdaFabricResponse> DeleteEdgeDeviceFromSdaFabricAsync(
+		Task<ExecutionResponse> DeleteEdgeDeviceFromSdaFabricAsync(
 			[AliasAs("deviceIPAddress")]string deviceIpAddress,
 			CancellationToken cancellationToken = default);
 
@@ -190,7 +190,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="virtualNetworkName">virtualNetworkName</param>
 		/// <returns>Task of DeleteIPPoolFromSDAVirtualNetworkResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/virtualnetwork/ippool")]
-		Task<DeleteIpPoolFromSdaVirtualNetworkResponse> DeleteIpPoolFromSdaVirtualNetwork(
+		Task<ExecutionResponse> DeleteIpPoolFromSdaVirtualNetwork(
 			[Body]DeleteIpPoolFromSdaVirtualNetworkRequest request,
 			[AliasAs("ipPoolName")]string ipPoolName,
 			[AliasAs("virtualNetworkName")]string virtualNetworkName,
@@ -207,7 +207,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="interfaceName">interfaceName</param>
 		/// <returns>Task of DeletePortAssignmentForAccessPointInSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
-		Task<DeletePortAssignmentForAccessPointInSdaFabricResponse> DeletePortAssignmentForAccessPointInSdaFabricAsync(
+		Task<ExecutionResponse> DeletePortAssignmentForAccessPointInSdaFabricAsync(
 			[Body]DeletePortAssignmentForAccessPointInSdaFabricRequest request,
 			[AliasAs("device_ip")]string deviceIp,
 			[AliasAs("interfaceName")]string interfaceName,
@@ -224,7 +224,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="interfaceName">interfaceName</param>
 		/// <returns>Task of DeletePortAssignmentForUserDeviceInSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/hostonboarding/user-device")]
-		Task<DeletePortAssignmentForUserDeviceInSdaFabricResponse> DeletePortAssignmentForUserDeviceInSdaFabricAsync(
+		Task<ExecutionResponse> DeletePortAssignmentForUserDeviceInSdaFabricAsync(
 			[Body]DeletePortAssignmentForUserDeviceInSdaFabricRequest request,
 			[AliasAs("device_ip")]string deviceIp,
 			[AliasAs("interfaceName")]string interfaceName,
@@ -240,7 +240,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="fabricName">Fabric Name</param>
 		/// <returns>Task of DeleteSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/fabric")]
-		Task<DeleteSdaFabricResponse> DeleteSdaFabricAsync(
+		Task<ExecutionResponse> DeleteSdaFabricAsync(
 			[Body]DeleteSdaFabricRequest request,
 			[AliasAs("fabricName")]string fabricName,
 			CancellationToken cancellationToken = default);
@@ -255,7 +255,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteNameHierarchy">Site Name Hierarchy</param>
 		/// <returns>Task of DeleteSiteFromSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/fabric-site")]
-		Task<DeleteSiteFromSdaFabricResponse> DeleteSiteFromSdaFabric(
+		Task<ExecutionResponse> DeleteSiteFromSdaFabric(
 			[Body]DeleteSiteFromSdaFabricRequest request,
 			[AliasAs("siteNameHierarchy")]string siteNameHierarchy,
 			CancellationToken cancellationToken = default);
@@ -285,7 +285,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="deviceIPAddress">Device IP Address</param>
 		/// <returns>Task of DeletesBorderDeviceFromSdaFabricResponse</returns>
 		[Delete("/dna/intent/api/v1/business/sda/border-device")]
-		Task<DeleteBorderDeviceFromSdaFabricResponse> DeleteBorderDeviceFromSdaFabricAsync(
+		Task<ExecutionResponse> DeleteBorderDeviceFromSdaFabricAsync(
 			[Body]DeleteBorderDeviceFromSdaFabricRequest request,
 			[AliasAs("deviceIPAddress")]string deviceIPAddress,
 			CancellationToken cancellationToken = default);
@@ -313,7 +313,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteNameHierarchy">siteNameHierarchy</param>
 		/// <returns>Task of GetDefaultAuthenticationProfileFromSdaFabricResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/authentication-profile")]
-		Task<GetDefaultAuthenticationProfileFromSdaFabricResponse> GetDefaultAuthenticationProfileFromSdaFabricAsync(
+		Task<object> GetDefaultAuthenticationProfileFromSdaFabricAsync(
 			[Body]GetDefaultAuthenticationProfileFromSdaFabricRequest request,
 			[AliasAs("siteNameHierarchy")]string siteNameHierarchy,
 			CancellationToken cancellationToken = default);
@@ -405,7 +405,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="fabricName">Fabric Name</param>
 		/// <returns>Task of GetSdaFabricInfoResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/fabric")]
-		Task<GetSdaFabricInfoResponse> GetSdaFabricInfoAsync(
+		Task<object> GetSdaFabricInfoAsync(
 			[Body]GetSdaFabricInfoRequest request,
 			[AliasAs("fabricName")]string fabricName,
 			CancellationToken cancellationToken = default);
@@ -420,7 +420,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="siteNameHierarchy">Site Name Hierarchy</param>
 		/// <returns>Task of GetSiteFromSdaFabricResponse</returns>
 		[Get("/dna/intent/api/v1/business/sda/fabric-site")]
-		Task<GetSiteFromSdaFabricResponse> GetSiteFromSdaFabricAsync(
+		Task<object> GetSiteFromSdaFabricAsync(
 			[Body]GetSiteFromSdaFabricRequest request,
 			[AliasAs("siteNameHierarchy")]string siteNameHierarchy,
 			CancellationToken cancellationToken = default);
@@ -462,7 +462,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <returns>Task of UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse</returns>
 		[Put("/dna/intent/api/v1/business/sda/authentication-profile")]
-		Task<UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse> UpdateDefaultAuthenticationProfileTemplateInSdaFabricAsync(
+		Task<ExecutionResponse> UpdateDefaultAuthenticationProfileTemplateInSdaFabricAsync(
 			[Body]UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequest request,
 			CancellationToken cancellationToken = default);
 	}
