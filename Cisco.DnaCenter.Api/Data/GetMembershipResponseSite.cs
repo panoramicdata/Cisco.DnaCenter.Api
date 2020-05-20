@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		/// <param name="Response">Response.</param>
 		/// <param name="_Version">_Version.</param>
-		public GetMembershipResponseSite(List<GetSiteResponseResponse> Response = default, string? _Version = default)
+		public GetMembershipResponseSite(List<SiteResultResponseSites> Response = default, string? _Version = default)
 		{
 			this.Response = Response;
 			this._Version = _Version;
@@ -25,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
-		public List<GetSiteResponseResponse> Response { get; set; }
+		public List<SiteResultResponseSites> Response { get; set; }
 
 		/// <summary>
 		/// Gets or Sets _Version

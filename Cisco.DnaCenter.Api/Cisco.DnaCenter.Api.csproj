@@ -18,7 +18,7 @@
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<PackageReleaseNotes>
-			Refactored GetMembershipResponseDevice Site response to be GetSiteResponseResponse instead of Object.
+			Refactored GetMembershipResponseDevice Site response to be SiteResultResponseSites.
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
