@@ -1,7 +1,6 @@
-using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -16,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		/// <param name="Response">Response.</param>
 		/// <param name="_Version">_Version.</param>
-		public GetMembershipResponseSite(List<Object> Response = default, string? _Version = default)
+		public GetMembershipResponseSite(List<GetSiteResponseResponse> Response = default, string? _Version = default)
 		{
 			this.Response = Response;
 			this._Version = _Version;
@@ -26,7 +25,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
-		public List<Object> Response { get; set; }
+		public List<GetSiteResponseResponse> Response { get; set; }
 
 		/// <summary>
 		/// Gets or Sets _Version
