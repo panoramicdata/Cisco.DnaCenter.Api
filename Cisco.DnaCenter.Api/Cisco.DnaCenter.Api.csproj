@@ -18,8 +18,7 @@
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<PackageReleaseNotes>
-			Refactored ExecutionResponse and ExecutionStatusResponse classes.
-			Completed the AreaCrud_Succeeds unit test.
+			Refactored GetMembershipResponseDevice Device response to be NetworkDeviceListResultResponse instead of Object.
 		</PackageReleaseNotes>
 	</PropertyGroup>
 
