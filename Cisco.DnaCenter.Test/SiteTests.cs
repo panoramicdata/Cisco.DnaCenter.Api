@@ -109,6 +109,21 @@ namespace Cisco.DnaCenter.Test
 			siteById.Response.Should().BeOfType<GetSiteResponseResponse>();
 			siteById.Response.Name.Should().Be(guid);
 
+			// Update
+			var updateSiteRequest = new UpdateSiteRequest(
+				UpdateSiteRequest.TypeEnum.Area,
+				new UpdateSiteRequestSite(new CreateSiteRequestSiteArea("Name is changed", parentName)));
+
+			var updatedSite = await Client
+				.Sites
+				.UpdateAsync(updateSiteRequest, null, site.Id!)
+				.ConfigureAwait(false);
+
+			executionStatus = await Client
+				.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!)
+				.ConfigureAwait(false);
+			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+
 			// Delete
 			var deleteSiteResponse = await Client
 				.Sites
@@ -121,7 +136,6 @@ namespace Cisco.DnaCenter.Test
 			executionStatus = await Client
 				.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!)
 				.ConfigureAwait(false);
-
 
 			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 		}
