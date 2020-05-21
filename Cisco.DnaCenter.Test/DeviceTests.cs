@@ -95,5 +95,33 @@ namespace Cisco.DnaCenter.Test
 				Logger.LogInformation($"    - {device.SerialNumber}: {device.Hostname}");
 			}
 		}
+
+		[Fact(Skip = "Unit test not finished")]
+		public async Task GetPnpDeviceListAsync_Succeeds()
+		{
+			var devices = await Client
+				.DeviceOnboardingPnp
+				.GetPnpDeviceListAsync()
+				.ConfigureAwait(false);
+
+			devices.Should().NotBeNull();
+		}
+
+		[Fact(Skip = "Unit test not finished")]
+		public async Task CreateAsync_Succeeds()
+		{
+			var device = new Device
+			{
+				DeviceInfo = new DeviceDeviceInfo(),
+			};
+
+			var result = await Client
+				.DeviceOnboardingPnp
+				.ImportDevicesInBulkAsync(device)
+				.ConfigureAwait(false);
+
+			result.Should().NotBeNull();
+			result.Should().BeOfType<TaskIdResult>();
+		}
 	}
 }
