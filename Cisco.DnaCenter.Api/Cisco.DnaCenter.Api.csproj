@@ -17,9 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>
-			Refactored GetMembershipResponseDevice Site response to be SiteResultResponseSites.
-		</PackageReleaseNotes>
+		<PackageReleaseNotes>Added siteName support to IDeviceOnboardingPnp.GetPnpDeviceListAsync()</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
