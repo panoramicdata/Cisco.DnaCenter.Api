@@ -18,9 +18,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
-		[Post("/dna/intent/api/v1/template-programmer/project")]
+		[Post("/api/v1/template-programmer/project")]
 		Task<TaskIdResult> CreateProjectAsync(
-			[Body]ProjectDto request,
+			[Body] ProjectDto request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -32,11 +32,11 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="request">request</param>
 		/// <param name="projectId">projectId</param>
 		/// <returns>Task of TaskIdResult</returns>
-		[Post("/dna/intent/api/v1/template-programmer/project/{projectId}/template")]
+		[Post("/api/v1/template-programmer/project/{projectId}/template")]
 		Task<TaskIdResult> CreateTemplateAsync(
-			[Body]TemplateDto request,
+			[Body] TemplateDto request,
 			string Content_Type,
-			[AliasAs("projectId")]string projectId,
+			[AliasAs("projectId")] string projectId,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -47,9 +47,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="projectId">projectId</param>
 		/// <returns>Task of TaskIdResult</returns>
-		[Delete("/dna/intent/api/v1/template-programmer/project/{projectId}")]
+		[Delete("/api/v1/template-programmer/project/{projectId}")]
 		Task<TaskIdResult> DeleteProjectAsync(
-			[AliasAs("projectId")]string projectId,
+			[AliasAs("projectId")] string projectId,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -60,9 +60,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="templateId">templateId</param>
 		/// <returns>Task of TaskIdResult</returns>
-		[Delete("/dna/intent/api/v1/template-programmer/template/{templateId}")]
+		[Delete("/api/v1/template-programmer/template/{templateId}")]
 		Task<TaskIdResult> DeleteTemplateAsync(
-			[AliasAs("templateId")]string templateId,
+			[AliasAs("templateId")] string templateId,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -73,9 +73,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of TemplateDeploymentStatusDto</returns>
-		[Post("/dna/intent/api/v1/template-programmer/template/deploy")]
+		[Post("/api/v1/template-programmer/template/deploy")]
 		Task<TemplateDeploymentStatusDto> DeployTemplateAsync(
-			[Body]TemplateDeploymentInfo request,
+			[Body] TemplateDeploymentInfo request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -86,9 +86,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="name">Name of project to be searched (optional)</param>
 		/// <returns>Task of CollectionProjectDto</returns>
-		[Get("/dna/intent/api/v1/template-programmer/project")]
+		[Get("/api/v1/template-programmer/project")]
 		Task<CollectionProjectDto> GetProjectsAsync(
-			[AliasAs("name")]string name = null,
+			[AliasAs("name")] string name = null,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -99,9 +99,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="deploymentId">deploymentId</param>
 		/// <returns>Task of TemplateDeploymentStatusDto</returns>
-		[Get("/dna/intent/api/v1/template-programmer/template/deploy/status/{deploymentId}")]
+		[Get("/api/v1/template-programmer/template/deploy/status/{deploymentId}")]
 		Task<TemplateDeploymentStatusDto> GetTemplateDeploymentStatusAsync(
-			[AliasAs("deploymentId")]string deploymentId,
+			[AliasAs("deploymentId")] string deploymentId,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -113,10 +113,10 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="templateId">templateId</param>
 		/// <param name="latestVersion">latestVersion (optional)</param>
 		/// <returns>Task of TemplateDto</returns>
-		[Get("/dna/intent/api/v1/template-programmer/template/{templateId}")]
+		[Get("/api/v1/template-programmer/template/{templateId}")]
 		Task<TemplateDto> GetTemplateDetailsAsync(
-			[AliasAs("templateId")]string templateId,
-			[AliasAs("latestVersion")]bool? latestVersion = null,
+			[AliasAs("templateId")] string templateId,
+			[AliasAs("latestVersion")] bool? latestVersion = null,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -127,9 +127,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="templateId">templateId</param>
 		/// <returns>Task of CollectionTemplateInfo</returns>
-		[Get("/dna/intent/api/v1/template-programmer/template/version/{templateId}")]
+		[Get("/api/v1/template-programmer/template/version/{templateId}")]
 		Task<CollectionTemplateInfo> GetTemplateVersionsAsync(
-			[AliasAs("templateId")]string templateId,
+			[AliasAs("templateId")] string templateId,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -146,15 +146,15 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="productType">productType (optional)</param>
 		/// <param name="filterConflictingTemplates">filterConflictingTemplates (optional)</param>
 		/// <returns>Task of CollectionTemplateInfo</returns>
-		[Get("/dna/intent/api/v1/template-programmer/template")]
-		Task<CollectionTemplateInfo> GetsAvailableTemplatesAsync(
-			[AliasAs("projectId")]string projectId = null,
-			[AliasAs("softwareType")]string softwareType = null,
-			[AliasAs("softwareVersion")]string softwareVersion = null,
-			[AliasAs("productFamily")]string productFamily = null,
-			[AliasAs("productSeries")]string productSeries = null,
-			[AliasAs("productType")]string productType = null,
-			[AliasAs("filterConflictingTemplates")]bool? filterConflictingTemplates = null,
+		[Get("/api/v1/template-programmer/template")]
+		Task<CollectionTemplateInfo> GetAvailableTemplatesAsync(
+			[AliasAs("projectId")] string projectId = null,
+			[AliasAs("softwareType")] string softwareType = null,
+			[AliasAs("softwareVersion")] string softwareVersion = null,
+			[AliasAs("productFamily")] string productFamily = null,
+			[AliasAs("productSeries")] string productSeries = null,
+			[AliasAs("productType")] string productType = null,
+			[AliasAs("filterConflictingTemplates")] bool? filterConflictingTemplates = null,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -165,9 +165,9 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of TemplatePreviewResponseDto</returns>
-		[Put("/dna/intent/api/v1/template-programmer/template/preview")]
+		[Put("/api/v1/template-programmer/template/preview")]
 		Task<TemplatePreviewResponseDto> PreviewTemplate(
-			[Body]TemplatePreviewRequestDto request,
+			[Body] TemplatePreviewRequestDto request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -178,8 +178,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
-		[Put("/dna/intent/api/v1/template-programmer/project")]
-		Task<TaskIdResult> UpdateProjectAsync([Body]ProjectDto request,
+		[Put("/api/v1/template-programmer/project")]
+		Task<TaskIdResult> UpdateProjectAsync([Body] ProjectDto request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -190,8 +190,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
-		[Put("/dna/intent/api/v1/template-programmer/template")]
-		Task<TaskIdResult> UpdateTemplateAsync([Body]TemplateDto request,
+		[Put("/api/v1/template-programmer/template")]
+		Task<TaskIdResult> UpdateTemplateAsync([Body] TemplateDto request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -202,8 +202,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <param name="request">request</param>
 		/// <returns>Task of TaskIdResult</returns>
-		[Post("/dna/intent/api/v1/template-programmer/template/version")]
-		Task<TaskIdResult> VersionTemplateAsync([Body]TemplateVersionRequestDto request,
+		[Post("/api/v1/template-programmer/template/version")]
+		Task<TaskIdResult> VersionTemplateAsync([Body] TemplateVersionRequestDto request,
 			CancellationToken cancellationToken = default);
 	}
 }
