@@ -107,21 +107,21 @@ namespace Cisco.DnaCenter.Test
 			devices.Should().NotBeNull();
 		}
 
-		[Fact(Skip = "Unit test not finished")]
-		public async Task CreateAsync_Succeeds()
-		{
-			var device = new Device
-			{
-				DeviceInfo = new DeviceDeviceInfo(),
-			};
+		//[Fact(Skip = "Unit test not finished")]
+		//public async Task CreateAsync_Succeeds()
+		//{
+		//	var device = new Device
+		//	{
+		//		DeviceInfo = new DeviceDeviceInfo(),
+		//	};
 
-			var result = await Client
-				.DeviceOnboardingPnp
-				.ImportDevicesInBulkAsync(device)
-				.ConfigureAwait(false);
+		//	var result = await Client
+		//		.DeviceOnboardingPnp
+		//		.ImportDevicesInBulkAsync(device)
+		//		.ConfigureAwait(false);
 
-			result.Should().NotBeNull();
-			result.Should().BeOfType<TaskIdResult>();
-		}
+		//	result.Should().NotBeNull();
+		//	result.Should().BeOfType<TaskIdResult>();
+		//}
 	}
 }
