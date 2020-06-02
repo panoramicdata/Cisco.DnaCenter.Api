@@ -3,7 +3,6 @@ using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
-
 	/// <summary>
 	/// SiteProvisionRequestConfigInfo
 	/// </summary>

@@ -2,7 +2,6 @@
 
 namespace Cisco.DnaCenter.Api.Data
 {
-
 	[DataContract]
 	public enum ExecutionStatusStatus
 	{
