@@ -34,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of Device</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device")]
 		Task<Device> AddDeviceToPnpDatabaseAsync(
-			[Body] Device request,
+			[Body] List<DeviceDeviceInfo> request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
