@@ -34,7 +34,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of Device</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device")]
 		Task<Device> AddDeviceToPnpDatabaseAsync(
-			[Body] List<DeviceDeviceInfo> request,
+			[Body] Device request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
@@ -344,7 +344,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of ImportDevicesInBulkResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/import")]
 		Task<ImportDevicesInBulkResponse> ImportDevicesInBulkAsync(
-			[Body] ClaimDeviceRequest request,
+			[Body] List<DeviceDeviceInfo> request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
