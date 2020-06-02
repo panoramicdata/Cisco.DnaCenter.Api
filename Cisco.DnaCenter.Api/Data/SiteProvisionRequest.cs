@@ -1,7 +1,7 @@
-using System.Text;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -61,11 +61,20 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="DeviceId">DeviceId.</param>
 		/// <param name="SiteId">SiteId.</param>
 		/// <param name="Type">Type.</param>
-		public SiteProvisionRequest(string? DeviceId = default, string? SiteId = default, TypeEnum? Type = default)
+		public SiteProvisionRequest(
+			string? DeviceId = default,
+			string? SiteId = default,
+			TypeEnum? Type = default,
+			SiteProvisionRequestImageInfo? ImageInfo = default,
+			SiteProvisionRequestConfigInfo? ConfigInfo = default,
+			string? TopOfStackSerialNumber = default
+			)
 		{
 			this.DeviceId = DeviceId;
 			this.SiteId = SiteId;
 			this.Type = Type;
+			this.ImageInfo = ImageInfo;
+			this.TopOfStackSerialNumber = TopOfStackSerialNumber;
 		}
 
 		/// <summary>
@@ -81,6 +90,24 @@ namespace Cisco.DnaCenter.Api.Data
 		public string? SiteId { get; set; }
 
 		/// <summary>
+		/// Gets or Sets ImageInfo
+		/// </summary>
+		[DataMember(Name = "imageInfo", EmitDefaultValue = false)]
+		public SiteProvisionRequestImageInfo? ImageInfo { get; set; }
+
+		/// <summary>
+		/// Gets or Sets ConfigInfo
+		/// </summary>
+		[DataMember(Name = "configInfo", EmitDefaultValue = false)]
+		public SiteProvisionRequestConfigInfo? ConfigInfo { get; set; }
+
+		/// <summary>
+		/// Gets or Sets TopOfStackSerialNumber
+		/// </summary>
+		[DataMember(Name = "topOfStackSerialNumber", EmitDefaultValue = false)]
+		public string? TopOfStackSerialNumber { get; set; }
+
+		/// <summary>
 		/// Returns the string presentation of the object
 		/// </summary>
 		/// <returns>String presentation of the object</returns>
@@ -91,6 +118,9 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
 			sb.Append("  SiteId: ").Append(SiteId).Append("\n");
 			sb.Append("  Type: ").Append(Type).Append("\n");
+			sb.Append("  ImageInfo: ").Append(ImageInfo?.ToString()).Append("\n");
+			sb.Append("  ConfigInfo: ").Append(ConfigInfo?.ToString()).Append("\n");
+			sb.Append("  TopOfStackSerialNumber: ").Append(TopOfStackSerialNumber).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}
