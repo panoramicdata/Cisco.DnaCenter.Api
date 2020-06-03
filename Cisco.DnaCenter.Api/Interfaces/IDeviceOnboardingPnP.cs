@@ -410,9 +410,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of UpdateDeviceResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
 		Task<UpdateDeviceResponse> UpdateDeviceAsync(
-			[Body] Device request,
-			string Content_Type,
 			[AliasAs("id")] string id,
+			[Body] DeviceDeviceInfo request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
