@@ -224,7 +224,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <param name="lastContact">Device Has Contacted lastContact &gt; 0 (optional)</param>
 		/// <returns>Task of Device</returns>
 		[Get("/dna/intent/api/v1/onboarding/pnp-device")]
-		Task<Device> GetPnpDeviceListAsync(
+		Task<List<Device>> GetPnpDeviceListAsync(
 			[AliasAs("limit")] int? limit = null,
 			[AliasAs("offset")] int? offset = null,
 			[AliasAs("sort")] List<string> sort = null,
