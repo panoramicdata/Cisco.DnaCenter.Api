@@ -344,7 +344,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <returns>Task of ImportDevicesInBulkResponse</returns>
 		[Post("/dna/intent/api/v1/onboarding/pnp-device/import")]
 		Task<ImportDevicesInBulkResponse> ImportDevicesInBulkAsync(
-			[Body] List<DeviceDeviceInfo> request,
+			[Body] List<ImportDevicesInBulkRequestItem> request,
 			CancellationToken cancellationToken = default);
 
 		/// <summary>

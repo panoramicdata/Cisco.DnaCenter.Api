@@ -79,6 +79,19 @@ namespace Cisco.DnaCenter.Api.Interfaces
 			CancellationToken cancellationToken = default);
 
 		/// <summary>
+		/// Deploy Template
+		/// </summary>
+		/// <remarks>
+		/// Deploys a template
+		/// </remarks>
+		/// <param name="request">request</param>
+		/// <returns>Task of TemplateDeploymentStatusDto</returns>
+		[Post("/api/v1/template-programmer/template/version")]
+		Task<TaskIdResult> CommitTemplateAsync(
+			[Body] CommitTemplateRequest request,
+			CancellationToken cancellationToken = default);
+
+		/// <summary>
 		/// Get Projects
 		/// </summary>
 		/// <remarks>
