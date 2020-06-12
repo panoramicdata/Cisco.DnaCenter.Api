@@ -50,6 +50,19 @@ namespace Cisco.DnaCenter.Api.Data
 		}
 
 		/// <summary>
+		/// Gets or Sets CablingScheme
+		/// </summary>
+		[JsonConverter(typeof(StringEnumConverter))]
+		public enum SiteProvisionRequestCablingScheme
+		{
+			/// <summary>
+			/// Enum OneB for "1B"
+			/// </summary>
+			[EnumMember(Value = "1B")]
+			OneB,
+		}
+
+		/// <summary>
 		/// Gets or Sets Type
 		/// </summary>
 		[DataMember(Name = "type", EmitDefaultValue = false)]
@@ -60,20 +73,29 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		/// <param name="DeviceId">DeviceId.</param>
 		/// <param name="SiteId">SiteId.</param>
+		/// <param name="Hostname">Hostname.</param>
 		/// <param name="Type">Type.</param>
+		/// <param name="ImageInfo">SiteId.</param>
+		/// <param name="ConfigInfo">SiteId.</param>
+		/// <param name="ConfigInfo">SiteId.</param>
 		public SiteProvisionRequest(
 			string? DeviceId = default,
 			string? SiteId = default,
+			string? Hostname = default,
 			TypeEnum? Type = default,
 			SiteProvisionRequestImageInfo? ImageInfo = default,
 			SiteProvisionRequestConfigInfo? ConfigInfo = default,
-			string? TopOfStackSerialNumber = default
+			string? TopOfStackSerialNumber = default,
+			SiteProvisionRequestCablingScheme CablingScheme = default
 			)
 		{
 			this.DeviceId = DeviceId;
 			this.SiteId = SiteId;
+			this.Hostname = Hostname;
+			this.CablingScheme = CablingScheme;
 			this.Type = Type;
 			this.ImageInfo = ImageInfo;
+			this.ConfigInfo = ConfigInfo;
 			this.TopOfStackSerialNumber = TopOfStackSerialNumber;
 		}
 
@@ -88,6 +110,18 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "siteId", EmitDefaultValue = false)]
 		public string? SiteId { get; set; }
+
+		/// <summary>
+		/// Gets or Sets Hostname
+		/// </summary>
+		[DataMember(Name = "hostname", EmitDefaultValue = false)]
+		public string? Hostname { get; set; }
+
+		/// <summary>
+		/// Gets or Sets CablingScheme
+		/// </summary>
+		[DataMember(Name = "cablingScheme", EmitDefaultValue = false)]
+		public SiteProvisionRequestCablingScheme? CablingScheme { get; set; }
 
 		/// <summary>
 		/// Gets or Sets ImageInfo
@@ -117,10 +151,12 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("class SiteProvisionRequest {\n");
 			sb.Append("  DeviceId: ").Append(DeviceId).Append("\n");
 			sb.Append("  SiteId: ").Append(SiteId).Append("\n");
+			sb.Append("  Hostname: ").Append(Hostname).Append("\n");
 			sb.Append("  Type: ").Append(Type).Append("\n");
 			sb.Append("  ImageInfo: ").Append(ImageInfo?.ToString()).Append("\n");
 			sb.Append("  ConfigInfo: ").Append(ConfigInfo?.ToString()).Append("\n");
 			sb.Append("  TopOfStackSerialNumber: ").Append(TopOfStackSerialNumber).Append("\n");
+			sb.Append("  CablingScheme: ").Append(CablingScheme).Append("\n");
 			sb.Append("}\n");
 			return sb.ToString();
 		}
