@@ -52,6 +52,7 @@ namespace Cisco.DnaCenter.Test
 					.ConfigurationTemplates
 					.GetTemplateDetailsAsync(item.TemplateId!)
 					.ConfigureAwait(false);
+				templateDetails.Should().NotBeNull();
 			}
 		}
 	}
