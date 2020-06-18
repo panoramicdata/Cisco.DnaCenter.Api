@@ -140,7 +140,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets CreateTime
 		/// </summary>
 		[DataMember(Name = "createTime", EmitDefaultValue = false)]
-		public int? CreateTime { get; set; }
+		public long? CreateTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Deployed

@@ -6,7 +6,7 @@
 		<PackageIcon>Icon.png</PackageIcon>
 		<Authors>Panoramic Data Limited</Authors>
 		<Company>Panoramic Data Limited</Company>
-		<Description>An API for Cisco DNA Center</Description>
+		<Description>Changed all CreateTime properties to long?s</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/panoramicdata/Cisco.DnaCenter.Api</PackageProjectUrl>
 		<RepositoryType>git</RepositoryType>
