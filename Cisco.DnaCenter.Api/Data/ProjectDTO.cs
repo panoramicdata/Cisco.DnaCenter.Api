@@ -21,7 +21,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Name">Name.</param>
 		/// <param name="Tags">Tags.</param>
 		/// <param name="Templates">Templates.</param>
-		public ProjectDto(int? CreateTime = default, string? Description = default, string? Id = default, int? LastUpdateTime = default, string? Name = default, List<string> Tags = default, Object Templates = default)
+		public ProjectDto(long? CreateTime = default, string? Description = default, string? Id = default, long? LastUpdateTime = default, string? Name = default, List<string> Tags = default, Object Templates = default)
 		{
 			this.CreateTime = CreateTime;
 			this.Description = Description;
@@ -54,7 +54,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
-		public int? LastUpdateTime { get; set; }
+		public long? LastUpdateTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Name

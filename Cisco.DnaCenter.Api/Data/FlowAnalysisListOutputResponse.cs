@@ -26,7 +26,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="SourceIp">SourceIP.</param>
 		/// <param name="SourcePort">SourcePort.</param>
 		/// <param name="Status">Status.</param>
-		public FlowAnalysisListOutputResponse(bool? ControlPath = default, int? CreateTime = default, string? DestinationIp = default, string? DestinationPort = default, string? FailureReason = default, string? Id = default, List<string> Inclusions = default, int? LastUpdateTime = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default, string? Status = default)
+		public FlowAnalysisListOutputResponse(bool? ControlPath = default, long? CreateTime = default, string? DestinationIp = default, string? DestinationPort = default, string? FailureReason = default, string? Id = default, List<string> Inclusions = default, long? LastUpdateTime = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default, string? Status = default)
 		{
 			this.ControlPath = ControlPath;
 			this.CreateTime = CreateTime;
@@ -89,7 +89,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
-		public int? LastUpdateTime { get; set; }
+		public long? LastUpdateTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets PeriodicRefresh

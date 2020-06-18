@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>SiteProvisionRequest improvements</PackageReleaseNotes>
+		<PackageReleaseNotes>Fixes for CreateTime and LastUpdateTime to handle 64-bit integers</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

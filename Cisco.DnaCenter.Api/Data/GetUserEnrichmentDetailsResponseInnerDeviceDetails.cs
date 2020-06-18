@@ -52,7 +52,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="InstanceUuid">InstanceUuid.</param>
 		/// <param name="Id">Id.</param>
 		/// <param name="NeighborTopology">NeighborTopology.</param>
-		public GetUserEnrichmentDetailsResponseInnerDeviceDetails(string? Family = default, string? Type = default, Object Location = default, Object ErrorCode = default, string? MacAddress = default, string? Role = default, string? ApManagerInterfaceIp = default, string? AssociatedWlcIp = default, string? BootDateTime = default, string? CollectionStatus = default, string? InterfaceCount = default, string? LineCardCount = default, string? LineCardId = default, string? ManagementIpAddress = default, string? MemorySize = default, string? PlatformId = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? SnmpContact = default, string? SnmpLocation = default, Object TunnelUdpPort = default, Object WaasDeviceMode = default, string? Series = default, string? InventoryStatusDetail = default, string? CollectionInterval = default, string? SerialNumber = default, string? SoftwareVersion = default, string? RoleSource = default, string? Hostname = default, string? UpTime = default, int? LastUpdateTime = default, Object ErrorDescription = default, Object LocationName = default, string? TagCount = default, string? LastUpdated = default, string? InstanceUuid = default, string? Id = default, List<GetUserEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology> NeighborTopology = default)
+		public GetUserEnrichmentDetailsResponseInnerDeviceDetails(string? Family = default, string? Type = default, Object Location = default, Object ErrorCode = default, string? MacAddress = default, string? Role = default, string? ApManagerInterfaceIp = default, string? AssociatedWlcIp = default, string? BootDateTime = default, string? CollectionStatus = default, string? InterfaceCount = default, string? LineCardCount = default, string? LineCardId = default, string? ManagementIpAddress = default, string? MemorySize = default, string? PlatformId = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? SnmpContact = default, string? SnmpLocation = default, Object TunnelUdpPort = default, Object WaasDeviceMode = default, string? Series = default, string? InventoryStatusDetail = default, string? CollectionInterval = default, string? SerialNumber = default, string? SoftwareVersion = default, string? RoleSource = default, string? Hostname = default, string? UpTime = default, long? LastUpdateTime = default, Object ErrorDescription = default, Object LocationName = default, string? TagCount = default, string? LastUpdated = default, string? InstanceUuid = default, string? Id = default, List<GetUserEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology> NeighborTopology = default)
 		{
 			this.Family = Family;
 			this.Type = Type;
@@ -278,7 +278,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
-		public int? LastUpdateTime { get; set; }
+		public long? LastUpdateTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets ErrorDescription

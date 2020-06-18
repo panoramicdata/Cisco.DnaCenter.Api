@@ -81,7 +81,29 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TemplateContent">TemplateContent.</param>
 		/// <param name="TemplateParams">TemplateParams.</param>
 		/// <param name="_Version">_Version.</param>
-		public TemplateDto(string? Author = default, bool? Composite = default, List<TemplateDtoContainingTemplates> ContainingTemplates = default, int? CreateTime = default, string? Description = default, List<TemplateDtoDeviceTypes> DeviceTypes = default, FailurePolicyEnum? FailurePolicy = default, string? Id = default, int? LastUpdateTime = default, string? Name = default, string? ParentTemplateId = default, string? ProjectId = default, string? ProjectName = default, string? RollbackTemplateContent = default, List<TemplateDtoRollbackTemplateParams> RollbackTemplateParams = default, string? SoftwareType = default, string? SoftwareVariant = default, string? SoftwareVersion = default, List<string> Tags = default, string? TemplateContent = default, List<TemplateDtoRollbackTemplateParams> TemplateParams = default, string? _Version = default)
+		public TemplateDto(
+			string? Author = default,
+			bool? Composite = default,
+			List<TemplateDtoContainingTemplates> ContainingTemplates = default,
+			long? CreateTime = default,
+			string? Description = default,
+			List<TemplateDtoDeviceTypes> DeviceTypes = default,
+			FailurePolicyEnum? FailurePolicy = default,
+			string? Id = default,
+			long? LastUpdateTime = default,
+			string? Name = default,
+			string? ParentTemplateId = default,
+			string? ProjectId = default,
+			string? ProjectName = default,
+			string? RollbackTemplateContent = default,
+			List<TemplateDtoRollbackTemplateParams> RollbackTemplateParams = default,
+			string? SoftwareType = default,
+			string? SoftwareVariant = default,
+			string? SoftwareVersion = default,
+			List<string> Tags = default,
+			string? TemplateContent = default,
+			List<TemplateDtoRollbackTemplateParams> TemplateParams = default,
+			string? _Version = default)
 		{
 			this.Author = Author;
 			this.Composite = Composite;
@@ -153,7 +175,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
-		public int? LastUpdateTime { get; set; }
+		public long? LastUpdateTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Name

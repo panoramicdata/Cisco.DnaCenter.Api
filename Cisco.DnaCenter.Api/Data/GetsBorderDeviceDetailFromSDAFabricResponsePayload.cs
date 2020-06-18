@@ -49,7 +49,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TransitNetworks">TransitNetworks.</param>
 		/// <param name="VirtualNetwork">VirtualNetwork.</param>
 		/// <param name="Wlan">Wlan.</param>
-		public GetsBorderDeviceDetailFromSdaFabricResponsePayload(string? Id = default, int? InstanceId = default, int? AuthEntityId = default, string? DisplayName = default, int? AuthEntityClass = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, int? CreateTime = default, bool? Deployed = default, bool? IsSeeded = default, bool? IsStale = default, int? LastUpdateTime = default, string? Name = default, string? _Namespace = default, string? ProvisioningState = default, int? ResourceVersion = default, List<Object> TargetIdList = default, string? Type = default, List<Object> CfsChangeInfo = default, List<Object> CustomProvisions = default, List<Object> Configs = default, List<Object> ManagedSites = default, string? NetworkDeviceId = default, List<string> Roles = default, bool? SaveWanConnectivityDetailsOnly = default, string? SiteId = default, List<Object> AkcSettingsCfs = default, List<Object> DeviceInterfaceInfo = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings DeviceSettings = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings NetworkWideSettings = default, List<Object> OtherDevice = default, List<EditApplicationRequestInnerApplicationSet> TransitNetworks = default, List<Object> VirtualNetwork = default, List<Object> Wlan = default)
+		public GetsBorderDeviceDetailFromSdaFabricResponsePayload(string? Id = default, int? InstanceId = default, int? AuthEntityId = default, string? DisplayName = default, int? AuthEntityClass = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, long? CreateTime = default, bool? Deployed = default, bool? IsSeeded = default, bool? IsStale = default, long? LastUpdateTime = default, string? Name = default, string? _Namespace = default, string? ProvisioningState = default, int? ResourceVersion = default, List<Object> TargetIdList = default, string? Type = default, List<Object> CfsChangeInfo = default, List<Object> CustomProvisions = default, List<Object> Configs = default, List<Object> ManagedSites = default, string? NetworkDeviceId = default, List<string> Roles = default, bool? SaveWanConnectivityDetailsOnly = default, string? SiteId = default, List<Object> AkcSettingsCfs = default, List<Object> DeviceInterfaceInfo = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings DeviceSettings = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings NetworkWideSettings = default, List<Object> OtherDevice = default, List<EditApplicationRequestInnerApplicationSet> TransitNetworks = default, List<Object> VirtualNetwork = default, List<Object> Wlan = default)
 		{
 			this.Id = Id;
 			this.InstanceId = InstanceId;
@@ -164,7 +164,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastUpdateTime
 		/// </summary>
 		[DataMember(Name = "lastUpdateTime", EmitDefaultValue = false)]
-		public int? LastUpdateTime { get; set; }
+		public long? LastUpdateTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Name
