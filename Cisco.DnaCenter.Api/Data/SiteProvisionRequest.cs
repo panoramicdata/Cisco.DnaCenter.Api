@@ -77,7 +77,9 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Type">Type.</param>
 		/// <param name="ImageInfo">SiteId.</param>
 		/// <param name="ConfigInfo">SiteId.</param>
-		/// <param name="ConfigInfo">SiteId.</param>
+		/// <param name="TopOfStackSerialNumber">TopOfStackSerialNumber.</param>
+		/// <param name="CablingScheme">CablingScheme.</param>
+		/// <param name="RfProfile">RfProfile.</param>
 		public SiteProvisionRequest(
 			string? DeviceId = default,
 			string? SiteId = default,
@@ -86,7 +88,8 @@ namespace Cisco.DnaCenter.Api.Data
 			SiteProvisionRequestImageInfo? ImageInfo = default,
 			SiteProvisionRequestConfigInfo? ConfigInfo = default,
 			string? TopOfStackSerialNumber = default,
-			SiteProvisionRequestCablingScheme CablingScheme = default
+			SiteProvisionRequestCablingScheme CablingScheme = default,
+			string? RfProfile = default
 			)
 		{
 			this.DeviceId = DeviceId;
@@ -97,6 +100,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.ImageInfo = ImageInfo;
 			this.ConfigInfo = ConfigInfo;
 			this.TopOfStackSerialNumber = TopOfStackSerialNumber;
+			this.RfProfile = RfProfile;
 		}
 
 		/// <summary>
@@ -116,6 +120,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[DataMember(Name = "hostname", EmitDefaultValue = false)]
 		public string? Hostname { get; set; }
+
+		/// <summary>
+		/// Gets or Sets RfProfile
+		/// </summary>
+		[DataMember(Name = "rfProfile", EmitDefaultValue = false)]
+		public string? RfProfile { get; set; }
 
 		/// <summary>
 		/// Gets or Sets CablingScheme

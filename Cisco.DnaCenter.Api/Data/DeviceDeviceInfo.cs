@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
@@ -439,7 +438,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
-		public Object Tags { get; set; }
+		public List<TagDto>? Tags { get; set; }
 
 		/// <summary>
 		/// Gets or Sets SudiRequired
