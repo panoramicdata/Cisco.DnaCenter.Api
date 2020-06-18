@@ -1,8 +1,8 @@
-using System.Text;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -100,7 +100,7 @@ namespace Cisco.DnaCenter.Api.Data
 			string? SoftwareType = default,
 			string? SoftwareVariant = default,
 			string? SoftwareVersion = default,
-			List<string> Tags = default,
+			List<TagDto>? Tags = default,
 			string? TemplateContent = default,
 			List<TemplateDtoRollbackTemplateParams> TemplateParams = default,
 			string? _Version = default)
@@ -123,7 +123,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.SoftwareType = SoftwareType;
 			this.SoftwareVariant = SoftwareVariant;
 			this.SoftwareVersion = SoftwareVersion;
-			this.Tags = Tags;
+			this.Tags = Tags ?? new List<TagDto>();
 			this.TemplateContent = TemplateContent;
 			this.TemplateParams = TemplateParams;
 			this._Version = _Version;
@@ -235,7 +235,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
-		public List<string> Tags { get; set; }
+		public List<TagDto> Tags { get; set; } = new List<TagDto>();
 
 		/// <summary>
 		/// Gets or Sets TemplateContent

@@ -1,7 +1,7 @@
 using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -21,14 +21,21 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Name">Name.</param>
 		/// <param name="Tags">Tags.</param>
 		/// <param name="Templates">Templates.</param>
-		public ProjectDto(long? CreateTime = default, string? Description = default, string? Id = default, long? LastUpdateTime = default, string? Name = default, List<string> Tags = default, Object Templates = default)
+		public ProjectDto(
+			long? CreateTime = default,
+			string? Description = default,
+			string? Id = default,
+			long? LastUpdateTime = default,
+			string? Name = default,
+			List<TagDto>? Tags = default,
+			Object Templates = default)
 		{
 			this.CreateTime = CreateTime;
 			this.Description = Description;
 			this.Id = Id;
 			this.LastUpdateTime = LastUpdateTime;
 			this.Name = Name;
-			this.Tags = Tags;
+			this.Tags = Tags ?? new List<TagDto>();
 			this.Templates = Templates;
 		}
 
@@ -66,7 +73,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
-		public List<string> Tags { get; set; }
+		public List<TagDto> Tags { get; set; } = new List<TagDto>();
 
 		/// <summary>
 		/// Gets or Sets Templates

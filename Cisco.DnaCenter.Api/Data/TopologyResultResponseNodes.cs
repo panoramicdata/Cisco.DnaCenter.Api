@@ -1,7 +1,7 @@
 using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -39,7 +39,32 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="VlanId">VlanId.</param>
 		/// <param name="X">X.</param>
 		/// <param name="Y">Y.</param>
-		public TopologyResultResponseNodes(bool? AclApplied = default, Object AdditionalInfo = default, TopologyResultResponseCustomParam CustomParam = default, string? DataPathId = default, string? DeviceType = default, string? Family = default, bool? _Fixed = default, bool? GreyOut = default, string? Id = default, string? Ip = default, string? Label = default, string? NetworkType = default, string? NodeType = default, int? Order = default, string? OsType = default, string? PlatformId = default, string? Role = default, string? RoleSource = default, string? SoftwareVersion = default, List<string> Tags = default, string? UpperNode = default, string? UserId = default, string? VlanId = default, int? X = default, int? Y = default)
+		public TopologyResultResponseNodes(
+			bool? AclApplied = default,
+			Object AdditionalInfo = default,
+			TopologyResultResponseCustomParam CustomParam = default,
+			string? DataPathId = default,
+			string? DeviceType = default,
+			string? Family = default,
+			bool? _Fixed = default,
+			bool? GreyOut = default,
+			string? Id = default,
+			string? Ip = default,
+			string? Label = default,
+			string? NetworkType = default,
+			string? NodeType = default,
+			int? Order = default,
+			string? OsType = default,
+			string? PlatformId = default,
+			string? Role = default,
+			string? RoleSource = default,
+			string? SoftwareVersion = default,
+			List<TagDto>? Tags = default,
+			string? UpperNode = default,
+			string? UserId = default,
+			string? VlanId = default,
+			int? X = default,
+			int? Y = default)
 		{
 			this.AclApplied = AclApplied;
 			this.AdditionalInfo = AdditionalInfo;
@@ -60,7 +85,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.Role = Role;
 			this.RoleSource = RoleSource;
 			this.SoftwareVersion = SoftwareVersion;
-			this.Tags = Tags;
+			this.Tags = Tags ?? new List<TagDto>();
 			this.UpperNode = UpperNode;
 			this.UserId = UserId;
 			this.VlanId = VlanId;
@@ -186,7 +211,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
-		public List<string> Tags { get; set; }
+		public List<TagDto> Tags { get; set; } = new List<TagDto>();
 
 		/// <summary>
 		/// Gets or Sets UpperNode

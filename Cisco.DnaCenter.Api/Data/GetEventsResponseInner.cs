@@ -1,7 +1,7 @@
 using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -27,7 +27,20 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Severity">Severity.</param>
 		/// <param name="Details">Details.</param>
 		/// <param name="SubscriptionTypes">SubscriptionTypes.</param>
-		public GetEventsResponseInner(string? EventId = default, string? _NameSpace = default, string? Name = default, string? Description = default, string? _Version = default, string? Category = default, string? Domain = default, string? SubDomain = default, string? Type = default, List<string> Tags = default, decimal? Severity = default, Object Details = default, List<string> SubscriptionTypes = default)
+		public GetEventsResponseInner(
+			string? EventId = default,
+			string? _NameSpace = default,
+			string? Name = default,
+			string? Description = default,
+			string? _Version = default,
+			string? Category = default,
+			string? Domain = default,
+			string? SubDomain = default,
+			string? Type = default,
+			List<TagDto>? Tags = default,
+			decimal? Severity = default,
+			Object Details = default,
+			List<string> SubscriptionTypes = default)
 		{
 			this.EventId = EventId;
 			this._NameSpace = _NameSpace;
@@ -38,7 +51,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.Domain = Domain;
 			this.SubDomain = SubDomain;
 			this.Type = Type;
-			this.Tags = Tags;
+			this.Tags = Tags ?? new List<TagDto>();
 			this.Severity = Severity;
 			this.Details = Details;
 			this.SubscriptionTypes = SubscriptionTypes;
@@ -102,7 +115,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
-		public List<string> Tags { get; set; }
+		public List<TagDto> Tags { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Severity

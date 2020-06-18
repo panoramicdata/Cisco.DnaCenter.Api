@@ -34,7 +34,7 @@ namespace Cisco.DnaCenter.Test
 		}
 
 		[Fact]
-		public async void GetConfigurationTemplatesAsync_Succeeds()
+		public async void GetConfigurationTemplatesAndDetailsAsync_Succeeds()
 		{
 			var configurationTemplates = await Client
 				.ConfigurationTemplates
@@ -47,6 +47,11 @@ namespace Cisco.DnaCenter.Test
 			{
 				item.TemplateId.Should().NotBeNullOrEmpty();
 				item.Name.Should().NotBeNullOrEmpty();
+
+				var templateDetails = await Client
+					.ConfigurationTemplates
+					.GetTemplateDetailsAsync(item.TemplateId!)
+					.ConfigureAwait(false);
 			}
 		}
 	}
