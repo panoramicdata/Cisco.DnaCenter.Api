@@ -211,7 +211,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Tags
 		/// </summary>
 		[DataMember(Name = "tags", EmitDefaultValue = false)]
-		public List<TagDto> Tags { get; set; } = new List<TagDto>();
+		public List<TagDto>? Tags { get; set; }
 
 		/// <summary>
 		/// Gets or Sets UpperNode

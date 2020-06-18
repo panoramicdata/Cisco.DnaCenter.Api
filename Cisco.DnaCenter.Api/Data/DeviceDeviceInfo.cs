@@ -162,7 +162,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.UserSudiSerialNos = UserSudiSerialNos;
 			this.AddnMacAddrs = AddnMacAddrs;
 			this.PreWorkflowCliOuputs = PreWorkflowCliOuputs;
-			this.Tags = Tags ?? new List<TagDto>();
+			this.Tags = Tags;
 			this.SudiRequired = SudiRequired;
 			this.SmartAccountId = SmartAccountId;
 			this.VirtualAccountId = VirtualAccountId;
