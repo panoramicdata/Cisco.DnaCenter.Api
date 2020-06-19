@@ -52,7 +52,7 @@ namespace Cisco.DnaCenter.Api
 				_shouldDisposeHttpClient = true;
 			}
 
-			ApplicationPoliies = RestService.For<IApplicationPolicies>(_httpClient);
+			ApplicationPolicies = RestService.For<IApplicationPolicies>(_httpClient);
 			Authentication = RestService.For<IAuthentication>(_httpClient);
 			Business = RestService.For<IBusiness>(_httpClient);
 			Clients = RestService.For<IClients>(_httpClient);
@@ -113,7 +113,7 @@ namespace Cisco.DnaCenter.Api
 		}
 
 		/// <inheritdoc />
-		public IApplicationPolicies ApplicationPoliies { get; }
+		public IApplicationPolicies ApplicationPolicies { get; }
 
 		/// <inheritdoc />
 		public IAuthentication Authentication { get; }
