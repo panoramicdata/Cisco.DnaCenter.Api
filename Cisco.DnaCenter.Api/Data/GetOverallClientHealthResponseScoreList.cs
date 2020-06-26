@@ -1,6 +1,6 @@
 using System;
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -19,7 +19,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="ClientUniqueCount">ClientUniqueCount.</param>
 		/// <param name="Starttime">Starttime.</param>
 		/// <param name="Endtime">Endtime.</param>
-		public GetOverallClientHealthResponseScoreList(GetOverallClientHealthResponseScoreCategory ScoreCategory = default, int? ScoreValue = default, int? ClientCount = default, Object ClientUniqueCount = default, int? Starttime = default, int? Endtime = default)
+		public GetOverallClientHealthResponseScoreList(
+			GetOverallClientHealthResponseScoreCategory ScoreCategory = default,
+			int? ScoreValue = default,
+			int? ClientCount = default,
+			Object ClientUniqueCount = default,
+			long? Starttime = default,
+			long? Endtime = default)
 		{
 			this.ScoreCategory = ScoreCategory;
 			this.ScoreValue = ScoreValue;
@@ -57,13 +63,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Starttime
 		/// </summary>
 		[DataMember(Name = "starttime", EmitDefaultValue = false)]
-		public int? Starttime { get; set; }
+		public long? Starttime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Endtime
 		/// </summary>
 		[DataMember(Name = "endtime", EmitDefaultValue = false)]
-		public int? Endtime { get; set; }
+		public long? Endtime { get; set; }
 
 		/// <summary>
 		/// Returns the string presentation of the object

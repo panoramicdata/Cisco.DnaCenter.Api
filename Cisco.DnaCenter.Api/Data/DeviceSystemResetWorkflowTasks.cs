@@ -1,6 +1,6 @@
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -22,7 +22,16 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="WorkItemList">WorkItemList.</param>
 		/// <param name="TimeTaken">TimeTaken.</param>
 		/// <param name="Name">Name.</param>
-		public DeviceSystemResetWorkflowTasks(string? State = default, string? Type = default, decimal? CurrWorkItemIdx = default, decimal? TaskSeqNo = default, decimal? EndTime = default, decimal? StartTime = default, List<DeviceSystemResetWorkflowWorkItemList> WorkItemList = default, decimal? TimeTaken = default, string? Name = default)
+		public DeviceSystemResetWorkflowTasks(
+			string? State = default,
+			string? Type = default,
+			decimal? CurrWorkItemIdx = default,
+			decimal? TaskSeqNo = default,
+			long? EndTime = default,
+			long? StartTime = default,
+			List<DeviceSystemResetWorkflowWorkItemList> WorkItemList = default,
+			decimal? TimeTaken = default,
+			string? Name = default)
 		{
 			this.State = State;
 			this.Type = Type;
@@ -63,13 +72,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
-		public decimal? EndTime { get; set; }
+		public long? EndTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
-		public decimal? StartTime { get; set; }
+		public long? StartTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets WorkItemList

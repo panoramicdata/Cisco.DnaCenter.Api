@@ -24,7 +24,18 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="RootId">RootId.</param>
 		/// <param name="InstanceTenantId">InstanceTenantId.</param>
 		/// <param name="Id">Id.</param>
-		public UpdateSiteResponseResponse(string? EndTime = default, string? _Version = default, string? StartTime = default, string? Progress = default, string? Data = default, string? ServiceType = default, List<string> OperationIdList = default, string? IsError = default, string? RootId = default, string? InstanceTenantId = default, string? Id = default)
+		public UpdateSiteResponseResponse(
+			string? EndTime = default,
+			string? _Version = default,
+			string? StartTime = default,
+			string? Progress = default,
+			string? Data = default,
+			string? ServiceType = default,
+			List<string> OperationIdList = default,
+			string? IsError = default,
+			string? RootId = default,
+			string? InstanceTenantId = default,
+			string? Id = default)
 		{
 			this.EndTime = EndTime;
 			this._Version = _Version;

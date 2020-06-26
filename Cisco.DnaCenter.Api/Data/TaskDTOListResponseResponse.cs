@@ -1,6 +1,6 @@
 using System;
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -31,7 +31,25 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="Username">Username.</param>
 		/// <param name="_Version">_Version.</param>
-		public TaskDtoListResponseResponse(string? AdditionalStatusURL = default, string? Data = default, string? EndTime = default, string? ErrorCode = default, string? ErrorKey = default, string? FailureReason = default, string? Id = default, string? InstanceTenantId = default, bool? IsError = default, string? LastUpdate = default, Object OperationIdList = default, string? ParentId = default, string? Progress = default, string? RootId = default, string? ServiceType = default, string? StartTime = default, string? Username = default, int? _Version = default)
+		public TaskDtoListResponseResponse(
+			string? AdditionalStatusURL = default,
+			string? Data = default,
+			string? EndTime = default,
+			string? ErrorCode = default,
+			string? ErrorKey = default,
+			string? FailureReason = default,
+			string? Id = default,
+			string? InstanceTenantId = default,
+			bool? IsError = default,
+			string? LastUpdate = default,
+			Object OperationIdList = default,
+			string? ParentId = default,
+			string? Progress = default,
+			string? RootId = default,
+			string? ServiceType = default,
+			string? StartTime = default,
+			string? Username = default,
+			int? _Version = default)
 		{
 			this.AdditionalStatusURL = AdditionalStatusURL;
 			this.Data = Data;

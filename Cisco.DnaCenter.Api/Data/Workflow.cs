@@ -66,7 +66,26 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Type">Type.</param>
 		/// <param name="UseState">UseState.</param>
 		/// <param name="_Version">_Version.</param>
-		public Workflow(string? Id = default, bool? AddToInventory = default, int? AddedOn = default, string? ConfigId = default, int? CurrTaskIdx = default, string? Description = default, int? EndTime = default, int? ExecTime = default, string? ImageId = default, InstanceTypeEnum? InstanceType = default, int? LastupdateOn = default, string? Name = default, int? StartTime = default, string? State = default, List<WorkflowTasks> Tasks = default, string? TenantId = default, string? Type = default, string? UseState = default, int? _Version = default)
+		public Workflow(
+			string? Id = default,
+			bool? AddToInventory = default,
+			int? AddedOn = default,
+			string? ConfigId = default,
+			int? CurrTaskIdx = default,
+			string? Description = default,
+			long? EndTime = default,
+			long? ExecTime = default,
+			string? ImageId = default,
+			InstanceTypeEnum? InstanceType = default,
+			long? LastupdateOn = default,
+			string? Name = default,
+			long? StartTime = default,
+			string? State = default,
+			List<WorkflowTasks> Tasks = default,
+			string? TenantId = default,
+			string? Type = default,
+			string? UseState = default,
+			int? _Version = default)
 		{
 			this.Id = Id;
 			this.AddToInventory = AddToInventory;
@@ -129,13 +148,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
-		public int? EndTime { get; set; }
+		public long? EndTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets ExecTime
 		/// </summary>
 		[DataMember(Name = "execTime", EmitDefaultValue = false)]
-		public int? ExecTime { get; set; }
+		public long? ExecTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets ImageId
@@ -147,7 +166,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastupdateOn
 		/// </summary>
 		[DataMember(Name = "lastupdateOn", EmitDefaultValue = false)]
-		public int? LastupdateOn { get; set; }
+		public long? LastupdateOn { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Name
@@ -159,7 +178,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
-		public int? StartTime { get; set; }
+		public long? StartTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets State

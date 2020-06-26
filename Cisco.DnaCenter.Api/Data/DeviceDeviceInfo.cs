@@ -83,7 +83,7 @@ namespace Cisco.DnaCenter.Api.Data
 			string? MacAddress = default,
 			string? Pid = default,
 			List<string> DeviceSudiSerialNos = default,
-			decimal? LastUpdateOn = default,
+			long? LastupdateOn = default,
 			string? WorkflowId = default,
 			string? WorkflowName = default,
 			string? ProjectId = default,
@@ -102,7 +102,7 @@ namespace Cisco.DnaCenter.Api.Data
 			string? AuthStatus = default,
 			DeviceDeviceInfoStackInfo StackInfo = default,
 			bool? ReloadRequested = default,
-			decimal? AddedOn = default,
+			long? AddedOn = default,
 			string? SiteId = default,
 			DeviceDeviceInfoAaaCredentials AaaCredentials = default,
 			List<string> UserMicNumbers = default,
@@ -282,7 +282,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastUpdateOn
 		/// </summary>
 		[DataMember(Name = "lastUpdateOn", EmitDefaultValue = false)]
-		public decimal? LastUpdateOn { get; set; }
+		public long? LastupdateOn { get; set; }
 
 		/// <summary>
 		/// Gets or Sets WorkflowId
@@ -396,7 +396,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets AddedOn
 		/// </summary>
 		[DataMember(Name = "addedOn", EmitDefaultValue = false)]
-		public decimal? AddedOn { get; set; }
+		public long? AddedOn { get; set; }
 
 		/// <summary>
 		/// Gets or Sets SiteId
