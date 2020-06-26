@@ -1,5 +1,5 @@
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -18,7 +18,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="EndTime">EndTime.</param>
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="TimeTaken">TimeTaken.</param>
-		public DeviceSystemResetWorkflowWorkItemList(string? State = default, string? Command = default, string? OutputStr = default, decimal? EndTime = default, decimal? StartTime = default, decimal? TimeTaken = default)
+		public DeviceSystemResetWorkflowWorkItemList(
+			string? State = default,
+			string? Command = default,
+			string? OutputStr = default,
+			long? EndTime = default,
+			long? StartTime = default,
+			decimal? TimeTaken = default)
 		{
 			this.State = State;
 			this.Command = Command;
@@ -50,13 +56,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
-		public decimal? EndTime { get; set; }
+		public long? EndTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
-		public decimal? StartTime { get; set; }
+		public long? StartTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets TimeTaken

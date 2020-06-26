@@ -18,7 +18,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="State">State.</param>
 		/// <param name="TimeTaken">TimeTaken.</param>
-		public WorkflowWorkItemList(string? Command = default, int? EndTime = default, string? OutputStr = default, int? StartTime = default, string? State = default, int? TimeTaken = default)
+		public WorkflowWorkItemList(
+			string? Command = default,
+			long? EndTime = default,
+			string? OutputStr = default,
+			long? StartTime = default,
+			string? State = default,
+			int? TimeTaken = default)
 		{
 			this.Command = Command;
 			this.EndTime = EndTime;
@@ -38,7 +44,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
-		public int? EndTime { get; set; }
+		public long? EndTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets OutputStr
@@ -50,7 +56,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
-		public int? StartTime { get; set; }
+		public long? StartTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets State

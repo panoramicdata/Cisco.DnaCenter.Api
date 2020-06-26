@@ -83,7 +83,7 @@ namespace Cisco.DnaCenter.Api.Data
 			string? MacAddress = default,
 			string? Pid = default,
 			List<string> DeviceSudiSerialNos = default,
-			decimal? LastUpdateOn = default,
+			long? LastupdateOn = default,
 			string? WorkflowId = default,
 			string? WorkflowName = default,
 			string? ProjectId = default,
@@ -102,7 +102,7 @@ namespace Cisco.DnaCenter.Api.Data
 			string? AuthStatus = default,
 			DeviceDeviceInfoStackInfo StackInfo = default,
 			bool? ReloadRequested = default,
-			decimal? AddedOn = default,
+			long? AddedOn = default,
 			string? SiteId = default,
 			DeviceDeviceInfoAaaCredentials AaaCredentials = default,
 			List<string> UserMicNumbers = default,
@@ -135,7 +135,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.MacAddress = MacAddress;
 			this.Pid = Pid;
 			this.DeviceSudiSerialNos = DeviceSudiSerialNos;
-			this.LastUpdateOn = LastUpdateOn;
+			this.LastupdateOn = LastupdateOn;
 			this.WorkflowId = WorkflowId;
 			this.WorkflowName = WorkflowName;
 			this.ProjectId = ProjectId;
@@ -282,7 +282,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets LastUpdateOn
 		/// </summary>
 		[DataMember(Name = "lastUpdateOn", EmitDefaultValue = false)]
-		public decimal? LastUpdateOn { get; set; }
+		public long? LastupdateOn { get; set; }
 
 		/// <summary>
 		/// Gets or Sets WorkflowId
@@ -396,7 +396,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets AddedOn
 		/// </summary>
 		[DataMember(Name = "addedOn", EmitDefaultValue = false)]
-		public decimal? AddedOn { get; set; }
+		public long? AddedOn { get; set; }
 
 		/// <summary>
 		/// Gets or Sets SiteId
@@ -502,7 +502,7 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  MacAddress: ").Append(MacAddress).Append("\n");
 			sb.Append("  Pid: ").Append(Pid).Append("\n");
 			sb.Append("  DeviceSudiSerialNos: ").Append(DeviceSudiSerialNos).Append("\n");
-			sb.Append("  LastUpdateOn: ").Append(LastUpdateOn).Append("\n");
+			sb.Append("  LastUpdateOn: ").Append(LastupdateOn).Append("\n");
 			sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
 			sb.Append("  WorkflowName: ").Append(WorkflowName).Append("\n");
 			sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");

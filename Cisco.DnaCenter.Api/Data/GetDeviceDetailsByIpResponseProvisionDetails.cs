@@ -1,6 +1,6 @@
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -21,7 +21,15 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="TaskNodes">TaskNodes.</param>
 		/// <param name="Topology">Topology.</param>
 		/// <param name="BeginStep">BeginStep.</param>
-		public GetDeviceDetailsByIpResponseProvisionDetails(string? StartTime = default, string? EndTime = default, string? Duration = default, string? StatusMessage = default, string? Status = default, List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes> TaskNodes = default, string? Topology = default, string? BeginStep = default)
+		public GetDeviceDetailsByIpResponseProvisionDetails(
+			string? StartTime = default,
+			string? EndTime = default,
+			string? Duration = default,
+			string? StatusMessage = default,
+			string? Status = default,
+			List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes> TaskNodes = default,
+			string? Topology = default,
+			string? BeginStep = default)
 		{
 			this.StartTime = StartTime;
 			this.EndTime = EndTime;

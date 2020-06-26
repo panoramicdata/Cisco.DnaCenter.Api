@@ -1,6 +1,6 @@
 using System;
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -27,7 +27,21 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="ParentTask">ParentTask.</param>
 		/// <param name="CliTemplateUserMessageDto">CliTemplateUserMessageDto.</param>
 		/// <param name="StepRan">StepRan.</param>
-		public GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes(string? StartTime = default, string? EndTime = default, string? Duration = default, string? Status = default, string? NextTask = default, string? Name = default, string? Target = default, string? StatusMessage = default, string? Payload = default, Object ProvisionedNames = default, Object ErrorPayload = default, Object ParentTask = default, Object CliTemplateUserMessageDto = default, string? StepRan = default)
+		public GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes(
+			string? StartTime = default,
+			string? EndTime = default,
+			string? Duration = default,
+			string? Status = default,
+			string? NextTask = default,
+			string? Name = default,
+			string? Target = default,
+			string? StatusMessage = default,
+			string? Payload = default,
+			Object ProvisionedNames = default,
+			Object ErrorPayload = default,
+			Object ParentTask = default,
+			Object CliTemplateUserMessageDto = default,
+			string? StepRan = default)
 		{
 			this.StartTime = StartTime;
 			this.EndTime = EndTime;

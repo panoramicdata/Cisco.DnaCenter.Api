@@ -1,5 +1,5 @@
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -22,7 +22,17 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="SiteId">SiteId.</param>
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="TaskId">TaskId.</param>
-		public DayZeroConfigPreviewResultResponse(bool? Complete = default, string? Config = default, bool? Error = default, string? ErrorMessage = default, int? ExpiredTime = default, string? RfProfile = default, string? SensorProfile = default, string? SiteId = default, int? StartTime = default, string? TaskId = default)
+		public DayZeroConfigPreviewResultResponse(
+			bool? Complete = default,
+			string? Config = default,
+			bool? Error = default,
+			string? ErrorMessage = default,
+			long? ExpiredTime = default,
+			string? RfProfile = default,
+			string? SensorProfile = default,
+			string? SiteId = default,
+			long? StartTime = default,
+			string? TaskId = default)
 		{
 			this.Complete = Complete;
 			this.Config = Config;
@@ -64,7 +74,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ExpiredTime
 		/// </summary>
 		[DataMember(Name = "expiredTime", EmitDefaultValue = false)]
-		public int? ExpiredTime { get; set; }
+		public long? ExpiredTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets RfProfile
@@ -88,7 +98,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
-		public int? StartTime { get; set; }
+		public long? StartTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets TaskId

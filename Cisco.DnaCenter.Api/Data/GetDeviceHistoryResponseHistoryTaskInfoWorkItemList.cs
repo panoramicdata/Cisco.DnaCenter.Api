@@ -1,5 +1,5 @@
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -18,7 +18,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="EndTime">EndTime.</param>
 		/// <param name="TimeTaken">TimeTaken.</param>
 		/// <param name="OutputStr">OutputStr.</param>
-		public GetDeviceHistoryResponseHistoryTaskInfoWorkItemList(string? State = default, string? Command = default, decimal? StartTime = default, decimal? EndTime = default, decimal? TimeTaken = default, string? OutputStr = default)
+		public GetDeviceHistoryResponseHistoryTaskInfoWorkItemList(
+			string? State = default,
+			string? Command = default,
+			long? StartTime = default,
+			long? EndTime = default,
+			decimal? TimeTaken = default,
+			string? OutputStr = default)
 		{
 			this.State = State;
 			this.Command = Command;
@@ -44,13 +50,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets StartTime
 		/// </summary>
 		[DataMember(Name = "startTime", EmitDefaultValue = false)]
-		public decimal? StartTime { get; set; }
+		public long? StartTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets EndTime
 		/// </summary>
 		[DataMember(Name = "endTime", EmitDefaultValue = false)]
-		public decimal? EndTime { get; set; }
+		public long? EndTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets TimeTaken

@@ -1,6 +1,6 @@
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -20,7 +20,14 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Starttime">Starttime.</param>
 		/// <param name="Endtime">Endtime.</param>
 		/// <param name="ScoreList">ScoreList.</param>
-		public GetOverallClientHealthResponseScoreList1(GetOverallClientHealthResponseScoreCategory ScoreCategory = default, int? ScoreValue = default, int? ClientCount = default, decimal? ClientUniqueCount = default, int? Starttime = default, int? Endtime = default, List<GetOverallClientHealthResponseScoreList> ScoreList = default)
+		public GetOverallClientHealthResponseScoreList1(
+			GetOverallClientHealthResponseScoreCategory ScoreCategory = default,
+			int? ScoreValue = default,
+			int? ClientCount = default,
+			decimal? ClientUniqueCount = default,
+			long? Starttime = default,
+			long? Endtime = default,
+			List<GetOverallClientHealthResponseScoreList> ScoreList = default)
 		{
 			this.ScoreCategory = ScoreCategory;
 			this.ScoreValue = ScoreValue;
@@ -59,13 +66,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Starttime
 		/// </summary>
 		[DataMember(Name = "starttime", EmitDefaultValue = false)]
-		public int? Starttime { get; set; }
+		public long? Starttime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets Endtime
 		/// </summary>
 		[DataMember(Name = "endtime", EmitDefaultValue = false)]
-		public int? Endtime { get; set; }
+		public long? Endtime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets ScoreList
