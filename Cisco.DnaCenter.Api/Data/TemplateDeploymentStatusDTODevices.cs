@@ -19,7 +19,14 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="Name">Name.</param>
 		/// <param name="StartTime">StartTime.</param>
 		/// <param name="Status">Status.</param>
-		public TemplateDeploymentStatusDtoDevices(string? DeviceId = default, string? Duration = default, string? EndTime = default, string? IpAddress = default, string? Name = default, string? StartTime = default, string? Status = default)
+		public TemplateDeploymentStatusDtoDevices(
+			string? DeviceId = default,
+			string? Duration = default,
+			string? EndTime = default,
+			string? IpAddress = default,
+			string? Name = default,
+			string? StartTime = default,
+			string? Status = default)
 		{
 			this.DeviceId = DeviceId;
 			this.Duration = Duration;
