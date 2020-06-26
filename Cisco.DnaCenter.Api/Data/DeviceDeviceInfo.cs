@@ -135,7 +135,7 @@ namespace Cisco.DnaCenter.Api.Data
 			this.MacAddress = MacAddress;
 			this.Pid = Pid;
 			this.DeviceSudiSerialNos = DeviceSudiSerialNos;
-			this.LastUpdateOn = LastUpdateOn;
+			this.LastupdateOn = LastupdateOn;
 			this.WorkflowId = WorkflowId;
 			this.WorkflowName = WorkflowName;
 			this.ProjectId = ProjectId;
@@ -502,7 +502,7 @@ namespace Cisco.DnaCenter.Api.Data
 			sb.Append("  MacAddress: ").Append(MacAddress).Append("\n");
 			sb.Append("  Pid: ").Append(Pid).Append("\n");
 			sb.Append("  DeviceSudiSerialNos: ").Append(DeviceSudiSerialNos).Append("\n");
-			sb.Append("  LastUpdateOn: ").Append(LastUpdateOn).Append("\n");
+			sb.Append("  LastUpdateOn: ").Append(LastupdateOn).Append("\n");
 			sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
 			sb.Append("  WorkflowName: ").Append(WorkflowName).Append("\n");
 			sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
