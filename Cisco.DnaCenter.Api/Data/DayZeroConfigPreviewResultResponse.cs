@@ -1,5 +1,5 @@
-using System.Text;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -27,7 +27,7 @@ namespace Cisco.DnaCenter.Api.Data
 			string? Config = default,
 			bool? Error = default,
 			string? ErrorMessage = default,
-			int? ExpiredTime = default,
+			long? ExpiredTime = default,
 			string? RfProfile = default,
 			string? SensorProfile = default,
 			string? SiteId = default,
@@ -74,7 +74,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets ExpiredTime
 		/// </summary>
 		[DataMember(Name = "expiredTime", EmitDefaultValue = false)]
-		public int? ExpiredTime { get; set; }
+		public long? ExpiredTime { get; set; }
 
 		/// <summary>
 		/// Gets or Sets RfProfile
