@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Changed Microsoft.Extensions.Logging to 3.1.4 from 3.1.3 to maintain better compatibility with other projects.</PackageReleaseNotes>
+		<PackageReleaseNotes>Added GetAllPnpDeviceListAsync to page through all available data for GetPnpDeviceListAsync.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

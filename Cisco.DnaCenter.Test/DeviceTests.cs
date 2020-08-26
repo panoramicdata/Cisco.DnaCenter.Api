@@ -1,4 +1,5 @@
 ﻿using Cisco.DnaCenter.Api.Data;
+using Cisco.DnaCenter.Api.Extensions;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -96,7 +97,7 @@ namespace Cisco.DnaCenter.Test
 			}
 		}
 
-		[Fact(Skip = "Unit test not finished")]
+		[Fact]
 		public async Task GetPnpDeviceListAsync_Succeeds()
 		{
 			var devices = await Client
@@ -105,6 +106,19 @@ namespace Cisco.DnaCenter.Test
 				.ConfigureAwait(false);
 
 			devices.Should().NotBeNull();
+			devices.Count.Should().Be(50);
+		}
+
+		[Fact]
+		public async Task GetAllPnpDeviceListAsync()
+		{
+			var devices = await Client
+				.DeviceOnboardingPnp
+				.GetAllPnpDeviceListAsync()
+				.ConfigureAwait(false);
+
+			devices.Should().NotBeNull();
+			devices.Count.Should().BeGreaterThan(50);
 		}
 
 		//[Fact(Skip = "Unit test not finished")]
