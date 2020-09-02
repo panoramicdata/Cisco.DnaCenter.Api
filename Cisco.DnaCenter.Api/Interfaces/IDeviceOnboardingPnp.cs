@@ -239,7 +239,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 			[AliasAs("projectId")] List<string> projectId = null,
 			[AliasAs("workflowId")] List<string> workflowId = null,
 			[AliasAs("projectName")] List<string> projectName = null,
-			[AliasAs("siteName")] List<string> SiteName = null,
+			[AliasAs("siteName")] List<string> siteName = null,
 			[AliasAs("workflowName")] List<string> workflowName = null,
 			[AliasAs("smartAccountId")] List<string> smartAccountId = null,
 			[AliasAs("virtualAccountId")] List<string> virtualAccountId = null,
