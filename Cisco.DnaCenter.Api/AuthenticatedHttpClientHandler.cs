@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Net.Http;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,12 +26,25 @@ namespace Cisco.DnaCenter.Api
 		public AuthenticatedHttpClientHandler(
 			DnaCenterClient dnaCenterClient,
 			string? token,
-			ILogger logger)
+			ILogger logger,
+			bool ignoreSslCertificateErrors)
 		{
 			_dnaCenterClient = dnaCenterClient;
 			_token = token;
 			_logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+			if (ignoreSslCertificateErrors)
+			{
+				ServerCertificateCustomValidationCallback = DangerousAcceptAnyServerCertificateValidator;
+			}
 		}
+
+		private bool DangerousAcceptAnyServerCertificateValidator(
+			HttpRequestMessage arg1,
+			X509Certificate2 arg2,
+			X509Chain arg3,
+			SslPolicyErrors arg4)
+			=> true;
 
 		protected override async Task<HttpResponseMessage> SendAsync(
 			HttpRequestMessage request,

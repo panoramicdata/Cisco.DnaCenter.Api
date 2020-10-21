@@ -40,6 +40,11 @@ namespace Cisco.DnaCenter.Api
 		/// </summary>
 		public bool IsUsernamePasswordAuthenticated => Username != null && Password != null;
 
+		/// <summary>
+		/// Whether to ignore SSL certificate errors
+		/// </summary>
+		public bool IgnoreSslCertificateErrors { get; set; }
+
 		public void Validate()
 		{
 			// If an HttpClient is provided, Username, Password, Token and Uri should NOT be

@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Added GetAllPnpDeviceListAsync to page through all available data for GetPnpDeviceListAsync.</PackageReleaseNotes>
+		<PackageReleaseNotes>Added IgnoreSslCertificateErrors to DnaCenterClientOptions.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
