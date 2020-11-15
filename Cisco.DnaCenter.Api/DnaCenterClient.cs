@@ -23,6 +23,8 @@ namespace Cisco.DnaCenter.Api
 
 		public bool IsConnected { get; private set; }
 
+		public bool IgnoreSslCertificateErrors { get; private set; }
+
 		public DnaCenterClient(DnaCenterClientOptions options, ILogger? logger = null)
 		{
 			_logger = logger ?? NullLogger.Instance;
@@ -44,7 +46,7 @@ namespace Cisco.DnaCenter.Api
 			else
 			{
 				// We are creating an HttpClient (one was not provided), so set _httpClient so that we know to dispose of it later.
-				_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(this, _options.Token, _logger);
+				_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(this, _options.Token, _logger, _options.IgnoreSslCertificateErrors);
 				_httpClient = new HttpClient(_authenticatedHttpClientHandler)
 				{
 					BaseAddress = _options.Uri
