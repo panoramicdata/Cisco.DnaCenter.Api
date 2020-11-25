@@ -405,8 +405,8 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// <remarks>
 		/// Updates device details specified by device id in Pnp database
 		/// </remarks>
-		/// <param name="request">request</param>
 		/// <param name="id">id</param>
+		/// <param name="request">request</param>
 		/// <returns>Task of UpdateDeviceResponse</returns>
 		[Put("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
 		Task<UpdateDeviceResponse> UpdateDeviceAsync(

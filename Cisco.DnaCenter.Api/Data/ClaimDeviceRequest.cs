@@ -22,7 +22,16 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="PopulateInventory">PopulateInventory.</param>
 		/// <param name="ProjectId">ProjectId.</param>
 		/// <param name="WorkflowId">WorkflowId.</param>
-		public ClaimDeviceRequest(string? ConfigFileUrl = default, string? ConfigId = default, List<ResetRequestDeviceResetList> DeviceClaimList = default, string? FileServiceId = default, string? ImageId = default, string? ImageUrl = default, bool? PopulateInventory = default, string? ProjectId = default, string? WorkflowId = default)
+		public ClaimDeviceRequest(
+			string? ConfigFileUrl = default,
+			string? ConfigId = default,
+			List<ResetRequestDeviceResetList>? DeviceClaimList = default,
+			string? FileServiceId = default,
+			string? ImageId = default,
+			string? ImageUrl = default,
+			bool? PopulateInventory = default,
+			string? ProjectId = default,
+			string? WorkflowId = default)
 		{
 			this.ConfigFileUrl = ConfigFileUrl;
 			this.ConfigId = ConfigId;
@@ -51,7 +60,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets DeviceClaimList
 		/// </summary>
 		[DataMember(Name = "deviceClaimList", EmitDefaultValue = false)]
-		public List<ResetRequestDeviceResetList> DeviceClaimList { get; set; }
+		public List<ResetRequestDeviceResetList>? DeviceClaimList { get; set; }
 
 		/// <summary>
 		/// Gets or Sets FileServiceId
