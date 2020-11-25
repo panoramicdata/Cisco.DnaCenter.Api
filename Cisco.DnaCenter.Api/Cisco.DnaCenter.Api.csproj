@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Added IgnoreSslCertificateErrors to DnaCenterClientOptions.</PackageReleaseNotes>
+		<PackageReleaseNotes>Rerequest token if invalid.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
