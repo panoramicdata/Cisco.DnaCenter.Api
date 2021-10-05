@@ -11,6 +11,8 @@ namespace Cisco.DnaCenter.Api.Data
 	public enum RfModel
 	{
 
+		// Note: Insert these in the same order as in the DNA Center
+
 		/// <summary>
 		/// Enum CubesAndWalledOffices for "Cubes And Walled Offices"
 		/// </summary>
@@ -24,6 +26,12 @@ namespace Cisco.DnaCenter.Api.Data
 		DrywallOfficeOnly,
 
 		/// <summary>
+		/// Enum FreeSpace for "Free Space"
+		/// </summary>
+		[EnumMember(Value = "Free Space")]
+		FreeSpace,
+
+		/// <summary>
 		/// Enum IndoorHighCeiling for "Indoor High Ceiling"
 		/// </summary>
 		[EnumMember(Value = "Indoor High Ceiling")]
@@ -34,11 +42,5 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		[EnumMember(Value = "Outdoor Open Space")]
 		OutdoorOpenSpace,
-
-		/// <summary>
-		/// Enum FreeSpace for "Free Space"
-		/// </summary>
-		[EnumMember(Value = "Free Space")]
-		FreeSpace
 	}
 }
