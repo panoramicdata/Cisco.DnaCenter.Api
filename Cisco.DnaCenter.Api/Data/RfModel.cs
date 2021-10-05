@@ -33,6 +33,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Enum OutdoorOpenSpace for "Outdoor Open Space"
 		/// </summary>
 		[EnumMember(Value = "Outdoor Open Space")]
-		OutdoorOpenSpace
+		OutdoorOpenSpace,
+
+		/// <summary>
+		/// Enum FreeSpace for "Free Space"
+		/// </summary>
+		[EnumMember(Value = "Free Space")]
+		FreeSpace
 	}
 }

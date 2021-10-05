@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Rerequest token if invalid.</PackageReleaseNotes>
+		<PackageReleaseNotes>Added FreeSpace to RfModel.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
