@@ -2,8 +2,11 @@ using Cisco.DnaCenter.Api.Data;
 using Cisco.DnaCenter.Api.Interfaces;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Refit;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Net.Http;
@@ -54,30 +57,48 @@ namespace Cisco.DnaCenter.Api
 				_shouldDisposeHttpClient = true;
 			}
 
-			ApplicationPolicies = RestService.For<IApplicationPolicies>(_httpClient);
-			Authentication = RestService.For<IAuthentication>(_httpClient);
-			Business = RestService.For<IBusiness>(_httpClient);
-			Clients = RestService.For<IClients>(_httpClient);
-			CommandRunner = RestService.For<ICommandRunner>(_httpClient);
-			ConfigurationTemplates = RestService.For<IConfigurationTemplates>(_httpClient);
-			DeviceOnboardingPnp = RestService.For<IDeviceOnboardingPnp>(_httpClient);
-			Devices = RestService.For<IDevices>(_httpClient);
-			EventManagement = RestService.For<IEventManagement>(_httpClient);
-			Files = RestService.For<IFiles>(_httpClient);
-			Issues = RestService.For<IIssues>(_httpClient);
-			Maps = RestService.For<IMaps>(_httpClient);
-			NetworkDiscovery = RestService.For<INetworkDiscovery>(_httpClient);
-			NetworkSettings = RestService.For<INetworkSettings>(_httpClient);
-			NonFabricWireless = RestService.For<INonFabricWireless>(_httpClient);
-			PathTrace = RestService.For<IPathTrace>(_httpClient);
-			Sda = RestService.For<ISda>(_httpClient);
-			SiteDesign = RestService.For<ISiteDesign>(_httpClient);
-			Sites = RestService.For<ISites>(_httpClient);
-			SoftwareImages = RestService.For<ISoftwareImages>(_httpClient);
-			Tags = RestService.For<ITags>(_httpClient);
-			Tasks = RestService.For<ITasks>(_httpClient);
-			Topologies = RestService.For<ITopologies>(_httpClient);
-			Users = RestService.For<IUsers>(_httpClient);
+			var refitSettings = new RefitSettings
+			{
+				UrlParameterFormatter = new CustomUrlParameterFormatter(),
+				ContentSerializer = new NewtonsoftJsonContentSerializer(
+					new JsonSerializerSettings
+					{
+						// By default nulls should not be rendered out, this will allow the receiving API to apply any defaults.
+						// Use [JsonProperty(NullValueHandling = NullValueHandling.Include)] to send
+						// nulls for specific properties, i.e. disassociating port schedule ids from a port
+						NullValueHandling = NullValueHandling.Ignore,
+						//#if DEBUG
+						//						MissingMemberHandling = MissingMemberHandling.Error,
+						//#endif
+						Converters = new List<JsonConverter> { new StringEnumConverter() }
+					}
+				)
+			};
+
+			ApplicationPolicies = RestService.For<IApplicationPolicies>(_httpClient, refitSettings);
+			Authentication = RestService.For<IAuthentication>(_httpClient, refitSettings);
+			Business = RestService.For<IBusiness>(_httpClient, refitSettings);
+			Clients = RestService.For<IClients>(_httpClient, refitSettings);
+			CommandRunner = RestService.For<ICommandRunner>(_httpClient, refitSettings);
+			ConfigurationTemplates = RestService.For<IConfigurationTemplates>(_httpClient, refitSettings);
+			DeviceOnboardingPnp = RestService.For<IDeviceOnboardingPnp>(_httpClient, refitSettings);
+			Devices = RestService.For<IDevices>(_httpClient, refitSettings);
+			EventManagement = RestService.For<IEventManagement>(_httpClient, refitSettings);
+			Files = RestService.For<IFiles>(_httpClient, refitSettings);
+			Issues = RestService.For<IIssues>(_httpClient, refitSettings);
+			Maps = RestService.For<IMaps>(_httpClient, refitSettings);
+			NetworkDiscovery = RestService.For<INetworkDiscovery>(_httpClient, refitSettings);
+			NetworkSettings = RestService.For<INetworkSettings>(_httpClient, refitSettings);
+			NonFabricWireless = RestService.For<INonFabricWireless>(_httpClient, refitSettings);
+			PathTrace = RestService.For<IPathTrace>(_httpClient, refitSettings);
+			Sda = RestService.For<ISda>(_httpClient, refitSettings);
+			SiteDesign = RestService.For<ISiteDesign>(_httpClient, refitSettings);
+			Sites = RestService.For<ISites>(_httpClient, refitSettings);
+			SoftwareImages = RestService.For<ISoftwareImages>(_httpClient, refitSettings);
+			Tags = RestService.For<ITags>(_httpClient, refitSettings);
+			Tasks = RestService.For<ITasks>(_httpClient, refitSettings);
+			Topologies = RestService.For<ITopologies>(_httpClient, refitSettings);
+			Users = RestService.For<IUsers>(_httpClient, refitSettings);
 		}
 
 		public async Task ConnectAsync(CancellationToken cancellationToken = default)
