@@ -11,7 +11,7 @@ namespace Cisco.DnaCenter.Api
 {
 	public class AuthenticatedHttpClientHandler : HttpClientHandler
 	{
-		private readonly LogLevel _levelToLogAt = LogLevel.Trace;
+		private const LogLevel _levelToLogAt = LogLevel.Trace;
 		private string? _token;
 		private readonly ILogger _logger;
 		private readonly DnaCenterClient _dnaCenterClient;
