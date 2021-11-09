@@ -14,7 +14,7 @@ namespace Cisco.DnaCenter.Api
 				return null;
 			}
 
-			if (typeof(IEnumerable<string>).IsAssignableFrom(type))
+			if (typeof(IEnumerable<string>).IsAssignableFrom(type) && !(parameterValue is string))
 			{
 				return string.Join(",", (IEnumerable<string>)parameterValue);
 			}
