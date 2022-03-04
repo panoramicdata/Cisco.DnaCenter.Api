@@ -1,5 +1,7 @@
 # Cisco.DnaCenter.Api
 
+[![Nuget](https://img.shields.io/nuget/v/Cisco.DnaCenter.Api)](https://www.nuget.org/packages/Cisco.DnaCenter.Api/)
+
 To use the Cisco DNA Center nuget package:
 
 ## Visual Studio
