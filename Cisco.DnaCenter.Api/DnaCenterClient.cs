@@ -123,7 +123,7 @@ namespace Cisco.DnaCenter.Api
 			{
 				var base64UsernameAndPassword = _options.GetBase64UsernamePassword();
 				authenticationResponse = await Authentication
-					.Authenticate($"Basic: {base64UsernameAndPassword}", cancellationToken)
+					.Authenticate($"Basic {base64UsernameAndPassword}", cancellationToken)
 					.ConfigureAwait(false);
 			}
 			catch (Exception e)
