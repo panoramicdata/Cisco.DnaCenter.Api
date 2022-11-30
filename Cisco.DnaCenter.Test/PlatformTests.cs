@@ -19,7 +19,7 @@ namespace Cisco.DnaCenter.Test
 				.GetCiscoDNACenterReleaseSummaryAsync()
 				.ConfigureAwait(false);
 
-			getCiscoDNACenterReleaseSummaryResponseResult.Should().BeOfType<GetCiscoDNACenterReleaseSummaryResponseResult>();
+			getCiscoDNACenterReleaseSummaryResponseResult.Should().BeOfType<CiscoDNACenterReleaseSummaryResponseResult>();
 			getCiscoDNACenterReleaseSummaryResponseResult.Should().NotBeNull();
 
 			var getCiscoDNACenterReleaseSummaryResponseResultResponse = getCiscoDNACenterReleaseSummaryResponseResult.Response;

@@ -4,17 +4,17 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetCiscoDNACenterReleaseSummaryResponseResult
+	/// CiscoDNACenterReleaseSummaryResponseResult
 	/// </summary>
 	[DataContract]
-	public class GetCiscoDNACenterReleaseSummaryResponseResult
+	public class CiscoDNACenterReleaseSummaryResponseResult
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetCiscoDNACenterReleaseSummaryResponseResult" /> class.
+		/// Initializes a new instance of the <see cref="CiscoDNACenterReleaseSummaryResponseResult" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
 		/// <param name="_Version">_Version.</param>
-		public GetCiscoDNACenterReleaseSummaryResponseResult(GetCiscoDNACenterReleaseSummaryResponseResultResponse Response = default, string? _Version = default)
+		public CiscoDNACenterReleaseSummaryResponseResult(CiscoDNACenterReleaseSummaryResponseResultResponse Response = default, string? _Version = default)
 		{
 			this.Response = Response;
 			this._Version = _Version;
@@ -24,7 +24,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Gets or Sets Response
 		/// </summary>
 		[DataMember(Name = "response", EmitDefaultValue = false)]
-		public GetCiscoDNACenterReleaseSummaryResponseResultResponse Response { get; set; }
+		public CiscoDNACenterReleaseSummaryResponseResultResponse Response { get; set; }
 
 		/// <summary>
 		/// Gets or Sets _Version

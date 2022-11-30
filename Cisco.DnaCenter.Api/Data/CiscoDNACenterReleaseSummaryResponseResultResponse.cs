@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
-	/// GetReleaseSummaryResponse
+	/// CiscoDNACenterReleaseSummaryResponseResultResponse
 	/// </summary>
 	[DataContract]
-	public class GetCiscoDNACenterReleaseSummaryResponseResultResponse
+	public class CiscoDNACenterReleaseSummaryResponseResultResponse
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GetCiscoDNACenterReleaseSummaryResponseResultResponse" /> class.
+		/// Initializes a new instance of the <see cref="CiscoDNACenterReleaseSummaryResponseResultResponse" /> class.
 		/// </summary>
 		/// <param name="InstalledVersion">InstalledVersion.</param>
 		/// <param name="Name">Name.</param>
@@ -20,7 +20,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <param name="CorePackages">CorePackages.</param>
 		/// <param name="Packages">Packages.</param>
 		/// <param name="SupportedDirectUpdates">SupportedDirectUpdates.</param>
-		public GetCiscoDNACenterReleaseSummaryResponseResultResponse(
+		public CiscoDNACenterReleaseSummaryResponseResultResponse(
 			string? InstalledVersion = default,
 			string? Name = default,
 			string? SystemVersion = default,
@@ -93,7 +93,7 @@ namespace Cisco.DnaCenter.Api.Data
 		public override string ToString()
 		{
 			var sb = new StringBuilder();
-			sb.Append("class GetCiscoDNACenterReleaseSummaryResponse {\n");
+			sb.Append("class CiscoDNACenterReleaseSummaryResponseResult {\n");
 			sb.Append("  InstalledVersion: ").Append(InstalledVersion).Append("\n");
 			sb.Append("  Name: ").Append(Name).Append("\n");
 			sb.Append("  SystemVersion: ").Append(SystemVersion).Append("\n");

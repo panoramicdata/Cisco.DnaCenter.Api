@@ -18,7 +18,7 @@ namespace Cisco.DnaCenter.Api.Interfaces
 		/// </remarks>
 		/// <returns>Task of GetCiscoDNACenterReleaseSummaryResponse</returns>
 		[Get("/dna/intent/api/v1/dnac-release")]
-		Task<GetCiscoDNACenterReleaseSummaryResponseResult> GetCiscoDNACenterReleaseSummaryAsync(
+		Task<CiscoDNACenterReleaseSummaryResponseResult> GetCiscoDNACenterReleaseSummaryAsync(
 			CancellationToken cancellationToken = default);
 	}
 }
