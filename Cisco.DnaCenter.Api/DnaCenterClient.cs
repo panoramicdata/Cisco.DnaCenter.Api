@@ -91,6 +91,7 @@ namespace Cisco.DnaCenter.Api
 			NetworkSettings = RestService.For<INetworkSettings>(_httpClient, refitSettings);
 			NonFabricWireless = RestService.For<INonFabricWireless>(_httpClient, refitSettings);
 			PathTrace = RestService.For<IPathTrace>(_httpClient, refitSettings);
+			Platform = RestService.For<IPlatform>(_httpClient, refitSettings);
 			Sda = RestService.For<ISda>(_httpClient, refitSettings);
 			SiteDesign = RestService.For<ISiteDesign>(_httpClient, refitSettings);
 			Sites = RestService.For<ISites>(_httpClient, refitSettings);
@@ -182,6 +183,9 @@ namespace Cisco.DnaCenter.Api
 
 		/// <inheritdoc />
 		public IPathTrace PathTrace { get; }
+
+		/// <inheritdoc />
+		public IPlatform Platform { get; }
 
 		/// <inheritdoc />
 		public ISda Sda { get; }

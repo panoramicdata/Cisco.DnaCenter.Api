@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>changed GetRfModels to use long IDs. Updated to .Net 7.</PackageReleaseNotes>
+		<PackageReleaseNotes>Implemented Platform.GetCiscoDNACenterReleaseSummaryAsync()</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
