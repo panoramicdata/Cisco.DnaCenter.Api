@@ -1,6 +1,6 @@
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data
 {
@@ -14,7 +14,8 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="RetrieveRfProfilesResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-		public RetrieveRfProfilesResponse(List<RetrieveRfProfilesResponseResponse> Response = default)
+		public RetrieveRfProfilesResponse() : this(default) { }
+		public RetrieveRfProfilesResponse(List<RetrieveRfProfilesResponseResponse> Response)
 		{
 			this.Response = Response;
 		}
