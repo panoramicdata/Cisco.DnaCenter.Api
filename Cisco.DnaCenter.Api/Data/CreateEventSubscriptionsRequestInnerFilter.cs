@@ -14,7 +14,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
 		/// </summary>
 		/// <param name="EventIds">EventIds.</param>
-		public CreateEventSubscriptionsRequestInnerFilter(List<string> EventIds = default)
+
+		public CreateEventSubscriptionsRequestInnerFilter() : this(default) { }
+
+		public CreateEventSubscriptionsRequestInnerFilter(List<string> EventIds)
 		{
 			this.EventIds = EventIds;
 		}

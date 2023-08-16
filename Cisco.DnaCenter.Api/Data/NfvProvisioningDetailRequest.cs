@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="NfvProvisioningDetailRequest" /> class.
 		/// </summary>
 		/// <param name="DeviceIp">DeviceIp.</param>
-		public NfvProvisioningDetailRequest(string? DeviceIp = default)
+
+		public NfvProvisioningDetailRequest() : this(default) { }
+
+		public NfvProvisioningDetailRequest(string? DeviceIp)
 		{
 			this.DeviceIp = DeviceIp;
 		}

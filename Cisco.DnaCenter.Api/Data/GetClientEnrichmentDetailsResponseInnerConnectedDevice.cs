@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetClientEnrichmentDetailsResponseInnerConnectedDevice" /> class.
 		/// </summary>
 		/// <param name="DeviceDetails">DeviceDetails.</param>
-		public GetClientEnrichmentDetailsResponseInnerConnectedDevice(GetClientEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails = default)
+
+		public GetClientEnrichmentDetailsResponseInnerConnectedDevice() : this(default) { }
+
+		public GetClientEnrichmentDetailsResponseInnerConnectedDevice(GetClientEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails)
 		{
 			this.DeviceDetails = DeviceDetails;
 		}

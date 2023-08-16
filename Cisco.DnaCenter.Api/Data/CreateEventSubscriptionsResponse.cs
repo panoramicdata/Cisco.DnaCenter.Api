@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsResponse" /> class.
 		/// </summary>
 		/// <param name="StatusUri">StatusUri.</param>
-		public CreateEventSubscriptionsResponse(string? StatusUri = default)
+
+		public CreateEventSubscriptionsResponse() : this(default) { }
+
+		public CreateEventSubscriptionsResponse(string? StatusUri)
 		{
 			this.StatusUri = StatusUri;
 		}

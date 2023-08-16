@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServicesToConnect" /> class.
 		/// </summary>
 		/// <param name="Service">Service.</param>
-		public ProvisionNfvRequestServicesToConnect(string? Service = default)
+
+		public ProvisionNfvRequestServicesToConnect() : this(default) { }
+
+		public ProvisionNfvRequestServicesToConnect(string? Service)
 		{
 			this.Service = Service;
 		}

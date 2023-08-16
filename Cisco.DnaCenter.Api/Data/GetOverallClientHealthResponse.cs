@@ -14,7 +14,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetOverallClientHealthResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-		public GetOverallClientHealthResponse(List<GetOverallClientHealthResponseResponse> Response = default)
+
+		public GetOverallClientHealthResponse() : this(default) { }
+
+		public GetOverallClientHealthResponse(List<GetOverallClientHealthResponseResponse> Response)
 		{
 			this.Response = Response;
 		}

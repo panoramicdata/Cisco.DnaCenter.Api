@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="EventCountResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-		public EventCountResponse(decimal? Response = default)
+
+		public EventCountResponse() : this(default) { }
+
+		public EventCountResponse(decimal? Response)
 		{
 			this.Response = Response;
 		}

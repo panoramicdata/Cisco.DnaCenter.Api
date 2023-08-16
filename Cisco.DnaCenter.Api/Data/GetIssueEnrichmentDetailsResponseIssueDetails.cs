@@ -14,6 +14,9 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetIssueEnrichmentDetailsResponseIssueDetails" /> class.
 		/// </summary>
 		/// <param name="Issue">Issue.</param>
+
+		public GetIssueEnrichmentDetailsResponseIssueDetails() : this(default) { }
+
 		public GetIssueEnrichmentDetailsResponseIssueDetails(List<GetIssueEnrichmentDetailsResponseIssueDetailsIssue> Issue = default)
 		{
 			this.Issue = Issue;

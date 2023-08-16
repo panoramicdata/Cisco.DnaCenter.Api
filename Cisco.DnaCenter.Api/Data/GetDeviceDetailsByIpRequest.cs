@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpRequest" /> class.
 		/// </summary>
 		/// <param name="DeviceIp">DeviceIp.</param>
-		public GetDeviceDetailsByIpRequest(string? DeviceIp = default)
+
+		public GetDeviceDetailsByIpRequest() : this(default) { }
+
+		public GetDeviceDetailsByIpRequest(string? DeviceIp)
 		{
 			this.DeviceIp = DeviceIp;
 		}

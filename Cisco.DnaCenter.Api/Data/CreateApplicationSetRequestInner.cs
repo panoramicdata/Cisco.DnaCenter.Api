@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="CreateApplicationSetRequestInner" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
-		public CreateApplicationSetRequestInner(string? Name = default)
+
+		public CreateApplicationSetRequestInner() : this(default) { }
+
+		public CreateApplicationSetRequestInner(string? Name)
 		{
 			this.Name = Name;
 		}
