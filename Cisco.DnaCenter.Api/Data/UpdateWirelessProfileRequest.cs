@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="UpdateWirelessProfileRequest" /> class.
 		/// </summary>
 		/// <param name="ProfileDetails">ProfileDetails.</param>
-		public UpdateWirelessProfileRequest(GetWirelessProfileResponseInnerProfileDetails ProfileDetails = default)
+
+		public UpdateWirelessProfileRequest(): this(default) { }
+
+		public UpdateWirelessProfileRequest(GetWirelessProfileResponseInnerProfileDetails ProfileDetails)
 		{
 			this.ProfileDetails = ProfileDetails;
 		}

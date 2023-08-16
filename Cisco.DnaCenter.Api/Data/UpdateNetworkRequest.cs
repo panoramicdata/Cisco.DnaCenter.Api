@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="UpdateNetworkRequest" /> class.
 		/// </summary>
 		/// <param name="Settings">Settings.</param>
-		public UpdateNetworkRequest(UpdateNetworkRequestSettings Settings = default)
+
+		public UpdateNetworkRequest(): this(default) { }
+
+		public UpdateNetworkRequest(UpdateNetworkRequestSettings Settings)
 		{
 			this.Settings = Settings;
 		}

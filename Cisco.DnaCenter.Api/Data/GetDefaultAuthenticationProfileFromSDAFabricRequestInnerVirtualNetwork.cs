@@ -13,7 +13,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork" /> class.
 		/// </summary>
 		/// <param name="VirtualNetworkName">VirtualNetworkName.</param>
-		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork(string? VirtualNetworkName = default)
+
+		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork(): this(default) { }
+
+		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork(string? VirtualNetworkName)
 		{
 			this.VirtualNetworkName = VirtualNetworkName;
 		}

@@ -13,7 +13,9 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="NotificationCountResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-		public NotificationCountResponse(decimal? Response = default)
+		public NotificationCountResponse(): this(default) { }
+
+		public NotificationCountResponse(decimal? Response)
 		{
 			this.Response = Response;
 		}

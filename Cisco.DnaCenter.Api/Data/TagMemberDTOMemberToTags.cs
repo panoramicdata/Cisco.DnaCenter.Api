@@ -14,7 +14,10 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="TagMemberDtoMemberToTags" /> class.
 		/// </summary>
 		/// <param name="Key">Key.</param>
-		public TagMemberDtoMemberToTags(List<string> Key = default)
+
+		public TagMemberDtoMemberToTags(): this(default) { }
+
+		public TagMemberDtoMemberToTags(List<string> Key)
 		{
 			this.Key = Key;
 		}
