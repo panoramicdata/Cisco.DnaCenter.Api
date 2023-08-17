@@ -16,7 +16,7 @@ namespace Cisco.DnaCenter.Api.Data
 
 		public GetDeviceDetailsByIpResponse() : this(default) { }
 
-		public GetDeviceDetailsByIpResponse(GetDeviceDetailsByIpResponseProvisionDetails ProvisionDetails = default)
+		public GetDeviceDetailsByIpResponse(GetDeviceDetailsByIpResponseProvisionDetails ProvisionDetails)
 		{
 			this.ProvisionDetails = ProvisionDetails;
 		}

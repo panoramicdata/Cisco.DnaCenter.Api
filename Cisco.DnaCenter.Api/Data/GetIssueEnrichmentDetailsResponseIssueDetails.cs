@@ -17,7 +17,7 @@ namespace Cisco.DnaCenter.Api.Data
 
 		public GetIssueEnrichmentDetailsResponseIssueDetails() : this(default) { }
 
-		public GetIssueEnrichmentDetailsResponseIssueDetails(List<GetIssueEnrichmentDetailsResponseIssueDetailsIssue> Issue = default)
+		public GetIssueEnrichmentDetailsResponseIssueDetails(List<GetIssueEnrichmentDetailsResponseIssueDetailsIssue> Issue)
 		{
 			this.Issue = Issue;
 		}
