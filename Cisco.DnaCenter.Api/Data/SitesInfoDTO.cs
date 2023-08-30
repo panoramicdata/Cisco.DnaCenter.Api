@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="SitesInfoDto" /> class.
 		/// </summary>
 		/// <param name="SiteUuids">SiteUuids.</param>
-		public SitesInfoDto(List<string> SiteUuids)
+		public SitesInfoDto(List<string>? SiteUuids)
 		{
 			this.SiteUuids = SiteUuids;
 		}

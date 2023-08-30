@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetWirelessProfileResponseInner" /> class.
 		/// </summary>
 		/// <param name="ProfileDetails">ProfileDetails.</param>
-		public GetWirelessProfileResponseInner(GetWirelessProfileResponseInnerProfileDetails ProfileDetails)
+		public GetWirelessProfileResponseInner(GetWirelessProfileResponseInnerProfileDetails? ProfileDetails)
 		{
 			this.ProfileDetails = ProfileDetails;
 		}

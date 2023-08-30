@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="AssignDeviceToSiteRequest" /> class.
 		/// </summary>
 		/// <param name="Device">Device.</param>
-		public AssignDeviceToSiteRequest(List<AssignDeviceToSiteRequestDevice> Device)
+		public AssignDeviceToSiteRequest(List<AssignDeviceToSiteRequestDevice>? Device)
 		{
 			this.Device = Device;
 		}
