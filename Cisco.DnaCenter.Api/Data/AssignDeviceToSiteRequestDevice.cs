@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AssignDeviceToSiteRequestDevice" /> class.
 		/// </summary>
-		/// <param name="Ip">Ip.</param>
 		public AssignDeviceToSiteRequestDevice() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="AssignDeviceToSiteRequestDevice" /> class.
+		/// </summary>
+		/// <param name="Ip">Ip.</param>
 		public AssignDeviceToSiteRequestDevice(string? Ip)
 		{
 			this.Ip = Ip;

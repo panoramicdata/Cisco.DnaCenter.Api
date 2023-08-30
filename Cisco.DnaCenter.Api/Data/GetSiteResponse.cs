@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetSiteResponse" /> class.
 		/// </summary>
-		/// <param name="Response">Response.</param>
 		public GetSiteResponse() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetSiteResponse" /> class.
+		/// </summary>
+		/// <param name="Response">Response.</param>
 		public GetSiteResponse(List<GetSiteResponseResponse> Response)
 		{
 			this.Response = Response;

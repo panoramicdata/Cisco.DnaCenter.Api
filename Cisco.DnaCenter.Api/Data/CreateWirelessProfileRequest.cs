@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateWirelessProfileRequest" /> class.
 		/// </summary>
-		/// <param name="ProfileDetails">ProfileDetails.</param>
 		public CreateWirelessProfileRequest() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CreateWirelessProfileRequest" /> class.
+		/// </summary>
+		/// <param name="ProfileDetails">ProfileDetails.</param>
 		public CreateWirelessProfileRequest(GetWirelessProfileResponseInnerProfileDetails ProfileDetails)
 		{
 			this.ProfileDetails = ProfileDetails;

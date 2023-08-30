@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UpdateDeviceCredentialsRequest" /> class.
 		/// </summary>
-		/// <param name="Settings">Settings.</param>
 		public UpdateDeviceCredentialsRequest() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="UpdateDeviceCredentialsRequest" /> class.
+		/// </summary>
+		/// <param name="Settings">Settings.</param>
 		public UpdateDeviceCredentialsRequest(UpdateDeviceCredentialsRequestSettings Settings)
 		{
 			this.Settings = Settings;

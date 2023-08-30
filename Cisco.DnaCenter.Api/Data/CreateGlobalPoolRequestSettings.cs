@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateGlobalPoolRequestSettings" /> class.
 		/// </summary>
-		/// <param name="Ippool">Ippool.</param>
 		public CreateGlobalPoolRequestSettings() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CreateGlobalPoolRequestSettings" /> class.
+		/// </summary>
+		/// <param name="Ippool">Ippool.</param>
 		public CreateGlobalPoolRequestSettings(List<CreateGlobalPoolRequestSettingsIppool> Ippool)
 		{
 			this.Ippool = Ippool;

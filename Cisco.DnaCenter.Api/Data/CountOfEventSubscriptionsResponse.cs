@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EventSubscriptionCountResponse" /> class.
 		/// </summary>
-		/// <param name="Response">Response.</param>
 		public EventSubscriptionCountResponse() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="EventSubscriptionCountResponse" /> class.
+		/// </summary>
+		/// <param name="Response">Response.</param>
 		public EventSubscriptionCountResponse(decimal? Response)
 		{
 			this.Response = Response;

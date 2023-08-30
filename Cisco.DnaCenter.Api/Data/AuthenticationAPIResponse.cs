@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
 		/// </summary>
-		/// <param name="Token">Token.</param>
 		public AuthenticationResponse() : this(default) { }
 
+		// <summary>
+		/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
+		/// </summary>
+		/// <param name="Token">Token.</param>
 		public AuthenticationResponse(string? Token)
 		{
 			this.Token = Token;

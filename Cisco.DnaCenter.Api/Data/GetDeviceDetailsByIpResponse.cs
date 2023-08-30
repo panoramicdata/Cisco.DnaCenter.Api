@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpResponse" /> class.
 		/// </summary>
-		/// <param name="ProvisionDetails">ProvisionDetails.</param>
 		public GetDeviceDetailsByIpResponse() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpResponse" /> class.
+		/// </summary>
+		/// <param name="ProvisionDetails">ProvisionDetails.</param>
 		public GetDeviceDetailsByIpResponse(GetDeviceDetailsByIpResponseProvisionDetails ProvisionDetails)
 		{
 			this.ProvisionDetails = ProvisionDetails;

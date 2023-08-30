@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SitesInfoDto" /> class.
 		/// </summary>
-		/// <param name="SiteUuids">SiteUuids.</param>
 		public SitesInfoDto() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="SitesInfoDto" /> class.
+		/// </summary>
+		/// <param name="SiteUuids">SiteUuids.</param>
 		public SitesInfoDto(List<string> SiteUuids)
 		{
 			this.SiteUuids = SiteUuids;

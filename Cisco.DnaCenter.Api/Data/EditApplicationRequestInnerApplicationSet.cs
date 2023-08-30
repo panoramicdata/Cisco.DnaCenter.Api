@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
 		/// </summary>
-		/// <param name="IdRef">IdRef.</param>
 		public EditApplicationRequestInnerApplicationSet() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
+		/// </summary>
+		/// <param name="IdRef">IdRef.</param>
 		public EditApplicationRequestInnerApplicationSet(string? IdRef)
 		{
 			this.IdRef = IdRef;

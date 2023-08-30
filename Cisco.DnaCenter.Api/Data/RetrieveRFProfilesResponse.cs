@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="RetrieveRfProfilesResponse" /> class.
 		/// </summary>
-		/// <param name="Response">Response.</param>
 		public RetrieveRfProfilesResponse() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="RetrieveRfProfilesResponse" /> class.
+		/// </summary>
+		/// <param name="Response">Response.</param>
 		public RetrieveRfProfilesResponse(List<RetrieveRfProfilesResponseResponse> Response)
 		{
 			this.Response = Response;

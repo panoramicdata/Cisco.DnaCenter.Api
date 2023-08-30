@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddFabricRequestInner" /> class.
 		/// </summary>
-		/// <param name="FabricName">FabricName.</param>
 		public AddFabricRequestInner() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="AddFabricRequestInner" /> class.
+		/// </summary>
+		/// <param name="FabricName">FabricName.</param>
 		public AddFabricRequestInner(string? FabricName)
 		{
 			this.FabricName = FabricName;

@@ -9,9 +9,12 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
 		/// </summary>
-		/// <param name="InstanceUuid">InstanceUuid.</param>
 		public TagMembersResultResponse() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
+		/// </summary>
+		/// <param name="InstanceUuid">InstanceUuid.</param>
 		public TagMembersResultResponse(string? InstanceUuid)
 		{
 			this.InstanceUuid = InstanceUuid;

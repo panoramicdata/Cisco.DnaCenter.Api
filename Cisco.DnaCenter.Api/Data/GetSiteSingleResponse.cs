@@ -9,9 +9,12 @@
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetSiteSingleResponse" /> class.
 		/// </summary>
-		/// <param name="Response">Response.</param>
 		public GetSiteSingleResponse() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetSiteSingleResponse" /> class.
+		/// </summary>
+		/// <param name="Response">Response.</param>
 		public GetSiteSingleResponse(GetSiteResponseResponse Response)
 		{
 			this.Response = Response;

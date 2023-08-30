@@ -9,9 +9,12 @@
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NfvProvisioningDetailRequest" /> class.
 		/// </summary>
-		/// <param name="DeviceIp">DeviceIp.</param>
 		public NfvProvisioningDetailRequest() : this(default) { }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="NfvProvisioningDetailRequest" /> class.
+		/// </summary>
+		/// <param name="DeviceIp">DeviceIp.</param>
 		public NfvProvisioningDetailRequest(string? DeviceIp)
 		{
 			this.DeviceIp = DeviceIp;
