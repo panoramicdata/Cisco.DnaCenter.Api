@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,8 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="UpdateWirelessProfileRequest" /> class.
 		/// </summary>
 		/// <param name="ProfileDetails">ProfileDetails.</param>
-
-		public UpdateWirelessProfileRequest(): this(default) { }
+		public UpdateWirelessProfileRequest() : this(default) { }
 
 		public UpdateWirelessProfileRequest(GetWirelessProfileResponseInnerProfileDetails ProfileDetails)
 		{

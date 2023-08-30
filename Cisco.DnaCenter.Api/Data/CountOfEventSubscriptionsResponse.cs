@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="EventSubscriptionCountResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-
 		public EventSubscriptionCountResponse() : this(default) { }
 
 		public EventSubscriptionCountResponse(decimal? Response)

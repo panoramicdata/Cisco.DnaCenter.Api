@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="AddFabricRequestInner" /> class.
 		/// </summary>
 		/// <param name="FabricName">FabricName.</param>
-
 		public AddFabricRequestInner() : this(default) { }
 
 		public AddFabricRequestInner(string? FabricName)

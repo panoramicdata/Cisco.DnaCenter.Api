@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="CreateApplicationSetRequestInner" /> class.
 		/// </summary>
 		/// <param name="Name">Name.</param>
-
 		public CreateApplicationSetRequestInner() : this(default) { }
 
 		public CreateApplicationSetRequestInner(string? Name)

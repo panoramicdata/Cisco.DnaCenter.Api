@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -15,6 +11,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// </summary>
 		/// <param name="Response">Response.</param>
 		public RetrieveRfProfilesResponse() : this(default) { }
+
 		public RetrieveRfProfilesResponse(List<RetrieveRfProfilesResponseResponse> Response)
 		{
 			this.Response = Response;

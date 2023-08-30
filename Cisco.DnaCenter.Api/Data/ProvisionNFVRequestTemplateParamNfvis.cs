@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestTemplateParamNfvis" /> class.
 		/// </summary>
 		/// <param name="Var1">Var1.</param>
-
 		public ProvisionNfvRequestTemplateParamNfvis() : this(default) { }
 
 		public ProvisionNfvRequestTemplateParamNfvis(string? Var1)

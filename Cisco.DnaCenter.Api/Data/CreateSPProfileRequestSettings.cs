@@ -1,7 +1,3 @@
-using System.Text;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -14,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="CreateSpProfileRequestSettings" /> class.
 		/// </summary>
 		/// <param name="Qos">Qos.</param>
-
 		public CreateSpProfileRequestSettings() : this(default) { }
 
 		public CreateSpProfileRequestSettings(List<CreateSpProfileRequestSettingsQos> Qos)

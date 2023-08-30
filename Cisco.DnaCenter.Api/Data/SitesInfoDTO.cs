@@ -1,7 +1,3 @@
-using System.Text;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -14,8 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="SitesInfoDto" /> class.
 		/// </summary>
 		/// <param name="SiteUuids">SiteUuids.</param>
-
-		public SitesInfoDto(): this(default) { }
+		public SitesInfoDto() : this(default) { }
 
 		public SitesInfoDto(List<string> SiteUuids)
 		{

@@ -1,7 +1,4 @@
-﻿using System.Runtime.Serialization;
-using System.Text;
-
-namespace Cisco.DnaCenter.Api.Data
+﻿namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
 	/// GetSiteResponse
@@ -13,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetSiteSingleResponse" /> class.
 		/// </summary>
 		/// <param name="Response">Response.</param>
-
 		public GetSiteSingleResponse() : this(default) { }
 
 		public GetSiteSingleResponse(GetSiteResponseResponse Response)

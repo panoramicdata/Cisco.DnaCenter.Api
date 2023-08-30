@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,8 +10,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork" /> class.
 		/// </summary>
 		/// <param name="VirtualNetworkName">VirtualNetworkName.</param>
-
-		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork(): this(default) { }
+		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork() : this(default) { }
 
 		public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork(string? VirtualNetworkName)
 		{

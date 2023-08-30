@@ -1,7 +1,4 @@
-﻿using System.Runtime.Serialization;
-using System.Text;
-
-namespace Cisco.DnaCenter.Api.Data
+﻿namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
 	/// NFVProvisioningDetailRequest
@@ -13,7 +10,6 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="NfvProvisioningDetailRequest" /> class.
 		/// </summary>
 		/// <param name="DeviceIp">DeviceIp.</param>
-
 		public NfvProvisioningDetailRequest() : this(default) { }
 
 		public NfvProvisioningDetailRequest(string? DeviceIp)
