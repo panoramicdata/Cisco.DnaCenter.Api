@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="CreateSpProfileRequest" /> class.
 		/// </summary>
 		/// <param name="Settings">Settings.</param>
-		public CreateSpProfileRequest(CreateSpProfileRequestSettings? Settings)
+		public CreateSpProfileRequest(CreateSpProfileRequestSettings Settings)
 		{
 			this.Settings = Settings;
 		}

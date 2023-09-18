@@ -15,7 +15,7 @@ namespace Cisco.DnaCenter.Api.Data
 		/// Initializes a new instance of the <see cref="CreateDeviceCredentialsRequest" /> class.
 		/// </summary>
 		/// <param name="Settings">Settings.</param>
-		public CreateDeviceCredentialsRequest(CreateDeviceCredentialsRequestSettings? Settings)
+		public CreateDeviceCredentialsRequest(CreateDeviceCredentialsRequestSettings Settings)
 		{
 			this.Settings = Settings;
 		}
