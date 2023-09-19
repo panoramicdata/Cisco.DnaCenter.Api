@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetWorkflowCountResponse" /> class.
 		/// </summary>
+		public GetWorkflowCountResponse() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetWorkflowCountResponse" /> class.
+		/// </summary>
 		/// <param name="Response">Response.</param>
-		public GetWorkflowCountResponse(decimal? Response = default)
+		public GetWorkflowCountResponse(decimal? Response)
 		{
 			this.Response = Response;
 		}

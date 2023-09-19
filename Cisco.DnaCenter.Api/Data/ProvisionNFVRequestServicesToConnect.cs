@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServicesToConnect" /> class.
 		/// </summary>
+		public ProvisionNfvRequestServicesToConnect() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ProvisionNfvRequestServicesToConnect" /> class.
+		/// </summary>
 		/// <param name="Service">Service.</param>
-		public ProvisionNfvRequestServicesToConnect(string? Service = default)
+		public ProvisionNfvRequestServicesToConnect(string? Service)
 		{
 			this.Service = Service;
 		}

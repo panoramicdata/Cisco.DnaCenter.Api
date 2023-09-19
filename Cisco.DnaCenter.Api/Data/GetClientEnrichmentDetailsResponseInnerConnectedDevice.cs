@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetClientEnrichmentDetailsResponseInnerConnectedDevice" /> class.
 		/// </summary>
+		public GetClientEnrichmentDetailsResponseInnerConnectedDevice() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetClientEnrichmentDetailsResponseInnerConnectedDevice" /> class.
+		/// </summary>
 		/// <param name="DeviceDetails">DeviceDetails.</param>
-		public GetClientEnrichmentDetailsResponseInnerConnectedDevice(GetClientEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails = default)
+		public GetClientEnrichmentDetailsResponseInnerConnectedDevice(GetClientEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails)
 		{
 			this.DeviceDetails = DeviceDetails;
 		}

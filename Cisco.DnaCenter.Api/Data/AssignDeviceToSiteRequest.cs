@@ -1,7 +1,3 @@
-using System.Text;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AssignDeviceToSiteRequest" /> class.
 		/// </summary>
+		public AssignDeviceToSiteRequest() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="AssignDeviceToSiteRequest" /> class.
+		/// </summary>
 		/// <param name="Device">Device.</param>
-		public AssignDeviceToSiteRequest(List<AssignDeviceToSiteRequestDevice> Device = default)
+		public AssignDeviceToSiteRequest(List<AssignDeviceToSiteRequestDevice> Device)
 		{
 			this.Device = Device;
 		}

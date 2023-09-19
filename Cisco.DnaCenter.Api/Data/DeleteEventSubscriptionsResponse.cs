@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DeleteEventSubscriptionsResponse" /> class.
 		/// </summary>
+		public DeleteEventSubscriptionsResponse() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DeleteEventSubscriptionsResponse" /> class.
+		/// </summary>
 		/// <param name="StatusUri">StatusUri.</param>
-		public DeleteEventSubscriptionsResponse(string? StatusUri = default)
+		public DeleteEventSubscriptionsResponse(string? StatusUri)
 		{
 			this.StatusUri = StatusUri;
 		}

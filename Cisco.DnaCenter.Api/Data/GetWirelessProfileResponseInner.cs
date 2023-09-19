@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetWirelessProfileResponseInner" /> class.
 		/// </summary>
+		public GetWirelessProfileResponseInner() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetWirelessProfileResponseInner" /> class.
+		/// </summary>
 		/// <param name="ProfileDetails">ProfileDetails.</param>
-		public GetWirelessProfileResponseInner(GetWirelessProfileResponseInnerProfileDetails ProfileDetails = default)
+		public GetWirelessProfileResponseInner(GetWirelessProfileResponseInnerProfileDetails ProfileDetails)
 		{
 			this.ProfileDetails = ProfileDetails;
 		}

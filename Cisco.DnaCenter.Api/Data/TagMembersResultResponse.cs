@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
 		/// </summary>
+		public TagMembersResultResponse() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
+		/// </summary>
 		/// <param name="InstanceUuid">InstanceUuid.</param>
-		public TagMembersResultResponse(string? InstanceUuid = default)
+		public TagMembersResultResponse(string? InstanceUuid)
 		{
 			this.InstanceUuid = InstanceUuid;
 		}

@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetDeviceCountResponse" /> class.
 		/// </summary>
+		public GetDeviceCountResponse() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetDeviceCountResponse" /> class.
+		/// </summary>
 		/// <param name="Response">Response.</param>
-		public GetDeviceCountResponse(decimal? Response = default)
+		public GetDeviceCountResponse(decimal? Response)
 		{
 			this.Response = Response;
 		}

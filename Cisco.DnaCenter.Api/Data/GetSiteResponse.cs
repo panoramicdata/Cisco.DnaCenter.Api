@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GetSiteResponse" /> class.
 		/// </summary>
+		public GetSiteResponse() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="GetSiteResponse" /> class.
+		/// </summary>
 		/// <param name="Response">Response.</param>
-		public GetSiteResponse(List<GetSiteResponseResponse> Response = default)
+		public GetSiteResponse(List<GetSiteResponseResponse> Response)
 		{
 			this.Response = Response;
 		}

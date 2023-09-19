@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateSpProfileRequest" /> class.
 		/// </summary>
+		public CreateSpProfileRequest() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CreateSpProfileRequest" /> class.
+		/// </summary>
 		/// <param name="Settings">Settings.</param>
-		public CreateSpProfileRequest(CreateSpProfileRequestSettings Settings = default)
+		public CreateSpProfileRequest(CreateSpProfileRequestSettings Settings)
 		{
 			this.Settings = Settings;
 		}

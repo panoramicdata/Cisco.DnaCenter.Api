@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
 		/// </summary>
+		public EditApplicationRequestInnerApplicationSet() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
+		/// </summary>
 		/// <param name="IdRef">IdRef.</param>
-		public EditApplicationRequestInnerApplicationSet(string? IdRef = default)
+		public EditApplicationRequestInnerApplicationSet(string? IdRef)
 		{
 			this.IdRef = IdRef;
 		}

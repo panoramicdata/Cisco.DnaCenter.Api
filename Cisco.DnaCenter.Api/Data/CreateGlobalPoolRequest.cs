@@ -1,6 +1,3 @@
-using System.Text;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -12,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateGlobalPoolRequest" /> class.
 		/// </summary>
+		public CreateGlobalPoolRequest() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CreateGlobalPoolRequest" /> class.
+		/// </summary>
 		/// <param name="Settings">Settings.</param>
-		public CreateGlobalPoolRequest(CreateGlobalPoolRequestSettings Settings = default)
+		public CreateGlobalPoolRequest(CreateGlobalPoolRequestSettings Settings)
 		{
 			this.Settings = Settings;
 		}

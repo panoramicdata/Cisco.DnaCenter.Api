@@ -1,7 +1,3 @@
-using System.Text;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
 		/// </summary>
+		public CreateEventSubscriptionsRequestInnerFilter() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
+		/// </summary>
 		/// <param name="EventIds">EventIds.</param>
-		public CreateEventSubscriptionsRequestInnerFilter(List<string> EventIds = default)
+		public CreateEventSubscriptionsRequestInnerFilter(List<string> EventIds)
 		{
 			this.EventIds = EventIds;
 		}

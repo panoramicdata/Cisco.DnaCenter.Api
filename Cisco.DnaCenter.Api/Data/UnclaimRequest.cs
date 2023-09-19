@@ -1,7 +1,3 @@
-using System.Text;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-
 namespace Cisco.DnaCenter.Api.Data
 {
 	/// <summary>
@@ -13,8 +9,13 @@ namespace Cisco.DnaCenter.Api.Data
 		/// <summary>
 		/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.
 		/// </summary>
+		public UnclaimRequest() : this(default) { }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.
+		/// </summary>
 		/// <param name="DeviceIdList">DeviceIdList.</param>
-		public UnclaimRequest(List<string> DeviceIdList = default)
+		public UnclaimRequest(List<string> DeviceIdList)
 		{
 			this.DeviceIdList = DeviceIdList;
 		}
