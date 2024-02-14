@@ -1,4 +1,5 @@
 ﻿using Cisco.DnaCenter.Api.Data;
+using Cisco.DnaCenter.Api.Extensions;
 using FluentAssertions;
 using System;
 using System.Linq;
@@ -83,7 +84,7 @@ public class SiteTests : Tests
 		executionStatus.Should().NotBeNull();
 		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 
-		//	Get all sites
+		//	Get site (first page only)
 		var sitesResponse = await Client
 			.Sites
 			.GetSitesAsync();
@@ -92,6 +93,16 @@ public class SiteTests : Tests
 		site.Should().NotBeNull();
 		site.Should().BeOfType<GetSiteResponseResponse>();
 		site.Id.Should().NotBeNullOrEmpty();
+
+		//	Get all sites
+		var allSitesResponse = await Client
+			.Sites
+			.GetAllSitesAsync();
+
+		var sites = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
+		sites.Should().NotBeNull();
+		sites.Should().BeOfType<GetSiteResponseResponse>();
+		sites.Id.Should().NotBeNullOrEmpty();
 
 		// Read
 		var siteById = await Client
