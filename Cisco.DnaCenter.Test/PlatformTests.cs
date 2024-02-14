@@ -16,8 +16,7 @@ public class PlatformTests : Tests
 	{
 		var getCiscoDNACenterReleaseSummaryResponseResult = await Client
 			.Platform
-			.GetCiscoDNACenterReleaseSummaryAsync()
-			.ConfigureAwait(false);
+			.GetCiscoDNACenterReleaseSummaryAsync();
 
 		getCiscoDNACenterReleaseSummaryResponseResult.Should().BeOfType<CiscoDNACenterReleaseSummaryResponseResult>();
 		getCiscoDNACenterReleaseSummaryResponseResult.Should().NotBeNull();

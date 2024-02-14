@@ -15,8 +15,7 @@ public class ConfigurationTemplateTests : Tests
 	{
 		var projects = await Client
 			.ConfigurationTemplates
-			.GetProjectsAsync()
-			.ConfigureAwait(false);
+			.GetProjectsAsync();
 
 		projects.Should().NotBeNull();
 		projects.Should().NotBeEmpty();
@@ -38,8 +37,7 @@ public class ConfigurationTemplateTests : Tests
 	{
 		var configurationTemplates = await Client
 			.ConfigurationTemplates
-			.GetAvailableTemplatesAsync()
-			.ConfigureAwait(false);
+			.GetAvailableTemplatesAsync();
 
 		configurationTemplates.Should().NotBeNull();
 		configurationTemplates.Should().NotBeEmpty();
@@ -50,8 +48,7 @@ public class ConfigurationTemplateTests : Tests
 
 			var templateDetails = await Client
 				.ConfigurationTemplates
-				.GetTemplateDetailsAsync(item.TemplateId!)
-				.ConfigureAwait(false);
+				.GetTemplateDetailsAsync(item.TemplateId!);
 			templateDetails.Should().NotBeNull();
 		}
 	}

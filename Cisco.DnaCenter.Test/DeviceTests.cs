@@ -18,7 +18,7 @@ public class DeviceTests : Tests
 	[Fact]
 	public async void GetAllAsync_Succeeds()
 	{
-		var devices = await GetDevices().ConfigureAwait(false);
+		var devices = await GetDevices();
 
 		var device = devices.Response[0];
 
@@ -29,8 +29,7 @@ public class DeviceTests : Tests
 		// Get details for the first device
 		var deviceDetails = await Client
 			.Devices
-			.GetAsync(deviceId)
-			.ConfigureAwait(false);
+			.GetAsync(deviceId);
 		deviceDetails.Response.Should().NotBeNull();
 		deviceDetails.Response.SerialNumber.Should().NotBeNullOrEmpty();
 	}
@@ -53,8 +52,7 @@ public class DeviceTests : Tests
 	{
 		var interfaces = await Client
 			.Devices
-			.GetAllInterfacesAsync()
-			.ConfigureAwait(false);
+			.GetAllInterfacesAsync();
 
 		interfaces.Should().BeOfType<DeviceIfListResult>();
 		interfaces.Should().NotBeNull();
@@ -66,8 +64,7 @@ public class DeviceTests : Tests
 	{
 		var deviceCount = await Client
 			.Devices
-			.GetCountAsync()
-			.ConfigureAwait(false);
+			.GetCountAsync();
 
 		deviceCount.Should().BeOfType<CountResult>();
 		deviceCount.Response.Should().NotBeNull();
@@ -80,15 +77,13 @@ public class DeviceTests : Tests
 	{
 		var sites = await Client
 			.Sites
-			.GetSitesAsync()
-			.ConfigureAwait(false);
+			.GetSitesAsync();
 
 		var firstSite = sites.Response[0];
 
 		var devicesResponse = await Client
 			.Devices
-			.GetAllAsync(locationName: new List<string> { firstSite.SiteNameHierarchy })
-			.ConfigureAwait(false);
+			.GetAllAsync(locationName: new List<string> { firstSite.SiteNameHierarchy });
 
 		Logger.LogInformation("Devices:");
 		foreach (var device in devicesResponse.Response)
@@ -102,8 +97,7 @@ public class DeviceTests : Tests
 	{
 		var devices = await Client
 			.DeviceOnboardingPnp
-			.GetPnpDeviceListAsync()
-			.ConfigureAwait(false);
+			.GetPnpDeviceListAsync();
 
 		devices.Should().NotBeNull();
 		devices.Count.Should().Be(50);
@@ -114,8 +108,7 @@ public class DeviceTests : Tests
 	{
 		var devices = await Client
 			.DeviceOnboardingPnp
-			.GetAllPnpDeviceListAsync()
-			.ConfigureAwait(false);
+			.GetAllPnpDeviceListAsync();
 
 		devices.Should().NotBeNull();
 		devices.Count.Should().BeGreaterThan(50);

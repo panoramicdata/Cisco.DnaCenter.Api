@@ -15,7 +15,7 @@ public class MapTests : Tests
 	[Fact]
 	public async void GetRfModelsAsync_Succeeds()
 	{
-		var rfModelIdMappings = await Client.Maps.GetRfModelsAsync().ConfigureAwait(false);
+		var rfModelIdMappings = await Client.Maps.GetRfModelsAsync();
 
 		rfModelIdMappings.Should().NotBeNull();
 		rfModelIdMappings.Should().NotBeEmpty();

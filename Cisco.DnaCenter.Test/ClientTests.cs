@@ -13,8 +13,7 @@ public class ClientTests : Tests
 	public async void ConnectAsync_Succeeds()
 	{
 		await Client
-			.ConnectAsync()
-			.ConfigureAwait(false);
+			.ConnectAsync();
 	}
 
 	[Fact]
@@ -22,7 +21,6 @@ public class ClientTests : Tests
 	{
 		await Client
 			.Devices
-			.GetCountAsync()
-			.ConfigureAwait(false);
+			.GetCountAsync();
 	}
 }

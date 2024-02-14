@@ -17,7 +17,7 @@ public class SiteTests : Tests
 	[Fact]
 	public async void GetSitesAsync_Succeeds()
 	{
-		var sites = await GetSitesAsync().ConfigureAwait(false);
+		var sites = await GetSitesAsync();
 
 		var sitesResponse = sites.Response[0];
 
@@ -28,8 +28,7 @@ public class SiteTests : Tests
 		// Get details for the first device
 		var getSiteResponse = await Client
 			.Sites
-			.GetSiteAsync(siteId)
-			.ConfigureAwait(false);
+			.GetSiteAsync(siteId);
 		getSiteResponse.Should().BeOfType<GetSiteSingleResponse>();
 		getSiteResponse.Should().NotBeNull();
 
@@ -71,16 +70,14 @@ public class SiteTests : Tests
 						ParentName = parentName
 					}
 				}
-			}, false, true)
-			.ConfigureAwait(false);
+			}, false, true);
 
 		createSitesResponse.Should().BeOfType<ExecutionStatusResponse>();
 		createSitesResponse.Should().NotBeNull();
 		createSitesResponse.ExecutionId.Should().NotBeNull();
 
 		var executionStatus = await Client
-			.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!)
-			.ConfigureAwait(false);
+			.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!);
 
 		executionStatus.Should().BeOfType<ExecutionStatus>();
 		executionStatus.Should().NotBeNull();
@@ -89,8 +86,7 @@ public class SiteTests : Tests
 		//	Get all sites
 		var sitesResponse = await Client
 			.Sites
-			.GetSitesAsync()
-			.ConfigureAwait(false);
+			.GetSitesAsync();
 
 		var site = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
 		site.Should().NotBeNull();
@@ -100,8 +96,7 @@ public class SiteTests : Tests
 		// Read
 		var siteById = await Client
 			.Sites
-			.GetSiteAsync(site.Id!)
-			.ConfigureAwait(false);
+			.GetSiteAsync(site.Id!);
 
 		siteById.Should().BeOfType<GetSiteSingleResponse>();
 		siteById.Should().NotBeNull();
@@ -116,26 +111,22 @@ public class SiteTests : Tests
 
 		var updatedSite = await Client
 			.Sites
-			.UpdateSiteAsync(updateSiteRequest, null, site.Id!)
-			.ConfigureAwait(false);
+			.UpdateSiteAsync(updateSiteRequest, null, site.Id!);
 
 		executionStatus = await Client
-			.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!)
-			.ConfigureAwait(false);
+			.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!);
 		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 
 		// Delete
 		var deleteSiteResponse = await Client
 			.Sites
-			.DeleteSiteAsync(site.Id!)
-			.ConfigureAwait(false);
+			.DeleteSiteAsync(site.Id!);
 
 		deleteSiteResponse.Should().BeOfType<ExecutionStatusResponse>();
 		deleteSiteResponse.Should().NotBeNull();
 
 		executionStatus = await Client
-			.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!)
-			.ConfigureAwait(false);
+			.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!);
 
 		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 	}
