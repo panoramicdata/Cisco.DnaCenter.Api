@@ -80,7 +80,7 @@ namespace Cisco.DnaCenter.Test
 		{
 			var sites = await Client
 				.Sites
-				.GetAllAsync()
+				.GetSitesAsync()
 				.ConfigureAwait(false);
 
 			var firstSite = sites.Response[0];

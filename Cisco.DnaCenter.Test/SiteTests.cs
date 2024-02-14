@@ -28,7 +28,7 @@ namespace Cisco.DnaCenter.Test
 			// Get details for the first device
 			var getSiteResponse = await Client
 				.Sites
-				.GetAsync(siteId)
+				.GetSiteAsync(siteId)
 				.ConfigureAwait(false);
 			getSiteResponse.Should().BeOfType<GetSiteSingleResponse>();
 			getSiteResponse.Should().NotBeNull();
@@ -43,7 +43,7 @@ namespace Cisco.DnaCenter.Test
 		{
 			var sites = await Client
 				.Sites
-				.GetAllAsync()
+				.GetSitesAsync()
 				.ConfigureAwait(false);
 
 			sites.Should().BeOfType<GetSiteResponse>();
@@ -60,7 +60,7 @@ namespace Cisco.DnaCenter.Test
 			const string parentName = "Global";
 			var createSitesResponse = await Client
 				.Sites
-				.CreateAsync(new CreateSiteRequest
+				.CreateSiteAsync(new CreateSiteRequest
 				{
 					Type = CreateSiteRequest.TypeEnum.Area,
 					Site = new CreateSiteRequestSite
@@ -89,7 +89,7 @@ namespace Cisco.DnaCenter.Test
 			//	Get all sites
 			var sitesResponse = await Client
 				.Sites
-				.GetAllAsync()
+				.GetSitesAsync()
 				.ConfigureAwait(false);
 
 			var site = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
@@ -100,7 +100,7 @@ namespace Cisco.DnaCenter.Test
 			// Read
 			var siteById = await Client
 				.Sites
-				.GetAsync(site.Id!)
+				.GetSiteAsync(site.Id!)
 				.ConfigureAwait(false);
 
 			siteById.Should().BeOfType<GetSiteSingleResponse>();
@@ -116,7 +116,7 @@ namespace Cisco.DnaCenter.Test
 
 			var updatedSite = await Client
 				.Sites
-				.UpdateAsync(updateSiteRequest, null, site.Id!)
+				.UpdateSiteAsync(updateSiteRequest, null, site.Id!)
 				.ConfigureAwait(false);
 
 			executionStatus = await Client
@@ -127,7 +127,7 @@ namespace Cisco.DnaCenter.Test
 			// Delete
 			var deleteSiteResponse = await Client
 				.Sites
-				.DeleteAsync(site.Id!)
+				.DeleteSiteAsync(site.Id!)
 				.ConfigureAwait(false);
 
 			deleteSiteResponse.Should().BeOfType<ExecutionStatusResponse>();
