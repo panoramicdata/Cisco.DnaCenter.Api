@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// AddDefaultAuthenticationProfileInSdaFabricRequest
+/// </summary>
+[DataContract]
+public class AddDefaultAuthenticationProfileInSdaFabricRequest : List<UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequestInner>
 {
 	/// <summary>
-	/// AddDefaultAuthenticationProfileInSdaFabricRequest
+	/// Initializes a new instance of the <see cref="AddDefaultAuthenticationProfileInSdaFabricRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class AddDefaultAuthenticationProfileInSdaFabricRequest : List<UpdateDefaultAuthenticationProfileTemplateInSdaFabricRequestInner>
+	[JsonConstructor]
+	public AddDefaultAuthenticationProfileInSdaFabricRequest()
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AddDefaultAuthenticationProfileInSdaFabricRequest" /> class.
-		/// </summary>
-		[JsonConstructor]
-		public AddDefaultAuthenticationProfileInSdaFabricRequest()
-		{
-		}
+	}
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class AddDefaultAuthenticationProfileInSdaFabricRequest {\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class AddDefaultAuthenticationProfileInSdaFabricRequest {\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

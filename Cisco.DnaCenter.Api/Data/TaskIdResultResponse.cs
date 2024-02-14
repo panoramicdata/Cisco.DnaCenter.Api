@@ -1,49 +1,48 @@
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// TaskIdResultResponse
+/// </summary>
+[DataContract]
+public class TaskIdResultResponse
 {
 	/// <summary>
-	/// TaskIdResultResponse
+	/// Initializes a new instance of the <see cref="TaskIdResultResponse" /> class.
 	/// </summary>
-	[DataContract]
-	public class TaskIdResultResponse
+	/// <param name="TaskId">TaskId.</param>
+	/// <param name="Url">Url.</param>
+	public TaskIdResultResponse(string TaskId = default, string? Url = default)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="TaskIdResultResponse" /> class.
-		/// </summary>
-		/// <param name="TaskId">TaskId.</param>
-		/// <param name="Url">Url.</param>
-		public TaskIdResultResponse(string TaskId = default, string? Url = default)
-		{
-			this.TaskId = TaskId;
-			this.Url = Url;
-		}
+		this.TaskId = TaskId;
+		this.Url = Url;
+	}
 
-		/// <summary>
-		/// Gets or Sets TaskId
-		/// </summary>
-		[DataMember(Name = "taskId", EmitDefaultValue = false)]
-		public string TaskId { get; set; }
+	/// <summary>
+	/// Gets or Sets TaskId
+	/// </summary>
+	[DataMember(Name = "taskId", EmitDefaultValue = false)]
+	public string TaskId { get; set; }
 
-		/// <summary>
-		/// Gets or Sets Url
-		/// </summary>
-		[DataMember(Name = "url", EmitDefaultValue = false)]
-		public string? Url { get; set; }
+	/// <summary>
+	/// Gets or Sets Url
+	/// </summary>
+	[DataMember(Name = "url", EmitDefaultValue = false)]
+	public string? Url { get; set; }
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class TaskIdResultResponse {\n");
-			sb.Append("  TaskId: ").Append(TaskId).Append("\n");
-			sb.Append("  Url: ").Append(Url).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class TaskIdResultResponse {\n");
+		sb.Append("  TaskId: ").Append(TaskId).Append("\n");
+		sb.Append("  Url: ").Append(Url).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

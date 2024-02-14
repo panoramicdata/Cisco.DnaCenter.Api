@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// TagMembersResultResponse
+/// </summary>
+[DataContract]
+public class TagMembersResultResponse
 {
 	/// <summary>
-	/// TagMembersResultResponse
+	/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
 	/// </summary>
-	[DataContract]
-	public class TagMembersResultResponse
+	public TagMembersResultResponse() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
+	/// </summary>
+	/// <param name="InstanceUuid">InstanceUuid.</param>
+	public TagMembersResultResponse(string? InstanceUuid)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
-		/// </summary>
-		public TagMembersResultResponse() : this(default) { }
+		this.InstanceUuid = InstanceUuid;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="TagMembersResultResponse" /> class.
-		/// </summary>
-		/// <param name="InstanceUuid">InstanceUuid.</param>
-		public TagMembersResultResponse(string? InstanceUuid)
-		{
-			this.InstanceUuid = InstanceUuid;
-		}
+	/// <summary>
+	/// Gets or Sets InstanceUuid
+	/// </summary>
+	[DataMember(Name = "instanceUuid", EmitDefaultValue = false)]
+	public string? InstanceUuid { get; set; }
 
-		/// <summary>
-		/// Gets or Sets InstanceUuid
-		/// </summary>
-		[DataMember(Name = "instanceUuid", EmitDefaultValue = false)]
-		public string? InstanceUuid { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class TagMembersResultResponse {\n");
-			sb.Append("  InstanceUuid: ").Append(InstanceUuid).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class TagMembersResultResponse {\n");
+		sb.Append("  InstanceUuid: ").Append(InstanceUuid).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

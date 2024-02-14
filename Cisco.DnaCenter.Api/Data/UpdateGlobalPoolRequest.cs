@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// UpdateGlobalPoolRequest
+/// </summary>
+[DataContract]
+public class UpdateGlobalPoolRequest
 {
 	/// <summary>
-	/// UpdateGlobalPoolRequest
+	/// Initializes a new instance of the <see cref="UpdateGlobalPoolRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class UpdateGlobalPoolRequest
+	public UpdateGlobalPoolRequest() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="UpdateGlobalPoolRequest" /> class.
+	/// </summary>
+	/// <param name="Settings">Settings.</param>
+	public UpdateGlobalPoolRequest(UpdateGlobalPoolRequestSettings Settings)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateGlobalPoolRequest" /> class.
-		/// </summary>
-		public UpdateGlobalPoolRequest() : this(default) { }
+		this.Settings = Settings;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateGlobalPoolRequest" /> class.
-		/// </summary>
-		/// <param name="Settings">Settings.</param>
-		public UpdateGlobalPoolRequest(UpdateGlobalPoolRequestSettings Settings)
-		{
-			this.Settings = Settings;
-		}
+	/// <summary>
+	/// Gets or Sets Settings
+	/// </summary>
+	[DataMember(Name = "settings", EmitDefaultValue = false)]
+	public UpdateGlobalPoolRequestSettings Settings { get; set; }
 
-		/// <summary>
-		/// Gets or Sets Settings
-		/// </summary>
-		[DataMember(Name = "settings", EmitDefaultValue = false)]
-		public UpdateGlobalPoolRequestSettings Settings { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class UpdateGlobalPoolRequest {\n");
-			sb.Append("  Settings: ").Append(Settings).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class UpdateGlobalPoolRequest {\n");
+		sb.Append("  Settings: ").Append(Settings).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

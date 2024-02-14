@@ -6,138 +6,137 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Cisco.DnaCenter.Test
+namespace Cisco.DnaCenter.Test;
+
+public class SiteTests : Tests
 {
-	public class SiteTests : Tests
+	public SiteTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
 	{
-		public SiteTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
-		{
-		}
+	}
 
-		[Fact]
-		public async void GetSitesAsync_Succeeds()
-		{
-			var sites = await GetSitesAsync().ConfigureAwait(false);
+	[Fact]
+	public async void GetSitesAsync_Succeeds()
+	{
+		var sites = await GetSitesAsync().ConfigureAwait(false);
 
-			var sitesResponse = sites.Response[0];
+		var sitesResponse = sites.Response[0];
 
-			sitesResponse.Should().NotBeNull();
-			sitesResponse.Id.Should().NotBeNull();
-			var siteId = sites.Response[0].Id!;
+		sitesResponse.Should().NotBeNull();
+		sitesResponse.Id.Should().NotBeNull();
+		var siteId = sites.Response[0].Id!;
 
-			// Get details for the first device
-			var getSiteResponse = await Client
-				.Sites
-				.GetSiteAsync(siteId)
-				.ConfigureAwait(false);
-			getSiteResponse.Should().BeOfType<GetSiteSingleResponse>();
-			getSiteResponse.Should().NotBeNull();
+		// Get details for the first device
+		var getSiteResponse = await Client
+			.Sites
+			.GetSiteAsync(siteId)
+			.ConfigureAwait(false);
+		getSiteResponse.Should().BeOfType<GetSiteSingleResponse>();
+		getSiteResponse.Should().NotBeNull();
 
-			var response = getSiteResponse.Response;
+		var response = getSiteResponse.Response;
 
-			response.Id.Should().Be(siteId);
-			response.Name.Should().NotBeNullOrEmpty();
-		}
+		response.Id.Should().Be(siteId);
+		response.Name.Should().NotBeNullOrEmpty();
+	}
 
-		private async Task<GetSiteResponse> GetSitesAsync()
-		{
-			var sites = await Client
-				.Sites
-				.GetSitesAsync()
-				.ConfigureAwait(false);
+	private async Task<GetSiteResponse> GetSitesAsync()
+	{
+		var sites = await Client
+			.Sites
+			.GetSitesAsync()
+			.ConfigureAwait(false);
 
-			sites.Should().BeOfType<GetSiteResponse>();
-			sites.Should().NotBeNull();
-			sites.Response.Should().NotBeNullOrEmpty();
-			return sites;
-		}
+		sites.Should().BeOfType<GetSiteResponse>();
+		sites.Should().NotBeNull();
+		sites.Response.Should().NotBeNullOrEmpty();
+		return sites;
+	}
 
-		[Fact]
-		private async Task AreaCrud_Succeeds()
-		{
-			// Create
-			var guid = Guid.NewGuid().ToString().Substring(0, 10);
-			const string parentName = "Global";
-			var createSitesResponse = await Client
-				.Sites
-				.CreateSiteAsync(new CreateSiteRequest
+	[Fact]
+	private async Task AreaCrud_Succeeds()
+	{
+		// Create
+		var guid = Guid.NewGuid().ToString().Substring(0, 10);
+		const string parentName = "Global";
+		var createSitesResponse = await Client
+			.Sites
+			.CreateSiteAsync(new CreateSiteRequest
+			{
+				Type = CreateSiteRequest.TypeEnum.Area,
+				Site = new CreateSiteRequestSite
 				{
-					Type = CreateSiteRequest.TypeEnum.Area,
-					Site = new CreateSiteRequestSite
+					Area = new CreateSiteRequestSiteArea
 					{
-						Area = new CreateSiteRequestSiteArea
-						{
-							Name = guid,
-							ParentName = parentName
-						}
+						Name = guid,
+						ParentName = parentName
 					}
-				}, false, true)
-				.ConfigureAwait(false);
+				}
+			}, false, true)
+			.ConfigureAwait(false);
 
-			createSitesResponse.Should().BeOfType<ExecutionStatusResponse>();
-			createSitesResponse.Should().NotBeNull();
-			createSitesResponse.ExecutionId.Should().NotBeNull();
+		createSitesResponse.Should().BeOfType<ExecutionStatusResponse>();
+		createSitesResponse.Should().NotBeNull();
+		createSitesResponse.ExecutionId.Should().NotBeNull();
 
-			var executionStatus = await Client
-				.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!)
-				.ConfigureAwait(false);
+		var executionStatus = await Client
+			.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!)
+			.ConfigureAwait(false);
 
-			executionStatus.Should().BeOfType<ExecutionStatus>();
-			executionStatus.Should().NotBeNull();
-			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+		executionStatus.Should().BeOfType<ExecutionStatus>();
+		executionStatus.Should().NotBeNull();
+		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 
-			//	Get all sites
-			var sitesResponse = await Client
-				.Sites
-				.GetSitesAsync()
-				.ConfigureAwait(false);
+		//	Get all sites
+		var sitesResponse = await Client
+			.Sites
+			.GetSitesAsync()
+			.ConfigureAwait(false);
 
-			var site = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
-			site.Should().NotBeNull();
-			site.Should().BeOfType<GetSiteResponseResponse>();
-			site.Id.Should().NotBeNullOrEmpty();
+		var site = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
+		site.Should().NotBeNull();
+		site.Should().BeOfType<GetSiteResponseResponse>();
+		site.Id.Should().NotBeNullOrEmpty();
 
-			// Read
-			var siteById = await Client
-				.Sites
-				.GetSiteAsync(site.Id!)
-				.ConfigureAwait(false);
+		// Read
+		var siteById = await Client
+			.Sites
+			.GetSiteAsync(site.Id!)
+			.ConfigureAwait(false);
 
-			siteById.Should().BeOfType<GetSiteSingleResponse>();
-			siteById.Should().NotBeNull();
-			siteById.Response.Should().NotBeNull();
-			siteById.Response.Should().BeOfType<GetSiteResponseResponse>();
-			siteById.Response.Name.Should().Be(guid);
+		siteById.Should().BeOfType<GetSiteSingleResponse>();
+		siteById.Should().NotBeNull();
+		siteById.Response.Should().NotBeNull();
+		siteById.Response.Should().BeOfType<GetSiteResponseResponse>();
+		siteById.Response.Name.Should().Be(guid);
 
-			// Update
-			var updateSiteRequest = new UpdateSiteRequest(
-				UpdateSiteRequest.TypeEnum.Area,
-				new UpdateSiteRequestSite(new CreateSiteRequestSiteArea("Name is changed", parentName)));
+		// Update
+		var updateSiteRequest = new UpdateSiteRequest(
+			UpdateSiteRequest.TypeEnum.Area,
+			new UpdateSiteRequestSite(new CreateSiteRequestSiteArea("Name is changed", parentName)));
 
-			var updatedSite = await Client
-				.Sites
-				.UpdateSiteAsync(updateSiteRequest, null, site.Id!)
-				.ConfigureAwait(false);
+		var updatedSite = await Client
+			.Sites
+			.UpdateSiteAsync(updateSiteRequest, null, site.Id!)
+			.ConfigureAwait(false);
 
-			executionStatus = await Client
-				.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!)
-				.ConfigureAwait(false);
-			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+		executionStatus = await Client
+			.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!)
+			.ConfigureAwait(false);
+		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 
-			// Delete
-			var deleteSiteResponse = await Client
-				.Sites
-				.DeleteSiteAsync(site.Id!)
-				.ConfigureAwait(false);
+		// Delete
+		var deleteSiteResponse = await Client
+			.Sites
+			.DeleteSiteAsync(site.Id!)
+			.ConfigureAwait(false);
 
-			deleteSiteResponse.Should().BeOfType<ExecutionStatusResponse>();
-			deleteSiteResponse.Should().NotBeNull();
+		deleteSiteResponse.Should().BeOfType<ExecutionStatusResponse>();
+		deleteSiteResponse.Should().NotBeNull();
 
-			executionStatus = await Client
-				.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!)
-				.ConfigureAwait(false);
+		executionStatus = await Client
+			.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!)
+			.ConfigureAwait(false);
 
-			executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
-		}
+		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 	}
 }

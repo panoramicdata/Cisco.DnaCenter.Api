@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// CreateEventSubscriptionsRequest
+/// </summary>
+[DataContract]
+public class CreateEventSubscriptionsRequest : List<CreateEventSubscriptionsRequestInner>
 {
 	/// <summary>
-	/// CreateEventSubscriptionsRequest
+	/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class CreateEventSubscriptionsRequest : List<CreateEventSubscriptionsRequestInner>
+	[JsonConstructor]
+	public CreateEventSubscriptionsRequest()
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequest" /> class.
-		/// </summary>
-		[JsonConstructor]
-		public CreateEventSubscriptionsRequest()
-		{
-		}
+	}
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class CreateEventSubscriptionsRequest {\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class CreateEventSubscriptionsRequest {\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

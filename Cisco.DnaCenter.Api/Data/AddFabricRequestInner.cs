@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// AddFabricRequestInner
+/// </summary>
+[DataContract]
+public class AddFabricRequestInner
 {
 	/// <summary>
-	/// AddFabricRequestInner
+	/// Initializes a new instance of the <see cref="AddFabricRequestInner" /> class.
 	/// </summary>
-	[DataContract]
-	public class AddFabricRequestInner
+	public AddFabricRequestInner() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="AddFabricRequestInner" /> class.
+	/// </summary>
+	/// <param name="FabricName">FabricName.</param>
+	public AddFabricRequestInner(string? FabricName)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AddFabricRequestInner" /> class.
-		/// </summary>
-		public AddFabricRequestInner() : this(default) { }
+		this.FabricName = FabricName;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AddFabricRequestInner" /> class.
-		/// </summary>
-		/// <param name="FabricName">FabricName.</param>
-		public AddFabricRequestInner(string? FabricName)
-		{
-			this.FabricName = FabricName;
-		}
+	/// <summary>
+	/// Gets or Sets FabricName
+	/// </summary>
+	[DataMember(Name = "fabricName", EmitDefaultValue = false)]
+	public string? FabricName { get; set; }
 
-		/// <summary>
-		/// Gets or Sets FabricName
-		/// </summary>
-		[DataMember(Name = "fabricName", EmitDefaultValue = false)]
-		public string? FabricName { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class AddFabricRequestInner {\n");
-			sb.Append("  FabricName: ").Append(FabricName).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class AddFabricRequestInner {\n");
+		sb.Append("  FabricName: ").Append(FabricName).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

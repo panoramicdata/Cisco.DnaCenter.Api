@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// AuthenticationAPIResponse
+/// </summary>
+[DataContract]
+public class AuthenticationResponse
 {
 	/// <summary>
-	/// AuthenticationAPIResponse
+	/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
 	/// </summary>
-	[DataContract]
-	public class AuthenticationResponse
+	public AuthenticationResponse() : this(default) { }
+
+	// <summary>
+	/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
+	/// </summary>
+	/// <param name="Token">Token.</param>
+	public AuthenticationResponse(string? Token)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
-		/// </summary>
-		public AuthenticationResponse() : this(default) { }
+		this.Token = Token;
+	}
 
-		// <summary>
-		/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
-		/// </summary>
-		/// <param name="Token">Token.</param>
-		public AuthenticationResponse(string? Token)
-		{
-			this.Token = Token;
-		}
+	/// <summary>
+	/// Gets or Sets Token
+	/// </summary>
+	[DataMember(Name = "Token", EmitDefaultValue = false)]
+	public string? Token { get; set; }
 
-		/// <summary>
-		/// Gets or Sets Token
-		/// </summary>
-		[DataMember(Name = "Token", EmitDefaultValue = false)]
-		public string? Token { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class AuthenticationAPIResponse {\n");
-			sb.Append("  Token: ").Append(Token).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class AuthenticationAPIResponse {\n");
+		sb.Append("  Token: ").Append(Token).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

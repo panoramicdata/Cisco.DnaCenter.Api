@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// GetApplicationsResponse
+/// </summary>
+[DataContract]
+public class GetApplicationsResponse : List<EditApplicationRequestInner>
 {
 	/// <summary>
-	/// GetApplicationsResponse
+	/// Initializes a new instance of the <see cref="GetApplicationsResponse" /> class.
 	/// </summary>
-	[DataContract]
-	public class GetApplicationsResponse : List<EditApplicationRequestInner>
+	[JsonConstructor]
+	public GetApplicationsResponse()
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="GetApplicationsResponse" /> class.
-		/// </summary>
-		[JsonConstructor]
-		public GetApplicationsResponse()
-		{
-		}
+	}
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class GetApplicationsResponse {\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class GetApplicationsResponse {\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

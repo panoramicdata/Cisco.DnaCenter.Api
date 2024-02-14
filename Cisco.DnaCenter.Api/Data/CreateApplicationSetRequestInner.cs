@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// CreateApplicationSetRequestInner
+/// </summary>
+[DataContract]
+public class CreateApplicationSetRequestInner
 {
 	/// <summary>
-	/// CreateApplicationSetRequestInner
+	/// Initializes a new instance of the <see cref="CreateApplicationSetRequestInner" /> class.
 	/// </summary>
-	[DataContract]
-	public class CreateApplicationSetRequestInner
+	public CreateApplicationSetRequestInner() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="CreateApplicationSetRequestInner" /> class.
+	/// </summary>
+	/// <param name="Name">Name.</param>
+	public CreateApplicationSetRequestInner(string? Name)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateApplicationSetRequestInner" /> class.
-		/// </summary>
-		public CreateApplicationSetRequestInner() : this(default) { }
+		this.Name = Name;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateApplicationSetRequestInner" /> class.
-		/// </summary>
-		/// <param name="Name">Name.</param>
-		public CreateApplicationSetRequestInner(string? Name)
-		{
-			this.Name = Name;
-		}
+	/// <summary>
+	/// Gets or Sets Name
+	/// </summary>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
+	public string? Name { get; set; }
 
-		/// <summary>
-		/// Gets or Sets Name
-		/// </summary>
-		[DataMember(Name = "name", EmitDefaultValue = false)]
-		public string? Name { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class CreateApplicationSetRequestInner {\n");
-			sb.Append("  Name: ").Append(Name).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class CreateApplicationSetRequestInner {\n");
+		sb.Append("  Name: ").Append(Name).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

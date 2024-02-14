@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// AddControlPlaneDeviceInSdaFabricRequest
+/// </summary>
+[DataContract]
+public class AddControlPlaneDeviceInSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
 {
 	/// <summary>
-	/// AddControlPlaneDeviceInSdaFabricRequest
+	/// Initializes a new instance of the <see cref="AddControlPlaneDeviceInSdaFabricRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class AddControlPlaneDeviceInSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
+	[JsonConstructor]
+	public AddControlPlaneDeviceInSdaFabricRequest()
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AddControlPlaneDeviceInSdaFabricRequest" /> class.
-		/// </summary>
-		[JsonConstructor]
-		public AddControlPlaneDeviceInSdaFabricRequest()
-		{
-		}
+	}
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class AddControlPlaneDeviceInSdaFabricRequest {\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class AddControlPlaneDeviceInSdaFabricRequest {\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

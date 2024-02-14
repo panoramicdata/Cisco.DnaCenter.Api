@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// GetIssueEnrichmentDetailsResponse
+/// </summary>
+[DataContract]
+public class GetIssueEnrichmentDetailsResponse
 {
 	/// <summary>
-	/// GetIssueEnrichmentDetailsResponse
+	/// Initializes a new instance of the <see cref="GetIssueEnrichmentDetailsResponse" /> class.
 	/// </summary>
-	[DataContract]
-	public class GetIssueEnrichmentDetailsResponse
+	public GetIssueEnrichmentDetailsResponse() : this(default) { }
+
+	// <summary>
+	/// Initializes a new instance of the <see cref="GetIssueEnrichmentDetailsResponse" /> class.
+	/// </summary>
+	/// <param name="IssueDetails">IssueDetails.</param>
+	public GetIssueEnrichmentDetailsResponse(GetIssueEnrichmentDetailsResponseIssueDetails IssueDetails)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="GetIssueEnrichmentDetailsResponse" /> class.
-		/// </summary>
-		public GetIssueEnrichmentDetailsResponse() : this(default) { }
+		this.IssueDetails = IssueDetails;
+	}
 
-		// <summary>
-		/// Initializes a new instance of the <see cref="GetIssueEnrichmentDetailsResponse" /> class.
-		/// </summary>
-		/// <param name="IssueDetails">IssueDetails.</param>
-		public GetIssueEnrichmentDetailsResponse(GetIssueEnrichmentDetailsResponseIssueDetails IssueDetails)
-		{
-			this.IssueDetails = IssueDetails;
-		}
+	/// <summary>
+	/// Gets or Sets IssueDetails
+	/// </summary>
+	[DataMember(Name = "issueDetails", EmitDefaultValue = false)]
+	public GetIssueEnrichmentDetailsResponseIssueDetails IssueDetails { get; set; }
 
-		/// <summary>
-		/// Gets or Sets IssueDetails
-		/// </summary>
-		[DataMember(Name = "issueDetails", EmitDefaultValue = false)]
-		public GetIssueEnrichmentDetailsResponseIssueDetails IssueDetails { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class GetIssueEnrichmentDetailsResponse {\n");
-			sb.Append("  IssueDetails: ").Append(IssueDetails).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class GetIssueEnrichmentDetailsResponse {\n");
+		sb.Append("  IssueDetails: ").Append(IssueDetails).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

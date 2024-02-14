@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// CreateEventSubscriptionsRequestInnerFilter
+/// </summary>
+[DataContract]
+public class CreateEventSubscriptionsRequestInnerFilter
 {
 	/// <summary>
-	/// CreateEventSubscriptionsRequestInnerFilter
+	/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
 	/// </summary>
-	[DataContract]
-	public class CreateEventSubscriptionsRequestInnerFilter
+	public CreateEventSubscriptionsRequestInnerFilter() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
+	/// </summary>
+	/// <param name="EventIds">EventIds.</param>
+	public CreateEventSubscriptionsRequestInnerFilter(List<string> EventIds)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
-		/// </summary>
-		public CreateEventSubscriptionsRequestInnerFilter() : this(default) { }
+		this.EventIds = EventIds;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
-		/// </summary>
-		/// <param name="EventIds">EventIds.</param>
-		public CreateEventSubscriptionsRequestInnerFilter(List<string> EventIds)
-		{
-			this.EventIds = EventIds;
-		}
+	/// <summary>
+	/// Gets or Sets EventIds
+	/// </summary>
+	[DataMember(Name = "eventIds", EmitDefaultValue = false)]
+	public List<string> EventIds { get; set; }
 
-		/// <summary>
-		/// Gets or Sets EventIds
-		/// </summary>
-		[DataMember(Name = "eventIds", EmitDefaultValue = false)]
-		public List<string> EventIds { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class CreateEventSubscriptionsRequestInnerFilter {\n");
-			sb.Append("  EventIds: ").Append(EventIds).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class CreateEventSubscriptionsRequestInnerFilter {\n");
+		sb.Append("  EventIds: ").Append(EventIds).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

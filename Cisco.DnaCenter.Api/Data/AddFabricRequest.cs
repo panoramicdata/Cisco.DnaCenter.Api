@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// AddFabricRequest
+/// </summary>
+[DataContract]
+public class AddFabricRequest : List<AddFabricRequestInner>
 {
 	/// <summary>
-	/// AddFabricRequest
+	/// Initializes a new instance of the <see cref="AddFabricRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class AddFabricRequest : List<AddFabricRequestInner>
+	[JsonConstructor]
+	public AddFabricRequest()
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="AddFabricRequest" /> class.
-		/// </summary>
-		[JsonConstructor]
-		public AddFabricRequest()
-		{
-		}
+	}
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class AddFabricRequest {\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class AddFabricRequest {\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// UnclaimRequest
+/// </summary>
+[DataContract]
+public class UnclaimRequest
 {
 	/// <summary>
-	/// UnclaimRequest
+	/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class UnclaimRequest
+	public UnclaimRequest() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.
+	/// </summary>
+	/// <param name="DeviceIdList">DeviceIdList.</param>
+	public UnclaimRequest(List<string> DeviceIdList)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.
-		/// </summary>
-		public UnclaimRequest() : this(default) { }
+		this.DeviceIdList = DeviceIdList;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.
-		/// </summary>
-		/// <param name="DeviceIdList">DeviceIdList.</param>
-		public UnclaimRequest(List<string> DeviceIdList)
-		{
-			this.DeviceIdList = DeviceIdList;
-		}
+	/// <summary>
+	/// Gets or Sets DeviceIdList
+	/// </summary>
+	[DataMember(Name = "deviceIdList", EmitDefaultValue = false)]
+	public List<string> DeviceIdList { get; set; }
 
-		/// <summary>
-		/// Gets or Sets DeviceIdList
-		/// </summary>
-		[DataMember(Name = "deviceIdList", EmitDefaultValue = false)]
-		public List<string> DeviceIdList { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class UnclaimRequest {\n");
-			sb.Append("  DeviceIdList: ").Append(DeviceIdList).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class UnclaimRequest {\n");
+		sb.Append("  DeviceIdList: ").Append(DeviceIdList).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

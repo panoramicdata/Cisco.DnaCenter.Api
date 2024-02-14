@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// GetSiteFromSdaFabricRequest
+/// </summary>
+[DataContract]
+public class GetSiteFromSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
 {
 	/// <summary>
-	/// GetSiteFromSdaFabricRequest
+	/// Initializes a new instance of the <see cref="GetSiteFromSdaFabricRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class GetSiteFromSdaFabricRequest : List<GetSdaFabricInfoRequestInner>
+	[JsonConstructor]
+	public GetSiteFromSdaFabricRequest()
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="GetSiteFromSdaFabricRequest" /> class.
-		/// </summary>
-		[JsonConstructor]
-		public GetSiteFromSdaFabricRequest()
-		{
-		}
+	}
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class GetSiteFromSdaFabricRequest {\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class GetSiteFromSdaFabricRequest {\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

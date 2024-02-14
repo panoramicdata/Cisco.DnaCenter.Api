@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// UpdateSPProfileRequest
+/// </summary>
+[DataContract]
+public class UpdateSpProfileRequest
 {
 	/// <summary>
-	/// UpdateSPProfileRequest
+	/// Initializes a new instance of the <see cref="UpdateSpProfileRequest" /> class.
 	/// </summary>
-	[DataContract]
-	public class UpdateSpProfileRequest
+	public UpdateSpProfileRequest() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="UpdateSpProfileRequest" /> class.
+	/// </summary>
+	/// <param name="Settings">Settings.</param>
+	public UpdateSpProfileRequest(UpdateSpProfileRequestSettings Settings)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateSpProfileRequest" /> class.
-		/// </summary>
-		public UpdateSpProfileRequest() : this(default) { }
+		this.Settings = Settings;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="UpdateSpProfileRequest" /> class.
-		/// </summary>
-		/// <param name="Settings">Settings.</param>
-		public UpdateSpProfileRequest(UpdateSpProfileRequestSettings Settings)
-		{
-			this.Settings = Settings;
-		}
+	/// <summary>
+	/// Gets or Sets Settings
+	/// </summary>
+	[DataMember(Name = "settings", EmitDefaultValue = false)]
+	public UpdateSpProfileRequestSettings Settings { get; set; }
 
-		/// <summary>
-		/// Gets or Sets Settings
-		/// </summary>
-		[DataMember(Name = "settings", EmitDefaultValue = false)]
-		public UpdateSpProfileRequestSettings Settings { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class UpdateSPProfileRequest {\n");
-			sb.Append("  Settings: ").Append(Settings).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class UpdateSPProfileRequest {\n");
+		sb.Append("  Settings: ").Append(Settings).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

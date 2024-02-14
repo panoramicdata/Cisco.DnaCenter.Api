@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// GetClientEnrichmentDetailsResponse
+/// </summary>
+[DataContract]
+public class GetClientEnrichmentDetailsResponse : List<GetClientEnrichmentDetailsResponseInner>
 {
 	/// <summary>
-	/// GetClientEnrichmentDetailsResponse
+	/// Initializes a new instance of the <see cref="GetClientEnrichmentDetailsResponse" /> class.
 	/// </summary>
-	[DataContract]
-	public class GetClientEnrichmentDetailsResponse : List<GetClientEnrichmentDetailsResponseInner>
+	[JsonConstructor]
+	public GetClientEnrichmentDetailsResponse()
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="GetClientEnrichmentDetailsResponse" /> class.
-		/// </summary>
-		[JsonConstructor]
-		public GetClientEnrichmentDetailsResponse()
-		{
-		}
+	}
 
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class GetClientEnrichmentDetailsResponse {\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class GetClientEnrichmentDetailsResponse {\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }

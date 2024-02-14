@@ -2,58 +2,57 @@
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Cisco.DnaCenter.Test
+namespace Cisco.DnaCenter.Test;
+
+public class ConfigurationTemplateTests : Tests
 {
-	public class ConfigurationTemplateTests : Tests
+	public ConfigurationTemplateTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
 	{
-		public ConfigurationTemplateTests(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
-		{
-		}
+	}
 
-		[Fact]
-		public async void GetProjectsAsync_Succeeds()
-		{
-			var projects = await Client
-				.ConfigurationTemplates
-				.GetProjectsAsync()
-				.ConfigureAwait(false);
+	[Fact]
+	public async void GetProjectsAsync_Succeeds()
+	{
+		var projects = await Client
+			.ConfigurationTemplates
+			.GetProjectsAsync()
+			.ConfigureAwait(false);
 
-			projects.Should().NotBeNull();
-			projects.Should().NotBeEmpty();
-			foreach (var project in projects)
+		projects.Should().NotBeNull();
+		projects.Should().NotBeEmpty();
+		foreach (var project in projects)
+		{
+			project.Id.Should().NotBeNullOrWhiteSpace();
+			project.Name.Should().NotBeNullOrEmpty();
+			project.Templates.Should().NotBeNull();
+			foreach (var template in project.Templates)
 			{
-				project.Id.Should().NotBeNullOrWhiteSpace();
-				project.Name.Should().NotBeNullOrEmpty();
-				project.Templates.Should().NotBeNull();
-				foreach (var template in project.Templates)
-				{
-					template.Id.Should().NotBeNullOrWhiteSpace();
-					template.Name.Should().NotBeNullOrWhiteSpace();
-				}
+				template.Id.Should().NotBeNullOrWhiteSpace();
+				template.Name.Should().NotBeNullOrWhiteSpace();
 			}
 		}
+	}
 
-		[Fact]
-		public async void GetConfigurationTemplatesAndDetailsAsync_Succeeds()
+	[Fact]
+	public async void GetConfigurationTemplatesAndDetailsAsync_Succeeds()
+	{
+		var configurationTemplates = await Client
+			.ConfigurationTemplates
+			.GetAvailableTemplatesAsync()
+			.ConfigureAwait(false);
+
+		configurationTemplates.Should().NotBeNull();
+		configurationTemplates.Should().NotBeEmpty();
+		foreach (var item in configurationTemplates)
 		{
-			var configurationTemplates = await Client
+			item.TemplateId.Should().NotBeNullOrEmpty();
+			item.Name.Should().NotBeNullOrEmpty();
+
+			var templateDetails = await Client
 				.ConfigurationTemplates
-				.GetAvailableTemplatesAsync()
+				.GetTemplateDetailsAsync(item.TemplateId!)
 				.ConfigureAwait(false);
-
-			configurationTemplates.Should().NotBeNull();
-			configurationTemplates.Should().NotBeEmpty();
-			foreach (var item in configurationTemplates)
-			{
-				item.TemplateId.Should().NotBeNullOrEmpty();
-				item.Name.Should().NotBeNullOrEmpty();
-
-				var templateDetails = await Client
-					.ConfigurationTemplates
-					.GetTemplateDetailsAsync(item.TemplateId!)
-					.ConfigureAwait(false);
-				templateDetails.Should().NotBeNull();
-			}
+			templateDetails.Should().NotBeNull();
 		}
 	}
 }

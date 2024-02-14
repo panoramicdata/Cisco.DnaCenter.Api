@@ -1,42 +1,41 @@
-namespace Cisco.DnaCenter.Api.Data
+namespace Cisco.DnaCenter.Api.Data;
+
+/// <summary>
+/// EditApplicationRequestInnerApplicationSet
+/// </summary>
+[DataContract]
+public class EditApplicationRequestInnerApplicationSet
 {
 	/// <summary>
-	/// EditApplicationRequestInnerApplicationSet
+	/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
 	/// </summary>
-	[DataContract]
-	public class EditApplicationRequestInnerApplicationSet
+	public EditApplicationRequestInnerApplicationSet() : this(default) { }
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
+	/// </summary>
+	/// <param name="IdRef">IdRef.</param>
+	public EditApplicationRequestInnerApplicationSet(string? IdRef)
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
-		/// </summary>
-		public EditApplicationRequestInnerApplicationSet() : this(default) { }
+		this.IdRef = IdRef;
+	}
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="EditApplicationRequestInnerApplicationSet" /> class.
-		/// </summary>
-		/// <param name="IdRef">IdRef.</param>
-		public EditApplicationRequestInnerApplicationSet(string? IdRef)
-		{
-			this.IdRef = IdRef;
-		}
+	/// <summary>
+	/// Gets or Sets IdRef
+	/// </summary>
+	[DataMember(Name = "idRef", EmitDefaultValue = false)]
+	public string? IdRef { get; set; }
 
-		/// <summary>
-		/// Gets or Sets IdRef
-		/// </summary>
-		[DataMember(Name = "idRef", EmitDefaultValue = false)]
-		public string? IdRef { get; set; }
-
-		/// <summary>
-		/// Returns the string presentation of the object
-		/// </summary>
-		/// <returns>String presentation of the object</returns>
-		public override string ToString()
-		{
-			var sb = new StringBuilder();
-			sb.Append("class EditApplicationRequestInnerApplicationSet {\n");
-			sb.Append("  IdRef: ").Append(IdRef).Append("\n");
-			sb.Append("}\n");
-			return sb.ToString();
-		}
+	/// <summary>
+	/// Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
+	{
+		var sb = new StringBuilder();
+		sb.Append("class EditApplicationRequestInnerApplicationSet {\n");
+		sb.Append("  IdRef: ").Append(IdRef).Append("\n");
+		sb.Append("}\n");
+		return sb.ToString();
 	}
 }
