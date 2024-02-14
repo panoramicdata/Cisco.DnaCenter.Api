@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Implemented Platform.GetCiscoDNACenterReleaseSummaryAsync()</PackageReleaseNotes>
+		<PackageReleaseNotes>Renamed ISites endpoints for clarity. Implemented extension method GetAllSitesAsync() that returns all pages - use GetSites() for a variable length single page. Package updated to .Net 8</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
