@@ -29,9 +29,9 @@ public static class ISiteExtensions
 		const int limit = 500;
 		while (true)
 		{
-			var sitesPage = await
+			var response = await
 				site
-					.GetSitesAsync(
+					.GetSitesInternalAsync(
 						name,
 						siteId,
 						type,
@@ -39,10 +39,18 @@ public static class ISiteExtensions
 						limit.ToString(),
 						cancellationToken)
 					.ConfigureAwait(false);
-			//sites.Response.AddRange(sitesPage.Response);
-			sitesResponses.AddRange(sitesPage.Response);
 
-			if (sitesPage.Response.Count == 0)
+			var items = response.Content.Response;
+
+			// Global appears on every page, so we need to skip it on all but the first page
+			if (offset != 1)
+			{
+				items = items[1..];
+			}
+
+			sitesResponses.AddRange(items);
+
+			if (items.Count == 0)
 			{
 				break;
 			}

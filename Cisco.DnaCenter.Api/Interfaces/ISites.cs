@@ -96,6 +96,15 @@ public interface ISites
 		[AliasAs("limit")] string limit = null,
 		CancellationToken cancellationToken = default);
 
+	[Get("/dna/intent/api/v1/site")]
+	internal Task<ApiResponse<GetSiteResponse>> GetSitesInternalAsync(
+	[AliasAs("name")] string name = null,
+	[AliasAs("siteId")] string siteId = null,
+	[AliasAs("type")] string type = null,
+	[AliasAs("offset")] string offset = null,
+	[AliasAs("limit")] string limit = null,
+	CancellationToken cancellationToken = default);
+
 	/// <summary>
 	/// Get Site
 	/// </summary>
