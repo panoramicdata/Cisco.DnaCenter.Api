@@ -1,5 +1,6 @@
 ﻿using Cisco.DnaCenter.Api.Data;
 using Cisco.DnaCenter.Api.Interfaces;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -39,6 +40,11 @@ public static class ISiteExtensions
 						limit.ToString(),
 						cancellationToken)
 					.ConfigureAwait(false);
+
+			if (response.IsSuccessStatusCode == false)
+			{
+				throw new InvalidDataException(response.ReasonPhrase);
+			}
 
 			var items = response.Content.Response;
 
