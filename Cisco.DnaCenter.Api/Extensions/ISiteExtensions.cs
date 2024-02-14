@@ -24,7 +24,7 @@ public static class ISiteExtensions
 		string? type = null,
 		CancellationToken cancellationToken = default)
 	{
-		var sites = new GetSiteResponse();
+		var sitesResponses = new List<GetSiteResponseResponse>();
 		var offset = 1;
 		const int limit = 500;
 		while (true)
@@ -39,7 +39,8 @@ public static class ISiteExtensions
 						limit.ToString(),
 						cancellationToken)
 					.ConfigureAwait(false);
-			sites.Response.AddRange(sitesPage.Response);
+			//sites.Response.AddRange(sitesPage.Response);
+			sitesResponses.AddRange(sitesPage.Response);
 
 			if (sitesPage.Response.Count == 0)
 			{
@@ -48,6 +49,8 @@ public static class ISiteExtensions
 
 			offset += limit;
 		}
+
+		var sites = new GetSiteResponse(sitesResponses);
 		return sites;
 	}
 }
