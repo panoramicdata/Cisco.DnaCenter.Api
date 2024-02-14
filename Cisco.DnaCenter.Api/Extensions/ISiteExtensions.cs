@@ -16,15 +16,15 @@ public static class ISiteExtensions
 	/// <param name="name">siteNameHierarchy (ex: global/groupName) (optional, default to )</param>
 	/// <param name="siteId">Site id to which site details to retrieve. (optional, default to )</param>
 	/// <param name="type">type (ex: area, building, floor) (optional, default to )</param>
-	/// <returns>Task of List GetSiteResponse</returns>
-	public static async Task<List<GetSiteResponseResponse>> GetAllSitesAsync(this ISites site,
+	/// <returns>Task of GetSiteResponse</returns>
+	public static async Task<GetSiteResponse> GetAllSitesAsync(this ISites site,
 
 		string? name = null,
 		string? siteId = null,
 		string? type = null,
 		CancellationToken cancellationToken = default)
 	{
-		var sites = new List<GetSiteResponseResponse>();
+		var sites = new GetSiteResponse();
 		var offset = 1;
 		const int limit = 500;
 		while (true)
@@ -39,7 +39,7 @@ public static class ISiteExtensions
 						limit.ToString(),
 						cancellationToken)
 					.ConfigureAwait(false);
-			sites.AddRange(sitesPage.Response);
+			sites.Response.AddRange(sitesPage.Response);
 
 			if (sitesPage.Response.Count == 0)
 			{
