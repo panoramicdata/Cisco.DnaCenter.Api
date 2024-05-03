@@ -6,7 +6,7 @@
 [DataContract]
 public class ImportDevicesInBulkRequestItem
 {
-	public ImportDevicesInBulkRequestItem(DeviceDeviceInfo DeviceInfo, DeviceDayZeroConfig? DeviceDayZeroConfig)
+	public ImportDevicesInBulkRequestItem(DeviceDeviceInfo DeviceInfo, DeviceDayZeroConfig? DeviceDayZeroConfig = null)
 	{
 		this.DeviceInfo = DeviceInfo;
 		this.DayZeroConfig = DeviceDayZeroConfig;
