@@ -1,7 +1,7 @@
 ﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
-/// DeviceDeviceInfo
+/// ImportDevicesInBulkRequestItem
 /// </summary>
 [DataContract]
 public class ImportDevicesInBulkRequestItem
@@ -19,7 +19,7 @@ public class ImportDevicesInBulkRequestItem
 	public DeviceDeviceInfo DeviceInfo { get; set; }
 
 	/// <summary>
-	/// DeviceDeviceInfo
+	/// DayZeroConfig
 	/// </summary>
 	[DataMember(Name = "dayZeroConfig", EmitDefaultValue = false)]
 	public DeviceDayZeroConfig? DayZeroConfig { get; set; }
