@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// DeviceDeviceInfo
@@ -8,9 +6,10 @@ namespace Cisco.DnaCenter.Api.Data;
 [DataContract]
 public class ImportDevicesInBulkRequestItem
 {
-	public ImportDevicesInBulkRequestItem(DeviceDeviceInfo DeviceInfo)
+	public ImportDevicesInBulkRequestItem(DeviceDeviceInfo DeviceInfo, DeviceDayZeroConfig? DeviceDayZeroConfig)
 	{
 		this.DeviceInfo = DeviceInfo;
+		this.DayZeroConfig = DeviceDayZeroConfig;
 	}
 
 	/// <summary>
@@ -18,4 +17,10 @@ public class ImportDevicesInBulkRequestItem
 	/// </summary>
 	[DataMember(Name = "deviceInfo", EmitDefaultValue = false)]
 	public DeviceDeviceInfo DeviceInfo { get; set; }
+
+	/// <summary>
+	/// DeviceDeviceInfo
+	/// </summary>
+	[DataMember(Name = "dayZeroConfig", EmitDefaultValue = false)]
+	public DeviceDayZeroConfig? DayZeroConfig { get; set; }
 }
