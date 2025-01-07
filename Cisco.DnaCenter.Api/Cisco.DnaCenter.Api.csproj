@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Renamed ISites endpoints for clarity. Implemented extension method GetAllSitesAsync() that returns all pages - use GetSites() for a variable length single page. Package updated to .Net 8</PackageReleaseNotes>
+		<PackageReleaseNotes>Updated Refit API to 8.0.0</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -38,8 +38,8 @@
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="Refit" Version="7.0.0" />
-		<PackageReference Include="Refit.Newtonsoft.Json" Version="7.0.0" />
+		<PackageReference Include="Refit" Version="8.0.0" />
+		<PackageReference Include="Refit.Newtonsoft.Json" Version="8.0.0" />
 		<PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
