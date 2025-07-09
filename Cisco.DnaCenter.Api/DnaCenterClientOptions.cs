@@ -45,6 +45,11 @@ public class DnaCenterClientOptions
 	/// </summary>
 	public bool IgnoreSslCertificateErrors { get; set; }
 
+	/// <summary>
+	/// An optional User-Agent string to attach to outgoing requests.
+	/// </summary>
+	public string? UserAgent { get; set; }
+
 	public void Validate()
 	{
 		// If an HttpClient is provided, Username, Password, Token and Uri should NOT be

@@ -15,6 +15,8 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 	private string? _token;
 	private readonly ILogger _logger;
 	private readonly DnaCenterClient _dnaCenterClient;
+	private string? _userAgent;
+
 
 	public string Token
 	{
@@ -28,7 +30,9 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		DnaCenterClient dnaCenterClient,
 		string? token,
 		ILogger logger,
-		bool ignoreSslCertificateErrors)
+		bool ignoreSslCertificateErrors,
+		string? userAgent
+		)
 	{
 		_dnaCenterClient = dnaCenterClient;
 		_token = token;
@@ -38,6 +42,8 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		{
 			ServerCertificateCustomValidationCallback = DangerousAcceptAnyServerCertificateValidator;
 		}
+
+		_userAgent = userAgent;
 	}
 
 	private bool DangerousAcceptAnyServerCertificateValidator(
@@ -70,6 +76,11 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			else
 			{
 				request.Headers.Add("X-Auth-Token", _token);
+			}
+
+			if (_userAgent is not null)
+			{
+				request.Headers.Add("User-Agent", _userAgent);
 			}
 
 			// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
