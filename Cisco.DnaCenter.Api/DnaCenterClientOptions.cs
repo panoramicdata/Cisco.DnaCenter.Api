@@ -50,8 +50,37 @@ public class DnaCenterClientOptions
 	/// </summary>
 	public string? UserAgent { get; set; }
 
+	/// <summary>
+	/// Maximum backoff delay in seconds for retries.
+	/// </summary>
+	public int MaxBackOffDelaySeconds { get; set; } = 32;
+
+	/// <summary>
+	/// Backoff delay factor (exponential).
+	/// </summary>
+	public double BackOffDelayFactor { get; set; } = 2.0;
+
+	/// <summary>
+	/// Maximum number of retry attempts.
+	/// </summary>
+	public int MaxAttemptCount { get; set; } = 5;
+
 	public void Validate()
 	{
+		if (MaxBackOffDelaySeconds < 1) {
+			throw new ConfigurationException($"{nameof(MaxBackOffDelaySeconds)} must be at least 1.");
+		}
+
+		if (BackOffDelayFactor < 1.0)
+		{
+			throw new ConfigurationException($"{nameof(BackOffDelayFactor)} must be at least 1.0.");
+		}
+
+		if (MaxAttemptCount < 1)
+		{
+			throw new ConfigurationException($"{nameof(MaxAttemptCount)} must be at least 1.");
+		}
+
 		// If an HttpClient is provided, Username, Password, Token and Uri should NOT be
 		if (HttpClient != null)
 		{

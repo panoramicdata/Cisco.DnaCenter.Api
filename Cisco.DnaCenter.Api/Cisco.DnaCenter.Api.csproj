@@ -17,7 +17,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
-		<PackageReleaseNotes>Add optional UserAgent property to DnaCenterClientOptions.</PackageReleaseNotes>
+		<PackageReleaseNotes>Add more Options to support query retries with backoff, plus better logging of status codes.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

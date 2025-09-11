@@ -49,7 +49,7 @@ public class DnaCenterClient : IDisposable
 		else
 		{
 			// We are creating an HttpClient (one was not provided), so set _httpClient so that we know to dispose of it later.
-			_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(this, _options.Token, _logger, _options.IgnoreSslCertificateErrors, _options.UserAgent);
+			_authenticatedHttpClientHandler = new AuthenticatedHttpClientHandler(this, _options, _logger);
 			_httpClient = new HttpClient(_authenticatedHttpClientHandler)
 			{
 				BaseAddress = _options.Uri
