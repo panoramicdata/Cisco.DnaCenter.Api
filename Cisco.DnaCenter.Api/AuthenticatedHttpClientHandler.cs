@@ -107,7 +107,12 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			// Complete the action
 			HttpResponseMessage httpResponseMessage;
 
-            try
+			httpResponseMessage = await base
+				.SendAsync(request, cancellationToken)
+				.ConfigureAwait(false);
+
+			/*
+			try
             {
                 httpResponseMessage = await base
                     .SendAsync(request, cancellationToken)
@@ -145,10 +150,11 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
                     request.RequestUri
                 );
 
-				// Wait 1 seconds and then retry
+				// Wait 1 second and then retry
 				await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
                 continue;
             }
+			*/
 
 			// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
 			if (_logger.IsEnabled(_levelToLogAt))
@@ -172,17 +178,9 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
                 switch (statusCodeInt)
                 {
                     case 429:
-						// Back off by the requested amount.
-						var headers = httpResponseMessage.Headers;
-                        var foundHeader = headers.TryGetValues("Retry-After", out var retryAfterHeaders);
-                        var retryAfterSecondsString = foundHeader
-                            ? retryAfterHeaders.FirstOrDefault() ?? "1"
-                            : "1";
-                        if (!int.TryParse(retryAfterSecondsString, out var retryAfterSeconds))
-                        {
-                            retryAfterSeconds = 1;
-                        }
-
+						// Back off. The limiter varies depending on the endpoint e.g 100/min for Sites and 50/min for Devices.
+						var retryAfterSeconds = 1;
+                        
                         delay = CalculateBackoffDelay(attemptCount, retryAfterSeconds, _options.BackOffDelayFactor, _options.MaxBackOffDelaySeconds);
 
                         _logger.LogDebug(
@@ -272,7 +270,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
     }
 
 	/// <summary>
-	/// Calculate the back-off delay taking into account the retry-after header, the attemptcount and back-off factor and the maximum back-off delay.
+	/// Calculate the back-off delay taking into account the attemptcount, back-off factor and the maximum back-off delay.
 	/// Wait at least retryAfterSeconds, then back off by the backOffDelayFactor to the power of the attemptCount, but no more than maxBackOffDelay.
 	/// </summary>
 	internal static TimeSpan CalculateBackoffDelay(
