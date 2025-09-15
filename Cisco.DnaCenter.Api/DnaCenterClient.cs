@@ -24,7 +24,7 @@ public class DnaCenterClient : IDisposable
 	private readonly ILogger _logger;
 	private readonly DnaCenterClientOptions _options;
 
-	public bool IsConnected { get; private set; }
+	public bool IsConnected { get; set; }
 
 	public bool IgnoreSslCertificateErrors { get; private set; }
 

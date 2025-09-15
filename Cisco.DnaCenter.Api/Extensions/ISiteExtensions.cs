@@ -56,7 +56,8 @@ public static class ISiteExtensions
 
 			sitesResponses.AddRange(items);
 
-			if (items.Count == 0)
+			// If we got less results back than the requested limit, we are done
+			if (items.Count < limit)
 			{
 				break;
 			}

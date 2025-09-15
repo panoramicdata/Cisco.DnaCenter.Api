@@ -1,8 +1,11 @@
 ﻿using Cisco.DnaCenter.Api.Data;
 using Cisco.DnaCenter.Api.Extensions;
 using FluentAssertions;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
@@ -140,5 +143,35 @@ public class SiteTests : Tests
 			.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!);
 
 		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+	}
+
+	[Fact]
+	public async Task GetAllSitesAsync_MultipleRequests_LogsUnauthorizedResponses()
+	{
+		for (int i = 1; i <= 160; i++)
+		{
+			try
+			{
+				var result = await Client.Sites.GetAllSitesAsync();
+				Logger.LogInformation("Request {RequestNumber}: Success. Result count: {Count}", i, result?.Response.Count() ?? 0);
+
+				// Should always have 7 results
+				result.Response.Count().Should().Be(7, "There should always be 7 sites");
+			}
+			catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.Unauthorized)
+			{
+				Logger.LogWarning("Request {RequestNumber}: Unauthorized (401). Exception: {Message}", i, ex.Message);
+
+				// Quit
+				break;
+			}
+			catch (Exception ex)
+			{
+				Logger.LogError("Request {RequestNumber}: Exception: {Message}", i, ex.Message);
+				
+				// Quit
+				break;
+			}
+		}
 	}
 }
