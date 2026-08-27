@@ -1,5 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <NuGetAuditMode>All</NuGetAuditMode>
-  </PropertyGroup>
-</Project>
