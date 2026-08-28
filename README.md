@@ -1,5 +1,3 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 # Cisco.DnaCenter.Api
 
 [![Nuget](https://img.shields.io/nuget/v/Cisco.DnaCenter.Api)](https://www.nuget.org/packages/Cisco.DnaCenter.Api/)
