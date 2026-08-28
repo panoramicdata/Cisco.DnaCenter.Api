@@ -20,6 +20,7 @@
     <PackageReleaseNotes>Add more Options to support query retries with backoff, plus better logging of status codes.</PackageReleaseNotes>
     <PackageId>Cisco.DnaCenter.Api</PackageId>
     <NeutralResourcesLanguage>en</NeutralResourcesLanguage>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Icon.png">
