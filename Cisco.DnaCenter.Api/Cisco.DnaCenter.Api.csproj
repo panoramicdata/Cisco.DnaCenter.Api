@@ -18,6 +18,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <PackageReleaseNotes>Add more Options to support query retries with backoff, plus better logging of status codes.</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Icon.png">
