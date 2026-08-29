@@ -1,5 +1,5 @@
 ﻿using Cisco.DnaCenter.Api.Data;
-using FluentAssertions;
+using AwesomeAssertions;
 using System;
 using Xunit;
 using Xunit.Abstractions;

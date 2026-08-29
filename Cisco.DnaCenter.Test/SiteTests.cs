@@ -1,6 +1,6 @@
 ﻿using Cisco.DnaCenter.Api.Data;
 using Cisco.DnaCenter.Api.Extensions;
-using FluentAssertions;
+using AwesomeAssertions;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
