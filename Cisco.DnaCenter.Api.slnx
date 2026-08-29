@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="global.json" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="version.json" />
+    <File Path="CONTRIBUTING.md" />
+    <File Path="SECURITY.md" />
+  </Folder>
+  <Project Path="Cisco.DnaCenter.Api/Cisco.DnaCenter.Api.csproj" />
+  <Project Path="Cisco.DnaCenter.Test/Cisco.DnaCenter.Test.csproj" />
+</Solution>

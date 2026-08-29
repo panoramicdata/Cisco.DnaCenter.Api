@@ -352,3 +352,4 @@ MigrationBackup/
 # Appsettings
 appsettings.*.json
 appsettings.json
+nuget-key.txt
