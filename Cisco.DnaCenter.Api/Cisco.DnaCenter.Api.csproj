@@ -17,12 +17,39 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
-    <PackageReleaseNotes>Add more Options to support query retries with backoff, plus better logging of status codes.</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      Security fix: sensitive HTTP headers are now redacted in diagnostic output.
+
+      Previously AuthenticatedHttpClientHandler passed the whole HttpRequestMessage to the logger,
+      and its ToString() renders every header. The X-Auth-Token set on each request was therefore
+      written verbatim, on every attempt of the retry loop. The response side did the same.
+
+      This also exposed the account credentials, not only the session token. The token endpoint is
+      called with an Authorization header carrying Basic encoded username and password, and that
+      request travels through the same handler.
+
+      X-Auth-Token, Authorization, Proxy-Authorization, Cookie, Set-Cookie and common API key
+      headers are now redacted, case-insensitively, on request and response. The scheme and
+      credential length are retained, so failures remain diagnosable.
+
+      Breaking change to message text: the Request and Response log messages are now rendered by
+      this library rather than by HttpRequestMessage.ToString(). The shape is the same but code
+      parsing those messages should be checked.
+
+      Consumers should upgrade, review existing Trace logs for previously captured credentials, and
+      change any password that appears in them.
+
+      Also in this release: more Options to support query retries with backoff, plus better logging
+      of status codes.
+    </PackageReleaseNotes>
     <NeutralResourcesLanguage>en</NeutralResourcesLanguage>
     <PackageId>Cisco.DnaCenter.Api</PackageId>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Cisco.DnaCenter.Test" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png">
       <Pack>True</Pack>
