@@ -102,7 +102,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
 			if (_logger.IsEnabled(_levelToLogAt))
 			{
-				_logger.Log(_levelToLogAt, "{LogPrefix}Request\r\n{Request}", logPrefix, request);
+				_logger.Log(_levelToLogAt, "{LogPrefix}Request\r\n{Request}", logPrefix, request.ToRedactedString());
 				if (request.Content != null)
 				{
 					var requestContent = await request.Content.ReadAsStringAsync().ConfigureAwait(false);
@@ -167,7 +167,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
 			if (_logger.IsEnabled(_levelToLogAt))
 			{
-				_logger.Log(_levelToLogAt, "{LogPrefix}Response\r\n{HttpResponseMessage}", logPrefix, httpResponseMessage);
+				_logger.Log(_levelToLogAt, "{LogPrefix}Response\r\n{HttpResponseMessage}", logPrefix, httpResponseMessage.ToRedactedString());
 				if (httpResponseMessage.Content != null)
 				{
 					var responseContent = await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
