@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -15,7 +15,7 @@ public class GetApplicationSetsResponseResponse
 	/// <param name="Id">Id.</param>
 	/// <param name="IdentitySource">IdentitySource.</param>
 	/// <param name="Name">Name.</param>
-	public GetApplicationSetsResponseResponse(string? Id = default, GetApplicationSetsResponseIdentitySource IdentitySource = default, string? Name = default)
+	public GetApplicationSetsResponseResponse(string? Id = default, GetApplicationSetsResponseIdentitySource? IdentitySource = default, string? Name = default)
 	{
 		this.Id = Id;
 		this.IdentitySource = IdentitySource;
@@ -32,7 +32,7 @@ public class GetApplicationSetsResponseResponse
 	/// Gets or Sets IdentitySource
 	/// </summary>
 	[DataMember(Name = "identitySource", EmitDefaultValue = false)]
-	public GetApplicationSetsResponseIdentitySource IdentitySource { get; set; }
+	public GetApplicationSetsResponseIdentitySource? IdentitySource { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Name

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -30,7 +30,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// <param name="HealthScore">HealthScore.</param>
 	/// <param name="Level">Level.</param>
 	/// <param name="FabricGroup">FabricGroup.</param>
-	public GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes(string? Role = default, string? Name = default, string? Id = default, string? Description = default, Object DeviceType = default, Object PlatformId = default, Object Family = default, Object Ip = default, Object SoftwareVersion = default, Object UserId = default, Object NodeType = default, Object RadioFrequency = default, decimal? Clients = default, Object Count = default, Object HealthScore = default, decimal? Level = default, Object FabricGroup = default)
+	public GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes(string? Role = default, string? Name = default, string? Id = default, string? Description = default, Object? DeviceType = default, Object? PlatformId = default, Object? Family = default, Object? Ip = default, Object? SoftwareVersion = default, Object? UserId = default, Object? NodeType = default, Object? RadioFrequency = default, decimal? Clients = default, Object? Count = default, Object? HealthScore = default, decimal? Level = default, Object? FabricGroup = default)
 	{
 		this.Role = Role;
 		this.Name = Name;
@@ -79,49 +79,49 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// Gets or Sets DeviceType
 	/// </summary>
 	[DataMember(Name = "deviceType", EmitDefaultValue = false)]
-	public Object DeviceType { get; set; }
+	public Object? DeviceType { get; set; }
 
 	/// <summary>
 	/// Gets or Sets PlatformId
 	/// </summary>
 	[DataMember(Name = "platformId", EmitDefaultValue = false)]
-	public Object PlatformId { get; set; }
+	public Object? PlatformId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Family
 	/// </summary>
 	[DataMember(Name = "family", EmitDefaultValue = false)]
-	public Object Family { get; set; }
+	public Object? Family { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ip
 	/// </summary>
 	[DataMember(Name = "ip", EmitDefaultValue = false)]
-	public Object Ip { get; set; }
+	public Object? Ip { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SoftwareVersion
 	/// </summary>
 	[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
-	public Object SoftwareVersion { get; set; }
+	public Object? SoftwareVersion { get; set; }
 
 	/// <summary>
 	/// Gets or Sets UserId
 	/// </summary>
 	[DataMember(Name = "userId", EmitDefaultValue = false)]
-	public Object UserId { get; set; }
+	public Object? UserId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NodeType
 	/// </summary>
 	[DataMember(Name = "nodeType", EmitDefaultValue = false)]
-	public Object NodeType { get; set; }
+	public Object? NodeType { get; set; }
 
 	/// <summary>
 	/// Gets or Sets RadioFrequency
 	/// </summary>
 	[DataMember(Name = "radioFrequency", EmitDefaultValue = false)]
-	public Object RadioFrequency { get; set; }
+	public Object? RadioFrequency { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Clients
@@ -133,13 +133,13 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// Gets or Sets Count
 	/// </summary>
 	[DataMember(Name = "count", EmitDefaultValue = false)]
-	public Object Count { get; set; }
+	public Object? Count { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HealthScore
 	/// </summary>
 	[DataMember(Name = "healthScore", EmitDefaultValue = false)]
-	public Object HealthScore { get; set; }
+	public Object? HealthScore { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Level
@@ -151,7 +151,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// Gets or Sets FabricGroup
 	/// </summary>
 	[DataMember(Name = "fabricGroup", EmitDefaultValue = false)]
-	public Object FabricGroup { get; set; }
+	public Object? FabricGroup { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

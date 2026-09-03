@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettin
 	/// </summary>
 	/// <param name="Id">Id.</param>
 	/// <param name="IpAddress">IpAddress.</param>
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp(string? Id = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress IpAddress = default)
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp(string? Id = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress? IpAddress = default)
 	{
 		this.Id = Id;
 		this.IpAddress = IpAddress;
@@ -30,7 +30,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettin
 	/// Gets or Sets IpAddress
 	/// </summary>
 	[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress IpAddress { get; set; }
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsIpAddress? IpAddress { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

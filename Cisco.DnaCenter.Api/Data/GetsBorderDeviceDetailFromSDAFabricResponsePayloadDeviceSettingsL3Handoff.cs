@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -22,7 +22,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3H
 	/// <param name="RemoteIpAddress">RemoteIpAddress.</param>
 	/// <param name="VlanId">VlanId.</param>
 	/// <param name="VirtualNetwork">VirtualNetwork.</param>
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, decimal? InstanceVersion = default, string? LocalIpAddress = default, string? RemoteIpAddress = default, int? VlanId = default, EditApplicationRequestInnerApplicationSet VirtualNetwork = default)
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, decimal? InstanceVersion = default, string? LocalIpAddress = default, string? RemoteIpAddress = default, int? VlanId = default, EditApplicationRequestInnerApplicationSet? VirtualNetwork = default)
 	{
 		this.Id = Id;
 		this.InstanceId = InstanceId;
@@ -94,7 +94,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3H
 	/// Gets or Sets VirtualNetwork
 	/// </summary>
 	[DataMember(Name = "virtualNetwork", EmitDefaultValue = false)]
-	public EditApplicationRequestInnerApplicationSet VirtualNetwork { get; set; }
+	public EditApplicationRequestInnerApplicationSet? VirtualNetwork { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -8,7 +8,7 @@ namespace Cisco.DnaCenter.Api.Data;
 [DataContract]
 public class ImportDevicesInBulkRequestItem
 {
-	public ImportDevicesInBulkRequestItem(DeviceDeviceInfo DeviceInfo)
+	public ImportDevicesInBulkRequestItem(DeviceDeviceInfo? DeviceInfo)
 	{
 		this.DeviceInfo = DeviceInfo;
 	}
@@ -17,5 +17,5 @@ public class ImportDevicesInBulkRequestItem
 	/// DeviceDeviceInfo
 	/// </summary>
 	[DataMember(Name = "deviceInfo", EmitDefaultValue = false)]
-	public DeviceDeviceInfo DeviceInfo { get; set; }
+	public DeviceDeviceInfo? DeviceInfo { get; set; }
 }

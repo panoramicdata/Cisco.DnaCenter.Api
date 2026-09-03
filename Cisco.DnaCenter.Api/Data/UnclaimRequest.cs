@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// UnclaimRequest
@@ -15,7 +15,7 @@ public class UnclaimRequest
 	/// Initializes a new instance of the <see cref="UnclaimRequest" /> class.
 	/// </summary>
 	/// <param name="DeviceIdList">DeviceIdList.</param>
-	public UnclaimRequest(List<string> DeviceIdList)
+	public UnclaimRequest(List<string>? DeviceIdList)
 	{
 		this.DeviceIdList = DeviceIdList;
 	}
@@ -24,7 +24,7 @@ public class UnclaimRequest
 	/// Gets or Sets DeviceIdList
 	/// </summary>
 	[DataMember(Name = "deviceIdList", EmitDefaultValue = false)]
-	public List<string> DeviceIdList { get; set; }
+	public List<string>? DeviceIdList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

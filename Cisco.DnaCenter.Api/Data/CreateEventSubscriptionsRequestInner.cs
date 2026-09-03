@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class CreateEventSubscriptionsRequestInner
 	/// <param name="Description">Description.</param>
 	/// <param name="SubscriptionEndpoints">SubscriptionEndpoints.</param>
 	/// <param name="Filter">Filter.</param>
-	public CreateEventSubscriptionsRequestInner(string? SubscriptionId = default, string? _Version = default, string? Name = default, string? Description = default, List<CreateEventSubscriptionsRequestInnerSubscriptionEndpoints> SubscriptionEndpoints = default, CreateEventSubscriptionsRequestInnerFilter Filter = default)
+	public CreateEventSubscriptionsRequestInner(string? SubscriptionId = default, string? _Version = default, string? Name = default, string? Description = default, List<CreateEventSubscriptionsRequestInnerSubscriptionEndpoints>? SubscriptionEndpoints = default, CreateEventSubscriptionsRequestInnerFilter? Filter = default)
 	{
 		this.SubscriptionId = SubscriptionId;
 		this._Version = _Version;
@@ -57,13 +57,13 @@ public class CreateEventSubscriptionsRequestInner
 	/// Gets or Sets SubscriptionEndpoints
 	/// </summary>
 	[DataMember(Name = "subscriptionEndpoints", EmitDefaultValue = false)]
-	public List<CreateEventSubscriptionsRequestInnerSubscriptionEndpoints> SubscriptionEndpoints { get; set; }
+	public List<CreateEventSubscriptionsRequestInnerSubscriptionEndpoints>? SubscriptionEndpoints { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Filter
 	/// </summary>
 	[DataMember(Name = "filter", EmitDefaultValue = false)]
-	public CreateEventSubscriptionsRequestInnerFilter Filter { get; set; }
+	public CreateEventSubscriptionsRequestInnerFilter? Filter { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

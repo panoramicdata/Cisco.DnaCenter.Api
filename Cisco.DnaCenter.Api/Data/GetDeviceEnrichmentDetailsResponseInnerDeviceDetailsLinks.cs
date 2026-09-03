@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -20,7 +20,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks
 	/// <param name="Target">Target.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="PortUtilization">PortUtilization.</param>
-	public GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks(string? Source = default, string? LinkStatus = default, List<Object> Label = default, string? Target = default, Object Id = default, Object PortUtilization = default)
+	public GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks(string? Source = default, string? LinkStatus = default, List<Object>? Label = default, string? Target = default, Object? Id = default, Object? PortUtilization = default)
 	{
 		this.Source = Source;
 		this.LinkStatus = LinkStatus;
@@ -46,7 +46,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks
 	/// Gets or Sets Label
 	/// </summary>
 	[DataMember(Name = "label", EmitDefaultValue = false)]
-	public List<Object> Label { get; set; }
+	public List<Object>? Label { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Target
@@ -58,13 +58,13 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks
 	/// Gets or Sets Id
 	/// </summary>
 	[DataMember(Name = "id", EmitDefaultValue = false)]
-	public Object Id { get; set; }
+	public Object? Id { get; set; }
 
 	/// <summary>
 	/// Gets or Sets PortUtilization
 	/// </summary>
 	[DataMember(Name = "portUtilization", EmitDefaultValue = false)]
-	public Object PortUtilization { get; set; }
+	public Object? PortUtilization { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -16,7 +16,7 @@ public class GetDeviceHistoryResponseResponse
 	/// <param name="Details">Details.</param>
 	/// <param name="HistoryTaskInfo">HistoryTaskInfo.</param>
 	/// <param name="ErrorFlag">ErrorFlag.</param>
-	public GetDeviceHistoryResponseResponse(decimal? Timestamp = default, string? Details = default, GetDeviceHistoryResponseHistoryTaskInfo HistoryTaskInfo = default, bool? ErrorFlag = default)
+	public GetDeviceHistoryResponseResponse(decimal? Timestamp = default, string? Details = default, GetDeviceHistoryResponseHistoryTaskInfo? HistoryTaskInfo = default, bool? ErrorFlag = default)
 	{
 		this.Timestamp = Timestamp;
 		this.Details = Details;
@@ -40,7 +40,7 @@ public class GetDeviceHistoryResponseResponse
 	/// Gets or Sets HistoryTaskInfo
 	/// </summary>
 	[DataMember(Name = "historyTaskInfo", EmitDefaultValue = false)]
-	public GetDeviceHistoryResponseHistoryTaskInfo HistoryTaskInfo { get; set; }
+	public GetDeviceHistoryResponseHistoryTaskInfo? HistoryTaskInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ErrorFlag

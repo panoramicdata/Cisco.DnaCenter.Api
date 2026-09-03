@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetDeviceHistoryResponse
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="StatusCode">StatusCode.</param>
-	public GetDeviceHistoryResponse(List<GetDeviceHistoryResponseResponse> Response = default, decimal? StatusCode = default)
+	public GetDeviceHistoryResponse(List<GetDeviceHistoryResponseResponse>? Response = default, decimal? StatusCode = default)
 	{
 		this.Response = Response;
 		this.StatusCode = StatusCode;
@@ -25,7 +25,7 @@ public class GetDeviceHistoryResponse
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<GetDeviceHistoryResponseResponse> Response { get; set; }
+	public List<GetDeviceHistoryResponseResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets StatusCode

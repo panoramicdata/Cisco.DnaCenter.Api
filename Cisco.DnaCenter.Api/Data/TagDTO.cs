@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class TagDto
 	/// <param name="Name">Name.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="InstanceTenantId">InstanceTenantId.</param>
-	public TagDto(bool? SystemTag = default, string? Description = default, List<TagDtoDynamicRules> DynamicRules = default, string? Name = default, string? Id = default, string? InstanceTenantId = default)
+	public TagDto(bool? SystemTag = default, string? Description = default, List<TagDtoDynamicRules>? DynamicRules = default, string? Name = default, string? Id = default, string? InstanceTenantId = default)
 	{
 		this.SystemTag = SystemTag;
 		this.Description = Description;
@@ -45,7 +45,7 @@ public class TagDto
 	/// Gets or Sets DynamicRules
 	/// </summary>
 	[DataMember(Name = "dynamicRules", EmitDefaultValue = false)]
-	public List<TagDtoDynamicRules> DynamicRules { get; set; }
+	public List<TagDtoDynamicRules>? DynamicRules { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Name

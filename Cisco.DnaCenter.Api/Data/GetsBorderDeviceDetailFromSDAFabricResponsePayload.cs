@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -49,7 +49,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayload
 	/// <param name="TransitNetworks">TransitNetworks.</param>
 	/// <param name="VirtualNetwork">VirtualNetwork.</param>
 	/// <param name="Wlan">Wlan.</param>
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayload(string? Id = default, int? InstanceId = default, int? AuthEntityId = default, string? DisplayName = default, int? AuthEntityClass = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, long? CreateTime = default, bool? Deployed = default, bool? IsSeeded = default, bool? IsStale = default, long? LastUpdateTime = default, string? Name = default, string? _Namespace = default, string? ProvisioningState = default, int? ResourceVersion = default, List<Object> TargetIdList = default, string? Type = default, List<Object> CfsChangeInfo = default, List<Object> CustomProvisions = default, List<Object> Configs = default, List<Object> ManagedSites = default, string? NetworkDeviceId = default, List<string> Roles = default, bool? SaveWanConnectivityDetailsOnly = default, string? SiteId = default, List<Object> AkcSettingsCfs = default, List<Object> DeviceInterfaceInfo = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings DeviceSettings = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings NetworkWideSettings = default, List<Object> OtherDevice = default, List<EditApplicationRequestInnerApplicationSet> TransitNetworks = default, List<Object> VirtualNetwork = default, List<Object> Wlan = default)
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayload(string? Id = default, int? InstanceId = default, int? AuthEntityId = default, string? DisplayName = default, int? AuthEntityClass = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, long? CreateTime = default, bool? Deployed = default, bool? IsSeeded = default, bool? IsStale = default, long? LastUpdateTime = default, string? Name = default, string? _Namespace = default, string? ProvisioningState = default, int? ResourceVersion = default, List<Object>? TargetIdList = default, string? Type = default, List<Object>? CfsChangeInfo = default, List<Object>? CustomProvisions = default, List<Object>? Configs = default, List<Object>? ManagedSites = default, string? NetworkDeviceId = default, List<string>? Roles = default, bool? SaveWanConnectivityDetailsOnly = default, string? SiteId = default, List<Object>? AkcSettingsCfs = default, List<Object>? DeviceInterfaceInfo = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings? DeviceSettings = default, GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings? NetworkWideSettings = default, List<Object>? OtherDevice = default, List<EditApplicationRequestInnerApplicationSet>? TransitNetworks = default, List<Object>? VirtualNetwork = default, List<Object>? Wlan = default)
 	{
 		this.Id = Id;
 		this.InstanceId = InstanceId;
@@ -194,7 +194,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayload
 	/// Gets or Sets TargetIdList
 	/// </summary>
 	[DataMember(Name = "targetIdList", EmitDefaultValue = false)]
-	public List<Object> TargetIdList { get; set; }
+	public List<Object>? TargetIdList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Type
@@ -206,25 +206,25 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayload
 	/// Gets or Sets CfsChangeInfo
 	/// </summary>
 	[DataMember(Name = "cfsChangeInfo", EmitDefaultValue = false)]
-	public List<Object> CfsChangeInfo { get; set; }
+	public List<Object>? CfsChangeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CustomProvisions
 	/// </summary>
 	[DataMember(Name = "customProvisions", EmitDefaultValue = false)]
-	public List<Object> CustomProvisions { get; set; }
+	public List<Object>? CustomProvisions { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Configs
 	/// </summary>
 	[DataMember(Name = "configs", EmitDefaultValue = false)]
-	public List<Object> Configs { get; set; }
+	public List<Object>? Configs { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ManagedSites
 	/// </summary>
 	[DataMember(Name = "managedSites", EmitDefaultValue = false)]
-	public List<Object> ManagedSites { get; set; }
+	public List<Object>? ManagedSites { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkDeviceId
@@ -236,7 +236,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayload
 	/// Gets or Sets Roles
 	/// </summary>
 	[DataMember(Name = "roles", EmitDefaultValue = false)]
-	public List<string> Roles { get; set; }
+	public List<string>? Roles { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SaveWanConnectivityDetailsOnly
@@ -254,49 +254,49 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayload
 	/// Gets or Sets AkcSettingsCfs
 	/// </summary>
 	[DataMember(Name = "akcSettingsCfs", EmitDefaultValue = false)]
-	public List<Object> AkcSettingsCfs { get; set; }
+	public List<Object>? AkcSettingsCfs { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DeviceInterfaceInfo
 	/// </summary>
 	[DataMember(Name = "deviceInterfaceInfo", EmitDefaultValue = false)]
-	public List<Object> DeviceInterfaceInfo { get; set; }
+	public List<Object>? DeviceInterfaceInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DeviceSettings
 	/// </summary>
 	[DataMember(Name = "deviceSettings", EmitDefaultValue = false)]
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings DeviceSettings { get; set; }
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings? DeviceSettings { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkWideSettings
 	/// </summary>
 	[DataMember(Name = "networkWideSettings", EmitDefaultValue = false)]
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings NetworkWideSettings { get; set; }
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings? NetworkWideSettings { get; set; }
 
 	/// <summary>
 	/// Gets or Sets OtherDevice
 	/// </summary>
 	[DataMember(Name = "otherDevice", EmitDefaultValue = false)]
-	public List<Object> OtherDevice { get; set; }
+	public List<Object>? OtherDevice { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TransitNetworks
 	/// </summary>
 	[DataMember(Name = "transitNetworks", EmitDefaultValue = false)]
-	public List<EditApplicationRequestInnerApplicationSet> TransitNetworks { get; set; }
+	public List<EditApplicationRequestInnerApplicationSet>? TransitNetworks { get; set; }
 
 	/// <summary>
 	/// Gets or Sets VirtualNetwork
 	/// </summary>
 	[DataMember(Name = "virtualNetwork", EmitDefaultValue = false)]
-	public List<Object> VirtualNetwork { get; set; }
+	public List<Object>? VirtualNetwork { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Wlan
 	/// </summary>
 	[DataMember(Name = "wlan", EmitDefaultValue = false)]
-	public List<Object> Wlan { get; set; }
+	public List<Object>? Wlan { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

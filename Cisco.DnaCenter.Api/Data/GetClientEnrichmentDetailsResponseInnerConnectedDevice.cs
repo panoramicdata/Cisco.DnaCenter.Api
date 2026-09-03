@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// GetClientEnrichmentDetailsResponseInnerConnectedDevice
@@ -15,7 +15,7 @@ public class GetClientEnrichmentDetailsResponseInnerConnectedDevice
 	/// Initializes a new instance of the <see cref="GetClientEnrichmentDetailsResponseInnerConnectedDevice" /> class.
 	/// </summary>
 	/// <param name="DeviceDetails">DeviceDetails.</param>
-	public GetClientEnrichmentDetailsResponseInnerConnectedDevice(GetClientEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails)
+	public GetClientEnrichmentDetailsResponseInnerConnectedDevice(GetClientEnrichmentDetailsResponseInnerDeviceDetails? DeviceDetails)
 	{
 		this.DeviceDetails = DeviceDetails;
 	}
@@ -24,7 +24,7 @@ public class GetClientEnrichmentDetailsResponseInnerConnectedDevice
 	/// Gets or Sets DeviceDetails
 	/// </summary>
 	[DataMember(Name = "deviceDetails", EmitDefaultValue = false)]
-	public GetClientEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails { get; set; }
+	public GetClientEnrichmentDetailsResponseInnerDeviceDetails? DeviceDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

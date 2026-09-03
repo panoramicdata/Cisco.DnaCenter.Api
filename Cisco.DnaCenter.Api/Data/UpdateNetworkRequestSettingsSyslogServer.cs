@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class UpdateNetworkRequestSettingsSyslogServer
 	/// </summary>
 	/// <param name="IpAddresses">IpAddresses.</param>
 	/// <param name="ConfigureDnacIp">ConfigureDnacIP.</param>
-	public UpdateNetworkRequestSettingsSyslogServer(List<string> IpAddresses = default, bool? ConfigureDnacIp = default)
+	public UpdateNetworkRequestSettingsSyslogServer(List<string>? IpAddresses = default, bool? ConfigureDnacIp = default)
 	{
 		this.IpAddresses = IpAddresses;
 		this.ConfigureDnacIp = ConfigureDnacIp;
@@ -25,7 +25,7 @@ public class UpdateNetworkRequestSettingsSyslogServer
 	/// Gets or Sets IpAddresses
 	/// </summary>
 	[DataMember(Name = "ipAddresses", EmitDefaultValue = false)]
-	public List<string> IpAddresses { get; set; }
+	public List<string>? IpAddresses { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConfigureDnacIP

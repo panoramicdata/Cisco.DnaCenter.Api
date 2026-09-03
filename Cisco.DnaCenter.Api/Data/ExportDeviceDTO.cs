@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -46,7 +46,7 @@ public class ExportDeviceDto
 	/// <param name="OperationEnum">OperationEnum.</param>
 	/// <param name="Parameters">Parameters.</param>
 	/// <param name="Password">Password.</param>
-	public ExportDeviceDto(List<string> DeviceUuids = default, string? Id = default, OperationEnumEnum? OperationEnum = default, List<string> Parameters = default, string? Password = default)
+	public ExportDeviceDto(List<string>? DeviceUuids = default, string? Id = default, OperationEnumEnum? OperationEnum = default, List<string>? Parameters = default, string? Password = default)
 	{
 		this.DeviceUuids = DeviceUuids;
 		this.Id = Id;
@@ -59,7 +59,7 @@ public class ExportDeviceDto
 	/// Gets or Sets DeviceUuids
 	/// </summary>
 	[DataMember(Name = "deviceUuids", EmitDefaultValue = false)]
-	public List<string> DeviceUuids { get; set; }
+	public List<string>? DeviceUuids { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id
@@ -71,7 +71,7 @@ public class ExportDeviceDto
 	/// Gets or Sets Parameters
 	/// </summary>
 	[DataMember(Name = "parameters", EmitDefaultValue = false)]
-	public List<string> Parameters { get; set; }
+	public List<string>? Parameters { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Password

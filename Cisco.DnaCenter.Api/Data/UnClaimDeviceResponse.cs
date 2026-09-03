@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -18,7 +18,7 @@ public class UnClaimDeviceResponse
 	/// <param name="JsonResponse">JsonResponse.</param>
 	/// <param name="Message">Message.</param>
 	/// <param name="StatusCode">StatusCode.</param>
-	public UnClaimDeviceResponse(List<Object> JsonArrayResponse = default, Object JsonResponse = default, string? Message = default, decimal? StatusCode = default)
+	public UnClaimDeviceResponse(List<Object>? JsonArrayResponse = default, Object? JsonResponse = default, string? Message = default, decimal? StatusCode = default)
 	{
 		this.JsonArrayResponse = JsonArrayResponse;
 		this.JsonResponse = JsonResponse;
@@ -30,13 +30,13 @@ public class UnClaimDeviceResponse
 	/// Gets or Sets JsonArrayResponse
 	/// </summary>
 	[DataMember(Name = "jsonArrayResponse", EmitDefaultValue = false)]
-	public List<Object> JsonArrayResponse { get; set; }
+	public List<Object>? JsonArrayResponse { get; set; }
 
 	/// <summary>
 	/// Gets or Sets JsonResponse
 	/// </summary>
 	[DataMember(Name = "jsonResponse", EmitDefaultValue = false)]
-	public Object JsonResponse { get; set; }
+	public Object? JsonResponse { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Message

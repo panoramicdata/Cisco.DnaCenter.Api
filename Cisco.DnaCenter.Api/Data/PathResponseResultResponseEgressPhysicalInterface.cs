@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -25,7 +25,7 @@ public class PathResponseResultResponseEgressPhysicalInterface
 	/// <param name="QosStatsCollectionFailureReason">QosStatsCollectionFailureReason.</param>
 	/// <param name="UsedVlan">UsedVlan.</param>
 	/// <param name="VrfName">VrfName.</param>
-	public PathResponseResultResponseEgressPhysicalInterface(PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis AclAnalysis = default, string? Id = default, PathResponseResultResponseEgressPhysicalInterfaceInterfaceStatistics InterfaceStatistics = default, string? InterfaceStatsCollection = default, string? InterfaceStatsCollectionFailureReason = default, string? Name = default, List<PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo> PathOverlayInfo = default, List<PathResponseResultResponseEgressPhysicalInterfaceQosStatistics> QosStatistics = default, string? QosStatsCollection = default, string? QosStatsCollectionFailureReason = default, string? UsedVlan = default, string? VrfName = default)
+	public PathResponseResultResponseEgressPhysicalInterface(PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis? AclAnalysis = default, string? Id = default, PathResponseResultResponseEgressPhysicalInterfaceInterfaceStatistics? InterfaceStatistics = default, string? InterfaceStatsCollection = default, string? InterfaceStatsCollectionFailureReason = default, string? Name = default, List<PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo>? PathOverlayInfo = default, List<PathResponseResultResponseEgressPhysicalInterfaceQosStatistics>? QosStatistics = default, string? QosStatsCollection = default, string? QosStatsCollectionFailureReason = default, string? UsedVlan = default, string? VrfName = default)
 	{
 		this.AclAnalysis = AclAnalysis;
 		this.Id = Id;
@@ -45,7 +45,7 @@ public class PathResponseResultResponseEgressPhysicalInterface
 	/// Gets or Sets AclAnalysis
 	/// </summary>
 	[DataMember(Name = "aclAnalysis", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis AclAnalysis { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis? AclAnalysis { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id
@@ -57,7 +57,7 @@ public class PathResponseResultResponseEgressPhysicalInterface
 	/// Gets or Sets InterfaceStatistics
 	/// </summary>
 	[DataMember(Name = "interfaceStatistics", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterfaceInterfaceStatistics InterfaceStatistics { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterfaceInterfaceStatistics? InterfaceStatistics { get; set; }
 
 	/// <summary>
 	/// Gets or Sets InterfaceStatsCollection
@@ -81,13 +81,13 @@ public class PathResponseResultResponseEgressPhysicalInterface
 	/// Gets or Sets PathOverlayInfo
 	/// </summary>
 	[DataMember(Name = "pathOverlayInfo", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo> PathOverlayInfo { get; set; }
+	public List<PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo>? PathOverlayInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets QosStatistics
 	/// </summary>
 	[DataMember(Name = "qosStatistics", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseEgressPhysicalInterfaceQosStatistics> QosStatistics { get; set; }
+	public List<PathResponseResultResponseEgressPhysicalInterfaceQosStatistics>? QosStatistics { get; set; }
 
 	/// <summary>
 	/// Gets or Sets QosStatsCollection

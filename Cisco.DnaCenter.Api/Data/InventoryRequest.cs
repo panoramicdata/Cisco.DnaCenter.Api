@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -45,7 +45,7 @@ public class InventoryRequest
 	/// <param name="Timeout">Timeout.</param>
 	/// <param name="UpdateMgmtIp">UpdateMgmtIp.</param>
 	/// <param name="UserNameList">UserNameList.</param>
-	public InventoryRequest(int? CdpLevel = default, string? DiscoveryType = default, List<string> EnablePasswordList = default, List<string> GlobalCredentialIdList = default, InventoryRequestHttpReadCredential HttpReadCredential = default, InventoryRequestHttpReadCredential HttpWriteCredential = default, string? IpAddressList = default, List<string> IpFilterList = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, bool? NoAddNewDevice = default, string? ParentDiscoveryId = default, List<string> PasswordList = default, string? PreferredManagementIpMethod = default, string? ProtocolOrder = default, bool? ReDiscovery = default, int? Retry = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpROCommunityDesc = default, string? SnmpRWCommunity = default, string? SnmpRWCommunityDesc = default, string? SnmpUserName = default, string? SnmpVersion = default, int? Timeout = default, bool? UpdateMgmtIp = default, List<string> UserNameList = default)
+	public InventoryRequest(int? CdpLevel = default, string? DiscoveryType = default, List<string>? EnablePasswordList = default, List<string>? GlobalCredentialIdList = default, InventoryRequestHttpReadCredential? HttpReadCredential = default, InventoryRequestHttpReadCredential? HttpWriteCredential = default, string? IpAddressList = default, List<string>? IpFilterList = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, bool? NoAddNewDevice = default, string? ParentDiscoveryId = default, List<string>? PasswordList = default, string? PreferredManagementIpMethod = default, string? ProtocolOrder = default, bool? ReDiscovery = default, int? Retry = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpROCommunityDesc = default, string? SnmpRWCommunity = default, string? SnmpRWCommunityDesc = default, string? SnmpUserName = default, string? SnmpVersion = default, int? Timeout = default, bool? UpdateMgmtIp = default, List<string>? UserNameList = default)
 	{
 		this.CdpLevel = CdpLevel;
 		this.DiscoveryType = DiscoveryType;
@@ -97,25 +97,25 @@ public class InventoryRequest
 	/// Gets or Sets EnablePasswordList
 	/// </summary>
 	[DataMember(Name = "enablePasswordList", EmitDefaultValue = false)]
-	public List<string> EnablePasswordList { get; set; }
+	public List<string>? EnablePasswordList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets GlobalCredentialIdList
 	/// </summary>
 	[DataMember(Name = "globalCredentialIdList", EmitDefaultValue = false)]
-	public List<string> GlobalCredentialIdList { get; set; }
+	public List<string>? GlobalCredentialIdList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HttpReadCredential
 	/// </summary>
 	[DataMember(Name = "httpReadCredential", EmitDefaultValue = false)]
-	public InventoryRequestHttpReadCredential HttpReadCredential { get; set; }
+	public InventoryRequestHttpReadCredential? HttpReadCredential { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HttpWriteCredential
 	/// </summary>
 	[DataMember(Name = "httpWriteCredential", EmitDefaultValue = false)]
-	public InventoryRequestHttpReadCredential HttpWriteCredential { get; set; }
+	public InventoryRequestHttpReadCredential? HttpWriteCredential { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IpAddressList
@@ -127,7 +127,7 @@ public class InventoryRequest
 	/// Gets or Sets IpFilterList
 	/// </summary>
 	[DataMember(Name = "ipFilterList", EmitDefaultValue = false)]
-	public List<string> IpFilterList { get; set; }
+	public List<string>? IpFilterList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LldpLevel
@@ -163,7 +163,7 @@ public class InventoryRequest
 	/// Gets or Sets PasswordList
 	/// </summary>
 	[DataMember(Name = "passwordList", EmitDefaultValue = false)]
-	public List<string> PasswordList { get; set; }
+	public List<string>? PasswordList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets PreferredMgmtIPMethod
@@ -271,7 +271,7 @@ public class InventoryRequest
 	/// Gets or Sets UserNameList
 	/// </summary>
 	[DataMember(Name = "userNameList", EmitDefaultValue = false)]
-	public List<string> UserNameList { get; set; }
+	public List<string>? UserNameList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

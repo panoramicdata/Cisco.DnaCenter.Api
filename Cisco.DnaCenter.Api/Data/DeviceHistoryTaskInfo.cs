@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class DeviceHistoryTaskInfo
 	/// <param name="TimeTaken">TimeTaken.</param>
 	/// <param name="AddnDetails">AddnDetails.</param>
 	/// <param name="Name">Name.</param>
-	public DeviceHistoryTaskInfo(string? Type = default, List<DeviceSystemResetWorkflowWorkItemList> WorkItemList = default, decimal? TimeTaken = default, List<DeviceDeviceInfoHttpHeaders> AddnDetails = default, string? Name = default)
+	public DeviceHistoryTaskInfo(string? Type = default, List<DeviceSystemResetWorkflowWorkItemList>? WorkItemList = default, decimal? TimeTaken = default, List<DeviceDeviceInfoHttpHeaders>? AddnDetails = default, string? Name = default)
 	{
 		this.Type = Type;
 		this.WorkItemList = WorkItemList;
@@ -37,7 +37,7 @@ public class DeviceHistoryTaskInfo
 	/// Gets or Sets WorkItemList
 	/// </summary>
 	[DataMember(Name = "workItemList", EmitDefaultValue = false)]
-	public List<DeviceSystemResetWorkflowWorkItemList> WorkItemList { get; set; }
+	public List<DeviceSystemResetWorkflowWorkItemList>? WorkItemList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TimeTaken
@@ -49,7 +49,7 @@ public class DeviceHistoryTaskInfo
 	/// Gets or Sets AddnDetails
 	/// </summary>
 	[DataMember(Name = "addnDetails", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoHttpHeaders> AddnDetails { get; set; }
+	public List<DeviceDeviceInfoHttpHeaders>? AddnDetails { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Name

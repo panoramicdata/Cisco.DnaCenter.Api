@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -16,7 +16,7 @@ public class DeviceRunSummaryList
 	/// <param name="HistoryTaskInfo">HistoryTaskInfo.</param>
 	/// <param name="ErrorFlag">ErrorFlag.</param>
 	/// <param name="Timestamp">Timestamp.</param>
-	public DeviceRunSummaryList(string? Details = default, DeviceHistoryTaskInfo HistoryTaskInfo = default, bool? ErrorFlag = default, decimal? Timestamp = default)
+	public DeviceRunSummaryList(string? Details = default, DeviceHistoryTaskInfo? HistoryTaskInfo = default, bool? ErrorFlag = default, decimal? Timestamp = default)
 	{
 		this.Details = Details;
 		this.HistoryTaskInfo = HistoryTaskInfo;
@@ -34,7 +34,7 @@ public class DeviceRunSummaryList
 	/// Gets or Sets HistoryTaskInfo
 	/// </summary>
 	[DataMember(Name = "historyTaskInfo", EmitDefaultValue = false)]
-	public DeviceHistoryTaskInfo HistoryTaskInfo { get; set; }
+	public DeviceHistoryTaskInfo? HistoryTaskInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ErrorFlag

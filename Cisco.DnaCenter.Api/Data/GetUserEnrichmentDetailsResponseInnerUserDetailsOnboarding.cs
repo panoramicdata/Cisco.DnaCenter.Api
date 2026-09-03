@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -23,7 +23,7 @@ public class GetUserEnrichmentDetailsResponseInnerUserDetailsOnboarding
 	/// <param name="MaxDhcpDuration">MaxDhcpDuration.</param>
 	/// <param name="AaaServerIp">AaaServerIp.</param>
 	/// <param name="DhcpServerIp">DhcpServerIp.</param>
-	public GetUserEnrichmentDetailsResponseInnerUserDetailsOnboarding(Object AverageRunDuration = default, Object MaxRunDuration = default, Object AverageAssocDuration = default, Object MaxAssocDuration = default, Object AverageAuthDuration = default, Object MaxAuthDuration = default, Object AverageDhcpDuration = default, Object MaxDhcpDuration = default, Object AaaServerIp = default, Object DhcpServerIp = default)
+	public GetUserEnrichmentDetailsResponseInnerUserDetailsOnboarding(Object? AverageRunDuration = default, Object? MaxRunDuration = default, Object? AverageAssocDuration = default, Object? MaxAssocDuration = default, Object? AverageAuthDuration = default, Object? MaxAuthDuration = default, Object? AverageDhcpDuration = default, Object? MaxDhcpDuration = default, Object? AaaServerIp = default, Object? DhcpServerIp = default)
 	{
 		this.AverageRunDuration = AverageRunDuration;
 		this.MaxRunDuration = MaxRunDuration;
@@ -41,61 +41,61 @@ public class GetUserEnrichmentDetailsResponseInnerUserDetailsOnboarding
 	/// Gets or Sets AverageRunDuration
 	/// </summary>
 	[DataMember(Name = "averageRunDuration", EmitDefaultValue = false)]
-	public Object AverageRunDuration { get; set; }
+	public Object? AverageRunDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MaxRunDuration
 	/// </summary>
 	[DataMember(Name = "maxRunDuration", EmitDefaultValue = false)]
-	public Object MaxRunDuration { get; set; }
+	public Object? MaxRunDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AverageAssocDuration
 	/// </summary>
 	[DataMember(Name = "averageAssocDuration", EmitDefaultValue = false)]
-	public Object AverageAssocDuration { get; set; }
+	public Object? AverageAssocDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MaxAssocDuration
 	/// </summary>
 	[DataMember(Name = "maxAssocDuration", EmitDefaultValue = false)]
-	public Object MaxAssocDuration { get; set; }
+	public Object? MaxAssocDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AverageAuthDuration
 	/// </summary>
 	[DataMember(Name = "averageAuthDuration", EmitDefaultValue = false)]
-	public Object AverageAuthDuration { get; set; }
+	public Object? AverageAuthDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MaxAuthDuration
 	/// </summary>
 	[DataMember(Name = "maxAuthDuration", EmitDefaultValue = false)]
-	public Object MaxAuthDuration { get; set; }
+	public Object? MaxAuthDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AverageDhcpDuration
 	/// </summary>
 	[DataMember(Name = "averageDhcpDuration", EmitDefaultValue = false)]
-	public Object AverageDhcpDuration { get; set; }
+	public Object? AverageDhcpDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MaxDhcpDuration
 	/// </summary>
 	[DataMember(Name = "maxDhcpDuration", EmitDefaultValue = false)]
-	public Object MaxDhcpDuration { get; set; }
+	public Object? MaxDhcpDuration { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AaaServerIp
 	/// </summary>
 	[DataMember(Name = "aaaServerIp", EmitDefaultValue = false)]
-	public Object AaaServerIp { get; set; }
+	public Object? AaaServerIp { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DhcpServerIp
 	/// </summary>
 	[DataMember(Name = "dhcpServerIp", EmitDefaultValue = false)]
-	public Object DhcpServerIp { get; set; }
+	public Object? DhcpServerIp { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

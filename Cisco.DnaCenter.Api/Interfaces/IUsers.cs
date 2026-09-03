@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +18,7 @@ public interface IUsers
 	/// </remarks>
 	/// <param name="entity_type">User enrichment details can be fetched based on either User ID or Client MAC address. This parameter value must either be network_user_id/mac_address</param>
 	/// <param name="entity_value">Contains the actual value for the entity type that has been defined</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetUserEnrichmentDetailsResponse</returns>
 	[Get("/dna/intent/api/v1/user-enrichment-details")]
 	Task<GetUserEnrichmentDetailsResponse> GetAsync(

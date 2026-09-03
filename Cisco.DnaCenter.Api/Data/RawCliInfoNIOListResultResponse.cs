@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -24,7 +24,7 @@ public class RawCliInfoNioListResultResponse
 	/// <param name="RunningConfig">RunningConfig.</param>
 	/// <param name="Snmp">Snmp.</param>
 	/// <param name="_Version">_Version.</param>
-	public RawCliInfoNioListResultResponse(Object AttributeInfo = default, string? CdpNeighbors = default, string? HealthMonitor = default, string? Id = default, string? IntfDescription = default, string? Inventory = default, string? IpIntfBrief = default, string? MacAddressTable = default, string? RunningConfig = default, string? Snmp = default, string? _Version = default)
+	public RawCliInfoNioListResultResponse(Object? AttributeInfo = default, string? CdpNeighbors = default, string? HealthMonitor = default, string? Id = default, string? IntfDescription = default, string? Inventory = default, string? IpIntfBrief = default, string? MacAddressTable = default, string? RunningConfig = default, string? Snmp = default, string? _Version = default)
 	{
 		this.AttributeInfo = AttributeInfo;
 		this.CdpNeighbors = CdpNeighbors;
@@ -43,7 +43,7 @@ public class RawCliInfoNioListResultResponse
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CdpNeighbors

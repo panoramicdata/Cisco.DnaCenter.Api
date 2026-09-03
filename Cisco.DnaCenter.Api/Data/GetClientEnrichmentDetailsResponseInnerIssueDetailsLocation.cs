@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -20,7 +20,7 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation
 	/// <param name="Building">Building.</param>
 	/// <param name="Floor">Floor.</param>
 	/// <param name="ApsImpacted">ApsImpacted.</param>
-	public GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation(string? SiteId = default, string? SiteType = default, string? Area = default, string? Building = default, Object Floor = default, List<Object> ApsImpacted = default)
+	public GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation(string? SiteId = default, string? SiteType = default, string? Area = default, string? Building = default, Object? Floor = default, List<Object>? ApsImpacted = default)
 	{
 		this.SiteId = SiteId;
 		this.SiteType = SiteType;
@@ -58,13 +58,13 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation
 	/// Gets or Sets Floor
 	/// </summary>
 	[DataMember(Name = "floor", EmitDefaultValue = false)]
-	public Object Floor { get; set; }
+	public Object? Floor { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApsImpacted
 	/// </summary>
 	[DataMember(Name = "apsImpacted", EmitDefaultValue = false)]
-	public List<Object> ApsImpacted { get; set; }
+	public List<Object>? ApsImpacted { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

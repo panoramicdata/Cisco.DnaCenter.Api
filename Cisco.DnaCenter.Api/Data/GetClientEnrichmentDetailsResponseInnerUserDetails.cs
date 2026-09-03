@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -38,7 +38,7 @@ public class GetClientEnrichmentDetailsResponseInnerUserDetails
 	/// <param name="Snr">Snr.</param>
 	/// <param name="DataRate">DataRate.</param>
 	/// <param name="Port">Port.</param>
-	public GetClientEnrichmentDetailsResponseInnerUserDetails(string? Id = default, string? ConnectionStatus = default, string? HostType = default, string? UserId = default, Object HostName = default, Object HostOs = default, Object HostVersion = default, Object SubType = default, int? LastUpdated = default, List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore> HealthScore = default, string? HostMac = default, string? HostIpV4 = default, List<Object> HostIpV6 = default, Object AuthType = default, string? VlanId = default, Object Ssid = default, Object Location = default, string? ClientConnection = default, List<Object> ConnectedDevice = default, decimal? IssueCount = default, Object Rssi = default, Object Snr = default, Object DataRate = default, Object Port = default)
+	public GetClientEnrichmentDetailsResponseInnerUserDetails(string? Id = default, string? ConnectionStatus = default, string? HostType = default, string? UserId = default, Object? HostName = default, Object? HostOs = default, Object? HostVersion = default, Object? SubType = default, int? LastUpdated = default, List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore>? HealthScore = default, string? HostMac = default, string? HostIpV4 = default, List<Object>? HostIpV6 = default, Object? AuthType = default, string? VlanId = default, Object? Ssid = default, Object? Location = default, string? ClientConnection = default, List<Object>? ConnectedDevice = default, decimal? IssueCount = default, Object? Rssi = default, Object? Snr = default, Object? DataRate = default, Object? Port = default)
 	{
 		this.Id = Id;
 		this.ConnectionStatus = ConnectionStatus;
@@ -94,25 +94,25 @@ public class GetClientEnrichmentDetailsResponseInnerUserDetails
 	/// Gets or Sets HostName
 	/// </summary>
 	[DataMember(Name = "hostName", EmitDefaultValue = false)]
-	public Object HostName { get; set; }
+	public Object? HostName { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HostOs
 	/// </summary>
 	[DataMember(Name = "hostOs", EmitDefaultValue = false)]
-	public Object HostOs { get; set; }
+	public Object? HostOs { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HostVersion
 	/// </summary>
 	[DataMember(Name = "hostVersion", EmitDefaultValue = false)]
-	public Object HostVersion { get; set; }
+	public Object? HostVersion { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SubType
 	/// </summary>
 	[DataMember(Name = "subType", EmitDefaultValue = false)]
-	public Object SubType { get; set; }
+	public Object? SubType { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LastUpdated
@@ -124,7 +124,7 @@ public class GetClientEnrichmentDetailsResponseInnerUserDetails
 	/// Gets or Sets HealthScore
 	/// </summary>
 	[DataMember(Name = "healthScore", EmitDefaultValue = false)]
-	public List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore> HealthScore { get; set; }
+	public List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore>? HealthScore { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HostMac
@@ -142,13 +142,13 @@ public class GetClientEnrichmentDetailsResponseInnerUserDetails
 	/// Gets or Sets HostIpV6
 	/// </summary>
 	[DataMember(Name = "hostIpV6", EmitDefaultValue = false)]
-	public List<Object> HostIpV6 { get; set; }
+	public List<Object>? HostIpV6 { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AuthType
 	/// </summary>
 	[DataMember(Name = "authType", EmitDefaultValue = false)]
-	public Object AuthType { get; set; }
+	public Object? AuthType { get; set; }
 
 	/// <summary>
 	/// Gets or Sets VlanId
@@ -160,13 +160,13 @@ public class GetClientEnrichmentDetailsResponseInnerUserDetails
 	/// Gets or Sets Ssid
 	/// </summary>
 	[DataMember(Name = "ssid", EmitDefaultValue = false)]
-	public Object Ssid { get; set; }
+	public Object? Ssid { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Location
 	/// </summary>
 	[DataMember(Name = "location", EmitDefaultValue = false)]
-	public Object Location { get; set; }
+	public Object? Location { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ClientConnection
@@ -178,7 +178,7 @@ public class GetClientEnrichmentDetailsResponseInnerUserDetails
 	/// Gets or Sets ConnectedDevice
 	/// </summary>
 	[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
-	public List<Object> ConnectedDevice { get; set; }
+	public List<Object>? ConnectedDevice { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IssueCount
@@ -190,25 +190,25 @@ public class GetClientEnrichmentDetailsResponseInnerUserDetails
 	/// Gets or Sets Rssi
 	/// </summary>
 	[DataMember(Name = "rssi", EmitDefaultValue = false)]
-	public Object Rssi { get; set; }
+	public Object? Rssi { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Snr
 	/// </summary>
 	[DataMember(Name = "snr", EmitDefaultValue = false)]
-	public Object Snr { get; set; }
+	public Object? Snr { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DataRate
 	/// </summary>
 	[DataMember(Name = "dataRate", EmitDefaultValue = false)]
-	public Object DataRate { get; set; }
+	public Object? DataRate { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Port
 	/// </summary>
 	[DataMember(Name = "port", EmitDefaultValue = false)]
-	public Object Port { get; set; }
+	public Object? Port { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

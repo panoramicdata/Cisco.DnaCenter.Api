@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -55,7 +55,7 @@ public class GetSiteHealthResponseResponse
 	/// <param name="ApplicationGoodCount">ApplicationGoodCount.</param>
 	/// <param name="ApplicationTotalCount">ApplicationTotalCount.</param>
 	/// <param name="ApplicationBytesTotalCount">ApplicationBytesTotalCount.</param>
-	public GetSiteHealthResponseResponse(string? SiteName = default, string? SiteId = default, string? ParentSiteId = default, string? ParentSiteName = default, string? SiteType = default, Object Latitude = default, Object Longitude = default, string? HealthyNetworkDevicePercentage = default, string? HealthyClientsPercentage = default, string? ClientHealthWired = default, Object ClientHealthWireless = default, string? NumberOfClients = default, Object ClientNumberOfIssues = default, Object NetworkNumberOfIssues = default, string? NumberOfNetworkDevice = default, Object NetworkHealthAverage = default, string? NetworkHealthAccess = default, string? NetworkHealthCore = default, string? NetworkHealthDistribution = default, string? NetworkHealthRouter = default, Object NetworkHealthWireless = default, Object NetworkHealthOthers = default, string? NumberOfWiredClients = default, Object NumberOfWirelessClients = default, string? WiredGoodClients = default, Object WirelessGoodClients = default, Object ClientIssueCount = default, string? OverallGoodDevices = default, string? AccessGoodCount = default, string? AccessTotalCount = default, string? CoreGoodCount = default, string? CoreTotalCount = default, string? DistributionGoodCount = default, string? DistributionTotalCount = default, string? RouterGoodCount = default, string? RouterTotalCount = default, string? WirelessDeviceGoodCount = default, string? WirelessDeviceTotalCount = default, Object ApplicationHealth = default, Object ApplicationGoodCount = default, Object ApplicationTotalCount = default, Object ApplicationBytesTotalCount = default)
+	public GetSiteHealthResponseResponse(string? SiteName = default, string? SiteId = default, string? ParentSiteId = default, string? ParentSiteName = default, string? SiteType = default, Object? Latitude = default, Object? Longitude = default, string? HealthyNetworkDevicePercentage = default, string? HealthyClientsPercentage = default, string? ClientHealthWired = default, Object? ClientHealthWireless = default, string? NumberOfClients = default, Object? ClientNumberOfIssues = default, Object? NetworkNumberOfIssues = default, string? NumberOfNetworkDevice = default, Object? NetworkHealthAverage = default, string? NetworkHealthAccess = default, string? NetworkHealthCore = default, string? NetworkHealthDistribution = default, string? NetworkHealthRouter = default, Object? NetworkHealthWireless = default, Object? NetworkHealthOthers = default, string? NumberOfWiredClients = default, Object? NumberOfWirelessClients = default, string? WiredGoodClients = default, Object? WirelessGoodClients = default, Object? ClientIssueCount = default, string? OverallGoodDevices = default, string? AccessGoodCount = default, string? AccessTotalCount = default, string? CoreGoodCount = default, string? CoreTotalCount = default, string? DistributionGoodCount = default, string? DistributionTotalCount = default, string? RouterGoodCount = default, string? RouterTotalCount = default, string? WirelessDeviceGoodCount = default, string? WirelessDeviceTotalCount = default, Object? ApplicationHealth = default, Object? ApplicationGoodCount = default, Object? ApplicationTotalCount = default, Object? ApplicationBytesTotalCount = default)
 	{
 		this.SiteName = SiteName;
 		this.SiteId = SiteId;
@@ -135,13 +135,13 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets Latitude
 	/// </summary>
 	[DataMember(Name = "latitude", EmitDefaultValue = false)]
-	public Object Latitude { get; set; }
+	public Object? Latitude { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Longitude
 	/// </summary>
 	[DataMember(Name = "longitude", EmitDefaultValue = false)]
-	public Object Longitude { get; set; }
+	public Object? Longitude { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HealthyNetworkDevicePercentage
@@ -165,7 +165,7 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets ClientHealthWireless
 	/// </summary>
 	[DataMember(Name = "clientHealthWireless", EmitDefaultValue = false)]
-	public Object ClientHealthWireless { get; set; }
+	public Object? ClientHealthWireless { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NumberOfClients
@@ -177,13 +177,13 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets ClientNumberOfIssues
 	/// </summary>
 	[DataMember(Name = "clientNumberOfIssues", EmitDefaultValue = false)]
-	public Object ClientNumberOfIssues { get; set; }
+	public Object? ClientNumberOfIssues { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkNumberOfIssues
 	/// </summary>
 	[DataMember(Name = "networkNumberOfIssues", EmitDefaultValue = false)]
-	public Object NetworkNumberOfIssues { get; set; }
+	public Object? NetworkNumberOfIssues { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NumberOfNetworkDevice
@@ -195,7 +195,7 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets NetworkHealthAverage
 	/// </summary>
 	[DataMember(Name = "networkHealthAverage", EmitDefaultValue = false)]
-	public Object NetworkHealthAverage { get; set; }
+	public Object? NetworkHealthAverage { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkHealthAccess
@@ -225,13 +225,13 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets NetworkHealthWireless
 	/// </summary>
 	[DataMember(Name = "networkHealthWireless", EmitDefaultValue = false)]
-	public Object NetworkHealthWireless { get; set; }
+	public Object? NetworkHealthWireless { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkHealthOthers
 	/// </summary>
 	[DataMember(Name = "networkHealthOthers", EmitDefaultValue = false)]
-	public Object NetworkHealthOthers { get; set; }
+	public Object? NetworkHealthOthers { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NumberOfWiredClients
@@ -243,7 +243,7 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets NumberOfWirelessClients
 	/// </summary>
 	[DataMember(Name = "numberOfWirelessClients", EmitDefaultValue = false)]
-	public Object NumberOfWirelessClients { get; set; }
+	public Object? NumberOfWirelessClients { get; set; }
 
 	/// <summary>
 	/// Gets or Sets WiredGoodClients
@@ -255,13 +255,13 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets WirelessGoodClients
 	/// </summary>
 	[DataMember(Name = "wirelessGoodClients", EmitDefaultValue = false)]
-	public Object WirelessGoodClients { get; set; }
+	public Object? WirelessGoodClients { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ClientIssueCount
 	/// </summary>
 	[DataMember(Name = "clientIssueCount", EmitDefaultValue = false)]
-	public Object ClientIssueCount { get; set; }
+	public Object? ClientIssueCount { get; set; }
 
 	/// <summary>
 	/// Gets or Sets OverallGoodDevices
@@ -333,25 +333,25 @@ public class GetSiteHealthResponseResponse
 	/// Gets or Sets ApplicationHealth
 	/// </summary>
 	[DataMember(Name = "applicationHealth", EmitDefaultValue = false)]
-	public Object ApplicationHealth { get; set; }
+	public Object? ApplicationHealth { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApplicationGoodCount
 	/// </summary>
 	[DataMember(Name = "applicationGoodCount", EmitDefaultValue = false)]
-	public Object ApplicationGoodCount { get; set; }
+	public Object? ApplicationGoodCount { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApplicationTotalCount
 	/// </summary>
 	[DataMember(Name = "applicationTotalCount", EmitDefaultValue = false)]
-	public Object ApplicationTotalCount { get; set; }
+	public Object? ApplicationTotalCount { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApplicationBytesTotalCount
 	/// </summary>
 	[DataMember(Name = "applicationBytesTotalCount", EmitDefaultValue = false)]
-	public Object ApplicationBytesTotalCount { get; set; }
+	public Object? ApplicationBytesTotalCount { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

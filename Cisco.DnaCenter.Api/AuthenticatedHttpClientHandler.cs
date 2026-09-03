@@ -32,15 +32,15 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 	}
 
 	public AuthenticatedHttpClientHandler(
-		DnaCenterClient dnaCenterClient,
-		DnaCenterClientOptions options,
+		DnaCenterClient? dnaCenterClient,
+		DnaCenterClientOptions? options,
 		ILogger logger
 		)
 	{
-		_options = options;
-		_token = options.Token;
-		_userAgent = options.UserAgent;
-		_dnaCenterClient = dnaCenterClient;
+		_options = options ?? throw new ArgumentNullException(nameof(options));
+		_token = _options.Token;
+		_userAgent = _options.UserAgent;
+		_dnaCenterClient = dnaCenterClient ?? throw new ArgumentNullException(nameof(dnaCenterClient));
 		_logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
 		if (_options.IgnoreSslCertificateErrors)
@@ -48,13 +48,6 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			ServerCertificateCustomValidationCallback = DangerousAcceptAnyServerCertificateValidator;
 		}
 	}
-
-	private bool DangerousAcceptAnyServerCertificateValidator(
-		HttpRequestMessage arg1,
-		X509Certificate2 arg2,
-		X509Chain arg3,
-		SslPolicyErrors arg4)
-		=> true;
 
 	protected override async Task<HttpResponseMessage> SendAsync(
 		HttpRequestMessage request,
@@ -74,7 +67,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 
 			if (_token is null)
 			{
-				if (!request.RequestUri.AbsoluteUri.EndsWith("/dna/system/api/v1/auth/token"))
+				if (request.RequestUri?.AbsoluteUri.EndsWith("/dna/system/api/v1/auth/token") != true)
 				{
 					await _dnaCenterClient
 						.ConnectAsync(cancellationToken)
@@ -280,6 +273,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 						// RH I'm not sure if this is needed or not, in addition to the 401 logic above.
 						// Also, just setting _token to null is enough to allow acquisition of a new token (IsConnected might need to be false)
 						if (httpResponseMessage.StatusCode == HttpStatusCode.Unauthorized
+							&& httpResponseMessage.Content is not null
 							&& (await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false)).IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
 						{
 							if (attemptCount != 1)

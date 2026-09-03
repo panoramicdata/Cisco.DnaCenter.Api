@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class PathResponseResultResponse
 	/// <param name="NetworkElementsInfo">NetworkElementsInfo.</param>
 	/// <param name="Properties">Properties.</param>
 	/// <param name="Request">Request.</param>
-	public PathResponseResultResponse(PathResponseResultResponseDetailedStatus DetailedStatus = default, string? LastUpdate = default, List<PathResponseResultResponseNetworkElements> NetworkElements = default, List<PathResponseResultResponseNetworkElementsInfo> NetworkElementsInfo = default, List<string> Properties = default, FlowAnalysisListOutputResponse Request = default)
+	public PathResponseResultResponse(PathResponseResultResponseDetailedStatus? DetailedStatus = default, string? LastUpdate = default, List<PathResponseResultResponseNetworkElements>? NetworkElements = default, List<PathResponseResultResponseNetworkElementsInfo>? NetworkElementsInfo = default, List<string>? Properties = default, FlowAnalysisListOutputResponse? Request = default)
 	{
 		this.DetailedStatus = DetailedStatus;
 		this.LastUpdate = LastUpdate;
@@ -33,7 +33,7 @@ public class PathResponseResultResponse
 	/// Gets or Sets DetailedStatus
 	/// </summary>
 	[DataMember(Name = "detailedStatus", EmitDefaultValue = false)]
-	public PathResponseResultResponseDetailedStatus DetailedStatus { get; set; }
+	public PathResponseResultResponseDetailedStatus? DetailedStatus { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LastUpdate
@@ -45,25 +45,25 @@ public class PathResponseResultResponse
 	/// Gets or Sets NetworkElements
 	/// </summary>
 	[DataMember(Name = "networkElements", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseNetworkElements> NetworkElements { get; set; }
+	public List<PathResponseResultResponseNetworkElements>? NetworkElements { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkElementsInfo
 	/// </summary>
 	[DataMember(Name = "networkElementsInfo", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseNetworkElementsInfo> NetworkElementsInfo { get; set; }
+	public List<PathResponseResultResponseNetworkElementsInfo>? NetworkElementsInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Properties
 	/// </summary>
 	[DataMember(Name = "properties", EmitDefaultValue = false)]
-	public List<string> Properties { get; set; }
+	public List<string>? Properties { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Request
 	/// </summary>
 	[DataMember(Name = "request", EmitDefaultValue = false)]
-	public FlowAnalysisListOutputResponse Request { get; set; }
+	public FlowAnalysisListOutputResponse? Request { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

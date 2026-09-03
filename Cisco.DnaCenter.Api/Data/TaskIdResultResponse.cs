@@ -1,4 +1,4 @@
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using System.Text;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class TaskIdResultResponse
 	/// </summary>
 	/// <param name="TaskId">TaskId.</param>
 	/// <param name="Url">Url.</param>
-	public TaskIdResultResponse(string TaskId = default, string? Url = default)
+	public TaskIdResultResponse(string? TaskId = default, string? Url = default)
 	{
 		this.TaskId = TaskId;
 		this.Url = Url;
@@ -24,7 +24,7 @@ public class TaskIdResultResponse
 	/// Gets or Sets TaskId
 	/// </summary>
 	[DataMember(Name = "taskId", EmitDefaultValue = false)]
-	public string TaskId { get; set; }
+	public string? TaskId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Url

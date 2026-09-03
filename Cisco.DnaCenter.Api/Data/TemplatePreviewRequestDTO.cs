@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class TemplatePreviewRequestDto
 	/// </summary>
 	/// <param name="_Params">_Params.</param>
 	/// <param name="TemplateId">TemplateId.</param>
-	public TemplatePreviewRequestDto(Object _Params = default, string? TemplateId = default)
+	public TemplatePreviewRequestDto(Object? _Params = default, string? TemplateId = default)
 	{
 		this._Params = _Params;
 		this.TemplateId = TemplateId;
@@ -25,7 +25,7 @@ public class TemplatePreviewRequestDto
 	/// Gets or Sets _Params
 	/// </summary>
 	[DataMember(Name = "params", EmitDefaultValue = false)]
-	public Object _Params { get; set; }
+	public Object? _Params { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TemplateId

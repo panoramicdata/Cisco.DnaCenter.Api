@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// GetSiteHealthResponse
@@ -15,7 +15,7 @@ public class GetSiteHealthResponse
 	/// Initializes a new instance of the <see cref="GetSiteHealthResponse" /> class.
 	/// </summary>
 	/// <param name="Response">Response.</param>
-	public GetSiteHealthResponse(List<GetSiteHealthResponseResponse> Response)
+	public GetSiteHealthResponse(List<GetSiteHealthResponseResponse>? Response)
 	{
 		this.Response = Response;
 	}
@@ -24,7 +24,7 @@ public class GetSiteHealthResponse
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<GetSiteHealthResponseResponse> Response { get; set; }
+	public List<GetSiteHealthResponseResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

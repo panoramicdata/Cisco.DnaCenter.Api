@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class UpdateGlobalPoolRequestSettingsIppool
 	/// <param name="DhcpServerIps">DhcpServerIps.</param>
 	/// <param name="DnsServerIps">DnsServerIps.</param>
 	/// <param name="Id">Id.</param>
-	public UpdateGlobalPoolRequestSettingsIppool(string? IpPoolName = default, string? Gateway = default, List<string> DhcpServerIps = default, List<string> DnsServerIps = default, string? Id = default)
+	public UpdateGlobalPoolRequestSettingsIppool(string? IpPoolName = default, string? Gateway = default, List<string>? DhcpServerIps = default, List<string>? DnsServerIps = default, string? Id = default)
 	{
 		this.IpPoolName = IpPoolName;
 		this.Gateway = Gateway;
@@ -43,13 +43,13 @@ public class UpdateGlobalPoolRequestSettingsIppool
 	/// Gets or Sets DhcpServerIps
 	/// </summary>
 	[DataMember(Name = "dhcpServerIps", EmitDefaultValue = false)]
-	public List<string> DhcpServerIps { get; set; }
+	public List<string>? DhcpServerIps { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DnsServerIps
 	/// </summary>
 	[DataMember(Name = "dnsServerIps", EmitDefaultValue = false)]
-	public List<string> DnsServerIps { get; set; }
+	public List<string>? DnsServerIps { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id

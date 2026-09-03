@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -17,7 +17,7 @@ public class ProvisionNfvRequestCustomServices
 	/// <param name="Profile">Profile.</param>
 	/// <param name="Topology">Topology.</param>
 	/// <param name="ImageName">ImageName.</param>
-	public ProvisionNfvRequestCustomServices(string? Name = default, string? ApplicationType = default, string? Profile = default, ProvisionNfvRequestTopology Topology = default, string? ImageName = default)
+	public ProvisionNfvRequestCustomServices(string? Name = default, string? ApplicationType = default, string? Profile = default, ProvisionNfvRequestTopology? Topology = default, string? ImageName = default)
 	{
 		this.Name = Name;
 		this.ApplicationType = ApplicationType;
@@ -48,7 +48,7 @@ public class ProvisionNfvRequestCustomServices
 	/// Gets or Sets Topology
 	/// </summary>
 	[DataMember(Name = "topology", EmitDefaultValue = false)]
-	public ProvisionNfvRequestTopology Topology { get; set; }
+	public ProvisionNfvRequestTopology? Topology { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ImageName

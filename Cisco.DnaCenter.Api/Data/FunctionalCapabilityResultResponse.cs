@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -59,7 +59,7 @@ public class FunctionalCapabilityResultResponse
 	/// <param name="FunctionName">FunctionName.</param>
 	/// <param name="FunctionOpState">FunctionOpState.</param>
 	/// <param name="Id">Id.</param>
-	public FunctionalCapabilityResultResponse(Object AttributeInfo = default, List<FunctionalCapabilityResultResponseFunctionDetails> FunctionDetails = default, string? FunctionName = default, FunctionOpStateEnum? FunctionOpState = default, string? Id = default)
+	public FunctionalCapabilityResultResponse(Object? AttributeInfo = default, List<FunctionalCapabilityResultResponseFunctionDetails>? FunctionDetails = default, string? FunctionName = default, FunctionOpStateEnum? FunctionOpState = default, string? Id = default)
 	{
 		this.AttributeInfo = AttributeInfo;
 		this.FunctionDetails = FunctionDetails;
@@ -72,13 +72,13 @@ public class FunctionalCapabilityResultResponse
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets FunctionDetails
 	/// </summary>
 	[DataMember(Name = "functionDetails", EmitDefaultValue = false)]
-	public List<FunctionalCapabilityResultResponseFunctionDetails> FunctionDetails { get; set; }
+	public List<FunctionalCapabilityResultResponseFunctionDetails>? FunctionDetails { get; set; }
 
 	/// <summary>
 	/// Gets or Sets FunctionName

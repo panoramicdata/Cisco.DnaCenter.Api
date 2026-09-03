@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -20,7 +20,7 @@ public class ImageInfoListResponseProfileInfo
 	/// <param name="ProfileName">ProfileName.</param>
 	/// <param name="Shares">Shares.</param>
 	/// <param name="VCpu">VCpu.</param>
-	public ImageInfoListResponseProfileInfo(string? Description = default, Object ExtendedAttributes = default, int? Memory = default, string? ProductType = default, string? ProfileName = default, int? Shares = default, int? VCpu = default)
+	public ImageInfoListResponseProfileInfo(string? Description = default, Object? ExtendedAttributes = default, int? Memory = default, string? ProductType = default, string? ProfileName = default, int? Shares = default, int? VCpu = default)
 	{
 		this.Description = Description;
 		this.ExtendedAttributes = ExtendedAttributes;
@@ -41,7 +41,7 @@ public class ImageInfoListResponseProfileInfo
 	/// Gets or Sets ExtendedAttributes
 	/// </summary>
 	[DataMember(Name = "extendedAttributes", EmitDefaultValue = false)]
-	public Object ExtendedAttributes { get; set; }
+	public Object? ExtendedAttributes { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Memory

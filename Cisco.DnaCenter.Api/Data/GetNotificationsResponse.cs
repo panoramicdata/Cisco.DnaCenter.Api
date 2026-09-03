@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -28,7 +28,7 @@ public class GetNotificationsResponse
 	/// <param name="Context">Context.</param>
 	/// <param name="Details">Details.</param>
 	/// <param name="TenantId">TenantId.</param>
-	public GetNotificationsResponse(string? InstanceId = default, string? EventId = default, string? Name = default, string? _Namespace = default, string? Description = default, string? Type = default, string? Category = default, decimal? Severity = default, decimal? Timestamp = default, string? Domain = default, string? SubDomain = default, string? Source = default, string? Context = default, Object Details = default, string? TenantId = default)
+	public GetNotificationsResponse(string? InstanceId = default, string? EventId = default, string? Name = default, string? _Namespace = default, string? Description = default, string? Type = default, string? Category = default, decimal? Severity = default, decimal? Timestamp = default, string? Domain = default, string? SubDomain = default, string? Source = default, string? Context = default, Object? Details = default, string? TenantId = default)
 	{
 		this.InstanceId = InstanceId;
 		this.EventId = EventId;
@@ -129,7 +129,7 @@ public class GetNotificationsResponse
 	/// Gets or Sets Details
 	/// </summary>
 	[DataMember(Name = "details", EmitDefaultValue = false)]
-	public Object Details { get; set; }
+	public Object? Details { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TenantId

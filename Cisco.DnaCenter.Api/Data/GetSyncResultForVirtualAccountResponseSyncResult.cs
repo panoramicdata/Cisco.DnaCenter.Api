@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetSyncResultForVirtualAccountResponseSyncResult
 	/// </summary>
 	/// <param name="SyncList">SyncList.</param>
 	/// <param name="SyncMsg">SyncMsg.</param>
-	public GetSyncResultForVirtualAccountResponseSyncResult(List<GetSyncResultForVirtualAccountResponseSyncResultSyncList> SyncList = default, string? SyncMsg = default)
+	public GetSyncResultForVirtualAccountResponseSyncResult(List<GetSyncResultForVirtualAccountResponseSyncResultSyncList>? SyncList = default, string? SyncMsg = default)
 	{
 		this.SyncList = SyncList;
 		this.SyncMsg = SyncMsg;
@@ -25,7 +25,7 @@ public class GetSyncResultForVirtualAccountResponseSyncResult
 	/// Gets or Sets SyncList
 	/// </summary>
 	[DataMember(Name = "syncList", EmitDefaultValue = false)]
-	public List<GetSyncResultForVirtualAccountResponseSyncResultSyncList> SyncList { get; set; }
+	public List<GetSyncResultForVirtualAccountResponseSyncResultSyncList>? SyncList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SyncMsg

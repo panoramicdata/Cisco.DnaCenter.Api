@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class PathResponseResultResponseEgressInterface
 	/// </summary>
 	/// <param name="PhysicalInterface">PhysicalInterface.</param>
 	/// <param name="VirtualInterface">VirtualInterface.</param>
-	public PathResponseResultResponseEgressInterface(PathResponseResultResponseEgressPhysicalInterface PhysicalInterface = default, List<PathResponseResultResponseEgressPhysicalInterface> VirtualInterface = default)
+	public PathResponseResultResponseEgressInterface(PathResponseResultResponseEgressPhysicalInterface? PhysicalInterface = default, List<PathResponseResultResponseEgressPhysicalInterface>? VirtualInterface = default)
 	{
 		this.PhysicalInterface = PhysicalInterface;
 		this.VirtualInterface = VirtualInterface;
@@ -25,13 +25,13 @@ public class PathResponseResultResponseEgressInterface
 	/// Gets or Sets PhysicalInterface
 	/// </summary>
 	[DataMember(Name = "physicalInterface", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterface PhysicalInterface { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterface? PhysicalInterface { get; set; }
 
 	/// <summary>
 	/// Gets or Sets VirtualInterface
 	/// </summary>
 	[DataMember(Name = "virtualInterface", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseEgressPhysicalInterface> VirtualInterface { get; set; }
+	public List<PathResponseResultResponseEgressPhysicalInterface>? VirtualInterface { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

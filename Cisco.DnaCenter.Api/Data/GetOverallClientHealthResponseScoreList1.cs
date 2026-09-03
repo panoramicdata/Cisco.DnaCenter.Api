@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -21,13 +21,13 @@ public class GetOverallClientHealthResponseScoreList1
 	/// <param name="Endtime">Endtime.</param>
 	/// <param name="ScoreList">ScoreList.</param>
 	public GetOverallClientHealthResponseScoreList1(
-		GetOverallClientHealthResponseScoreCategory ScoreCategory = default,
+		GetOverallClientHealthResponseScoreCategory? ScoreCategory = default,
 		int? ScoreValue = default,
 		int? ClientCount = default,
 		decimal? ClientUniqueCount = default,
 		long? Starttime = default,
 		long? Endtime = default,
-		List<GetOverallClientHealthResponseScoreList> ScoreList = default)
+		List<GetOverallClientHealthResponseScoreList>? ScoreList = default)
 	{
 		this.ScoreCategory = ScoreCategory;
 		this.ScoreValue = ScoreValue;
@@ -42,7 +42,7 @@ public class GetOverallClientHealthResponseScoreList1
 	/// Gets or Sets ScoreCategory
 	/// </summary>
 	[DataMember(Name = "scoreCategory", EmitDefaultValue = false)]
-	public GetOverallClientHealthResponseScoreCategory ScoreCategory { get; set; }
+	public GetOverallClientHealthResponseScoreCategory? ScoreCategory { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ScoreValue
@@ -78,7 +78,7 @@ public class GetOverallClientHealthResponseScoreList1
 	/// Gets or Sets ScoreList
 	/// </summary>
 	[DataMember(Name = "scoreList", EmitDefaultValue = false)]
-	public List<GetOverallClientHealthResponseScoreList> ScoreList { get; set; }
+	public List<GetOverallClientHealthResponseScoreList>? ScoreList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

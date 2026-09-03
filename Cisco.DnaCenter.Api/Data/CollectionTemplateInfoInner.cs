@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class CollectionTemplateInfoInner
 	/// <param name="TemplateId">TemplateId.</param>
 	/// <param name="VersionsInfo">VersionsInfo.</param>
 	/// <param name="Composite">Composite.</param>
-	public CollectionTemplateInfoInner(string? Name = default, string? ProjectName = default, string? ProjectId = default, string? TemplateId = default, List<CollectionTemplateInfoInnerVersionsInfo> VersionsInfo = default, bool? Composite = default)
+	public CollectionTemplateInfoInner(string? Name = default, string? ProjectName = default, string? ProjectId = default, string? TemplateId = default, List<CollectionTemplateInfoInnerVersionsInfo>? VersionsInfo = default, bool? Composite = default)
 	{
 		this.Name = Name;
 		this.ProjectName = ProjectName;
@@ -57,7 +57,7 @@ public class CollectionTemplateInfoInner
 	/// Gets or Sets VersionsInfo
 	/// </summary>
 	[DataMember(Name = "versionsInfo", EmitDefaultValue = false)]
-	public List<CollectionTemplateInfoInnerVersionsInfo> VersionsInfo { get; set; }
+	public List<CollectionTemplateInfoInnerVersionsInfo>? VersionsInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Composite

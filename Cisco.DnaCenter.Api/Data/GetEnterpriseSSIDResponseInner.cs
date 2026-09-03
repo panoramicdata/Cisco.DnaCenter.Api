@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class GetEnterpriseSsidResponseInner
 	/// <param name="GroupUuid">GroupUuid.</param>
 	/// <param name="InheritedGroupUuid">InheritedGroupUuid.</param>
 	/// <param name="InheritedGroupName">InheritedGroupName.</param>
-	public GetEnterpriseSsidResponseInner(string? InstanceUuid = default, int? _Version = default, List<GetEnterpriseSsidResponseInnerSsidDetails> SsidDetails = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
+	public GetEnterpriseSsidResponseInner(string? InstanceUuid = default, int? _Version = default, List<GetEnterpriseSsidResponseInnerSsidDetails>? SsidDetails = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
 	{
 		this.InstanceUuid = InstanceUuid;
 		this._Version = _Version;
@@ -45,7 +45,7 @@ public class GetEnterpriseSsidResponseInner
 	/// Gets or Sets SsidDetails
 	/// </summary>
 	[DataMember(Name = "ssidDetails", EmitDefaultValue = false)]
-	public List<GetEnterpriseSsidResponseInnerSsidDetails> SsidDetails { get; set; }
+	public List<GetEnterpriseSsidResponseInnerSsidDetails>? SsidDetails { get; set; }
 
 	/// <summary>
 	/// Gets or Sets GroupUuid

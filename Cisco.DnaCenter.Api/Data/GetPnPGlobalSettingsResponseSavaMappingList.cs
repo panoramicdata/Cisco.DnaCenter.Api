@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -25,7 +25,7 @@ public class GetPnpGlobalSettingsResponseSavaMappingList
 	/// <param name="VirtualAccountId">VirtualAccountId.</param>
 	/// <param name="AutoSyncPeriod">AutoSyncPeriod.</param>
 	/// <param name="SyncResultStr">SyncResultStr.</param>
-	public GetPnpGlobalSettingsResponseSavaMappingList(string? SyncStatus = default, decimal? SyncStartTime = default, GetSyncResultForVirtualAccountResponseSyncResult SyncResult = default, decimal? LastSync = default, string? TenantId = default, GetPnpGlobalSettingsResponseProfile Profile = default, string? Token = default, decimal? Expiry = default, string? CcoUser = default, string? SmartAccountId = default, string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default)
+	public GetPnpGlobalSettingsResponseSavaMappingList(string? SyncStatus = default, decimal? SyncStartTime = default, GetSyncResultForVirtualAccountResponseSyncResult? SyncResult = default, decimal? LastSync = default, string? TenantId = default, GetPnpGlobalSettingsResponseProfile? Profile = default, string? Token = default, decimal? Expiry = default, string? CcoUser = default, string? SmartAccountId = default, string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default)
 	{
 		this.SyncStatus = SyncStatus;
 		this.SyncStartTime = SyncStartTime;
@@ -58,7 +58,7 @@ public class GetPnpGlobalSettingsResponseSavaMappingList
 	/// Gets or Sets SyncResult
 	/// </summary>
 	[DataMember(Name = "syncResult", EmitDefaultValue = false)]
-	public GetSyncResultForVirtualAccountResponseSyncResult SyncResult { get; set; }
+	public GetSyncResultForVirtualAccountResponseSyncResult? SyncResult { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LastSync
@@ -76,7 +76,7 @@ public class GetPnpGlobalSettingsResponseSavaMappingList
 	/// Gets or Sets Profile
 	/// </summary>
 	[DataMember(Name = "profile", EmitDefaultValue = false)]
-	public GetPnpGlobalSettingsResponseProfile Profile { get; set; }
+	public GetPnpGlobalSettingsResponseProfile? Profile { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Token

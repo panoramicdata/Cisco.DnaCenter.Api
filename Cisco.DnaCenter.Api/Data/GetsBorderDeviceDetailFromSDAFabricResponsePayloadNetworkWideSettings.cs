@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -30,7 +30,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettin
 	/// <param name="Ntp">Ntp.</param>
 	/// <param name="Snmp">Snmp.</param>
 	/// <param name="Syslogs">Syslogs.</param>
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object> Aaa = default, List<Object> Cmx = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp> Dhcp = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns> Dns = default, List<Object> Ldap = default, List<Object> NativeVlan = default, List<Object> Netflow = default, List<Object> Ntp = default, List<Object> Snmp = default, List<Object> Syslogs = default)
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object>? Aaa = default, List<Object>? Cmx = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp>? Dhcp = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns>? Dns = default, List<Object>? Ldap = default, List<Object>? NativeVlan = default, List<Object>? Netflow = default, List<Object>? Ntp = default, List<Object>? Snmp = default, List<Object>? Syslogs = default)
 	{
 		this.Id = Id;
 		this.InstanceId = InstanceId;
@@ -90,61 +90,61 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettin
 	/// Gets or Sets Aaa
 	/// </summary>
 	[DataMember(Name = "aaa", EmitDefaultValue = false)]
-	public List<Object> Aaa { get; set; }
+	public List<Object>? Aaa { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Cmx
 	/// </summary>
 	[DataMember(Name = "cmx", EmitDefaultValue = false)]
-	public List<Object> Cmx { get; set; }
+	public List<Object>? Cmx { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Dhcp
 	/// </summary>
 	[DataMember(Name = "dhcp", EmitDefaultValue = false)]
-	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp> Dhcp { get; set; }
+	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDhcp>? Dhcp { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Dns
 	/// </summary>
 	[DataMember(Name = "dns", EmitDefaultValue = false)]
-	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns> Dns { get; set; }
+	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadNetworkWideSettingsDns>? Dns { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ldap
 	/// </summary>
 	[DataMember(Name = "ldap", EmitDefaultValue = false)]
-	public List<Object> Ldap { get; set; }
+	public List<Object>? Ldap { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NativeVlan
 	/// </summary>
 	[DataMember(Name = "nativeVlan", EmitDefaultValue = false)]
-	public List<Object> NativeVlan { get; set; }
+	public List<Object>? NativeVlan { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Netflow
 	/// </summary>
 	[DataMember(Name = "netflow", EmitDefaultValue = false)]
-	public List<Object> Netflow { get; set; }
+	public List<Object>? Netflow { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ntp
 	/// </summary>
 	[DataMember(Name = "ntp", EmitDefaultValue = false)]
-	public List<Object> Ntp { get; set; }
+	public List<Object>? Ntp { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Snmp
 	/// </summary>
 	[DataMember(Name = "snmp", EmitDefaultValue = false)]
-	public List<Object> Snmp { get; set; }
+	public List<Object>? Snmp { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Syslogs
 	/// </summary>
 	[DataMember(Name = "syslogs", EmitDefaultValue = false)]
-	public List<Object> Syslogs { get; set; }
+	public List<Object>? Syslogs { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

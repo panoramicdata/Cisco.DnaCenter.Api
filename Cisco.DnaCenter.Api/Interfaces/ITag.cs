@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +18,8 @@ public interface ITags
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="id">Tag ID</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="Content_Type">Content_Type.</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/tag/{id}/member")]
 	Task<TaskIdResult> AddMembersAsync(
@@ -33,6 +35,7 @@ public interface ITags
 	/// Creates tag with specified tag attributes
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/tag")]
 	Task<TaskIdResult> CreateAsync(
@@ -46,6 +49,7 @@ public interface ITags
 	/// Deletes a tag specified by id
 	/// </remarks>
 	/// <param name="id">Tag ID</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Delete("/dna/intent/api/v1/tag/{id}")]
 	Task<TaskIdResult> DeleteAsync(
@@ -69,20 +73,21 @@ public interface ITags
 	/// <param name="sortBy">Only supported attribute is name. SortyBy is mandatory when order is used. (optional)</param>
 	/// <param name="order">Available values are asc and des (optional)</param>
 	/// <param name="systemTag">systemTag (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TagListResult</returns>
 	[Get("/dna/intent/api/v1/tag")]
 	Task<TagListResult> GetAllAsync(
-		[AliasAs("name")]string name = null,
-		[AliasAs("additionalInfo_nameSpace")]string additionalInfo_nameSpace = null,
-		[AliasAs("additionalInfo_attributes")]string additionalInfo_attributes = null,
-		[AliasAs("level")]string level = null,
-		[AliasAs("offset")]string offset = null,
-		[AliasAs("limit")]string limit = null,
-		[AliasAs("size")]string size = null,
-		[AliasAs("field")]string field = null,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("order")]string order = null,
-		[AliasAs("systemTag")]string systemTag = null,
+		[AliasAs("name")]string? name = null,
+		[AliasAs("additionalInfo_nameSpace")]string? additionalInfo_nameSpace = null,
+		[AliasAs("additionalInfo_attributes")]string? additionalInfo_attributes = null,
+		[AliasAs("level")]string? level = null,
+		[AliasAs("offset")]string? offset = null,
+		[AliasAs("limit")]string? limit = null,
+		[AliasAs("size")]string? size = null,
+		[AliasAs("field")]string? field = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("order")]string? order = null,
+		[AliasAs("systemTag")]string? systemTag = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -92,6 +97,7 @@ public interface ITags
 	/// Returns tag specified by Id
 	/// </remarks>
 	/// <param name="id">Tag ID</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TagResult</returns>
 	[Get("/dna/intent/api/v1/tag/{id}")]
 	Task<TagResult> GetByIdAsync(
@@ -110,15 +116,16 @@ public interface ITags
 	/// <param name="level">levelArg (optional)</param>
 	/// <param name="size">size in kilobytes(KB) (optional)</param>
 	/// <param name="systemTag">systemTag (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountResult</returns>
 	[Get("/dna/intent/api/v1/tag/count")]
 	Task<CountResult> GetCountAsync(
-		[AliasAs("name")]string name = null,
-		[AliasAs("_nameSpace")]string _nameSpace = null,
-		[AliasAs("attributeName")]string attributeName = null,
-		[AliasAs("level")]string level = null,
-		[AliasAs("size")]string size = null,
-		[AliasAs("systemTag")]string systemTag = null,
+		[AliasAs("name")]string? name = null,
+		[AliasAs("_nameSpace")]string? _nameSpace = null,
+		[AliasAs("attributeName")]string? attributeName = null,
+		[AliasAs("level")]string? level = null,
+		[AliasAs("size")]string? size = null,
+		[AliasAs("systemTag")]string? systemTag = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -131,13 +138,14 @@ public interface ITags
 	/// <param name="memberType">memberType</param>
 	/// <param name="memberAssociationType">memberAssociationType (optional)</param>
 	/// <param name="level">level (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountResult</returns>
 	[Get("/dna/intent/api/v1/tag/{id}/member/count")]
 	Task<CountResult> GetMemberCountAsync(
 		[AliasAs("id")]string id,
 		[AliasAs("memberType")]string memberType,
-		[AliasAs("memberAssociationType")]string memberAssociationType = null,
-		[AliasAs("level")]string level = null,
+		[AliasAs("memberAssociationType")]string? memberAssociationType = null,
+		[AliasAs("level")]string? level = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -152,15 +160,16 @@ public interface ITags
 	/// <param name="limit">Used to Number of maximum members to return in the result (optional)</param>
 	/// <param name="memberAssociationType">Indicates how the member is associated with the tag. Possible values and description. 1) DYNAMIC : The member is associated to the tag through rules. 2) STATIC ??? The member is associated to the tag manually. 3) MIXED ??? The member is associated manually and also satisfies the rule defined for the tag (optional)</param>
 	/// <param name="level">level (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TagMembersResult</returns>
 	[Get("/dna/intent/api/v1/tag/{id}/member")]
 	Task<TagMembersResult> GetMembersByIdAsync(
 		[AliasAs("id")]string id,
 		[AliasAs("memberType")]string memberType,
-		[AliasAs("offset")]string offset = null,
-		[AliasAs("limit")]string limit = null,
-		[AliasAs("memberAssociationType")]string memberAssociationType = null,
-		[AliasAs("level")]string level = null,
+		[AliasAs("offset")]string? offset = null,
+		[AliasAs("limit")]string? limit = null,
+		[AliasAs("memberAssociationType")]string? memberAssociationType = null,
+		[AliasAs("level")]string? level = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -182,6 +191,7 @@ public interface ITags
 	/// </remarks>
 	/// <param name="id">Tag ID</param>
 	/// <param name="memberId">TagMember id to be removed from tag</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Delete("/dna/intent/api/v1/tag/{id}/member/{memberId}")]
 	Task<TaskIdResult> RemoveMemberAsync(
@@ -196,6 +206,7 @@ public interface ITags
 	/// Updates a tag specified by id
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/tag")]
 	Task<TaskIdResult> UpdateAsync(
@@ -209,6 +220,7 @@ public interface ITags
 	/// Updates tag membership. As part of the request payload through this API, only the specified members are added / retained to the given input tags. Possible values of memberType attribute in the request payload can be queried by using the /tag/member/type API
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/tag/member")]
 	Task<TaskIdResult> UpdateMembershipAsync(

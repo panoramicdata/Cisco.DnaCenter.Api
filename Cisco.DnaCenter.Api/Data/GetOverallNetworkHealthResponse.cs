@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -24,7 +24,7 @@ public class GetOverallNetworkHealthResponse
 	/// <param name="MonitoredUnHealthyDevices">MonitoredUnHealthyDevices.</param>
 	/// <param name="UnMonitoredDevices">UnMonitoredDevices.</param>
 	/// <param name="HealthDistirubution">HealthDistirubution.</param>
-	public GetOverallNetworkHealthResponse(string? _Version = default, List<GetOverallNetworkHealthResponseResponse> Response = default, string? MeasuredBy = default, Object LatestMeasuredByEntity = default, int? LatestHealthScore = default, int? MonitoredDevices = default, int? MonitoredHealthyDevices = default, int? MonitoredUnHealthyDevices = default, decimal? UnMonitoredDevices = default, List<GetOverallNetworkHealthResponseHealthDistirubution> HealthDistirubution = default)
+	public GetOverallNetworkHealthResponse(string? _Version = default, List<GetOverallNetworkHealthResponseResponse>? Response = default, string? MeasuredBy = default, Object? LatestMeasuredByEntity = default, int? LatestHealthScore = default, int? MonitoredDevices = default, int? MonitoredHealthyDevices = default, int? MonitoredUnHealthyDevices = default, decimal? UnMonitoredDevices = default, List<GetOverallNetworkHealthResponseHealthDistirubution>? HealthDistirubution = default)
 	{
 		this._Version = _Version;
 		this.Response = Response;
@@ -48,7 +48,7 @@ public class GetOverallNetworkHealthResponse
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<GetOverallNetworkHealthResponseResponse> Response { get; set; }
+	public List<GetOverallNetworkHealthResponseResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MeasuredBy
@@ -60,7 +60,7 @@ public class GetOverallNetworkHealthResponse
 	/// Gets or Sets LatestMeasuredByEntity
 	/// </summary>
 	[DataMember(Name = "latestMeasuredByEntity", EmitDefaultValue = false)]
-	public Object LatestMeasuredByEntity { get; set; }
+	public Object? LatestMeasuredByEntity { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LatestHealthScore
@@ -96,7 +96,7 @@ public class GetOverallNetworkHealthResponse
 	/// Gets or Sets HealthDistirubution
 	/// </summary>
 	[DataMember(Name = "healthDistirubution", EmitDefaultValue = false)]
-	public List<GetOverallNetworkHealthResponseHealthDistirubution> HealthDistirubution { get; set; }
+	public List<GetOverallNetworkHealthResponseHealthDistirubution>? HealthDistirubution { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

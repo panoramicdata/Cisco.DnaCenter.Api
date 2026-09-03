@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -27,7 +27,7 @@ public class GetDeviceDetailsByIpResponseProvisionDetails
 		string? Duration = default,
 		string? StatusMessage = default,
 		string? Status = default,
-		List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes> TaskNodes = default,
+		List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes>? TaskNodes = default,
 		string? Topology = default,
 		string? BeginStep = default)
 	{
@@ -75,7 +75,7 @@ public class GetDeviceDetailsByIpResponseProvisionDetails
 	/// Gets or Sets TaskNodes
 	/// </summary>
 	[DataMember(Name = "taskNodes", EmitDefaultValue = false)]
-	public List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes> TaskNodes { get; set; }
+	public List<GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes>? TaskNodes { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Topology

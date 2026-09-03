@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,6 +28,7 @@ public interface ICommandRunner
 	/// Submit request for read-only CLIs
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/network-device-poller/cli/read-request")]
 	Task<TaskIdResult> RunReadOnlyCommandsOnDevicesToGetTheirRealTimeConfigurationAsync(

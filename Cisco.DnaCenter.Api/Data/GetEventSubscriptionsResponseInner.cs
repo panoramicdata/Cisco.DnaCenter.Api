@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class GetEventSubscriptionsResponseInner
 	/// <param name="Description">Description.</param>
 	/// <param name="SubscriptionEndpoints">SubscriptionEndpoints.</param>
 	/// <param name="Filter">Filter.</param>
-	public GetEventSubscriptionsResponseInner(string? _Version = default, string? Name = default, string? Description = default, List<GetEventSubscriptionsResponseInnerSubscriptionEndpoints> SubscriptionEndpoints = default, CreateEventSubscriptionsRequestInnerFilter Filter = default)
+	public GetEventSubscriptionsResponseInner(string? _Version = default, string? Name = default, string? Description = default, List<GetEventSubscriptionsResponseInnerSubscriptionEndpoints>? SubscriptionEndpoints = default, CreateEventSubscriptionsRequestInnerFilter? Filter = default)
 	{
 		this._Version = _Version;
 		this.Name = Name;
@@ -49,13 +49,13 @@ public class GetEventSubscriptionsResponseInner
 	/// Gets or Sets SubscriptionEndpoints
 	/// </summary>
 	[DataMember(Name = "subscriptionEndpoints", EmitDefaultValue = false)]
-	public List<GetEventSubscriptionsResponseInnerSubscriptionEndpoints> SubscriptionEndpoints { get; set; }
+	public List<GetEventSubscriptionsResponseInnerSubscriptionEndpoints>? SubscriptionEndpoints { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Filter
 	/// </summary>
 	[DataMember(Name = "filter", EmitDefaultValue = false)]
-	public CreateEventSubscriptionsRequestInnerFilter Filter { get; set; }
+	public CreateEventSubscriptionsRequestInnerFilter? Filter { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

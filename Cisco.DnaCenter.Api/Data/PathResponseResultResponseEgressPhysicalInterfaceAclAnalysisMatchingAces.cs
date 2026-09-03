@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchin
 	/// <param name="Ace">Ace.</param>
 	/// <param name="MatchingPorts">MatchingPorts.</param>
 	/// <param name="Result">Result.</param>
-	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingAces(string? Ace = default, List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingPorts> MatchingPorts = default, string? Result = default)
+	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingAces(string? Ace = default, List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingPorts>? MatchingPorts = default, string? Result = default)
 	{
 		this.Ace = Ace;
 		this.MatchingPorts = MatchingPorts;
@@ -33,7 +33,7 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchin
 	/// Gets or Sets MatchingPorts
 	/// </summary>
 	[DataMember(Name = "matchingPorts", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingPorts> MatchingPorts { get; set; }
+	public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingPorts>? MatchingPorts { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Result

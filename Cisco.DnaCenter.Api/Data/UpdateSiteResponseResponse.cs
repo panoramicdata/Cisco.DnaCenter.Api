@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -31,7 +31,7 @@ public class UpdateSiteResponseResponse
 		string? Progress = default,
 		string? Data = default,
 		string? ServiceType = default,
-		List<string> OperationIdList = default,
+		List<string>? OperationIdList = default,
 		string? IsError = default,
 		string? RootId = default,
 		string? InstanceTenantId = default,
@@ -90,7 +90,7 @@ public class UpdateSiteResponseResponse
 	/// Gets or Sets OperationIdList
 	/// </summary>
 	[DataMember(Name = "operationIdList", EmitDefaultValue = false)]
-	public List<string> OperationIdList { get; set; }
+	public List<string>? OperationIdList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IsError

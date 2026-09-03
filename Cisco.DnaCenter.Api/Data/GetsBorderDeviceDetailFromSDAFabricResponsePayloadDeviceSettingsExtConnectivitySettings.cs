@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -26,7 +26,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExt
 	/// <param name="PolicySgtTag">PolicySgtTag.</param>
 	/// <param name="L2Handoff">L2Handoff.</param>
 	/// <param name="L3Handoff">L3Handoff.</param>
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, string? ExternalDomainProtocolNumber = default, string? InterfaceUuid = default, bool? PolicyPropagationEnabled = default, decimal? PolicySgtTag = default, List<Object> L2Handoff = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff> L3Handoff = default)
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, string? ExternalDomainProtocolNumber = default, string? InterfaceUuid = default, bool? PolicyPropagationEnabled = default, decimal? PolicySgtTag = default, List<Object>? L2Handoff = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff>? L3Handoff = default)
 	{
 		this.Id = Id;
 		this.InstanceId = InstanceId;
@@ -106,13 +106,13 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExt
 	/// Gets or Sets L2Handoff
 	/// </summary>
 	[DataMember(Name = "l2Handoff", EmitDefaultValue = false)]
-	public List<Object> L2Handoff { get; set; }
+	public List<Object>? L2Handoff { get; set; }
 
 	/// <summary>
 	/// Gets or Sets L3Handoff
 	/// </summary>
 	[DataMember(Name = "l3Handoff", EmitDefaultValue = false)]
-	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff> L3Handoff { get; set; }
+	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsL3Handoff>? L3Handoff { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

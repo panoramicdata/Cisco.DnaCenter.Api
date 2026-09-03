@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class TagDtoRules
 	/// <param name="Operation">Operation.</param>
 	/// <param name="Name">Name.</param>
 	/// <param name="Value">Value.</param>
-	public TagDtoRules(List<string> Values = default, List<string> Items = default, string? Operation = default, string? Name = default, string? Value = default)
+	public TagDtoRules(List<string>? Values = default, List<string>? Items = default, string? Operation = default, string? Name = default, string? Value = default)
 	{
 		this.Values = Values;
 		this.Items = Items;
@@ -31,13 +31,13 @@ public class TagDtoRules
 	/// Gets or Sets Values
 	/// </summary>
 	[DataMember(Name = "values", EmitDefaultValue = false)]
-	public List<string> Values { get; set; }
+	public List<string>? Values { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Items
 	/// </summary>
 	[DataMember(Name = "items", EmitDefaultValue = false)]
-	public List<string> Items { get; set; }
+	public List<string>? Items { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Operation

@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// GetIssueEnrichmentDetailsResponse
@@ -11,11 +11,11 @@ public class GetIssueEnrichmentDetailsResponse
 	/// </summary>
 	public GetIssueEnrichmentDetailsResponse() : this(default) { }
 
-	// <summary>
+	/// <summary>
 	/// Initializes a new instance of the <see cref="GetIssueEnrichmentDetailsResponse" /> class.
 	/// </summary>
 	/// <param name="IssueDetails">IssueDetails.</param>
-	public GetIssueEnrichmentDetailsResponse(GetIssueEnrichmentDetailsResponseIssueDetails IssueDetails)
+	public GetIssueEnrichmentDetailsResponse(GetIssueEnrichmentDetailsResponseIssueDetails? IssueDetails)
 	{
 		this.IssueDetails = IssueDetails;
 	}
@@ -24,7 +24,7 @@ public class GetIssueEnrichmentDetailsResponse
 	/// Gets or Sets IssueDetails
 	/// </summary>
 	[DataMember(Name = "issueDetails", EmitDefaultValue = false)]
-	public GetIssueEnrichmentDetailsResponseIssueDetails IssueDetails { get; set; }
+	public GetIssueEnrichmentDetailsResponseIssueDetails? IssueDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

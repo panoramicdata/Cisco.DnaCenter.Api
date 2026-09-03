@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class GetClientEnrichmentDetailsResponseInner
 	/// <param name="UserDetails">UserDetails.</param>
 	/// <param name="ConnectedDevice">ConnectedDevice.</param>
 	/// <param name="IssueDetails">IssueDetails.</param>
-	public GetClientEnrichmentDetailsResponseInner(GetClientEnrichmentDetailsResponseInnerUserDetails UserDetails = default, List<GetClientEnrichmentDetailsResponseInnerConnectedDevice> ConnectedDevice = default, GetClientEnrichmentDetailsResponseInnerIssueDetails IssueDetails = default)
+	public GetClientEnrichmentDetailsResponseInner(GetClientEnrichmentDetailsResponseInnerUserDetails? UserDetails = default, List<GetClientEnrichmentDetailsResponseInnerConnectedDevice>? ConnectedDevice = default, GetClientEnrichmentDetailsResponseInnerIssueDetails? IssueDetails = default)
 	{
 		this.UserDetails = UserDetails;
 		this.ConnectedDevice = ConnectedDevice;
@@ -27,19 +27,19 @@ public class GetClientEnrichmentDetailsResponseInner
 	/// Gets or Sets UserDetails
 	/// </summary>
 	[DataMember(Name = "userDetails", EmitDefaultValue = false)]
-	public GetClientEnrichmentDetailsResponseInnerUserDetails UserDetails { get; set; }
+	public GetClientEnrichmentDetailsResponseInnerUserDetails? UserDetails { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConnectedDevice
 	/// </summary>
 	[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
-	public List<GetClientEnrichmentDetailsResponseInnerConnectedDevice> ConnectedDevice { get; set; }
+	public List<GetClientEnrichmentDetailsResponseInnerConnectedDevice>? ConnectedDevice { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IssueDetails
 	/// </summary>
 	[DataMember(Name = "issueDetails", EmitDefaultValue = false)]
-	public GetClientEnrichmentDetailsResponseInnerIssueDetails IssueDetails { get; set; }
+	public GetClientEnrichmentDetailsResponseInnerIssueDetails? IssueDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

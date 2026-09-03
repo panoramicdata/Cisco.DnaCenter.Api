@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class ImageInfoListResponseApplicableDevicesForImage
 	/// <param name="MdfId">MdfId.</param>
 	/// <param name="ProductId">ProductId.</param>
 	/// <param name="ProductName">ProductName.</param>
-	public ImageInfoListResponseApplicableDevicesForImage(string? MdfId = default, List<string> ProductId = default, string? ProductName = default)
+	public ImageInfoListResponseApplicableDevicesForImage(string? MdfId = default, List<string>? ProductId = default, string? ProductName = default)
 	{
 		this.MdfId = MdfId;
 		this.ProductId = ProductId;
@@ -33,7 +33,7 @@ public class ImageInfoListResponseApplicableDevicesForImage
 	/// Gets or Sets ProductId
 	/// </summary>
 	[DataMember(Name = "productId", EmitDefaultValue = false)]
-	public List<string> ProductId { get; set; }
+	public List<string>? ProductId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ProductName

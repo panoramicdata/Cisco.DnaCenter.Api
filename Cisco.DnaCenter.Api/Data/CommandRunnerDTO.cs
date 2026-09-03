@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class CommandRunnerDto
 	/// <param name="DeviceUuids">DeviceUuids.</param>
 	/// <param name="Name">Name.</param>
 	/// <param name="Timeout">Timeout.</param>
-	public CommandRunnerDto(List<string> Commands = default, string? Description = default, List<string> DeviceUuids = default, string? Name = default, int? Timeout = default)
+	public CommandRunnerDto(List<string>? Commands = default, string? Description = default, List<string>? DeviceUuids = default, string? Name = default, int? Timeout = default)
 	{
 		this.Commands = Commands;
 		this.Description = Description;
@@ -31,7 +31,7 @@ public class CommandRunnerDto
 	/// Gets or Sets Commands
 	/// </summary>
 	[DataMember(Name = "commands", EmitDefaultValue = false)]
-	public List<string> Commands { get; set; }
+	public List<string>? Commands { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Description
@@ -43,7 +43,7 @@ public class CommandRunnerDto
 	/// Gets or Sets DeviceUuids
 	/// </summary>
 	[DataMember(Name = "deviceUuids", EmitDefaultValue = false)]
-	public List<string> DeviceUuids { get; set; }
+	public List<string>? DeviceUuids { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Name

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class ProvisionNfvRequestServiceProviders1
 	/// </summary>
 	/// <param name="ServiceProvider">ServiceProvider.</param>
 	/// <param name="WanInterface">WanInterface.</param>
-	public ProvisionNfvRequestServiceProviders1(string? ServiceProvider = default, ProvisionNfvRequestWanInterface WanInterface = default)
+	public ProvisionNfvRequestServiceProviders1(string? ServiceProvider = default, ProvisionNfvRequestWanInterface? WanInterface = default)
 	{
 		this.ServiceProvider = ServiceProvider;
 		this.WanInterface = WanInterface;
@@ -30,7 +30,7 @@ public class ProvisionNfvRequestServiceProviders1
 	/// Gets or Sets WanInterface
 	/// </summary>
 	[DataMember(Name = "wanInterface", EmitDefaultValue = false)]
-	public ProvisionNfvRequestWanInterface WanInterface { get; set; }
+	public ProvisionNfvRequestWanInterface? WanInterface { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

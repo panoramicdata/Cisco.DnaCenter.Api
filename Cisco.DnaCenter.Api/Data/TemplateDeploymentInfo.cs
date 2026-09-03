@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -19,7 +19,7 @@ public class TemplateDeploymentInfo
 	/// <param name="MemberTemplateDeploymentInfo">MemberTemplateDeploymentInfo.</param>
 	/// <param name="TargetInfo">TargetInfo.</param>
 	/// <param name="TemplateId">TemplateId.</param>
-	public TemplateDeploymentInfo(bool? ForcePushTemplate = default, bool? IsComposite = default, string? MainTemplateId = default, List<string> MemberTemplateDeploymentInfo = default, List<TemplateDeploymentInfoTargetInfo> TargetInfo = default, string? TemplateId = default)
+	public TemplateDeploymentInfo(bool? ForcePushTemplate = default, bool? IsComposite = default, string? MainTemplateId = default, List<string>? MemberTemplateDeploymentInfo = default, List<TemplateDeploymentInfoTargetInfo>? TargetInfo = default, string? TemplateId = default)
 	{
 		this.ForcePushTemplate = ForcePushTemplate;
 		this.IsComposite = IsComposite;
@@ -51,13 +51,13 @@ public class TemplateDeploymentInfo
 	/// Gets or Sets MemberTemplateDeploymentInfo
 	/// </summary>
 	[DataMember(Name = "memberTemplateDeploymentInfo", EmitDefaultValue = false)]
-	public List<string> MemberTemplateDeploymentInfo { get; set; }
+	public List<string>? MemberTemplateDeploymentInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TargetInfo
 	/// </summary>
 	[DataMember(Name = "targetInfo", EmitDefaultValue = false)]
-	public List<TemplateDeploymentInfoTargetInfo> TargetInfo { get; set; }
+	public List<TemplateDeploymentInfoTargetInfo>? TargetInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TemplateId

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -17,7 +17,7 @@ public class CreateApplicationRequestInner
 	/// <param name="NetworkApplications">NetworkApplications.</param>
 	/// <param name="NetworkIdentity">NetworkIdentity.</param>
 	/// <param name="ApplicationSet">ApplicationSet.</param>
-	public CreateApplicationRequestInner(string? Name = default, List<CreateApplicationRequestInnerNetworkApplications> NetworkApplications = default, List<CreateApplicationRequestInnerNetworkIdentity> NetworkIdentity = default, EditApplicationRequestInnerApplicationSet ApplicationSet = default)
+	public CreateApplicationRequestInner(string? Name = default, List<CreateApplicationRequestInnerNetworkApplications>? NetworkApplications = default, List<CreateApplicationRequestInnerNetworkIdentity>? NetworkIdentity = default, EditApplicationRequestInnerApplicationSet? ApplicationSet = default)
 	{
 		this.Name = Name;
 		this.NetworkApplications = NetworkApplications;
@@ -35,19 +35,19 @@ public class CreateApplicationRequestInner
 	/// Gets or Sets NetworkApplications
 	/// </summary>
 	[DataMember(Name = "networkApplications", EmitDefaultValue = false)]
-	public List<CreateApplicationRequestInnerNetworkApplications> NetworkApplications { get; set; }
+	public List<CreateApplicationRequestInnerNetworkApplications>? NetworkApplications { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkIdentity
 	/// </summary>
 	[DataMember(Name = "networkIdentity", EmitDefaultValue = false)]
-	public List<CreateApplicationRequestInnerNetworkIdentity> NetworkIdentity { get; set; }
+	public List<CreateApplicationRequestInnerNetworkIdentity>? NetworkIdentity { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApplicationSet
 	/// </summary>
 	[DataMember(Name = "applicationSet", EmitDefaultValue = false)]
-	public EditApplicationRequestInnerApplicationSet ApplicationSet { get; set; }
+	public EditApplicationRequestInnerApplicationSet? ApplicationSet { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

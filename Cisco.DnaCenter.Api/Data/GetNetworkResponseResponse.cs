@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -23,7 +23,7 @@ public class GetNetworkResponseResponse
 	/// <param name="GroupUuid">GroupUuid.</param>
 	/// <param name="InheritedGroupUuid">InheritedGroupUuid.</param>
 	/// <param name="InheritedGroupName">InheritedGroupName.</param>
-	public GetNetworkResponseResponse(string? InstanceType = default, string? InstanceUuid = default, string? _Namespace = default, string? Type = default, string? Key = default, int? _Version = default, List<UpdateNetworkRequestSettingsSyslogServer> Value = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
+	public GetNetworkResponseResponse(string? InstanceType = default, string? InstanceUuid = default, string? _Namespace = default, string? Type = default, string? Key = default, int? _Version = default, List<UpdateNetworkRequestSettingsSyslogServer>? Value = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
 	{
 		this.InstanceType = InstanceType;
 		this.InstanceUuid = InstanceUuid;
@@ -77,7 +77,7 @@ public class GetNetworkResponseResponse
 	/// Gets or Sets Value
 	/// </summary>
 	[DataMember(Name = "value", EmitDefaultValue = false)]
-	public List<UpdateNetworkRequestSettingsSyslogServer> Value { get; set; }
+	public List<UpdateNetworkRequestSettingsSyslogServer>? Value { get; set; }
 
 	/// <summary>
 	/// Gets or Sets GroupUuid

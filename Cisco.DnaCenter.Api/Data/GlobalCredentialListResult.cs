@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GlobalCredentialListResult
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="_Version">_Version.</param>
-	public GlobalCredentialListResult(List<GlobalCredentialListResultResponse> Response = default, string? _Version = default)
+	public GlobalCredentialListResult(List<GlobalCredentialListResultResponse>? Response = default, string? _Version = default)
 	{
 		this.Response = Response;
 		this._Version = _Version;
@@ -25,7 +25,7 @@ public class GlobalCredentialListResult
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<GlobalCredentialListResultResponse> Response { get; set; }
+	public List<GlobalCredentialListResultResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

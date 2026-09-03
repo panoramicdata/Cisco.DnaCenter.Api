@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,11 +18,12 @@ public interface INonFabricWireless
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="__persistbapioutput"> (optional, default to true)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of APProvisionResponse</returns>
 	[Post("/dna/intent/api/v1/wireless/ap-provision")]
 	Task<ApProvisionResponse> ProvisionApAsync(
 		[Body]ApProvisionRequest request,
-		string __persistbapioutput = null,
+		string? __persistbapioutput = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -33,6 +34,7 @@ public interface INonFabricWireless
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateAndProvisionSSIDResponse</returns>
 	[Post("/dna/intent/api/v1/business/ssid")]
 	Task<ExecutionStatusResponse> CreateAndProvisionSsidAsync(
@@ -47,6 +49,7 @@ public interface INonFabricWireless
 	/// Creates enterprise SSID
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateEnterpriseSSIDResponse</returns>
 	[Post("/dna/intent/api/v1/enterprise-ssid")]
 	Task<ExecutionStatusResponse> CreateEnterpriseSsidAsync(
@@ -60,6 +63,7 @@ public interface INonFabricWireless
 	/// Create or Update RF profile
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateOrUpdateRfProfileResponse</returns>
 	[Post("/dna/intent/api/v1/wireless/rf-profile")]
 	Task<CreateOrUpdateRfProfileResponse> CreateOrUpdateRfProfileAsync(
@@ -73,6 +77,7 @@ public interface INonFabricWireless
 	/// Creates Wireless Network Profile on DNAC and associates sites and SSIDs to it.
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateWirelessProfileResponse</returns>
 	[Post("/dna/intent/api/v1/wireless/profile")]
 	Task<ExecutionStatusResponse> CreateWirelessProfileAsync(
@@ -86,6 +91,7 @@ public interface INonFabricWireless
 	/// Deletes given enterprise SSID
 	/// </remarks>
 	/// <param name="ssidName">Enter the SSID name to be deleted</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteEnterpriseSSIDResponse</returns>
 	[Delete("/dna/intent/api/v1/enterprise-ssid/{ssidName}")]
 	Task<ExecutionStatusResponse> DeleteEnterpriseSsidAsync(
@@ -99,6 +105,8 @@ public interface INonFabricWireless
 	/// Delete RF profile(s)
 	/// </remarks>
 	/// <param name="rf_profile_name"></param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="rfProfileName">rfProfileName.</param>
 	/// <returns>Task of DeleteRfProfilesResponse</returns>
 	[Delete("/dna/intent/api/v1/wireless/rf-profile/{RfProfileName}")]
 	Task<DeleteRfProfilesResponse> DeleteRfProfilesAsync(
@@ -114,6 +122,7 @@ public interface INonFabricWireless
 	/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
 	/// <param name="ssidName"></param>
 	/// <param name="managedAPLocations"></param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteSSIDAndProvisionItToDevicesResponse</returns>
 	[Delete("/dna/intent/api/v1/business/ssid/{ssidName}/{managedAPLocations}")]
 	Task<ExecutionStatusResponse> DeleteSsidAndProvisionItToDevicesAsync(
@@ -130,6 +139,7 @@ public interface INonFabricWireless
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="wirelessProfileName"></param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteWirelessProfileResponse</returns>
 	[Delete("/dna/intent/api/v1/wireless-profile/{wirelessProfileName}")]
 	Task<ExecutionStatusResponse> DeleteWirelessProfileAsync(
@@ -144,10 +154,11 @@ public interface INonFabricWireless
 	/// Gets either one or all the enterprise SSID
 	/// </remarks>
 	/// <param name="ssidName">Enter the enterprise SSID name that needs to be retrieved. If not entered, all the enterprise SSIDs will be retrieved. (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetEnterpriseSSIDResponse</returns>
 	[Get("/dna/intent/api/v1/enterprise-ssid")]
 	Task<GetEnterpriseSsidResponse> GetEnterpriseSsidAsync(
-		[AliasAs("ssidName")]string ssidName = null,
+		[AliasAs("ssidName")]string? ssidName = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -157,10 +168,11 @@ public interface INonFabricWireless
 	/// Gets either one or all the wireless network profiles if no name is provided for network-profile.
 	/// </remarks>
 	/// <param name="profileName"> (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetWirelessProfileResponse</returns>
 	[Get("/dna/intent/api/v1/wireless/profile")]
 	Task<GetWirelessProfileResponse> GetWirelessProfileAsync(
-		[AliasAs("profileName")]string profileName = null,
+		[AliasAs("profileName")]string? profileName = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -171,6 +183,7 @@ public interface INonFabricWireless
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of ProvisionResponse</returns>
 	[Post("/dna/intent/api/v1/wireless/provision")]
 	Task<ProvisionResponse> ProvisionAsync(
@@ -186,6 +199,7 @@ public interface INonFabricWireless
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="__persistbapioutput">Enable this parameter to execute the API and return a response asynchronously.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of ProvisionUpdateResponse</returns>
 	[Put("/dna/intent/api/v1/wireless/provision")]
 	Task<ProvisionUpdateResponse> ProvisionUpdateAsync(
@@ -200,10 +214,11 @@ public interface INonFabricWireless
 	/// Retrieve all RF profiles
 	/// </remarks>
 	/// <param name="rf_profile_name"> (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of RetrieveRfProfilesResponse</returns>
 	[Get("/dna/intent/api/v1/wireless/rf-profile")]
 	Task<RetrieveRfProfilesResponse> RetrieveRfProfilesAsync(
-		[AliasAs("rf_profile_name")]string rf_profile_name = null,
+		[AliasAs("rf_profile_name")]string? rf_profile_name = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -213,6 +228,7 @@ public interface INonFabricWireless
 	/// Updates the wireless Network Profile with updated details provided. All sites to be present in the network profile should be provided.
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateWirelessProfileResponse</returns>
 	[Put("/dna/intent/api/v1/wireless/profile")]
 	Task<ExecutionStatusResponse> UpdateWirelessProfileAsync(

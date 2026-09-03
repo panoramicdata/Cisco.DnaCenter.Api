@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -30,7 +30,7 @@ public class TopologyResultResponseLinks
 	/// <param name="StartPortSpeed">StartPortSpeed.</param>
 	/// <param name="Tag">Tag.</param>
 	/// <param name="Target">Target.</param>
-	public TopologyResultResponseLinks(Object AdditionalInfo = default, string? EndPortID = default, string? EndPortIpv4Address = default, string? EndPortIpv4Mask = default, string? EndPortName = default, string? EndPortSpeed = default, bool? GreyOut = default, string? Id = default, string? LinkStatus = default, string? Source = default, string? StartPortID = default, string? StartPortIpv4Address = default, string? StartPortIpv4Mask = default, string? StartPortName = default, string? StartPortSpeed = default, string? Tag = default, string? Target = default)
+	public TopologyResultResponseLinks(Object? AdditionalInfo = default, string? EndPortID = default, string? EndPortIpv4Address = default, string? EndPortIpv4Mask = default, string? EndPortName = default, string? EndPortSpeed = default, bool? GreyOut = default, string? Id = default, string? LinkStatus = default, string? Source = default, string? StartPortID = default, string? StartPortIpv4Address = default, string? StartPortIpv4Mask = default, string? StartPortName = default, string? StartPortSpeed = default, string? Tag = default, string? Target = default)
 	{
 		this.AdditionalInfo = AdditionalInfo;
 		this.EndPortID = EndPortID;
@@ -55,7 +55,7 @@ public class TopologyResultResponseLinks
 	/// Gets or Sets AdditionalInfo
 	/// </summary>
 	[DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
-	public Object AdditionalInfo { get; set; }
+	public Object? AdditionalInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets EndPortID

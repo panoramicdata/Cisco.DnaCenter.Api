@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -13,7 +13,7 @@ public class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff
 	/// Initializes a new instance of the <see cref="GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff" /> class.
 	/// </summary>
 	/// <param name="VirtualNetwork">VirtualNetwork.</param>
-	public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff(GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork VirtualNetwork = default)
+	public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff(GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork? VirtualNetwork = default)
 	{
 		this.VirtualNetwork = VirtualNetwork;
 	}
@@ -22,7 +22,7 @@ public class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff
 	/// Gets or Sets VirtualNetwork
 	/// </summary>
 	[DataMember(Name = "virtualNetwork", EmitDefaultValue = false)]
-	public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork VirtualNetwork { get; set; }
+	public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerVirtualNetwork? VirtualNetwork { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

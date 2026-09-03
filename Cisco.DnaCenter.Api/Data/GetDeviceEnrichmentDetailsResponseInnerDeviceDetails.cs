@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -52,7 +52,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetails
 	/// <param name="InstanceUuid">InstanceUuid.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="NeighborTopology">NeighborTopology.</param>
-	public GetDeviceEnrichmentDetailsResponseInnerDeviceDetails(string? Family = default, string? Type = default, Object Location = default, string? ErrorCode = default, string? MacAddress = default, string? Role = default, string? ApManagerInterfaceIp = default, string? AssociatedWlcIp = default, string? BootDateTime = default, string? CollectionStatus = default, string? InterfaceCount = default, string? LineCardCount = default, string? LineCardId = default, string? ManagementIpAddress = default, string? MemorySize = default, string? PlatformId = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? SnmpContact = default, string? SnmpLocation = default, Object TunnelUdpPort = default, Object WaasDeviceMode = default, string? Series = default, string? InventoryStatusDetail = default, string? CollectionInterval = default, string? SerialNumber = default, string? SoftwareVersion = default, string? RoleSource = default, string? Hostname = default, string? UpTime = default, long? LastUpdateTime = default, string? ErrorDescription = default, Object LocationName = default, string? TagCount = default, string? LastUpdated = default, string? InstanceUuid = default, string? Id = default, List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology> NeighborTopology = default)
+	public GetDeviceEnrichmentDetailsResponseInnerDeviceDetails(string? Family = default, string? Type = default, Object? Location = default, string? ErrorCode = default, string? MacAddress = default, string? Role = default, string? ApManagerInterfaceIp = default, string? AssociatedWlcIp = default, string? BootDateTime = default, string? CollectionStatus = default, string? InterfaceCount = default, string? LineCardCount = default, string? LineCardId = default, string? ManagementIpAddress = default, string? MemorySize = default, string? PlatformId = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? SnmpContact = default, string? SnmpLocation = default, Object? TunnelUdpPort = default, Object? WaasDeviceMode = default, string? Series = default, string? InventoryStatusDetail = default, string? CollectionInterval = default, string? SerialNumber = default, string? SoftwareVersion = default, string? RoleSource = default, string? Hostname = default, string? UpTime = default, long? LastUpdateTime = default, string? ErrorDescription = default, Object? LocationName = default, string? TagCount = default, string? LastUpdated = default, string? InstanceUuid = default, string? Id = default, List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology>? NeighborTopology = default)
 	{
 		this.Family = Family;
 		this.Type = Type;
@@ -110,7 +110,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets Location
 	/// </summary>
 	[DataMember(Name = "location", EmitDefaultValue = false)]
-	public Object Location { get; set; }
+	public Object? Location { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ErrorCode
@@ -218,13 +218,13 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets TunnelUdpPort
 	/// </summary>
 	[DataMember(Name = "tunnelUdpPort", EmitDefaultValue = false)]
-	public Object TunnelUdpPort { get; set; }
+	public Object? TunnelUdpPort { get; set; }
 
 	/// <summary>
 	/// Gets or Sets WaasDeviceMode
 	/// </summary>
 	[DataMember(Name = "waasDeviceMode", EmitDefaultValue = false)]
-	public Object WaasDeviceMode { get; set; }
+	public Object? WaasDeviceMode { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Series
@@ -290,7 +290,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets LocationName
 	/// </summary>
 	[DataMember(Name = "locationName", EmitDefaultValue = false)]
-	public Object LocationName { get; set; }
+	public Object? LocationName { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TagCount
@@ -320,7 +320,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets NeighborTopology
 	/// </summary>
 	[DataMember(Name = "neighborTopology", EmitDefaultValue = false)]
-	public List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology> NeighborTopology { get; set; }
+	public List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology>? NeighborTopology { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

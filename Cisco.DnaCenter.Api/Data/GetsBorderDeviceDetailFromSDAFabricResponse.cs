@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -15,7 +15,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponse
 	/// <param name="Status">Status.</param>
 	/// <param name="Description">Description.</param>
 	/// <param name="Payload">Payload.</param>
-	public GetsBorderDeviceDetailFromSdaFabricResponse(string? Status = default, string? Description = default, GetsBorderDeviceDetailFromSdaFabricResponsePayload Payload = default)
+	public GetsBorderDeviceDetailFromSdaFabricResponse(string? Status = default, string? Description = default, GetsBorderDeviceDetailFromSdaFabricResponsePayload? Payload = default)
 	{
 		this.Status = Status;
 		this.Description = Description;
@@ -38,7 +38,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponse
 	/// Gets or Sets Payload
 	/// </summary>
 	[DataMember(Name = "payload", EmitDefaultValue = false)]
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayload Payload { get; set; }
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayload? Payload { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

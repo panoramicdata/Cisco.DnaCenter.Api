@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -23,7 +23,7 @@ public class GetServiceProviderDetailsResponseResponse
 	/// <param name="GroupUuid">GroupUuid.</param>
 	/// <param name="InheritedGroupUuid">InheritedGroupUuid.</param>
 	/// <param name="InheritedGroupName">InheritedGroupName.</param>
-	public GetServiceProviderDetailsResponseResponse(string? InstanceType = default, string? InstanceUuid = default, string? _Namespace = default, string? Type = default, string? Key = default, string? _Version = default, List<GetServiceProviderDetailsResponseValue> Value = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
+	public GetServiceProviderDetailsResponseResponse(string? InstanceType = default, string? InstanceUuid = default, string? _Namespace = default, string? Type = default, string? Key = default, string? _Version = default, List<GetServiceProviderDetailsResponseValue>? Value = default, string? GroupUuid = default, string? InheritedGroupUuid = default, string? InheritedGroupName = default)
 	{
 		this.InstanceType = InstanceType;
 		this.InstanceUuid = InstanceUuid;
@@ -77,7 +77,7 @@ public class GetServiceProviderDetailsResponseResponse
 	/// Gets or Sets Value
 	/// </summary>
 	[DataMember(Name = "value", EmitDefaultValue = false)]
-	public List<GetServiceProviderDetailsResponseValue> Value { get; set; }
+	public List<GetServiceProviderDetailsResponseValue>? Value { get; set; }
 
 	/// <summary>
 	/// Gets or Sets GroupUuid

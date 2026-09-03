@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -31,7 +31,7 @@ public class GetClientDetailResponseTopologyNodes
 	/// <param name="Level">Level.</param>
 	/// <param name="FabricGroup">FabricGroup.</param>
 	/// <param name="ConnectedDevice">ConnectedDevice.</param>
-	public GetClientDetailResponseTopologyNodes(string? Role = default, string? Name = default, string? Id = default, string? Description = default, string? DeviceType = default, Object PlatformId = default, Object Family = default, string? Ip = default, Object SoftwareVersion = default, Object UserId = default, string? NodeType = default, Object RadioFrequency = default, Object Clients = default, Object Count = default, int? HealthScore = default, decimal? Level = default, Object FabricGroup = default, Object ConnectedDevice = default)
+	public GetClientDetailResponseTopologyNodes(string? Role = default, string? Name = default, string? Id = default, string? Description = default, string? DeviceType = default, Object? PlatformId = default, Object? Family = default, string? Ip = default, Object? SoftwareVersion = default, Object? UserId = default, string? NodeType = default, Object? RadioFrequency = default, Object? Clients = default, Object? Count = default, int? HealthScore = default, decimal? Level = default, Object? FabricGroup = default, Object? ConnectedDevice = default)
 	{
 		this.Role = Role;
 		this.Name = Name;
@@ -87,13 +87,13 @@ public class GetClientDetailResponseTopologyNodes
 	/// Gets or Sets PlatformId
 	/// </summary>
 	[DataMember(Name = "platformId", EmitDefaultValue = false)]
-	public Object PlatformId { get; set; }
+	public Object? PlatformId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Family
 	/// </summary>
 	[DataMember(Name = "family", EmitDefaultValue = false)]
-	public Object Family { get; set; }
+	public Object? Family { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ip
@@ -105,13 +105,13 @@ public class GetClientDetailResponseTopologyNodes
 	/// Gets or Sets SoftwareVersion
 	/// </summary>
 	[DataMember(Name = "softwareVersion", EmitDefaultValue = false)]
-	public Object SoftwareVersion { get; set; }
+	public Object? SoftwareVersion { get; set; }
 
 	/// <summary>
 	/// Gets or Sets UserId
 	/// </summary>
 	[DataMember(Name = "userId", EmitDefaultValue = false)]
-	public Object UserId { get; set; }
+	public Object? UserId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NodeType
@@ -123,19 +123,19 @@ public class GetClientDetailResponseTopologyNodes
 	/// Gets or Sets RadioFrequency
 	/// </summary>
 	[DataMember(Name = "radioFrequency", EmitDefaultValue = false)]
-	public Object RadioFrequency { get; set; }
+	public Object? RadioFrequency { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Clients
 	/// </summary>
 	[DataMember(Name = "clients", EmitDefaultValue = false)]
-	public Object Clients { get; set; }
+	public Object? Clients { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Count
 	/// </summary>
 	[DataMember(Name = "count", EmitDefaultValue = false)]
-	public Object Count { get; set; }
+	public Object? Count { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HealthScore
@@ -153,13 +153,13 @@ public class GetClientDetailResponseTopologyNodes
 	/// Gets or Sets FabricGroup
 	/// </summary>
 	[DataMember(Name = "fabricGroup", EmitDefaultValue = false)]
-	public Object FabricGroup { get; set; }
+	public Object? FabricGroup { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConnectedDevice
 	/// </summary>
 	[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
-	public Object ConnectedDevice { get; set; }
+	public Object? ConnectedDevice { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

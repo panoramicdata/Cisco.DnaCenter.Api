@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -15,7 +15,7 @@ public class GetEventSubscriptionsResponseInnerSubscriptionEndpoints
 	/// <param name="InstanceId">InstanceId.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="SubscriptionDetails">SubscriptionDetails.</param>
-	public GetEventSubscriptionsResponseInnerSubscriptionEndpoints(string? InstanceId = default, string? Id = default, CreateEventSubscriptionsRequestInnerSubscriptionDetails SubscriptionDetails = default)
+	public GetEventSubscriptionsResponseInnerSubscriptionEndpoints(string? InstanceId = default, string? Id = default, CreateEventSubscriptionsRequestInnerSubscriptionDetails? SubscriptionDetails = default)
 	{
 		this.InstanceId = InstanceId;
 		this.Id = Id;
@@ -38,7 +38,7 @@ public class GetEventSubscriptionsResponseInnerSubscriptionEndpoints
 	/// Gets or Sets SubscriptionDetails
 	/// </summary>
 	[DataMember(Name = "subscriptionDetails", EmitDefaultValue = false)]
-	public CreateEventSubscriptionsRequestInnerSubscriptionDetails SubscriptionDetails { get; set; }
+	public CreateEventSubscriptionsRequestInnerSubscriptionDetails? SubscriptionDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

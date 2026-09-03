@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -45,7 +45,7 @@ public class GetWirelessProfileResponseInnerProfileDetailsSsidDetails
 	/// <param name="EnableFabric">EnableFabric.</param>
 	/// <param name="FlexConnect">FlexConnect.</param>
 	/// <param name="InterfaceName">InterfaceName.</param>
-	public GetWirelessProfileResponseInnerProfileDetailsSsidDetails(string? Name = default, TypeEnum? Type = default, bool? EnableFabric = default, GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect = default, string? InterfaceName = default)
+	public GetWirelessProfileResponseInnerProfileDetailsSsidDetails(string? Name = default, TypeEnum? Type = default, bool? EnableFabric = default, GetWirelessProfileResponseInnerProfileDetailsFlexConnect? FlexConnect = default, string? InterfaceName = default)
 	{
 		this.Name = Name;
 		this.Type = Type;
@@ -70,7 +70,7 @@ public class GetWirelessProfileResponseInnerProfileDetailsSsidDetails
 	/// Gets or Sets FlexConnect
 	/// </summary>
 	[DataMember(Name = "flexConnect", EmitDefaultValue = false)]
-	public GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect { get; set; }
+	public GetWirelessProfileResponseInnerProfileDetailsFlexConnect? FlexConnect { get; set; }
 
 	/// <summary>
 	/// Gets or Sets InterfaceName

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -64,25 +64,26 @@ public class DeviceDeviceInfo
 	/// <param name="PopulateInventory">PopulateInventory.</param>
 	/// <param name="SiteName">SiteName.</param>
 	/// <param name="Name">Name.</param>
+	/// <param name="LastupdateOn">LastupdateOn.</param>
 	public DeviceDeviceInfo(
 		string? Source = default,
 		string? SerialNumber = default,
 		bool? Stack = default,
 		string? Mode = default,
 		string? State = default,
-		DeviceDeviceInfoLocation Location = default,
+		DeviceDeviceInfoLocation? Location = default,
 		string? Description = default,
 		string? OnbState = default,
 		string? AuthenticatedMicNumber = default,
 		string? AuthenticatedSudiSerialNo = default,
-		List<string> CapabilitiesSupported = default,
-		List<string> FeaturesSupported = default,
+		List<string>? CapabilitiesSupported = default,
+		List<string>? FeaturesSupported = default,
 		string? CmState = default,
 		decimal? FirstContact = default,
 		decimal? LastContact = default,
 		string? MacAddress = default,
 		string? Pid = default,
-		List<string> DeviceSudiSerialNos = default,
+		List<string>? DeviceSudiSerialNos = default,
 		long? LastupdateOn = default,
 		string? WorkflowId = default,
 		string? WorkflowName = default,
@@ -91,24 +92,24 @@ public class DeviceDeviceInfo
 		string? DeviceType = default,
 		string? AgentType = default,
 		string? ImageVersion = default,
-		List<DeviceDeviceInfoFileSystemList> FileSystemList = default,
-		List<DeviceDeviceInfoPnpProfileList> PnpProfileList = default,
+		List<DeviceDeviceInfoFileSystemList>? FileSystemList = default,
+		List<DeviceDeviceInfoPnpProfileList>? PnpProfileList = default,
 		string? ImageFile = default,
-		List<DeviceDeviceInfoHttpHeaders> HttpHeaders = default,
-		List<DeviceDeviceInfoNeighborLinks> NeighborLinks = default,
+		List<DeviceDeviceInfoHttpHeaders>? HttpHeaders = default,
+		List<DeviceDeviceInfoNeighborLinks>? NeighborLinks = default,
 		decimal? LastSyncTime = default,
-		List<DeviceDeviceInfoIpInterfaces> IpInterfaces = default,
+		List<DeviceDeviceInfoIpInterfaces>? IpInterfaces = default,
 		string? Hostname = default,
 		string? AuthStatus = default,
-		DeviceDeviceInfoStackInfo StackInfo = default,
+		DeviceDeviceInfoStackInfo? StackInfo = default,
 		bool? ReloadRequested = default,
 		long? AddedOn = default,
 		string? SiteId = default,
-		DeviceDeviceInfoAaaCredentials AaaCredentials = default,
-		List<string> UserMicNumbers = default,
-		List<string> UserSudiSerialNos = default,
-		List<string> AddnMacAddrs = default,
-		List<DeviceDeviceInfoPreWorkflowCliOuputs> PreWorkflowCliOuputs = default,
+		DeviceDeviceInfoAaaCredentials? AaaCredentials = default,
+		List<string>? UserMicNumbers = default,
+		List<string>? UserSudiSerialNos = default,
+		List<string>? AddnMacAddrs = default,
+		List<DeviceDeviceInfoPreWorkflowCliOuputs>? PreWorkflowCliOuputs = default,
 		List<TagDto>? Tags = default,
 		bool? SudiRequired = default,
 		string? SmartAccountId = default,
@@ -204,7 +205,7 @@ public class DeviceDeviceInfo
 	/// Gets or Sets Location
 	/// </summary>
 	[DataMember(Name = "location", EmitDefaultValue = false)]
-	public DeviceDeviceInfoLocation Location { get; set; }
+	public DeviceDeviceInfoLocation? Location { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Description
@@ -234,13 +235,13 @@ public class DeviceDeviceInfo
 	/// Gets or Sets CapabilitiesSupported
 	/// </summary>
 	[DataMember(Name = "capabilitiesSupported", EmitDefaultValue = false)]
-	public List<string> CapabilitiesSupported { get; set; }
+	public List<string>? CapabilitiesSupported { get; set; }
 
 	/// <summary>
 	/// Gets or Sets FeaturesSupported
 	/// </summary>
 	[DataMember(Name = "featuresSupported", EmitDefaultValue = false)]
-	public List<string> FeaturesSupported { get; set; }
+	public List<string>? FeaturesSupported { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CmState
@@ -276,7 +277,7 @@ public class DeviceDeviceInfo
 	/// Gets or Sets DeviceSudiSerialNos
 	/// </summary>
 	[DataMember(Name = "deviceSudiSerialNos", EmitDefaultValue = false)]
-	public List<string> DeviceSudiSerialNos { get; set; }
+	public List<string>? DeviceSudiSerialNos { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LastUpdateOn
@@ -330,13 +331,13 @@ public class DeviceDeviceInfo
 	/// Gets or Sets FileSystemList
 	/// </summary>
 	[DataMember(Name = "fileSystemList", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoFileSystemList> FileSystemList { get; set; }
+	public List<DeviceDeviceInfoFileSystemList>? FileSystemList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets PnpProfileList
 	/// </summary>
 	[DataMember(Name = "pnpProfileList", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoPnpProfileList> PnpProfileList { get; set; }
+	public List<DeviceDeviceInfoPnpProfileList>? PnpProfileList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ImageFile
@@ -348,13 +349,13 @@ public class DeviceDeviceInfo
 	/// Gets or Sets HttpHeaders
 	/// </summary>
 	[DataMember(Name = "httpHeaders", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoHttpHeaders> HttpHeaders { get; set; }
+	public List<DeviceDeviceInfoHttpHeaders>? HttpHeaders { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NeighborLinks
 	/// </summary>
 	[DataMember(Name = "neighborLinks", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoNeighborLinks> NeighborLinks { get; set; }
+	public List<DeviceDeviceInfoNeighborLinks>? NeighborLinks { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LastSyncTime
@@ -366,7 +367,7 @@ public class DeviceDeviceInfo
 	/// Gets or Sets IpInterfaces
 	/// </summary>
 	[DataMember(Name = "ipInterfaces", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoIpInterfaces> IpInterfaces { get; set; }
+	public List<DeviceDeviceInfoIpInterfaces>? IpInterfaces { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Hostname
@@ -384,7 +385,7 @@ public class DeviceDeviceInfo
 	/// Gets or Sets StackInfo
 	/// </summary>
 	[DataMember(Name = "stackInfo", EmitDefaultValue = false)]
-	public DeviceDeviceInfoStackInfo StackInfo { get; set; }
+	public DeviceDeviceInfoStackInfo? StackInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ReloadRequested
@@ -408,31 +409,31 @@ public class DeviceDeviceInfo
 	/// Gets or Sets AaaCredentials
 	/// </summary>
 	[DataMember(Name = "aaaCredentials", EmitDefaultValue = false)]
-	public DeviceDeviceInfoAaaCredentials AaaCredentials { get; set; }
+	public DeviceDeviceInfoAaaCredentials? AaaCredentials { get; set; }
 
 	/// <summary>
 	/// Gets or Sets UserMicNumbers
 	/// </summary>
 	[DataMember(Name = "userMicNumbers", EmitDefaultValue = false)]
-	public List<string> UserMicNumbers { get; set; }
+	public List<string>? UserMicNumbers { get; set; }
 
 	/// <summary>
 	/// Gets or Sets UserSudiSerialNos
 	/// </summary>
 	[DataMember(Name = "userSudiSerialNos", EmitDefaultValue = false)]
-	public List<string> UserSudiSerialNos { get; set; }
+	public List<string>? UserSudiSerialNos { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AddnMacAddrs
 	/// </summary>
 	[DataMember(Name = "addnMacAddrs", EmitDefaultValue = false)]
-	public List<string> AddnMacAddrs { get; set; }
+	public List<string>? AddnMacAddrs { get; set; }
 
 	/// <summary>
 	/// Gets or Sets PreWorkflowCliOuputs
 	/// </summary>
 	[DataMember(Name = "preWorkflowCliOuputs", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoPreWorkflowCliOuputs> PreWorkflowCliOuputs { get; set; }
+	public List<DeviceDeviceInfoPreWorkflowCliOuputs>? PreWorkflowCliOuputs { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Tags

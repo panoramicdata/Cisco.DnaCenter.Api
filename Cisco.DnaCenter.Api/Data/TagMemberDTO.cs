@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class TagMemberDto
 	/// </summary>
 	/// <param name="MemberToTags">MemberToTags.</param>
 	/// <param name="MemberType">MemberType.</param>
-	public TagMemberDto(List<TagMemberDtoMemberToTags> MemberToTags = default, string? MemberType = default)
+	public TagMemberDto(List<TagMemberDtoMemberToTags>? MemberToTags = default, string? MemberType = default)
 	{
 		this.MemberToTags = MemberToTags;
 		this.MemberType = MemberType;
@@ -25,7 +25,7 @@ public class TagMemberDto
 	/// Gets or Sets MemberToTags
 	/// </summary>
 	[DataMember(Name = "memberToTags", EmitDefaultValue = false)]
-	public List<TagMemberDtoMemberToTags> MemberToTags { get; set; }
+	public List<TagMemberDtoMemberToTags>? MemberToTags { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MemberType

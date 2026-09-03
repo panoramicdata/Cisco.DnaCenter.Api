@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class ResetRequestDeviceResetList
 	/// <param name="LicenseLevel">LicenseLevel.</param>
 	/// <param name="LicenseType">LicenseType.</param>
 	/// <param name="TopOfStackSerialNumber">TopOfStackSerialNumber.</param>
-	public ResetRequestDeviceResetList(List<ResetRequestConfigList> ConfigList = default, string? DeviceId = default, string? LicenseLevel = default, string? LicenseType = default, string? TopOfStackSerialNumber = default)
+	public ResetRequestDeviceResetList(List<ResetRequestConfigList>? ConfigList = default, string? DeviceId = default, string? LicenseLevel = default, string? LicenseType = default, string? TopOfStackSerialNumber = default)
 	{
 		this.ConfigList = ConfigList;
 		this.DeviceId = DeviceId;
@@ -31,7 +31,7 @@ public class ResetRequestDeviceResetList
 	/// Gets or Sets ConfigList
 	/// </summary>
 	[DataMember(Name = "configList", EmitDefaultValue = false)]
-	public List<ResetRequestConfigList> ConfigList { get; set; }
+	public List<ResetRequestConfigList>? ConfigList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DeviceId

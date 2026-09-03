@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class CollectionProjectDtoInner
 	/// <param name="Name">Name.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="Templates">Templates.</param>
-	public CollectionProjectDtoInner(string? Name = default, string? Id = default, List<CollectionProjectDtoInnerTemplates> Templates = default)
+	public CollectionProjectDtoInner(string? Name = default, string? Id = default, List<CollectionProjectDtoInnerTemplates>? Templates = default)
 	{
 		this.Name = Name;
 		this.Id = Id;
@@ -39,7 +39,7 @@ public class CollectionProjectDtoInner
 	/// Gets or Sets Templates
 	/// </summary>
 	[DataMember(Name = "templates", EmitDefaultValue = false)]
-	public List<CollectionProjectDtoInnerTemplates> Templates { get; set; }
+	public List<CollectionProjectDtoInnerTemplates>? Templates { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

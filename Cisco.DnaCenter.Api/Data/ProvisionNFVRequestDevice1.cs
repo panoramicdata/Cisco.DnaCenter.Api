@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -22,7 +22,7 @@ public class ProvisionNfvRequestDevice1
 	/// <param name="SubPools">SubPools.</param>
 	/// <param name="CustomNetworks">CustomNetworks.</param>
 	/// <param name="TemplateParam">TemplateParam.</param>
-	public ProvisionNfvRequestDevice1(string? Ip = default, string? DeviceSerialNumber = default, string? TagName = default, List<ProvisionNfvRequestServiceProviders1> ServiceProviders = default, List<ProvisionNfvRequestServices1> Services = default, List<ProvisionNfvRequestVlan1> Vlan = default, List<ProvisionNFVRequestSubPools> SubPools = default, List<ProvisionNfvRequestCustomNetworks1> CustomNetworks = default, ProvisionNfvRequestTemplateParam TemplateParam = default)
+	public ProvisionNfvRequestDevice1(string? Ip = default, string? DeviceSerialNumber = default, string? TagName = default, List<ProvisionNfvRequestServiceProviders1>? ServiceProviders = default, List<ProvisionNfvRequestServices1>? Services = default, List<ProvisionNfvRequestVlan1>? Vlan = default, List<ProvisionNFVRequestSubPools>? SubPools = default, List<ProvisionNfvRequestCustomNetworks1>? CustomNetworks = default, ProvisionNfvRequestTemplateParam? TemplateParam = default)
 	{
 		this.Ip = Ip;
 		this.DeviceSerialNumber = DeviceSerialNumber;
@@ -57,37 +57,37 @@ public class ProvisionNfvRequestDevice1
 	/// Gets or Sets ServiceProviders
 	/// </summary>
 	[DataMember(Name = "serviceProviders", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestServiceProviders1> ServiceProviders { get; set; }
+	public List<ProvisionNfvRequestServiceProviders1>? ServiceProviders { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Services
 	/// </summary>
 	[DataMember(Name = "services", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestServices1> Services { get; set; }
+	public List<ProvisionNfvRequestServices1>? Services { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Vlan
 	/// </summary>
 	[DataMember(Name = "vlan", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestVlan1> Vlan { get; set; }
+	public List<ProvisionNfvRequestVlan1>? Vlan { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SubPools
 	/// </summary>
 	[DataMember(Name = "subPools", EmitDefaultValue = false)]
-	public List<ProvisionNFVRequestSubPools> SubPools { get; set; }
+	public List<ProvisionNFVRequestSubPools>? SubPools { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CustomNetworks
 	/// </summary>
 	[DataMember(Name = "customNetworks", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestCustomNetworks1> CustomNetworks { get; set; }
+	public List<ProvisionNfvRequestCustomNetworks1>? CustomNetworks { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TemplateParam
 	/// </summary>
 	[DataMember(Name = "templateParam", EmitDefaultValue = false)]
-	public ProvisionNfvRequestTemplateParam TemplateParam { get; set; }
+	public ProvisionNfvRequestTemplateParam? TemplateParam { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

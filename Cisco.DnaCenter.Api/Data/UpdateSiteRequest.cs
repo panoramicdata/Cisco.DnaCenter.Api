@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -48,7 +48,7 @@ public class UpdateSiteRequest
 	/// </summary>
 	/// <param name="Type">Type.</param>
 	/// <param name="Site">Site.</param>
-	public UpdateSiteRequest(TypeEnum? Type = default, UpdateSiteRequestSite Site = default)
+	public UpdateSiteRequest(TypeEnum? Type = default, UpdateSiteRequestSite? Site = default)
 	{
 		this.Type = Type;
 		this.Site = Site;
@@ -58,7 +58,7 @@ public class UpdateSiteRequest
 	/// Gets or Sets Site
 	/// </summary>
 	[DataMember(Name = "site", EmitDefaultValue = false)]
-	public UpdateSiteRequestSite Site { get; set; }
+	public UpdateSiteRequestSite? Site { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

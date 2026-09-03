@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -37,10 +37,10 @@ public class GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes
 		string? Target = default,
 		string? StatusMessage = default,
 		string? Payload = default,
-		Object ProvisionedNames = default,
-		Object ErrorPayload = default,
-		Object ParentTask = default,
-		Object CliTemplateUserMessageDto = default,
+		Object? ProvisionedNames = default,
+		Object? ErrorPayload = default,
+		Object? ParentTask = default,
+		Object? CliTemplateUserMessageDto = default,
 		string? StepRan = default)
 	{
 		this.StartTime = StartTime;
@@ -117,25 +117,25 @@ public class GetDeviceDetailsByIpResponseProvisionDetailsTaskNodes
 	/// Gets or Sets ProvisionedNames
 	/// </summary>
 	[DataMember(Name = "provisionedNames", EmitDefaultValue = false)]
-	public Object ProvisionedNames { get; set; }
+	public Object? ProvisionedNames { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ErrorPayload
 	/// </summary>
 	[DataMember(Name = "errorPayload", EmitDefaultValue = false)]
-	public Object ErrorPayload { get; set; }
+	public Object? ErrorPayload { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ParentTask
 	/// </summary>
 	[DataMember(Name = "parentTask", EmitDefaultValue = false)]
-	public Object ParentTask { get; set; }
+	public Object? ParentTask { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CliTemplateUserMessageDto
 	/// </summary>
 	[DataMember(Name = "cliTemplateUserMessageDto", EmitDefaultValue = false)]
-	public Object CliTemplateUserMessageDto { get; set; }
+	public Object? CliTemplateUserMessageDto { get; set; }
 
 	/// <summary>
 	/// Gets or Sets StepRan

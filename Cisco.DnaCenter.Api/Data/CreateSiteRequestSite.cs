@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -15,7 +15,7 @@ public class CreateSiteRequestSite
 	/// <param name="Area">Area.</param>
 	/// <param name="Building">Building.</param>
 	/// <param name="Floor">Floor.</param>
-	public CreateSiteRequestSite(CreateSiteRequestSiteArea Area = default, CreateSiteRequestSiteBuilding Building = default, CreateSiteRequestSiteFloor Floor = default)
+	public CreateSiteRequestSite(CreateSiteRequestSiteArea? Area = default, CreateSiteRequestSiteBuilding? Building = default, CreateSiteRequestSiteFloor? Floor = default)
 	{
 		this.Area = Area;
 		this.Building = Building;
@@ -26,19 +26,19 @@ public class CreateSiteRequestSite
 	/// Gets or Sets Area
 	/// </summary>
 	[DataMember(Name = "area", EmitDefaultValue = false)]
-	public CreateSiteRequestSiteArea Area { get; set; }
+	public CreateSiteRequestSiteArea? Area { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Building
 	/// </summary>
 	[DataMember(Name = "building", EmitDefaultValue = false)]
-	public CreateSiteRequestSiteBuilding Building { get; set; }
+	public CreateSiteRequestSiteBuilding? Building { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Floor
 	/// </summary>
 	[DataMember(Name = "floor", EmitDefaultValue = false)]
-	public CreateSiteRequestSiteFloor Floor { get; set; }
+	public CreateSiteRequestSiteFloor? Floor { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

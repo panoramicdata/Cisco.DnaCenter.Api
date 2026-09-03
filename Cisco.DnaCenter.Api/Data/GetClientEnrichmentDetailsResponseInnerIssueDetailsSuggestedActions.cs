@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -16,7 +16,7 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions
 	/// </summary>
 	/// <param name="Message">Message.</param>
 	/// <param name="Steps">Steps.</param>
-	public GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions(string? Message = default, List<Object> Steps = default)
+	public GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions(string? Message = default, List<Object>? Steps = default)
 	{
 		this.Message = Message;
 		this.Steps = Steps;
@@ -32,7 +32,7 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions
 	/// Gets or Sets Steps
 	/// </summary>
 	[DataMember(Name = "steps", EmitDefaultValue = false)]
-	public List<Object> Steps { get; set; }
+	public List<Object>? Steps { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

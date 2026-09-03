@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -25,7 +25,7 @@ public class UpdatePnpServerProfileResponse
 	/// <param name="SmartAccountId">SmartAccountId.</param>
 	/// <param name="Expiry">Expiry.</param>
 	/// <param name="SyncStatus">SyncStatus.</param>
-	public UpdatePnpServerProfileResponse(string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default, GetSyncResultForVirtualAccountResponseProfile Profile = default, string? CcoUser = default, GetSyncResultForVirtualAccountResponseSyncResult SyncResult = default, string? Token = default, decimal? SyncStartTime = default, decimal? LastSync = default, string? TenantId = default, string? SmartAccountId = default, decimal? Expiry = default, string? SyncStatus = default)
+	public UpdatePnpServerProfileResponse(string? VirtualAccountId = default, decimal? AutoSyncPeriod = default, string? SyncResultStr = default, GetSyncResultForVirtualAccountResponseProfile? Profile = default, string? CcoUser = default, GetSyncResultForVirtualAccountResponseSyncResult? SyncResult = default, string? Token = default, decimal? SyncStartTime = default, decimal? LastSync = default, string? TenantId = default, string? SmartAccountId = default, decimal? Expiry = default, string? SyncStatus = default)
 	{
 		this.VirtualAccountId = VirtualAccountId;
 		this.AutoSyncPeriod = AutoSyncPeriod;
@@ -64,7 +64,7 @@ public class UpdatePnpServerProfileResponse
 	/// Gets or Sets Profile
 	/// </summary>
 	[DataMember(Name = "profile", EmitDefaultValue = false)]
-	public GetSyncResultForVirtualAccountResponseProfile Profile { get; set; }
+	public GetSyncResultForVirtualAccountResponseProfile? Profile { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CcoUser
@@ -76,7 +76,7 @@ public class UpdatePnpServerProfileResponse
 	/// Gets or Sets SyncResult
 	/// </summary>
 	[DataMember(Name = "syncResult", EmitDefaultValue = false)]
-	public GetSyncResultForVirtualAccountResponseSyncResult SyncResult { get; set; }
+	public GetSyncResultForVirtualAccountResponseSyncResult? SyncResult { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Token

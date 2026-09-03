@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -21,7 +21,7 @@ public class FlowAnalysisRequest
 	/// <param name="Protocol">Protocol.</param>
 	/// <param name="SourceIp">SourceIP.</param>
 	/// <param name="SourcePort">SourcePort.</param>
-	public FlowAnalysisRequest(bool? ControlPath = default, string? DestinationIp = default, string? DestinationPort = default, List<string> Inclusions = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default)
+	public FlowAnalysisRequest(bool? ControlPath = default, string? DestinationIp = default, string? DestinationPort = default, List<string>? Inclusions = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default)
 	{
 		this.ControlPath = ControlPath;
 		this.DestinationIp = DestinationIp;
@@ -55,7 +55,7 @@ public class FlowAnalysisRequest
 	/// Gets or Sets Inclusions
 	/// </summary>
 	[DataMember(Name = "inclusions", EmitDefaultValue = false)]
-	public List<string> Inclusions { get; set; }
+	public List<string>? Inclusions { get; set; }
 
 	/// <summary>
 	/// Gets or Sets PeriodicRefresh

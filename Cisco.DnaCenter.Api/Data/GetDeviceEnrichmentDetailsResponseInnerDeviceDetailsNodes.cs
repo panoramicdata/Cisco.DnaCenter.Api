@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -31,7 +31,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// <param name="Level">Level.</param>
 	/// <param name="FabricGroup">FabricGroup.</param>
 	/// <param name="ConnectedDevice">ConnectedDevice.</param>
-	public GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNodes(string? Role = default, string? Name = default, string? Id = default, string? Description = default, string? DeviceType = default, string? PlatformId = default, string? Family = default, string? Ip = default, string? SoftwareVersion = default, Object UserId = default, string? NodeType = default, Object RadioFrequency = default, Object Clients = default, Object Count = default, int? HealthScore = default, decimal? Level = default, Object FabricGroup = default, Object ConnectedDevice = default)
+	public GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNodes(string? Role = default, string? Name = default, string? Id = default, string? Description = default, string? DeviceType = default, string? PlatformId = default, string? Family = default, string? Ip = default, string? SoftwareVersion = default, Object? UserId = default, string? NodeType = default, Object? RadioFrequency = default, Object? Clients = default, Object? Count = default, int? HealthScore = default, decimal? Level = default, Object? FabricGroup = default, Object? ConnectedDevice = default)
 	{
 		this.Role = Role;
 		this.Name = Name;
@@ -111,7 +111,7 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// Gets or Sets UserId
 	/// </summary>
 	[DataMember(Name = "userId", EmitDefaultValue = false)]
-	public Object UserId { get; set; }
+	public Object? UserId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NodeType
@@ -123,19 +123,19 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// Gets or Sets RadioFrequency
 	/// </summary>
 	[DataMember(Name = "radioFrequency", EmitDefaultValue = false)]
-	public Object RadioFrequency { get; set; }
+	public Object? RadioFrequency { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Clients
 	/// </summary>
 	[DataMember(Name = "clients", EmitDefaultValue = false)]
-	public Object Clients { get; set; }
+	public Object? Clients { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Count
 	/// </summary>
 	[DataMember(Name = "count", EmitDefaultValue = false)]
-	public Object Count { get; set; }
+	public Object? Count { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HealthScore
@@ -153,13 +153,13 @@ public class GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsNodes
 	/// Gets or Sets FabricGroup
 	/// </summary>
 	[DataMember(Name = "fabricGroup", EmitDefaultValue = false)]
-	public Object FabricGroup { get; set; }
+	public Object? FabricGroup { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConnectedDevice
 	/// </summary>
 	[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
-	public Object ConnectedDevice { get; set; }
+	public Object? ConnectedDevice { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

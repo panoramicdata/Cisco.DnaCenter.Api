@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// SitesInfoDto
@@ -15,7 +15,7 @@ public class SitesInfoDto
 	/// Initializes a new instance of the <see cref="SitesInfoDto" /> class.
 	/// </summary>
 	/// <param name="SiteUuids">SiteUuids.</param>
-	public SitesInfoDto(List<string> SiteUuids)
+	public SitesInfoDto(List<string>? SiteUuids)
 	{
 		this.SiteUuids = SiteUuids;
 	}
@@ -24,7 +24,7 @@ public class SitesInfoDto
 	/// Gets or Sets SiteUuids
 	/// </summary>
 	[DataMember(Name = "siteUuids", EmitDefaultValue = false)]
-	public List<string> SiteUuids { get; set; }
+	public List<string>? SiteUuids { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

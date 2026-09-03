@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -46,7 +46,7 @@ public class CreateAndProvisionSsidRequest
 	/// <param name="SsidType">SsidType.</param>
 	/// <param name="EnableFabric">EnableFabric.</param>
 	/// <param name="FlexConnect">FlexConnect.</param>
-	public CreateAndProvisionSsidRequest(List<string> ManagedAPLocations = default, CreateAndProvisionSsidRequestSsidDetails SsidDetails = default, SsidTypeEnum? SsidType = default, bool? EnableFabric = default, GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect = default)
+	public CreateAndProvisionSsidRequest(List<string>? ManagedAPLocations = default, CreateAndProvisionSsidRequestSsidDetails? SsidDetails = default, SsidTypeEnum? SsidType = default, bool? EnableFabric = default, GetWirelessProfileResponseInnerProfileDetailsFlexConnect? FlexConnect = default)
 	{
 		this.ManagedAPLocations = ManagedAPLocations;
 		this.SsidDetails = SsidDetails;
@@ -59,13 +59,13 @@ public class CreateAndProvisionSsidRequest
 	/// Gets or Sets ManagedAPLocations
 	/// </summary>
 	[DataMember(Name = "managedAPLocations", EmitDefaultValue = false)]
-	public List<string> ManagedAPLocations { get; set; }
+	public List<string>? ManagedAPLocations { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SsidDetails
 	/// </summary>
 	[DataMember(Name = "ssidDetails", EmitDefaultValue = false)]
-	public CreateAndProvisionSsidRequestSsidDetails SsidDetails { get; set; }
+	public CreateAndProvisionSsidRequestSsidDetails? SsidDetails { get; set; }
 
 	/// <summary>
 	/// Gets or Sets EnableFabric
@@ -77,7 +77,7 @@ public class CreateAndProvisionSsidRequest
 	/// Gets or Sets FlexConnect
 	/// </summary>
 	[DataMember(Name = "flexConnect", EmitDefaultValue = false)]
-	public GetWirelessProfileResponseInnerProfileDetailsFlexConnect FlexConnect { get; set; }
+	public GetWirelessProfileResponseInnerProfileDetailsFlexConnect? FlexConnect { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

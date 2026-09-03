@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -94,7 +94,7 @@ public class ProvisionNfvRequestServices
 	/// <param name="Name">Name.</param>
 	/// <param name="ImageName">ImageName.</param>
 	/// <param name="Topology">Topology.</param>
-	public ProvisionNfvRequestServices(TypeEnum? Type = default, string? Profile = default, string? Mode = default, string? Name = default, string? ImageName = default, ProvisionNfvRequestTopology Topology = default)
+	public ProvisionNfvRequestServices(TypeEnum? Type = default, string? Profile = default, string? Mode = default, string? Name = default, string? ImageName = default, ProvisionNfvRequestTopology? Topology = default)
 	{
 		this.Type = Type;
 		this.Profile = Profile;
@@ -132,7 +132,7 @@ public class ProvisionNfvRequestServices
 	/// Gets or Sets Topology
 	/// </summary>
 	[DataMember(Name = "topology", EmitDefaultValue = false)]
-	public ProvisionNfvRequestTopology Topology { get; set; }
+	public ProvisionNfvRequestTopology? Topology { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

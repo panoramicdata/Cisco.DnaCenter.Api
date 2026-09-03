@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -21,7 +21,7 @@ public class GetDefaultAuthenticationProfileFromSdaFabricRequestInner
 	/// <param name="BorderSessionType">BorderSessionType.</param>
 	/// <param name="ConnectedToInternet">ConnectedToInternet.</param>
 	/// <param name="ExternalConnectivitySettings">ExternalConnectivitySettings.</param>
-	public GetDefaultAuthenticationProfileFromSdaFabricRequestInner(string? DeviceManagementIpAddress = default, string? SiteHierarchy = default, string? ExternalDomainRoutingProtocolName = default, string? ExternalConnectivityIpPoolName = default, string? InternalAutonomouSystemNumber = default, string? BorderSessionType = default, bool? ConnectedToInternet = default, List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings> ExternalConnectivitySettings = default)
+	public GetDefaultAuthenticationProfileFromSdaFabricRequestInner(string? DeviceManagementIpAddress = default, string? SiteHierarchy = default, string? ExternalDomainRoutingProtocolName = default, string? ExternalConnectivityIpPoolName = default, string? InternalAutonomouSystemNumber = default, string? BorderSessionType = default, bool? ConnectedToInternet = default, List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings>? ExternalConnectivitySettings = default)
 	{
 		this.DeviceManagementIpAddress = DeviceManagementIpAddress;
 		this.SiteHierarchy = SiteHierarchy;
@@ -79,7 +79,7 @@ public class GetDefaultAuthenticationProfileFromSdaFabricRequestInner
 	/// Gets or Sets ExternalConnectivitySettings
 	/// </summary>
 	[DataMember(Name = "externalConnectivitySettings", EmitDefaultValue = false)]
-	public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings> ExternalConnectivitySettings { get; set; }
+	public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings>? ExternalConnectivitySettings { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

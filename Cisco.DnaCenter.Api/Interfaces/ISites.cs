@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,6 +20,7 @@ public interface ISites
 	/// <param name="__persistbapioutput">Persist bapi sync response</param>
 	/// <param name="siteId">Site id to which site the device to assign</param>
 	/// <param name="__runsynctimeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 55)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AssignDeviceToSiteResponse</returns>
 	[Post("/dna/system/api/v1/site/{siteId}/device")]
 	Task<ExecutionStatusResponse> AssignDevicesToSiteAsync(
@@ -40,6 +41,7 @@ public interface ISites
 	/// <param name="__runsync">Enable this parameter to execute the API and return a response synchronously</param>
 	/// <param name="__persistbapioutput">Persist bapi sync response</param>
 	/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 30)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateSiteResponse</returns>
 	[Post("/dna/intent/api/v1/site")]
 	Task<ExecutionStatusResponse> CreateSiteAsync(
@@ -56,6 +58,7 @@ public interface ISites
 	/// Delete site with area/building/floor by siteId.
 	/// </remarks>
 	/// <param name="siteId">Site id to which site details to be deleted.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteSiteResponse</returns>
 	[Delete("/dna/intent/api/v1/site/{siteId}")]
 	Task<ExecutionStatusResponse> DeleteSiteAsync(
@@ -69,6 +72,7 @@ public interface ISites
 	/// Getting the site children details and device details.
 	/// </remarks>
 	/// <param name="siteId">Site id to retrieve device associated with the site.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetMembershipResponse</returns>
 	[Get("/dna/intent/api/v1/membership/{siteId}")]
 	Task<GetMembershipResponse> GetSiteMembershipAsync(
@@ -86,6 +90,7 @@ public interface ISites
 	/// <param name="type">type (ex: area, building, floor) (optional, default to )</param>
 	/// <param name="offset">offset/starting row (optional, default to )</param>
 	/// <param name="limit">Number of sites to be retrieved (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
 	[Get("/dna/intent/api/v1/site")]
 	Task<GetSiteResponse> GetSitesAsync(
@@ -116,6 +121,7 @@ public interface ISites
 	/// <param name="type">type (ex: area, building, floor) (optional, default to )</param>
 	/// <param name="offset">offset/starting row (optional, default to )</param>
 	/// <param name="limit">Number of sites to be retrieved (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
 	[Get("/dna/intent/api/v1/site?siteId={siteId}")]
 	Task<GetSiteSingleResponse> GetSiteAsync(
@@ -129,10 +135,11 @@ public interface ISites
 	/// API to get site count
 	/// </remarks>
 	/// <param name="siteId"> Site id to retrieve site count. (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteCountResponse</returns>
 	[Get("/dna/intent/api/v1/site/count")]
 	Task<GetSiteCountResponse> GetSiteCountAsync(
-		[AliasAs("siteId")] string siteId = null,
+		[AliasAs("siteId")] string? siteId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -142,10 +149,11 @@ public interface ISites
 	/// Returns Overall Health information for all sites
 	/// </remarks>
 	/// <param name="timestamp">Epoch time(in milliseconds) when the Site Hierarchy data is required (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteHealthResponse</returns>
 	[Get("/dna/intent/api/v1/site-health")]
 	Task<GetSiteHealthResponse> GetSiteHealthAsync(
-		[AliasAs("timestamp")] string timestamp = null,
+		[AliasAs("timestamp")] string? timestamp = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -159,6 +167,7 @@ public interface ISites
 	/// <param name="siteId">Site id to which site details to be updated.</param>
 	/// <param name="__runsync">Enable this parameter to execute the API and return a response synchronously (optional, default to false)</param>
 	/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateSiteResponse</returns>
 	[Put("/dna/intent/api/v1/site/{siteId}")]
 	Task<ExecutionStatusResponse> UpdateSiteAsync(

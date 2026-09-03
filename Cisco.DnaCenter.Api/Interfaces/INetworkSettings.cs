@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,6 +19,7 @@ public interface INetworkSettings
 	/// <param name="request">request</param>
 	/// <param name="__persistbapioutput">Persist bapi sync response</param>
 	/// <param name="siteId">site id to assign credential.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AssignCredentialToSiteResponse</returns>
 	[Post("/dna/intent/api/v1/credential-to-site/{siteId}")]
 	Task<ExecutionStatusResponse> AssignCredentialToSiteAsync(
@@ -34,6 +35,7 @@ public interface INetworkSettings
 	/// API to create device credentials.
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateDeviceCredentialsResponse</returns>
 	[Post("/dna/intent/api/v1/device-credential")]
 	Task<ExecutionStatusResponse> CreateDeviceCredentialsAsync(
@@ -48,11 +50,12 @@ public interface INetworkSettings
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="__persistbapioutput"> Persist bapi sync response (optional, default to true)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateGlobalPoolResponse</returns>
 	[Post("/dna/intent/api/v1/global-pool")]
 	Task<ExecutionStatusResponse> CreateGlobalPoolAsync(
 		[Body]CreateGlobalPoolRequest request,
-		string __persistbapioutput = null,
+		string? __persistbapioutput = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -64,6 +67,7 @@ public interface INetworkSettings
 	/// <param name="request">request</param>
 	/// <param name="siteId">Site id to which site details to associate with the network settings.</param>
 	/// <param name="__persistbapioutput">Persist bapi sync response (optional, default to true)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateNetworkResponse</returns>
 	[Post("/dna/intent/api/v1/network/{siteId}")]
 	Task<ExecutionStatusResponse> CreateNetworkAsync(
@@ -79,6 +83,7 @@ public interface INetworkSettings
 	/// API to create service provider profile(QOS).
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateSPProfileResponse</returns>
 	[Post("/dna/intent/api/v1/service-provider")]
 	Task<ExecutionStatusResponse> CreateSpProfileAsync(
@@ -92,6 +97,7 @@ public interface INetworkSettings
 	/// Delete device credential.
 	/// </remarks>
 	/// <param name="id">global credential id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteDeviceCredentialResponse</returns>
 	[Delete("/dna/intent/api/v1/device-credential/{id}")]
 	Task<ExecutionResponse> DeleteDeviceCredentialAsync(
@@ -105,6 +111,7 @@ public interface INetworkSettings
 	/// API to delete global IP pool.
 	/// </remarks>
 	/// <param name="id">global pool id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteGlobalIPPoolResponse</returns>
 	[Delete("/dna/intent/api/v1/global-pool/{id}")]
 	Task<ExecutionStatusResponse> DeleteGlobalIpPoolAsync(
@@ -118,6 +125,8 @@ public interface INetworkSettings
 	/// API to delete Service Provider profile (QoS).
 	/// </remarks>
 	/// <param name="sp_profile_name">sp profile name</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="spProfileName">spProfileName.</param>
 	/// <returns>Task of DeleteSPProfileResponse</returns>
 	[Delete("/dna/intent/api/v1/sp-profile/{spProfileName}")]
 	Task<ExecutionStatusResponse> DeleteSpProfileAsync(
@@ -131,10 +140,11 @@ public interface INetworkSettings
 	/// API to get device credential details.
 	/// </remarks>
 	/// <param name="siteId">Site id to retrieve the credential details associated with the site. (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetDeviceCredentialDetailsResponse</returns>
 	[Get("/dna/intent/api/v1/device-credential")]
 	Task<GetDeviceCredentialDetailsResponse> GetDeviceCredentialDetailsAsync(
-		[AliasAs("siteId")]string siteId = null,
+		[AliasAs("siteId")]string? siteId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -145,11 +155,12 @@ public interface INetworkSettings
 	/// </remarks>
 	/// <param name="offset">offset/starting row (optional, default to )</param>
 	/// <param name="limit">No of Global Pools to be retrieved (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetGlobalPoolResponse</returns>
 	[Get("/dna/intent/api/v1/global-pool")]
 	Task<GetGlobalPoolResponse> GetGlobalPoolAsync(
-		[AliasAs("offset")]string offset = null,
-		[AliasAs("limit")]string limit = null,
+		[AliasAs("offset")]string? offset = null,
+		[AliasAs("limit")]string? limit = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -159,10 +170,11 @@ public interface INetworkSettings
 	/// API to get  DHCP and DNS center server details.
 	/// </remarks>
 	/// <param name="siteId">Site id to get the network settings associated with the site. (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetNetworkResponse</returns>
 	[Get("/dna/intent/api/v1/network")]
 	Task<GetNetworkResponse> GetNetworkAsync(
-		[AliasAs("siteId")]string siteId = null,
+		[AliasAs("siteId")]string? siteId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -183,6 +195,7 @@ public interface INetworkSettings
 	/// API to update device credentials.
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateDeviceCredentialsResponse</returns>
 	[Put("/dna/intent/api/v1/device-credential")]
 	Task<ExecutionStatusResponse> UpdateDeviceCredentialsAsync(
@@ -196,6 +209,7 @@ public interface INetworkSettings
 	/// API to update global pool
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateGlobalPoolResponse</returns>
 	[Put("/dna/intent/api/v1/global-pool")]
 	Task<ExecutionStatusResponse> UpdateGlobalPoolAsync(
@@ -225,6 +239,7 @@ public interface INetworkSettings
 	/// API to update SP profile
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateSPProfileResponse</returns>
 	[Put("/dna/intent/api/v1/service-provider")]
 	Task<ExecutionStatusResponse> UpdateSPProfileAsync(

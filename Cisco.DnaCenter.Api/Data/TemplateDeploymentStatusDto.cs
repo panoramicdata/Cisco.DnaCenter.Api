@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -26,7 +26,7 @@ public class TemplateDeploymentStatusDto
 	public TemplateDeploymentStatusDto(
 		string? DeploymentId = default,
 		string? DeploymentName = default,
-		List<TemplateDeploymentStatusDtoDevices> Devices = default,
+		List<TemplateDeploymentStatusDtoDevices>? Devices = default,
 		string? Duration = default,
 		string? EndTime = default,
 		string? ProjectName = default,
@@ -63,7 +63,7 @@ public class TemplateDeploymentStatusDto
 	/// Gets or Sets Devices
 	/// </summary>
 	[DataMember(Name = "devices", EmitDefaultValue = false)]
-	public List<TemplateDeploymentStatusDtoDevices> Devices { get; set; }
+	public List<TemplateDeploymentStatusDtoDevices>? Devices { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Duration

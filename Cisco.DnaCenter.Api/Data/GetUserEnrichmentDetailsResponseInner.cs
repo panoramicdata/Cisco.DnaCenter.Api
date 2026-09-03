@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetUserEnrichmentDetailsResponseInner
 	/// </summary>
 	/// <param name="UserDetails">UserDetails.</param>
 	/// <param name="ConnectedDevice">ConnectedDevice.</param>
-	public GetUserEnrichmentDetailsResponseInner(GetUserEnrichmentDetailsResponseInnerUserDetails UserDetails = default, List<GetUserEnrichmentDetailsResponseInnerConnectedDevice> ConnectedDevice = default)
+	public GetUserEnrichmentDetailsResponseInner(GetUserEnrichmentDetailsResponseInnerUserDetails? UserDetails = default, List<GetUserEnrichmentDetailsResponseInnerConnectedDevice>? ConnectedDevice = default)
 	{
 		this.UserDetails = UserDetails;
 		this.ConnectedDevice = ConnectedDevice;
@@ -25,13 +25,13 @@ public class GetUserEnrichmentDetailsResponseInner
 	/// Gets or Sets UserDetails
 	/// </summary>
 	[DataMember(Name = "userDetails", EmitDefaultValue = false)]
-	public GetUserEnrichmentDetailsResponseInnerUserDetails UserDetails { get; set; }
+	public GetUserEnrichmentDetailsResponseInnerUserDetails? UserDetails { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConnectedDevice
 	/// </summary>
 	[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
-	public List<GetUserEnrichmentDetailsResponseInnerConnectedDevice> ConnectedDevice { get; set; }
+	public List<GetUserEnrichmentDetailsResponseInnerConnectedDevice>? ConnectedDevice { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

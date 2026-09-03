@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
@@ -28,7 +28,7 @@ public class ProjectDto
 		long? LastUpdateTime = default,
 		string? Name = default,
 		List<TagDto>? Tags = default,
-		Object Templates = default)
+		Object? Templates = default)
 	{
 		this.CreateTime = CreateTime;
 		this.Description = Description;
@@ -79,7 +79,7 @@ public class ProjectDto
 	/// Gets or Sets Templates
 	/// </summary>
 	[DataMember(Name = "templates", EmitDefaultValue = false)]
-	public Object Templates { get; set; }
+	public Object? Templates { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ public interface IApplicationPolicies
 	/// Create new Custom application
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateApplicationResponse</returns>
 	[Post("/dna/intent/api/v1/applications")]
 	Task<CreateApplicationResponse> CreateApplicationAsync(
@@ -30,6 +31,7 @@ public interface IApplicationPolicies
 	/// Create new custom application-set/s
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateApplicationSetResponse</returns>
 	[Post("/dna/intent/api/v1/application-policy-application-set")]
 	Task<CreateApplicationSetResponse> CreateApplicationSetAsync(
@@ -43,6 +45,7 @@ public interface IApplicationPolicies
 	/// Delete existing application by its id
 	/// </remarks>
 	/// <param name="id">Application&#39;s Id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteApplicationResponse</returns>
 	[Delete("/dna/intent/api/v1/applications")]
 	Task<DeleteApplicationResponse> DeleteApplicationAsync(
@@ -56,6 +59,7 @@ public interface IApplicationPolicies
 	/// Delete existing application-set by it&#39;s id
 	/// </remarks>
 	/// <param name="id"></param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteApplicationSetResponse</returns>
 	[Delete("/dna/intent/api/v1/application-policy-application-set")]
 	Task<DeleteApplicationSetResponse> DeleteApplicationSetAsync(
@@ -69,6 +73,7 @@ public interface IApplicationPolicies
 	/// Edit the attributes of an existing application
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of EditApplicationResponse</returns>
 	[Put("/dna/intent/api/v1/applications")]
 	Task<EditApplicationResponse> UpdateApplicationAsync(
@@ -84,12 +89,13 @@ public interface IApplicationPolicies
 	/// <param name="offset"> (optional, default to 1)</param>
 	/// <param name="limit"> (optional, default to 500)</param>
 	/// <param name="name"> (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetApplicationSetsResponse</returns>
 	[Get("/dna/intent/api/v1/application-policy-application-set")]
 	Task<GetApplicationSetsResponse> GetApplicationSetsAsync(
 		[AliasAs("offset")]int? offset = null,
 		[AliasAs("limit")]int? limit = null,
-		[AliasAs("name")]string name = null,
+		[AliasAs("name")]string? name = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -112,12 +118,13 @@ public interface IApplicationPolicies
 	/// <param name="offset">The offset of the first application to be returned (optional, default to 1)</param>
 	/// <param name="limit">The maximum number of applications to be returned (optional, default to 500)</param>
 	/// <param name="name">Application&#39;s name (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetApplicationsResponse</returns>
 	[Get("/dna/intent/api/v1/applications")]
 	Task<GetApplicationsResponse> GetAllAsync(
 		[AliasAs("offset")]int? offset = null,
 		[AliasAs("limit")]int? limit = null,
-		[AliasAs("name")]string name = null,
+		[AliasAs("name")]string? name = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>

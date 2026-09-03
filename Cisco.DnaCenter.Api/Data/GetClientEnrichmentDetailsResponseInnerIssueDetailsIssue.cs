@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -26,7 +26,7 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsIssue
 	/// <param name="IssueTimestamp">IssueTimestamp.</param>
 	/// <param name="SuggestedActions">SuggestedActions.</param>
 	/// <param name="ImpactedHosts">ImpactedHosts.</param>
-	public GetClientEnrichmentDetailsResponseInnerIssueDetailsIssue(string? IssueId = default, string? IssueSource = default, string? IssueCategory = default, string? IssueName = default, string? IssueDescription = default, string? IssueEntity = default, string? IssueEntityValue = default, string? IssueSeverity = default, string? IssuePriority = default, string? IssueSummary = default, int? IssueTimestamp = default, List<GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions> SuggestedActions = default, List<GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts> ImpactedHosts = default)
+	public GetClientEnrichmentDetailsResponseInnerIssueDetailsIssue(string? IssueId = default, string? IssueSource = default, string? IssueCategory = default, string? IssueName = default, string? IssueDescription = default, string? IssueEntity = default, string? IssueEntityValue = default, string? IssueSeverity = default, string? IssuePriority = default, string? IssueSummary = default, int? IssueTimestamp = default, List<GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions>? SuggestedActions = default, List<GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts>? ImpactedHosts = default)
 	{
 		this.IssueId = IssueId;
 		this.IssueSource = IssueSource;
@@ -113,13 +113,13 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsIssue
 	/// Gets or Sets SuggestedActions
 	/// </summary>
 	[DataMember(Name = "suggestedActions", EmitDefaultValue = false)]
-	public List<GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions> SuggestedActions { get; set; }
+	public List<GetClientEnrichmentDetailsResponseInnerIssueDetailsSuggestedActions>? SuggestedActions { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ImpactedHosts
 	/// </summary>
 	[DataMember(Name = "impactedHosts", EmitDefaultValue = false)]
-	public List<GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts> ImpactedHosts { get; set; }
+	public List<GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts>? ImpactedHosts { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -22,7 +22,8 @@ public class GetPnpGlobalSettingsResponse
 	/// <param name="Id">Id.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="_Version">_Version.</param>
-	public GetPnpGlobalSettingsResponse(List<GetPnpGlobalSettingsResponseSavaMappingList> SavaMappingList = default, GetPnpGlobalSettingsResponseTaskTimeOuts TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials AaaCredentials = default, GetPnpGlobalSettingsResponseDefaultProfile DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)
+	/// <param name="_Id">_Id.</param>
+	public GetPnpGlobalSettingsResponse(List<GetPnpGlobalSettingsResponseSavaMappingList>? SavaMappingList = default, GetPnpGlobalSettingsResponseTaskTimeOuts? TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials? AaaCredentials = default, GetPnpGlobalSettingsResponseDefaultProfile? DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)
 	{
 		this.SavaMappingList = SavaMappingList;
 		this.TaskTimeOuts = TaskTimeOuts;
@@ -39,13 +40,13 @@ public class GetPnpGlobalSettingsResponse
 	/// Gets or Sets SavaMappingList
 	/// </summary>
 	[DataMember(Name = "savaMappingList", EmitDefaultValue = false)]
-	public List<GetPnpGlobalSettingsResponseSavaMappingList> SavaMappingList { get; set; }
+	public List<GetPnpGlobalSettingsResponseSavaMappingList>? SavaMappingList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TaskTimeOuts
 	/// </summary>
 	[DataMember(Name = "taskTimeOuts", EmitDefaultValue = false)]
-	public GetPnpGlobalSettingsResponseTaskTimeOuts TaskTimeOuts { get; set; }
+	public GetPnpGlobalSettingsResponseTaskTimeOuts? TaskTimeOuts { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TenantId
@@ -57,13 +58,13 @@ public class GetPnpGlobalSettingsResponse
 	/// Gets or Sets AaaCredentials
 	/// </summary>
 	[DataMember(Name = "aaaCredentials", EmitDefaultValue = false)]
-	public DeviceDeviceInfoAaaCredentials AaaCredentials { get; set; }
+	public DeviceDeviceInfoAaaCredentials? AaaCredentials { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DefaultProfile
 	/// </summary>
 	[DataMember(Name = "defaultProfile", EmitDefaultValue = false)]
-	public GetPnpGlobalSettingsResponseDefaultProfile DefaultProfile { get; set; }
+	public GetPnpGlobalSettingsResponseDefaultProfile? DefaultProfile { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AcceptEula

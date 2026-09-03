@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class CreateDeviceCredentialsRequestSettings
 	/// <param name="SnmpV3">SnmpV3.</param>
 	/// <param name="HttpsRead">HttpsRead.</param>
 	/// <param name="HttpsWrite">HttpsWrite.</param>
-	public CreateDeviceCredentialsRequestSettings(List<CreateDeviceCredentialsRequestSettingsCliCredential> CliCredential = default, List<CreateDeviceCredentialsRequestSettingsSnmpV2cRead> SnmpV2cRead = default, List<CreateDeviceCredentialsRequestSettingsSnmpV2cWrite> SnmpV2cWrite = default, List<CreateDeviceCredentialsRequestSettingsSnmpV3> SnmpV3 = default, List<CreateDeviceCredentialsRequestSettingsHttpsRead> HttpsRead = default, List<CreateDeviceCredentialsRequestSettingsHttpsRead> HttpsWrite = default)
+	public CreateDeviceCredentialsRequestSettings(List<CreateDeviceCredentialsRequestSettingsCliCredential>? CliCredential = default, List<CreateDeviceCredentialsRequestSettingsSnmpV2cRead>? SnmpV2cRead = default, List<CreateDeviceCredentialsRequestSettingsSnmpV2cWrite>? SnmpV2cWrite = default, List<CreateDeviceCredentialsRequestSettingsSnmpV3>? SnmpV3 = default, List<CreateDeviceCredentialsRequestSettingsHttpsRead>? HttpsRead = default, List<CreateDeviceCredentialsRequestSettingsHttpsRead>? HttpsWrite = default)
 	{
 		this.CliCredential = CliCredential;
 		this.SnmpV2cRead = SnmpV2cRead;
@@ -33,37 +33,37 @@ public class CreateDeviceCredentialsRequestSettings
 	/// Gets or Sets CliCredential
 	/// </summary>
 	[DataMember(Name = "cliCredential", EmitDefaultValue = false)]
-	public List<CreateDeviceCredentialsRequestSettingsCliCredential> CliCredential { get; set; }
+	public List<CreateDeviceCredentialsRequestSettingsCliCredential>? CliCredential { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SnmpV2cRead
 	/// </summary>
 	[DataMember(Name = "snmpV2cRead", EmitDefaultValue = false)]
-	public List<CreateDeviceCredentialsRequestSettingsSnmpV2cRead> SnmpV2cRead { get; set; }
+	public List<CreateDeviceCredentialsRequestSettingsSnmpV2cRead>? SnmpV2cRead { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SnmpV2cWrite
 	/// </summary>
 	[DataMember(Name = "snmpV2cWrite", EmitDefaultValue = false)]
-	public List<CreateDeviceCredentialsRequestSettingsSnmpV2cWrite> SnmpV2cWrite { get; set; }
+	public List<CreateDeviceCredentialsRequestSettingsSnmpV2cWrite>? SnmpV2cWrite { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SnmpV3
 	/// </summary>
 	[DataMember(Name = "snmpV3", EmitDefaultValue = false)]
-	public List<CreateDeviceCredentialsRequestSettingsSnmpV3> SnmpV3 { get; set; }
+	public List<CreateDeviceCredentialsRequestSettingsSnmpV3>? SnmpV3 { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HttpsRead
 	/// </summary>
 	[DataMember(Name = "httpsRead", EmitDefaultValue = false)]
-	public List<CreateDeviceCredentialsRequestSettingsHttpsRead> HttpsRead { get; set; }
+	public List<CreateDeviceCredentialsRequestSettingsHttpsRead>? HttpsRead { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HttpsWrite
 	/// </summary>
 	[DataMember(Name = "httpsWrite", EmitDefaultValue = false)]
-	public List<CreateDeviceCredentialsRequestSettingsHttpsRead> HttpsWrite { get; set; }
+	public List<CreateDeviceCredentialsRequestSettingsHttpsRead>? HttpsWrite { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class GetPnpGlobalSettingsResponseDefaultProfile
 	/// <param name="Cert">Cert.</param>
 	/// <param name="IpAddresses">IpAddresses.</param>
 	/// <param name="Port">Port.</param>
-	public GetPnpGlobalSettingsResponseDefaultProfile(List<string> FqdnAddresses = default, bool? Proxy = default, string? Cert = default, List<string> IpAddresses = default, decimal? Port = default)
+	public GetPnpGlobalSettingsResponseDefaultProfile(List<string>? FqdnAddresses = default, bool? Proxy = default, string? Cert = default, List<string>? IpAddresses = default, decimal? Port = default)
 	{
 		this.FqdnAddresses = FqdnAddresses;
 		this.Proxy = Proxy;
@@ -31,7 +31,7 @@ public class GetPnpGlobalSettingsResponseDefaultProfile
 	/// Gets or Sets FqdnAddresses
 	/// </summary>
 	[DataMember(Name = "fqdnAddresses", EmitDefaultValue = false)]
-	public List<string> FqdnAddresses { get; set; }
+	public List<string>? FqdnAddresses { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Proxy
@@ -49,7 +49,7 @@ public class GetPnpGlobalSettingsResponseDefaultProfile
 	/// Gets or Sets IpAddresses
 	/// </summary>
 	[DataMember(Name = "ipAddresses", EmitDefaultValue = false)]
-	public List<string> IpAddresses { get; set; }
+	public List<string>? IpAddresses { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Port

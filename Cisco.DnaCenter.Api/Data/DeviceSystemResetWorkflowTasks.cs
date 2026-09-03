@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -29,7 +29,7 @@ public class DeviceSystemResetWorkflowTasks
 		decimal? TaskSeqNo = default,
 		long? EndTime = default,
 		long? StartTime = default,
-		List<DeviceSystemResetWorkflowWorkItemList> WorkItemList = default,
+		List<DeviceSystemResetWorkflowWorkItemList>? WorkItemList = default,
 		decimal? TimeTaken = default,
 		string? Name = default)
 	{
@@ -84,7 +84,7 @@ public class DeviceSystemResetWorkflowTasks
 	/// Gets or Sets WorkItemList
 	/// </summary>
 	[DataMember(Name = "workItemList", EmitDefaultValue = false)]
-	public List<DeviceSystemResetWorkflowWorkItemList> WorkItemList { get; set; }
+	public List<DeviceSystemResetWorkflowWorkItemList>? WorkItemList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TimeTaken

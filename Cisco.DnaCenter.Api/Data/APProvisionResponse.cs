@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -15,7 +15,7 @@ public class ApProvisionResponse
 	/// <param name="ExecutionId">ExecutionId.</param>
 	/// <param name="ExecutionUrl">ExecutionUrl.</param>
 	/// <param name="ProvisionTasks">ProvisionTasks.</param>
-	public ApProvisionResponse(string? ExecutionId = default, string? ExecutionUrl = default, ApProvisionResponseProvisionTasks ProvisionTasks = default)
+	public ApProvisionResponse(string? ExecutionId = default, string? ExecutionUrl = default, ApProvisionResponseProvisionTasks? ProvisionTasks = default)
 	{
 		this.ExecutionId = ExecutionId;
 		this.ExecutionUrl = ExecutionUrl;
@@ -38,7 +38,7 @@ public class ApProvisionResponse
 	/// Gets or Sets ProvisionTasks
 	/// </summary>
 	[DataMember(Name = "provisionTasks", EmitDefaultValue = false)]
-	public ApProvisionResponseProvisionTasks ProvisionTasks { get; set; }
+	public ApProvisionResponseProvisionTasks? ProvisionTasks { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

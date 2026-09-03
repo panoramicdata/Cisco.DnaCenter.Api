@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -13,7 +13,7 @@ public class GetUserEnrichmentDetailsResponseInnerConnectedDevice
 	/// Initializes a new instance of the <see cref="GetUserEnrichmentDetailsResponseInnerConnectedDevice" /> class.
 	/// </summary>
 	/// <param name="DeviceDetails">DeviceDetails.</param>
-	public GetUserEnrichmentDetailsResponseInnerConnectedDevice(GetUserEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails = default)
+	public GetUserEnrichmentDetailsResponseInnerConnectedDevice(GetUserEnrichmentDetailsResponseInnerDeviceDetails? DeviceDetails = default)
 	{
 		this.DeviceDetails = DeviceDetails;
 	}
@@ -22,7 +22,7 @@ public class GetUserEnrichmentDetailsResponseInnerConnectedDevice
 	/// Gets or Sets DeviceDetails
 	/// </summary>
 	[DataMember(Name = "deviceDetails", EmitDefaultValue = false)]
-	public GetUserEnrichmentDetailsResponseInnerDeviceDetails DeviceDetails { get; set; }
+	public GetUserEnrichmentDetailsResponseInnerDeviceDetails? DeviceDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class ResetRequestConfigList
 	/// </summary>
 	/// <param name="ConfigId">ConfigId.</param>
 	/// <param name="ConfigParameters">ConfigParameters.</param>
-	public ResetRequestConfigList(string? ConfigId = default, List<DeviceDeviceInfoHttpHeaders> ConfigParameters = default)
+	public ResetRequestConfigList(string? ConfigId = default, List<DeviceDeviceInfoHttpHeaders>? ConfigParameters = default)
 	{
 		this.ConfigId = ConfigId;
 		this.ConfigParameters = ConfigParameters;
@@ -31,7 +31,7 @@ public class ResetRequestConfigList
 	/// Gets or Sets ConfigParameters
 	/// </summary>
 	[DataMember(Name = "configParameters", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoHttpHeaders> ConfigParameters { get; set; }
+	public List<DeviceDeviceInfoHttpHeaders>? ConfigParameters { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

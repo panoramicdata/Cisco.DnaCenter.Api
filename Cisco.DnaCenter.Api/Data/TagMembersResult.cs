@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class TagMembersResult
 	/// </summary>
 	/// <param name="_Version">_Version.</param>
 	/// <param name="Response">Response.</param>
-	public TagMembersResult(string? _Version = default, List<TagMembersResultResponse> Response = default)
+	public TagMembersResult(string? _Version = default, List<TagMembersResultResponse>? Response = default)
 	{
 		this._Version = _Version;
 		this.Response = Response;
@@ -31,7 +31,7 @@ public class TagMembersResult
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<TagMembersResultResponse> Response { get; set; }
+	public List<TagMembersResultResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -21,7 +21,7 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts
 	/// <param name="FailedAttempts">FailedAttempts.</param>
 	/// <param name="Location">Location.</param>
 	/// <param name="Timestamp">Timestamp.</param>
-	public GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts(string? HostType = default, string? HostName = default, string? HostOs = default, string? Ssid = default, string? ConnectedInterface = default, string? MacAddress = default, int? FailedAttempts = default, GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation Location = default, int? Timestamp = default)
+	public GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts(string? HostType = default, string? HostName = default, string? HostOs = default, string? Ssid = default, string? ConnectedInterface = default, string? MacAddress = default, int? FailedAttempts = default, GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation? Location = default, int? Timestamp = default)
 	{
 		this.HostType = HostType;
 		this.HostName = HostName;
@@ -80,7 +80,7 @@ public class GetClientEnrichmentDetailsResponseInnerIssueDetailsImpactedHosts
 	/// Gets or Sets Location
 	/// </summary>
 	[DataMember(Name = "location", EmitDefaultValue = false)]
-	public GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation Location { get; set; }
+	public GetClientEnrichmentDetailsResponseInnerIssueDetailsLocation? Location { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Timestamp

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -35,7 +35,7 @@ public class PathResponseResultResponseNetworkElements
 	/// <param name="Tunnels">Tunnels.</param>
 	/// <param name="Type">Type.</param>
 	/// <param name="WlanId">WlanId.</param>
-	public PathResponseResultResponseNetworkElements(List<PathResponseResultResponseAccuracyList> AccuracyList = default, PathResponseResultResponseDetailedStatus DetailedStatus = default, PathResponseResultResponseDeviceStatistics DeviceStatistics = default, string? DeviceStatsCollection = default, string? DeviceStatsCollectionFailureReason = default, PathResponseResultResponseEgressPhysicalInterface EgressPhysicalInterface = default, PathResponseResultResponseEgressPhysicalInterface EgressVirtualInterface = default, PathResponseResultResponseFlexConnect FlexConnect = default, string? Id = default, PathResponseResultResponseEgressPhysicalInterface IngressPhysicalInterface = default, PathResponseResultResponseEgressPhysicalInterface IngressVirtualInterface = default, string? Ip = default, string? LinkInformationSource = default, string? Name = default, string? PerfMonCollection = default, string? PerfMonCollectionFailureReason = default, List<PathResponseResultResponsePerfMonStatistics> PerfMonStatistics = default, string? Role = default, string? Ssid = default, List<string> Tunnels = default, string? Type = default, string? WlanId = default)
+	public PathResponseResultResponseNetworkElements(List<PathResponseResultResponseAccuracyList>? AccuracyList = default, PathResponseResultResponseDetailedStatus? DetailedStatus = default, PathResponseResultResponseDeviceStatistics? DeviceStatistics = default, string? DeviceStatsCollection = default, string? DeviceStatsCollectionFailureReason = default, PathResponseResultResponseEgressPhysicalInterface? EgressPhysicalInterface = default, PathResponseResultResponseEgressPhysicalInterface? EgressVirtualInterface = default, PathResponseResultResponseFlexConnect? FlexConnect = default, string? Id = default, PathResponseResultResponseEgressPhysicalInterface? IngressPhysicalInterface = default, PathResponseResultResponseEgressPhysicalInterface? IngressVirtualInterface = default, string? Ip = default, string? LinkInformationSource = default, string? Name = default, string? PerfMonCollection = default, string? PerfMonCollectionFailureReason = default, List<PathResponseResultResponsePerfMonStatistics>? PerfMonStatistics = default, string? Role = default, string? Ssid = default, List<string>? Tunnels = default, string? Type = default, string? WlanId = default)
 	{
 		this.AccuracyList = AccuracyList;
 		this.DetailedStatus = DetailedStatus;
@@ -65,19 +65,19 @@ public class PathResponseResultResponseNetworkElements
 	/// Gets or Sets AccuracyList
 	/// </summary>
 	[DataMember(Name = "accuracyList", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseAccuracyList> AccuracyList { get; set; }
+	public List<PathResponseResultResponseAccuracyList>? AccuracyList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DetailedStatus
 	/// </summary>
 	[DataMember(Name = "detailedStatus", EmitDefaultValue = false)]
-	public PathResponseResultResponseDetailedStatus DetailedStatus { get; set; }
+	public PathResponseResultResponseDetailedStatus? DetailedStatus { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DeviceStatistics
 	/// </summary>
 	[DataMember(Name = "deviceStatistics", EmitDefaultValue = false)]
-	public PathResponseResultResponseDeviceStatistics DeviceStatistics { get; set; }
+	public PathResponseResultResponseDeviceStatistics? DeviceStatistics { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DeviceStatsCollection
@@ -95,19 +95,19 @@ public class PathResponseResultResponseNetworkElements
 	/// Gets or Sets EgressPhysicalInterface
 	/// </summary>
 	[DataMember(Name = "egressPhysicalInterface", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterface EgressPhysicalInterface { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterface? EgressPhysicalInterface { get; set; }
 
 	/// <summary>
 	/// Gets or Sets EgressVirtualInterface
 	/// </summary>
 	[DataMember(Name = "egressVirtualInterface", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterface EgressVirtualInterface { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterface? EgressVirtualInterface { get; set; }
 
 	/// <summary>
 	/// Gets or Sets FlexConnect
 	/// </summary>
 	[DataMember(Name = "flexConnect", EmitDefaultValue = false)]
-	public PathResponseResultResponseFlexConnect FlexConnect { get; set; }
+	public PathResponseResultResponseFlexConnect? FlexConnect { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id
@@ -119,13 +119,13 @@ public class PathResponseResultResponseNetworkElements
 	/// Gets or Sets IngressPhysicalInterface
 	/// </summary>
 	[DataMember(Name = "ingressPhysicalInterface", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterface IngressPhysicalInterface { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterface? IngressPhysicalInterface { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IngressVirtualInterface
 	/// </summary>
 	[DataMember(Name = "ingressVirtualInterface", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterface IngressVirtualInterface { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterface? IngressVirtualInterface { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ip
@@ -161,7 +161,7 @@ public class PathResponseResultResponseNetworkElements
 	/// Gets or Sets PerfMonStatistics
 	/// </summary>
 	[DataMember(Name = "perfMonStatistics", EmitDefaultValue = false)]
-	public List<PathResponseResultResponsePerfMonStatistics> PerfMonStatistics { get; set; }
+	public List<PathResponseResultResponsePerfMonStatistics>? PerfMonStatistics { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Role
@@ -179,7 +179,7 @@ public class PathResponseResultResponseNetworkElements
 	/// Gets or Sets Tunnels
 	/// </summary>
 	[DataMember(Name = "tunnels", EmitDefaultValue = false)]
-	public List<string> Tunnels { get; set; }
+	public List<string>? Tunnels { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Type

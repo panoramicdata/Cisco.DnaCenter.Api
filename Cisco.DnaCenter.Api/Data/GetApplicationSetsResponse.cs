@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// GetApplicationSetsResponse
@@ -15,7 +15,7 @@ public class GetApplicationSetsResponse
 	/// Initializes a new instance of the <see cref="GetApplicationSetsResponse" /> class.
 	/// </summary>
 	/// <param name="Response">Response.</param>
-	public GetApplicationSetsResponse(List<GetApplicationSetsResponseResponse> Response)
+	public GetApplicationSetsResponse(List<GetApplicationSetsResponseResponse>? Response)
 	{
 		this.Response = Response;
 	}
@@ -24,7 +24,7 @@ public class GetApplicationSetsResponse
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<GetApplicationSetsResponseResponse> Response { get; set; }
+	public List<GetApplicationSetsResponseResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

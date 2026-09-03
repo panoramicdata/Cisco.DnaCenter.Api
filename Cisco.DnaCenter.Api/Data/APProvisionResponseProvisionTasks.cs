@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class ApProvisionResponseProvisionTasks
 	/// </summary>
 	/// <param name="Success">Success.</param>
 	/// <param name="Failure">Failure.</param>
-	public ApProvisionResponseProvisionTasks(List<ApProvisionResponseProvisionTasksSuccess> Success = default, ApProvisionResponseProvisionTasksFailure Failure = default)
+	public ApProvisionResponseProvisionTasks(List<ApProvisionResponseProvisionTasksSuccess>? Success = default, ApProvisionResponseProvisionTasksFailure? Failure = default)
 	{
 		this.Success = Success;
 		this.Failure = Failure;
@@ -25,13 +25,13 @@ public class ApProvisionResponseProvisionTasks
 	/// Gets or Sets Success
 	/// </summary>
 	[DataMember(Name = "success", EmitDefaultValue = false)]
-	public List<ApProvisionResponseProvisionTasksSuccess> Success { get; set; }
+	public List<ApProvisionResponseProvisionTasksSuccess>? Success { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Failure
 	/// </summary>
 	[DataMember(Name = "failure", EmitDefaultValue = false)]
-	public ApProvisionResponseProvisionTasksFailure Failure { get; set; }
+	public ApProvisionResponseProvisionTasksFailure? Failure { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

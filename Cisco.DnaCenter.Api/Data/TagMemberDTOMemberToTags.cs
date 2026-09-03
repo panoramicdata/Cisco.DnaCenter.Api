@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// TagMemberDtoMemberToTags
@@ -15,7 +15,7 @@ public class TagMemberDtoMemberToTags
 	/// Initializes a new instance of the <see cref="TagMemberDtoMemberToTags" /> class.
 	/// </summary>
 	/// <param name="Key">Key.</param>
-	public TagMemberDtoMemberToTags(List<string> Key)
+	public TagMemberDtoMemberToTags(List<string>? Key)
 	{
 		this.Key = Key;
 	}
@@ -24,7 +24,7 @@ public class TagMemberDtoMemberToTags
 	/// Gets or Sets Key
 	/// </summary>
 	[DataMember(Name = "key", EmitDefaultValue = false)]
-	public List<string> Key { get; set; }
+	public List<string>? Key { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

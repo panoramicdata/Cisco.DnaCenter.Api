@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Collections.Generic;
 using System.Threading;
@@ -18,6 +18,7 @@ public interface IDeviceOnboardingPnp
 	/// Adds a Pnp Workflow along with the relevant tasks in the workflow into the Pnp database
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddAWorkflowResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-workflow")]
 	Task<AddWorkflowResponse> AddWorkflowAsync(
@@ -31,6 +32,7 @@ public interface IDeviceOnboardingPnp
 	/// Adds a device to the Pnp database.
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of Device</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device")]
 	Task<Device> AddDeviceToPnpDatabaseAsync(
@@ -44,6 +46,7 @@ public interface IDeviceOnboardingPnp
 	/// Registers a Smart Account, Virtual Account and the relevant server profile info with the Pnp System &amp; database. The devices present in the registered virtual account are synced with the Pnp database as well. The response payload returns the new profile
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddVirtualAccountResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
 	Task<AddVirtualAccountResponse> AddVirtualAccountAsync(
@@ -57,6 +60,7 @@ public interface IDeviceOnboardingPnp
 	/// Claim a device based on DNA-C Site based design process. Different parameters are required for different device platforms.
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of SiteClaimResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device/site-claim")]
 	Task<SiteClaimResponse> ClaimDeviceToSiteAsync(
@@ -70,6 +74,7 @@ public interface IDeviceOnboardingPnp
 	/// Claims one of more devices with specified workflow
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of ClaimDeviceResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device/claim")]
 	Task<ClaimDeviceResponse> ClaimDeviceAsync(
@@ -83,6 +88,7 @@ public interface IDeviceOnboardingPnp
 	/// Deletes specified device from Pnp database
 	/// </remarks>
 	/// <param name="id">id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteDeviceByIdFromPnpResponse</returns>
 	[Delete("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
 	Task<DeleteDeviceByIdFromPnpResponse> DeleteDeviceByIdFromPnpAysnc(
@@ -96,6 +102,7 @@ public interface IDeviceOnboardingPnp
 	/// Deletes a workflow specified by id
 	/// </remarks>
 	/// <param name="id">id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteWorkflowByIdResponse</returns>
 	[Delete("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
 	Task<DeleteWorkflowByIdResponse> DeleteWorkflowByIdAsync(
@@ -110,6 +117,7 @@ public interface IDeviceOnboardingPnp
 	/// </remarks>
 	/// <param name="domain">Smart Account Domain</param>
 	/// <param name="name">Virtual Account Name</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeregisterVirtualAccountResponse</returns>
 	[Delete("/dna/intent/api/v1/onboarding/pnp-settings/vacct")]
 	Task<DeregisterVirtualAccountResponse> DeregisterVirtualAccountAsync(
@@ -124,6 +132,7 @@ public interface IDeviceOnboardingPnp
 	/// Returns device details specified by device id
 	/// </remarks>
 	/// <param name="id">id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetDeviceByIdResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
 	Task<GetDeviceByIdResponse> GetDeviceAsync(
@@ -139,12 +148,13 @@ public interface IDeviceOnboardingPnp
 	/// <param name="serialNumber">Device Serial Number</param>
 	/// <param name="sort">Comma seperated list of fields to sort on (optional)</param>
 	/// <param name="sortOrder">Sort Order Ascending (asc) or Descending (des) (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetDeviceHistoryResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-device/history")]
 	Task<GetDeviceHistoryResponse> GetDeviceHistoryAsync(
 		[AliasAs("serialNumber")] string serialNumber,
-		[AliasAs("sort")] List<string> sort = null,
-		[AliasAs("sortOrder")] string sortOrder = null,
+		[AliasAs("sort")] List<string>? sort = null,
+		[AliasAs("sortOrder")] string? sortOrder = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -178,22 +188,23 @@ public interface IDeviceOnboardingPnp
 	/// <param name="smartAccountId">Device Smart Account (optional)</param>
 	/// <param name="virtualAccountId">Device Virtual Account (optional)</param>
 	/// <param name="lastContact">Device Has Contacted lastContact &gt; 0 (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetDeviceCountResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-device/count")]
 	Task<GetDeviceCountResponse> GetPnpDeviceCountAsync(
-		[AliasAs("serialNumber")] List<string> serialNumber = null,
-		[AliasAs("state")] List<string> state = null,
-		[AliasAs("onbState")] List<string> onbState = null,
-		[AliasAs("cmState")] List<string> cmState = null,
-		[AliasAs("name")] List<string> name = null,
-		[AliasAs("pid")] List<string> pid = null,
-		[AliasAs("source")] List<string> source = null,
-		[AliasAs("projectId")] List<string> projectId = null,
-		[AliasAs("workflowId")] List<string> workflowId = null,
-		[AliasAs("projectName")] List<string> projectName = null,
-		[AliasAs("workflowName")] List<string> workflowName = null,
-		[AliasAs("smartAccountId")] List<string> smartAccountId = null,
-		[AliasAs("virtualAccountId")] List<string> virtualAccountId = null,
+		[AliasAs("serialNumber")] List<string>? serialNumber = null,
+		[AliasAs("state")] List<string>? state = null,
+		[AliasAs("onbState")] List<string>? onbState = null,
+		[AliasAs("cmState")] List<string>? cmState = null,
+		[AliasAs("name")] List<string>? name = null,
+		[AliasAs("pid")] List<string>? pid = null,
+		[AliasAs("source")] List<string>? source = null,
+		[AliasAs("projectId")] List<string>? projectId = null,
+		[AliasAs("workflowId")] List<string>? workflowId = null,
+		[AliasAs("projectName")] List<string>? projectName = null,
+		[AliasAs("workflowName")] List<string>? workflowName = null,
+		[AliasAs("smartAccountId")] List<string>? smartAccountId = null,
+		[AliasAs("virtualAccountId")] List<string>? virtualAccountId = null,
 		[AliasAs("lastContact")] bool? lastContact = null,
 		CancellationToken cancellationToken = default);
 
@@ -222,27 +233,28 @@ public interface IDeviceOnboardingPnp
 	/// <param name="smartAccountId">Device Smart Account (optional)</param>
 	/// <param name="virtualAccountId">Device Virtual Account (optional)</param>
 	/// <param name="lastContact">Device Has Contacted lastContact &gt; 0 (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of Device</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-device")]
 	Task<List<Device>> GetPnpDeviceListAsync(
 		[AliasAs("limit")] int? limit = null,
 		[AliasAs("offset")] int? offset = null,
-		[AliasAs("sort")] List<string> sort = null,
-		[AliasAs("sortOrder")] string sortOrder = null,
-		[AliasAs("serialNumber")] List<string> serialNumber = null,
-		[AliasAs("state")] List<string> state = null,
-		[AliasAs("onbState")] List<string> onbState = null,
-		[AliasAs("cmState")] List<string> cmState = null,
-		[AliasAs("name")] List<string> name = null,
-		[AliasAs("pid")] List<string> pid = null,
-		[AliasAs("source")] List<string> source = null,
-		[AliasAs("projectId")] List<string> projectId = null,
-		[AliasAs("workflowId")] List<string> workflowId = null,
-		[AliasAs("projectName")] List<string> projectName = null,
-		[AliasAs("siteName")] List<string> siteName = null,
-		[AliasAs("workflowName")] List<string> workflowName = null,
-		[AliasAs("smartAccountId")] List<string> smartAccountId = null,
-		[AliasAs("virtualAccountId")] List<string> virtualAccountId = null,
+		[AliasAs("sort")] List<string>? sort = null,
+		[AliasAs("sortOrder")] string? sortOrder = null,
+		[AliasAs("serialNumber")] List<string>? serialNumber = null,
+		[AliasAs("state")] List<string>? state = null,
+		[AliasAs("onbState")] List<string>? onbState = null,
+		[AliasAs("cmState")] List<string>? cmState = null,
+		[AliasAs("name")] List<string>? name = null,
+		[AliasAs("pid")] List<string>? pid = null,
+		[AliasAs("source")] List<string>? source = null,
+		[AliasAs("projectId")] List<string>? projectId = null,
+		[AliasAs("workflowId")] List<string>? workflowId = null,
+		[AliasAs("projectName")] List<string>? projectName = null,
+		[AliasAs("siteName")] List<string>? siteName = null,
+		[AliasAs("workflowName")] List<string>? workflowName = null,
+		[AliasAs("smartAccountId")] List<string>? smartAccountId = null,
+		[AliasAs("virtualAccountId")] List<string>? virtualAccountId = null,
 		[AliasAs("lastContact")] bool? lastContact = null,
 		CancellationToken cancellationToken = default);
 
@@ -265,6 +277,7 @@ public interface IDeviceOnboardingPnp
 	/// </remarks>
 	/// <param name="domain">Smart Account Domain</param>
 	/// <param name="name">Virtual Account Name</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSyncResultForVirtualAccountResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-device/sacct/{domain}/vacct/{name}/sync-result")]
 	Task<GetSyncResultForVirtualAccountResponse> GetSyncResultForVirtualAccountAsync(
@@ -279,6 +292,7 @@ public interface IDeviceOnboardingPnp
 	/// Returns list of virtual accounts associated with the specified smart account
 	/// </remarks>
 	/// <param name="domain">Smart Account Domain</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetVirtualAccountListResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-settings/sacct/{domain}/vacct")]
 	Task<GetVirtualAccountListResponse> GetVirtualAccountListAsync(
@@ -292,6 +306,7 @@ public interface IDeviceOnboardingPnp
 	/// Returns a workflow specified by id
 	/// </remarks>
 	/// <param name="id">id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetWorkflowByIdResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
 	Task<GetWorkflowByIdResponse> GetWorkflowByIdAsync(
@@ -305,10 +320,11 @@ public interface IDeviceOnboardingPnp
 	/// Returns the workflow count
 	/// </remarks>
 	/// <param name="name">Workflow Name (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetWorkflowCountResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-workflow/count")]
 	Task<GetWorkflowCountResponse> GetWorkflowCountAsync(
-		[AliasAs("name")] List<string> name = null,
+		[AliasAs("name")] List<string>? name = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -323,15 +339,16 @@ public interface IDeviceOnboardingPnp
 	/// <param name="sortOrder">Sort Order Ascending (asc) or Descending (des) (optional)</param>
 	/// <param name="type">Workflow Type (optional)</param>
 	/// <param name="name">Workflow Name (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetWorkflowsResponse</returns>
 	[Get("/dna/intent/api/v1/onboarding/pnp-workflow")]
 	Task<GetWorkflowsResponse> GetWorkflowsAsync(
 		[AliasAs("limit")] int? limit = null,
 		[AliasAs("offset")] int? offset = null,
-		[AliasAs("sort")] List<string> sort = null,
-		[AliasAs("sortOrder")] string sortOrder = null,
-		[AliasAs("type")] List<string> type = null,
-		[AliasAs("name")] List<string> name = null,
+		[AliasAs("sort")] List<string>? sort = null,
+		[AliasAs("sortOrder")] string? sortOrder = null,
+		[AliasAs("type")] List<string>? type = null,
+		[AliasAs("name")] List<string>? name = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -341,6 +358,7 @@ public interface IDeviceOnboardingPnp
 	/// Add devices to Pnp in bulk
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of ImportDevicesInBulkResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device/import")]
 	Task<ImportDevicesInBulkResponse> ImportDevicesInBulkAsync(
@@ -354,6 +372,7 @@ public interface IDeviceOnboardingPnp
 	/// Triggers a preview for site-based Day 0 Configuration
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DayZeroConfigPreviewResult</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device/site-config-preview")]
 	Task<DayZeroConfigPreviewResult> PreviewConfigAsync(
@@ -367,6 +386,7 @@ public interface IDeviceOnboardingPnp
 	/// Recovers a device from a Workflow Execution Error state
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of ResetDeviceResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device/reset")]
 	Task<ResetDeviceResponse> ResetDeviceAsync(
@@ -380,6 +400,7 @@ public interface IDeviceOnboardingPnp
 	/// Synchronizes the device info from the given smart account &amp; virtual account with the Pnp database. The response payload returns a list of synced devices
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of SyncVirtualAccountDevicesResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device/vacct-sync")]
 	Task<SyncVirtualAccountDevicesResponse> SyncVirtualAccountDevicesAsync(
@@ -393,6 +414,7 @@ public interface IDeviceOnboardingPnp
 	/// Un-Claims one of more devices with specified workflow
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UnClaimDeviceResponse</returns>
 	[Post("/dna/intent/api/v1/onboarding/pnp-device/unclaim")]
 	Task<UnClaimDeviceResponse> UnClaimDeviceAsync(
@@ -407,6 +429,7 @@ public interface IDeviceOnboardingPnp
 	/// </remarks>
 	/// <param name="id">id</param>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateDeviceResponse</returns>
 	[Put("/dna/intent/api/v1/onboarding/pnp-device/{id}")]
 	Task<UpdateDeviceResponse> UpdateDeviceAsync(
@@ -421,6 +444,7 @@ public interface IDeviceOnboardingPnp
 	/// Updates the user&#39;s list of global Pnp settings
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdatePnpGlobalSettingsResponse</returns>
 	[Put("/dna/intent/api/v1/onboarding/pnp-settings")]
 	Task<UpdatePnpGlobalSettingsResponse> UpdatePnpGlobalSettingsAsync(
@@ -434,6 +458,7 @@ public interface IDeviceOnboardingPnp
 	/// Updates the Pnp Server profile in a registered Virtual Account in the Pnp database. The response payload returns the updated smart &amp; virtual account info
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdatePnpServerProfileResponse</returns>
 	[Put("/dna/intent/api/v1/onboarding/pnp-settings/savacct")]
 	Task<UpdatePnpServerProfileResponse> UpdatePnpServerProfileAsync(
@@ -448,6 +473,8 @@ public interface IDeviceOnboardingPnp
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="id">id</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="Content_Type">Content_Type.</param>
 	/// <returns>Task of UpdateWorkflowResponse</returns>
 	[Put("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
 	Task<UpdateWorkflowResponse> UpdateWorkflowAsync(

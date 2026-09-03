@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class ImportDevicesInBulkResponse
 	/// </summary>
 	/// <param name="SuccessList">SuccessList.</param>
 	/// <param name="FailureList">FailureList.</param>
-	public ImportDevicesInBulkResponse(List<ImportDevicesInBulkResponseSuccessList> SuccessList = default, List<ImportDevicesInBulkResponseFailureList> FailureList = default)
+	public ImportDevicesInBulkResponse(List<ImportDevicesInBulkResponseSuccessList>? SuccessList = default, List<ImportDevicesInBulkResponseFailureList>? FailureList = default)
 	{
 		this.SuccessList = SuccessList;
 		this.FailureList = FailureList;
@@ -25,13 +25,13 @@ public class ImportDevicesInBulkResponse
 	/// Gets or Sets SuccessList
 	/// </summary>
 	[DataMember(Name = "successList", EmitDefaultValue = false)]
-	public List<ImportDevicesInBulkResponseSuccessList> SuccessList { get; set; }
+	public List<ImportDevicesInBulkResponseSuccessList>? SuccessList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets FailureList
 	/// </summary>
 	[DataMember(Name = "failureList", EmitDefaultValue = false)]
-	public List<ImportDevicesInBulkResponseFailureList> FailureList { get; set; }
+	public List<ImportDevicesInBulkResponseFailureList>? FailureList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

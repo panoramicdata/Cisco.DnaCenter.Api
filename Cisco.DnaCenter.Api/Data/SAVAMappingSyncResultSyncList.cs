@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -55,7 +55,7 @@ public class SavaMappingSyncResultSyncList
 	/// </summary>
 	/// <param name="DeviceSnList">DeviceSnList.</param>
 	/// <param name="SyncType">SyncType.</param>
-	public SavaMappingSyncResultSyncList(List<string> DeviceSnList = default, SyncTypeEnum? SyncType = default)
+	public SavaMappingSyncResultSyncList(List<string>? DeviceSnList = default, SyncTypeEnum? SyncType = default)
 	{
 		this.DeviceSnList = DeviceSnList;
 		this.SyncType = SyncType;
@@ -65,7 +65,7 @@ public class SavaMappingSyncResultSyncList
 	/// Gets or Sets DeviceSnList
 	/// </summary>
 	[DataMember(Name = "deviceSnList", EmitDefaultValue = false)]
-	public List<string> DeviceSnList { get; set; }
+	public List<string>? DeviceSnList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

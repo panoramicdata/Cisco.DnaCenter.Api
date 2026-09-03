@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class TemplatePreviewResponseDto
 	/// <param name="CliPreview">CliPreview.</param>
 	/// <param name="TemplateId">TemplateId.</param>
 	/// <param name="ValidationErrors">ValidationErrors.</param>
-	public TemplatePreviewResponseDto(string? CliPreview = default, string? TemplateId = default, Object ValidationErrors = default)
+	public TemplatePreviewResponseDto(string? CliPreview = default, string? TemplateId = default, Object? ValidationErrors = default)
 	{
 		this.CliPreview = CliPreview;
 		this.TemplateId = TemplateId;
@@ -39,7 +39,7 @@ public class TemplatePreviewResponseDto
 	/// Gets or Sets ValidationErrors
 	/// </summary>
 	[DataMember(Name = "validationErrors", EmitDefaultValue = false)]
-	public Object ValidationErrors { get; set; }
+	public Object? ValidationErrors { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

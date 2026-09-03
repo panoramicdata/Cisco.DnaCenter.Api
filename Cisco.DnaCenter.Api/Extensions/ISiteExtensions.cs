@@ -17,6 +17,7 @@ public static class ISiteExtensions
 	/// <param name="name">siteNameHierarchy (ex: global/groupName) (optional, default to )</param>
 	/// <param name="siteId">Site id to which site details to retrieve. (optional, default to )</param>
 	/// <param name="type">type (ex: area, building, floor) (optional, default to )</param>
+	/// <param name="site">site.</param>
 	/// <returns>Task of GetSiteResponse</returns>
 	public static async Task<GetSiteResponse> GetAllSitesAsync(this ISites site,
 
@@ -46,7 +47,8 @@ public static class ISiteExtensions
 				throw new InvalidDataException(response.ReasonPhrase);
 			}
 
-			var items = response.Content.Response;
+			var items = response.Content?.Response
+				?? throw new InvalidDataException("The site response contained no sites.");
 
 			// Global appears on every page, so we need to skip it on all but the first page
 			if (offset != 1)

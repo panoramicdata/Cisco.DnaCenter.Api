@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// UpdateGlobalPoolRequestSettings
@@ -15,7 +15,7 @@ public class UpdateGlobalPoolRequestSettings
 	/// Initializes a new instance of the <see cref="UpdateGlobalPoolRequestSettings" /> class.
 	/// </summary>
 	/// <param name="Ippool">Ippool.</param>
-	public UpdateGlobalPoolRequestSettings(List<UpdateGlobalPoolRequestSettingsIppool> Ippool)
+	public UpdateGlobalPoolRequestSettings(List<UpdateGlobalPoolRequestSettingsIppool>? Ippool)
 	{
 		this.Ippool = Ippool;
 	}
@@ -24,7 +24,7 @@ public class UpdateGlobalPoolRequestSettings
 	/// Gets or Sets Ippool
 	/// </summary>
 	[DataMember(Name = "ippool", EmitDefaultValue = false)]
-	public List<UpdateGlobalPoolRequestSettingsIppool> Ippool { get; set; }
+	public List<UpdateGlobalPoolRequestSettingsIppool>? Ippool { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

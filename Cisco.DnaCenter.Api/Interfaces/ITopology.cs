@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ public interface ITopologies
 	/// Returns the Layer 3 network topology by routing protocol
 	/// </remarks>
 	/// <param name="topologyType">Type of topology(OSPF,ISIS,etc)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TopologyResult</returns>
 	[Get("/dna/intent/api/v1/topology/l3/{topologyType}")]
 	Task<TopologyResult> GetL3TopologyDetailsAsync(
@@ -30,10 +31,11 @@ public interface ITopologies
 	/// Returns Overall Network Health information by Device category (Access, Distribution, Core, Router, Wireless) for any given point of time
 	/// </remarks>
 	/// <param name="timestamp">Epoch time(in milliseconds) when the Network health data is required (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetOverallNetworkHealthResponse</returns>
 	[Get("/dna/intent/api/v1/network-health")]
 	Task<GetOverallNetworkHealthResponse> GetOverallNetworkHealthAsync(
-		[AliasAs("timestamp")]string timestamp = null,
+		[AliasAs("timestamp")]string? timestamp = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -43,10 +45,11 @@ public interface ITopologies
 	/// Returns the raw physical topology by specified criteria of nodeType
 	/// </remarks>
 	/// <param name="nodeType">nodeType (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TopologyResult</returns>
 	[Get("/dna/intent/api/v1/topology/physical-topology")]
 	Task<TopologyResult> GetPhysicalTopologyAsync(
-		[AliasAs("nodeType")]string nodeType = null,
+		[AliasAs("nodeType")]string? nodeType = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -67,6 +70,8 @@ public interface ITopologies
 	/// Returns Layer 2 network topology by specified VLAN ID
 	/// </remarks>
 	/// <param name="vlanID">Vlan Name for e.g Vlan1, Vlan23 etc</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="vlanId">vlanId.</param>
 	/// <returns>Task of TopologyResult</returns>
 	[Get("/dna/intent/api/v1/topology/l2/{vlanId}")]
 	Task<TopologyResult> GetTopologyDetailsAsync(

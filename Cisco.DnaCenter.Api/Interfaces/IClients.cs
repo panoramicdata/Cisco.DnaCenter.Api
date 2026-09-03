@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,11 +18,12 @@ public interface IClients
 	/// </remarks>
 	/// <param name="macAddress">MAC Address of the client</param>
 	/// <param name="timestamp">Epoch time(in milliseconds) when the Client health data is required (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetClientDetailResponse</returns>
 	[Get("/dna/intent/api/v1/client-detail")]
 	Task<GetClientDetailResponse> GetAsync(
 		[AliasAs("macAddress")]string macAddress,
-		[AliasAs("timestamp")]string timestamp = null,
+		[AliasAs("timestamp")]string? timestamp = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -34,12 +35,13 @@ public interface IClients
 	/// <param name="entity_type">Client enrichment details can be fetched based on either User ID or Client MAC address. This parameter value must either be network_user_id/mac_address</param>
 	/// <param name="entity_value">Contains the actual value for the entity type that has been defined</param>
 	/// <param name="issueCategory">The category of the DNA event based on which the underlying issues need to be fetched (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetClientEnrichmentDetailsResponse</returns>
 	[Get("/dna/intent/api/v1/client-enrichment-details")]
 	Task<GetClientEnrichmentDetailsResponse> GetEnrichmentDetailsAsync(
 		string entity_type,
 		string entity_value,
-		string issueCategory = null,
+		string? issueCategory = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -49,9 +51,10 @@ public interface IClients
 	/// Returns Overall Client Health information by Client type (Wired and Wireless) for any given point of time
 	/// </remarks>
 	/// <param name="timestamp">Epoch time(in milliseconds) when the Client health data is required (optional, default to )</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetOverallClientHealthResponse</returns>
 	[Get("/dna/intent/api/v1/client-health")]
 	Task<GetOverallClientHealthResponse> GetOverallHealthAsync(
-		[AliasAs("timestamp")]string timestamp = null,
+		[AliasAs("timestamp")]string? timestamp = null,
 		CancellationToken cancellationToken = default);
 }

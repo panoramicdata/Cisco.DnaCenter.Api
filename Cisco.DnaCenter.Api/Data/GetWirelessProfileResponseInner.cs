@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// GetWirelessProfileResponseInner
@@ -15,7 +15,7 @@ public class GetWirelessProfileResponseInner
 	/// Initializes a new instance of the <see cref="GetWirelessProfileResponseInner" /> class.
 	/// </summary>
 	/// <param name="ProfileDetails">ProfileDetails.</param>
-	public GetWirelessProfileResponseInner(GetWirelessProfileResponseInnerProfileDetails ProfileDetails)
+	public GetWirelessProfileResponseInner(GetWirelessProfileResponseInnerProfileDetails? ProfileDetails)
 	{
 		this.ProfileDetails = ProfileDetails;
 	}
@@ -24,7 +24,7 @@ public class GetWirelessProfileResponseInner
 	/// Gets or Sets ProfileDetails
 	/// </summary>
 	[DataMember(Name = "profileDetails", EmitDefaultValue = false)]
-	public GetWirelessProfileResponseInnerProfileDetails ProfileDetails { get; set; }
+	public GetWirelessProfileResponseInnerProfileDetails? ProfileDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

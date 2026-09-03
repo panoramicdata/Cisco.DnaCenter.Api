@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -17,7 +17,7 @@ public class DeviceWorkflowParameters
 	/// <param name="LicenseLevel">LicenseLevel.</param>
 	/// <param name="LicenseType">LicenseType.</param>
 	/// <param name="ConfigList">ConfigList.</param>
-	public DeviceWorkflowParameters(string? TopOfStackSerialNumber = default, string? LicenseLevel = default, string? LicenseType = default, List<DeviceWorkflowParametersConfigList> ConfigList = default)
+	public DeviceWorkflowParameters(string? TopOfStackSerialNumber = default, string? LicenseLevel = default, string? LicenseType = default, List<DeviceWorkflowParametersConfigList>? ConfigList = default)
 	{
 		this.TopOfStackSerialNumber = TopOfStackSerialNumber;
 		this.LicenseLevel = LicenseLevel;
@@ -47,7 +47,7 @@ public class DeviceWorkflowParameters
 	/// Gets or Sets ConfigList
 	/// </summary>
 	[DataMember(Name = "configList", EmitDefaultValue = false)]
-	public List<DeviceWorkflowParametersConfigList> ConfigList { get; set; }
+	public List<DeviceWorkflowParametersConfigList>? ConfigList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

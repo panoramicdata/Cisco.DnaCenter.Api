@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// CiscoDNACenterReleaseSummaryResponseResult
@@ -11,7 +11,7 @@ public class CiscoDNACenterReleaseSummaryResponseResult
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="_Version">_Version.</param>
-	public CiscoDNACenterReleaseSummaryResponseResult(CiscoDNACenterReleaseSummaryResponseResultResponse Response = default, string? _Version = default)
+	public CiscoDNACenterReleaseSummaryResponseResult(CiscoDNACenterReleaseSummaryResponseResultResponse? Response = default, string? _Version = default)
 	{
 		this.Response = Response;
 		this._Version = _Version;
@@ -21,7 +21,7 @@ public class CiscoDNACenterReleaseSummaryResponseResult
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public CiscoDNACenterReleaseSummaryResponseResultResponse Response { get; set; }
+	public CiscoDNACenterReleaseSummaryResponseResultResponse? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

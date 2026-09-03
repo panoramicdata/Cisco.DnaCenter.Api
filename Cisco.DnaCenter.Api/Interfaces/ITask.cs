@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ public interface ITasks
 	/// Returns a task by specified id
 	/// </remarks>
 	/// <param name="taskId">UUID of the Task</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskDtoResponse</returns>
 	[Get("/dna/intent/api/v1/task/{taskId}")]
 	Task<TaskDtoResponse> GetByIdAsync(
@@ -32,6 +33,7 @@ public interface ITasks
 	/// <param name="operationId">operationId</param>
 	/// <param name="offset">Index, minimum value is 0</param>
 	/// <param name="limit">The maximum value of {limit} supported is 500. &lt;br/&gt; Base 1 indexing for {limit}, minimum value is 1</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskDtoListResponse</returns>
 	[Get("/dna/intent/api/v1/task/operation/{operationId}/{offset}/{limit}")]
 	Task<TaskDtoListResponse> GetByOperationIdAsync(
@@ -56,19 +58,20 @@ public interface ITasks
 	/// <param name="isError">Fetch tasks ended as success or failure. Valid values: true, false (optional)</param>
 	/// <param name="failureReason">Fetch tasks that contains this failure reason (optional)</param>
 	/// <param name="parentId">Fetch tasks that have this parent Id (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountResult</returns>
 	[Get("/dna/intent/api/v1/task/count")]
 	Task<CountResult> GetCountAsync(
-		[AliasAs("startTime")]string startTime = null,
-		[AliasAs("endTime")]string endTime = null,
-		[AliasAs("data")]string data = null,
-		[AliasAs("errorCode")]string errorCode = null,
-		[AliasAs("serviceType")]string serviceType = null,
-		[AliasAs("username")]string username = null,
-		[AliasAs("progress")]string progress = null,
-		[AliasAs("isError")]string isError = null,
-		[AliasAs("failureReason")]string failureReason = null,
-		[AliasAs("parentId")]string parentId = null,
+		[AliasAs("startTime")]string? startTime = null,
+		[AliasAs("endTime")]string? endTime = null,
+		[AliasAs("data")]string? data = null,
+		[AliasAs("errorCode")]string? errorCode = null,
+		[AliasAs("serviceType")]string? serviceType = null,
+		[AliasAs("username")]string? username = null,
+		[AliasAs("progress")]string? progress = null,
+		[AliasAs("isError")]string? isError = null,
+		[AliasAs("failureReason")]string? failureReason = null,
+		[AliasAs("parentId")]string? parentId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -78,6 +81,7 @@ public interface ITasks
 	/// Returns a task with its children tasks by based on their id
 	/// </remarks>
 	/// <param name="taskId">UUID of the Task</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskDtoListResponse</returns>
 	[Get("/dna/intent/api/v1/task/{taskId}/tree")]
 	Task<TaskDtoListResponse> GetTreeAsync(
@@ -104,22 +108,23 @@ public interface ITasks
 	/// <param name="limit">limit (optional)</param>
 	/// <param name="sortBy">Sort results by this field (optional)</param>
 	/// <param name="order">Sort order - asc or dsc (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskDtoListResponse</returns>
 	[Get("/dna/intent/api/v1/task")]
 	Task<TaskDtoListResponse> GetAllAsync(
-		[AliasAs("startTime")]string startTime = null,
-		[AliasAs("endTime")]string endTime = null,
-		[AliasAs("data")]string data = null,
-		[AliasAs("errorCode")]string errorCode = null,
-		[AliasAs("serviceType")]string serviceType = null,
-		[AliasAs("username")]string username = null,
-		[AliasAs("progress")]string progress = null,
-		[AliasAs("isError")]string isError = null,
-		[AliasAs("failureReason")]string failureReason = null,
-		[AliasAs("parentId")]string parentId = null,
-		[AliasAs("offset")]string offset = null,
-		[AliasAs("limit")]string limit = null,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("order")]string order = null,
+		[AliasAs("startTime")]string? startTime = null,
+		[AliasAs("endTime")]string? endTime = null,
+		[AliasAs("data")]string? data = null,
+		[AliasAs("errorCode")]string? errorCode = null,
+		[AliasAs("serviceType")]string? serviceType = null,
+		[AliasAs("username")]string? username = null,
+		[AliasAs("progress")]string? progress = null,
+		[AliasAs("isError")]string? isError = null,
+		[AliasAs("failureReason")]string? failureReason = null,
+		[AliasAs("parentId")]string? parentId = null,
+		[AliasAs("offset")]string? offset = null,
+		[AliasAs("limit")]string? limit = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("order")]string? order = null,
 		CancellationToken cancellationToken = default);
 }

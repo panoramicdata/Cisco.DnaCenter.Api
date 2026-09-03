@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ public interface IConfigurationTemplates
 	/// Creates a new project
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/api/v1/template-programmer/project")]
 	Task<TaskIdResult> CreateProjectAsync(
@@ -31,6 +32,8 @@ public interface IConfigurationTemplates
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="projectId">projectId</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="Content_Type">Content_Type.</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/api/v1/template-programmer/project/{projectId}/template")]
 	Task<TaskIdResult> CreateTemplateAsync(
@@ -46,6 +49,7 @@ public interface IConfigurationTemplates
 	/// Deletes an existing Project
 	/// </remarks>
 	/// <param name="projectId">projectId</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Delete("/api/v1/template-programmer/project/{projectId}")]
 	Task<TaskIdResult> DeleteProjectAsync(
@@ -59,6 +63,7 @@ public interface IConfigurationTemplates
 	/// Deletes an existing template
 	/// </remarks>
 	/// <param name="templateId">templateId</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Delete("/api/v1/template-programmer/template/{templateId}")]
 	Task<TaskIdResult> DeleteTemplateAsync(
@@ -72,6 +77,7 @@ public interface IConfigurationTemplates
 	/// Deploys a template
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TemplateDeploymentStatusDto</returns>
 	[Post("/api/v1/template-programmer/template/deploy")]
 	Task<TemplateDeploymentStatusDto> DeployTemplateAsync(
@@ -85,6 +91,7 @@ public interface IConfigurationTemplates
 	/// Deploys a template
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TemplateDeploymentStatusDto</returns>
 	[Post("/api/v1/template-programmer/template/version")]
 	Task<TaskIdResult> CommitTemplateAsync(
@@ -98,10 +105,11 @@ public interface IConfigurationTemplates
 	/// Returns the projects in the system
 	/// </remarks>
 	/// <param name="name">Name of project to be searched (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CollectionProjectDto</returns>
 	[Get("/api/v1/template-programmer/project")]
 	Task<CollectionProjectDto> GetProjectsAsync(
-		[AliasAs("name")] string name = null,
+		[AliasAs("name")] string? name = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -111,6 +119,7 @@ public interface IConfigurationTemplates
 	/// Returns the status of a deployed template.
 	/// </remarks>
 	/// <param name="deploymentId">deploymentId</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TemplateDeploymentStatusDto</returns>
 	[Get("/api/v1/template-programmer/template/deploy/status/{deploymentId}")]
 	Task<TemplateDeploymentStatusDto> GetTemplateDeploymentStatusAsync(
@@ -125,6 +134,7 @@ public interface IConfigurationTemplates
 	/// </remarks>
 	/// <param name="templateId">templateId</param>
 	/// <param name="latestVersion">latestVersion (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TemplateDto</returns>
 	[Get("/api/v1/template-programmer/template/{templateId}")]
 	Task<TemplateDto> GetTemplateDetailsAsync(
@@ -139,6 +149,7 @@ public interface IConfigurationTemplates
 	/// Returns the versions of a specified template
 	/// </remarks>
 	/// <param name="templateId">templateId</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CollectionTemplateInfo</returns>
 	[Get("/api/v1/template-programmer/template/version/{templateId}")]
 	Task<CollectionTemplateInfo> GetTemplateVersionsAsync(
@@ -158,15 +169,16 @@ public interface IConfigurationTemplates
 	/// <param name="productSeries">productSeries (optional)</param>
 	/// <param name="productType">productType (optional)</param>
 	/// <param name="filterConflictingTemplates">filterConflictingTemplates (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CollectionTemplateInfo</returns>
 	[Get("/api/v1/template-programmer/template")]
 	Task<CollectionTemplateInfo> GetAvailableTemplatesAsync(
-		[AliasAs("projectId")] string projectId = null,
-		[AliasAs("softwareType")] string softwareType = null,
-		[AliasAs("softwareVersion")] string softwareVersion = null,
-		[AliasAs("productFamily")] string productFamily = null,
-		[AliasAs("productSeries")] string productSeries = null,
-		[AliasAs("productType")] string productType = null,
+		[AliasAs("projectId")] string? projectId = null,
+		[AliasAs("softwareType")] string? softwareType = null,
+		[AliasAs("softwareVersion")] string? softwareVersion = null,
+		[AliasAs("productFamily")] string? productFamily = null,
+		[AliasAs("productSeries")] string? productSeries = null,
+		[AliasAs("productType")] string? productType = null,
 		[AliasAs("filterConflictingTemplates")] bool? filterConflictingTemplates = null,
 		CancellationToken cancellationToken = default);
 
@@ -177,6 +189,7 @@ public interface IConfigurationTemplates
 	/// Previews an existing template
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TemplatePreviewResponseDto</returns>
 	[Put("/api/v1/template-programmer/template/preview")]
 	Task<TemplatePreviewResponseDto> PreviewTemplate(
@@ -190,6 +203,7 @@ public interface IConfigurationTemplates
 	/// Updates an existing project
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/api/v1/template-programmer/project")]
 	Task<TaskIdResult> UpdateProjectAsync([Body] ProjectDto request,
@@ -202,6 +216,7 @@ public interface IConfigurationTemplates
 	/// Updates an existing template
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/api/v1/template-programmer/template")]
 	Task<TaskIdResult> UpdateTemplateAsync([Body] TemplateDto request,
@@ -214,6 +229,7 @@ public interface IConfigurationTemplates
 	/// Creates Versioning for the current contents of the template
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/api/v1/template-programmer/template/version")]
 	Task<TaskIdResult> VersionTemplateAsync([Body] TemplateVersionRequestDto request,

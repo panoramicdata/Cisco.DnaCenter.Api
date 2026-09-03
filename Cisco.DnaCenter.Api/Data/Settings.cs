@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -21,7 +21,7 @@ public class Settings
 	/// <param name="TaskTimeOuts">TaskTimeOuts.</param>
 	/// <param name="TenantId">TenantId.</param>
 	/// <param name="_Version">_Version.</param>
-	public Settings(string? Id = default, DeviceDeviceInfoAaaCredentials AaaCredentials = default, bool? AcceptEula = default, SettingsDefaultProfile DefaultProfile = default, List<SettingsSavaMappingList> SavaMappingList = default, SettingsTaskTimeOuts TaskTimeOuts = default, string? TenantId = default, int? _Version = default)
+	public Settings(string? Id = default, DeviceDeviceInfoAaaCredentials? AaaCredentials = default, bool? AcceptEula = default, SettingsDefaultProfile? DefaultProfile = default, List<SettingsSavaMappingList>? SavaMappingList = default, SettingsTaskTimeOuts? TaskTimeOuts = default, string? TenantId = default, int? _Version = default)
 	{
 		this.Id = Id;
 		this.AaaCredentials = AaaCredentials;
@@ -43,7 +43,7 @@ public class Settings
 	/// Gets or Sets AaaCredentials
 	/// </summary>
 	[DataMember(Name = "aaaCredentials", EmitDefaultValue = false)]
-	public DeviceDeviceInfoAaaCredentials AaaCredentials { get; set; }
+	public DeviceDeviceInfoAaaCredentials? AaaCredentials { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AcceptEula
@@ -55,19 +55,19 @@ public class Settings
 	/// Gets or Sets DefaultProfile
 	/// </summary>
 	[DataMember(Name = "defaultProfile", EmitDefaultValue = false)]
-	public SettingsDefaultProfile DefaultProfile { get; set; }
+	public SettingsDefaultProfile? DefaultProfile { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SavaMappingList
 	/// </summary>
 	[DataMember(Name = "savaMappingList", EmitDefaultValue = false)]
-	public List<SettingsSavaMappingList> SavaMappingList { get; set; }
+	public List<SettingsSavaMappingList>? SavaMappingList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TaskTimeOuts
 	/// </summary>
 	[DataMember(Name = "taskTimeOuts", EmitDefaultValue = false)]
-	public SettingsTaskTimeOuts TaskTimeOuts { get; set; }
+	public SettingsTaskTimeOuts? TaskTimeOuts { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TenantId

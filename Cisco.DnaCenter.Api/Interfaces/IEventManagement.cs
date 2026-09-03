@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ public interface IEventManagement
 	/// Returns the Count of EventSubscriptions
 	/// </remarks>
 	/// <param name="eventIds">List of subscriptions related to the respective eventIds</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountOfEventSubscriptionsResponse</returns>
 	[Get("/dna/intent/api/v1/event/subscription/count")]
 	Task<EventSubscriptionCountResponse> GetEventSubscriptionCountAsync(
@@ -31,11 +32,12 @@ public interface IEventManagement
 	/// </remarks>
 	/// <param name="tags">The registered Tags should be provided</param>
 	/// <param name="eventId">The registered EventId should be provided (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountOfEventsResponse</returns>
 	[Get("/dna/intent/api/v1/events/count")]
 	Task<EventCountResponse> GetEventCountAsync(
 		[AliasAs("tags")]string tags,
-		[AliasAs("eventId")]string eventId = null,
+		[AliasAs("eventId")]string? eventId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -53,18 +55,19 @@ public interface IEventManagement
 	/// <param name="domain">domain  (optional)</param>
 	/// <param name="subDomain">subDomain  (optional)</param>
 	/// <param name="source">source  (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountOfNotificationsResponse</returns>
 	[Get("/dna/intent/api/v1/event/event-series/count")]
 	Task<NotificationCountResponse> GetNotificationCountAsync(
-		[AliasAs("eventIds")]string eventIds = null,
-		[AliasAs("startTime")]string startTime = null,
-		[AliasAs("endTime")]string endTime = null,
-		[AliasAs("category")]string category = null,
-		[AliasAs("type")]string type = null,
-		[AliasAs("severity")]string severity = null,
-		[AliasAs("domain")]string domain = null,
-		[AliasAs("subDomain")]string subDomain = null,
-		[AliasAs("source")]string source = null,
+		[AliasAs("eventIds")]string? eventIds = null,
+		[AliasAs("startTime")]string? startTime = null,
+		[AliasAs("endTime")]string? endTime = null,
+		[AliasAs("category")]string? category = null,
+		[AliasAs("type")]string? type = null,
+		[AliasAs("severity")]string? severity = null,
+		[AliasAs("domain")]string? domain = null,
+		[AliasAs("subDomain")]string? subDomain = null,
+		[AliasAs("source")]string? source = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -74,6 +77,7 @@ public interface IEventManagement
 	/// Subscribe SubscriptionEndpoint to list of registered events
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CreateEventSubscriptionsResponse</returns>
 	[Post("/dna/intent/api/v1/event/subscription")]
 	Task<CreateEventSubscriptionsResponse> CreateEventSubscriptionsAsync(
@@ -87,6 +91,7 @@ public interface IEventManagement
 	/// Delete EventSubscriptions
 	/// </remarks>
 	/// <param name="subscriptions">List of EventSubscriptionId&#39;s for removal</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteEventSubscriptionsResponse</returns>
 	[Delete("/dna/intent/api/v1/event/subscription")]
 	Task<DeleteEventSubscriptionsResponse> DeleteEventSubscriptionsAsync(
@@ -104,14 +109,15 @@ public interface IEventManagement
 	/// <param name="limit">The number of Subscriptions&#39;s to limit in the resultset whose default value 10 (optional)</param>
 	/// <param name="sortBy">SortBy field name (optional)</param>
 	/// <param name="order">order(asc/desc) (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetEventSubscriptionsResponse</returns>
 	[Get("/dna/intent/api/v1/event/subscription")]
 	Task<GetEventSubscriptionsResponse> GetEventSubscriptionsAsync(
-		[AliasAs("eventIds")]string eventIds = null,
+		[AliasAs("eventIds")]string? eventIds = null,
 		[AliasAs("offset")]int? offset = null,
 		[AliasAs("limit")]int? limit = null,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("order")]string order = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("order")]string? order = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -126,15 +132,16 @@ public interface IEventManagement
 	/// <param name="limit">The number of Registries to limit in the resultset whose default value 10 (optional)</param>
 	/// <param name="sortBy">SortBy field name (optional)</param>
 	/// <param name="order">order(asc/desc) (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetEventsResponse</returns>
 	[Get("/dna/intent/api/v1/events")]
 	Task<GetEventsResponse> GetEventsAsync(
 		[AliasAs("tags")]string tags,
-		[AliasAs("eventId")]string eventId = null,
+		[AliasAs("eventId")]string? eventId = null,
 		[AliasAs("offset")]int? offset = null,
 		[AliasAs("limit")]int? limit = null,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("order")]string order = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("order")]string? order = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -156,22 +163,23 @@ public interface IEventManagement
 	/// <param name="limit">Limit whose default value 10 (optional)</param>
 	/// <param name="sortBy">SortBy field name (optional)</param>
 	/// <param name="order">order(asc/desc) (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetNotificationsResponse</returns>
 	[Get("/dna/intent/api/v1/event/event-series")]
 	Task<GetNotificationsResponse> GetNotificationsAsync(
-		[AliasAs("eventIds")]string eventIds = null,
-		[AliasAs("startTime")]string startTime = null,
-		[AliasAs("endTime")]string endTime = null,
-		[AliasAs("category")]string category = null,
-		[AliasAs("type")]string type = null,
-		[AliasAs("severity")]string severity = null,
-		[AliasAs("domain")]string domain = null,
-		[AliasAs("subDomain")]string subDomain = null,
-		[AliasAs("source")]string source = null,
+		[AliasAs("eventIds")]string? eventIds = null,
+		[AliasAs("startTime")]string? startTime = null,
+		[AliasAs("endTime")]string? endTime = null,
+		[AliasAs("category")]string? category = null,
+		[AliasAs("type")]string? type = null,
+		[AliasAs("severity")]string? severity = null,
+		[AliasAs("domain")]string? domain = null,
+		[AliasAs("subDomain")]string? subDomain = null,
+		[AliasAs("source")]string? source = null,
 		[AliasAs("offset")]int? offset = null,
 		[AliasAs("limit")]int? limit = null,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("order")]string order = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("order")]string? order = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -181,6 +189,7 @@ public interface IEventManagement
 	/// Get the Status of events API calls with provided executionId as mandatory path parameter
 	/// </remarks>
 	/// <param name="executionId">Execution ID</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetStatusAPIForEventsResponse</returns>
 	[Get("/dna/intent/api/v1/event/api-status/{executionId}")]
 	Task<GetEventStatusApisResponse> GetEventStatusApisAsync(
@@ -194,6 +203,7 @@ public interface IEventManagement
 	/// Update SubscriptionEndpoint to list of registered events
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateEventSubscriptionsResponse</returns>
 	[Put("/dna/intent/api/v1/event/subscription")]
 	Task<UpdateEventSubscriptionsResponse> UpdateEventSubscriptionsAsync(

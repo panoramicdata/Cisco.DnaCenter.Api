@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -41,7 +41,7 @@ public class UpdateWorkflowResponse
 		string? ImageId = default,
 		decimal? CurrTaskIdx = default,
 		long? AddedOn = default,
-		List<DeviceSystemResetWorkflowTasks> Tasks = default,
+		List<DeviceSystemResetWorkflowTasks>? Tasks = default,
 		bool? AddToInventory = default,
 		string? InstanceType = default,
 		long? EndTime = default,
@@ -126,7 +126,7 @@ public class UpdateWorkflowResponse
 	/// Gets or Sets Tasks
 	/// </summary>
 	[DataMember(Name = "tasks", EmitDefaultValue = false)]
-	public List<DeviceSystemResetWorkflowTasks> Tasks { get; set; }
+	public List<DeviceSystemResetWorkflowTasks>? Tasks { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AddToInventory

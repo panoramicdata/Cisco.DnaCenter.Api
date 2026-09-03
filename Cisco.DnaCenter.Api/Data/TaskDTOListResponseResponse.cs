@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -42,7 +42,7 @@ public class TaskDtoListResponseResponse
 		string? InstanceTenantId = default,
 		bool? IsError = default,
 		string? LastUpdate = default,
-		Object OperationIdList = default,
+		Object? OperationIdList = default,
 		string? ParentId = default,
 		string? Progress = default,
 		string? RootId = default,
@@ -135,7 +135,7 @@ public class TaskDtoListResponseResponse
 	/// Gets or Sets OperationIdList
 	/// </summary>
 	[DataMember(Name = "operationIdList", EmitDefaultValue = false)]
-	public Object OperationIdList { get; set; }
+	public Object? OperationIdList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ParentId

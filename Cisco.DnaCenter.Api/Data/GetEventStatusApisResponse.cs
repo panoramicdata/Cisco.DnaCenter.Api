@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class GetEventStatusApisResponse
 	/// <param name="ErrorMessage">ErrorMessage.</param>
 	/// <param name="ApiStatus">ApiStatus.</param>
 	/// <param name="StatusMessage">StatusMessage.</param>
-	public GetEventStatusApisResponse(Object ErrorMessage = default, string? ApiStatus = default, string? StatusMessage = default)
+	public GetEventStatusApisResponse(Object? ErrorMessage = default, string? ApiStatus = default, string? StatusMessage = default)
 	{
 		this.ErrorMessage = ErrorMessage;
 		this.ApiStatus = ApiStatus;
@@ -27,7 +27,7 @@ public class GetEventStatusApisResponse
 	/// Gets or Sets ErrorMessage
 	/// </summary>
 	[DataMember(Name = "errorMessage", EmitDefaultValue = false)]
-	public Object ErrorMessage { get; set; }
+	public Object? ErrorMessage { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApiStatus

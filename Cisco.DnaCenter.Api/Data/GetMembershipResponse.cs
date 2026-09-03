@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetMembershipResponse
 	/// </summary>
 	/// <param name="Site">Site.</param>
 	/// <param name="Device">Device.</param>
-	public GetMembershipResponse(GetMembershipResponseSite Site = default, List<GetMembershipResponseDevice> Device = default)
+	public GetMembershipResponse(GetMembershipResponseSite? Site = default, List<GetMembershipResponseDevice>? Device = default)
 	{
 		this.Site = Site;
 		this.Device = Device;
@@ -25,13 +25,13 @@ public class GetMembershipResponse
 	/// Gets or Sets Site
 	/// </summary>
 	[DataMember(Name = "site", EmitDefaultValue = false)]
-	public GetMembershipResponseSite Site { get; set; }
+	public GetMembershipResponseSite? Site { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Device
 	/// </summary>
 	[DataMember(Name = "device", EmitDefaultValue = false)]
-	public List<GetMembershipResponseDevice> Device { get; set; }
+	public List<GetMembershipResponseDevice>? Device { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

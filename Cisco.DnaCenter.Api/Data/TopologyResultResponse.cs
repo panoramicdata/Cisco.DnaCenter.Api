@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class TopologyResultResponse
 	/// <param name="Id">Id.</param>
 	/// <param name="Links">Links.</param>
 	/// <param name="Nodes">Nodes.</param>
-	public TopologyResultResponse(string? Id = default, List<TopologyResultResponseLinks> Links = default, List<TopologyResultResponseNodes> Nodes = default)
+	public TopologyResultResponse(string? Id = default, List<TopologyResultResponseLinks>? Links = default, List<TopologyResultResponseNodes>? Nodes = default)
 	{
 		this.Id = Id;
 		this.Links = Links;
@@ -33,13 +33,13 @@ public class TopologyResultResponse
 	/// Gets or Sets Links
 	/// </summary>
 	[DataMember(Name = "links", EmitDefaultValue = false)]
-	public List<TopologyResultResponseLinks> Links { get; set; }
+	public List<TopologyResultResponseLinks>? Links { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Nodes
 	/// </summary>
 	[DataMember(Name = "nodes", EmitDefaultValue = false)]
-	public List<TopologyResultResponseNodes> Nodes { get; set; }
+	public List<TopologyResultResponseNodes>? Nodes { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

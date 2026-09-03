@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetGlobalPoolResponse
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="_Version">_Version.</param>
-	public GetGlobalPoolResponse(List<GetGlobalPoolResponseResponse> Response = default, string? _Version = default)
+	public GetGlobalPoolResponse(List<GetGlobalPoolResponseResponse>? Response = default, string? _Version = default)
 	{
 		this.Response = Response;
 		this._Version = _Version;
@@ -25,7 +25,7 @@ public class GetGlobalPoolResponse
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<GetGlobalPoolResponseResponse> Response { get; set; }
+	public List<GetGlobalPoolResponseResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchin
 	/// </summary>
 	/// <param name="Ports">Ports.</param>
 	/// <param name="Protocol">Protocol.</param>
-	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingPorts(List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts> Ports = default, string? Protocol = default)
+	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingPorts(List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts>? Ports = default, string? Protocol = default)
 	{
 		this.Ports = Ports;
 		this.Protocol = Protocol;
@@ -25,7 +25,7 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchin
 	/// Gets or Sets Ports
 	/// </summary>
 	[DataMember(Name = "ports", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts> Ports { get; set; }
+	public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts>? Ports { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Protocol

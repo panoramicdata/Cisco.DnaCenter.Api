@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class ProvisionResponseProvisioningTasks
 	/// </summary>
 	/// <param name="Success">Success.</param>
 	/// <param name="Failed">Failed.</param>
-	public ProvisionResponseProvisioningTasks(List<string> Success = default, List<string> Failed = default)
+	public ProvisionResponseProvisioningTasks(List<string>? Success = default, List<string>? Failed = default)
 	{
 		this.Success = Success;
 		this.Failed = Failed;
@@ -25,13 +25,13 @@ public class ProvisionResponseProvisioningTasks
 	/// Gets or Sets Success
 	/// </summary>
 	[DataMember(Name = "success", EmitDefaultValue = false)]
-	public List<string> Success { get; set; }
+	public List<string>? Success { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Failed
 	/// </summary>
 	[DataMember(Name = "failed", EmitDefaultValue = false)]
-	public List<string> Failed { get; set; }
+	public List<string>? Failed { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

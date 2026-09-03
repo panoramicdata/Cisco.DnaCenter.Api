@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class TagDtoDynamicRules
 	/// </summary>
 	/// <param name="MemberType">MemberType.</param>
 	/// <param name="Rules">Rules.</param>
-	public TagDtoDynamicRules(string? MemberType = default, TagDtoRules Rules = default)
+	public TagDtoDynamicRules(string? MemberType = default, TagDtoRules? Rules = default)
 	{
 		this.MemberType = MemberType;
 		this.Rules = Rules;
@@ -30,7 +30,7 @@ public class TagDtoDynamicRules
 	/// Gets or Sets Rules
 	/// </summary>
 	[DataMember(Name = "rules", EmitDefaultValue = false)]
-	public TagDtoRules Rules { get; set; }
+	public TagDtoRules? Rules { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

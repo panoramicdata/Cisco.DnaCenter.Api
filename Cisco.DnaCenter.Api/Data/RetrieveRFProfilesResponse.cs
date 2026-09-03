@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// RetrieveRfProfilesResponse
@@ -15,7 +15,7 @@ public class RetrieveRfProfilesResponse
 	/// Initializes a new instance of the <see cref="RetrieveRfProfilesResponse" /> class.
 	/// </summary>
 	/// <param name="Response">Response.</param>
-	public RetrieveRfProfilesResponse(List<RetrieveRfProfilesResponseResponse> Response)
+	public RetrieveRfProfilesResponse(List<RetrieveRfProfilesResponseResponse>? Response)
 	{
 		this.Response = Response;
 	}
@@ -24,7 +24,7 @@ public class RetrieveRfProfilesResponse
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<RetrieveRfProfilesResponseResponse> Response { get; set; }
+	public List<RetrieveRfProfilesResponseResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

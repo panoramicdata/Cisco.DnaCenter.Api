@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -26,7 +26,7 @@ public class FlowAnalysisListOutputResponse
 	/// <param name="SourceIp">SourceIP.</param>
 	/// <param name="SourcePort">SourcePort.</param>
 	/// <param name="Status">Status.</param>
-	public FlowAnalysisListOutputResponse(bool? ControlPath = default, long? CreateTime = default, string? DestinationIp = default, string? DestinationPort = default, string? FailureReason = default, string? Id = default, List<string> Inclusions = default, long? LastUpdateTime = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default, string? Status = default)
+	public FlowAnalysisListOutputResponse(bool? ControlPath = default, long? CreateTime = default, string? DestinationIp = default, string? DestinationPort = default, string? FailureReason = default, string? Id = default, List<string>? Inclusions = default, long? LastUpdateTime = default, bool? PeriodicRefresh = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default, string? Status = default)
 	{
 		this.ControlPath = ControlPath;
 		this.CreateTime = CreateTime;
@@ -83,7 +83,7 @@ public class FlowAnalysisListOutputResponse
 	/// Gets or Sets Inclusions
 	/// </summary>
 	[DataMember(Name = "inclusions", EmitDefaultValue = false)]
-	public List<string> Inclusions { get; set; }
+	public List<string>? Inclusions { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LastUpdateTime

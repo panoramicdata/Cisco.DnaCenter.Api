@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +18,7 @@ public interface ISiteDesign
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="deviceIp">Device to which the provisioning detail has to be retrieved</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetDeviceDetailsByIPResponse</returns>
 	[Get("/dna/intent/api/v1/business/nfv/provisioningDetail")]
 	Task<GetDeviceDetailsByIpResponse> GetDeviceDetailsByIpAsync(
@@ -35,6 +36,7 @@ public interface ISiteDesign
 	/// <param name="__runsync">Enable this parameter to execute the API and return a response synchronously</param>
 	/// <param name="__persistbapioutput">Persist bapi sync response</param>
 	/// <param name="__runsynctimeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of NFVProvisioningDetailResponse</returns>
 	[Post("/dna/intent/api/v1/nfv-provision-detail")]
 	Task<ExecutionStatusResponse> NfvProvisioningDetailAsync(
@@ -54,6 +56,7 @@ public interface ISiteDesign
 	/// <param name="__runsync">Enable this parameter to execute the API and return a response synchronously</param>
 	/// <param name="__persistbapioutput">Persist bapi sync response</param>
 	/// <param name="__timeout">During synchronous execution, this defines the maximum time to wait for a response, before the API execution is terminated (optional, default to 10)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of ProvisionNFVResponse</returns>
 	[Post("/dna/intent/api/v1/business/nfv")]
 	Task<ExecutionStatusResponse> ProvisionNfvAsync(

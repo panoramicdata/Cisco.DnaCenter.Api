@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// AuthenticationAPIResponse
@@ -11,7 +11,7 @@ public class AuthenticationResponse
 	/// </summary>
 	public AuthenticationResponse() : this(default) { }
 
-	// <summary>
+	/// <summary>
 	/// Initializes a new instance of the <see cref="AuthenticationResponse" /> class.
 	/// </summary>
 	/// <param name="Token">Token.</param>

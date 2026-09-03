@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// UpdateDeviceCredentialsRequest
@@ -15,7 +15,7 @@ public class UpdateDeviceCredentialsRequest
 	/// Initializes a new instance of the <see cref="UpdateDeviceCredentialsRequest" /> class.
 	/// </summary>
 	/// <param name="Settings">Settings.</param>
-	public UpdateDeviceCredentialsRequest(UpdateDeviceCredentialsRequestSettings Settings)
+	public UpdateDeviceCredentialsRequest(UpdateDeviceCredentialsRequestSettings? Settings)
 	{
 		this.Settings = Settings;
 	}
@@ -24,7 +24,7 @@ public class UpdateDeviceCredentialsRequest
 	/// Gets or Sets Settings
 	/// </summary>
 	[DataMember(Name = "settings", EmitDefaultValue = false)]
-	public UpdateDeviceCredentialsRequestSettings Settings { get; set; }
+	public UpdateDeviceCredentialsRequestSettings? Settings { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

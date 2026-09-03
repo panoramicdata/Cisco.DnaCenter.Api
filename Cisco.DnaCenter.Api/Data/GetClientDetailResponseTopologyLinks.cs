@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -20,7 +20,7 @@ public class GetClientDetailResponseTopologyLinks
 	/// <param name="Target">Target.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="PortUtilization">PortUtilization.</param>
-	public GetClientDetailResponseTopologyLinks(string? Source = default, string? LinkStatus = default, List<string> Label = default, string? Target = default, Object Id = default, Object PortUtilization = default)
+	public GetClientDetailResponseTopologyLinks(string? Source = default, string? LinkStatus = default, List<string>? Label = default, string? Target = default, Object? Id = default, Object? PortUtilization = default)
 	{
 		this.Source = Source;
 		this.LinkStatus = LinkStatus;
@@ -46,7 +46,7 @@ public class GetClientDetailResponseTopologyLinks
 	/// Gets or Sets Label
 	/// </summary>
 	[DataMember(Name = "label", EmitDefaultValue = false)]
-	public List<string> Label { get; set; }
+	public List<string>? Label { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Target
@@ -58,13 +58,13 @@ public class GetClientDetailResponseTopologyLinks
 	/// Gets or Sets Id
 	/// </summary>
 	[DataMember(Name = "id", EmitDefaultValue = false)]
-	public Object Id { get; set; }
+	public Object? Id { get; set; }
 
 	/// <summary>
 	/// Gets or Sets PortUtilization
 	/// </summary>
 	[DataMember(Name = "portUtilization", EmitDefaultValue = false)]
-	public Object PortUtilization { get; set; }
+	public Object? PortUtilization { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

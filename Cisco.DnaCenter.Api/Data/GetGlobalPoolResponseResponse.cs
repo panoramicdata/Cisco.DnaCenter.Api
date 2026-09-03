@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -33,7 +33,7 @@ public class GetGlobalPoolResponseResponse
 	/// <param name="Ipv6">Ipv6.</param>
 	/// <param name="Id">Id.</param>
 	/// <param name="IpPoolCidr">IpPoolCidr.</param>
-	public GetGlobalPoolResponseResponse(string? IpPoolName = default, List<string> DhcpServerIps = default, List<string> Gateways = default, string? CreateTime = default, string? LastUpdateTime = default, string? TotalIpAddressCount = default, string? UsedIpAddressCount = default, string? ParentUuid = default, string? Owner = default, string? Shared = default, string? Overlapping = default, string? ConfigureExternalDhcp = default, string? UsedPercentage = default, Object ClientOptions = default, List<string> DnsServerIps = default, List<GetGlobalPoolResponseContext> Context = default, string? Ipv6 = default, string? Id = default, string? IpPoolCidr = default)
+	public GetGlobalPoolResponseResponse(string? IpPoolName = default, List<string>? DhcpServerIps = default, List<string>? Gateways = default, string? CreateTime = default, string? LastUpdateTime = default, string? TotalIpAddressCount = default, string? UsedIpAddressCount = default, string? ParentUuid = default, string? Owner = default, string? Shared = default, string? Overlapping = default, string? ConfigureExternalDhcp = default, string? UsedPercentage = default, Object? ClientOptions = default, List<string>? DnsServerIps = default, List<GetGlobalPoolResponseContext>? Context = default, string? Ipv6 = default, string? Id = default, string? IpPoolCidr = default)
 	{
 		this.IpPoolName = IpPoolName;
 		this.DhcpServerIps = DhcpServerIps;
@@ -66,13 +66,13 @@ public class GetGlobalPoolResponseResponse
 	/// Gets or Sets DhcpServerIps
 	/// </summary>
 	[DataMember(Name = "dhcpServerIps", EmitDefaultValue = false)]
-	public List<string> DhcpServerIps { get; set; }
+	public List<string>? DhcpServerIps { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Gateways
 	/// </summary>
 	[DataMember(Name = "gateways", EmitDefaultValue = false)]
-	public List<string> Gateways { get; set; }
+	public List<string>? Gateways { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CreateTime
@@ -138,19 +138,19 @@ public class GetGlobalPoolResponseResponse
 	/// Gets or Sets ClientOptions
 	/// </summary>
 	[DataMember(Name = "clientOptions", EmitDefaultValue = false)]
-	public Object ClientOptions { get; set; }
+	public Object? ClientOptions { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DnsServerIps
 	/// </summary>
 	[DataMember(Name = "dnsServerIps", EmitDefaultValue = false)]
-	public List<string> DnsServerIps { get; set; }
+	public List<string>? DnsServerIps { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Context
 	/// </summary>
 	[DataMember(Name = "context", EmitDefaultValue = false)]
-	public List<GetGlobalPoolResponseContext> Context { get; set; }
+	public List<GetGlobalPoolResponseContext>? Context { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ipv6

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -26,7 +26,7 @@ public class GetOverallNetworkHealthResponseHealthDistirubution
 	/// <param name="FairCount">FairCount.</param>
 	/// <param name="UnmonCount">UnmonCount.</param>
 	/// <param name="KpiMetrics">KpiMetrics.</param>
-	public GetOverallNetworkHealthResponseHealthDistirubution(string? Category = default, int? TotalCount = default, int? HealthScore = default, int? GoodPercentage = default, decimal? BadPercentage = default, decimal? FairPercentage = default, decimal? UnmonPercentage = default, int? GoodCount = default, decimal? BadCount = default, decimal? FairCount = default, decimal? UnmonCount = default, List<Object> KpiMetrics = default)
+	public GetOverallNetworkHealthResponseHealthDistirubution(string? Category = default, int? TotalCount = default, int? HealthScore = default, int? GoodPercentage = default, decimal? BadPercentage = default, decimal? FairPercentage = default, decimal? UnmonPercentage = default, int? GoodCount = default, decimal? BadCount = default, decimal? FairCount = default, decimal? UnmonCount = default, List<Object>? KpiMetrics = default)
 	{
 		this.Category = Category;
 		this.TotalCount = TotalCount;
@@ -112,7 +112,7 @@ public class GetOverallNetworkHealthResponseHealthDistirubution
 	/// Gets or Sets KpiMetrics
 	/// </summary>
 	[DataMember(Name = "kpiMetrics", EmitDefaultValue = false)]
-	public List<Object> KpiMetrics { get; set; }
+	public List<Object>? KpiMetrics { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

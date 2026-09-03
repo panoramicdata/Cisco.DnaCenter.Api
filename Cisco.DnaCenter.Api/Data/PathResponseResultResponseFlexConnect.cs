@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -72,7 +72,7 @@ public class PathResponseResultResponseFlexConnect
 	/// <param name="IngressAclAnalysis">IngressAclAnalysis.</param>
 	/// <param name="WirelessLanControllerId">WirelessLanControllerId.</param>
 	/// <param name="WirelessLanControllerName">WirelessLanControllerName.</param>
-	public PathResponseResultResponseFlexConnect(AuthenticationEnum? Authentication = default, DataSwitchingEnum? DataSwitching = default, PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis EgressAclAnalysis = default, PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis IngressAclAnalysis = default, string? WirelessLanControllerId = default, string? WirelessLanControllerName = default)
+	public PathResponseResultResponseFlexConnect(AuthenticationEnum? Authentication = default, DataSwitchingEnum? DataSwitching = default, PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis? EgressAclAnalysis = default, PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis? IngressAclAnalysis = default, string? WirelessLanControllerId = default, string? WirelessLanControllerName = default)
 	{
 		this.Authentication = Authentication;
 		this.DataSwitching = DataSwitching;
@@ -86,13 +86,13 @@ public class PathResponseResultResponseFlexConnect
 	/// Gets or Sets EgressAclAnalysis
 	/// </summary>
 	[DataMember(Name = "egressAclAnalysis", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis EgressAclAnalysis { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis? EgressAclAnalysis { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IngressAclAnalysis
 	/// </summary>
 	[DataMember(Name = "ingressAclAnalysis", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis IngressAclAnalysis { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis? IngressAclAnalysis { get; set; }
 
 	/// <summary>
 	/// Gets or Sets WirelessLanControllerId

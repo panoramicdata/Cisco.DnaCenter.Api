@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -21,7 +21,7 @@ public class CreateOrUpdateRfProfileRequest
 	/// <param name="EnableBrownField">EnableBrownField.</param>
 	/// <param name="RadioTypeAProperties">RadioTypeAProperties.</param>
 	/// <param name="RadioTypeBProperties">RadioTypeBProperties.</param>
-	public CreateOrUpdateRfProfileRequest(string? Name = default, bool? DefaultRfProfile = default, bool? EnableRadioTypeA = default, bool? EnableRadioTypeB = default, string? ChannelWidth = default, bool? EnableCustom = default, bool? EnableBrownField = default, CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeAProperties = default, CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeBProperties = default)
+	public CreateOrUpdateRfProfileRequest(string? Name = default, bool? DefaultRfProfile = default, bool? EnableRadioTypeA = default, bool? EnableRadioTypeB = default, string? ChannelWidth = default, bool? EnableCustom = default, bool? EnableBrownField = default, CreateOrUpdateRfProfileRequestRadioTypeAProperties? RadioTypeAProperties = default, CreateOrUpdateRfProfileRequestRadioTypeAProperties? RadioTypeBProperties = default)
 	{
 		this.Name = Name;
 		this.DefaultRfProfile = DefaultRfProfile;
@@ -80,13 +80,13 @@ public class CreateOrUpdateRfProfileRequest
 	/// Gets or Sets RadioTypeAProperties
 	/// </summary>
 	[DataMember(Name = "radioTypeAProperties", EmitDefaultValue = false)]
-	public CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeAProperties { get; set; }
+	public CreateOrUpdateRfProfileRequestRadioTypeAProperties? RadioTypeAProperties { get; set; }
 
 	/// <summary>
 	/// Gets or Sets RadioTypeBProperties
 	/// </summary>
 	[DataMember(Name = "radioTypeBProperties", EmitDefaultValue = false)]
-	public CreateOrUpdateRfProfileRequestRadioTypeAProperties RadioTypeBProperties { get; set; }
+	public CreateOrUpdateRfProfileRequestRadioTypeAProperties? RadioTypeBProperties { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

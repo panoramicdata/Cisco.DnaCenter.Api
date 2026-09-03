@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -30,7 +30,7 @@ public class DiscoveryJobNioListResultResponse
 	/// <param name="StartTime">StartTime.</param>
 	/// <param name="TaskId">TaskId.</param>
 	public DiscoveryJobNioListResultResponse(
-		Object AttributeInfo = default,
+		Object? AttributeInfo = default,
 		string? CliStatus = default,
 		string? DiscoveryStatus = default,
 		string? EndTime = default,
@@ -69,7 +69,7 @@ public class DiscoveryJobNioListResultResponse
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CliStatus

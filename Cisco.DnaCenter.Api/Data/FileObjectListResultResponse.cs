@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -26,7 +26,7 @@ public class FileObjectListResultResponse
 	/// <param name="SftpServerList">SftpServerList.</param>
 	/// <param name="Sha1Checksum">Sha1Checksum.</param>
 	/// <param name="TaskId">TaskId.</param>
-	public FileObjectListResultResponse(Object AttributeInfo = default, string? DownloadPath = default, bool? Encrypted = default, string? FileFormat = default, string? FileSize = default, string? Id = default, string? Md5Checksum = default, string? Name = default, string? _NameSpace = default, List<Object> SftpServerList = default, string? Sha1Checksum = default, Object TaskId = default)
+	public FileObjectListResultResponse(Object? AttributeInfo = default, string? DownloadPath = default, bool? Encrypted = default, string? FileFormat = default, string? FileSize = default, string? Id = default, string? Md5Checksum = default, string? Name = default, string? _NameSpace = default, List<Object>? SftpServerList = default, string? Sha1Checksum = default, Object? TaskId = default)
 	{
 		this.AttributeInfo = AttributeInfo;
 		this.DownloadPath = DownloadPath;
@@ -46,7 +46,7 @@ public class FileObjectListResultResponse
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DownloadPath
@@ -100,7 +100,7 @@ public class FileObjectListResultResponse
 	/// Gets or Sets SftpServerList
 	/// </summary>
 	[DataMember(Name = "sftpServerList", EmitDefaultValue = false)]
-	public List<Object> SftpServerList { get; set; }
+	public List<Object>? SftpServerList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Sha1Checksum
@@ -112,7 +112,7 @@ public class FileObjectListResultResponse
 	/// Gets or Sets TaskId
 	/// </summary>
 	[DataMember(Name = "taskId", EmitDefaultValue = false)]
-	public Object TaskId { get; set; }
+	public Object? TaskId { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

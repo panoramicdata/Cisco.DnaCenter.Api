@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// GetDeviceDetailsByIPResponse
@@ -15,7 +15,7 @@ public class GetDeviceDetailsByIpResponse
 	/// Initializes a new instance of the <see cref="GetDeviceDetailsByIpResponse" /> class.
 	/// </summary>
 	/// <param name="ProvisionDetails">ProvisionDetails.</param>
-	public GetDeviceDetailsByIpResponse(GetDeviceDetailsByIpResponseProvisionDetails ProvisionDetails)
+	public GetDeviceDetailsByIpResponse(GetDeviceDetailsByIpResponseProvisionDetails? ProvisionDetails)
 	{
 		this.ProvisionDetails = ProvisionDetails;
 	}
@@ -24,7 +24,7 @@ public class GetDeviceDetailsByIpResponse
 	/// Gets or Sets ProvisionDetails
 	/// </summary>
 	[DataMember(Name = "provisionDetails", EmitDefaultValue = false)]
-	public GetDeviceDetailsByIpResponseProvisionDetails ProvisionDetails { get; set; }
+	public GetDeviceDetailsByIpResponseProvisionDetails? ProvisionDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

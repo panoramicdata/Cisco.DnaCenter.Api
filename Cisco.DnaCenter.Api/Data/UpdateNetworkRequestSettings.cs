@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -23,7 +23,7 @@ public class UpdateNetworkRequestSettings
 	/// <param name="MessageOfTheday">MessageOfTheday.</param>
 	/// <param name="NetworkAaa">NetworkAaa.</param>
 	/// <param name="ClientAndEndpointAaa">ClientAndEndpointAaa.</param>
-	public UpdateNetworkRequestSettings(List<string> DhcpServer = default, UpdateNetworkRequestSettingsDnsServer DnsServer = default, UpdateNetworkRequestSettingsSyslogServer SyslogServer = default, UpdateNetworkRequestSettingsSyslogServer SnmpServer = default, UpdateNetworkRequestSettingsNetflowcollector Netflowcollector = default, List<string> NtpServer = default, string? Timezone = default, UpdateNetworkRequestSettingsMessageOfTheday MessageOfTheday = default, UpdateNetworkRequestSettingsNetworkAaa NetworkAaa = default, UpdateNetworkRequestSettingsClientAndEndpointAaa ClientAndEndpointAaa = default)
+	public UpdateNetworkRequestSettings(List<string>? DhcpServer = default, UpdateNetworkRequestSettingsDnsServer? DnsServer = default, UpdateNetworkRequestSettingsSyslogServer? SyslogServer = default, UpdateNetworkRequestSettingsSyslogServer? SnmpServer = default, UpdateNetworkRequestSettingsNetflowcollector? Netflowcollector = default, List<string>? NtpServer = default, string? Timezone = default, UpdateNetworkRequestSettingsMessageOfTheday? MessageOfTheday = default, UpdateNetworkRequestSettingsNetworkAaa? NetworkAaa = default, UpdateNetworkRequestSettingsClientAndEndpointAaa? ClientAndEndpointAaa = default)
 	{
 		this.DhcpServer = DhcpServer;
 		this.DnsServer = DnsServer;
@@ -41,37 +41,37 @@ public class UpdateNetworkRequestSettings
 	/// Gets or Sets DhcpServer
 	/// </summary>
 	[DataMember(Name = "dhcpServer", EmitDefaultValue = false)]
-	public List<string> DhcpServer { get; set; }
+	public List<string>? DhcpServer { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DnsServer
 	/// </summary>
 	[DataMember(Name = "dnsServer", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettingsDnsServer DnsServer { get; set; }
+	public UpdateNetworkRequestSettingsDnsServer? DnsServer { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SyslogServer
 	/// </summary>
 	[DataMember(Name = "syslogServer", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettingsSyslogServer SyslogServer { get; set; }
+	public UpdateNetworkRequestSettingsSyslogServer? SyslogServer { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SnmpServer
 	/// </summary>
 	[DataMember(Name = "snmpServer", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettingsSyslogServer SnmpServer { get; set; }
+	public UpdateNetworkRequestSettingsSyslogServer? SnmpServer { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Netflowcollector
 	/// </summary>
 	[DataMember(Name = "netflowcollector", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettingsNetflowcollector Netflowcollector { get; set; }
+	public UpdateNetworkRequestSettingsNetflowcollector? Netflowcollector { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NtpServer
 	/// </summary>
 	[DataMember(Name = "ntpServer", EmitDefaultValue = false)]
-	public List<string> NtpServer { get; set; }
+	public List<string>? NtpServer { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Timezone
@@ -83,19 +83,19 @@ public class UpdateNetworkRequestSettings
 	/// Gets or Sets MessageOfTheday
 	/// </summary>
 	[DataMember(Name = "messageOfTheday", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettingsMessageOfTheday MessageOfTheday { get; set; }
+	public UpdateNetworkRequestSettingsMessageOfTheday? MessageOfTheday { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkAaa
 	/// </summary>
 	[DataMember(Name = "network_aaa", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettingsNetworkAaa NetworkAaa { get; set; }
+	public UpdateNetworkRequestSettingsNetworkAaa? NetworkAaa { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ClientAndEndpointAaa
 	/// </summary>
 	[DataMember(Name = "clientAndEndpoint_aaa", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettingsClientAndEndpointAaa ClientAndEndpointAaa { get; set; }
+	public UpdateNetworkRequestSettingsClientAndEndpointAaa? ClientAndEndpointAaa { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

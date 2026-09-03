@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class SettingsDefaultProfile
 	/// <param name="IpAddresses">IpAddresses.</param>
 	/// <param name="Port">Port.</param>
 	/// <param name="Proxy">Proxy.</param>
-	public SettingsDefaultProfile(string? Cert = default, List<string> FqdnAddresses = default, List<string> IpAddresses = default, int? Port = default, bool? Proxy = default)
+	public SettingsDefaultProfile(string? Cert = default, List<string>? FqdnAddresses = default, List<string>? IpAddresses = default, int? Port = default, bool? Proxy = default)
 	{
 		this.Cert = Cert;
 		this.FqdnAddresses = FqdnAddresses;
@@ -37,13 +37,13 @@ public class SettingsDefaultProfile
 	/// Gets or Sets FqdnAddresses
 	/// </summary>
 	[DataMember(Name = "fqdnAddresses", EmitDefaultValue = false)]
-	public List<string> FqdnAddresses { get; set; }
+	public List<string>? FqdnAddresses { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IpAddresses
 	/// </summary>
 	[DataMember(Name = "ipAddresses", EmitDefaultValue = false)]
-	public List<string> IpAddresses { get; set; }
+	public List<string>? IpAddresses { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Port

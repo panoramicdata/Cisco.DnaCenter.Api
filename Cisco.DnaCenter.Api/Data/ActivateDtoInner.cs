@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class ActivateDtoInner
 	/// <param name="DistributeIfNeeded">DistributeIfNeeded.</param>
 	/// <param name="ImageUuidList">ImageUuidList.</param>
 	/// <param name="SmuImageUuidList">SmuImageUuidList.</param>
-	public ActivateDtoInner(bool? ActivateLowerImageVersion = default, string? DeviceUpgradeMode = default, string? DeviceUuid = default, bool? DistributeIfNeeded = default, List<string> ImageUuidList = default, List<string> SmuImageUuidList = default)
+	public ActivateDtoInner(bool? ActivateLowerImageVersion = default, string? DeviceUpgradeMode = default, string? DeviceUuid = default, bool? DistributeIfNeeded = default, List<string>? ImageUuidList = default, List<string>? SmuImageUuidList = default)
 	{
 		this.ActivateLowerImageVersion = ActivateLowerImageVersion;
 		this.DeviceUpgradeMode = DeviceUpgradeMode;
@@ -57,13 +57,13 @@ public class ActivateDtoInner
 	/// Gets or Sets ImageUuidList
 	/// </summary>
 	[DataMember(Name = "imageUuidList", EmitDefaultValue = false)]
-	public List<string> ImageUuidList { get; set; }
+	public List<string>? ImageUuidList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SmuImageUuidList
 	/// </summary>
 	[DataMember(Name = "smuImageUuidList", EmitDefaultValue = false)]
-	public List<string> SmuImageUuidList { get; set; }
+	public List<string>? SmuImageUuidList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

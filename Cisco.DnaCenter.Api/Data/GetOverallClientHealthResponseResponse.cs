@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetOverallClientHealthResponseResponse
 	/// </summary>
 	/// <param name="SiteId">SiteId.</param>
 	/// <param name="ScoreDetail">ScoreDetail.</param>
-	public GetOverallClientHealthResponseResponse(string? SiteId = default, List<GetOverallClientHealthResponseScoreDetail> ScoreDetail = default)
+	public GetOverallClientHealthResponseResponse(string? SiteId = default, List<GetOverallClientHealthResponseScoreDetail>? ScoreDetail = default)
 	{
 		this.SiteId = SiteId;
 		this.ScoreDetail = ScoreDetail;
@@ -31,7 +31,7 @@ public class GetOverallClientHealthResponseResponse
 	/// Gets or Sets ScoreDetail
 	/// </summary>
 	[DataMember(Name = "scoreDetail", EmitDefaultValue = false)]
-	public List<GetOverallClientHealthResponseScoreDetail> ScoreDetail { get; set; }
+	public List<GetOverallClientHealthResponseScoreDetail>? ScoreDetail { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

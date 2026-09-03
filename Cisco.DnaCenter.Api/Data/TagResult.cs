@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class TagResult
 	/// </summary>
 	/// <param name="_Version">_Version.</param>
 	/// <param name="Response">Response.</param>
-	public TagResult(string? _Version = default, TagResultResponse Response = default)
+	public TagResult(string? _Version = default, TagResultResponse? Response = default)
 	{
 		this._Version = _Version;
 		this.Response = Response;
@@ -30,7 +30,7 @@ public class TagResult
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public TagResultResponse Response { get; set; }
+	public TagResultResponse? Response { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

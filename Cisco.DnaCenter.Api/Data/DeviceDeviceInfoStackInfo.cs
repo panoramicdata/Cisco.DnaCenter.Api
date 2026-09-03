@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class DeviceDeviceInfoStackInfo
 	/// <param name="StackRingProtocol">StackRingProtocol.</param>
 	/// <param name="ValidLicenseLevels">ValidLicenseLevels.</param>
 	/// <param name="TotalMemberCount">TotalMemberCount.</param>
-	public DeviceDeviceInfoStackInfo(bool? SupportsStackWorkflows = default, bool? IsFullRing = default, List<DeviceDeviceInfoStackInfoStackMemberList> StackMemberList = default, string? StackRingProtocol = default, List<string> ValidLicenseLevels = default, decimal? TotalMemberCount = default)
+	public DeviceDeviceInfoStackInfo(bool? SupportsStackWorkflows = default, bool? IsFullRing = default, List<DeviceDeviceInfoStackInfoStackMemberList>? StackMemberList = default, string? StackRingProtocol = default, List<string>? ValidLicenseLevels = default, decimal? TotalMemberCount = default)
 	{
 		this.SupportsStackWorkflows = SupportsStackWorkflows;
 		this.IsFullRing = IsFullRing;
@@ -45,7 +45,7 @@ public class DeviceDeviceInfoStackInfo
 	/// Gets or Sets StackMemberList
 	/// </summary>
 	[DataMember(Name = "stackMemberList", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoStackInfoStackMemberList> StackMemberList { get; set; }
+	public List<DeviceDeviceInfoStackInfoStackMemberList>? StackMemberList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets StackRingProtocol
@@ -57,7 +57,7 @@ public class DeviceDeviceInfoStackInfo
 	/// Gets or Sets ValidLicenseLevels
 	/// </summary>
 	[DataMember(Name = "validLicenseLevels", EmitDefaultValue = false)]
-	public List<string> ValidLicenseLevels { get; set; }
+	public List<string>? ValidLicenseLevels { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TotalMemberCount

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -65,7 +65,7 @@ public class SettingsSavaMappingList
 	/// <param name="TenantId">TenantId.</param>
 	/// <param name="Token">Token.</param>
 	/// <param name="VirtualAccountId">VirtualAccountId.</param>
-	public SettingsSavaMappingList(int? AutoSyncPeriod = default, string? CcoUser = default, int? Expiry = default, int? LastSync = default, SavaMappingProfile Profile = default, string? SmartAccountId = default, SavaMappingSyncResult SyncResult = default, string? SyncResultStr = default, int? SyncStartTime = default, SyncStatusEnum? SyncStatus = default, string? TenantId = default, string? Token = default, string? VirtualAccountId = default)
+	public SettingsSavaMappingList(int? AutoSyncPeriod = default, string? CcoUser = default, int? Expiry = default, int? LastSync = default, SavaMappingProfile? Profile = default, string? SmartAccountId = default, SavaMappingSyncResult? SyncResult = default, string? SyncResultStr = default, int? SyncStartTime = default, SyncStatusEnum? SyncStatus = default, string? TenantId = default, string? Token = default, string? VirtualAccountId = default)
 	{
 		this.AutoSyncPeriod = AutoSyncPeriod;
 		this.CcoUser = CcoUser;
@@ -110,7 +110,7 @@ public class SettingsSavaMappingList
 	/// Gets or Sets Profile
 	/// </summary>
 	[DataMember(Name = "profile", EmitDefaultValue = false)]
-	public SavaMappingProfile Profile { get; set; }
+	public SavaMappingProfile? Profile { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SmartAccountId
@@ -122,7 +122,7 @@ public class SettingsSavaMappingList
 	/// Gets or Sets SyncResult
 	/// </summary>
 	[DataMember(Name = "syncResult", EmitDefaultValue = false)]
-	public SavaMappingSyncResult SyncResult { get; set; }
+	public SavaMappingSyncResult? SyncResult { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SyncResultStr

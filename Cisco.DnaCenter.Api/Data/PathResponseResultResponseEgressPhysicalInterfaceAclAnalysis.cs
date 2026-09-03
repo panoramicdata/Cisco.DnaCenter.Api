@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis
 	/// <param name="AclName">AclName.</param>
 	/// <param name="MatchingAces">MatchingAces.</param>
 	/// <param name="Result">Result.</param>
-	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis(string? AclName = default, List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingAces> MatchingAces = default, string? Result = default)
+	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis(string? AclName = default, List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingAces>? MatchingAces = default, string? Result = default)
 	{
 		this.AclName = AclName;
 		this.MatchingAces = MatchingAces;
@@ -33,7 +33,7 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysis
 	/// Gets or Sets MatchingAces
 	/// </summary>
 	[DataMember(Name = "matchingAces", EmitDefaultValue = false)]
-	public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingAces> MatchingAces { get; set; }
+	public List<PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisMatchingAces>? MatchingAces { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Result

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class ProvisionNfvRequest
 	/// </summary>
 	/// <param name="SiteProfile">SiteProfile.</param>
 	/// <param name="Provisioning">Provisioning.</param>
-	public ProvisionNfvRequest(List<ProvisionNfvRequestSiteProfile> SiteProfile = default, List<ProvisionNFVRequestProvisioning> Provisioning = default)
+	public ProvisionNfvRequest(List<ProvisionNfvRequestSiteProfile>? SiteProfile = default, List<ProvisionNFVRequestProvisioning>? Provisioning = default)
 	{
 		this.SiteProfile = SiteProfile;
 		this.Provisioning = Provisioning;
@@ -25,13 +25,13 @@ public class ProvisionNfvRequest
 	/// Gets or Sets SiteProfile
 	/// </summary>
 	[DataMember(Name = "siteProfile", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestSiteProfile> SiteProfile { get; set; }
+	public List<ProvisionNfvRequestSiteProfile>? SiteProfile { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Provisioning
 	/// </summary>
 	[DataMember(Name = "provisioning", EmitDefaultValue = false)]
-	public List<ProvisionNFVRequestProvisioning> Provisioning { get; set; }
+	public List<ProvisionNFVRequestProvisioning>? Provisioning { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

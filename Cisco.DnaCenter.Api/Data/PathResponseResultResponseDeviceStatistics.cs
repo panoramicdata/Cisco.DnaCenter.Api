@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class PathResponseResultResponseDeviceStatistics
 	/// </summary>
 	/// <param name="CpuStatistics">CpuStatistics.</param>
 	/// <param name="MemoryStatistics">MemoryStatistics.</param>
-	public PathResponseResultResponseDeviceStatistics(PathResponseResultResponseDeviceStatisticsCpuStatistics CpuStatistics = default, PathResponseResultResponseDeviceStatisticsMemoryStatistics MemoryStatistics = default)
+	public PathResponseResultResponseDeviceStatistics(PathResponseResultResponseDeviceStatisticsCpuStatistics? CpuStatistics = default, PathResponseResultResponseDeviceStatisticsMemoryStatistics? MemoryStatistics = default)
 	{
 		this.CpuStatistics = CpuStatistics;
 		this.MemoryStatistics = MemoryStatistics;
@@ -24,13 +24,13 @@ public class PathResponseResultResponseDeviceStatistics
 	/// Gets or Sets CpuStatistics
 	/// </summary>
 	[DataMember(Name = "cpuStatistics", EmitDefaultValue = false)]
-	public PathResponseResultResponseDeviceStatisticsCpuStatistics CpuStatistics { get; set; }
+	public PathResponseResultResponseDeviceStatisticsCpuStatistics? CpuStatistics { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MemoryStatistics
 	/// </summary>
 	[DataMember(Name = "memoryStatistics", EmitDefaultValue = false)]
-	public PathResponseResultResponseDeviceStatisticsMemoryStatistics MemoryStatistics { get; set; }
+	public PathResponseResultResponseDeviceStatisticsMemoryStatistics? MemoryStatistics { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

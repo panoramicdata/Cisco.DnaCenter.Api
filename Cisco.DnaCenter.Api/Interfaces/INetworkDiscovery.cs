@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Collections.Generic;
 using System.Threading;
@@ -18,6 +18,7 @@ public interface INetworkDiscovery
 	/// Adds global CLI credential
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/global-credential/cli")]
 	Task<TaskIdResult> CreateCliCredentialsAsync(
@@ -31,6 +32,7 @@ public interface INetworkDiscovery
 	/// Adds HTTP read credentials
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/global-credential/http-read")]
 	Task<TaskIdResult> CreateHttpReadCredentialsAsync(
@@ -44,6 +46,7 @@ public interface INetworkDiscovery
 	/// Adds global HTTP write credentials
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/global-credential/http-write")]
 	Task<TaskIdResult> CreateHttpWriteCredentialsAsync(
@@ -57,6 +60,7 @@ public interface INetworkDiscovery
 	/// Adds global netconf credentials
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/global-credential/netconf")]
 	Task<TaskIdResult> CreateNetconfCredentialsAsync(
@@ -70,6 +74,7 @@ public interface INetworkDiscovery
 	/// Adds global SNMP read community
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
 	Task<TaskIdResult> CreateSnmpV2ReadCommunityAsync(
@@ -127,6 +132,7 @@ public interface INetworkDiscovery
 	/// Stops the discovery for the given Discovery ID and removes it. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 	/// </remarks>
 	/// <param name="id">Discovery ID</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Delete("/dna/intent/api/v1/discovery/{id}")]
 	Task<TaskIdResult> DeleteDiscoveryByIdAsync(
@@ -141,6 +147,7 @@ public interface INetworkDiscovery
 	/// </remarks>
 	/// <param name="startIndex">Start index</param>
 	/// <param name="recordsToDelete">Number of records to delete</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Delete("/dna/intent/api/v1/discovery/{startIndex}/{recordsToDelete}")]
 	Task<TaskIdResult> DeleteDiscoveryBySpecifiedRangeAsync(
@@ -155,6 +162,7 @@ public interface INetworkDiscovery
 	/// Deletes global credential for the given ID
 	/// </remarks>
 	/// <param name="globalCredentialId">ID of global-credential</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Delete("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
 	Task<TaskIdResult> DeleteGlobalCredentialsByIdAsync(
@@ -179,6 +187,7 @@ public interface INetworkDiscovery
 	/// Returns the credential sub type for the given Id
 	/// </remarks>
 	/// <param name="id">Global Credential ID</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GlobalCredentialSubTypeResult</returns>
 	[Get("/dna/intent/api/v1/global-credential/{id}")]
 	Task<GlobalCredentialSubTypeResult> GetCredentialSubTypeByCredentialIdAsync(
@@ -193,11 +202,12 @@ public interface INetworkDiscovery
 	/// </remarks>
 	/// <param name="id">Discovery ID</param>
 	/// <param name="taskId">taskId (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountResult</returns>
 	[Get("/dna/intent/api/v1/discovery/{id}/network-device/count")]
 	Task<CountResult> GetDevicesDiscoveredByIdAsync(
 		[AliasAs("id")]string id,
-		[AliasAs("taskId")]string taskId = null,
+		[AliasAs("taskId")]string? taskId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -210,13 +220,14 @@ public interface INetworkDiscovery
 	/// <param name="startIndex">Start index</param>
 	/// <param name="recordsToReturn">Number of records to return</param>
 	/// <param name="taskId">taskId (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of NetworkDeviceNioListResult</returns>
 	[Get("/dna/intent/api/v1/discovery/{id}/network-device/{startIndex}/{recordsToReturn}")]
 	Task<NetworkDeviceNioListResult> GetDiscoveredDevicesByRangeAsync(
 		[AliasAs("id")]string id,
 		[AliasAs("startIndex")]int? startIndex,
 		[AliasAs("recordsToReturn")]int? recordsToReturn,
-		[AliasAs("taskId")]string taskId = null,
+		[AliasAs("taskId")]string? taskId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -227,11 +238,12 @@ public interface INetworkDiscovery
 	/// </remarks>
 	/// <param name="id">Discovery ID</param>
 	/// <param name="taskId">taskId (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of NetworkDeviceNioListResult</returns>
 	[Get("/dna/intent/api/v1/discovery/{id}/network-device")]
 	Task<NetworkDeviceNioListResult> GetDiscoveredNetworkDevicesByDiscoveryIdAsync(
 		[AliasAs("id")]string id,
-		[AliasAs("taskId")]string taskId = null,
+		[AliasAs("taskId")]string? taskId = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -242,6 +254,7 @@ public interface INetworkDiscovery
 	/// </remarks>
 	/// <param name="startIndex">Start index</param>
 	/// <param name="recordsToReturn">Number of records to return</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DiscoveryNioListResult</returns>
 	[Get("/dna/intent/api/v1/discovery/{startIndex}/{recordsToReturn}")]
 	Task<DiscoveryNioListResult> GetDiscoveriesByRangeAsync(
@@ -256,6 +269,7 @@ public interface INetworkDiscovery
 	/// Returns discovery by Discovery ID. Discovery ID can be obtained using the \&quot;Get Discoveries by range\&quot; API.
 	/// </remarks>
 	/// <param name="id">Discovery ID</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DiscoveryNioResult</returns>
 	[Get("/dna/intent/api/v1/discovery/{id}")]
 	Task<DiscoveryNioResult> GetDiscoveryByIdAsync(
@@ -272,13 +286,14 @@ public interface INetworkDiscovery
 	/// <param name="offset">offset (optional)</param>
 	/// <param name="limit">limit (optional)</param>
 	/// <param name="name">name (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DiscoveryJobNioListResult</returns>
 	[Get("/dna/intent/api/v1/discovery/job")]
 	Task<DiscoveryJobNioListResult> GetDiscoveryJobsByIpAsync(
 		[AliasAs("ipAddress")]string ipAddress,
 		[AliasAs("offset")]int? offset = null,
 		[AliasAs("limit")]int? limit = null,
-		[AliasAs("name")]string name = null,
+		[AliasAs("name")]string? name = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -290,12 +305,13 @@ public interface INetworkDiscovery
 	/// <param name="credentialSubType">Credential type as CLI / SNMPV2_READ_COMMUNITY / SNMPV2_WRITE_COMMUNITY / SNMPV3 / HTTP_WRITE / HTTP_READ / NETCONF</param>
 	/// <param name="sortBy">sortBy (optional)</param>
 	/// <param name="order">order (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GlobalCredentialListResult</returns>
 	[Get("/dna/intent/api/v1/global-credential")]
 	Task<GlobalCredentialListResult> GetGlobalCredentialsAsync(
 		[AliasAs("credentialSubType")]string credentialSubType,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("order")]string order = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("order")]string? order = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -308,13 +324,14 @@ public interface INetworkDiscovery
 	/// <param name="offset">offset (optional)</param>
 	/// <param name="limit">limit (optional)</param>
 	/// <param name="ipAddress">ipAddress (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DiscoveryJobNioListResult</returns>
 	[Get("/dna/intent/api/v1/discovery/{id}/job")]
 	Task<DiscoveryJobNioListResult> GetListOfDiscoveriesByDiscoveryIdAsync(
 		[AliasAs("id")]string id,
 		[AliasAs("offset")]int? offset = null,
 		[AliasAs("limit")]int? limit = null,
-		[AliasAs("ipAddress")]string ipAddress = null,
+		[AliasAs("ipAddress")]string? ipAddress = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -333,19 +350,20 @@ public interface INetworkDiscovery
 	/// <param name="cliStatus">cliStatus (optional)</param>
 	/// <param name="netconfStatus">netconfStatus (optional)</param>
 	/// <param name="httpStatus">httpStatus (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of CountResult</returns>
 	[Get("/dna/intent/api/v1/discovery/{id}/summary")]
 	Task<CountResult> GetNetworkDevicesFromDiscoveryAsync(
 		[AliasAs("id")]string id,
-		[AliasAs("taskId")]string taskId = null,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("sortOrder")]string sortOrder = null,
-		[AliasAs("ipAddress")]List<string> ipAddress = null,
-		[AliasAs("pingStatus")]List<string> pingStatus = null,
-		[AliasAs("snmpStatus")]List<string> snmpStatus = null,
-		[AliasAs("cliStatus")]List<string> cliStatus = null,
-		[AliasAs("netconfStatus")]List<string> netconfStatus = null,
-		[AliasAs("httpStatus")]List<string> httpStatus = null,
+		[AliasAs("taskId")]string? taskId = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("sortOrder")]string? sortOrder = null,
+		[AliasAs("ipAddress")]List<string>? ipAddress = null,
+		[AliasAs("pingStatus")]List<string>? pingStatus = null,
+		[AliasAs("snmpStatus")]List<string>? snmpStatus = null,
+		[AliasAs("cliStatus")]List<string>? cliStatus = null,
+		[AliasAs("netconfStatus")]List<string>? netconfStatus = null,
+		[AliasAs("httpStatus")]List<string>? httpStatus = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -366,6 +384,7 @@ public interface INetworkDiscovery
 	/// Initiates discovery with the given parameters
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/discovery")]
 	Task<TaskIdResult> StartDiscoveryAsync(
@@ -379,6 +398,7 @@ public interface INetworkDiscovery
 	/// Updates global CLI credentials
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/cli")]
 	Task<TaskIdResult> UpdateCliCredentialsAsync(
@@ -393,6 +413,8 @@ public interface INetworkDiscovery
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="globalCredentialId">Global credential Uuid</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="Content_Type">Content_Type.</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
 	Task<TaskIdResult> UpdateGlobalCredentialsAsync(
@@ -408,6 +430,7 @@ public interface INetworkDiscovery
 	/// Updates global HTTP Read credential
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/http-read")]
 	Task<TaskIdResult> UpdateHttpReadCredentialAsync(
@@ -421,6 +444,7 @@ public interface INetworkDiscovery
 	/// Updates global HTTP write credentials
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/http-write")]
 	Task<TaskIdResult> UpdateHttpWriteCredentialsAsync(
@@ -434,6 +458,7 @@ public interface INetworkDiscovery
 	/// Updates global netconf credentials
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/netconf")]
 	Task<TaskIdResult> UpdateNetconfCredentialsAsync(
@@ -447,6 +472,7 @@ public interface INetworkDiscovery
 	/// Updates global SNMP read community
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/snmpv2-read-community")]
 	Task<TaskIdResult> UpdateSnmpReadCommunityAsync(
@@ -460,6 +486,7 @@ public interface INetworkDiscovery
 	/// Updates global SNMP write community
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/snmpv2-write-community")]
 	Task<TaskIdResult> UpdateSnmpWriteCommunityAsync(
@@ -473,6 +500,7 @@ public interface INetworkDiscovery
 	/// Updates global SNMPv3 credential
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/snmpv3")]
 	Task<TaskIdResult> UpdateSnmpv3CredentialsAsync(
@@ -486,6 +514,7 @@ public interface INetworkDiscovery
 	/// Stops or starts an existing discovery
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/discovery")]
 	Task<TaskIdResult> UpdatesAnExistingDiscoveryBySpecifiedIdAsync(

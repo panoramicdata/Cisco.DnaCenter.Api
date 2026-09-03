@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts
 	/// </summary>
 	/// <param name="DestPorts">DestPorts.</param>
 	/// <param name="SourcePorts">SourcePorts.</param>
-	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts(List<string> DestPorts = default, List<string> SourcePorts = default)
+	public PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts(List<string>? DestPorts = default, List<string>? SourcePorts = default)
 	{
 		this.DestPorts = DestPorts;
 		this.SourcePorts = SourcePorts;
@@ -25,13 +25,13 @@ public class PathResponseResultResponseEgressPhysicalInterfaceAclAnalysisPorts
 	/// Gets or Sets DestPorts
 	/// </summary>
 	[DataMember(Name = "destPorts", EmitDefaultValue = false)]
-	public List<string> DestPorts { get; set; }
+	public List<string>? DestPorts { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SourcePorts
 	/// </summary>
 	[DataMember(Name = "sourcePorts", EmitDefaultValue = false)]
-	public List<string> SourcePorts { get; set; }
+	public List<string>? SourcePorts { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

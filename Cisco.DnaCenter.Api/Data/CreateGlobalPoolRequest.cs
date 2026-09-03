@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// CreateGlobalPoolRequest
@@ -15,7 +15,7 @@ public class CreateGlobalPoolRequest
 	/// Initializes a new instance of the <see cref="CreateGlobalPoolRequest" /> class.
 	/// </summary>
 	/// <param name="Settings">Settings.</param>
-	public CreateGlobalPoolRequest(CreateGlobalPoolRequestSettings Settings)
+	public CreateGlobalPoolRequest(CreateGlobalPoolRequestSettings? Settings)
 	{
 		this.Settings = Settings;
 	}
@@ -24,7 +24,7 @@ public class CreateGlobalPoolRequest
 	/// Gets or Sets Settings
 	/// </summary>
 	[DataMember(Name = "settings", EmitDefaultValue = false)]
-	public CreateGlobalPoolRequestSettings Settings { get; set; }
+	public CreateGlobalPoolRequestSettings? Settings { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

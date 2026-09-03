@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -76,7 +76,7 @@ public class ImageInfoListResponseResponse
 	/// <param name="ShaCheckSum">ShaCheckSum.</param>
 	/// <param name="Vendor">Vendor.</param>
 	/// <param name="_Version">_Version.</param>
-	public ImageInfoListResponseResponse(List<ImageInfoListResponseApplicableDevicesForImage> ApplicableDevicesForImage = default, string? ApplicationType = default, string? CreatedTime = default, Object ExtendedAttributes = default, string? Family = default, string? Feature = default, string? FileServiceId = default, string? FileSize = default, string? ImageIntegrityStatus = default, string? ImageName = default, List<string> ImageSeries = default, string? ImageSource = default, string? ImageType = default, string? ImageUuid = default, ImportSourceTypeEnum? ImportSourceType = default, bool? IsTaggedGolden = default, string? Md5Checksum = default, string? Name = default, List<ImageInfoListResponseProfileInfo> ProfileInfo = default, string? ShaCheckSum = default, string? Vendor = default, string? _Version = default)
+	public ImageInfoListResponseResponse(List<ImageInfoListResponseApplicableDevicesForImage>? ApplicableDevicesForImage = default, string? ApplicationType = default, string? CreatedTime = default, Object? ExtendedAttributes = default, string? Family = default, string? Feature = default, string? FileServiceId = default, string? FileSize = default, string? ImageIntegrityStatus = default, string? ImageName = default, List<string>? ImageSeries = default, string? ImageSource = default, string? ImageType = default, string? ImageUuid = default, ImportSourceTypeEnum? ImportSourceType = default, bool? IsTaggedGolden = default, string? Md5Checksum = default, string? Name = default, List<ImageInfoListResponseProfileInfo>? ProfileInfo = default, string? ShaCheckSum = default, string? Vendor = default, string? _Version = default)
 	{
 		this.ApplicableDevicesForImage = ApplicableDevicesForImage;
 		this.ApplicationType = ApplicationType;
@@ -106,7 +106,7 @@ public class ImageInfoListResponseResponse
 	/// Gets or Sets ApplicableDevicesForImage
 	/// </summary>
 	[DataMember(Name = "applicableDevicesForImage", EmitDefaultValue = false)]
-	public List<ImageInfoListResponseApplicableDevicesForImage> ApplicableDevicesForImage { get; set; }
+	public List<ImageInfoListResponseApplicableDevicesForImage>? ApplicableDevicesForImage { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApplicationType
@@ -124,7 +124,7 @@ public class ImageInfoListResponseResponse
 	/// Gets or Sets ExtendedAttributes
 	/// </summary>
 	[DataMember(Name = "extendedAttributes", EmitDefaultValue = false)]
-	public Object ExtendedAttributes { get; set; }
+	public Object? ExtendedAttributes { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Family
@@ -166,7 +166,7 @@ public class ImageInfoListResponseResponse
 	/// Gets or Sets ImageSeries
 	/// </summary>
 	[DataMember(Name = "imageSeries", EmitDefaultValue = false)]
-	public List<string> ImageSeries { get; set; }
+	public List<string>? ImageSeries { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ImageSource
@@ -208,7 +208,7 @@ public class ImageInfoListResponseResponse
 	/// Gets or Sets ProfileInfo
 	/// </summary>
 	[DataMember(Name = "profileInfo", EmitDefaultValue = false)]
-	public List<ImageInfoListResponseProfileInfo> ProfileInfo { get; set; }
+	public List<ImageInfoListResponseProfileInfo>? ProfileInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ShaCheckSum

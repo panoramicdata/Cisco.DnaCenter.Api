@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -31,7 +31,7 @@ public class WorkflowTasks
 		int? TaskSeqNo = default,
 		int? TimeTaken = default,
 		string? Type = default,
-		List<WorkflowWorkItemList> WorkItemList = default)
+		List<WorkflowWorkItemList>? WorkItemList = default)
 	{
 		this.CurrWorkItemIdx = CurrWorkItemIdx;
 		this.EndTime = EndTime;
@@ -96,7 +96,7 @@ public class WorkflowTasks
 	/// Gets or Sets WorkItemList
 	/// </summary>
 	[DataMember(Name = "workItemList", EmitDefaultValue = false)]
-	public List<WorkflowWorkItemList> WorkItemList { get; set; }
+	public List<WorkflowWorkItemList>? WorkItemList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

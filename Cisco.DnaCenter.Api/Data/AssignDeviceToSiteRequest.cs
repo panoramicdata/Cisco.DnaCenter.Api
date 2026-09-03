@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// AssignDeviceToSiteRequest
@@ -15,7 +15,7 @@ public class AssignDeviceToSiteRequest
 	/// Initializes a new instance of the <see cref="AssignDeviceToSiteRequest" /> class.
 	/// </summary>
 	/// <param name="Device">Device.</param>
-	public AssignDeviceToSiteRequest(List<AssignDeviceToSiteRequestDevice> Device)
+	public AssignDeviceToSiteRequest(List<AssignDeviceToSiteRequestDevice>? Device)
 	{
 		this.Device = Device;
 	}
@@ -24,7 +24,7 @@ public class AssignDeviceToSiteRequest
 	/// Gets or Sets Device
 	/// </summary>
 	[DataMember(Name = "device", EmitDefaultValue = false)]
-	public List<AssignDeviceToSiteRequestDevice> Device { get; set; }
+	public List<AssignDeviceToSiteRequestDevice>? Device { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

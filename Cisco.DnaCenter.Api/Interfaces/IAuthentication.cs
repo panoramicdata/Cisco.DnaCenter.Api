@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ public interface IAuthentication
 	/// API to obtain an access token. The token obtained using this API is required to be set as value to the X-Auth-Token HTTP Header for all API calls to Cisco DNA Center.
 	/// </remarks>
 	/// <param name="authorization">Basic Auth Base64 encoding of &lt;username&gt;:&lt;password&gt;</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AuthenticationAPIResponse</returns>
 	[Post("/dna/system/api/v1/auth/token")]
 	Task<AuthenticationResponse> Authenticate(

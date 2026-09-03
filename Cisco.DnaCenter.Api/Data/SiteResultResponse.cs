@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// SiteResultResponse
@@ -15,7 +15,7 @@ public class SiteResultResponse
 	/// Initializes a new instance of the <see cref="SiteResultResponse" /> class.
 	/// </summary>
 	/// <param name="Sites">Sites.</param>
-	public SiteResultResponse(List<SiteResultResponseSites> Sites)
+	public SiteResultResponse(List<SiteResultResponseSites>? Sites)
 	{
 		this.Sites = Sites;
 	}
@@ -24,7 +24,7 @@ public class SiteResultResponse
 	/// Gets or Sets Sites
 	/// </summary>
 	[DataMember(Name = "sites", EmitDefaultValue = false)]
-	public List<SiteResultResponseSites> Sites { get; set; }
+	public List<SiteResultResponseSites>? Sites { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class DeviceDeviceInfoPrimaryEndpoint
 	/// <param name="Ipv6Address">Ipv6Address.</param>
 	/// <param name="Fqdn">Fqdn.</param>
 	/// <param name="Certificate">Certificate.</param>
-	public DeviceDeviceInfoPrimaryEndpoint(decimal? Port = default, string? Protocol = default, Object Ipv4Address = default, Object Ipv6Address = default, string? Fqdn = default, string? Certificate = default)
+	public DeviceDeviceInfoPrimaryEndpoint(decimal? Port = default, string? Protocol = default, Object? Ipv4Address = default, Object? Ipv6Address = default, string? Fqdn = default, string? Certificate = default)
 	{
 		this.Port = Port;
 		this.Protocol = Protocol;
@@ -45,13 +45,13 @@ public class DeviceDeviceInfoPrimaryEndpoint
 	/// Gets or Sets Ipv4Address
 	/// </summary>
 	[DataMember(Name = "ipv4Address", EmitDefaultValue = false)]
-	public Object Ipv4Address { get; set; }
+	public Object? Ipv4Address { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ipv6Address
 	/// </summary>
 	[DataMember(Name = "ipv6Address", EmitDefaultValue = false)]
-	public Object Ipv6Address { get; set; }
+	public Object? Ipv6Address { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Fqdn

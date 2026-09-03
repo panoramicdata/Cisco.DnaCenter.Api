@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
@@ -41,8 +41,8 @@ public class TopologyResultResponseNodes
 	/// <param name="Y">Y.</param>
 	public TopologyResultResponseNodes(
 		bool? AclApplied = default,
-		Object AdditionalInfo = default,
-		TopologyResultResponseCustomParam CustomParam = default,
+		Object? AdditionalInfo = default,
+		TopologyResultResponseCustomParam? CustomParam = default,
 		string? DataPathId = default,
 		string? DeviceType = default,
 		string? Family = default,
@@ -103,13 +103,13 @@ public class TopologyResultResponseNodes
 	/// Gets or Sets AdditionalInfo
 	/// </summary>
 	[DataMember(Name = "additionalInfo", EmitDefaultValue = false)]
-	public Object AdditionalInfo { get; set; }
+	public Object? AdditionalInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CustomParam
 	/// </summary>
 	[DataMember(Name = "customParam", EmitDefaultValue = false)]
-	public TopologyResultResponseCustomParam CustomParam { get; set; }
+	public TopologyResultResponseCustomParam? CustomParam { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DataPathId

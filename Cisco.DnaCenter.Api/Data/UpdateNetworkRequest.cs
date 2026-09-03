@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// UpdateNetworkRequest
@@ -15,7 +15,7 @@ public class UpdateNetworkRequest
 	/// Initializes a new instance of the <see cref="UpdateNetworkRequest" /> class.
 	/// </summary>
 	/// <param name="Settings">Settings.</param>
-	public UpdateNetworkRequest(UpdateNetworkRequestSettings Settings)
+	public UpdateNetworkRequest(UpdateNetworkRequestSettings? Settings)
 	{
 		this.Settings = Settings;
 	}
@@ -24,7 +24,7 @@ public class UpdateNetworkRequest
 	/// Gets or Sets Settings
 	/// </summary>
 	[DataMember(Name = "settings", EmitDefaultValue = false)]
-	public UpdateNetworkRequestSettings Settings { get; set; }
+	public UpdateNetworkRequestSettings? Settings { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

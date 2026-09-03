@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class GetDeviceHistoryResponseHistoryTaskInfo
 	/// <param name="TimeTaken">TimeTaken.</param>
 	/// <param name="WorkItemList">WorkItemList.</param>
 	/// <param name="AddnDetails">AddnDetails.</param>
-	public GetDeviceHistoryResponseHistoryTaskInfo(string? Name = default, string? Type = default, decimal? TimeTaken = default, List<GetDeviceHistoryResponseHistoryTaskInfoWorkItemList> WorkItemList = default, List<DeviceDeviceInfoHttpHeaders> AddnDetails = default)
+	public GetDeviceHistoryResponseHistoryTaskInfo(string? Name = default, string? Type = default, decimal? TimeTaken = default, List<GetDeviceHistoryResponseHistoryTaskInfoWorkItemList>? WorkItemList = default, List<DeviceDeviceInfoHttpHeaders>? AddnDetails = default)
 	{
 		this.Name = Name;
 		this.Type = Type;
@@ -49,13 +49,13 @@ public class GetDeviceHistoryResponseHistoryTaskInfo
 	/// Gets or Sets WorkItemList
 	/// </summary>
 	[DataMember(Name = "workItemList", EmitDefaultValue = false)]
-	public List<GetDeviceHistoryResponseHistoryTaskInfoWorkItemList> WorkItemList { get; set; }
+	public List<GetDeviceHistoryResponseHistoryTaskInfoWorkItemList>? WorkItemList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AddnDetails
 	/// </summary>
 	[DataMember(Name = "addnDetails", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoHttpHeaders> AddnDetails { get; set; }
+	public List<DeviceDeviceInfoHttpHeaders>? AddnDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

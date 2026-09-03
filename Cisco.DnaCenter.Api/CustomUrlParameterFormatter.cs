@@ -7,7 +7,7 @@ namespace Cisco.DnaCenter.Api;
 
 internal class CustomUrlParameterFormatter : DefaultUrlParameterFormatter
 {
-	public override string? Format(object parameterValue, ICustomAttributeProvider attributeProvider, Type type)
+	public override string? Format(object? parameterValue, ICustomAttributeProvider attributeProvider, Type type)
 	{
 		if (parameterValue is null)
 		{

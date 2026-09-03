@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class ProvisionNfvRequestCustomNetworks
 	/// <param name="ConnectionType">ConnectionType.</param>
 	/// <param name="NetworkMode">NetworkMode.</param>
 	/// <param name="Vlan">Vlan.</param>
-	public ProvisionNfvRequestCustomNetworks(string? Name = default, List<ProvisionNfvRequestServicesToConnect> ServicesToConnect = default, string? ConnectionType = default, string? NetworkMode = default, string? Vlan = default)
+	public ProvisionNfvRequestCustomNetworks(string? Name = default, List<ProvisionNfvRequestServicesToConnect>? ServicesToConnect = default, string? ConnectionType = default, string? NetworkMode = default, string? Vlan = default)
 	{
 		this.Name = Name;
 		this.ServicesToConnect = ServicesToConnect;
@@ -37,7 +37,7 @@ public class ProvisionNfvRequestCustomNetworks
 	/// Gets or Sets ServicesToConnect
 	/// </summary>
 	[DataMember(Name = "servicesToConnect", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestServicesToConnect> ServicesToConnect { get; set; }
+	public List<ProvisionNfvRequestServicesToConnect>? ServicesToConnect { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConnectionType

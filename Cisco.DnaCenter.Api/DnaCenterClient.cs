@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Cisco.DnaCenter.Api.Interfaces;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -28,7 +28,7 @@ public class DnaCenterClient : IDisposable
 
 	public bool IgnoreSslCertificateErrors { get; private set; }
 
-	public DnaCenterClient(DnaCenterClientOptions options, ILogger? logger = null)
+	public DnaCenterClient(DnaCenterClientOptions? options, ILogger? logger = null)
 	{
 		_logger = logger ?? NullLogger.Instance;
 

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -76,7 +76,7 @@ public class TemplateDtoRollbackTemplateParams
 	/// <param name="Range">Range.</param>
 	/// <param name="Required">Required.</param>
 	/// <param name="Selection">Selection.</param>
-	public TemplateDtoRollbackTemplateParams(string? Binding = default, DataTypeEnum? DataType = default, string? DefaultValue = default, string? Description = default, string? DisplayName = default, string? Group = default, string? Id = default, string? InstructionText = default, string? Key = default, bool? NotParam = default, int? Order = default, bool? ParamArray = default, string? ParameterName = default, string? Provider = default, List<TemplateDtoRange> Range = default, bool? Required = default, TemplateDtoSelection Selection = default)
+	public TemplateDtoRollbackTemplateParams(string? Binding = default, DataTypeEnum? DataType = default, string? DefaultValue = default, string? Description = default, string? DisplayName = default, string? Group = default, string? Id = default, string? InstructionText = default, string? Key = default, bool? NotParam = default, int? Order = default, bool? ParamArray = default, string? ParameterName = default, string? Provider = default, List<TemplateDtoRange>? Range = default, bool? Required = default, TemplateDtoSelection? Selection = default)
 	{
 		this.Binding = Binding;
 		this.DataType = DataType;
@@ -179,7 +179,7 @@ public class TemplateDtoRollbackTemplateParams
 	/// Gets or Sets Range
 	/// </summary>
 	[DataMember(Name = "range", EmitDefaultValue = false)]
-	public List<TemplateDtoRange> Range { get; set; }
+	public List<TemplateDtoRange>? Range { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Required
@@ -191,7 +191,7 @@ public class TemplateDtoRollbackTemplateParams
 	/// Gets or Sets Selection
 	/// </summary>
 	[DataMember(Name = "selection", EmitDefaultValue = false)]
-	public TemplateDtoSelection Selection { get; set; }
+	public TemplateDtoSelection? Selection { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

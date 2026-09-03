@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -50,7 +50,7 @@ public class ProvisionNfvRequestDevice
 	/// <param name="CustomNetworks">CustomNetworks.</param>
 	/// <param name="Vlan">Vlan.</param>
 	/// <param name="CustomTemplate">CustomTemplate.</param>
-	public ProvisionNfvRequestDevice(DeviceTypeEnum? DeviceType = default, string? TagName = default, List<ProvisionNfvRequestServiceProviders> ServiceProviders = default, bool? Dia = default, List<ProvisionNfvRequestServices> Services = default, List<ProvisionNfvRequestCustomServices> CustomServices = default, List<ProvisionNfvRequestCustomNetworks> CustomNetworks = default, List<ProvisionNfvRequestVlan> Vlan = default, List<ProvisionNfvRequestCustomTemplate> CustomTemplate = default)
+	public ProvisionNfvRequestDevice(DeviceTypeEnum? DeviceType = default, string? TagName = default, List<ProvisionNfvRequestServiceProviders>? ServiceProviders = default, bool? Dia = default, List<ProvisionNfvRequestServices>? Services = default, List<ProvisionNfvRequestCustomServices>? CustomServices = default, List<ProvisionNfvRequestCustomNetworks>? CustomNetworks = default, List<ProvisionNfvRequestVlan>? Vlan = default, List<ProvisionNfvRequestCustomTemplate>? CustomTemplate = default)
 	{
 		this.DeviceType = DeviceType;
 		this.TagName = TagName;
@@ -73,7 +73,7 @@ public class ProvisionNfvRequestDevice
 	/// Gets or Sets ServiceProviders
 	/// </summary>
 	[DataMember(Name = "serviceProviders", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestServiceProviders> ServiceProviders { get; set; }
+	public List<ProvisionNfvRequestServiceProviders>? ServiceProviders { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Dia
@@ -85,31 +85,31 @@ public class ProvisionNfvRequestDevice
 	/// Gets or Sets Services
 	/// </summary>
 	[DataMember(Name = "services", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestServices> Services { get; set; }
+	public List<ProvisionNfvRequestServices>? Services { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CustomServices
 	/// </summary>
 	[DataMember(Name = "customServices", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestCustomServices> CustomServices { get; set; }
+	public List<ProvisionNfvRequestCustomServices>? CustomServices { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CustomNetworks
 	/// </summary>
 	[DataMember(Name = "customNetworks", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestCustomNetworks> CustomNetworks { get; set; }
+	public List<ProvisionNfvRequestCustomNetworks>? CustomNetworks { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Vlan
 	/// </summary>
 	[DataMember(Name = "vlan", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestVlan> Vlan { get; set; }
+	public List<ProvisionNfvRequestVlan>? Vlan { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CustomTemplate
 	/// </summary>
 	[DataMember(Name = "customTemplate", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestCustomTemplate> CustomTemplate { get; set; }
+	public List<ProvisionNfvRequestCustomTemplate>? CustomTemplate { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

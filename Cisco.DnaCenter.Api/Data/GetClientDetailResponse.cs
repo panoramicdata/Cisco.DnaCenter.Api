@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -15,7 +15,7 @@ public class GetClientDetailResponse
 	/// <param name="Detail">Detail.</param>
 	/// <param name="ConnectionInfo">ConnectionInfo.</param>
 	/// <param name="Topology">Topology.</param>
-	public GetClientDetailResponse(GetClientDetailResponseDetail Detail = default, GetClientDetailResponseConnectionInfo ConnectionInfo = default, GetClientDetailResponseTopology Topology = default)
+	public GetClientDetailResponse(GetClientDetailResponseDetail? Detail = default, GetClientDetailResponseConnectionInfo? ConnectionInfo = default, GetClientDetailResponseTopology? Topology = default)
 	{
 		this.Detail = Detail;
 		this.ConnectionInfo = ConnectionInfo;
@@ -26,19 +26,19 @@ public class GetClientDetailResponse
 	/// Gets or Sets Detail
 	/// </summary>
 	[DataMember(Name = "detail", EmitDefaultValue = false)]
-	public GetClientDetailResponseDetail Detail { get; set; }
+	public GetClientDetailResponseDetail? Detail { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConnectionInfo
 	/// </summary>
 	[DataMember(Name = "connectionInfo", EmitDefaultValue = false)]
-	public GetClientDetailResponseConnectionInfo ConnectionInfo { get; set; }
+	public GetClientDetailResponseConnectionInfo? ConnectionInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Topology
 	/// </summary>
 	[DataMember(Name = "topology", EmitDefaultValue = false)]
-	public GetClientDetailResponseTopology Topology { get; set; }
+	public GetClientDetailResponseTopology? Topology { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

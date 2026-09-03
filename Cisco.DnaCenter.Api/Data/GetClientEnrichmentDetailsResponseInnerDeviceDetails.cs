@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -53,7 +53,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetails
 	/// <param name="Id">Id.</param>
 	/// <param name="NeighborTopology">NeighborTopology.</param>
 	/// <param name="Cisco360view">Cisco360view.</param>
-	public GetClientEnrichmentDetailsResponseInnerDeviceDetails(string? Family = default, string? Type = default, Object Location = default, string? ErrorCode = default, string? MacAddress = default, string? Role = default, string? ApManagerInterfaceIp = default, string? AssociatedWlcIp = default, Object BootDateTime = default, string? CollectionStatus = default, Object InterfaceCount = default, Object LineCardCount = default, Object LineCardId = default, string? ManagementIpAddress = default, string? MemorySize = default, string? PlatformId = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? SnmpContact = default, string? SnmpLocation = default, string? TunnelUdpPort = default, Object WaasDeviceMode = default, string? Series = default, string? InventoryStatusDetail = default, string? CollectionInterval = default, string? SerialNumber = default, string? SoftwareVersion = default, string? RoleSource = default, string? Hostname = default, string? UpTime = default, long? LastUpdateTime = default, Object ErrorDescription = default, Object LocationName = default, string? TagCount = default, string? LastUpdated = default, string? InstanceUuid = default, string? Id = default, List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology> NeighborTopology = default, string? Cisco360view = default)
+	public GetClientEnrichmentDetailsResponseInnerDeviceDetails(string? Family = default, string? Type = default, Object? Location = default, string? ErrorCode = default, string? MacAddress = default, string? Role = default, string? ApManagerInterfaceIp = default, string? AssociatedWlcIp = default, Object? BootDateTime = default, string? CollectionStatus = default, Object? InterfaceCount = default, Object? LineCardCount = default, Object? LineCardId = default, string? ManagementIpAddress = default, string? MemorySize = default, string? PlatformId = default, string? ReachabilityFailureReason = default, string? ReachabilityStatus = default, string? SnmpContact = default, string? SnmpLocation = default, string? TunnelUdpPort = default, Object? WaasDeviceMode = default, string? Series = default, string? InventoryStatusDetail = default, string? CollectionInterval = default, string? SerialNumber = default, string? SoftwareVersion = default, string? RoleSource = default, string? Hostname = default, string? UpTime = default, long? LastUpdateTime = default, Object? ErrorDescription = default, Object? LocationName = default, string? TagCount = default, string? LastUpdated = default, string? InstanceUuid = default, string? Id = default, List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology>? NeighborTopology = default, string? Cisco360view = default)
 	{
 		this.Family = Family;
 		this.Type = Type;
@@ -112,7 +112,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets Location
 	/// </summary>
 	[DataMember(Name = "location", EmitDefaultValue = false)]
-	public Object Location { get; set; }
+	public Object? Location { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ErrorCode
@@ -148,7 +148,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets BootDateTime
 	/// </summary>
 	[DataMember(Name = "bootDateTime", EmitDefaultValue = false)]
-	public Object BootDateTime { get; set; }
+	public Object? BootDateTime { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CollectionStatus
@@ -160,19 +160,19 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets InterfaceCount
 	/// </summary>
 	[DataMember(Name = "interfaceCount", EmitDefaultValue = false)]
-	public Object InterfaceCount { get; set; }
+	public Object? InterfaceCount { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LineCardCount
 	/// </summary>
 	[DataMember(Name = "lineCardCount", EmitDefaultValue = false)]
-	public Object LineCardCount { get; set; }
+	public Object? LineCardCount { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LineCardId
 	/// </summary>
 	[DataMember(Name = "lineCardId", EmitDefaultValue = false)]
-	public Object LineCardId { get; set; }
+	public Object? LineCardId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ManagementIpAddress
@@ -226,7 +226,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets WaasDeviceMode
 	/// </summary>
 	[DataMember(Name = "waasDeviceMode", EmitDefaultValue = false)]
-	public Object WaasDeviceMode { get; set; }
+	public Object? WaasDeviceMode { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Series
@@ -286,13 +286,13 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets ErrorDescription
 	/// </summary>
 	[DataMember(Name = "errorDescription", EmitDefaultValue = false)]
-	public Object ErrorDescription { get; set; }
+	public Object? ErrorDescription { get; set; }
 
 	/// <summary>
 	/// Gets or Sets LocationName
 	/// </summary>
 	[DataMember(Name = "locationName", EmitDefaultValue = false)]
-	public Object LocationName { get; set; }
+	public Object? LocationName { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TagCount
@@ -322,7 +322,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetails
 	/// Gets or Sets NeighborTopology
 	/// </summary>
 	[DataMember(Name = "neighborTopology", EmitDefaultValue = false)]
-	public List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology> NeighborTopology { get; set; }
+	public List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology>? NeighborTopology { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Cisco360view

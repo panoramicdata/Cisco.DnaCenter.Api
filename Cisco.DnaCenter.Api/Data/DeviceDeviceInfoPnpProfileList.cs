@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -17,7 +17,7 @@ public class DeviceDeviceInfoPnpProfileList
 	/// <param name="CreatedBy">CreatedBy.</param>
 	/// <param name="PrimaryEndpoint">PrimaryEndpoint.</param>
 	/// <param name="SecondaryEndpoint">SecondaryEndpoint.</param>
-	public DeviceDeviceInfoPnpProfileList(string? ProfileName = default, bool? DiscoveryCreated = default, string? CreatedBy = default, DeviceDeviceInfoPrimaryEndpoint PrimaryEndpoint = default, DeviceDeviceInfoPrimaryEndpoint SecondaryEndpoint = default)
+	public DeviceDeviceInfoPnpProfileList(string? ProfileName = default, bool? DiscoveryCreated = default, string? CreatedBy = default, DeviceDeviceInfoPrimaryEndpoint? PrimaryEndpoint = default, DeviceDeviceInfoPrimaryEndpoint? SecondaryEndpoint = default)
 	{
 		this.ProfileName = ProfileName;
 		this.DiscoveryCreated = DiscoveryCreated;
@@ -48,13 +48,13 @@ public class DeviceDeviceInfoPnpProfileList
 	/// Gets or Sets PrimaryEndpoint
 	/// </summary>
 	[DataMember(Name = "primaryEndpoint", EmitDefaultValue = false)]
-	public DeviceDeviceInfoPrimaryEndpoint PrimaryEndpoint { get; set; }
+	public DeviceDeviceInfoPrimaryEndpoint? PrimaryEndpoint { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SecondaryEndpoint
 	/// </summary>
 	[DataMember(Name = "secondaryEndpoint", EmitDefaultValue = false)]
-	public DeviceDeviceInfoPrimaryEndpoint SecondaryEndpoint { get; set; }
+	public DeviceDeviceInfoPrimaryEndpoint? SecondaryEndpoint { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

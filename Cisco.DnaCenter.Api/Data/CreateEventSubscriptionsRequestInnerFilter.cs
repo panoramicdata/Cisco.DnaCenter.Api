@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// CreateEventSubscriptionsRequestInnerFilter
@@ -15,7 +15,7 @@ public class CreateEventSubscriptionsRequestInnerFilter
 	/// Initializes a new instance of the <see cref="CreateEventSubscriptionsRequestInnerFilter" /> class.
 	/// </summary>
 	/// <param name="EventIds">EventIds.</param>
-	public CreateEventSubscriptionsRequestInnerFilter(List<string> EventIds)
+	public CreateEventSubscriptionsRequestInnerFilter(List<string>? EventIds)
 	{
 		this.EventIds = EventIds;
 	}
@@ -24,7 +24,7 @@ public class CreateEventSubscriptionsRequestInnerFilter
 	/// Gets or Sets EventIds
 	/// </summary>
 	[DataMember(Name = "eventIds", EmitDefaultValue = false)]
-	public List<string> EventIds { get; set; }
+	public List<string>? EventIds { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

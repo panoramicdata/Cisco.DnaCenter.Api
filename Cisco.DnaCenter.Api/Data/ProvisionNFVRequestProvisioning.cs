@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class ProvisionNFVRequestProvisioning
 	/// </summary>
 	/// <param name="Site">Site.</param>
 	/// <param name="Device">Device.</param>
-	public ProvisionNFVRequestProvisioning(ProvisionNfvRequestSite Site = default, List<ProvisionNfvRequestDevice1> Device = default)
+	public ProvisionNFVRequestProvisioning(ProvisionNfvRequestSite? Site = default, List<ProvisionNfvRequestDevice1>? Device = default)
 	{
 		this.Site = Site;
 		this.Device = Device;
@@ -25,13 +25,13 @@ public class ProvisionNFVRequestProvisioning
 	/// Gets or Sets Site
 	/// </summary>
 	[DataMember(Name = "site", EmitDefaultValue = false)]
-	public ProvisionNfvRequestSite Site { get; set; }
+	public ProvisionNfvRequestSite? Site { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Device
 	/// </summary>
 	[DataMember(Name = "device", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestDevice1> Device { get; set; }
+	public List<ProvisionNfvRequestDevice1>? Device { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

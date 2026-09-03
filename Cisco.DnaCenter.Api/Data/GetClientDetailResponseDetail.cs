@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -52,7 +52,7 @@ public class GetClientDetailResponseDetail
 	/// <param name="OnboardingTime">OnboardingTime.</param>
 	/// <param name="Port">Port.</param>
 	/// <param name="IosCapable">IosCapable.</param>
-	public GetClientDetailResponseDetail(string? Id = default, string? ConnectionStatus = default, string? HostType = default, Object UserId = default, string? HostName = default, Object HostOs = default, Object HostVersion = default, string? SubType = default, int? LastUpdated = default, List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore> HealthScore = default, string? HostMac = default, string? HostIpV4 = default, List<string> HostIpV6 = default, string? AuthType = default, string? VlanId = default, string? Vnid = default, string? Ssid = default, string? Frequency = default, string? Channel = default, Object ApGroup = default, Object Location = default, string? ClientConnection = default, List<Object> ConnectedDevice = default, decimal? IssueCount = default, string? Rssi = default, Object AvgRssi = default, string? Snr = default, Object AvgSnr = default, string? DataRate = default, string? TxBytes = default, string? RxBytes = default, Object DnsSuccess = default, Object DnsFailure = default, GetClientDetailResponseDetailOnboarding Onboarding = default, string? ClientType = default, Object OnboardingTime = default, Object Port = default, bool? IosCapable = default)
+	public GetClientDetailResponseDetail(string? Id = default, string? ConnectionStatus = default, string? HostType = default, Object? UserId = default, string? HostName = default, Object? HostOs = default, Object? HostVersion = default, string? SubType = default, int? LastUpdated = default, List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore>? HealthScore = default, string? HostMac = default, string? HostIpV4 = default, List<string>? HostIpV6 = default, string? AuthType = default, string? VlanId = default, string? Vnid = default, string? Ssid = default, string? Frequency = default, string? Channel = default, Object? ApGroup = default, Object? Location = default, string? ClientConnection = default, List<Object>? ConnectedDevice = default, decimal? IssueCount = default, string? Rssi = default, Object? AvgRssi = default, string? Snr = default, Object? AvgSnr = default, string? DataRate = default, string? TxBytes = default, string? RxBytes = default, Object? DnsSuccess = default, Object? DnsFailure = default, GetClientDetailResponseDetailOnboarding? Onboarding = default, string? ClientType = default, Object? OnboardingTime = default, Object? Port = default, bool? IosCapable = default)
 	{
 		this.Id = Id;
 		this.ConnectionStatus = ConnectionStatus;
@@ -116,7 +116,7 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets UserId
 	/// </summary>
 	[DataMember(Name = "userId", EmitDefaultValue = false)]
-	public Object UserId { get; set; }
+	public Object? UserId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HostName
@@ -128,13 +128,13 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets HostOs
 	/// </summary>
 	[DataMember(Name = "hostOs", EmitDefaultValue = false)]
-	public Object HostOs { get; set; }
+	public Object? HostOs { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HostVersion
 	/// </summary>
 	[DataMember(Name = "hostVersion", EmitDefaultValue = false)]
-	public Object HostVersion { get; set; }
+	public Object? HostVersion { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SubType
@@ -152,7 +152,7 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets HealthScore
 	/// </summary>
 	[DataMember(Name = "healthScore", EmitDefaultValue = false)]
-	public List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore> HealthScore { get; set; }
+	public List<GetClientEnrichmentDetailsResponseInnerUserDetailsHealthScore>? HealthScore { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HostMac
@@ -170,7 +170,7 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets HostIpV6
 	/// </summary>
 	[DataMember(Name = "hostIpV6", EmitDefaultValue = false)]
-	public List<string> HostIpV6 { get; set; }
+	public List<string>? HostIpV6 { get; set; }
 
 	/// <summary>
 	/// Gets or Sets AuthType
@@ -212,13 +212,13 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets ApGroup
 	/// </summary>
 	[DataMember(Name = "apGroup", EmitDefaultValue = false)]
-	public Object ApGroup { get; set; }
+	public Object? ApGroup { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Location
 	/// </summary>
 	[DataMember(Name = "location", EmitDefaultValue = false)]
-	public Object Location { get; set; }
+	public Object? Location { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ClientConnection
@@ -230,7 +230,7 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets ConnectedDevice
 	/// </summary>
 	[DataMember(Name = "connectedDevice", EmitDefaultValue = false)]
-	public List<Object> ConnectedDevice { get; set; }
+	public List<Object>? ConnectedDevice { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IssueCount
@@ -248,7 +248,7 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets AvgRssi
 	/// </summary>
 	[DataMember(Name = "avgRssi", EmitDefaultValue = false)]
-	public Object AvgRssi { get; set; }
+	public Object? AvgRssi { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Snr
@@ -260,7 +260,7 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets AvgSnr
 	/// </summary>
 	[DataMember(Name = "avgSnr", EmitDefaultValue = false)]
-	public Object AvgSnr { get; set; }
+	public Object? AvgSnr { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DataRate
@@ -284,19 +284,19 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets DnsSuccess
 	/// </summary>
 	[DataMember(Name = "dnsSuccess", EmitDefaultValue = false)]
-	public Object DnsSuccess { get; set; }
+	public Object? DnsSuccess { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DnsFailure
 	/// </summary>
 	[DataMember(Name = "dnsFailure", EmitDefaultValue = false)]
-	public Object DnsFailure { get; set; }
+	public Object? DnsFailure { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Onboarding
 	/// </summary>
 	[DataMember(Name = "onboarding", EmitDefaultValue = false)]
-	public GetClientDetailResponseDetailOnboarding Onboarding { get; set; }
+	public GetClientDetailResponseDetailOnboarding? Onboarding { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ClientType
@@ -308,13 +308,13 @@ public class GetClientDetailResponseDetail
 	/// Gets or Sets OnboardingTime
 	/// </summary>
 	[DataMember(Name = "onboardingTime", EmitDefaultValue = false)]
-	public Object OnboardingTime { get; set; }
+	public Object? OnboardingTime { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Port
 	/// </summary>
 	[DataMember(Name = "port", EmitDefaultValue = false)]
-	public Object Port { get; set; }
+	public Object? Port { get; set; }
 
 	/// <summary>
 	/// Gets or Sets IosCapable

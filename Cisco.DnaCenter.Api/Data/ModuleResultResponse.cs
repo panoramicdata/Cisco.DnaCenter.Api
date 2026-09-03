@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -107,7 +107,7 @@ public class ModuleResultResponse
 	/// <param name="PartNumber">PartNumber.</param>
 	/// <param name="SerialNumber">SerialNumber.</param>
 	/// <param name="VendorEquipmentType">VendorEquipmentType.</param>
-	public ModuleResultResponse(string? AssemblyNumber = default, string? AssemblyRevision = default, Object AttributeInfo = default, string? ContainmentEntity = default, string? Description = default, string? EntityPhysicalIndex = default, string? Id = default, IsFieldReplaceableEnum? IsFieldReplaceable = default, IsReportingAlarmsAllowedEnum? IsReportingAlarmsAllowed = default, string? Manufacturer = default, int? ModuleIndex = default, string? Name = default, string? OperationalStateCode = default, string? PartNumber = default, string? SerialNumber = default, string? VendorEquipmentType = default)
+	public ModuleResultResponse(string? AssemblyNumber = default, string? AssemblyRevision = default, Object? AttributeInfo = default, string? ContainmentEntity = default, string? Description = default, string? EntityPhysicalIndex = default, string? Id = default, IsFieldReplaceableEnum? IsFieldReplaceable = default, IsReportingAlarmsAllowedEnum? IsReportingAlarmsAllowed = default, string? Manufacturer = default, int? ModuleIndex = default, string? Name = default, string? OperationalStateCode = default, string? PartNumber = default, string? SerialNumber = default, string? VendorEquipmentType = default)
 	{
 		this.AssemblyNumber = AssemblyNumber;
 		this.AssemblyRevision = AssemblyRevision;
@@ -143,7 +143,7 @@ public class ModuleResultResponse
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ContainmentEntity

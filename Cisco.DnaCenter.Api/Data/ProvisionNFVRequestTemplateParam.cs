@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class ProvisionNfvRequestTemplateParam
 	/// </summary>
 	/// <param name="Nfvis">Nfvis.</param>
 	/// <param name="Asav">Asav.</param>
-	public ProvisionNfvRequestTemplateParam(ProvisionNfvRequestTemplateParamNfvis Nfvis = default, ProvisionNfvRequestTemplateParamNfvis Asav = default)
+	public ProvisionNfvRequestTemplateParam(ProvisionNfvRequestTemplateParamNfvis? Nfvis = default, ProvisionNfvRequestTemplateParamNfvis? Asav = default)
 	{
 		this.Nfvis = Nfvis;
 		this.Asav = Asav;
@@ -24,13 +24,13 @@ public class ProvisionNfvRequestTemplateParam
 	/// Gets or Sets Nfvis
 	/// </summary>
 	[DataMember(Name = "nfvis", EmitDefaultValue = false)]
-	public ProvisionNfvRequestTemplateParamNfvis Nfvis { get; set; }
+	public ProvisionNfvRequestTemplateParamNfvis? Nfvis { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Asav
 	/// </summary>
 	[DataMember(Name = "asav", EmitDefaultValue = false)]
-	public ProvisionNfvRequestTemplateParamNfvis Asav { get; set; }
+	public ProvisionNfvRequestTemplateParamNfvis? Asav { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

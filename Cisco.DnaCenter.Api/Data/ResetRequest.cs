@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class ResetRequest
 	/// <param name="DeviceResetList">DeviceResetList.</param>
 	/// <param name="ProjectId">ProjectId.</param>
 	/// <param name="WorkflowId">WorkflowId.</param>
-	public ResetRequest(List<ResetRequestDeviceResetList> DeviceResetList = default, string? ProjectId = default, string? WorkflowId = default)
+	public ResetRequest(List<ResetRequestDeviceResetList>? DeviceResetList = default, string? ProjectId = default, string? WorkflowId = default)
 	{
 		this.DeviceResetList = DeviceResetList;
 		this.ProjectId = ProjectId;
@@ -27,7 +27,7 @@ public class ResetRequest
 	/// Gets or Sets DeviceResetList
 	/// </summary>
 	[DataMember(Name = "deviceResetList", EmitDefaultValue = false)]
-	public List<ResetRequestDeviceResetList> DeviceResetList { get; set; }
+	public List<ResetRequestDeviceResetList>? DeviceResetList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ProjectId

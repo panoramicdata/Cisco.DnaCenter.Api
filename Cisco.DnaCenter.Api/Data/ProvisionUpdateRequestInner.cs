@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class ProvisionUpdateRequestInner
 	/// <param name="DeviceName">DeviceName.</param>
 	/// <param name="ManagedAPLocations">ManagedAPLocations.</param>
 	/// <param name="DynamicInterfaces">DynamicInterfaces.</param>
-	public ProvisionUpdateRequestInner(string? DeviceName = default, List<string> ManagedAPLocations = default, List<ProvisionRequestInnerDynamicInterfaces> DynamicInterfaces = default)
+	public ProvisionUpdateRequestInner(string? DeviceName = default, List<string>? ManagedAPLocations = default, List<ProvisionRequestInnerDynamicInterfaces>? DynamicInterfaces = default)
 	{
 		this.DeviceName = DeviceName;
 		this.ManagedAPLocations = ManagedAPLocations;
@@ -33,13 +33,13 @@ public class ProvisionUpdateRequestInner
 	/// Gets or Sets ManagedAPLocations
 	/// </summary>
 	[DataMember(Name = "managedAPLocations", EmitDefaultValue = false)]
-	public List<string> ManagedAPLocations { get; set; }
+	public List<string>? ManagedAPLocations { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DynamicInterfaces
 	/// </summary>
 	[DataMember(Name = "dynamicInterfaces", EmitDefaultValue = false)]
-	public List<ProvisionRequestInnerDynamicInterfaces> DynamicInterfaces { get; set; }
+	public List<ProvisionRequestInnerDynamicInterfaces>? DynamicInterfaces { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

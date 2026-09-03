@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -19,7 +19,7 @@ public class DeviceDeviceInfoIpInterfaces
 	/// <param name="Ipv4Address">Ipv4Address.</param>
 	/// <param name="Ipv6AddressList">Ipv6AddressList.</param>
 	/// <param name="Name">Name.</param>
-	public DeviceDeviceInfoIpInterfaces(string? Status = default, string? MacAddress = default, Object Ipv4Address = default, List<Object> Ipv6AddressList = default, string? Name = default)
+	public DeviceDeviceInfoIpInterfaces(string? Status = default, string? MacAddress = default, Object? Ipv4Address = default, List<Object>? Ipv6AddressList = default, string? Name = default)
 	{
 		this.Status = Status;
 		this.MacAddress = MacAddress;
@@ -44,13 +44,13 @@ public class DeviceDeviceInfoIpInterfaces
 	/// Gets or Sets Ipv4Address
 	/// </summary>
 	[DataMember(Name = "ipv4Address", EmitDefaultValue = false)]
-	public Object Ipv4Address { get; set; }
+	public Object? Ipv4Address { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Ipv6AddressList
 	/// </summary>
 	[DataMember(Name = "ipv6AddressList", EmitDefaultValue = false)]
-	public List<Object> Ipv6AddressList { get; set; }
+	public List<Object>? Ipv6AddressList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Name

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -53,7 +53,7 @@ public class WirelessInfoResultResponse
 	/// <param name="NetconfEnabled">NetconfEnabled.</param>
 	/// <param name="WirelessLicenseInfo">WirelessLicenseInfo.</param>
 	/// <param name="WirelessPackageInstalled">WirelessPackageInstalled.</param>
-	public WirelessInfoResultResponse(List<int?> AdminEnabledPorts = default, string? ApGroupName = default, string? DeviceId = default, string? EthMacAddress = default, string? FlexGroupName = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, bool? LagModeEnabled = default, bool? NetconfEnabled = default, WirelessLicenseInfoEnum? WirelessLicenseInfo = default, bool? WirelessPackageInstalled = default)
+	public WirelessInfoResultResponse(List<int?>? AdminEnabledPorts = default, string? ApGroupName = default, string? DeviceId = default, string? EthMacAddress = default, string? FlexGroupName = default, string? Id = default, string? InstanceTenantId = default, string? InstanceUuid = default, bool? LagModeEnabled = default, bool? NetconfEnabled = default, WirelessLicenseInfoEnum? WirelessLicenseInfo = default, bool? WirelessPackageInstalled = default)
 	{
 		this.AdminEnabledPorts = AdminEnabledPorts;
 		this.ApGroupName = ApGroupName;
@@ -73,7 +73,7 @@ public class WirelessInfoResultResponse
 	/// Gets or Sets AdminEnabledPorts
 	/// </summary>
 	[DataMember(Name = "adminEnabledPorts", EmitDefaultValue = false)]
-	public List<int?> AdminEnabledPorts { get; set; }
+	public List<int?>? AdminEnabledPorts { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApGroupName

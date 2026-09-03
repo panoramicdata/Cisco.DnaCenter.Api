@@ -1,4 +1,4 @@
-namespace Cisco.DnaCenter.Api.Data;
+﻿namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
 /// UpdateSPProfileRequest
@@ -15,7 +15,7 @@ public class UpdateSpProfileRequest
 	/// Initializes a new instance of the <see cref="UpdateSpProfileRequest" /> class.
 	/// </summary>
 	/// <param name="Settings">Settings.</param>
-	public UpdateSpProfileRequest(UpdateSpProfileRequestSettings Settings)
+	public UpdateSpProfileRequest(UpdateSpProfileRequestSettings? Settings)
 	{
 		this.Settings = Settings;
 	}
@@ -24,7 +24,7 @@ public class UpdateSpProfileRequest
 	/// Gets or Sets Settings
 	/// </summary>
 	[DataMember(Name = "settings", EmitDefaultValue = false)]
-	public UpdateSpProfileRequestSettings Settings { get; set; }
+	public UpdateSpProfileRequestSettings? Settings { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

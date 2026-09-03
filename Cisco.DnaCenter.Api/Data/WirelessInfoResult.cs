@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class WirelessInfoResult
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="_Version">_Version.</param>
-	public WirelessInfoResult(WirelessInfoResultResponse Response = default, string? _Version = default)
+	public WirelessInfoResult(WirelessInfoResultResponse? Response = default, string? _Version = default)
 	{
 		this.Response = Response;
 		this._Version = _Version;
@@ -24,7 +24,7 @@ public class WirelessInfoResult
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public WirelessInfoResultResponse Response { get; set; }
+	public WirelessInfoResultResponse? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

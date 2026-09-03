@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -20,10 +20,10 @@ public class GetOverallClientHealthResponseScoreList
 	/// <param name="Starttime">Starttime.</param>
 	/// <param name="Endtime">Endtime.</param>
 	public GetOverallClientHealthResponseScoreList(
-		GetOverallClientHealthResponseScoreCategory ScoreCategory = default,
+		GetOverallClientHealthResponseScoreCategory? ScoreCategory = default,
 		int? ScoreValue = default,
 		int? ClientCount = default,
-		Object ClientUniqueCount = default,
+		Object? ClientUniqueCount = default,
 		long? Starttime = default,
 		long? Endtime = default)
 	{
@@ -39,7 +39,7 @@ public class GetOverallClientHealthResponseScoreList
 	/// Gets or Sets ScoreCategory
 	/// </summary>
 	[DataMember(Name = "scoreCategory", EmitDefaultValue = false)]
-	public GetOverallClientHealthResponseScoreCategory ScoreCategory { get; set; }
+	public GetOverallClientHealthResponseScoreCategory? ScoreCategory { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ScoreValue
@@ -57,7 +57,7 @@ public class GetOverallClientHealthResponseScoreList
 	/// Gets or Sets ClientUniqueCount
 	/// </summary>
 	[DataMember(Name = "clientUniqueCount", EmitDefaultValue = false)]
-	public Object ClientUniqueCount { get; set; }
+	public Object? ClientUniqueCount { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Starttime

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -22,7 +22,7 @@ public class GetOverallNetworkHealthResponseResponse
 	/// <param name="BadCount">BadCount.</param>
 	/// <param name="Entity">Entity.</param>
 	/// <param name="TimeinMillis">TimeinMillis.</param>
-	public GetOverallNetworkHealthResponseResponse(string? Time = default, int? HealthScore = default, int? TotalCount = default, int? GoodCount = default, decimal? UnmonCount = default, int? FairCount = default, decimal? BadCount = default, Object Entity = default, int? TimeinMillis = default)
+	public GetOverallNetworkHealthResponseResponse(string? Time = default, int? HealthScore = default, int? TotalCount = default, int? GoodCount = default, decimal? UnmonCount = default, int? FairCount = default, decimal? BadCount = default, Object? Entity = default, int? TimeinMillis = default)
 	{
 		this.Time = Time;
 		this.HealthScore = HealthScore;
@@ -81,7 +81,7 @@ public class GetOverallNetworkHealthResponseResponse
 	/// Gets or Sets Entity
 	/// </summary>
 	[DataMember(Name = "entity", EmitDefaultValue = false)]
-	public Object Entity { get; set; }
+	public Object? Entity { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TimeinMillis

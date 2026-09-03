@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,25 +34,26 @@ public interface ISoftwareImages
 	/// <param name="sortOrder">sort order - &#39;asc&#39; or &#39;des&#39;. Default is asc (optional)</param>
 	/// <param name="limit">limit (optional)</param>
 	/// <param name="offset">offset (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of ImageInfoListResponse</returns>
 	[Get("/dna/intent/api/v1/image/importation")]
 	Task<ImageInfoListResponse> GetAllAsync(
-		[AliasAs("imageUuid")]string imageUuid = null,
-		[AliasAs("name")]string name = null,
-		[AliasAs("family")]string family = null,
-		[AliasAs("applicationType")]string applicationType = null,
-		[AliasAs("imageIntegrityStatus")]string imageIntegrityStatus = null,
-		[AliasAs("_version")]string _version = null,
-		[AliasAs("imageSeries")]string imageSeries = null,
-		[AliasAs("imageName")]string imageName = null,
+		[AliasAs("imageUuid")]string? imageUuid = null,
+		[AliasAs("name")]string? name = null,
+		[AliasAs("family")]string? family = null,
+		[AliasAs("applicationType")]string? applicationType = null,
+		[AliasAs("imageIntegrityStatus")]string? imageIntegrityStatus = null,
+		[AliasAs("_version")]string? _version = null,
+		[AliasAs("imageSeries")]string? imageSeries = null,
+		[AliasAs("imageName")]string? imageName = null,
 		[AliasAs("isTaggedGolden")]bool? isTaggedGolden = null,
 		[AliasAs("isCCORecommended")]bool? isCCORecommended = null,
 		[AliasAs("isCCOLatest")]bool? isCCOLatest = null,
 		[AliasAs("createdTime")]int? createdTime = null,
 		[AliasAs("imageSizeGreaterThan")]int? imageSizeGreaterThan = null,
 		[AliasAs("imageSizeLesserThan")]int? imageSizeLesserThan = null,
-		[AliasAs("sortBy")]string sortBy = null,
-		[AliasAs("sortOrder")]string sortOrder = null,
+		[AliasAs("sortBy")]string? sortBy = null,
+		[AliasAs("sortOrder")]string? sortOrder = null,
 		[AliasAs("limit")]int? limit = null,
 		[AliasAs("offset")]int? offset = null,
 		CancellationToken cancellationToken = default);
@@ -67,14 +68,16 @@ public interface ISoftwareImages
 	/// <param name="thirdPartyVendor">Third Party Vendor (optional)</param>
 	/// <param name="thirdPartyImageFamily">Third Party image family (optional)</param>
 	/// <param name="thirdPartyApplicationType">Third Party Application Type (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="Content_Type">Content_Type.</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/image/importation/source/file")]
 	Task<TaskIdResult> ImportLocalAsync(
 		string Content_Type,
 		[AliasAs("isThirdParty")]bool? isThirdParty = null,
-		[AliasAs("thirdPartyVendor")]string thirdPartyVendor = null,
-		[AliasAs("thirdPartyImageFamily")]string thirdPartyImageFamily = null,
-		[AliasAs("thirdPartyApplicationType")]string thirdPartyApplicationType = null,
+		[AliasAs("thirdPartyVendor")]string? thirdPartyVendor = null,
+		[AliasAs("thirdPartyImageFamily")]string? thirdPartyImageFamily = null,
+		[AliasAs("thirdPartyApplicationType")]string? thirdPartyApplicationType = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -87,14 +90,16 @@ public interface ISoftwareImages
 	/// <param name="scheduleAt">Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the distribution should be scheduled (Optional)  (optional)</param>
 	/// <param name="scheduleDesc">Custom Description (Optional) (optional)</param>
 	/// <param name="scheduleOrigin">Originator of this call (Optional) (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="Content_Type">Content_Type.</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/image/importation/source/url")]
 	Task<TaskIdResult> ImportViaUrlAsync(
 		[Body]ImageImportFromUrlDto request,
 		string Content_Type,
-		[AliasAs("scheduleAt")]string scheduleAt = null,
-		[AliasAs("scheduleDesc")]string scheduleDesc = null,
-		[AliasAs("scheduleOrigin")]string scheduleOrigin = null,
+		[AliasAs("scheduleAt")]string? scheduleAt = null,
+		[AliasAs("scheduleDesc")]string? scheduleDesc = null,
+		[AliasAs("scheduleOrigin")]string? scheduleOrigin = null,
 		CancellationToken cancellationToken = default);
 
 	/// <summary>
@@ -107,13 +112,15 @@ public interface ISoftwareImages
 	/// <param name="Client_Type">Client-type (Optional) (optional)</param>
 	/// <param name="Client_Url">Client-url (Optional) (optional)</param>
 	/// <param name="scheduleValidate">scheduleValidate, validates data before schedule (Optional) (optional)</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="Content_Type">Content_Type.</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/image/activation/device")]
 	Task<TaskIdResult> TriggerActivationAsync(
 		[Body]ActivateDto request,
 		string Content_Type,
-		string Client_Type = null,
-		string Client_Url = null,
+		string? Client_Type = null,
+		string? Client_Url = null,
 		[AliasAs("scheduleValidate")]bool? scheduleValidate = null,
 		CancellationToken cancellationToken = default);
 
@@ -124,6 +131,7 @@ public interface ISoftwareImages
 	/// Distributes a software image on a given device. Software image must be imported successfully into DNA Center before it can be distributed
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/image/distribution")]
 	Task<TaskIdResult> TriggerDistributionAsync(

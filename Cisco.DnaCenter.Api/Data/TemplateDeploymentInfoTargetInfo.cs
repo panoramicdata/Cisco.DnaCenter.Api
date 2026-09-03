@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -69,7 +69,7 @@ public class TemplateDeploymentInfoTargetInfo
 	/// <param name="Id">Id.</param>
 	/// <param name="_Params">_Params.</param>
 	/// <param name="Type">Type.</param>
-	public TemplateDeploymentInfoTargetInfo(string? HostName = default, string? Id = default, Object _Params = default, TypeEnum? Type = default)
+	public TemplateDeploymentInfoTargetInfo(string? HostName = default, string? Id = default, Object? _Params = default, TypeEnum? Type = default)
 	{
 		this.HostName = HostName;
 		this.Id = Id;
@@ -93,7 +93,7 @@ public class TemplateDeploymentInfoTargetInfo
 	/// Gets or Sets _Params
 	/// </summary>
 	[DataMember(Name = "params", EmitDefaultValue = false)]
-	public Object _Params { get; set; }
+	public Object? _Params { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

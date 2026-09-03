@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -25,9 +25,9 @@ public class CiscoDNACenterReleaseSummaryResponseResultResponse
 		string? Name = default,
 		string? SystemVersion = default,
 		string ? TenantId = default,
-		List<string> CorePackages = default,
-		List<string> Packages = default,
-		List<string> SupportedDirectUpdates = default)
+		List<string>? CorePackages = default,
+		List<string>? Packages = default,
+		List<string>? SupportedDirectUpdates = default)
 	{
 		this.InstalledVersion = InstalledVersion;
 		this.Name = Name;
@@ -72,19 +72,19 @@ public class CiscoDNACenterReleaseSummaryResponseResultResponse
 	/// Gets or Sets CorePackages
 	/// </summary>
 	[DataMember(Name = "corePackages", EmitDefaultValue = false)]
-	public List<string> CorePackages { get; set; }
+	public List<string>? CorePackages { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Packages
 	/// </summary>
 	[DataMember(Name = "packages", EmitDefaultValue = false)]
-	public List<string> Packages { get; set; }
+	public List<string>? Packages { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SupportedDirectUpdates
 	/// </summary>
 	[DataMember(Name = "supportedDirectUpdates", EmitDefaultValue = false)]
-	public List<string> SupportedDirectUpdates { get; set; }
+	public List<string>? SupportedDirectUpdates { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -20,7 +20,7 @@ public class PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo
 	/// <param name="SourceIp">SourceIp.</param>
 	/// <param name="SourcePort">SourcePort.</param>
 	/// <param name="VxlanInfo">VxlanInfo.</param>
-	public PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo(string? ControlPlane = default, string? DataPacketEncapsulation = default, string? DestIp = default, string? DestPort = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default, PathResponseResultResponseEgressPhysicalInterfaceVxlanInfo VxlanInfo = default)
+	public PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo(string? ControlPlane = default, string? DataPacketEncapsulation = default, string? DestIp = default, string? DestPort = default, string? Protocol = default, string? SourceIp = default, string? SourcePort = default, PathResponseResultResponseEgressPhysicalInterfaceVxlanInfo? VxlanInfo = default)
 	{
 		this.ControlPlane = ControlPlane;
 		this.DataPacketEncapsulation = DataPacketEncapsulation;
@@ -78,7 +78,7 @@ public class PathResponseResultResponseEgressPhysicalInterfacePathOverlayInfo
 	/// Gets or Sets VxlanInfo
 	/// </summary>
 	[DataMember(Name = "vxlanInfo", EmitDefaultValue = false)]
-	public PathResponseResultResponseEgressPhysicalInterfaceVxlanInfo VxlanInfo { get; set; }
+	public PathResponseResultResponseEgressPhysicalInterfaceVxlanInfo? VxlanInfo { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

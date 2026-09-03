@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopolog
 	/// </summary>
 	/// <param name="Nodes">Nodes.</param>
 	/// <param name="Links">Links.</param>
-	public GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology(List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes> Nodes = default, List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks> Links = default)
+	public GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopology(List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes>? Nodes = default, List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks>? Links = default)
 	{
 		this.Nodes = Nodes;
 		this.Links = Links;
@@ -25,13 +25,13 @@ public class GetClientEnrichmentDetailsResponseInnerDeviceDetailsNeighborTopolog
 	/// Gets or Sets Nodes
 	/// </summary>
 	[DataMember(Name = "nodes", EmitDefaultValue = false)]
-	public List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes> Nodes { get; set; }
+	public List<GetClientEnrichmentDetailsResponseInnerDeviceDetailsNodes>? Nodes { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Links
 	/// </summary>
 	[DataMember(Name = "links", EmitDefaultValue = false)]
-	public List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks> Links { get; set; }
+	public List<GetDeviceEnrichmentDetailsResponseInnerDeviceDetailsLinks>? Links { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

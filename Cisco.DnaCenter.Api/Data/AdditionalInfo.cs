@@ -17,7 +17,7 @@ public class AdditionalInfo
 	/// <param name="Attributes">Attributes.</param>
 	public AdditionalInfo(
 		string? NameSpace = default,
-		Dictionary<string, string> Attributes = default)
+		Dictionary<string, string>? Attributes = default)
 	{
 		this.NameSpace = NameSpace;
 		this.Attributes = Attributes;
@@ -33,7 +33,7 @@ public class AdditionalInfo
 	/// Attributes
 	/// </summary>
 	[DataMember(Name = "attributes", EmitDefaultValue = false)]
-	public Dictionary<string, string> Attributes { get; set; }
+	public Dictionary<string, string>? Attributes { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

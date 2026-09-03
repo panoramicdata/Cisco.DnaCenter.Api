@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -25,7 +25,7 @@ public class DeleteDeviceByIdFromPnpResponse
 	/// <param name="DayZeroConfigPreview">DayZeroConfigPreview.</param>
 	/// <param name="_Version">_Version.</param>
 	/// <param name="TenantId">TenantId.</param>
-	public DeleteDeviceByIdFromPnpResponse(string? Id = default, DeviceDeviceInfo DeviceInfo = default, DeviceSystemResetWorkflow SystemResetWorkflow = default, DeviceSystemResetWorkflow SystemWorkflow = default, DeviceSystemResetWorkflow Workflow = default, List<DeviceRunSummaryList> RunSummaryList = default, DeviceWorkflowParameters WorkflowParameters = default, DeviceDayZeroConfig DayZeroConfig = default, Object DayZeroConfigPreview = default, decimal? _Version = default, string? TenantId = default)
+	public DeleteDeviceByIdFromPnpResponse(string? Id = default, DeviceDeviceInfo? DeviceInfo = default, DeviceSystemResetWorkflow? SystemResetWorkflow = default, DeviceSystemResetWorkflow? SystemWorkflow = default, DeviceSystemResetWorkflow? Workflow = default, List<DeviceRunSummaryList>? RunSummaryList = default, DeviceWorkflowParameters? WorkflowParameters = default, DeviceDayZeroConfig? DayZeroConfig = default, Object? DayZeroConfigPreview = default, decimal? _Version = default, string? TenantId = default)
 	{
 		this.Id = Id;
 		this.DeviceInfo = DeviceInfo;
@@ -50,49 +50,49 @@ public class DeleteDeviceByIdFromPnpResponse
 	/// Gets or Sets DeviceInfo
 	/// </summary>
 	[DataMember(Name = "deviceInfo", EmitDefaultValue = false)]
-	public DeviceDeviceInfo DeviceInfo { get; set; }
+	public DeviceDeviceInfo? DeviceInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SystemResetWorkflow
 	/// </summary>
 	[DataMember(Name = "systemResetWorkflow", EmitDefaultValue = false)]
-	public DeviceSystemResetWorkflow SystemResetWorkflow { get; set; }
+	public DeviceSystemResetWorkflow? SystemResetWorkflow { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SystemWorkflow
 	/// </summary>
 	[DataMember(Name = "systemWorkflow", EmitDefaultValue = false)]
-	public DeviceSystemResetWorkflow SystemWorkflow { get; set; }
+	public DeviceSystemResetWorkflow? SystemWorkflow { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Workflow
 	/// </summary>
 	[DataMember(Name = "workflow", EmitDefaultValue = false)]
-	public DeviceSystemResetWorkflow Workflow { get; set; }
+	public DeviceSystemResetWorkflow? Workflow { get; set; }
 
 	/// <summary>
 	/// Gets or Sets RunSummaryList
 	/// </summary>
 	[DataMember(Name = "runSummaryList", EmitDefaultValue = false)]
-	public List<DeviceRunSummaryList> RunSummaryList { get; set; }
+	public List<DeviceRunSummaryList>? RunSummaryList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets WorkflowParameters
 	/// </summary>
 	[DataMember(Name = "workflowParameters", EmitDefaultValue = false)]
-	public DeviceWorkflowParameters WorkflowParameters { get; set; }
+	public DeviceWorkflowParameters? WorkflowParameters { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DayZeroConfig
 	/// </summary>
 	[DataMember(Name = "dayZeroConfig", EmitDefaultValue = false)]
-	public DeviceDayZeroConfig DayZeroConfig { get; set; }
+	public DeviceDayZeroConfig? DayZeroConfig { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DayZeroConfigPreview
 	/// </summary>
 	[DataMember(Name = "dayZeroConfigPreview", EmitDefaultValue = false)]
-	public Object DayZeroConfigPreview { get; set; }
+	public Object? DayZeroConfigPreview { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

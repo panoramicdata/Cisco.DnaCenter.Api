@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class DeleteApplicationSetResponse
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="_Version">_Version.</param>
-	public DeleteApplicationSetResponse(CreateApplicationSetResponseResponse Response = default, string? _Version = default)
+	public DeleteApplicationSetResponse(CreateApplicationSetResponseResponse? Response = default, string? _Version = default)
 	{
 		this.Response = Response;
 		this._Version = _Version;
@@ -24,7 +24,7 @@ public class DeleteApplicationSetResponse
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public CreateApplicationSetResponseResponse Response { get; set; }
+	public CreateApplicationSetResponseResponse? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Runtime.Serialization;
 
 namespace Cisco.DnaCenter.Api.Data;
@@ -14,7 +14,7 @@ public class DeviceIfResult
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="_Version">_Version.</param>
-	public DeviceIfResult(DeviceIfListResultResponse Response = default, string? _Version = default)
+	public DeviceIfResult(DeviceIfListResultResponse? Response = default, string? _Version = default)
 	{
 		this.Response = Response;
 		this._Version = _Version;
@@ -24,7 +24,7 @@ public class DeviceIfResult
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public DeviceIfListResultResponse Response { get; set; }
+	public DeviceIfListResultResponse? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

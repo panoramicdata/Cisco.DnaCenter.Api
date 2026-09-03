@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -84,10 +84,10 @@ public class TemplateDto
 	public TemplateDto(
 		string? Author = default,
 		bool? Composite = default,
-		List<TemplateDtoContainingTemplates> ContainingTemplates = default,
+		List<TemplateDtoContainingTemplates>? ContainingTemplates = default,
 		long? CreateTime = default,
 		string? Description = default,
-		List<TemplateDtoDeviceTypes> DeviceTypes = default,
+		List<TemplateDtoDeviceTypes>? DeviceTypes = default,
 		FailurePolicyEnum? FailurePolicy = default,
 		string? Id = default,
 		long? LastUpdateTime = default,
@@ -96,13 +96,13 @@ public class TemplateDto
 		string? ProjectId = default,
 		string? ProjectName = default,
 		string? RollbackTemplateContent = default,
-		List<TemplateDtoRollbackTemplateParams> RollbackTemplateParams = default,
+		List<TemplateDtoRollbackTemplateParams>? RollbackTemplateParams = default,
 		string? SoftwareType = default,
 		string? SoftwareVariant = default,
 		string? SoftwareVersion = default,
 		List<TagDto>? Tags = default,
 		string? TemplateContent = default,
-		List<TemplateDtoRollbackTemplateParams> TemplateParams = default,
+		List<TemplateDtoRollbackTemplateParams>? TemplateParams = default,
 		string? _Version = default)
 	{
 		this.Author = Author;
@@ -145,7 +145,7 @@ public class TemplateDto
 	/// Gets or Sets ContainingTemplates
 	/// </summary>
 	[DataMember(Name = "containingTemplates", EmitDefaultValue = false)]
-	public List<TemplateDtoContainingTemplates> ContainingTemplates { get; set; }
+	public List<TemplateDtoContainingTemplates>? ContainingTemplates { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CreateTime
@@ -163,7 +163,7 @@ public class TemplateDto
 	/// Gets or Sets DeviceTypes
 	/// </summary>
 	[DataMember(Name = "deviceTypes", EmitDefaultValue = false)]
-	public List<TemplateDtoDeviceTypes> DeviceTypes { get; set; }
+	public List<TemplateDtoDeviceTypes>? DeviceTypes { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id
@@ -211,7 +211,7 @@ public class TemplateDto
 	/// Gets or Sets RollbackTemplateParams
 	/// </summary>
 	[DataMember(Name = "rollbackTemplateParams", EmitDefaultValue = false)]
-	public List<TemplateDtoRollbackTemplateParams> RollbackTemplateParams { get; set; }
+	public List<TemplateDtoRollbackTemplateParams>? RollbackTemplateParams { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SoftwareType
@@ -247,7 +247,7 @@ public class TemplateDto
 	/// Gets or Sets TemplateParams
 	/// </summary>
 	[DataMember(Name = "templateParams", EmitDefaultValue = false)]
-	public List<TemplateDtoRollbackTemplateParams> TemplateParams { get; set; }
+	public List<TemplateDtoRollbackTemplateParams>? TemplateParams { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

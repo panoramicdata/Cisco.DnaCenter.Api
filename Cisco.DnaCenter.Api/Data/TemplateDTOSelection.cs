@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -44,7 +44,7 @@ public class TemplateDtoSelection
 	/// <param name="Id">Id.</param>
 	/// <param name="SelectionType">SelectionType.</param>
 	/// <param name="SelectionValues">SelectionValues.</param>
-	public TemplateDtoSelection(string? Id = default, SelectionTypeEnum? SelectionType = default, Object SelectionValues = default)
+	public TemplateDtoSelection(string? Id = default, SelectionTypeEnum? SelectionType = default, Object? SelectionValues = default)
 	{
 		this.Id = Id;
 		this.SelectionType = SelectionType;
@@ -61,7 +61,7 @@ public class TemplateDtoSelection
 	/// Gets or Sets SelectionValues
 	/// </summary>
 	[DataMember(Name = "selectionValues", EmitDefaultValue = false)]
-	public Object SelectionValues { get; set; }
+	public Object? SelectionValues { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

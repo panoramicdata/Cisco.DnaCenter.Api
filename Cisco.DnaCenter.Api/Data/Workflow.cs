@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -81,7 +81,7 @@ public class Workflow
 		string? Name = default,
 		long? StartTime = default,
 		string? State = default,
-		List<WorkflowTasks> Tasks = default,
+		List<WorkflowTasks>? Tasks = default,
 		string? TenantId = default,
 		string? Type = default,
 		string? UseState = default,
@@ -190,7 +190,7 @@ public class Workflow
 	/// Gets or Sets Tasks
 	/// </summary>
 	[DataMember(Name = "tasks", EmitDefaultValue = false)]
-	public List<WorkflowTasks> Tasks { get; set; }
+	public List<WorkflowTasks>? Tasks { get; set; }
 
 	/// <summary>
 	/// Gets or Sets TenantId

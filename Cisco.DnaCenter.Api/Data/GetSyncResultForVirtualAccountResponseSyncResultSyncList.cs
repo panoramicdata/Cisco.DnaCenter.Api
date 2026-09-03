@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class GetSyncResultForVirtualAccountResponseSyncResultSyncList
 	/// </summary>
 	/// <param name="SyncType">SyncType.</param>
 	/// <param name="DeviceSnList">DeviceSnList.</param>
-	public GetSyncResultForVirtualAccountResponseSyncResultSyncList(string? SyncType = default, List<string> DeviceSnList = default)
+	public GetSyncResultForVirtualAccountResponseSyncResultSyncList(string? SyncType = default, List<string>? DeviceSnList = default)
 	{
 		this.SyncType = SyncType;
 		this.DeviceSnList = DeviceSnList;
@@ -31,7 +31,7 @@ public class GetSyncResultForVirtualAccountResponseSyncResultSyncList
 	/// Gets or Sets DeviceSnList
 	/// </summary>
 	[DataMember(Name = "deviceSnList", EmitDefaultValue = false)]
-	public List<string> DeviceSnList { get; set; }
+	public List<string>? DeviceSnList { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

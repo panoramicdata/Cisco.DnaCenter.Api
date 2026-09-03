@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class ApProvisionRequestInner
 	/// <param name="DeviceName">DeviceName.</param>
 	/// <param name="CustomFlexGroupName">CustomFlexGroupName.</param>
 	/// <param name="CustomApGroupName">CustomApGroupName.</param>
-	public ApProvisionRequestInner(string? RfProfile = default, string? SiteId = default, string? Type = default, string? DeviceName = default, List<string> CustomFlexGroupName = default, string? CustomApGroupName = default)
+	public ApProvisionRequestInner(string? RfProfile = default, string? SiteId = default, string? Type = default, string? DeviceName = default, List<string>? CustomFlexGroupName = default, string? CustomApGroupName = default)
 	{
 		this.RfProfile = RfProfile;
 		this.SiteId = SiteId;
@@ -57,7 +57,7 @@ public class ApProvisionRequestInner
 	/// Gets or Sets CustomFlexGroupName
 	/// </summary>
 	[DataMember(Name = "customFlexGroupName", EmitDefaultValue = false)]
-	public List<string> CustomFlexGroupName { get; set; }
+	public List<string>? CustomFlexGroupName { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CustomApGroupName

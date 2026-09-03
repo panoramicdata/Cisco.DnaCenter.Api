@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class NetworkDeviceListResult
 	/// </summary>
 	/// <param name="Response">Response.</param>
 	/// <param name="_Version">_Version.</param>
-	public NetworkDeviceListResult(List<NetworkDeviceListResultResponse> Response = default, string? _Version = default)
+	public NetworkDeviceListResult(List<NetworkDeviceListResultResponse>? Response = default, string? _Version = default)
 	{
 		this.Response = Response;
 		this._Version = _Version;
@@ -25,7 +25,7 @@ public class NetworkDeviceListResult
 	/// Gets or Sets Response
 	/// </summary>
 	[DataMember(Name = "response", EmitDefaultValue = false)]
-	public List<NetworkDeviceListResultResponse> Response { get; set; }
+	public List<NetworkDeviceListResultResponse>? Response { get; set; }
 
 	/// <summary>
 	/// Gets or Sets _Version

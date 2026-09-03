@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class GetWirelessProfileResponseInnerProfileDetails
 	/// <param name="Name">Name.</param>
 	/// <param name="Sites">Sites.</param>
 	/// <param name="SsidDetails">SsidDetails.</param>
-	public GetWirelessProfileResponseInnerProfileDetails(string? Name = default, List<string> Sites = default, List<GetWirelessProfileResponseInnerProfileDetailsSsidDetails> SsidDetails = default)
+	public GetWirelessProfileResponseInnerProfileDetails(string? Name = default, List<string>? Sites = default, List<GetWirelessProfileResponseInnerProfileDetailsSsidDetails>? SsidDetails = default)
 	{
 		this.Name = Name;
 		this.Sites = Sites;
@@ -33,13 +33,13 @@ public class GetWirelessProfileResponseInnerProfileDetails
 	/// Gets or Sets Sites
 	/// </summary>
 	[DataMember(Name = "sites", EmitDefaultValue = false)]
-	public List<string> Sites { get; set; }
+	public List<string>? Sites { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SsidDetails
 	/// </summary>
 	[DataMember(Name = "ssidDetails", EmitDefaultValue = false)]
-	public List<GetWirelessProfileResponseInnerProfileDetailsSsidDetails> SsidDetails { get; set; }
+	public List<GetWirelessProfileResponseInnerProfileDetailsSsidDetails>? SsidDetails { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

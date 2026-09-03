@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -50,7 +50,7 @@ public class DiscoveryNioResultResponse
 	/// <param name="TimeOut">TimeOut.</param>
 	/// <param name="UpdateMgmtIp">UpdateMgmtIp.</param>
 	/// <param name="UserNameList">UserNameList.</param>
-	public DiscoveryNioResultResponse(Object AttributeInfo = default, int? CdpLevel = default, string? DeviceIds = default, string? DiscoveryCondition = default, string? DiscoveryStatus = default, string? DiscoveryType = default, string? EnablePasswordList = default, List<string> GlobalCredentialIdList = default, InventoryRequestHttpReadCredential HttpReadCredential = default, InventoryRequestHttpReadCredential HttpWriteCredential = default, string? Id = default, string? IpAddressList = default, string? IpFilterList = default, bool? IsAutoCdp = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, int? NumDevices = default, string? ParentDiscoveryId = default, string? PasswordList = default, string? PreferredManagementIpMethod = default, string? ProtocolOrder = default, int? RetryCount = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpRoCommunity = default, string? SnmpRoCommunityDesc = default, string? SnmpRwCommunity = default, string? SnmpRwCommunityDesc = default, string? SnmpUserName = default, int? TimeOut = default, bool? UpdateMgmtIp = default, string? UserNameList = default)
+	public DiscoveryNioResultResponse(Object? AttributeInfo = default, int? CdpLevel = default, string? DeviceIds = default, string? DiscoveryCondition = default, string? DiscoveryStatus = default, string? DiscoveryType = default, string? EnablePasswordList = default, List<string>? GlobalCredentialIdList = default, InventoryRequestHttpReadCredential? HttpReadCredential = default, InventoryRequestHttpReadCredential? HttpWriteCredential = default, string? Id = default, string? IpAddressList = default, string? IpFilterList = default, bool? IsAutoCdp = default, int? LldpLevel = default, string? Name = default, string? NetconfPort = default, int? NumDevices = default, string? ParentDiscoveryId = default, string? PasswordList = default, string? PreferredManagementIpMethod = default, string? ProtocolOrder = default, int? RetryCount = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpRoCommunity = default, string? SnmpRoCommunityDesc = default, string? SnmpRwCommunity = default, string? SnmpRwCommunityDesc = default, string? SnmpUserName = default, int? TimeOut = default, bool? UpdateMgmtIp = default, string? UserNameList = default)
 	{
 		this.AttributeInfo = AttributeInfo;
 		this.CdpLevel = CdpLevel;
@@ -94,7 +94,7 @@ public class DiscoveryNioResultResponse
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets CdpLevel
@@ -136,19 +136,19 @@ public class DiscoveryNioResultResponse
 	/// Gets or Sets GlobalCredentialIdList
 	/// </summary>
 	[DataMember(Name = "globalCredentialIdList", EmitDefaultValue = false)]
-	public List<string> GlobalCredentialIdList { get; set; }
+	public List<string>? GlobalCredentialIdList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HttpReadCredential
 	/// </summary>
 	[DataMember(Name = "httpReadCredential", EmitDefaultValue = false)]
-	public InventoryRequestHttpReadCredential HttpReadCredential { get; set; }
+	public InventoryRequestHttpReadCredential? HttpReadCredential { get; set; }
 
 	/// <summary>
 	/// Gets or Sets HttpWriteCredential
 	/// </summary>
 	[DataMember(Name = "httpWriteCredential", EmitDefaultValue = false)]
-	public InventoryRequestHttpReadCredential HttpWriteCredential { get; set; }
+	public InventoryRequestHttpReadCredential? HttpWriteCredential { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id

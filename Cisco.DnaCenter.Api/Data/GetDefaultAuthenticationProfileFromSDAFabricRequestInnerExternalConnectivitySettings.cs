@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -16,7 +16,7 @@ public class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalCon
 	/// <param name="InterfaceName">InterfaceName.</param>
 	/// <param name="ExternalAutonomouSystemNumber">ExternalAutonomouSystemNumber.</param>
 	/// <param name="L3Handoff">L3Handoff.</param>
-	public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings(string? InterfaceName = default, string? ExternalAutonomouSystemNumber = default, List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff> L3Handoff = default)
+	public GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalConnectivitySettings(string? InterfaceName = default, string? ExternalAutonomouSystemNumber = default, List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff>? L3Handoff = default)
 	{
 		this.InterfaceName = InterfaceName;
 		this.ExternalAutonomouSystemNumber = ExternalAutonomouSystemNumber;
@@ -39,7 +39,7 @@ public class GetDefaultAuthenticationProfileFromSdaFabricRequestInnerExternalCon
 	/// Gets or Sets L3Handoff
 	/// </summary>
 	[DataMember(Name = "l3Handoff", EmitDefaultValue = false)]
-	public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff> L3Handoff { get; set; }
+	public List<GetDefaultAuthenticationProfileFromSdaFabricRequestInnerL3Handoff>? L3Handoff { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

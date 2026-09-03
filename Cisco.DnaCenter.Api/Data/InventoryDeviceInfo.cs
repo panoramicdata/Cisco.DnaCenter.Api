@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
@@ -80,7 +80,7 @@ public class InventoryDeviceInfo
 	/// <param name="Type">Type.</param>
 	/// <param name="UpdateManagementIpAddressList">UpdateMgmtIPaddressList.</param>
 	/// <param name="UserName">UserName.</param>
-	public InventoryDeviceInfo(string? CliTransport = default, bool? ComputeDevice = default, string? EnablePassword = default, string? ExtendedDiscoveryInfo = default, string? HttpPassword = default, string? HttpPort = default, bool? HttpSecure = default, string? HttpUserName = default, List<string> IpAddress = default, List<string> MerakiOrgId = default, string? NetconfPort = default, string? Password = default, string? SerialNumber = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpRWCommunity = default, int? SnmpRetry = default, int? SnmpTimeout = default, string? SnmpUserName = default, string? SnmpVersion = default, TypeEnum? Type = default, List<InventoryDeviceInfoUpdateManagementIpAddressList> UpdateManagementIpAddressList = default, string? UserName = default)
+	public InventoryDeviceInfo(string? CliTransport = default, bool? ComputeDevice = default, string? EnablePassword = default, string? ExtendedDiscoveryInfo = default, string? HttpPassword = default, string? HttpPort = default, bool? HttpSecure = default, string? HttpUserName = default, List<string>? IpAddress = default, List<string>? MerakiOrgId = default, string? NetconfPort = default, string? Password = default, string? SerialNumber = default, string? SnmpAuthPassphrase = default, string? SnmpAuthProtocol = default, string? SnmpMode = default, string? SnmpPrivPassphrase = default, string? SnmpPrivProtocol = default, string? SnmpROCommunity = default, string? SnmpRWCommunity = default, int? SnmpRetry = default, int? SnmpTimeout = default, string? SnmpUserName = default, string? SnmpVersion = default, TypeEnum? Type = default, List<InventoryDeviceInfoUpdateManagementIpAddressList>? UpdateManagementIpAddressList = default, string? UserName = default)
 	{
 		this.CliTransport = CliTransport;
 		this.ComputeDevice = ComputeDevice;
@@ -163,13 +163,13 @@ public class InventoryDeviceInfo
 	/// Gets or Sets IpAddress
 	/// </summary>
 	[DataMember(Name = "ipAddress", EmitDefaultValue = false)]
-	public List<string> IpAddress { get; set; }
+	public List<string>? IpAddress { get; set; }
 
 	/// <summary>
 	/// Gets or Sets MerakiOrgId
 	/// </summary>
 	[DataMember(Name = "merakiOrgId", EmitDefaultValue = false)]
-	public List<string> MerakiOrgId { get; set; }
+	public List<string>? MerakiOrgId { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetconfPort
@@ -259,7 +259,7 @@ public class InventoryDeviceInfo
 	/// Gets or Sets UpdateMgmtIPaddressList
 	/// </summary>
 	[DataMember(Name = "updateMgmtIPaddressList", EmitDefaultValue = false)]
-	public List<InventoryDeviceInfoUpdateManagementIpAddressList> UpdateManagementIpAddressList { get; set; }
+	public List<InventoryDeviceInfoUpdateManagementIpAddressList>? UpdateManagementIpAddressList { get; set; }
 
 	/// <summary>
 	/// Gets or Sets UserName

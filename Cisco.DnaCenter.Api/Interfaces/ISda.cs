@@ -1,4 +1,4 @@
-using Cisco.DnaCenter.Api.Data;
+﻿using Cisco.DnaCenter.Api.Data;
 using Refit;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +17,7 @@ public interface ISda
 	/// **BETA** - Add control plane device in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddControlPlaneDeviceInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/control-plane-device")]
 	Task<ExecutionResponse> AddControlPlaneDeviceInSdaFabricAsync(
@@ -30,6 +31,7 @@ public interface ISda
 	/// **BETA** - Add default authentication profile in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddDefaultAuthenticationProfileInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/authentication-profile")]
 	Task<ExecutionResponse> AddDefaultAuthenticationProfileInSdaFabricAsync(
@@ -43,6 +45,7 @@ public interface ISda
 	/// **BETA** - Add edge device in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddEdgeDeviceInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/edge-device")]
 	Task<ExecutionResponse> AddEdgeDeviceInSdaFabricAsync(
@@ -56,6 +59,7 @@ public interface ISda
 	/// **BETA** - Add SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/fabric")]
 	Task<ExecutionResponse> AddFabricAsync(
@@ -69,6 +73,7 @@ public interface ISda
 	/// **BETA** - Add IP Pool in SDA Virtual Network
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddIPPoolInSDAVirtualNetworkResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/virtualnetwork/ippool")]
 	Task<ExecutionResponse> AddIpPoolInSdaVirtualNetwork(
@@ -82,6 +87,7 @@ public interface ISda
 	/// **BETA** - Add Port assignment for access point in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddPortAssignmentForAccessPointInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
 	Task<ExecutionResponse> AddPortAssignmentForAccessPointInSdaFabricAsync(
@@ -95,6 +101,7 @@ public interface ISda
 	/// **BETA** - Add Port assignment for user device in SDA Fabric.
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddPortAssignmentForUserDeviceInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/hostonboarding/user-device")]
 	Task<ExecutionResponse> AddPortAssignmentForUserDeviceInSdaFabric(
@@ -108,6 +115,7 @@ public interface ISda
 	/// **BETA** - Add Site in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddSiteInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/fabric-site")]
 	Task<ExecutionResponse> AddSiteInSdaFabricAsync(
@@ -121,6 +129,7 @@ public interface ISda
 	/// **BETA** - Add virtual network (VN) in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddVNInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/virtual-network")]
 	Task<AddVnInSdaFabricResponse> AddVnInSdaFabricAsync(
@@ -134,6 +143,7 @@ public interface ISda
 	/// **BETA** - Adds border device in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of AddsBorderDeviceInSdaFabricResponse</returns>
 	[Post("/dna/intent/api/v1/business/sda/border-device")]
 	Task<ExecutionResponse> AddsBorderDeviceInSdaFabricAsync(
@@ -147,6 +157,7 @@ public interface ISda
 	/// **BETA** - Delete control plane device in SDA Fabric
 	/// </remarks>
 	/// <param name="deviceIPAddress">Device IP Address</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteControlPlaneDeviceInSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/control-plane-device")]
 	Task<ExecutionResponse> DeleteControlPlaneDeviceInSdaFabricAsync(
@@ -160,6 +171,7 @@ public interface ISda
 	/// **BETA** - Delete default authentication profile from SDA Fabric
 	/// </remarks>
 	/// <param name="siteNameHierarchy">siteNameHierarchy</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteDefaultAuthenticationProfileFromSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/authentication-profile")]
 	Task<ExecutionResponse> DeleteDefaultAuthenticationProfileFromSdaFabricAsync(
@@ -173,6 +185,7 @@ public interface ISda
 	/// **BETA** - Delete edge device from SDA Fabric.
 	/// </remarks>
 	/// <param name="deviceIpAddress">Device IP Address</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteEdgeDeviceFromSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/edge-device")]
 	Task<ExecutionResponse> DeleteEdgeDeviceFromSdaFabricAsync(
@@ -188,6 +201,7 @@ public interface ISda
 	/// <param name="request">request</param>
 	/// <param name="ipPoolName">ipPoolName</param>
 	/// <param name="virtualNetworkName">virtualNetworkName</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteIPPoolFromSDAVirtualNetworkResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/virtualnetwork/ippool")]
 	Task<ExecutionResponse> DeleteIpPoolFromSdaVirtualNetwork(
@@ -205,6 +219,8 @@ public interface ISda
 	/// <param name="request">request</param>
 	/// <param name="device_ip">device-ip</param>
 	/// <param name="interfaceName">interfaceName</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="deviceIp">deviceIp.</param>
 	/// <returns>Task of DeletePortAssignmentForAccessPointInSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
 	Task<ExecutionResponse> DeletePortAssignmentForAccessPointInSdaFabricAsync(
@@ -222,6 +238,8 @@ public interface ISda
 	/// <param name="request">request</param>
 	/// <param name="device_ip">device-ip</param>
 	/// <param name="interfaceName">interfaceName</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="deviceIp">deviceIp.</param>
 	/// <returns>Task of DeletePortAssignmentForUserDeviceInSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/hostonboarding/user-device")]
 	Task<ExecutionResponse> DeletePortAssignmentForUserDeviceInSdaFabricAsync(
@@ -238,6 +256,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="fabricName">Fabric Name</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/fabric")]
 	Task<ExecutionResponse> DeleteSdaFabricAsync(
@@ -253,6 +272,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="siteNameHierarchy">Site Name Hierarchy</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteSiteFromSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/fabric-site")]
 	Task<ExecutionResponse> DeleteSiteFromSdaFabric(
@@ -268,6 +288,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="virtualNetworkName">virtualNetworkName</param>
 	/// <param name="siteNameHierarchy">siteNameHierarchy</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeleteVNFromSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/virtual-network")]
 	Task<DeleteVnFromSdaFabricResponse> DeleteVnFromSdaFabric(
@@ -283,6 +304,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="deviceIPAddress">Device IP Address</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of DeletesBorderDeviceFromSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/border-device")]
 	Task<ExecutionResponse> DeleteBorderDeviceFromSdaFabricAsync(
@@ -297,6 +319,8 @@ public interface ISda
 	/// **BETA** - Get control plane device from SDA Fabric
 	/// </remarks>
 	/// <param name="deviceIPAddress">Device IP Address</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="deviceIpAddress">deviceIpAddress.</param>
 	/// <returns>Task of GetControlPlaneDeviceFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/control-plane-device")]
 	Task<GetControlPlaneDeviceFromSdaFabricResponse> GetControlPlaneDeviceFromSdaFabricAysnc(
@@ -311,6 +335,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="siteNameHierarchy">siteNameHierarchy</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetDefaultAuthenticationProfileFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/authentication-profile")]
 	Task<object> GetDefaultAuthenticationProfileFromSdaFabricAsync(
@@ -325,6 +350,8 @@ public interface ISda
 	/// **BETA** - Get device info from SDA Fabric
 	/// </remarks>
 	/// <param name="deviceIPAddress">Device IP Address</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="deviceIpAddress">deviceIpAddress.</param>
 	/// <returns>Task of GetDeviceInfoFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/device")]
 	Task<GetDeviceInfoFromSdaFabricResponse> GetDeviceInfoFromSdaFabricAsync(
@@ -338,6 +365,7 @@ public interface ISda
 	/// **BETA** - Get edge device from SDA Fabric
 	/// </remarks>
 	/// <param name="deviceIpAddress">Device IP Address</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetEdgeDeviceFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/edge-device")]
 	Task<GetEdgeDeviceFromSdaFabricResponse> GetEdgeDeviceFromSdaFabricAsync(
@@ -353,6 +381,7 @@ public interface ISda
 	/// <param name="request">request</param>
 	/// <param name="ipPoolName">ipPoolName</param>
 	/// <param name="virtualNetworkName">virtualNetworkName</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetIPPoolFromSDAVirtualNetworkResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/virtualnetwork/ippool")]
 	Task<GetIPPoolFromSDAVirtualNetworkResponse> GetIpPoolFromSdaVirtualNetworkAsync(
@@ -370,6 +399,8 @@ public interface ISda
 	/// <param name="request">request</param>
 	/// <param name="device_ip">device-ip</param>
 	/// <param name="interfaceName">interfaceName</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <param name="deviceIp">deviceIp.</param>
 	/// <returns>Task of GetPortAssignmentForAccessPointInSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
 	Task<GetPortAssignmentForAccessPointInSdaFabricResponse> GetPortAssignmentForAccessPointInSdaFabricAsync(
@@ -387,6 +418,7 @@ public interface ISda
 	/// <param name="request">request</param>
 	/// <param name="device_ip">device-ip</param>
 	/// <param name="interfaceName">interfaceName</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetPortAssignmentForUserDeviceInSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/hostonboarding/user-device")]
 	Task<GetPortAssignmentForUserDeviceInSdaFabricResponse> GetPortAssignmentForUserDeviceInSdaFabricAsync(
@@ -403,6 +435,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="fabricName">Fabric Name</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSdaFabricInfoResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/fabric")]
 	Task<object> GetSdaFabricInfoAsync(
@@ -418,6 +451,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="siteNameHierarchy">Site Name Hierarchy</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/fabric-site")]
 	Task<object> GetSiteFromSdaFabricAsync(
@@ -433,6 +467,7 @@ public interface ISda
 	/// </remarks>
 	/// <param name="virtualNetworkName">virtualNetworkName</param>
 	/// <param name="siteNameHierarchy">siteNameHierarchy</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetVNFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/virtual-network")]
 	Task<GetVnFromSdaFabricResponse> GetVnFromSdaFabricAsync(
@@ -447,6 +482,7 @@ public interface ISda
 	/// **BETA** - Gets border device detail from SDA Fabric
 	/// </remarks>
 	/// <param name="deviceIPAddress">Device IP Address</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetsBorderDeviceDetailFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/border-device")]
 	Task<GetsBorderDeviceDetailFromSdaFabricResponse> GetsBorderDeviceDetailFromSdaFabricAsync(
@@ -460,6 +496,7 @@ public interface ISda
 	/// **BETA** - Update default authentication profile template in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateDefaultAuthenticationProfileTemplateInSdaFabricResponse</returns>
 	[Put("/dna/intent/api/v1/business/sda/authentication-profile")]
 	Task<ExecutionResponse> UpdateDefaultAuthenticationProfileTemplateInSdaFabricAsync(

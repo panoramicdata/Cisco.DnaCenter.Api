@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Runtime.Serialization;
 
@@ -17,7 +17,7 @@ public class FunctionalCapabilityResultResponseFunctionDetails
 	/// <param name="Id">Id.</param>
 	/// <param name="PropertyName">PropertyName.</param>
 	/// <param name="StringValue">StringValue.</param>
-	public FunctionalCapabilityResultResponseFunctionDetails(Object AttributeInfo = default, string? Id = default, string? PropertyName = default, string? StringValue = default)
+	public FunctionalCapabilityResultResponseFunctionDetails(Object? AttributeInfo = default, string? Id = default, string? PropertyName = default, string? StringValue = default)
 	{
 		this.AttributeInfo = AttributeInfo;
 		this.Id = Id;
@@ -29,7 +29,7 @@ public class FunctionalCapabilityResultResponseFunctionDetails
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id

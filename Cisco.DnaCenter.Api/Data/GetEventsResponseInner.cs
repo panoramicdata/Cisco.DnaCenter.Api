@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
@@ -39,8 +39,8 @@ public class GetEventsResponseInner
 		string? Type = default,
 		List<TagDto>? Tags = default,
 		decimal? Severity = default,
-		Object Details = default,
-		List<string> SubscriptionTypes = default)
+		Object? Details = default,
+		List<string>? SubscriptionTypes = default)
 	{
 		this.EventId = EventId;
 		this._NameSpace = _NameSpace;
@@ -127,13 +127,13 @@ public class GetEventsResponseInner
 	/// Gets or Sets Details
 	/// </summary>
 	[DataMember(Name = "details", EmitDefaultValue = false)]
-	public Object Details { get; set; }
+	public Object? Details { get; set; }
 
 	/// <summary>
 	/// Gets or Sets SubscriptionTypes
 	/// </summary>
 	[DataMember(Name = "subscriptionTypes", EmitDefaultValue = false)]
-	public List<string> SubscriptionTypes { get; set; }
+	public List<string>? SubscriptionTypes { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

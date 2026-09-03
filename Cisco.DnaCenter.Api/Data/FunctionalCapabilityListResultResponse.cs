@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -18,7 +18,7 @@ public class FunctionalCapabilityListResultResponse
 	/// <param name="DeviceId">DeviceId.</param>
 	/// <param name="FunctionalCapability">FunctionalCapability.</param>
 	/// <param name="Id">Id.</param>
-	public FunctionalCapabilityListResultResponse(Object AttributeInfo = default, string? DeviceId = default, List<FunctionalCapabilityResultResponse> FunctionalCapability = default, string? Id = default)
+	public FunctionalCapabilityListResultResponse(Object? AttributeInfo = default, string? DeviceId = default, List<FunctionalCapabilityResultResponse>? FunctionalCapability = default, string? Id = default)
 	{
 		this.AttributeInfo = AttributeInfo;
 		this.DeviceId = DeviceId;
@@ -30,7 +30,7 @@ public class FunctionalCapabilityListResultResponse
 	/// Gets or Sets AttributeInfo
 	/// </summary>
 	[DataMember(Name = "attributeInfo", EmitDefaultValue = false)]
-	public Object AttributeInfo { get; set; }
+	public Object? AttributeInfo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DeviceId
@@ -42,7 +42,7 @@ public class FunctionalCapabilityListResultResponse
 	/// Gets or Sets FunctionalCapability
 	/// </summary>
 	[DataMember(Name = "functionalCapability", EmitDefaultValue = false)]
-	public List<FunctionalCapabilityResultResponse> FunctionalCapability { get; set; }
+	public List<FunctionalCapabilityResultResponse>? FunctionalCapability { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Id

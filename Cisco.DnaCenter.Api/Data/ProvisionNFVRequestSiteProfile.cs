@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class ProvisionNfvRequestSiteProfile
 	/// </summary>
 	/// <param name="SiteProfileName">SiteProfileName.</param>
 	/// <param name="Device">Device.</param>
-	public ProvisionNfvRequestSiteProfile(string? SiteProfileName = default, List<ProvisionNfvRequestDevice> Device = default)
+	public ProvisionNfvRequestSiteProfile(string? SiteProfileName = default, List<ProvisionNfvRequestDevice>? Device = default)
 	{
 		this.SiteProfileName = SiteProfileName;
 		this.Device = Device;
@@ -31,7 +31,7 @@ public class ProvisionNfvRequestSiteProfile
 	/// Gets or Sets Device
 	/// </summary>
 	[DataMember(Name = "device", EmitDefaultValue = false)]
-	public List<ProvisionNfvRequestDevice> Device { get; set; }
+	public List<ProvisionNfvRequestDevice>? Device { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

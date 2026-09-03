@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -18,7 +18,7 @@ public class EditApplicationRequestInner
 	/// <param name="NetworkApplications">NetworkApplications.</param>
 	/// <param name="NetworkIdentity">NetworkIdentity.</param>
 	/// <param name="ApplicationSet">ApplicationSet.</param>
-	public EditApplicationRequestInner(string? Id = default, string? Name = default, List<EditApplicationRequestInnerNetworkApplications> NetworkApplications = default, List<EditApplicationRequestInnerNetworkIdentity> NetworkIdentity = default, EditApplicationRequestInnerApplicationSet ApplicationSet = default)
+	public EditApplicationRequestInner(string? Id = default, string? Name = default, List<EditApplicationRequestInnerNetworkApplications>? NetworkApplications = default, List<EditApplicationRequestInnerNetworkIdentity>? NetworkIdentity = default, EditApplicationRequestInnerApplicationSet? ApplicationSet = default)
 	{
 		this.Id = Id;
 		this.Name = Name;
@@ -43,19 +43,19 @@ public class EditApplicationRequestInner
 	/// Gets or Sets NetworkApplications
 	/// </summary>
 	[DataMember(Name = "networkApplications", EmitDefaultValue = false)]
-	public List<EditApplicationRequestInnerNetworkApplications> NetworkApplications { get; set; }
+	public List<EditApplicationRequestInnerNetworkApplications>? NetworkApplications { get; set; }
 
 	/// <summary>
 	/// Gets or Sets NetworkIdentity
 	/// </summary>
 	[DataMember(Name = "networkIdentity", EmitDefaultValue = false)]
-	public List<EditApplicationRequestInnerNetworkIdentity> NetworkIdentity { get; set; }
+	public List<EditApplicationRequestInnerNetworkIdentity>? NetworkIdentity { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ApplicationSet
 	/// </summary>
 	[DataMember(Name = "applicationSet", EmitDefaultValue = false)]
-	public EditApplicationRequestInnerApplicationSet ApplicationSet { get; set; }
+	public EditApplicationRequestInnerApplicationSet? ApplicationSet { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

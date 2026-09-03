@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -30,7 +30,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings
 	/// <param name="NodeType">NodeType.</param>
 	/// <param name="Storage">Storage.</param>
 	/// <param name="ExtConnectivitySettings">ExtConnectivitySettings.</param>
-	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object> ConnectedTo = default, decimal? Cpu = default, bool? DhcpEnabled = default, string? ExternalConnectivityIpPool = default, string? ExternalDomainRoutingProtocol = default, string? InternalDomainProtocolNumber = default, decimal? Memory = default, List<string> NodeType = default, decimal? Storage = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings> ExtConnectivitySettings = default)
+	public GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings(string? Id = default, int? InstanceId = default, string? DisplayName = default, string? InstanceTenantId = default, string? DeployPending = default, int? InstanceVersion = default, List<Object>? ConnectedTo = default, decimal? Cpu = default, bool? DhcpEnabled = default, string? ExternalConnectivityIpPool = default, string? ExternalDomainRoutingProtocol = default, string? InternalDomainProtocolNumber = default, decimal? Memory = default, List<string>? NodeType = default, decimal? Storage = default, List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings>? ExtConnectivitySettings = default)
 	{
 		this.Id = Id;
 		this.InstanceId = InstanceId;
@@ -90,7 +90,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings
 	/// Gets or Sets ConnectedTo
 	/// </summary>
 	[DataMember(Name = "connectedTo", EmitDefaultValue = false)]
-	public List<Object> ConnectedTo { get; set; }
+	public List<Object>? ConnectedTo { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Cpu
@@ -132,7 +132,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings
 	/// Gets or Sets NodeType
 	/// </summary>
 	[DataMember(Name = "nodeType", EmitDefaultValue = false)]
-	public List<string> NodeType { get; set; }
+	public List<string>? NodeType { get; set; }
 
 	/// <summary>
 	/// Gets or Sets Storage
@@ -144,7 +144,7 @@ public class GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettings
 	/// Gets or Sets ExtConnectivitySettings
 	/// </summary>
 	[DataMember(Name = "extConnectivitySettings", EmitDefaultValue = false)]
-	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings> ExtConnectivitySettings { get; set; }
+	public List<GetsBorderDeviceDetailFromSdaFabricResponsePayloadDeviceSettingsExtConnectivitySettings>? ExtConnectivitySettings { get; set; }
 
 	/// <summary>
 	/// Returns the string presentation of the object

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,7 +19,7 @@ public class DeleteVnFromSdaFabricResponse
 	/// <param name="Roles">Roles.</param>
 	/// <param name="DeviceManagementIpAddress">DeviceManagementIpAddress.</param>
 	/// <param name="SiteHierarchy">SiteHierarchy.</param>
-	public DeleteVnFromSdaFabricResponse(string? Status = default, string? Description = default, string? Name = default, List<string> Roles = default, string? DeviceManagementIpAddress = default, string? SiteHierarchy = default)
+	public DeleteVnFromSdaFabricResponse(string? Status = default, string? Description = default, string? Name = default, List<string>? Roles = default, string? DeviceManagementIpAddress = default, string? SiteHierarchy = default)
 	{
 		this.Status = Status;
 		this.Description = Description;
@@ -51,7 +51,7 @@ public class DeleteVnFromSdaFabricResponse
 	/// Gets or Sets Roles
 	/// </summary>
 	[DataMember(Name = "roles", EmitDefaultValue = false)]
-	public List<string> Roles { get; set; }
+	public List<string>? Roles { get; set; }
 
 	/// <summary>
 	/// Gets or Sets DeviceManagementIpAddress

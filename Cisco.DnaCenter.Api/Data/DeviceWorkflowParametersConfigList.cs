@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -15,7 +15,7 @@ public class DeviceWorkflowParametersConfigList
 	/// </summary>
 	/// <param name="ConfigParameters">ConfigParameters.</param>
 	/// <param name="ConfigId">ConfigId.</param>
-	public DeviceWorkflowParametersConfigList(List<DeviceDeviceInfoHttpHeaders> ConfigParameters = default, string? ConfigId = default)
+	public DeviceWorkflowParametersConfigList(List<DeviceDeviceInfoHttpHeaders>? ConfigParameters = default, string? ConfigId = default)
 	{
 		this.ConfigParameters = ConfigParameters;
 		this.ConfigId = ConfigId;
@@ -25,7 +25,7 @@ public class DeviceWorkflowParametersConfigList
 	/// Gets or Sets ConfigParameters
 	/// </summary>
 	[DataMember(Name = "configParameters", EmitDefaultValue = false)]
-	public List<DeviceDeviceInfoHttpHeaders> ConfigParameters { get; set; }
+	public List<DeviceDeviceInfoHttpHeaders>? ConfigParameters { get; set; }
 
 	/// <summary>
 	/// Gets or Sets ConfigId
