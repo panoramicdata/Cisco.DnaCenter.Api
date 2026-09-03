@@ -5,5 +5,8 @@
     <Copyright>Copyright © Panoramic Data Limited</Copyright>
     <Authors>Panoramic Data Limited</Authors>
     <Company>Panoramic Data Limited</Company>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Nullable>enable</Nullable>
+    <NuGetAuditMode>All</NuGetAuditMode>
   </PropertyGroup>
 </Project>
