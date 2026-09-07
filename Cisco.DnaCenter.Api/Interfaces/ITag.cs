@@ -18,8 +18,8 @@ public interface ITags
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="id">Tag ID</param>
-	/// <param name="cancellationToken">The cancellation token</param>
 	/// <param name="Content_Type">Content_Type.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/tag/{id}/member")]
 	Task<TaskIdResult> AddMembersAsync(

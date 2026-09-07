@@ -4,17 +4,26 @@ using System.Text;
 namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
-/// UpdateSiteResponse
+/// The response to a request that is executed asynchronously.
 /// </summary>
 [DataContract]
 public class ExecutionStatusResponse
 {
+	/// <summary>
+	/// The identifier of the execution started by the request.
+	/// </summary>
 	[DataMember(Name = "executionId")]
 	public string? ExecutionId { get; set; }
 
+	/// <summary>
+	/// The URL at which the status of the execution can be polled.
+	/// </summary>
 	[DataMember(Name = "executionStatusUrl")]
 	public string? ExecutionStatusUrl { get; set; }
 
+	/// <summary>
+	/// A message describing the outcome of the request.
+	/// </summary>
 	[DataMember(Name = "message")]
 	public string? Message { get; set; }
 

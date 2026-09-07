@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api.Extensions;
 
+/// <summary>
+/// Extension methods for <see cref="ISites" />.
+/// </summary>
 public static class ISiteExtensions
 {
 	/// <summary>
@@ -17,7 +20,8 @@ public static class ISiteExtensions
 	/// <param name="name">siteNameHierarchy (ex: global/groupName) (optional, default to )</param>
 	/// <param name="siteId">Site id to which site details to retrieve. (optional, default to )</param>
 	/// <param name="type">type (ex: area, building, floor) (optional, default to )</param>
-	/// <param name="site">site.</param>
+	/// <param name="site">The sites API.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
 	public static async Task<GetSiteResponse> GetAllSitesAsync(this ISites site,
 

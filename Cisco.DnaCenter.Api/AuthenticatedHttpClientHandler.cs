@@ -10,19 +10,30 @@ using System.Threading.Tasks;
 
 namespace Cisco.DnaCenter.Api;
 
+/// <summary>
+/// An <see cref="HttpClientHandler" /> that attaches the DNA Center session token to each
+/// request, refreshes it when it expires, and retries throttled or failed requests.
+/// </summary>
 public class AuthenticatedHttpClientHandler : HttpClientHandler
 {
 	private readonly DnaCenterClientOptions _options;
 	private readonly DnaCenterClient _dnaCenterClient;
 	private readonly ILogger _logger;
 	private string? _token;
-	private string? _userAgent;
+	private readonly string? _userAgent;
 	private const LogLevel _levelToLogAt = LogLevel.Trace;
 
+	/// <summary>
+	/// The URI of the most recent request sent through this handler.
+	/// </summary>
 	public string LastRequestUri { get; private set; } = string.Empty;
 
 	private readonly Stopwatch _durationStopWatch = new();
 
+	/// <summary>
+	/// Sets the session token sent with each request. Write-only, so that the token
+	/// cannot be read back out of the handler.
+	/// </summary>
 	public string Token
 	{
 		set
@@ -31,6 +42,13 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		}
 	}
 
+	/// <summary>
+	/// Initializes a new instance of the <see cref="AuthenticatedHttpClientHandler" /> class.
+	/// </summary>
+	/// <param name="dnaCenterClient">The client used to acquire a token when one is needed.</param>
+	/// <param name="options">The client options.</param>
+	/// <param name="logger">The logger to write diagnostics to.</param>
+	/// <exception cref="ArgumentNullException">Any argument is null.</exception>
 	public AuthenticatedHttpClientHandler(
 		DnaCenterClient? dnaCenterClient,
 		DnaCenterClientOptions? options,
@@ -49,6 +67,12 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		}
 	}
 
+	/// <summary>
+	/// Sends a request, adding the session token and retrying as the options allow.
+	/// </summary>
+	/// <param name="request">The request to send.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <returns>The response.</returns>
 	protected override async Task<HttpResponseMessage> SendAsync(
 		HttpRequestMessage request,
 		CancellationToken cancellationToken)
@@ -111,51 +135,6 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			httpResponseMessage = await base
 				.SendAsync(request, cancellationToken)
 				.ConfigureAwait(false);
-
-			/*
-			try
-            {
-                httpResponseMessage = await base
-                    .SendAsync(request, cancellationToken)
-                    .ConfigureAwait(false);
-            }
-            catch (HttpRequestException ex) when (ex.Message.StartsWith("INSERT COMMON ANNOYING ERROR HERE", StringComparison.Ordinal))
-            {
-				// *Keeping this try/catch template from the Meraki.API for consistancy* when applying to other projects.
-				// If there's any specific random error that seems to occur, log it as a warning and retry
-
-				var errorSummary = "SUMMARY";
-
-				// Try up to the maximum retry count.
-				if (attemptCount >= _options.MaxAttemptCount)
-                {
-                    _logger.LogError(
-						"{LogPrefix}Giving up retrying. Received {ErrorSummary} on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
-						logPrefix,
-						errorSummary,
-						attemptCount,
-						_options.MaxAttemptCount,
-						request.Method.ToString(),
-                        request.RequestUri
-                    );
-                    throw;
-                }
-
-                _logger.LogWarning(
-					"{LogPrefix}Received {ErrorSummary} on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
-                    logPrefix,
-					errorSummary,
-					attemptCount,
-					_options.MaxAttemptCount,
-					request.Method.ToString(),
-                    request.RequestUri
-                );
-
-				// Wait 1 second and then retry
-				await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken).ConfigureAwait(false);
-                continue;
-            }
-			*/
 
 			// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
 			if (_logger.IsEnabled(_levelToLogAt))
@@ -284,9 +263,6 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 							
 							continue;
 						}
-
-						// After handling all cases except 401
-						tokenRefreshCount = 0;
 
 						return httpResponseMessage;
 				}

@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Cisco.DnaCenter.Test;
 
@@ -16,11 +15,12 @@ public class DeviceTests : Tests
 	}
 
 	[Fact]
-	public async void GetAllAsync_Succeeds()
+	public async Task GetAllAsync_Succeeds()
 	{
 		var devices = await GetDevices();
 
-		var device = devices.Response[0];
+		devices.Response.Should().NotBeNull();
+		var device = devices.Response![0];
 
 		device.Should().NotBeNull();
 		device.Id.Should().NotBeNull();
@@ -29,7 +29,7 @@ public class DeviceTests : Tests
 		// Get details for the first device
 		var deviceDetails = await Client
 			.Devices
-			.GetAsync(deviceId);
+			.GetAsync(deviceId, cancellationToken: TestContext.Current.CancellationToken);
 		deviceDetails.Response.Should().NotBeNull();
 		deviceDetails.Response.SerialNumber.Should().NotBeNullOrEmpty();
 	}
@@ -48,11 +48,11 @@ public class DeviceTests : Tests
 	}
 
 	[Fact]
-	public async void GetAllInterfacesAsync_Succeeds()
+	public async Task GetAllInterfacesAsync_Succeeds()
 	{
 		var interfaces = await Client
 			.Devices
-			.GetAllInterfacesAsync();
+			.GetAllInterfacesAsync(cancellationToken: TestContext.Current.CancellationToken);
 
 		interfaces.Should().BeOfType<DeviceIfListResult>();
 		interfaces.Should().NotBeNull();
@@ -60,11 +60,11 @@ public class DeviceTests : Tests
 	}
 
 	[Fact]
-	public async void GetDeviceCountAsync_Succeeds()
+	public async Task GetDeviceCountAsync_Succeeds()
 	{
 		var deviceCount = await Client
 			.Devices
-			.GetCountAsync();
+			.GetCountAsync(cancellationToken: TestContext.Current.CancellationToken);
 
 		deviceCount.Should().BeOfType<CountResult>();
 		deviceCount.Response.Should().NotBeNull();
@@ -73,20 +73,22 @@ public class DeviceTests : Tests
 	}
 
 	[Fact]
-	public async void GitHub_Demo()
+	public async Task GitHub_Demo()
 	{
 		var sites = await Client
 			.Sites
-			.GetSitesAsync();
+			.GetSitesAsync(cancellationToken: TestContext.Current.CancellationToken);
 
-		var firstSite = sites.Response[0];
+		sites.Response.Should().NotBeNull();
+		var firstSite = sites.Response![0];
 
 		var devicesResponse = await Client
 			.Devices
-			.GetAllAsync(locationName: new List<string> { firstSite.SiteNameHierarchy });
+			.GetAllAsync(locationName: new List<string> { firstSite.SiteNameHierarchy! }, cancellationToken: TestContext.Current.CancellationToken);
 
 		Logger.LogInformation("Devices:");
-		foreach (var device in devicesResponse.Response)
+		devicesResponse.Response.Should().NotBeNull();
+		foreach (var device in devicesResponse.Response!)
 		{
 			Logger.LogInformation($"    - {device.SerialNumber}: {device.Hostname}");
 		}
@@ -97,7 +99,7 @@ public class DeviceTests : Tests
 	{
 		var devices = await Client
 			.DeviceOnboardingPnp
-			.GetPnpDeviceListAsync();
+			.GetPnpDeviceListAsync(cancellationToken: TestContext.Current.CancellationToken);
 
 		devices.Should().NotBeNull();
 		devices.Count.Should().Be(50);
@@ -108,26 +110,9 @@ public class DeviceTests : Tests
 	{
 		var devices = await Client
 			.DeviceOnboardingPnp
-			.GetAllPnpDeviceListAsync();
+			.GetAllPnpDeviceListAsync(cancellationToken: TestContext.Current.CancellationToken);
 
 		devices.Should().NotBeNull();
 		devices.Count.Should().BeGreaterThan(50);
 	}
-
-	//[Fact(Skip = "Unit test not finished")]
-	//public async Task CreateAsync_Succeeds()
-	//{
-	//	var device = new Device
-	//	{
-	//		DeviceInfo = new DeviceDeviceInfo(),
-	//	};
-
-	//	var result = await Client
-	//		.DeviceOnboardingPnp
-	//		.ImportDevicesInBulkAsync(device)
-	//		.ConfigureAwait(false);
-
-	//	result.Should().NotBeNull();
-	//	result.Should().BeOfType<TaskIdResult>();
-	//}
 }

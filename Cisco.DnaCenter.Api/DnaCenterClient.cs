@@ -24,10 +24,22 @@ public class DnaCenterClient : IDisposable
 	private readonly ILogger _logger;
 	private readonly DnaCenterClientOptions _options;
 
+	/// <summary>
+	/// Whether a session token has been acquired.
+	/// </summary>
 	public bool IsConnected { get; set; }
 
+	/// <summary>
+	/// Whether server certificate errors are ignored when talking to DNA Center.
+	/// </summary>
 	public bool IgnoreSslCertificateErrors { get; private set; }
 
+	/// <summary>
+	/// Initializes a new instance of the <see cref="DnaCenterClient" /> class.
+	/// </summary>
+	/// <param name="options">The client options. Must not be null, and must validate.</param>
+	/// <param name="logger">The logger to write diagnostics to. Defaults to no logging.</param>
+	/// <exception cref="ArgumentNullException"><paramref name="options" /> is null.</exception>
 	public DnaCenterClient(DnaCenterClientOptions? options, ILogger? logger = null)
 	{
 		_logger = logger ?? NullLogger.Instance;
@@ -102,6 +114,13 @@ public class DnaCenterClient : IDisposable
 		Users = RestService.For<IUsers>(_httpClient, refitSettings);
 	}
 
+	/// <summary>
+	/// Acquires a session token, using the username and password in the options.
+	/// </summary>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <exception cref="InvalidOperationException">
+	/// The client was not configured for username and password authentication, or is already connected.
+	/// </exception>
 	public async Task ConnectAsync(CancellationToken cancellationToken = default)
 	{
 		if (!_options.IsUsernamePasswordAuthenticated)
@@ -211,6 +230,18 @@ public class DnaCenterClient : IDisposable
 	/// <inheritdoc />
 	public IUsers Users { get; }
 
+	/// <summary>
+	/// Polls an execution until it succeeds, fails, or the timeout elapses.
+	/// </summary>
+	/// <param name="executionId">The execution to poll.</param>
+	/// <param name="timeout">How long to keep polling for. Defaults to no limit.</param>
+	/// <param name="pollingDelay">How long to wait between polls. Defaults to 500ms.</param>
+	/// <param name="initialDelay">How long to wait before the first poll. Defaults to no wait.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <returns>
+	/// The last status observed. This is still in progress if the timeout elapsed first.
+	/// </returns>
+	/// <exception cref="ArgumentNullException"><paramref name="executionId" /> is null.</exception>
 	public async Task<ExecutionStatus> GetFinalExecutionStatusAsync(
 		string executionId,
 		TimeSpan? timeout = null,
@@ -256,6 +287,8 @@ public class DnaCenterClient : IDisposable
 						return executionStatus;
 					}
 					break;
+				default:
+					break;
 			}
 
 			await Task.Delay(pollingDelay.Value, cancellationToken).ConfigureAwait(false);
@@ -263,12 +296,18 @@ public class DnaCenterClient : IDisposable
 	}
 
 	#region IDisposable Support
-	private bool _disposedValue = false; // To detect redundant calls
+	private bool _disposedValue; // To detect redundant calls
 
 	// Only set if an HttpsClient was NOT provided in the options.
 	private readonly bool _shouldDisposeHttpClient;
 	private readonly AuthenticatedHttpClientHandler? _authenticatedHttpClientHandler;
 
+	/// <summary>
+	/// Releases the resources used by the client.
+	/// </summary>
+	/// <param name="disposing">
+	/// True when called from <see cref="Dispose()" />, false when called from a finalizer.
+	/// </param>
 	protected virtual void Dispose(bool disposing)
 	{
 		if (!_disposedValue)
@@ -289,9 +328,14 @@ public class DnaCenterClient : IDisposable
 		}
 	}
 
-	// This code added to correctly implement the disposable pattern.
-	public void Dispose() =>
-		// Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-		Dispose(true);// TODO: uncomment the following line if the finalizer is overridden above.// GC.SuppressFinalize(this);
+	/// <summary>
+	/// Releases the resources used by the client.
+	/// </summary>
+	public void Dispose()
+	{
+		// Put cleanup code in Dispose(bool disposing) above, not here.
+		Dispose(true);
+		GC.SuppressFinalize(this);
+	}
 	#endregion
 }

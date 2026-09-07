@@ -20,7 +20,6 @@ public class GetPnpGlobalSettingsResponse
 	/// <param name="DefaultProfile">DefaultProfile.</param>
 	/// <param name="AcceptEula">AcceptEula.</param>
 	/// <param name="Id">Id.</param>
-	/// <param name="Id">Id.</param>
 	/// <param name="_Version">_Version.</param>
 	/// <param name="_Id">_Id.</param>
 	public GetPnpGlobalSettingsResponse(List<GetPnpGlobalSettingsResponseSavaMappingList>? SavaMappingList = default, GetPnpGlobalSettingsResponseTaskTimeOuts? TaskTimeOuts = default, string? TenantId = default, DeviceDeviceInfoAaaCredentials? AaaCredentials = default, GetPnpGlobalSettingsResponseDefaultProfile? DefaultProfile = default, bool? AcceptEula = default, string? Id = default, string? _Id = default, decimal? _Version = default)

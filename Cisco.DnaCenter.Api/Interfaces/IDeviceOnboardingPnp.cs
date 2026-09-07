@@ -473,8 +473,8 @@ public interface IDeviceOnboardingPnp
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="id">id</param>
-	/// <param name="cancellationToken">The cancellation token</param>
 	/// <param name="Content_Type">Content_Type.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of UpdateWorkflowResponse</returns>
 	[Put("/dna/intent/api/v1/onboarding/pnp-workflow/{id}")]
 	Task<UpdateWorkflowResponse> UpdateWorkflowAsync(

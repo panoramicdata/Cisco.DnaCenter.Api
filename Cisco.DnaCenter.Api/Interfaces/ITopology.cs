@@ -69,9 +69,8 @@ public interface ITopologies
 	/// <remarks>
 	/// Returns Layer 2 network topology by specified VLAN ID
 	/// </remarks>
-	/// <param name="vlanID">Vlan Name for e.g Vlan1, Vlan23 etc</param>
+	/// <param name="vlanId">Vlan Name for e.g Vlan1, Vlan23 etc</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="vlanId">vlanId.</param>
 	/// <returns>Task of TopologyResult</returns>
 	[Get("/dna/intent/api/v1/topology/l2/{vlanId}")]
 	Task<TopologyResult> GetTopologyDetailsAsync(

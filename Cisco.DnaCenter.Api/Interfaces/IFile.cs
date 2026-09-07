@@ -41,9 +41,8 @@ public interface IFiles
 	/// <remarks>
 	/// Returns list of files under a specific namespace
 	/// </remarks>
-	/// <param name="_nameSpace">A listing of fileId&#39;s</param>
+	/// <param name="nameSpace">A listing of fileId&#39;s</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="nameSpace">nameSpace.</param>
 	/// <returns>Task of FileObjectListResult</returns>
 	[Get("/dna/intent/api/v1/file/namespace/{nameSpace}")]
 	Task<FileObjectListResult> GetAllAsync(

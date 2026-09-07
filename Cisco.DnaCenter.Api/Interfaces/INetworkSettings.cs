@@ -124,9 +124,8 @@ public interface INetworkSettings
 	/// <remarks>
 	/// API to delete Service Provider profile (QoS).
 	/// </remarks>
-	/// <param name="sp_profile_name">sp profile name</param>
+	/// <param name="spProfileName">sp profile name</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="spProfileName">spProfileName.</param>
 	/// <returns>Task of DeleteSPProfileResponse</returns>
 	[Delete("/dna/intent/api/v1/sp-profile/{spProfileName}")]
 	Task<ExecutionStatusResponse> DeleteSpProfileAsync(

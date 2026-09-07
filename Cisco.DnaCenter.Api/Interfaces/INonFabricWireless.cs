@@ -104,9 +104,8 @@ public interface INonFabricWireless
 	/// <remarks>
 	/// Delete RF profile(s)
 	/// </remarks>
-	/// <param name="rf_profile_name"></param>
+	/// <param name="rfProfileName"> (optional, default to )</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="rfProfileName">rfProfileName.</param>
 	/// <returns>Task of DeleteRfProfilesResponse</returns>
 	[Delete("/dna/intent/api/v1/wireless/rf-profile/{RfProfileName}")]
 	Task<DeleteRfProfilesResponse> DeleteRfProfilesAsync(

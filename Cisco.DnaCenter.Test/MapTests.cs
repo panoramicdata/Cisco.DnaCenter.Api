@@ -2,7 +2,6 @@
 using AwesomeAssertions;
 using System;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Cisco.DnaCenter.Test;
 
@@ -13,9 +12,9 @@ public class MapTests : Tests
 	}
 
 	[Fact]
-	public async void GetRfModelsAsync_Succeeds()
+	public async Task GetRfModelsAsync_Succeeds()
 	{
-		var rfModelIdMappings = await Client.Maps.GetRfModelsAsync();
+		var rfModelIdMappings = await Client.Maps.GetRfModelsAsync(cancellationToken: TestContext.Current.CancellationToken);
 
 		rfModelIdMappings.Should().NotBeNull();
 		rfModelIdMappings.Should().NotBeEmpty();

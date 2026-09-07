@@ -32,8 +32,8 @@ public interface IConfigurationTemplates
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="projectId">projectId</param>
-	/// <param name="cancellationToken">The cancellation token</param>
 	/// <param name="Content_Type">Content_Type.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/api/v1/template-programmer/project/{projectId}/template")]
 	Task<TaskIdResult> CreateTemplateAsync(

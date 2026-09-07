@@ -65,6 +65,10 @@ public class DnaCenterClientOptions
 	/// </summary>
 	public int MaxAttemptCount { get; set; } = 5;
 
+	/// <summary>
+	/// Throws if these options are not a usable configuration.
+	/// </summary>
+	/// <exception cref="ConfigurationException">The options are not usable.</exception>
 	public void Validate()
 	{
 		if (MaxBackOffDelaySeconds < 1) {

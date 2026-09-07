@@ -31,7 +31,6 @@ public class DeviceDeviceInfo
 	/// <param name="MacAddress">MacAddress.</param>
 	/// <param name="Pid">Pid.</param>
 	/// <param name="DeviceSudiSerialNos">DeviceSudiSerialNos.</param>
-	/// <param name="LastUpdateOn">LastUpdateOn.</param>
 	/// <param name="WorkflowId">WorkflowId.</param>
 	/// <param name="WorkflowName">WorkflowName.</param>
 	/// <param name="ProjectId">ProjectId.</param>
@@ -64,7 +63,7 @@ public class DeviceDeviceInfo
 	/// <param name="PopulateInventory">PopulateInventory.</param>
 	/// <param name="SiteName">SiteName.</param>
 	/// <param name="Name">Name.</param>
-	/// <param name="LastupdateOn">LastupdateOn.</param>
+	/// <param name="LastupdateOn">LastUpdateOn.</param>
 	public DeviceDeviceInfo(
 		string? Source = default,
 		string? SerialNumber = default,

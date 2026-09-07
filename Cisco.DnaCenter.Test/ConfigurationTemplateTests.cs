@@ -1,6 +1,5 @@
 ﻿using AwesomeAssertions;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Cisco.DnaCenter.Test;
 
@@ -11,11 +10,11 @@ public class ConfigurationTemplateTests : Tests
 	}
 
 	[Fact]
-	public async void GetProjectsAsync_Succeeds()
+	public async Task GetProjectsAsync_Succeeds()
 	{
 		var projects = await Client
 			.ConfigurationTemplates
-			.GetProjectsAsync();
+			.GetProjectsAsync(cancellationToken: TestContext.Current.CancellationToken);
 
 		projects.Should().NotBeNull();
 		projects.Should().NotBeEmpty();
@@ -33,11 +32,11 @@ public class ConfigurationTemplateTests : Tests
 	}
 
 	[Fact]
-	public async void GetConfigurationTemplatesAndDetailsAsync_Succeeds()
+	public async Task GetConfigurationTemplatesAndDetailsAsync_Succeeds()
 	{
 		var configurationTemplates = await Client
 			.ConfigurationTemplates
-			.GetAvailableTemplatesAsync();
+			.GetAvailableTemplatesAsync(cancellationToken: TestContext.Current.CancellationToken);
 
 		configurationTemplates.Should().NotBeNull();
 		configurationTemplates.Should().NotBeEmpty();
@@ -48,7 +47,7 @@ public class ConfigurationTemplateTests : Tests
 
 			var templateDetails = await Client
 				.ConfigurationTemplates
-				.GetTemplateDetailsAsync(item.TemplateId!);
+				.GetTemplateDetailsAsync(item.TemplateId!, cancellationToken: TestContext.Current.CancellationToken);
 			templateDetails.Should().NotBeNull();
 		}
 	}

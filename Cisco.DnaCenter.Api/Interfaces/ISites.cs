@@ -116,11 +116,7 @@ public interface ISites
 	/// <remarks>
 	/// Get site with area/building/floor with specified hierarchy.
 	/// </remarks>
-	/// <param name="name">siteNameHierarchy (ex: global/groupName) (optional, default to )</param>
 	/// <param name="siteId">Site id to which site details to retrieve. (optional, default to )</param>
-	/// <param name="type">type (ex: area, building, floor) (optional, default to )</param>
-	/// <param name="offset">offset/starting row (optional, default to )</param>
-	/// <param name="limit">Number of sites to be retrieved (optional, default to )</param>
 	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
 	[Get("/dna/intent/api/v1/site?siteId={siteId}")]

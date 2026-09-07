@@ -1,5 +1,4 @@
-using Xunit;
-using Xunit.Abstractions;
+﻿using Xunit;
 
 namespace Cisco.DnaCenter.Test;
 
@@ -10,17 +9,17 @@ public class ClientTests : Tests
 	}
 
 	[Fact]
-	public async void ConnectAsync_Succeeds()
+	public async Task ConnectAsync_Succeeds()
 	{
 		await Client
-			.ConnectAsync();
+			.ConnectAsync(cancellationToken: TestContext.Current.CancellationToken);
 	}
 
 	[Fact]
-	public async void NoConnectAsync_Succeeds()
+	public async Task NoConnectAsync_Succeeds()
 	{
 		await Client
 			.Devices
-			.GetCountAsync();
+			.GetCountAsync(cancellationToken: TestContext.Current.CancellationToken);
 	}
 }

@@ -3,11 +3,15 @@
 namespace Cisco.DnaCenter.Api.Data;
 
 /// <summary>
-/// DeviceDeviceInfo
+/// A single device in a bulk device import request.
 /// </summary>
 [DataContract]
 public class ImportDevicesInBulkRequestItem
 {
+	/// <summary>
+	/// Initializes a new instance of the <see cref="ImportDevicesInBulkRequestItem" /> class.
+	/// </summary>
+	/// <param name="DeviceInfo">The device to import.</param>
 	public ImportDevicesInBulkRequestItem(DeviceDeviceInfo? DeviceInfo)
 	{
 		this.DeviceInfo = DeviceInfo;

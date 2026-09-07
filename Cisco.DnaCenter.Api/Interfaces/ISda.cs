@@ -217,10 +217,9 @@ public interface ISda
 	/// **BETA** - Delete Port assignment for access point in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
-	/// <param name="device_ip">device-ip</param>
 	/// <param name="interfaceName">interfaceName</param>
+	/// <param name="deviceIp">device-ip</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="deviceIp">deviceIp.</param>
 	/// <returns>Task of DeletePortAssignmentForAccessPointInSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
 	Task<ExecutionResponse> DeletePortAssignmentForAccessPointInSdaFabricAsync(
@@ -236,10 +235,9 @@ public interface ISda
 	/// **BETA** - Delete Port assignment for user device in SDA Fabric.
 	/// </remarks>
 	/// <param name="request">request</param>
-	/// <param name="device_ip">device-ip</param>
 	/// <param name="interfaceName">interfaceName</param>
+	/// <param name="deviceIp">device-ip</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="deviceIp">deviceIp.</param>
 	/// <returns>Task of DeletePortAssignmentForUserDeviceInSdaFabricResponse</returns>
 	[Delete("/dna/intent/api/v1/business/sda/hostonboarding/user-device")]
 	Task<ExecutionResponse> DeletePortAssignmentForUserDeviceInSdaFabricAsync(
@@ -318,9 +316,8 @@ public interface ISda
 	/// <remarks>
 	/// **BETA** - Get control plane device from SDA Fabric
 	/// </remarks>
-	/// <param name="deviceIPAddress">Device IP Address</param>
+	/// <param name="deviceIpAddress">Device IP Address</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="deviceIpAddress">deviceIpAddress.</param>
 	/// <returns>Task of GetControlPlaneDeviceFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/control-plane-device")]
 	Task<GetControlPlaneDeviceFromSdaFabricResponse> GetControlPlaneDeviceFromSdaFabricAysnc(
@@ -349,9 +346,8 @@ public interface ISda
 	/// <remarks>
 	/// **BETA** - Get device info from SDA Fabric
 	/// </remarks>
-	/// <param name="deviceIPAddress">Device IP Address</param>
+	/// <param name="deviceIpAddress">Device IP Address</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="deviceIpAddress">deviceIpAddress.</param>
 	/// <returns>Task of GetDeviceInfoFromSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/device")]
 	Task<GetDeviceInfoFromSdaFabricResponse> GetDeviceInfoFromSdaFabricAsync(
@@ -397,10 +393,9 @@ public interface ISda
 	/// **BETA** - Get Port assignment for access point in SDA Fabric
 	/// </remarks>
 	/// <param name="request">request</param>
-	/// <param name="device_ip">device-ip</param>
 	/// <param name="interfaceName">interfaceName</param>
+	/// <param name="deviceIp">device-ip</param>
 	/// <param name="cancellationToken">The cancellation token</param>
-	/// <param name="deviceIp">deviceIp.</param>
 	/// <returns>Task of GetPortAssignmentForAccessPointInSdaFabricResponse</returns>
 	[Get("/dna/intent/api/v1/business/sda/hostonboarding/access-point")]
 	Task<GetPortAssignmentForAccessPointInSdaFabricResponse> GetPortAssignmentForAccessPointInSdaFabricAsync(

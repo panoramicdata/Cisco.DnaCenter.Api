@@ -8,7 +8,6 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Cisco.DnaCenter.Test;
 
@@ -19,26 +18,28 @@ public class SiteTests : Tests
 	}
 
 	[Fact]
-	public async void GetSitesAsync_Succeeds()
+	public async Task GetSitesAsync_Succeeds()
 	{
 		var sites = await GetSitesAsync();
 
-		var sitesResponse = sites.Response[0];
+		sites.Response.Should().NotBeNull();
+		var sitesResponse = sites.Response![0];
 
 		sitesResponse.Should().NotBeNull();
 		sitesResponse.Id.Should().NotBeNull();
-		var siteId = sites.Response[0].Id!;
+		var siteId = sitesResponse.Id!;
 
 		// Get details for the first device
 		var getSiteResponse = await Client
 			.Sites
-			.GetSiteAsync(siteId);
+			.GetSiteAsync(siteId, cancellationToken: TestContext.Current.CancellationToken);
 		getSiteResponse.Should().BeOfType<GetSiteSingleResponse>();
 		getSiteResponse.Should().NotBeNull();
 
 		var response = getSiteResponse.Response;
+		response.Should().NotBeNull();
 
-		response.Id.Should().Be(siteId);
+		response!.Id.Should().Be(siteId);
 		response.Name.Should().NotBeNullOrEmpty();
 	}
 
@@ -74,14 +75,15 @@ public class SiteTests : Tests
 						ParentName = parentName
 					}
 				}
-			}, false, true);
+			}, false, true,
+				cancellationToken: TestContext.Current.CancellationToken);
 
 		createSitesResponse.Should().BeOfType<ExecutionStatusResponse>();
 		createSitesResponse.Should().NotBeNull();
 		createSitesResponse.ExecutionId.Should().NotBeNull();
 
 		var executionStatus = await Client
-			.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!);
+			.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!, cancellationToken: TestContext.Current.CancellationToken);
 
 		executionStatus.Should().BeOfType<ExecutionStatus>();
 		executionStatus.Should().NotBeNull();
@@ -90,19 +92,20 @@ public class SiteTests : Tests
 		//	Get site (first page only)
 		var sitesResponse = await Client
 			.Sites
-			.GetSitesAsync();
+			.GetSitesAsync(cancellationToken: TestContext.Current.CancellationToken);
 
-		var site = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
+		sitesResponse.Response.Should().NotBeNull();
+		var site = sitesResponse.Response!.SingleOrDefault(s => s.Name == guid);
 		site.Should().NotBeNull();
 		site.Should().BeOfType<GetSiteResponseResponse>();
-		site.Id.Should().NotBeNullOrEmpty();
+		site!.Id.Should().NotBeNullOrEmpty();
 
 		//	Get all sites
-		var allSitesResponse = await Client
+		await Client
 			.Sites
-			.GetAllSitesAsync();
+			.GetAllSitesAsync(cancellationToken: TestContext.Current.CancellationToken);
 
-		var sites = sitesResponse.Response.SingleOrDefault(s => s.Name == guid);
+		var sites = sitesResponse.Response!.SingleOrDefault(s => s.Name == guid);
 		sites.Should().NotBeNull();
 		sites.Should().BeOfType<GetSiteResponseResponse>();
 		sites.Id.Should().NotBeNullOrEmpty();
@@ -110,7 +113,7 @@ public class SiteTests : Tests
 		// Read
 		var siteById = await Client
 			.Sites
-			.GetSiteAsync(site.Id!);
+			.GetSiteAsync(site.Id!, cancellationToken: TestContext.Current.CancellationToken);
 
 		siteById.Should().BeOfType<GetSiteSingleResponse>();
 		siteById.Should().NotBeNull();
@@ -125,22 +128,22 @@ public class SiteTests : Tests
 
 		var updatedSite = await Client
 			.Sites
-			.UpdateSiteAsync(updateSiteRequest, null, site.Id!);
+			.UpdateSiteAsync(updateSiteRequest, null, site.Id!, cancellationToken: TestContext.Current.CancellationToken);
 
 		executionStatus = await Client
-			.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!);
+			.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!, cancellationToken: TestContext.Current.CancellationToken);
 		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 
 		// Delete
 		var deleteSiteResponse = await Client
 			.Sites
-			.DeleteSiteAsync(site.Id!);
+			.DeleteSiteAsync(site.Id!, cancellationToken: TestContext.Current.CancellationToken);
 
 		deleteSiteResponse.Should().BeOfType<ExecutionStatusResponse>();
 		deleteSiteResponse.Should().NotBeNull();
 
 		executionStatus = await Client
-			.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!);
+			.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!, cancellationToken: TestContext.Current.CancellationToken);
 
 		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 	}
@@ -152,11 +155,12 @@ public class SiteTests : Tests
 		{
 			try
 			{
-				var result = await Client.Sites.GetAllSitesAsync();
-				Logger.LogInformation("Request {RequestNumber}: Success. Result count: {Count}", i, result?.Response.Count() ?? 0);
+				var result = await Client.Sites.GetAllSitesAsync(cancellationToken: TestContext.Current.CancellationToken);
+				Logger.LogInformation("Request {RequestNumber}: Success. Result count: {Count}", i, result.Response?.Count ?? 0);
 
 				// Should always have 7 results
-				result.Response.Count().Should().Be(7, "There should always be 7 sites");
+				result.Response.Should().NotBeNull();
+				result.Response!.Count.Should().Be(7, "There should always be 7 sites");
 			}
 			catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.Unauthorized)
 			{

@@ -413,8 +413,8 @@ public interface INetworkDiscovery
 	/// </remarks>
 	/// <param name="request">request</param>
 	/// <param name="globalCredentialId">Global credential Uuid</param>
-	/// <param name="cancellationToken">The cancellation token</param>
 	/// <param name="Content_Type">Content_Type.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Put("/dna/intent/api/v1/global-credential/{globalCredentialId}")]
 	Task<TaskIdResult> UpdateGlobalCredentialsAsync(

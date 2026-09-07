@@ -68,8 +68,8 @@ public interface ISoftwareImages
 	/// <param name="thirdPartyVendor">Third Party Vendor (optional)</param>
 	/// <param name="thirdPartyImageFamily">Third Party image family (optional)</param>
 	/// <param name="thirdPartyApplicationType">Third Party Application Type (optional)</param>
-	/// <param name="cancellationToken">The cancellation token</param>
 	/// <param name="Content_Type">Content_Type.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/image/importation/source/file")]
 	Task<TaskIdResult> ImportLocalAsync(
@@ -90,8 +90,8 @@ public interface ISoftwareImages
 	/// <param name="scheduleAt">Epoch Time (The number of milli-seconds since January 1 1970 UTC) at which the distribution should be scheduled (Optional)  (optional)</param>
 	/// <param name="scheduleDesc">Custom Description (Optional) (optional)</param>
 	/// <param name="scheduleOrigin">Originator of this call (Optional) (optional)</param>
-	/// <param name="cancellationToken">The cancellation token</param>
 	/// <param name="Content_Type">Content_Type.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/image/importation/source/url")]
 	Task<TaskIdResult> ImportViaUrlAsync(
@@ -112,8 +112,8 @@ public interface ISoftwareImages
 	/// <param name="Client_Type">Client-type (Optional) (optional)</param>
 	/// <param name="Client_Url">Client-url (Optional) (optional)</param>
 	/// <param name="scheduleValidate">scheduleValidate, validates data before schedule (Optional) (optional)</param>
-	/// <param name="cancellationToken">The cancellation token</param>
 	/// <param name="Content_Type">Content_Type.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of TaskIdResult</returns>
 	[Post("/dna/intent/api/v1/image/activation/device")]
 	Task<TaskIdResult> TriggerActivationAsync(

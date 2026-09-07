@@ -4,7 +4,7 @@ using Cisco.DnaCenter.Test.Config;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.IO;
-using Xunit.Abstractions;
+using Xunit;
 
 namespace Cisco.DnaCenter.Test;
 
@@ -72,7 +72,8 @@ public class Tests
 			// Yes
 
 			// Load in the config
-			_configuration = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(fileInfo.FullName));
+			_configuration = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(fileInfo.FullName))
+				?? throw new ConfigurationException("appsettings.json did not deserialize to a Configuration.");
 			_configuration.Validate();
 			return _configuration;
 		}
