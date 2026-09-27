@@ -8,6 +8,9 @@ using Xunit;
 
 namespace Cisco.DnaCenter.Test;
 
+// Every test deriving from this class needs a live DNA Center and the credentials in
+// appsettings.json, which CI does not have. CI excludes them with --filter "Category!=Integration".
+[Trait("Category", "Integration")]
 public class Tests
 {
 	protected ILogger Logger;
