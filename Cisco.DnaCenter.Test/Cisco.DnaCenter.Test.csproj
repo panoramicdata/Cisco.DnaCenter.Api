@@ -4,6 +4,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <!-- xUnit.net v3 test projects host their own runner. -->
     <OutputType>Exe</OutputType>
+    <!-- Run the executable as a Microsoft.Testing.Platform app, so it accepts extension options such as the coverage switch. -->
+    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
     <!-- Route "dotnet test" through that runner rather than VSTest. -->
     <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
     <IsPackable>false</IsPackable>
