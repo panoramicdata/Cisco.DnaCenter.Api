@@ -109,13 +109,13 @@ public class AuthenticatedHttpClientHandlerTests
 			MaxAttemptCount = maxAttemptCount
 		});
 
-	private static (int, string) Token(string token) => (200, $"{{\"Token\":\"{token}\"}}");
+	private static (int, string) TokenResponse(string value) => (200, $"{{\"Token\":\"{value}\"}}");
 
 	[Fact]
 	public async Task FirstRequest_AcquiresTokenAndSendsItOnTheRequest()
 	{
 		using var server = new ScriptedServer()
-			.On(AuthPath, Token("token-1"))
+			.On(AuthPath, TokenResponse("token-1"))
 			.On(StatusPath, (200, SuccessBody));
 		using var client = CreateClient(server);
 
@@ -130,7 +130,7 @@ public class AuthenticatedHttpClientHandlerTests
 	public async Task Unauthorized_RefreshesTokenAndRetriesRequest()
 	{
 		using var server = new ScriptedServer()
-			.On(AuthPath, Token("token-1"), Token("token-2"))
+			.On(AuthPath, TokenResponse("token-1"), TokenResponse("token-2"))
 			.On(StatusPath, (401, string.Empty), (200, SuccessBody));
 		using var client = CreateClient(server);
 
@@ -146,7 +146,7 @@ public class AuthenticatedHttpClientHandlerTests
 	public async Task PersistentUnauthorized_GivesUpAfterTwoRefreshes()
 	{
 		using var server = new ScriptedServer()
-			.On(AuthPath, Token("token"))
+			.On(AuthPath, TokenResponse("token"))
 			.On(StatusPath, (401, string.Empty));
 		using var client = CreateClient(server);
 
@@ -164,7 +164,7 @@ public class AuthenticatedHttpClientHandlerTests
 	public async Task ThrottledOrUnavailable_GivesUpAtMaxAttemptCountWithExplanation(int statusCode)
 	{
 		using var server = new ScriptedServer()
-			.On(AuthPath, Token("token"))
+			.On(AuthPath, TokenResponse("token"))
 			.On(StatusPath, (statusCode, string.Empty));
 		using var client = CreateClient(server, maxAttemptCount: 1);
 
@@ -180,7 +180,7 @@ public class AuthenticatedHttpClientHandlerTests
 	public async Task ServiceUnavailable_IsRetriedAfterDelayUntilSuccess()
 	{
 		using var server = new ScriptedServer()
-			.On(AuthPath, Token("token"))
+			.On(AuthPath, TokenResponse("token"))
 			.On(StatusPath, (503, string.Empty), (200, SuccessBody));
 		using var client = CreateClient(server);
 
@@ -194,7 +194,7 @@ public class AuthenticatedHttpClientHandlerTests
 	public async Task OtherErrors_AreReturnedToTheCallerWithoutRetry()
 	{
 		using var server = new ScriptedServer()
-			.On(AuthPath, Token("token"))
+			.On(AuthPath, TokenResponse("token"))
 			.On(StatusPath, (500, string.Empty));
 		using var client = CreateClient(server);
 
@@ -208,7 +208,7 @@ public class AuthenticatedHttpClientHandlerTests
 	public async Task CancelledToken_ThrowsBeforeSending()
 	{
 		using var server = new ScriptedServer()
-			.On(AuthPath, Token("token"))
+			.On(AuthPath, TokenResponse("token"))
 			.On(StatusPath, (200, SuccessBody));
 		using var client = CreateClient(server);
 		using var cts = new System.Threading.CancellationTokenSource();
