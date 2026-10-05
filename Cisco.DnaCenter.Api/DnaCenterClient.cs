@@ -69,23 +69,7 @@ public class DnaCenterClient : IDisposable
 			_shouldDisposeHttpClient = true;
 		}
 
-		var refitSettings = new RefitSettings
-		{
-			UrlParameterFormatter = new CustomUrlParameterFormatter(),
-			ContentSerializer = new NewtonsoftJsonContentSerializer(
-				new JsonSerializerSettings
-				{
-					// By default nulls should not be rendered out, this will allow the receiving API to apply any defaults.
-					// Use [JsonProperty(NullValueHandling = NullValueHandling.Include)] to send
-					// nulls for specific properties, i.e. disassociating port schedule ids from a port
-					NullValueHandling = NullValueHandling.Ignore,
-					//#if DEBUG
-					//						MissingMemberHandling = MissingMemberHandling.Error,
-					//#endif
-					Converters = new List<JsonConverter> { new StringEnumConverter() }
-				}
-			)
-		};
+		var refitSettings = CreateRefitSettings();
 
 		ApplicationPolicies = RestService.For<IApplicationPolicies>(_httpClient, refitSettings);
 		Authentication = RestService.For<IAuthentication>(_httpClient, refitSettings);
@@ -113,6 +97,21 @@ public class DnaCenterClient : IDisposable
 		Topologies = RestService.For<ITopologies>(_httpClient, refitSettings);
 		Users = RestService.For<IUsers>(_httpClient, refitSettings);
 	}
+
+	private static RefitSettings CreateRefitSettings() => new()
+	{
+		UrlParameterFormatter = new CustomUrlParameterFormatter(),
+		ContentSerializer = new NewtonsoftJsonContentSerializer(
+			new JsonSerializerSettings
+			{
+				// By default nulls should not be rendered out, this will allow the receiving API to apply any defaults.
+				// Use [JsonProperty(NullValueHandling = NullValueHandling.Include)] to send
+				// nulls for specific properties, i.e. disassociating port schedule ids from a port
+				NullValueHandling = NullValueHandling.Ignore,
+				Converters = new List<JsonConverter> { new StringEnumConverter() }
+			}
+		)
+	};
 
 	/// <summary>
 	/// Acquires a session token, using the username and password in the options.
@@ -267,10 +266,7 @@ public class DnaCenterClient : IDisposable
 
 		while (true)
 		{
-			if (cancellationToken.IsCancellationRequested)
-			{
-				cancellationToken.ThrowIfCancellationRequested();
-			}
+			cancellationToken.ThrowIfCancellationRequested();
 
 			var executionStatus = await Business
 				.GetExecutionStatusAsync(executionId, cancellationToken)
@@ -286,8 +282,6 @@ public class DnaCenterClient : IDisposable
 					{
 						return executionStatus;
 					}
-					break;
-				default:
 					break;
 			}
 

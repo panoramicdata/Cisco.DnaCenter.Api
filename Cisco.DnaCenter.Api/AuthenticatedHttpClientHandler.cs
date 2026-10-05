@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
-using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Net.Security;
@@ -27,8 +26,6 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 	/// The URI of the most recent request sent through this handler.
 	/// </summary>
 	public string LastRequestUri { get; private set; } = string.Empty;
-
-	private readonly Stopwatch _durationStopWatch = new();
 
 	/// <summary>
 	/// Sets the session token sent with each request. Write-only, so that the token
@@ -77,245 +74,257 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		HttpRequestMessage request,
 		CancellationToken cancellationToken)
 	{
-		var attemptCount = 0;
-		var tokenRefreshCount = 0;
-		var maxTokenRefreshCount = 2; // maybe make this configurable
-		var logPrefix = $"Request {Guid.NewGuid()}: ";
-		var durationStopWatch = new Stopwatch();
+		var state = new SendState($"Request {Guid.NewGuid()}: ");
 
 		while (true)
 		{
-			_durationStopWatch.Restart();
-			attemptCount++;
+			state.AttemptCount++;
 			cancellationToken.ThrowIfCancellationRequested();
 
-			if (_token is null)
-			{
-				if (request.RequestUri?.AbsoluteUri.EndsWith("/dna/system/api/v1/auth/token") != true)
-				{
-					await _dnaCenterClient
-						.ConnectAsync(cancellationToken)
-						.ConfigureAwait(false);
-
-					// Token can be forcefully unset before here
-					// Check that X-Auth-Token is not present before adding new token to avoid double entry, triggering a 401
-					request.Headers.Remove("X-Auth-Token");
-					request.Headers.Add("X-Auth-Token", _token);
-				}
-			}
-			else
-			{
-				// For safety, ensure an old header isn't present.
-				request.Headers.Remove("X-Auth-Token");
-
-				request.Headers.Add("X-Auth-Token", _token);
-			}
-
-			if (_userAgent is not null)
-			{
-				request.Headers.Add("User-Agent", _userAgent);
-			}
-
-			// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
-			if (_logger.IsEnabled(_levelToLogAt))
-			{
-				_logger.Log(_levelToLogAt, "{LogPrefix}Request\r\n{Request}", logPrefix, request.ToRedactedString());
-				if (request.Content != null)
-				{
-					var requestContent = await request.Content.ReadAsStringAsync().ConfigureAwait(false);
-					_logger.Log(_levelToLogAt, "{LogPrefix}RequestContent\r\n{RequestContent}", logPrefix, requestContent);
-				}
-			}
+			await AttachHeadersAsync(request, cancellationToken).ConfigureAwait(false);
+			await LogRequestAsync(request, state.LogPrefix).ConfigureAwait(false);
 
 			LastRequestUri = request.RequestUri?.ToString() ?? string.Empty;
 
-			// Complete the action
-			HttpResponseMessage httpResponseMessage;
-
-			httpResponseMessage = await base
+			var httpResponseMessage = await base
 				.SendAsync(request, cancellationToken)
 				.ConfigureAwait(false);
 
-			// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
-			if (_logger.IsEnabled(_levelToLogAt))
-			{
-				_logger.Log(_levelToLogAt, "{LogPrefix}Response\r\n{HttpResponseMessage}", logPrefix, httpResponseMessage.ToRedactedString());
-				if (httpResponseMessage.Content != null)
-				{
-					var responseContent = await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
-					_logger.Log(_levelToLogAt, "{LogPrefix}ResponseContent\r\n{ResponseContent}", logPrefix, responseContent);
-				}
-			}
+			await LogResponseAsync(httpResponseMessage, state.LogPrefix).ConfigureAwait(false);
 
-			durationStopWatch.Stop();
-
-			TimeSpan delay;
 			// As long as we were not given a back-off request then we'll return the response and any further StatusCode handling is up to the caller
 			var statusCodeInt = (int)httpResponseMessage.StatusCode;
+			var decision = await DecideAsync(request, statusCodeInt, state, cancellationToken).ConfigureAwait(false);
 
-			try
+			if (decision.Outcome == SendOutcome.Return)
 			{
-				switch (statusCodeInt)
-				{
-					case 401:
-						// Token might be expired or invalid, try to refresh once
-						if (tokenRefreshCount < maxTokenRefreshCount)
-						{
-							tokenRefreshCount++;
+				return httpResponseMessage;
+			}
 
-							_logger.LogWarning(
-								"{LogPrefix}Received 401 Unauthorized. Attempting token refresh #{TokenRefreshCount}. ({Method} - {Url})",
-								logPrefix,
-								tokenRefreshCount,
-								request.Method.ToString(),
-								request.RequestUri
-							);
+			if (decision.Outcome == SendOutcome.Continue)
+			{
+				continue;
+			}
 
-							// Unset old token and remove from header
-							_token = null;
-							_dnaCenterClient.IsConnected = false;
-
-							// NOTE: I'm not entirely sure if getting a new token is necessary because if _token is set to false (and IsConnected to false),
-							// then Send would try to get a new token anyway, so getting another one here after unsetting it might be redundant code but safe.
-
-							// Get a new token
-							await _dnaCenterClient.ConnectAsync(cancellationToken).ConfigureAwait(false);
-
-							request.Headers.Remove("X-Auth-Token");
-							request.Headers.Add("X-Auth-Token", _token);
-
-							continue;
-						}
-						else
-						{
-							_logger.LogError(
-								"{LogPrefix}Token refresh failed or unauthorized after {MaxTokenRefreshCount} attempts. ({Method} - {Url})",
-								logPrefix,
-								maxTokenRefreshCount,
-								request.Method.ToString(),
-								request.RequestUri
-							);
-							return httpResponseMessage;
-						}
-					case 429:
-						// Back off. The limiter varies depending on the endpoint e.g 100/min for Sites and 50/min for Devices.
-						var retryAfterSeconds = 10;
-
-						// Technically, a 429 will look like this. I believe the comment 'The limit has been reached for the time-window' means
-						// no further requests will be attempted until 1 minute after the time mentioned, but I don't know if this is consistant
-						// across all endpoints so it's safer to just try our usual retry method for now as worst case we'll wait another 50+ seconds:
-						/*
-{
-  "error" : "Rate Limit exceeded; BapiName: Get Site, RateLimit config details: RateLimitContext{rate=100, windowUnit='minute', windowDuration=1, maxConcurrentExecutionsPermitted=0}",
-  "bapiExtendedStatusCode" : "REJECTED_ABOVE_THROTTLE_LIMIT",
-  "bapiExtendedStatusDescription" : "For BAPI: Get Site, maximum allowed BAPI instances per 1 minute is 100. The limit has been reached for the time-window between Mon Sep 15 14:06:02 UTC 2025 and now"
-}
-*/
-						delay = CalculateBackoffDelay(attemptCount, retryAfterSeconds, _options.BackOffDelayFactor, _options.MaxBackOffDelaySeconds);
-
-						_logger.LogDebug(
-							"{LogPrefix}Received {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}.",
-							logPrefix, statusCodeInt, attemptCount, _options.MaxAttemptCount
-						);
-						break;
-					case 502:
-					case 503:
-					case 504:
-						_logger.LogInformation(
-							"{LogPrefix}Received {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}.",
-							logPrefix, statusCodeInt, attemptCount, _options.MaxAttemptCount
-						);
-						delay = TimeSpan.FromSeconds(5);
-						break;
-					default:
-						if (attemptCount > 1)
-						{
-							_logger.LogDebug(
-								"{LogPrefix}Received {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}.",
-								logPrefix, statusCodeInt, attemptCount, _options.MaxAttemptCount
-							);
-						}
-
-						if (statusCodeInt == 500)
-						{
-							_logger.LogError(
-								"{LogPrefix}Received remote error code 500 on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
-								logPrefix,
-								attemptCount,
-								_options.MaxAttemptCount,
-								request.Method.ToString(),
-								request.RequestUri
-							);
-						}
-
-						// Handle token expiration (existing logic)
-						// RH I'm not sure if this is needed or not, in addition to the 401 logic above.
-						// Also, just setting _token to null is enough to allow acquisition of a new token (IsConnected might need to be false)
-						if (httpResponseMessage.StatusCode == HttpStatusCode.Unauthorized
-							&& httpResponseMessage.Content is not null
-							&& (await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false)).IndexOf("expired", StringComparison.InvariantCultureIgnoreCase) >= 0)
-						{
-							if (attemptCount != 1)
-							{
-								throw new InvalidOperationException("Unable to acquire new token.");
-							}
-							_token = null;							
-							
-							continue;
-						}
-
-						return httpResponseMessage;
-				}
-
-				// Try up to the maximum retry count. Replace the content with an error message if giving up.
-				if (attemptCount >= _options.MaxAttemptCount)
-				{
-					_logger.LogInformation(
-						"{LogPrefix}Giving up retrying. Returning {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
-						logPrefix,
-						statusCodeInt,
-						attemptCount,
-						_options.MaxAttemptCount,
-						request.Method.ToString(),
-						request.RequestUri
-					);
-
-					// Replace the httpResponseMessage content with the error message
-					var msg = $"Giving up retrying. Returning {statusCodeInt} on attempt {attemptCount}/{_options.MaxAttemptCount}.";
-
-					// httpResponseMessage.Content = new StringContent(msg);
-					httpResponseMessage.ReasonPhrase = msg;
-
-					return httpResponseMessage;
-				}
-
-				// Wait and then retry. Replace the content with a message that we're retrying.
-
+			// Try up to the maximum retry count. Replace the reason phrase with an error message if giving up.
+			if (state.AttemptCount >= _options.MaxAttemptCount)
+			{
 				_logger.LogInformation(
-					"{LogPrefix}Received {StatusCode} on attempt {AttemptCount}/{MaxAttemptCount} - Waiting {TotalSeconds:N2}s. ({Method} - {Url})",
-					logPrefix,
+					"{LogPrefix}Giving up retrying. Returning {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
+					state.LogPrefix,
 					statusCodeInt,
-					attemptCount,
+					state.AttemptCount,
 					_options.MaxAttemptCount,
-					delay.TotalSeconds,
 					request.Method.ToString(),
 					request.RequestUri
 				);
 
-				// Replace the httpResponseMessage content with the error message
-				var retryMsg = $"Retrying after receiving {statusCodeInt} on attempt {attemptCount}/{_options.MaxAttemptCount} - Waiting {delay.TotalSeconds:N2}s.";
-				
-				// httpResponseMessage.Content = new StringContent(retryMsg);
-				httpResponseMessage.ReasonPhrase = retryMsg;
+				httpResponseMessage.ReasonPhrase = $"Giving up retrying. Returning {statusCodeInt} on attempt {state.AttemptCount}/{_options.MaxAttemptCount}.";
 
-				await Task.Delay(delay, cancellationToken).ConfigureAwait(false);
+				return httpResponseMessage;
 			}
-			finally
+
+			// Wait and then retry. Replace the reason phrase with a message that we're retrying.
+			_logger.LogInformation(
+				"{LogPrefix}Received {StatusCode} on attempt {AttemptCount}/{MaxAttemptCount} - Waiting {TotalSeconds:N2}s. ({Method} - {Url})",
+				state.LogPrefix,
+				statusCodeInt,
+				state.AttemptCount,
+				_options.MaxAttemptCount,
+				decision.Delay.TotalSeconds,
+				request.Method.ToString(),
+				request.RequestUri
+			);
+
+			httpResponseMessage.ReasonPhrase = $"Retrying after receiving {statusCodeInt} on attempt {state.AttemptCount}/{_options.MaxAttemptCount} - Waiting {decision.Delay.TotalSeconds:N2}s.";
+
+			await Task.Delay(decision.Delay, cancellationToken).ConfigureAwait(false);
+		}
+	}
+
+	private async Task AttachHeadersAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+	{
+		if (_token is null)
+		{
+			if (request.RequestUri?.AbsoluteUri.EndsWith("/dna/system/api/v1/auth/token") != true)
 			{
-				// If you have statistics, record here as in Meraki.Api
-				// Statistics.RecordStatusCode(statusCodeInt, (long)durationStopWatch.Elapsed.TotalMilliseconds, (long)delay.TotalMilliseconds);
+				await _dnaCenterClient
+					.ConnectAsync(cancellationToken)
+					.ConfigureAwait(false);
+
+				// Token can be forcefully unset before here
+				// Check that X-Auth-Token is not present before adding new token to avoid double entry, triggering a 401
+				request.Headers.Remove("X-Auth-Token");
+				request.Headers.Add("X-Auth-Token", _token);
 			}
 		}
+		else
+		{
+			// For safety, ensure an old header isn't present.
+			request.Headers.Remove("X-Auth-Token");
+
+			request.Headers.Add("X-Auth-Token", _token);
+		}
+
+		if (_userAgent is not null)
+		{
+			request.Headers.Add("User-Agent", _userAgent);
+		}
+	}
+
+	private async Task LogRequestAsync(HttpRequestMessage request, string logPrefix)
+	{
+		// Only do diagnostic logging if we're at the level we want to enable for as this is more efficient
+		if (!_logger.IsEnabled(_levelToLogAt))
+		{
+			return;
+		}
+
+		_logger.Log(_levelToLogAt, "{LogPrefix}Request\r\n{Request}", logPrefix, request.ToRedactedString());
+		if (request.Content != null)
+		{
+			var requestContent = await request.Content.ReadAsStringAsync().ConfigureAwait(false);
+			_logger.Log(_levelToLogAt, "{LogPrefix}RequestContent\r\n{RequestContent}", logPrefix, requestContent);
+		}
+	}
+
+	private async Task LogResponseAsync(HttpResponseMessage httpResponseMessage, string logPrefix)
+	{
+		if (!_logger.IsEnabled(_levelToLogAt))
+		{
+			return;
+		}
+
+		_logger.Log(_levelToLogAt, "{LogPrefix}Response\r\n{HttpResponseMessage}", logPrefix, httpResponseMessage.ToRedactedString());
+		if (httpResponseMessage.Content != null)
+		{
+			var responseContent = await httpResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
+			_logger.Log(_levelToLogAt, "{LogPrefix}ResponseContent\r\n{ResponseContent}", logPrefix, responseContent);
+		}
+	}
+
+	private async Task<SendDecision> DecideAsync(
+		HttpRequestMessage request,
+		int statusCodeInt,
+		SendState state,
+		CancellationToken cancellationToken)
+	{
+		switch (statusCodeInt)
+		{
+			case 401:
+				return await HandleUnauthorizedAsync(request, state, cancellationToken).ConfigureAwait(false);
+			case 429:
+				// Back off. The limiter varies depending on the endpoint e.g 100/min for Sites and 50/min for Devices.
+				// The 429 body names the rate-limit window, but it is unclear whether that is consistent across
+				// endpoints, so we use our usual retry method; worst case we wait another 50+ seconds.
+				_logger.LogDebug(
+					"{LogPrefix}Received {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}.",
+					state.LogPrefix, statusCodeInt, state.AttemptCount, _options.MaxAttemptCount
+				);
+				return SendDecision.Wait(CalculateBackoffDelay(state.AttemptCount, 10, _options.BackOffDelayFactor, _options.MaxBackOffDelaySeconds));
+			case 502:
+			case 503:
+			case 504:
+				_logger.LogInformation(
+					"{LogPrefix}Received {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}.",
+					state.LogPrefix, statusCodeInt, state.AttemptCount, _options.MaxAttemptCount
+				);
+				return SendDecision.Wait(TimeSpan.FromSeconds(5));
+			default:
+				LogOtherStatus(request, statusCodeInt, state);
+				return SendDecision.ReturnResponse;
+		}
+	}
+
+	private async Task<SendDecision> HandleUnauthorizedAsync(
+		HttpRequestMessage request,
+		SendState state,
+		CancellationToken cancellationToken)
+	{
+		// Token might be expired or invalid, try to refresh
+		if (state.TokenRefreshCount >= MaxTokenRefreshCount)
+		{
+			_logger.LogError(
+				"{LogPrefix}Token refresh failed or unauthorized after {MaxTokenRefreshCount} attempts. ({Method} - {Url})",
+				state.LogPrefix,
+				MaxTokenRefreshCount,
+				request.Method.ToString(),
+				request.RequestUri
+			);
+			return SendDecision.ReturnResponse;
+		}
+
+		state.TokenRefreshCount++;
+
+		_logger.LogWarning(
+			"{LogPrefix}Received 401 Unauthorized. Attempting token refresh #{TokenRefreshCount}. ({Method} - {Url})",
+			state.LogPrefix,
+			state.TokenRefreshCount,
+			request.Method.ToString(),
+			request.RequestUri
+		);
+
+		// Unset old token and remove from header
+		_token = null;
+		_dnaCenterClient.IsConnected = false;
+
+		// Get a new token
+		await _dnaCenterClient.ConnectAsync(cancellationToken).ConfigureAwait(false);
+
+		request.Headers.Remove("X-Auth-Token");
+		request.Headers.Add("X-Auth-Token", _token);
+
+		return SendDecision.ContinueLoop;
+	}
+
+	private void LogOtherStatus(HttpRequestMessage request, int statusCodeInt, SendState state)
+	{
+		if (state.AttemptCount > 1)
+		{
+			_logger.LogDebug(
+				"{LogPrefix}Received {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}.",
+				state.LogPrefix, statusCodeInt, state.AttemptCount, _options.MaxAttemptCount
+			);
+		}
+
+		if (statusCodeInt == 500)
+		{
+			_logger.LogError(
+				"{LogPrefix}Received remote error code 500 on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
+				state.LogPrefix,
+				state.AttemptCount,
+				_options.MaxAttemptCount,
+				request.Method.ToString(),
+				request.RequestUri
+			);
+		}
+	}
+
+	private const int MaxTokenRefreshCount = 2;
+
+	private sealed class SendState(string logPrefix)
+	{
+		public string LogPrefix { get; } = logPrefix;
+
+		public int AttemptCount { get; set; }
+
+		public int TokenRefreshCount { get; set; }
+	}
+
+	private enum SendOutcome
+	{
+		Return,
+		Continue,
+		Wait
+	}
+
+	private readonly record struct SendDecision(SendOutcome Outcome, TimeSpan Delay)
+	{
+		public static SendDecision ReturnResponse { get; } = new(SendOutcome.Return, TimeSpan.Zero);
+
+		public static SendDecision ContinueLoop { get; } = new(SendOutcome.Continue, TimeSpan.Zero);
+
+		public static SendDecision Wait(TimeSpan delay) => new(SendOutcome.Wait, delay);
 	}
 
 	/// <summary>

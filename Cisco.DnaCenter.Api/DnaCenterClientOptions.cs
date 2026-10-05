@@ -71,7 +71,8 @@ public class DnaCenterClientOptions
 	/// <exception cref="ConfigurationException">The options are not usable.</exception>
 	public void Validate()
 	{
-		if (MaxBackOffDelaySeconds < 1) {
+		if (MaxBackOffDelaySeconds < 1)
+		{
 			throw new ConfigurationException($"{nameof(MaxBackOffDelaySeconds)} must be at least 1.");
 		}
 
@@ -85,55 +86,63 @@ public class DnaCenterClientOptions
 			throw new ConfigurationException($"{nameof(MaxAttemptCount)} must be at least 1.");
 		}
 
-		// If an HttpClient is provided, Username, Password, Token and Uri should NOT be
 		if (HttpClient != null)
 		{
-			if (Token != null)
-			{
-				throw new ConfigurationException($"If {nameof(HttpClient)} is provided, {nameof(Token)} should not be.");
-			}
-			if (Username != null)
-			{
-				throw new ConfigurationException($"If {nameof(HttpClient)} is provided, {nameof(Username)} should not be.");
-			}
-			if (Password != null)
-			{
-				throw new ConfigurationException($"If {nameof(HttpClient)} is provided, {nameof(Password)} should not be.");
-			}
+			ValidateWithHttpClient();
 		}
 		else
 		{
-			// If an HttpClient is not provided, Uri must be
-			if (Uri is null)
+			ValidateWithoutHttpClient();
+		}
+	}
+
+	// If an HttpClient is provided, Username, Password and Token should NOT be
+	private void ValidateWithHttpClient()
+	{
+		ThrowIfSet(Token, nameof(Token));
+		ThrowIfSet(Username, nameof(Username));
+		ThrowIfSet(Password, nameof(Password));
+
+		static void ThrowIfSet(object? value, string name)
+		{
+			if (value != null)
 			{
-				throw new ConfigurationException($"If {nameof(HttpClient)} is not provided, {nameof(Uri)} must be.");
+				throw new ConfigurationException($"If {nameof(HttpClient)} is provided, {name} should not be.");
+			}
+		}
+	}
+
+	private void ValidateWithoutHttpClient()
+	{
+		// If an HttpClient is not provided, Uri must be
+		if (Uri is null)
+		{
+			throw new ConfigurationException($"If {nameof(HttpClient)} is not provided, {nameof(Uri)} must be.");
+		}
+
+		if (Token is null)
+		{
+			// No token - Username and password must be provided
+			if (Username is null)
+			{
+				throw new ConfigurationException($"If {nameof(HttpClient)} and {nameof(Token)} are not provided, {nameof(Username)} must be.");
+			}
+			if (Password is null)
+			{
+				throw new ConfigurationException($"If {nameof(HttpClient)} and {nameof(Token)} are not provided, {nameof(Password)} must be.");
 			}
 
-			// Is the Token provided?
-			if (Token is null)
-			{
-				// No - Username and password must be
-				if (Username is null)
-				{
-					throw new ConfigurationException($"If {nameof(HttpClient)} and {nameof(Token)} are not provided, {nameof(Username)} must be.");
-				}
-				if (Password is null)
-				{
-					throw new ConfigurationException($"If {nameof(HttpClient)} and {nameof(Token)} are not provided, {nameof(Password)} must be.");
-				}
-			}
-			else
-			{
-				// Yes - Username and password must not be
-				if (Username != null)
-				{
-					throw new ConfigurationException($"If {nameof(HttpClient)} is not provided and {nameof(Token)} is provided, {nameof(Username)} must not be.");
-				}
-				if (Password != null)
-				{
-					throw new ConfigurationException($"If {nameof(HttpClient)} is not provided and {nameof(Token)} is provided, {nameof(Password)} must not be.");
-				}
-			}
+			return;
+		}
+
+		// Token provided - Username and password must not be
+		if (Username != null)
+		{
+			throw new ConfigurationException($"If {nameof(HttpClient)} is not provided and {nameof(Token)} is provided, {nameof(Username)} must not be.");
+		}
+		if (Password != null)
+		{
+			throw new ConfigurationException($"If {nameof(HttpClient)} is not provided and {nameof(Token)} is provided, {nameof(Password)} must not be.");
 		}
 	}
 

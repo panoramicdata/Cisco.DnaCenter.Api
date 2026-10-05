@@ -1,0 +1,12 @@
+---
+# Exclude machine-generated, swagger-style code from Codacy analysis.
+#  - Data/**: DTOs generated from the Cisco DNA Center API definition. Every class carries the same
+#    boilerplate (JsonConstructor-attributed constructor, generated ToString), which Codacy reports as
+#    redundant-constructor, long-method and duplication findings. They contain no hand-written logic.
+#  - Interfaces/**: Refit endpoint declarations mirroring the DNA Center REST API. Optional parameters
+#    and long parameter lists are the Refit idiom for query strings, and changing them would break the
+#    public API of the published package.
+# Hand-written code (client, handler, options, extensions) and the tests stay analysed.
+exclude_paths:
+  - "Cisco.DnaCenter.Api/Data/**"
+  - "Cisco.DnaCenter.Api/Interfaces/**"
