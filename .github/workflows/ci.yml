@@ -87,12 +87,16 @@ jobs:
         --coverage-output coverage.cobertura.xml
         --filter "Category!=Integration"
 
+    # Skipped when CODACY_PROJECT_TOKEN is not set (secrets cannot be tested in if: directly, hence the env var).
     # continue-on-error: a Codacy outage must not turn a passing test run red. The trade-off is that
-    # an expired or missing project token fails silently, so check the log for
-    # "Coverage received successfully".
+    # an expired project token fails silently, so check the log for "Coverage received successfully".
+    # Pinned to the full commit SHA of v1.3.0.
     - name: Upload coverage to Codacy
+      if: env.CODACY_PROJECT_TOKEN != ''
       continue-on-error: true
-      uses: codacy/codacy-coverage-reporter-action@v1
+      env:
+        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+      uses: codacy/codacy-coverage-reporter-action@89d6c85cfafaec52c72b6c5e8b2878d33104c699 # v1.3.0
       with:
         project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
         coverage-reports: Cisco.DnaCenter.Test/bin/Debug/net10.0/TestResults/coverage.cobertura.xml
