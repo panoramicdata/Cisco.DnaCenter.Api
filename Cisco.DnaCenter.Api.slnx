@@ -12,6 +12,7 @@
     <File Path="Directory.Build.props" />
     <File Path="Directory.Packages.props" />
     <File Path="Publish.ps1" />
+    <File Path=".codacy.yml" />
   </Folder>
   <Project Path="Cisco.DnaCenter.Api/Cisco.DnaCenter.Api.csproj" />
   <Project Path="Cisco.DnaCenter.Test/Cisco.DnaCenter.Test.csproj" />
