@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -111,6 +112,15 @@ public class AuthenticatedHttpClientHandlerTests
 
 	private static (int, string) TokenResponse(string value) => (200, $"{{\"Token\":\"{value}\"}}");
 
+	private static void ExpectUnauthorizedStatus(ApiException exception)
+		=> exception.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+
+	private static void ExpectGivingUpExplanation(ApiException exception, int statusCode)
+	{
+		exception.StatusCode.Should().Be((HttpStatusCode)statusCode);
+		exception.ReasonPhrase.Should().Contain("Giving up retrying").And.Contain(statusCode.ToString());
+	}
+
 	[Fact]
 	public async Task FirstRequest_AcquiresTokenAndSendsItOnTheRequest()
 	{
@@ -152,7 +162,8 @@ public class AuthenticatedHttpClientHandlerTests
 
 		var act = () => client.Business.GetExecutionStatusAsync("abc", TestContext.Current.CancellationToken);
 
-		(await act.Should().ThrowAsync<ApiException>()).Which.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+		var exception = (await act.Should().ThrowAsync<ApiException>()).Which;
+		ExpectUnauthorizedStatus(exception);
 		// One initial token, two refreshes; three attempts at the endpoint.
 		server.Received.Count(r => r.Path == AuthPath).Should().Be(3);
 		server.Received.Count(r => r.Path == StatusPath).Should().Be(3);
@@ -171,8 +182,7 @@ public class AuthenticatedHttpClientHandlerTests
 		var act = () => client.Business.GetExecutionStatusAsync("abc", TestContext.Current.CancellationToken);
 
 		var exception = (await act.Should().ThrowAsync<ApiException>()).Which;
-		exception.StatusCode.Should().Be((HttpStatusCode)statusCode);
-		exception.ReasonPhrase.Should().Contain("Giving up retrying").And.Contain(statusCode.ToString());
+		ExpectGivingUpExplanation(exception, statusCode);
 		server.Received.Count(r => r.Path == StatusPath).Should().Be(1);
 	}
 
@@ -200,7 +210,8 @@ public class AuthenticatedHttpClientHandlerTests
 
 		var act = () => client.Business.GetExecutionStatusAsync("abc", TestContext.Current.CancellationToken);
 
-		(await act.Should().ThrowAsync<ApiException>()).Which.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
+		(await act.Should().ThrowAsync<ApiException>()).Which
+			.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
 		server.Received.Count(r => r.Path == StatusPath).Should().Be(1);
 	}
 
@@ -211,7 +222,7 @@ public class AuthenticatedHttpClientHandlerTests
 			.On(AuthPath, TokenResponse("token"))
 			.On(StatusPath, (200, SuccessBody));
 		using var client = CreateClient(server);
-		using var cts = new System.Threading.CancellationTokenSource();
+		using var cts = new CancellationTokenSource();
 		await cts.CancelAsync();
 
 		var act = () => client.Business.GetExecutionStatusAsync("abc", cts.Token);
@@ -243,50 +254,47 @@ public class DnaCenterClientOptionsValidateTests
 {
 	private static readonly Uri SomeUri = new("https://dna.example.com/");
 
+	private static void AssertValid(DnaCenterClientOptions options)
+		=> options.Invoking(o => o.Validate()).Should().NotThrow();
+
+	private static void AssertInvalid(DnaCenterClientOptions options, string messagePart)
+		=> options.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage($"*{messagePart}*");
+
 	[Fact]
 	public void UsernameAndPassword_WithUri_IsValid()
-		=> new DnaCenterClientOptions { Uri = SomeUri, Username = "u", Password = "p" }
-			.Invoking(o => o.Validate()).Should().NotThrow();
+		=> AssertValid(new DnaCenterClientOptions { Uri = SomeUri, Username = "u", Password = "p" });
 
 	[Fact]
 	public void Token_WithUri_IsValid()
-		=> new DnaCenterClientOptions { Uri = SomeUri, Token = "t" }
-			.Invoking(o => o.Validate()).Should().NotThrow();
+		=> AssertValid(new DnaCenterClientOptions { Uri = SomeUri, Token = "t" });
 
 	[Fact]
 	public void HttpClientAlone_IsValid()
-		=> new DnaCenterClientOptions { HttpClient = new System.Net.Http.HttpClient() }
-			.Invoking(o => o.Validate()).Should().NotThrow();
+		=> AssertValid(new DnaCenterClientOptions { HttpClient = new System.Net.Http.HttpClient() });
 
 	[Fact]
 	public void MaxBackOffDelaySecondsBelowOne_Throws()
-		=> new DnaCenterClientOptions { Uri = SomeUri, Token = "t", MaxBackOffDelaySeconds = 0 }
-			.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage("*MaxBackOffDelaySeconds*");
+		=> AssertInvalid(new DnaCenterClientOptions { Uri = SomeUri, Token = "t", MaxBackOffDelaySeconds = 0 }, "MaxBackOffDelaySeconds");
 
 	[Fact]
 	public void BackOffDelayFactorBelowOne_Throws()
-		=> new DnaCenterClientOptions { Uri = SomeUri, Token = "t", BackOffDelayFactor = 0.5 }
-			.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage("*BackOffDelayFactor*");
+		=> AssertInvalid(new DnaCenterClientOptions { Uri = SomeUri, Token = "t", BackOffDelayFactor = 0.5 }, "BackOffDelayFactor");
 
 	[Fact]
 	public void MaxAttemptCountBelowOne_Throws()
-		=> new DnaCenterClientOptions { Uri = SomeUri, Token = "t", MaxAttemptCount = 0 }
-			.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage("*MaxAttemptCount*");
+		=> AssertInvalid(new DnaCenterClientOptions { Uri = SomeUri, Token = "t", MaxAttemptCount = 0 }, "MaxAttemptCount");
 
 	[Fact]
 	public void MissingUri_Throws()
-		=> new DnaCenterClientOptions { Token = "t" }
-			.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage("*Uri*");
+		=> AssertInvalid(new DnaCenterClientOptions { Token = "t" }, "Uri");
 
 	[Fact]
 	public void NoTokenAndNoUsername_Throws()
-		=> new DnaCenterClientOptions { Uri = SomeUri, Password = "p" }
-			.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage("*Username*");
+		=> AssertInvalid(new DnaCenterClientOptions { Uri = SomeUri, Password = "p" }, "Username");
 
 	[Fact]
 	public void NoTokenAndNoPassword_Throws()
-		=> new DnaCenterClientOptions { Uri = SomeUri, Username = "u" }
-			.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage("*Password*");
+		=> AssertInvalid(new DnaCenterClientOptions { Uri = SomeUri, Username = "u" }, "Password");
 
 	[Theory]
 	[InlineData("Username")]
@@ -294,16 +302,9 @@ public class DnaCenterClientOptionsValidateTests
 	public void TokenWithCredentials_Throws(string which)
 	{
 		var options = new DnaCenterClientOptions { Uri = SomeUri, Token = "t" };
-		if (which == "Username")
-		{
-			options.Username = "u";
-		}
-		else
-		{
-			options.Password = "p";
-		}
+		SetCredential(options, which);
 
-		options.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage($"*{which}*");
+		AssertInvalid(options, which);
 	}
 
 	[Theory]
@@ -313,19 +314,24 @@ public class DnaCenterClientOptionsValidateTests
 	public void HttpClientWithCredentials_Throws(string which)
 	{
 		var options = new DnaCenterClientOptions { HttpClient = new System.Net.Http.HttpClient() };
-		switch (which)
-		{
-			case "Token":
-				options.Token = "t";
-				break;
-			case "Username":
-				options.Username = "u";
-				break;
-			default:
-				options.Password = "p";
-				break;
-		}
+		SetCredential(options, which);
 
-		options.Invoking(o => o.Validate()).Should().Throw<ConfigurationException>().WithMessage($"*{which}*");
+		AssertInvalid(options, which);
+	}
+
+	private static void SetCredential(DnaCenterClientOptions options, string which)
+	{
+		if (which == "Username")
+		{
+			options.Username = "u";
+		}
+		else if (which == "Password")
+		{
+			options.Password = "p";
+		}
+		else
+		{
+			options.Token = "t";
+		}
 	}
 }

@@ -38,11 +38,21 @@ public class DnaCenterClient : IDisposable
 	/// Initializes a new instance of the <see cref="DnaCenterClient" /> class.
 	/// </summary>
 	/// <param name="options">The client options. Must not be null, and must validate.</param>
-	/// <param name="logger">The logger to write diagnostics to. Defaults to no logging.</param>
 	/// <exception cref="ArgumentNullException"><paramref name="options" /> is null.</exception>
-	public DnaCenterClient(DnaCenterClientOptions? options, ILogger? logger = null)
+	public DnaCenterClient(DnaCenterClientOptions? options)
+		: this(options, NullLogger.Instance)
 	{
-		_logger = logger ?? NullLogger.Instance;
+	}
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="DnaCenterClient" /> class.
+	/// </summary>
+	/// <param name="options">The client options. Must not be null, and must validate.</param>
+	/// <param name="logger">The logger to write diagnostics to. Must not be null.</param>
+	/// <exception cref="ArgumentNullException"><paramref name="options" /> is null.</exception>
+	public DnaCenterClient(DnaCenterClientOptions? options, ILogger logger)
+	{
+		_logger = logger;
 
 		if (options is null)
 		{
@@ -233,9 +243,21 @@ public class DnaCenterClient : IDisposable
 	/// Polls an execution until it succeeds, fails, or the timeout elapses.
 	/// </summary>
 	/// <param name="executionId">The execution to poll.</param>
-	/// <param name="timeout">How long to keep polling for. Defaults to no limit.</param>
-	/// <param name="pollingDelay">How long to wait between polls. Defaults to 500ms.</param>
-	/// <param name="initialDelay">How long to wait before the first poll. Defaults to no wait.</param>
+	/// <param name="cancellationToken">The cancellation token</param>
+	/// <returns>
+	/// The last status observed.
+	/// </returns>
+	/// <exception cref="ArgumentNullException"><paramref name="executionId" /> is null.</exception>
+	public Task<ExecutionStatus> GetFinalExecutionStatusAsync(string executionId, CancellationToken cancellationToken)
+		=> GetFinalExecutionStatusAsync(executionId, null, null, null, cancellationToken);
+
+	/// <summary>
+	/// Polls an execution until it succeeds, fails, or the timeout elapses.
+	/// </summary>
+	/// <param name="executionId">The execution to poll.</param>
+	/// <param name="timeout">How long to keep polling for.</param>
+	/// <param name="pollingDelay">How long to wait between polls.</param>
+	/// <param name="initialDelay">How long to wait before the first poll.</param>
 	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>
 	/// The last status observed. This is still in progress if the timeout elapsed first.
@@ -243,50 +265,72 @@ public class DnaCenterClient : IDisposable
 	/// <exception cref="ArgumentNullException"><paramref name="executionId" /> is null.</exception>
 	public async Task<ExecutionStatus> GetFinalExecutionStatusAsync(
 		string executionId,
-		TimeSpan? timeout = null,
-		TimeSpan? pollingDelay = null,
-		TimeSpan? initialDelay = null,
-		CancellationToken cancellationToken = default
-		)
+		TimeSpan? timeout,
+		TimeSpan? pollingDelay,
+		TimeSpan? initialDelay,
+		CancellationToken cancellationToken
+	)
 	{
 		if (executionId is null)
 		{
 			throw new ArgumentNullException(nameof(executionId));
 		}
 
-		var timeoutStopwatch = Stopwatch.StartNew();
 		pollingDelay ??= TimeSpan.FromMilliseconds(500);
-		timeout ??= TimeSpan.MaxValue;
+		var timeoutValue = timeout ?? TimeSpan.MaxValue;
 
-		// The user may have some knowledge that there is a minimum delay before it is worth polling.
-		if (initialDelay != null)
+		if (initialDelay is not null)
 		{
+			// The user may have some knowledge that there is a minimum delay before it is worth polling.
 			await Task.Delay(initialDelay.Value, cancellationToken).ConfigureAwait(false);
 		}
 
+		var timeoutStopwatch = Stopwatch.StartNew();
 		while (true)
 		{
-			cancellationToken.ThrowIfCancellationRequested();
-
-			var executionStatus = await Business
-				.GetExecutionStatusAsync(executionId, cancellationToken)
-				.ConfigureAwait(false);
-
-			switch (executionStatus.Status)
+			var executionStatus = await GetNextPoll(executionId, timeoutStopwatch, timeoutValue, cancellationToken);
+			if (executionStatus != null)
 			{
-				case ExecutionStatusStatus.Success:
-				case ExecutionStatusStatus.Failure:
-					return executionStatus;
-				case ExecutionStatusStatus.InProgress:
-					if (timeoutStopwatch.Elapsed > timeout)
-					{
-						return executionStatus;
-					}
-					break;
+				return executionStatus;
 			}
 
 			await Task.Delay(pollingDelay.Value, cancellationToken).ConfigureAwait(false);
 		}
+	}
+
+	/// <summary>
+	/// Polls the execution status once.
+	/// </summary>
+	/// <returns>The status to return to the caller, or null to keep polling.</returns>
+	private async Task<ExecutionStatus?> GetNextPoll(
+		string executionId,
+		Stopwatch timeoutStopwatch,
+		TimeSpan timeout,
+		CancellationToken cancellationToken
+	)
+	{
+		cancellationToken.ThrowIfCancellationRequested();
+
+		var executionStatus = await Business
+			.GetExecutionStatusAsync(executionId, cancellationToken)
+			.ConfigureAwait(false);
+
+		switch (executionStatus.Status)
+		{
+			case ExecutionStatusStatus.Success:
+			case ExecutionStatusStatus.Failure:
+				return executionStatus;
+			case ExecutionStatusStatus.InProgress:
+				if (timeoutStopwatch.Elapsed > timeout)
+				{
+					return executionStatus;
+				}
+				break;
+			default:
+				break;
+		}
+
+		return null;
 	}
 
 	#region IDisposable Support

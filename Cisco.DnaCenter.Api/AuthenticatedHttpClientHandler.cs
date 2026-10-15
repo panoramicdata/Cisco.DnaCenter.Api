@@ -28,11 +28,11 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 	public string LastRequestUri { get; private set; } = string.Empty;
 
 	/// <summary>
-	/// Sets the session token sent with each request. Write-only, so that the token
-	/// cannot be read back out of the handler.
+	/// Gets or sets the session token currently set on this handler.
 	/// </summary>
-	public string Token
+	public string? Token
 	{
+		get => _token;
 		set
 		{
 			_token = value ?? throw new ArgumentNullException(nameof(value));
@@ -75,6 +75,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		CancellationToken cancellationToken)
 	{
 		var state = new SendState($"Request {Guid.NewGuid()}: ");
+		HttpResponseMessage? httpResponseMessage = null;
 
 		while (true)
 		{
@@ -86,7 +87,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 
 			LastRequestUri = request.RequestUri?.ToString() ?? string.Empty;
 
-			var httpResponseMessage = await base
+			httpResponseMessage = await base
 				.SendAsync(request, cancellationToken)
 				.ConfigureAwait(false);
 
@@ -106,40 +107,57 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 				continue;
 			}
 
-			// Try up to the maximum retry count. Replace the reason phrase with an error message if giving up.
-			if (state.AttemptCount >= _options.MaxAttemptCount)
+			var giveUp = await HandleWaitOutcomeAsync(httpResponseMessage, request, statusCodeInt, state, decision, cancellationToken).ConfigureAwait(false);
+			if (giveUp)
 			{
-				_logger.LogInformation(
-					"{LogPrefix}Giving up retrying. Returning {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
-					state.LogPrefix,
-					statusCodeInt,
-					state.AttemptCount,
-					_options.MaxAttemptCount,
-					request.Method.ToString(),
-					request.RequestUri
-				);
-
-				httpResponseMessage.ReasonPhrase = $"Giving up retrying. Returning {statusCodeInt} on attempt {state.AttemptCount}/{_options.MaxAttemptCount}.";
-
 				return httpResponseMessage;
 			}
+		}
+	}
 
-			// Wait and then retry. Replace the reason phrase with a message that we're retrying.
+	private async Task<bool> HandleWaitOutcomeAsync(
+		HttpResponseMessage httpResponseMessage,
+		HttpRequestMessage request,
+		int statusCodeInt,
+		SendState state,
+		SendDecision decision,
+		CancellationToken cancellationToken)
+	{
+		// Try up to the maximum retry count. Replace the reason phrase with an error message if giving up.
+		if (state.AttemptCount >= _options.MaxAttemptCount)
+		{
 			_logger.LogInformation(
-				"{LogPrefix}Received {StatusCode} on attempt {AttemptCount}/{MaxAttemptCount} - Waiting {TotalSeconds:N2}s. ({Method} - {Url})",
+				"{LogPrefix}Giving up retrying. Returning {StatusCodeInt} on attempt {AttemptCount}/{MaxAttemptCount}. ({Method} - {Url})",
 				state.LogPrefix,
 				statusCodeInt,
 				state.AttemptCount,
 				_options.MaxAttemptCount,
-				decision.Delay.TotalSeconds,
 				request.Method.ToString(),
 				request.RequestUri
 			);
 
-			httpResponseMessage.ReasonPhrase = $"Retrying after receiving {statusCodeInt} on attempt {state.AttemptCount}/{_options.MaxAttemptCount} - Waiting {decision.Delay.TotalSeconds:N2}s.";
+			httpResponseMessage.ReasonPhrase = $"Giving up retrying. Returning {statusCodeInt} on attempt {state.AttemptCount}/{_options.MaxAttemptCount}.";
 
-			await Task.Delay(decision.Delay, cancellationToken).ConfigureAwait(false);
+			return true;
 		}
+
+		// Wait and then retry. Replace the reason phrase with a message that we're retrying.
+		_logger.LogInformation(
+			"{LogPrefix}Received {StatusCode} on attempt {AttemptCount}/{MaxAttemptCount} - Waiting {TotalSeconds:N2}s. ({Method} - {Url})",
+			state.LogPrefix,
+			statusCodeInt,
+			state.AttemptCount,
+			_options.MaxAttemptCount,
+			decision.Delay.TotalSeconds,
+			request.Method.ToString(),
+			request.RequestUri
+		);
+
+		httpResponseMessage.ReasonPhrase = $"Retrying after receiving {statusCodeInt} on attempt {state.AttemptCount}/{_options.MaxAttemptCount} - Waiting {decision.Delay.TotalSeconds:N2}s.";
+
+		await Task.Delay(decision.Delay, cancellationToken).ConfigureAwait(false);
+
+		return false;
 	}
 
 	private async Task AttachHeadersAsync(HttpRequestMessage request, CancellationToken cancellationToken)
