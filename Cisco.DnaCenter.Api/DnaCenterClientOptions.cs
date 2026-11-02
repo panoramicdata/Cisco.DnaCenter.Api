@@ -46,6 +46,12 @@ public class DnaCenterClientOptions
 	public bool IgnoreSslCertificateErrors { get; set; }
 
 	/// <summary>
+	/// Whether to refuse every request that is not a read (GET, HEAD or OPTIONS) before it is sent.
+	/// Not supported together with <see cref="HttpClient" />, which bypasses the client's own request pipeline.
+	/// </summary>
+	public bool IsReadOnly { get; set; }
+
+	/// <summary>
 	/// An optional User-Agent string to attach to outgoing requests.
 	/// </summary>
 	public string? UserAgent { get; set; }
@@ -88,6 +94,11 @@ public class DnaCenterClientOptions
 
 		if (HttpClient != null)
 		{
+			if (IsReadOnly)
+			{
+				throw new ConfigurationException($"{nameof(IsReadOnly)} cannot be enforced when {nameof(HttpClient)} is provided.");
+			}
+
 			ValidateWithHttpClient();
 		}
 		else
