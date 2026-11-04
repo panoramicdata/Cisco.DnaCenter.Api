@@ -74,6 +74,11 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		HttpRequestMessage request,
 		CancellationToken cancellationToken)
 	{
+		if (_options.IsReadOnly && !IsReadMethod(request.Method))
+		{
+			throw new InvalidOperationException($"The client is read-only: refusing {request.Method} {request.RequestUri}.");
+		}
+
 		var state = new SendState($"Request {Guid.NewGuid()}: ");
 		HttpResponseMessage? httpResponseMessage = null;
 
@@ -114,6 +119,9 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			}
 		}
 	}
+
+	private static bool IsReadMethod(HttpMethod method)
+		=> method == HttpMethod.Get || method == HttpMethod.Head || method == HttpMethod.Options;
 
 	private async Task<bool> HandleWaitOutcomeAsync(
 		HttpResponseMessage httpResponseMessage,
