@@ -74,10 +74,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 		HttpRequestMessage request,
 		CancellationToken cancellationToken)
 	{
-		if (_options.IsReadOnly && !IsReadMethod(request.Method))
-		{
-			throw new InvalidOperationException($"The client is read-only: refusing {request.Method} {request.RequestUri}.");
-		}
+		ThrowIfWriteRefused(request);
 
 		var state = new SendState($"Request {Guid.NewGuid()}: ");
 		HttpResponseMessage? httpResponseMessage = null;
@@ -90,7 +87,7 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			await AttachHeadersAsync(request, cancellationToken).ConfigureAwait(false);
 			await LogRequestAsync(request, state.LogPrefix).ConfigureAwait(false);
 
-			LastRequestUri = request.RequestUri?.ToString() ?? string.Empty;
+			LastRequestUri = GetRequestUri(request);
 
 			httpResponseMessage = await base
 				.SendAsync(request, cancellationToken)
@@ -119,6 +116,17 @@ public class AuthenticatedHttpClientHandler : HttpClientHandler
 			}
 		}
 	}
+
+	private void ThrowIfWriteRefused(HttpRequestMessage request)
+	{
+		if (_options.IsReadOnly && !IsReadMethod(request.Method))
+		{
+			throw new InvalidOperationException($"The client is read-only: refusing {request.Method} {request.RequestUri}.");
+		}
+	}
+
+	private static string GetRequestUri(HttpRequestMessage request)
+		=> request.RequestUri?.ToString() ?? string.Empty;
 
 	private static bool IsReadMethod(HttpMethod method)
 		=> method == HttpMethod.Get || method == HttpMethod.Head || method == HttpMethod.Options;

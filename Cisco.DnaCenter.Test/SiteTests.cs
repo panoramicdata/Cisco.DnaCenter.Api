@@ -64,51 +64,25 @@ public class SiteTests : Tests
 		const string parentName = "Global";
 		var createSitesResponse = await Client
 			.Sites
-			.CreateSiteAsync(new CreateSiteRequest
-			{
-				Type = CreateSiteRequest.TypeEnum.Area,
-				Site = new CreateSiteRequestSite
-				{
-					Area = new CreateSiteRequestSiteArea
-					{
-						Name = guid,
-						ParentName = parentName
-					}
-				}
-			}, false, true,
+			.CreateSiteAsync(CreateAreaRequest(guid, parentName), false, true,
 				cancellationToken: TestContext.Current.CancellationToken);
 
 		createSitesResponse.Should().BeOfType<ExecutionStatusResponse>();
 		createSitesResponse.Should().NotBeNull();
 		createSitesResponse.ExecutionId.Should().NotBeNull();
-
-		var executionStatus = await Client
-			.GetFinalExecutionStatusAsync(createSitesResponse.ExecutionId!, cancellationToken: TestContext.Current.CancellationToken);
-
-		executionStatus.Should().BeOfType<ExecutionStatus>();
-		executionStatus.Should().NotBeNull();
-		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+		await AssertExecutionSucceedsAsync(createSitesResponse.ExecutionId!);
 
 		//	Get site (first page only)
 		var sitesResponse = await Client
 			.Sites
 			.GetSitesAsync(cancellationToken: TestContext.Current.CancellationToken);
-
-		sitesResponse.Response.Should().NotBeNull();
-		var site = sitesResponse.Response!.SingleOrDefault(s => s.Name == guid);
-		site.Should().NotBeNull();
-		site.Should().BeOfType<GetSiteResponseResponse>();
-		site!.Id.Should().NotBeNullOrEmpty();
+		var site = AssertContainsSite(sitesResponse, guid);
 
 		//	Get all sites
-		await Client
+		var allSitesResponse = await Client
 			.Sites
-			.GetAllSitesAsync(cancellationToken: TestContext.Current.CancellationToken);
-
-		var sites = sitesResponse.Response!.SingleOrDefault(s => s.Name == guid);
-		sites.Should().NotBeNull();
-		sites.Should().BeOfType<GetSiteResponseResponse>();
-		sites.Id.Should().NotBeNullOrEmpty();
+			.GetAllSitesAsync(TestContext.Current.CancellationToken);
+		AssertContainsSite(allSitesResponse, guid);
 
 		// Read
 		var siteById = await Client
@@ -129,10 +103,7 @@ public class SiteTests : Tests
 		var updatedSite = await Client
 			.Sites
 			.UpdateSiteAsync(updateSiteRequest, null, site.Id!, cancellationToken: TestContext.Current.CancellationToken);
-
-		executionStatus = await Client
-			.GetFinalExecutionStatusAsync(updatedSite.ExecutionId!, cancellationToken: TestContext.Current.CancellationToken);
-		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
+		await AssertExecutionSucceedsAsync(updatedSite.ExecutionId!);
 
 		// Delete
 		var deleteSiteResponse = await Client
@@ -141,10 +112,38 @@ public class SiteTests : Tests
 
 		deleteSiteResponse.Should().BeOfType<ExecutionStatusResponse>();
 		deleteSiteResponse.Should().NotBeNull();
+		await AssertExecutionSucceedsAsync(deleteSiteResponse.ExecutionId!);
+	}
 
-		executionStatus = await Client
-			.GetFinalExecutionStatusAsync(deleteSiteResponse.ExecutionId!, cancellationToken: TestContext.Current.CancellationToken);
+	private static CreateSiteRequest CreateAreaRequest(string name, string parentName) => new()
+	{
+		Type = CreateSiteRequest.TypeEnum.Area,
+		Site = new CreateSiteRequestSite
+		{
+			Area = new CreateSiteRequestSiteArea
+			{
+				Name = name,
+				ParentName = parentName
+			}
+		}
+	};
 
+	private static GetSiteResponseResponse AssertContainsSite(GetSiteResponse sitesResponse, string name)
+	{
+		sitesResponse.Response.Should().NotBeNull();
+		var site = sitesResponse.Response!.SingleOrDefault(s => s.Name == name);
+		site.Should().NotBeNull();
+		site.Should().BeOfType<GetSiteResponseResponse>();
+		site!.Id.Should().NotBeNullOrEmpty();
+		return site;
+	}
+
+	private async Task AssertExecutionSucceedsAsync(string executionId)
+	{
+		var executionStatus = await Client
+			.GetFinalExecutionStatusAsync(executionId, TestContext.Current.CancellationToken);
+
+		executionStatus.Should().NotBeNull();
 		executionStatus.Status.Should().Be(ExecutionStatusStatus.Success);
 	}
 
@@ -172,7 +171,7 @@ public class SiteTests : Tests
 			catch (Exception ex)
 			{
 				Logger.LogError("Request {RequestNumber}: Exception: {Message}", i, ex.Message);
-				
+
 				// Quit
 				break;
 			}
