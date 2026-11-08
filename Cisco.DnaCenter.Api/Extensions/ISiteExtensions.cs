@@ -18,9 +18,22 @@ public static class ISiteExtensions
 	/// Get sites with area/building/floor with specified hierarchy. List all sites if these parameters are not given as an input.
 	/// </remarks>
 	/// <param name="site">The sites API.</param>
+	/// <returns>Task of GetSiteResponse</returns>
+	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site)
+	{
+		return GetAllSitesAsync(site, name: null, siteId: null, type: null, cancellationToken: CancellationToken.None);
+	}
+
+	/// <summary>
+	/// Get Sites
+	/// </summary>
+	/// <remarks>
+	/// Get sites with area/building/floor with specified hierarchy. List all sites if these parameters are not given as an input.
+	/// </remarks>
+	/// <param name="site">The sites API.</param>
 	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
-	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, CancellationToken cancellationToken = default)
+	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, CancellationToken cancellationToken)
 	{
 		return GetAllSitesAsync(site, name: null, siteId: null, type: null, cancellationToken: cancellationToken);
 	}
@@ -33,9 +46,23 @@ public static class ISiteExtensions
 	/// </remarks>
 	/// <param name="name">siteNameHierarchy (ex: global/groupName)</param>
 	/// <param name="site">The sites API.</param>
+	/// <returns>Task of GetSiteResponse</returns>
+	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name)
+	{
+		return GetAllSitesAsync(site, name: name, siteId: null, type: null, cancellationToken: CancellationToken.None);
+	}
+
+	/// <summary>
+	/// Get Sites
+	/// </summary>
+	/// <remarks>
+	/// Get sites with area/building/floor with specified hierarchy. List all sites if these parameters are not given as an input.
+	/// </remarks>
+	/// <param name="name">siteNameHierarchy (ex: global/groupName)</param>
+	/// <param name="site">The sites API.</param>
 	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
-	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, CancellationToken cancellationToken = default)
+	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, CancellationToken cancellationToken)
 	{
 		return GetAllSitesAsync(site, name: name, siteId: null, type: null, cancellationToken: cancellationToken);
 	}
@@ -49,9 +76,24 @@ public static class ISiteExtensions
 	/// <param name="name">siteNameHierarchy (ex: global/groupName)</param>
 	/// <param name="siteId">Site id to which site details to retrieve.</param>
 	/// <param name="site">The sites API.</param>
+	/// <returns>Task of GetSiteResponse</returns>
+	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, string? siteId)
+	{
+		return GetAllSitesAsync(site, name: name, siteId: siteId, type: null, cancellationToken: CancellationToken.None);
+	}
+
+	/// <summary>
+	/// Get Sites
+	/// </summary>
+	/// <remarks>
+	/// Get sites with area/building/floor with specified hierarchy. List all sites if these parameters are not given as an input.
+	/// </remarks>
+	/// <param name="name">siteNameHierarchy (ex: global/groupName)</param>
+	/// <param name="siteId">Site id to which site details to retrieve.</param>
+	/// <param name="site">The sites API.</param>
 	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
-	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, string? siteId, CancellationToken cancellationToken = default)
+	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, string? siteId, CancellationToken cancellationToken)
 	{
 		return GetAllSitesAsync(site, name: name, siteId: siteId, type: null, cancellationToken: cancellationToken);
 	}
@@ -66,9 +108,25 @@ public static class ISiteExtensions
 	/// <param name="siteId">Site id to which site details to retrieve.</param>
 	/// <param name="type">type (ex: area, building, floor)</param>
 	/// <param name="site">The sites API.</param>
+	/// <returns>Task of GetSiteResponse</returns>
+	public static Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, string? siteId, string? type)
+	{
+		return GetAllSitesAsync(site, name: name, siteId: siteId, type: type, cancellationToken: CancellationToken.None);
+	}
+
+	/// <summary>
+	/// Get Sites
+	/// </summary>
+	/// <remarks>
+	/// Get sites with area/building/floor with specified hierarchy. List all sites if these parameters are not given as an input.
+	/// </remarks>
+	/// <param name="name">siteNameHierarchy (ex: global/groupName)</param>
+	/// <param name="siteId">Site id to which site details to retrieve.</param>
+	/// <param name="type">type (ex: area, building, floor)</param>
+	/// <param name="site">The sites API.</param>
 	/// <param name="cancellationToken">The cancellation token</param>
 	/// <returns>Task of GetSiteResponse</returns>
-	public static async Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, string? siteId, string? type, CancellationToken cancellationToken = default)
+	public static async Task<GetSiteResponse> GetAllSitesAsync(this ISites site, string? name, string? siteId, string? type, CancellationToken cancellationToken)
 	{
 		var sitesResponses = new List<GetSiteResponseResponse>();
 		var offset = 1;

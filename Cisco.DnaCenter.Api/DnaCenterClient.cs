@@ -126,11 +126,20 @@ public class DnaCenterClient : IDisposable
 	/// <summary>
 	/// Acquires a session token, using the username and password in the options.
 	/// </summary>
+	/// <exception cref="InvalidOperationException">
+	/// The client was not configured for username and password authentication, or is already connected.
+	/// </exception>
+	public Task ConnectAsync()
+		=> ConnectAsync(CancellationToken.None);
+
+	/// <summary>
+	/// Acquires a session token, using the username and password in the options.
+	/// </summary>
 	/// <param name="cancellationToken">The cancellation token</param>
 	/// <exception cref="InvalidOperationException">
 	/// The client was not configured for username and password authentication, or is already connected.
 	/// </exception>
-	public async Task ConnectAsync(CancellationToken cancellationToken = default)
+	public async Task ConnectAsync(CancellationToken cancellationToken)
 	{
 		if (!_options.IsUsernamePasswordAuthenticated)
 		{
@@ -315,19 +324,14 @@ public class DnaCenterClient : IDisposable
 			.GetExecutionStatusAsync(executionId, cancellationToken)
 			.ConfigureAwait(false);
 
-		switch (executionStatus.Status)
+		if (executionStatus.Status is ExecutionStatusStatus.Success or ExecutionStatusStatus.Failure)
 		{
-			case ExecutionStatusStatus.Success:
-			case ExecutionStatusStatus.Failure:
-				return executionStatus;
-			case ExecutionStatusStatus.InProgress:
-				if (timeoutStopwatch.Elapsed > timeout)
-				{
-					return executionStatus;
-				}
-				break;
-			default:
-				break;
+			return executionStatus;
+		}
+
+		if (executionStatus.Status == ExecutionStatusStatus.InProgress && timeoutStopwatch.Elapsed > timeout)
+		{
+			return executionStatus;
 		}
 
 		return null;
