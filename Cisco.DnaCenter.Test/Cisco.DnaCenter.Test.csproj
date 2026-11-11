@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net11.0</TargetFramework>
     <!-- xUnit.net v3 test projects host their own runner. -->
     <OutputType>Exe</OutputType>
     <!-- Run the executable as a Microsoft.Testing.Platform app, so it accepts extension options such as the coverage switch. -->
