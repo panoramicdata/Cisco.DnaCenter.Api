@@ -5,6 +5,8 @@
 [![Nuget](https://img.shields.io/nuget/v/Cisco.DnaCenter.Api)](https://www.nuget.org/packages/Cisco.DnaCenter.Api/)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1dd6d6dbca1d45389c10ce38fd956769)](https://app.codacy.com/gh/panoramicdata/Cisco.DnaCenter.Api/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
+> **Need help with APIs or .NET?** Panoramic Data are experts in APIs and .NET, and we can help with your development. [Contact us](https://www.panoramicdata.com/contact-us) or see our [software services](https://www.panoramicdata.com/services/software).
+
 Supports .NET 11.0.
 
 To use the Cisco DNA Center nuget package:
