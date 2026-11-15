@@ -104,7 +104,7 @@ public partial class AuthenticatedHttpClientHandler
 			return SendDecision.ReturnResponse;
 		}
 
-		state.TokenRefreshCount++;
+		state.BeginTokenRefresh();
 
 		_logger.LogWarning(
 			"{LogPrefix}Received 401 Unauthorized. Attempting token refresh #{TokenRefreshCount}. ({Method} - {Url})",
@@ -133,9 +133,13 @@ public partial class AuthenticatedHttpClientHandler
 	{
 		public string LogPrefix { get; } = logPrefix;
 
-		public int AttemptCount { get; set; }
+		public int AttemptCount { get; private set; }
 
-		public int TokenRefreshCount { get; set; }
+		public int TokenRefreshCount { get; private set; }
+
+		public void BeginAttempt() => AttemptCount++;
+
+		public void BeginTokenRefresh() => TokenRefreshCount++;
 	}
 
 	private enum SendOutcome

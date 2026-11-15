@@ -81,7 +81,7 @@ public partial class AuthenticatedHttpClientHandler : HttpClientHandler
 
 		while (true)
 		{
-			state.AttemptCount++;
+			state.BeginAttempt();
 			cancellationToken.ThrowIfCancellationRequested();
 
 			await AttachHeadersAsync(request, cancellationToken).ConfigureAwait(false);

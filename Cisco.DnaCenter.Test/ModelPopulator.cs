@@ -29,18 +29,23 @@ internal static class ModelPopulator
 	internal static object? DefaultOf(Type type)
 		=> type.IsValueType ? Activator.CreateInstance(type) : null;
 
+	private static readonly Dictionary<Type, object> Scalars = new()
+	{
+		[typeof(string)] = "value",
+		[typeof(object)] = "value",
+		[typeof(bool)] = true,
+		[typeof(DateTime)] = new DateTime(2026, 1, 2, 3, 4, 5, DateTimeKind.Utc),
+		[typeof(DateTimeOffset)] = new DateTimeOffset(2026, 1, 2, 3, 4, 5, TimeSpan.Zero),
+		[typeof(Guid)] = Guid.Parse("11111111-2222-3333-4444-555555555555"),
+	};
+
 	internal static object? Build(Type type, int depth)
 	{
 		var underlying = Nullable.GetUnderlyingType(type) ?? type;
 
-		if (underlying == typeof(string) || underlying == typeof(object))
+		if (Scalars.TryGetValue(underlying, out var scalar))
 		{
-			return "value";
-		}
-
-		if (underlying == typeof(bool))
-		{
-			return true;
+			return scalar;
 		}
 
 		if (underlying.IsEnum)
@@ -48,30 +53,15 @@ internal static class ModelPopulator
 			return Enum.GetValues(underlying).GetValue(0);
 		}
 
-		if (underlying == typeof(DateTime))
-		{
-			return new DateTime(2026, 1, 2, 3, 4, 5, DateTimeKind.Utc);
-		}
-
-		if (underlying == typeof(DateTimeOffset))
-		{
-			return new DateTimeOffset(2026, 1, 2, 3, 4, 5, TimeSpan.Zero);
-		}
-
-		if (underlying == typeof(Guid))
-		{
-			return Guid.Parse("11111111-2222-3333-4444-555555555555");
-		}
-
 		if (underlying.IsPrimitive || underlying == typeof(decimal))
 		{
 			return Convert.ChangeType(1, underlying, System.Globalization.CultureInfo.InvariantCulture);
 		}
 
-		return BuildComposite(underlying, depth);
+		return BuildCollection(underlying, depth) ?? BuildObject(underlying, depth);
 	}
 
-	internal static object? BuildComposite(Type type, int depth)
+	private static object? BuildCollection(Type type, int depth)
 	{
 		if (type.IsArray)
 		{
@@ -80,24 +70,31 @@ internal static class ModelPopulator
 			return array;
 		}
 
-		if (type.IsGenericType)
+		var arguments = type.IsGenericType && typeof(IEnumerable).IsAssignableFrom(type) ? type.GetGenericArguments() : [];
+		return arguments.Length switch
 		{
-			var arguments = type.GetGenericArguments();
-			if (arguments.Length == 1 && typeof(IEnumerable).IsAssignableFrom(type))
-			{
-				var list = (IList)Activator.CreateInstance(typeof(List<>).MakeGenericType(arguments[0]))!;
-				list.Add(Build(arguments[0], depth + 1));
-				return list;
-			}
+			1 => BuildList(arguments[0], depth),
+			2 => BuildDictionary(arguments, depth),
+			_ => null,
+		};
+	}
 
-			if (arguments.Length == 2 && typeof(IEnumerable).IsAssignableFrom(type))
-			{
-				var dictionary = (IDictionary)Activator.CreateInstance(typeof(Dictionary<,>).MakeGenericType(arguments))!;
-				dictionary.Add(Build(arguments[0], depth + 1)!, Build(arguments[1], depth + 1));
-				return dictionary;
-			}
-		}
+	private static IList BuildList(Type element, int depth)
+	{
+		var list = (IList)Activator.CreateInstance(typeof(List<>).MakeGenericType(element))!;
+		list.Add(Build(element, depth + 1));
+		return list;
+	}
 
+	private static IDictionary BuildDictionary(Type[] arguments, int depth)
+	{
+		var dictionary = (IDictionary)Activator.CreateInstance(typeof(Dictionary<,>).MakeGenericType(arguments))!;
+		dictionary.Add(Build(arguments[0], depth + 1)!, Build(arguments[1], depth + 1));
+		return dictionary;
+	}
+
+	private static object? BuildObject(Type type, int depth)
+	{
 		if (depth >= MaxDepth || type.IsAbstract || type.IsInterface || type.GetConstructors().Length == 0)
 		{
 			return null;
