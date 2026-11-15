@@ -37,11 +37,21 @@ public class AuthenticatedHttpClientHandlerTests
 
 	private static (int, string) TokenResponse(string value) => (200, $"{{\"Token\":\"{value}\"}}");
 
-	// A server that issues a single token and answers the status endpoint with the given responses.
 	private static ScriptedServer ServeStatus(params (int Status, string Body)[] statusResponses)
+		=> ServeStatusWithTokens(["token"], statusResponses);
+
+	private static ScriptedServer ServeStatusWithTokens(string[] tokens, params (int Status, string Body)[] statusResponses)
 		=> new ScriptedServer()
-			.On(AuthPath, TokenResponse("token"))
+			.On(AuthPath, [.. tokens.Select(TokenResponse)])
 			.On(StatusPath, statusResponses);
+
+	private static async Task<ExecutionStatus> GetSuccessfulStatusAsync(ScriptedServer server)
+	{
+		using var client = CreateClient(server);
+		var status = await GetStatusAsync(client);
+		status.Status.Should().Be(ExecutionStatusStatus.Success);
+		return status;
+	}
 
 	private static Task<ExecutionStatus> GetStatusAsync(DnaCenterClient client)
 		=> client.Business.GetExecutionStatusAsync("abc", TestContext.Current.CancellationToken);
@@ -55,14 +65,10 @@ public class AuthenticatedHttpClientHandlerTests
 	[Fact]
 	public async Task FirstRequest_AcquiresTokenAndSendsItOnTheRequest()
 	{
-		using var server = new ScriptedServer()
-			.On(AuthPath, TokenResponse("token-1"))
-			.On(StatusPath, (200, SuccessBody));
-		using var client = CreateClient(server);
+		using var server = ServeStatusWithTokens(["token-1"], (200, SuccessBody));
 
-		var status = await GetStatusAsync(client);
+		await GetSuccessfulStatusAsync(server);
 
-		status.Status.Should().Be(ExecutionStatusStatus.Success);
 		server.Received.Select(r => r.Path).Should().Equal(AuthPath, StatusPath);
 		server.Received[1].AuthToken.Should().Be("token-1");
 	}
@@ -70,14 +76,10 @@ public class AuthenticatedHttpClientHandlerTests
 	[Fact]
 	public async Task Unauthorized_RefreshesTokenAndRetriesRequest()
 	{
-		using var server = new ScriptedServer()
-			.On(AuthPath, TokenResponse("token-1"), TokenResponse("token-2"))
-			.On(StatusPath, (401, string.Empty), (200, SuccessBody));
-		using var client = CreateClient(server);
+		using var server = ServeStatusWithTokens(["token-1", "token-2"], (401, string.Empty), (200, SuccessBody));
 
-		var status = await GetStatusAsync(client);
+		await GetSuccessfulStatusAsync(server);
 
-		status.Status.Should().Be(ExecutionStatusStatus.Success);
 		server.Received.Select(r => r.Path).Should().Equal(AuthPath, StatusPath, AuthPath, StatusPath);
 		server.Received[1].AuthToken.Should().Be("token-1");
 		server.Received[3].AuthToken.Should().Be("token-2");
@@ -116,11 +118,9 @@ public class AuthenticatedHttpClientHandlerTests
 	public async Task ServiceUnavailable_IsRetriedAfterDelayUntilSuccess()
 	{
 		using var server = ServeStatus((503, string.Empty), (200, SuccessBody));
-		using var client = CreateClient(server);
 
-		var status = await GetStatusAsync(client);
+		await GetSuccessfulStatusAsync(server);
 
-		status.Status.Should().Be(ExecutionStatusStatus.Success);
 		StatusRequestCount(server).Should().Be(2);
 	}
 
