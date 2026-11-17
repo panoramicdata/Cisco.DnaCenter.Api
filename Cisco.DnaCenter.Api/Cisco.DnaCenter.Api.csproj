@@ -74,6 +74,7 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="Refit" />
+    <PackageReference Include="Refit.Reflection" />
     <PackageReference Include="Refit.Newtonsoft.Json" />
     <PackageReference Include="SecurityCodeScan.VS2019">
       <PrivateAssets>all</PrivateAssets>
