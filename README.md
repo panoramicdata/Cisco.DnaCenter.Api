@@ -60,6 +60,43 @@ namespace My.Project
 }
 ````
 
+## Breaking changes
+
+Package versions follow the DNA Center API version and are driven by Nerdbank.GitVersioning, so these changes are not signalled by a major version bump. `main` breaks the public API of the published 1.3.175 release in the ways below (derived by comparing the public API of the 1.3.175 package with a build of `main`). Code compiled against 1.3.175 throws `MissingMethodException` until it is recompiled, and some call sites need editing.
+
+### Target framework
+
+1.3.175 targets `net10.0`. `main` targets `net11.0`.
+
+### Methods that lost their optional parameters
+
+Optional parameters were replaced with overloads, which changes the method signatures:
+
+| Area | Member | Change |
+|---|---|---|
+| Client | `DnaCenterClient.GetFinalExecutionStatusAsync` | The single method with optional `timeout`, `pollingDelay`, `initialDelay` and `cancellationToken` is now `(executionId, timeout, pollingDelay, initialDelay, cancellationToken)` plus `(executionId, cancellationToken)`. Calls such as `GetFinalExecutionStatusAsync(id)` or `GetFinalExecutionStatusAsync(id, timeout: t)` no longer compile; pass a token. |
+| Client | `DnaCenterClient` constructor and `ConnectAsync` | The optional `logger` and `cancellationToken` are now overloads. Source compatible, binary incompatible. |
+| Sites | `ISiteExtensions.GetAllSitesAsync` | `name`, `siteId`, `type` and `cancellationToken` are now overloads. They bind only in that order, so a call using named arguments out of order, such as `GetAllSitesAsync(type: "area")`, no longer compiles. |
+| PnP | `IDeviceOnBoardingPnpExtensions.GetAllPnpDeviceListAsync` | The single method with 17 optional filter parameters is replaced by overloads taking `sort`, `sort` and `sortOrder`, or a `PnpDeviceFilter` (new class holding every filter), each with a `cancellationToken`. Calls that pass `serialNumber`, `state`, `name` and other filters must move to `PnpDeviceFilter`. |
+
+```csharp
+// Before (1.3.175)
+var devices = await client.DeviceOnboardingPnp.GetAllPnpDeviceListAsync(serialNumber: new List<string> { "FOC123" });
+var status = await client.GetFinalExecutionStatusAsync(executionId);
+
+// After
+var devices = await client.DeviceOnboardingPnp.GetAllPnpDeviceListAsync(
+	new PnpDeviceFilter { SerialNumber = new List<string> { "FOC123" } },
+	cancellationToken);
+var status = await client.GetFinalExecutionStatusAsync(executionId, cancellationToken);
+```
+
+### Other changes
+
+- `AuthenticatedHttpClientHandler.Token` gained a getter (it was set-only). Not breaking.
+- `DnaCenterClientOptions.IsReadOnly` and the `PnpDeviceFilter` class are new. Not breaking.
+
+All other public types and members, including the generated interfaces and data classes, are unchanged.
 ## API Documentation
 
 The DNA Center Intent API documentation can be found here:
