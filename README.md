@@ -66,7 +66,7 @@ Package versions follow the DNA Center API version and are driven by Nerdbank.Gi
 
 ### Target framework
 
-1.3.175 targets `net10.0`. `main` targets `net11.0`.
+1.3.175 targets `net11.0`. `main` targets `net11.0`.
 
 ### Methods that lost their optional parameters
 
