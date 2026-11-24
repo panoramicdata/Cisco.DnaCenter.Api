@@ -12,7 +12,6 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/panoramicdata/Cisco.DnaCenter.Api</RepositoryUrl>
     <PackageTags>Cisco DNA Center API</PackageTags>
-    <Copyright>Panoramic Data Limited 2020</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <LangVersion>latest</LangVersion>
